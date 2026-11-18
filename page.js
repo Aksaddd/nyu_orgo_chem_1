@@ -3,6 +3,7 @@
   const { el } = ORGO, L = ORGO.learn;
   const app = document.getElementById("app");
   const link = href => ORGO.base + href;
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
   const PHASE = {
     build: ["Build", "Learn the ideas and begin recalling them. Short sessions on many days beat one long one."],
     strengthen: ["Strengthen", "The exam is close. Mixed practice and a timed mock exam matter most now."],
@@ -30,10 +31,10 @@
   ];
 
   function header() {
-    const d = L.examDate(), left = L.daysLeft();
-    let msg = "Set the exam date and the plan will pace itself to it.";
-    if (d) { const n = Math.ceil(left); msg = left < 0 ? "The exam date has passed. Pick a new date if there is another exam." : n === 0 ? "The exam is today." : n === 1 ? "1 day left" : n + " days left" }
-    const input = el("input", { type: "date", id: "examDate", value: d ? iso(d) : "", on: { change: e => L.setExamDate(e.target.value || null) } });
+    const d = L.examDate();
+    // saved on each change, as the browser fills the box; on leaving it, the box shows what was saved
+    const input = el("input", { type: "date", id: "examDate", value: d ? iso(d) : "", on: { focus: e => { using = e.target }, change: e => commit(e.target),
+      blur: e => { using = null; commit(e.target); if (e.target.value !== saved()) e.target.value = saved() } } });
     return el("header", { class: "stack" },
       el("div", {},
         el("p", { class: "eyebrow" }, "CHEM 225 · Organic Chemistry I"),
@@ -42,12 +43,27 @@
       el("p", { class: "muted small", "data-credit": "orgo" }),
       el("div", { class: "card row" },
         el("label", { for: "examDate" }, el("b", {}, "Exam date")), input,
-        el("span", { class: d && left >= 0 ? "badge" : "muted", "aria-live": "polite" }, msg)));
+        say(el("span", { id: "examSays", "aria-live": "polite" }))));
   }
   function iso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0") }
+  const saved = () => { const d = L.examDate(); return d ? iso(d) : "" };
+  // A date is saved once it is a whole one: typing the year 2026 passes through 0002, 0020 and 0202 on the way, and a day
+  // half typed reads as empty (badInput). An empty box clears the date.
+  const commit = box => { const v = box.value, y = +v.slice(0, 4); if (v === saved()) return; if (!v) { if (!box.validity.badInput) L.setExamDate(null) } else if (/^\d{4}-\d\d-\d\d$/.test(v) && y >= 2000 && y < 2100) L.setExamDate(v) };
+  // the line beside the date: whole calendar days, as Eureka's Settings counts them (0 is the day itself)
+  function say(span) {
+    const d = L.examDate(), n = L.calendarDays();
+    span.className = d && n >= 0 ? "badge" : "muted";
+    span.textContent = !d ? "Set the exam date and the plan will pace itself to it." : n < 0 ? "The exam date has passed. Pick a new date if there is another exam."
+      : n === 0 ? "The exam is today." : n === 1 ? "The exam is tomorrow." : n + " days left";
+    return span;
+  }
 
+  // plan() names its phase from the hours left; the words follow the calendar day, as the line beside the date does
+  const EVE = ["The day before", "The exam is tomorrow. Keep it light: one short recall round, then rest."];
+  const PAST = ["After the exam", "Set the date of the next exam and the plan will pace itself to it."];
   function today() {
-    const p = L.plan(), ph = PHASE[p.phase] || PHASE.build;
+    const p = L.plan(), n = L.calendarDays(), ph = p.phase === "exam" && n ? (n < 0 ? PAST : EVE) : PHASE[p.phase] || PHASE.build;
     return el("section", { class: "stack", "aria-labelledby": "h-today" },
       el("h2", { id: "h-today" }, "Today's session"),
       el("p", { class: "muted" }, el("b", {}, ph[0] + ". "), ph[1]),
@@ -63,7 +79,7 @@
     const box = (n, label) => el("div", { class: "card" }, el("div", { style: { fontSize: "2rem", fontWeight: 700 } }, String(n)), el("div", { class: "muted" }, label));
     return el("section", { class: "stack", "aria-labelledby": "h-nums" },
       el("h2", { id: "h-nums" }, "Where you stand"),
-      el("div", { class: "grid" }, box(s.answered, "questions answered"), box(s.due, "due now"), box(pct, "right after a day or more")),
+      el("div", { class: "grid" }, box(s.answered, s.answered === 1 ? "question answered" : "questions answered"), box(s.due, "due now"), box(pct, "right after a day or more")),
       el("p", { class: "muted" }, "The last number, not today's score, is the one that predicts the exam, because the exam asks what you can still do days later."));
   }
 
@@ -72,7 +88,7 @@
     const counts = [c.practice ? c.practice + " practice" : "", c.exam ? c.exam + " exam" : "", c.worked ? c.worked + " worked" : ""].filter(Boolean).join(" · ") || "No questions yet";
     return el("a", { class: "card tap", href: link("exam/index.html#" + t.id) },
       el("div", { class: "row", style: { justifyContent: "space-between" } },
-        el("span", { class: "badge" }, t.exam || ""), t.points ? el("span", { class: "muted small" }, t.points + " points") : null),
+        el("span", { class: "badge" }, t.exam || ""), t.points ? el("span", { class: "muted small" }, plural(t.points, "point", "points")) : null),
       el("h3", { style: { margin: ".4em 0 .3em" } }, t.short || t.title),
       el("div", { class: "row" }, ORGO.ui.levelDots(m.level), el("span", { class: "small muted" }, m.label)),
       el("div", { class: "small muted" }, counts));
@@ -98,12 +114,17 @@
       el("div", { class: "btn-row" }, el("a", { class: "btn", href: link("archive/index.html") }, "Open the archive")));
   }
 
+  // While the date box is in use it is left as it is, with what is typed and where: a new box would put the cursor back in
+  // the month. The rest is redrawn under it, and the line beside it says what was saved. In use means between its focus
+  // and blur events: Chrome fires "change" as it moves from the month to the day, while document.activeElement is the body.
+  let home = null, using = null;
   function render() {
-    const keep = document.activeElement && document.activeElement.id === "examDate";
-    app.textContent = "";
-    try { app.append(el("div", { class: "stack home" }, header(), today(), numbers(), blueprint(), parts(), how(), source())) }
-    catch (e) { console.error(e); app.append(el("div", { class: "empty" }, el("p", {}, "The dashboard could not be drawn. Reload the page."))) }
-    if (keep) { const i = document.getElementById("examDate"); i && i.focus() }
+    const box = document.getElementById("examDate"), busy = !!(home && home.isConnected && box && using === box);
+    try {
+      const rest = [today(), numbers(), blueprint(), parts(), how(), source()];
+      if (busy) { const top = home.firstChild; while (top.nextSibling) top.nextSibling.remove(); top.after(...rest); say(document.getElementById("examSays")) }
+      else { app.textContent = ""; app.append(home = el("div", { class: "stack home" }, header(), rest)) }
+    } catch (e) { console.error(e); home = null; app.textContent = ""; app.append(el("div", { class: "empty" }, el("p", {}, "The dashboard could not be drawn. Reload the page."))) }
   }
   ORGO.ready(render);
   ORGO.on("progress", render);
