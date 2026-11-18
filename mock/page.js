@@ -1,6 +1,6 @@
 // CHEM 225 · mock exams: the list, the timed exam room, and marking. History is kept in orgo-mock-v1.
 (() => {
-  const ORGO = window.ORGO, el = ORGO.el, L = ORGO.learn, D = ORGO.data, KEY = "mock-v1";
+  const ORGO = window.ORGO, el = ORGO.el, L = ORGO.learn, D = ORGO.data, KEY = "mock-v1", HIST = "mock-history-v1";
   const ONSCREEN = ["mcq", "multi", "numeric", "rank", "classify"];
   let app, tick = null;
   const r1 = x => Math.round(x * 10) / 10;
@@ -11,6 +11,9 @@
 
   ORGO.ready(() => {
     app = document.getElementById("app");
+    // Eureka's front page and study plan read orgo-mock-history-v1 ({at, right, total, pct, secs}, newest last, 50 at most).
+    // Once: build it from the attempts this page saved before it existed.
+    try { const old = ORGO.store.get(KEY, []); if (ORGO.store.raw(HIST) == null && Array.isArray(old) && old.length) ORGO.store.set(HIST, old.filter(a => a && a.max).map(a => ({ at: a.at, right: a.score, total: a.max, pct: Math.round(a.score / a.max * 100), secs: a.secs })).slice(-50)) } catch (e) { }
     if (!ORGO.quiz || !ORGO.quiz._widget) { app.appendChild(el("p", { class: "callout warn" }, "The question engine did not load. Reload the page.")); return }
     Promise.all(["exam", "mock"].map(n => ORGO.need(n).catch(() => null))).then(landing);
     window.addEventListener("pagehide", stopClock);
@@ -174,6 +177,7 @@
         ORGO.store.update(KEY, a => (Array.isArray(a) ? a : []).concat([{ id: x.id, at: Date.now(), score: r1(s.got), max: r1(s.max), secs: Math.round(used), parts: partsOut }]), []);
         L.did("mock"); try { ORGO.eureka.done("mock") } catch (e) { }
         const pct = s.max ? Math.round(s.got / s.max * 100) : 0;
+        ORGO.store.update(HIST, h => (Array.isArray(h) ? h : []).concat([{ at: Date.now(), right: r1(s.got), total: r1(s.max), pct, secs: Math.round(used) }]).slice(-50), []);
         const weak = Object.keys(byType).map(t => ({ t, f: byType[t].pts ? byType[t].got / byType[t].pts : 1, ...byType[t] })).filter(w => w.f < 0.999).sort((a, b) => a.f - b.f || b.pts - a.pts).slice(0, 3);
         barBox.textContent = ""; barBox.dataset.saved = "1";
         barBox.append(el("h1", { class: "mock-title" }, "Your result"),

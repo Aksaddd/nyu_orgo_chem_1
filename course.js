@@ -2,13 +2,17 @@
 // Inside Eureka (../shared/platform.js loaded) it checks the class code and adds the class bar.
 // On its own, the pages work without it: assets/core.js draws a simple top bar from orgoPortals.
 window.COURSE = {
+  // today's study plan on the front page (Eureka's shared/plan.js): where each part of the class keeps its progress.
+  // The plan reads orgo-read-v1 ({chapterId: {at, a, finished, done}}), the drill record orgo-drill-v1 (written by assets/core.js),
+  // and orgo-mock-history-v1 (a list of {at, right, total, pct, secs}, added by mock/page.js). There is no equations part.
+  plan: { read: { key: "orgo-read-v1", chapters: ["rings-1", "nmr", "rings-2", "acids", "organometallics", "sn2-1", "sn2-2", "sn1-e1", "e2", "choose", "beyond"], href: "read/index.html" }, drill: { key: "orgo-drill-v1", total: 453, href: "drill/index.html?mode=mixed" }, mock: { key: "orgo-mock-history-v1", href: "mock/index.html" }, review: { href: "review/index.html" } },
   id: "orgo", prefix: "orgo-", name: "CHEM 225", title: "Organic Chemistry I",
   base: (document.currentScript && document.currentScript.src || "").replace(/course\.js.*$/, ""),   // this class's folder
   badges: "orgo",
   sourceHint: "for example just chairs, or just SN2 and E2",
   terms: ["anti-periplanar", "pKa"],
   deckBonus: () => null,
-  orgoPortals: [["Readings", "read/"], ["Exam 2 Lab", "exam/"], ["Practice", "drill/"], ["Mechanisms", "mechanisms/"], ["Mock Exam", "mock/"], ["Molecule Lab", "lab/"], ["Foundations", "foundations/"], ["Review", "review/"], ["Archive", "archive/"], ["Syllabus", "syllabus/"]],
+  orgoPortals: [["Readings", "read/"], ["Practice", "drill/"], ["Exam 2 Lab", "exam/"], ["Mechanisms", "mechanisms/"], ["Mock Exam", "mock/"], ["Syllabus", "syllabus/"], ["Review", "review/"], ["Molecule Lab", "lab/"], ["Foundations", "foundations/"], ["Archive", "archive/"]],
   // the companion's fact for each of its six forms
   facts: [
     "A cat curled in a chair is the most relaxed cat. Cyclohexane agrees: the chair has no angle strain and no torsional strain.",
