@@ -4,7 +4,8 @@
 // file draws them once the reader has put the text in the page.
 //   ReadChem.draw(root)    draws every formula and figure in the text under root. Safe to call again: what is drawn stays.
 //   ReadChem.text(range)   the words in a range, without the letters inside drawings and on controls   } for read/notes.js,
-//   ReadChem.skip(node)    is this text node inside a drawing, or on a control?                        } which files notes by place
+//   ReadChem.quote(range)  the same words as the notebook shows them                                   } which files notes
+//   ReadChem.skip(node)    is this text node inside a drawing, on a control, or only space between blocks? } by place
 // It also turns a save of the class's own reader into the shape Eureka's reader keeps, before the reader reads it, and
 // opens the pictures of the professor's pages in the reader's own viewer.
 // Loaded after chapters.js, notes.js, the class engine (assets/core.js, mol.js and the others) and figures.js, and before the
@@ -80,14 +81,23 @@
 
   // ------------------------------------------------------------------ for the notes (read/notes.js)
   // Highlights are filed by where their words are in the passage. The letters inside a drawing, the line that opens a
-  // folded block and the words of a link are not counted and never marked.
-  const skip = n => !!(n && n.parentNode && n.parentNode.closest && n.parentNode.closest("svg, summary, a"));
-  function text(range) {
+  // folded block and the words of a link are not counted and never marked. Neither is the white space between two blocks
+  // (two paragraphs, a paragraph and a figure): a mark there would show as a coloured sliver on a line of its own.
+  const BLOCK = /^(P|DIV|UL|OL|LI|TABLE|THEAD|TBODY|TR|TD|TH|DETAILS|BLOCKQUOTE)$/;
+  const block = e => !e || (e.nodeType === 1 && (BLOCK.test(e.nodeName) || e.classList.contains("fig")));
+  const skip = n => { const p = n && n.parentNode; if (!p || !p.closest) return false; return !!p.closest("svg, summary, a") || (!/\S/.test(n.data) && BLOCK.test(p.nodeName) && block(n.previousSibling) && block(n.nextSibling)) };
+  function read(range, gaps) {
     const top = range.commonAncestorContainer, root = top.nodeType === 3 ? top.parentNode : top, w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     let out = "", n;
-    while ((n = w.nextNode())) { if (!range.intersectsNode(n) || skip(n)) continue; out += n.data.slice(n === range.startContainer ? range.startOffset : 0, n === range.endContainer ? range.endOffset : n.length) }
+    while ((n = w.nextNode())) {
+      if (!range.intersectsNode(n)) continue;
+      if (skip(n)) { if (gaps && !/\S/.test(n.data)) out += " "; continue }
+      out += n.data.slice(n === range.startContainer ? range.startOffset : 0, n === range.endContainer ? range.endOffset : n.length);
+    }
     return out;
   }
+  const text = range => read(range, false);                                // what is counted
+  const quote = range => read(range, true).replace(/\s+/g, " ");          // what the notebook shows: the same words, with a space where one block ends and the next begins
 
   // ------------------------------------------------------------------ keeping up with the page
   // The page calls draw() when it has drawn a chapter and when it has redrawn a passage's questions. Other scripts put text
@@ -112,5 +122,5 @@
     e.preventDefault(); img.src = a.href; img.alt = "The professor's handwritten notes, " + a.textContent; box.hidden = false;
   });
 
-  window.ReadChem = { draw, text, skip };
+  window.ReadChem = { draw, text, quote, skip };
 })();

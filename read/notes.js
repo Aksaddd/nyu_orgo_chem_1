@@ -12,9 +12,10 @@
   let ctx = null;   // { chapter, onChange }
 
   // CHEM 225: a passage here has drawings and a few controls in it (the lines that open a folded block, links). Their letters
-  // are not words of the passage: they are not counted, not marked and not quoted (read/chem.js: ReadChem.text, ReadChem.skip),
+  // are not words of the passage: they are not counted, not marked and not quoted (read/chem.js: ReadChem.text, skip, quote),
   // so a highlight keeps its place whatever a drawing is made of, and never lands inside one (a <mark> in an <svg> is not drawn).
-  const words = r => window.ReadChem ? window.ReadChem.text(r) : r.toString(), skip = n => !!(window.ReadChem && window.ReadChem.skip(n));
+  // (read/chem.js loads after this file, so window.ReadChem is looked up when it is needed, not now)
+  const RC = () => window.ReadChem, words = r => RC() ? RC().text(r) : r.toString(), quote = r => RC() ? RC().quote(r) : r.toString(), skip = n => !!(RC() && RC().skip(n));
   // character offset of (node, off) inside a passage
   const offsetIn = (root, node, off) => { const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return words(r).length };
   // wrap [s, e) of the passage's text in <mark> elements (one per text node it crosses)
@@ -49,7 +50,7 @@
     const sel = getSelection(); if (!sel.rangeCount || sel.isCollapsed) return null;
     const r = sel.getRangeAt(0), p1 = (r.startContainer.nodeType === 1 ? r.startContainer : r.startContainer.parentElement).closest(".rd-prose"), p2 = (r.endContainer.nodeType === 1 ? r.endContainer : r.endContainer.parentElement).closest(".rd-prose");
     if (!p1 || p1 !== p2) return null;
-    const s = offsetIn(p1, r.startContainer, r.startOffset), e = offsetIn(p1, r.endContainer, r.endOffset), text = words(r).trim();
+    const s = offsetIn(p1, r.startContainer, r.startOffset), e = offsetIn(p1, r.endContainer, r.endOffset), text = quote(r).trim();
     if (e - s < 2 || !text) return null;
     const lv = p1.dataset.alt ? p1.dataset.lv || "" : "";   // "" = the exam version, the passage as written
     return { prose: p1, key: ctx.chapter.id + ":" + p1.closest(".rd-sec").id.slice(3) + (lv ? "@" + lv : ""), lv, s, e, text, rect: r.getBoundingClientRect() };
