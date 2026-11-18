@@ -1,0 +1,1274 @@
+[
+ {
+  "id": "rate-pairs-001",
+  "type": "rate-pairs",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCBr>CH3CH2OH;25 °C>CCCOCC]]",
+    "ok": false,
+    "why": "The only nucleophile here is neutral ethanol, about as weak as methanol (1 in the lecture table). A primary halide cannot ionize, so there is no {{SN1}} route either: very slow."
+   },
+   {
+    "h": "[[rxn:CCCBr + CC[O-].[Na+]>CH3CH2OH;25 °C>CCCOCC]]",
+    "ok": true,
+    "why": "Ethoxide is an anion and a strong nucleophile. A primary bromide reacts by {{SN2}}, where the nucleophile is in the rate law, so the better nucleophile gives the faster reaction."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same bromide, same solvent, same temperature, same product. One flask has sodium ethoxide, {{CH3CH2O-}}, the other has only ethanol.",
+     "ask": {
+      "q": "What is the single difference?",
+      "a": "The nucleophile: the anion {{CH3CH2O-}} or its neutral conjugate acid {{CH3CH2OH}}."
+     }
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "1-Bromopropane is a primary halide: {{SN2}}. A primary carbocation does not form, so {{SN1}} is not available.",
+     "ask": {
+      "q": "What is the rate law?",
+      "a": "rate = k[RBr][Nu]. The nucleophile counts."
+     }
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "An anion is a better nucleophile than its own conjugate acid. The lecture table shows the size of the effect for the closest pair on it: {{HO-}} 16,000 against {{H2O}} 1.",
+     "ask": {
+      "q": "Which pair in the lecture table is the model for ethoxide and ethanol?",
+      "a": "{{HO-}} (16,000) and {{H2O}} (1), or {{CH3OH}} (1)."
+     }
+    },
+    {
+     "t": "Decide",
+     "h": "Better nucleophile in an {{SN2}} reaction: the flask with sodium ethoxide is faster."
+    }
+   ],
+   "answer": "The reaction with {{CH3CH2ONa}} is faster. Difference: the nucleophile (anion against neutral).",
+   "rule": "SN2: rate = k[substrate][nucleophile]. An anion beats its neutral conjugate acid."
+  }
+ },
+ {
+  "id": "rate-pairs-002",
+  "type": "rate-pairs",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + [Na+].[N-]=[N+]=[N-]>DMF>CC[C@@H](C)N=[N+]=[N-]]]",
+    "ok": true,
+    "why": "Tosylate is an excellent leaving group: a very weak base whose charge is shared by three oxygens. Azide displaces it by {{SN2}} with inversion, (S) to (R)."
+   },
+   {
+    "h": "[[rxn:CC[C@H](C)O + [Na+].[N-]=[N+]=[N-]>DMF>CC[C@@H](C)N=[N+]=[N-]]]",
+    "ok": false,
+    "why": "The leaving group would be {{HO-}}, a strong base and a poor leaving group. The lecture's verdict for an alcohol with a nucleophile is N.R.: this reaction does not go."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same carbon skeleton with the same (S) configuration, same nucleophile (azide), same solvent (DMF). On one substrate the group on carbon 2 is OTs, on the other OH.",
+     "ask": {
+      "q": "What is the single difference?",
+      "a": "The leaving group: tosylate or hydroxide."
+     }
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Secondary carbon, a good nucleophile that is a weak base, polar aprotic solvent: {{SN2}}. The inverted product, (R)-2-azidobutane, says the same.",
+     "ask": {
+      "q": "Is the leaving group part of the rate-determining step?",
+      "a": "Yes. In {{SN2}} the C-LG bond breaks in the only step."
+     }
+    },
+    {
+     "t": "Compare the leaving groups",
+     "h": "A good leaving group is a weak base. {{TsO-}} is the conjugate base of a strong acid (TsOH, {{pKa}} about -3) and is stabilized by resonance. {{HO-}} is the conjugate base of water ({{pKa}} 15.7): a strong base.",
+     "ask": {
+      "q": "Which is the weaker base, {{TsO-}} or {{HO-}}?",
+      "a": "{{TsO-}}, by about 19 {{pKa}} units. It is the better leaving group."
+     }
+    },
+    {
+     "t": "Decide",
+     "h": "The tosylate reacts. The alcohol does not react at all under these conditions: the lecture shows ethanol with {{HS-}} as N.R."
+    }
+   ],
+   "answer": "The tosylate reacts faster. Difference: the leaving group.",
+   "rule": "Good leaving group = weak base. OTs, I, Br, Cl leave; OH, OR and F do not."
+  }
+ },
+ {
+  "id": "rate-pairs-003",
+  "type": "rate-pairs",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:C=CBr + [Na+].[SH-]>DMF>C=CS]]",
+    "ok": false,
+    "why": "The bromine is on a carbon of a double bond: a vinyl halide. The lecture's {{SN2}} rate for vinyl is 0, and a vinyl halide does not do {{SN1}} either."
+   },
+   {
+    "h": "[[rxn:CCBr + [Na+].[SH-]>DMF>CCS]]",
+    "ok": true,
+    "why": "The bromine is on an {{sp3}} primary carbon. {{HS-}} (126,000) attacks from the back in an ordinary {{SN2}}: ethyl is 0.033 in the lecture figure."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same leaving group (Br), same nucleophile, same solvent, two carbons in each substrate. One substrate has a C=C.",
+     "ask": {
+      "q": "What is the hybridization of the carbon bonded to Br in each?",
+      "a": "{{sp2}} in bromoethene (vinyl), {{sp3}} in bromoethane."
+     }
+    },
+    {
+     "t": "Recall the lecture figure",
+     "h": "Figure 7.3: vinyl 0, ethyl 0.033. Vinyl is listed with tert-butyl as a substrate that does not undergo {{SN2}}.",
+     "ask": {
+      "q": "What rate does the lecture give for a vinyl substrate?",
+      "a": "0."
+     }
+    },
+    {
+     "t": "Explain it",
+     "h": "To attack from the back the nucleophile would have to come through the plane of the double bond, where the other carbon and the pi electrons are in the way. The alternative, {{SN1}}, would need a vinyl cation, which is too unstable to form."
+    },
+    {
+     "t": "Decide",
+     "h": "Bromoethane reacts by {{SN2}}; bromoethene does not react. Something beats nothing."
+    }
+   ],
+   "answer": "Bromoethane reacts faster. Difference: the carbon that carries the leaving group ({{sp3}} alkyl against {{sp2}} vinyl).",
+   "rule": "No SN2 and no SN1 at an sp2 carbon: vinyl and aryl halides do not substitute."
+  }
+ },
+ {
+  "id": "rate-pairs-004",
+  "type": "rate-pairs",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[N-]=[N+]=[N-]>DMSO>CCCCN=[N+]=[N-]]]",
+    "ok": true,
+    "why": "DMSO is polar aprotic. It dissolves the salt but cannot hydrogen bond to azide, so the anion is free and reactive. The lecture's summary: {{SN2}} likes a polar aprotic solvent."
+   },
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[N-]=[N+]=[N-]>CH3OH>CCCCN=[N+]=[N-]]]",
+    "ok": false,
+    "why": "Methanol is polar protic. Its O-H hydrogens hydrogen bond to the azide anion and hold it in a shell of solvent, which the nucleophile must shed before it can attack. Slower."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same primary bromide, same nucleophile, same product. Only the solvent changes: DMSO or methanol.",
+     "ask": {
+      "q": "What is the single difference?",
+      "a": "The solvent."
+     }
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary halide with a good anionic nucleophile: {{SN2}} in both flasks."
+    },
+    {
+     "t": "Classify the solvents",
+     "h": "Methanol has an O-H: polar protic, a hydrogen bond donor. DMSO, {{(CH3)2SO}}, has no O-H or N-H: polar aprotic.",
+     "ask": {
+      "q": "Which solvent can hydrogen bond to the azide anion?",
+      "a": "Methanol. DMSO has no hydrogen on oxygen or nitrogen to donate."
+     }
+    },
+    {
+     "t": "Connect solvent to rate",
+     "h": "A protic solvent solvates the anion and stabilizes the starting nucleophile more than the transition state, which raises the barrier. In a polar aprotic solvent the anion is poorly solvated and reacts fast.",
+     "ask": {
+      "q": "Which solvent type does the lecture list for {{SN2}}?",
+      "a": "Polar aprotic (DMSO, DMF, acetone, acetonitrile)."
+     }
+    }
+   ],
+   "answer": "The reaction in DMSO is faster. Difference: the solvent (polar aprotic against polar protic).",
+   "rule": "SN2 with an anionic nucleophile: polar aprotic solvent is faster. Protic solvents favour SN1."
+  }
+ },
+ {
+  "id": "rate-pairs-005",
+  "type": "rate-pairs",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[C-]#N>DMSO>CCCCC#N]]\n0.10 M 1-bromobutane, <b>0.10 M</b> NaCN",
+    "ok": false,
+    "why": "Same reaction with one tenth of the nucleophile. In a bimolecular reaction that means one tenth of the rate."
+   },
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[C-]#N>DMSO>CCCCC#N]]\n0.10 M 1-bromobutane, <b>1.0 M</b> NaCN",
+    "ok": true,
+    "why": "{{SN2}}: rate = k[RBr][{{CN-}}]. Ten times the cyanide concentration gives ten times the rate."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same substrate at the same concentration, same nucleophile, same solvent. Only the concentration of NaCN differs: 1.0 M or 0.10 M.",
+     "ask": {
+      "q": "What is the single difference?",
+      "a": "The concentration of the nucleophile."
+     }
+    },
+    {
+     "t": "Decide the mechanism first",
+     "h": "Whether the nucleophile concentration matters depends on the mechanism. 1-Bromobutane is primary, cyanide is a good nucleophile, DMSO is polar aprotic: {{SN2}}.",
+     "ask": {
+      "q": "Why must the mechanism be decided before the concentrations are compared?",
+      "a": "Because the nucleophile is in the {{SN2}} rate law but not in the {{SN1}} rate law."
+     }
+    },
+    {
+     "t": "Write the rate law",
+     "h": "{{SN2}} is bimolecular: rate = k[RBr][Nu]. The lecture's data for {{HS-}} and {{CH3I}}: doubling either concentration doubles the rate.",
+     "ask": {
+      "q": "By what factor does the rate change when [NaCN] goes from 0.10 M to 1.0 M?",
+      "a": "Ten times faster."
+     }
+    },
+    {
+     "t": "Contrast with SN1",
+     "h": "For a tertiary halide in water the answer would be different. There rate = k[RX] only, and changing the nucleophile concentration changes nothing (the lecture's tert-butyl bromide data: doubling water leaves the rate at 1)."
+    },
+    {
+     "t": "Decide",
+     "h": "More nucleophile, faster {{SN2}}: the 1.0 M flask."
+    }
+   ],
+   "answer": "The flask with 1.0 M NaCN is faster. Difference: the nucleophile concentration, which counts because the mechanism is SN2.",
+   "rule": "SN2: rate = k[RX][Nu]. SN1: rate = k[RX], the nucleophile concentration does not matter."
+  }
+ },
+ {
+  "id": "rate-pairs-006",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CI + [Na+].[OH-]>H2O>CO]]",
+    "ok": true,
+    "why": "Hydroxide is the nucleophile: 16,000 in the lecture table. Methyl iodide reacts by {{SN2}}, so the nucleophile is in the rate law."
+   },
+   {
+    "h": "[[rxn:CI>H2O>CO]]",
+    "ok": false,
+    "why": "Only water is available to attack: 1 in the lecture table. A methyl cation never forms, so there is no {{SN1}} route to make up for the weak nucleophile."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same substrate and solvent. One flask contains NaOH, the other only water. The difference is the nucleophile: {{HO-}} or {{H2O}}."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Methyl: {{SN2}} only. rate = k[{{CH3I}}][Nu]."
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "Lecture table: {{HO-}} 16,000, {{H2O}} 1. The anion is the better nucleophile by a factor of 16,000."
+    }
+   ],
+   "answer": "The reaction with NaOH is faster. Difference: the nucleophile ({{HO-}} against {{H2O}}).",
+   "rule": "SN2 speeds up with a better nucleophile; an anion beats its conjugate acid."
+  }
+ },
+ {
+  "id": "rate-pairs-007",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[OH-]>CH3CH2OH>CCCCO]]",
+    "ok": false,
+    "why": "Hydroxide is the stronger base, but as a nucleophile it is 16,000 in the lecture table, about eight times slower than {{HS-}}."
+   },
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[SH-]>CH3CH2OH>CCCCS]]",
+    "ok": true,
+    "why": "{{HS-}} is at the top of the lecture table: 126,000. Sulfur is below oxygen, so it is the better nucleophile."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same primary bromide, same solvent. The nucleophile is {{HS-}} in one flask and {{HO-}} in the other."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary halide with a strong nucleophile: {{SN2}}, so nucleophile strength sets the rate."
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "S and O are in the same column, and nucleophilicity increases down a column. Lecture table: {{HS-}} 126,000, {{HO-}} 16,000."
+    }
+   ],
+   "answer": "The reaction with NaSH is faster. Difference: the nucleophile.",
+   "rule": "Same column: the lower atom is the better nucleophile, so the faster SN2."
+  }
+ },
+ {
+  "id": "rate-pairs-008",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CI + C[O-].[Na+]>DMSO>COC]]",
+    "ok": true,
+    "why": "Methoxide is small. It reaches the back of the methyl carbon easily."
+   },
+   {
+    "h": "[[rxn:CI + CC(C)(C)[O-].[Na+]>DMSO>COC(C)(C)C]]",
+    "ok": false,
+    "why": "tert-Butoxide is the stronger base, but the lecture calls it a poor nucleophile: three methyl groups crowd the oxygen."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same substrate ({{CH3I}}), same solvent. The nucleophile is methoxide or tert-butoxide: same atom, same charge, different bulk."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Methyl iodide: {{SN2}} only (no beta hydrogen, so no elimination either)."
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "The lecture's rule: bulkier nucleophile, less nucleophilic. Basicity (tert-butanol {{pKa}} 17, methanol 15.5) points the wrong way here."
+    }
+   ],
+   "answer": "The reaction with {{CH3ONa}} is faster. Difference: the bulk of the nucleophile.",
+   "rule": "A bulky nucleophile is a slow nucleophile, even when it is the stronger base."
+  }
+ },
+ {
+  "id": "rate-pairs-009",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCBr + CC(=O)[O-].[Na+]>H2O>CCOC(C)=O]]",
+    "ok": false,
+    "why": "Acetate also attacks with a negative oxygen, but the charge is shared by two oxygens through resonance: 630 in the lecture table."
+   },
+   {
+    "h": "[[rxn:CCBr + [Na+].[OH-]>H2O>CCO]]",
+    "ok": true,
+    "why": "Hydroxide has its charge on one oxygen: 16,000 in the lecture table."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same primary bromide, same solvent. The nucleophile is hydroxide or acetate."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Bromoethane is primary: {{SN2}}, rate = k[RBr][Nu]."
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "Both are oxygen anions, so look for resonance. Acetate is delocalized and less reactive. Lecture table: {{HO-}} 16,000, {{CH3CO2-}} 630."
+    }
+   ],
+   "answer": "The reaction with NaOH is faster. Difference: the nucleophile (localized against delocalized charge).",
+   "rule": "Resonance in the nucleophile slows SN2."
+  }
+ },
+ {
+  "id": "rate-pairs-010",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC[C@H](C)Br + [Na+].[SH-]>DMF>CC[C@@H](C)S]]",
+    "ok": true,
+    "why": "Bromide is a good leaving group: a very weak base (HBr {{pKa}} -9). {{HS-}} displaces it with inversion to give (R)-butane-2-thiol."
+   },
+   {
+    "h": "[[rxn:CC[C@H](C)F + [Na+].[SH-]>DMF>CC[C@@H](C)S]]",
+    "ok": false,
+    "why": "Fluoride is not a good leaving group: it is the strongest base of the halides (HF {{pKa}} 4). The lecture shows fluoroethane with {{HS-}} giving no {{SN2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same (S)-2-butyl skeleton, same nucleophile, same solvent. The leaving group is Br or F."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Secondary carbon, excellent nucleophile that is a weak base, polar aprotic solvent: {{SN2}}. The leaving group leaves in the rate-determining step."
+    },
+    {
+     "t": "Compare the leaving groups",
+     "h": "Weaker base, better leaving group. HBr {{pKa}} -9, HF {{pKa}} 4: bromide is the weaker base by 13 units. The C-F bond is also the strongest carbon to halogen bond."
+    }
+   ],
+   "answer": "The bromide reacts faster. Difference: the leaving group.",
+   "rule": "Leaving group ability of the halides: I > Br > Cl >> F."
+  }
+ },
+ {
+  "id": "rate-pairs-011",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCl + [Na+].[C-]#N>DMSO>CCCC#N]]",
+    "ok": false,
+    "why": "Chloride is a good leaving group but not as good as iodide (HCl {{pKa}} -8). Everything else is the same, so this one is slower."
+   },
+   {
+    "h": "[[rxn:CCCI + [Na+].[C-]#N>DMSO>CCCC#N]]",
+    "ok": true,
+    "why": "Iodide is the best leaving group of the halides: the weakest base (HI {{pKa}} -10)."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same propyl group, same nucleophile, same solvent, same product. The leaving group is I or Cl."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary halide, good nucleophile, polar aprotic solvent: {{SN2}}."
+    },
+    {
+     "t": "Compare the leaving groups",
+     "h": "The weaker base is the better leaving group. Iodide is larger and spreads its charge over more volume: HI {{pKa}} -10 against HCl -8."
+    }
+   ],
+   "answer": "The iodide reacts faster. Difference: the leaving group.",
+   "rule": "Weaker base, better leaving group: I > Br > Cl >> F."
+  }
+ },
+ {
+  "id": "rate-pairs-012",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCCl + [Na+].[I-]>acetone>CCCCI]]",
+    "ok": true,
+    "why": "Chloride is a weak base and a good leaving group. Iodide displaces it by {{SN2}}."
+   },
+   {
+    "h": "[[rxn:CCCCOC + [Na+].[I-]>acetone>CCCCI]]",
+    "ok": false,
+    "why": "The leaving group would be methoxide, {{CH3O-}}: a strong base (methanol {{pKa}} 15.5) and a poor leaving group, like {{HO-}}. No reaction."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same butyl group, same nucleophile, same solvent. The group to be displaced is Cl or {{OCH3}}."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary carbon, good nucleophile, polar aprotic solvent: {{SN2}} if there is a leaving group."
+    },
+    {
+     "t": "Compare the leaving groups",
+     "h": "{{Cl-}} is the conjugate base of HCl ({{pKa}} -8). {{CH3O-}} is the conjugate base of methanol ({{pKa}} 15.5). The lecture's rule for {{HO-}} applies to {{CH3O-}} as well: strong base, poor leaving group."
+    }
+   ],
+   "answer": "The chloride reacts faster. Difference: the leaving group.",
+   "rule": "Ethers and alcohols do not undergo SN2 as they are: RO- and HO- are strong bases."
+  }
+ },
+ {
+  "id": "rate-pairs-013",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Cl>H2O;25 °C>CC(C)(C)O]]",
+    "ok": false,
+    "why": "The trap is to say that only the carbocation matters in {{SN1}}, so the two are equal. The carbocation is the same, but the leaving group leaves in the rate-determining step, and chloride leaves more slowly than iodide."
+   },
+   {
+    "h": "[[rxn:CC(C)(C)I>H2O;25 °C>CC(C)(C)O]]",
+    "ok": true,
+    "why": "The slow step of {{SN1}} is the C-LG bond breaking. Iodide is the better leaving group (HI {{pKa}} -10), so ionization is faster."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same tertiary carbon, same solvent and nucleophile (water), same product. The leaving group is I or Cl."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Tertiary halide in water with no strong base: {{SN1}}. rate = k[RX]."
+    },
+    {
+     "t": "Ask what happens in the slow step",
+     "h": "Step 1, the rate-determining step, is the ionization: the C-LG bond breaks to give the carbocation and the halide ion. The leaving group is directly involved."
+    },
+    {
+     "t": "Compare the leaving groups",
+     "h": "Weaker base, better leaving group: iodide. Good leaving group is on the lecture's list for {{SN1}} as well as for {{SN2}}."
+    }
+   ],
+   "answer": "The iodide reacts faster. Difference: the leaving group.",
+   "rule": "A good leaving group speeds SN1 and SN2 alike: it leaves in the rate-determining step of both."
+  }
+ },
+ {
+  "id": "rate-pairs-014",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CI + [Na+].[C-]#N>DMSO>CC#N]]",
+    "ok": true,
+    "why": "A methyl carbon has only hydrogens around it: relative {{SN2}} rate 1 in the lecture figure."
+   },
+   {
+    "h": "[[rxn:CCI + [Na+].[C-]#N>DMSO>CCC#N]]",
+    "ok": false,
+    "why": "A primary carbon has one alkyl group in the way of the nucleophile: ethyl is 0.033, thirty times slower than methyl."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same leaving group, nucleophile and solvent. The substrate is methyl or ethyl."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Methyl and primary halides with a good nucleophile: {{SN2}}."
+    },
+    {
+     "t": "Compare the crowding",
+     "h": "Steric hindrance slows the approaching nucleophile. Figure 7.3: methyl 1, ethyl 0.033."
+    }
+   ],
+   "answer": "Iodomethane reacts faster. Difference: the substrate (methyl against primary).",
+   "rule": "SN2: methyl > primary > secondary >>> tertiary."
+  }
+ },
+ {
+  "id": "rate-pairs-015",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Br + [Na+].[N-]=[N+]=[N-]>DMF>CC(C)(C)N=[N+]=[N-]]]",
+    "ok": false,
+    "why": "A tertiary carbon is completely blocked by its three methyl groups. Lecture figure: tert-butyl 0, no {{SN2}}."
+   },
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[N-]=[N+]=[N-]>DMF>CCCCN=[N+]=[N-]]]",
+    "ok": true,
+    "why": "A primary carbon is open to attack from the back: a normal {{SN2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "The two bromides are isomers ({{C4H9Br}}), with the same nucleophile and solvent. The carbon carrying Br is primary in one and tertiary in the other."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "A good nucleophile in a polar aprotic solvent: these are {{SN2}} conditions."
+    },
+    {
+     "t": "Compare the crowding",
+     "h": "{{SN2}} needs low sterics. Primary reacts well; tertiary does not react by {{SN2}} at all."
+    }
+   ],
+   "answer": "1-Bromobutane reacts faster. Difference: the substrate class (primary against tertiary).",
+   "rule": "Under SN2 conditions a tertiary halide does not substitute."
+  }
+ },
+ {
+  "id": "rate-pairs-016",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCCBr + [Na+].[C-]#N>DMSO>CCCCC#N]]",
+    "ok": true,
+    "why": "A primary carbon whose neighbour is an unbranched {{CH2}}: like ethyl, 0.033 in the lecture figure."
+   },
+   {
+    "h": "[[rxn:CC(C)CBr + [Na+].[C-]#N>DMSO>CC(C)CC#N]]",
+    "ok": false,
+    "why": "Also primary, which is why it looks equal. The carbon next door carries two methyl groups, and they block the path of the nucleophile: isobutyl is 0.003 in the lecture figure, about ten times slower."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Both are primary bromides and isomers of each other, with the same nucleophile and solvent. The difference is branching on the carbon next to the {{CH2Br}}: none in 1-bromobutane, two methyl groups in 1-bromo-2-methylpropane (isobutyl bromide)."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary halides, good nucleophile, polar aprotic solvent: {{SN2}}."
+    },
+    {
+     "t": "Compare the crowding",
+     "h": "The nucleophile approaches along the back of the C-Br bond and passes the groups on the neighbouring carbon. Figure 7.3: ethyl 0.033, isobutyl 0.003."
+    }
+   ],
+   "answer": "1-Bromobutane reacts faster. Difference: branching next to the reacting carbon.",
+   "rule": "Primary is not always equal: branching on the next carbon slows SN2 (isobutyl 0.003)."
+  }
+ },
+ {
+  "id": "rate-pairs-017",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCCBr + C[S-].[Na+]>DMF>CCCSC]]",
+    "ok": false,
+    "why": "An ordinary primary halide, like ethyl: 0.033 in the lecture figure. Good, but about forty times slower than allyl."
+   },
+   {
+    "h": "[[rxn:C=CCBr + C[S-].[Na+]>DMF>C=CCSC]]",
+    "ok": true,
+    "why": "The bromine is on an {{sp3}} carbon next to a double bond: an allyl halide. The neighbouring pi bond stabilizes the {{SN2}} transition state: 1.3 in the lecture figure, faster even than methyl."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same three carbons, same leaving group, nucleophile and solvent. One substrate has a C=C next to the {{CH2Br}}."
+    },
+    {
+     "t": "Classify the carbon carefully",
+     "h": "In 3-bromopropene the Br is on the {{sp3}} {{CH2}}, one carbon away from the double bond. That is allyl, not vinyl. Vinyl means the Br is on a carbon of the double bond itself."
+    },
+    {
+     "t": "Apply the lecture figure",
+     "h": "Allyl 1.3, the fastest entry. In the transition state the reacting carbon has a p orbital that overlaps with the pi bond next to it, which lowers the energy."
+    },
+    {
+     "t": "Decide",
+     "h": "Allyl (1.3) against an ordinary primary carbon (0.033)."
+    }
+   ],
+   "answer": "3-Bromopropene (allyl bromide) reacts faster. Difference: an allylic against a plain primary carbon.",
+   "rule": "Allyl is fast in SN2 (1.3); vinyl does not react (0). Find where the leaving group sits."
+  }
+ },
+ {
+  "id": "rate-pairs-018",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Br>H2O;heat>CC(C)(C)O]]",
+    "ok": true,
+    "why": "No strong nucleophile, a polar protic solvent: {{SN1}}. A tertiary halide ionizes readily because the tertiary carbocation is stable. This is the lecture's own example."
+   },
+   {
+    "h": "[[rxn:CCCCBr>H2O;heat>CCCCO]]",
+    "ok": false,
+    "why": "This applies the {{SN2}} order to the wrong mechanism. Water is a very poor nucleophile (1 in the lecture table), so {{SN2}} is very slow, and a primary carbocation does not form, so there is no {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Isomeric bromides in the same solvent. The carbon carrying Br is tertiary in one and primary in the other."
+    },
+    {
+     "t": "Decide the mechanism from the conditions",
+     "h": "The only nucleophile is water: neutral and weak, in a polar protic solvent. These are {{SN1}} conditions, not {{SN2}} conditions."
+    },
+    {
+     "t": "Compare the carbocations",
+     "h": "{{SN1}} rate follows carbocation stability: tertiary > secondary, and primary and methyl do not react by {{SN1}}."
+    },
+    {
+     "t": "Decide",
+     "h": "tert-Butyl bromide reacts by {{SN1}} (rate = k[t-BuBr]). 1-Bromobutane has no fast path at all."
+    }
+   ],
+   "answer": "2-Bromo-2-methylpropane reacts faster. Difference: the substrate class, and the conditions are SN1.",
+   "rule": "Read the conditions before ranking substrates: SN1 order is tertiary > secondary >> primary, the reverse of SN2."
+  }
+ },
+ {
+  "id": "rate-pairs-019",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:ClC1CCCCC1>CH3CH2OH>CCOC1CCCCC1]]",
+    "ok": false,
+    "why": "A plain secondary chloride. It can ionize, but its carbocation has no resonance stabilization, so it forms more slowly."
+   },
+   {
+    "h": "[[rxn:ClC1C=CCCC1>CH3CH2OH>CCOC1C=CCCC1]]",
+    "ok": true,
+    "why": "The chlorine is on an {{sp3}} carbon next to the double bond: allylic. The carbocation that forms is stabilized by resonance, so ionization is faster. The lecture lists allyl-LG as a substrate that does {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same ring, same leaving group, same solvent. One substrate has a C=C next to the carbon that carries Cl."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Secondary chlorides in ethanol, a polar protic solvent and a weak nucleophile, with no strong base: {{SN1}}."
+    },
+    {
+     "t": "Compare the carbocations",
+     "h": "Losing chloride from 3-chlorocyclohexene gives an allylic cation: the positive charge is shared by two carbons. The cyclohexyl cation has its charge on one carbon."
+    },
+    {
+     "t": "Decide",
+     "h": "The more stable carbocation forms faster: the allylic chloride."
+    }
+   ],
+   "answer": "3-Chlorocyclohexene reacts faster. Difference: an allylic against a plain secondary carbon.",
+   "rule": "SN1 rate follows carbocation stability, and resonance (allyl) stabilizes a carbocation."
+  }
+ },
+ {
+  "id": "rate-pairs-020",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:BrC1CCCCC1 + [Na+].[SH-]>DMF>SC1CCCCC1]]",
+    "ok": true,
+    "why": "The bromine is on an {{sp3}} secondary carbon. With an excellent nucleophile ({{HS-}}, 126,000) in a polar aprotic solvent, {{SN2}} goes."
+   },
+   {
+    "h": "[[rxn:Brc1ccccc1 + [Na+].[SH-]>DMF>Sc1ccccc1]]",
+    "ok": false,
+    "why": "The bromine is on an {{sp2}} carbon of a benzene ring: an aryl halide. Like a vinyl halide it cannot be attacked from the back (the ring is in the way) and cannot ionize. No {{SN2}}, no {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Six-membered ring, Br, the same nucleophile and solvent in both. One ring is cyclohexane, the other is benzene."
+    },
+    {
+     "t": "Look at the carbon carrying Br",
+     "h": "{{sp3}} in bromocyclohexane, {{sp2}} in bromobenzene."
+    },
+    {
+     "t": "Apply the rule for sp2 carbons",
+     "h": "The lecture gives vinyl an {{SN2}} rate of 0 and no {{SN1}}. An aryl carbon is an {{sp2}} carbon of the same kind: the back side points into the ring."
+    }
+   ],
+   "answer": "Bromocyclohexane reacts faster. Difference: an {{sp3}} alkyl carbon against an {{sp2}} aryl carbon.",
+   "rule": "A leaving group on a benzene ring or a double bond is not displaced by SN2 or SN1."
+  }
+ },
+ {
+  "id": "rate-pairs-021",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:Clc1ccccc1 + [Na+].[C-]#N>DMSO>N#Cc1ccccc1]]",
+    "ok": false,
+    "why": "The chlorine is on a ring carbon, which is {{sp2}}. An aryl halide does not undergo {{SN2}} or {{SN1}}."
+   },
+   {
+    "h": "[[rxn:ClCc1ccccc1 + [Na+].[C-]#N>DMSO>N#CCc1ccccc1]]",
+    "ok": true,
+    "why": "The chlorine is on an {{sp3}} {{CH2}} attached to the ring: a primary carbon, open to attack from the back. A fast {{SN2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same nucleophile and solvent, a benzene ring and one Cl in both. The Cl is on the ring in chlorobenzene and on a {{CH2}} next to the ring in benzyl chloride."
+    },
+    {
+     "t": "Look at the carbon carrying Cl",
+     "h": "Ring carbon: {{sp2}}, aryl. {{CH2}} carbon: {{sp3}}, primary."
+    },
+    {
+     "t": "Apply the rules",
+     "h": "{{sp2}} carbon: no substitution. Primary {{sp3}} carbon with a good nucleophile in a polar aprotic solvent: {{SN2}}."
+    }
+   ],
+   "answer": "Benzyl chloride reacts faster. Difference: the carbon that carries Cl ({{sp3}} against {{sp2}}).",
+   "rule": "Always find the carbon that carries the leaving group and ask whether it is sp3."
+  }
+ },
+ {
+  "id": "rate-pairs-022",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)Br>CH3OH>CC(C)OC]]",
+    "ok": true,
+    "why": "A secondary halide in a polar protic solvent can ionize to a secondary carbocation and react by {{SN1}}. It is not fast, but it goes."
+   },
+   {
+    "h": "[[rxn:C=C(C)Br>CH3OH>C=C(C)OC]]",
+    "ok": false,
+    "why": "The trap is to count this as a substituted, stabilized position. The Br is on a carbon of the double bond: vinyl. A vinyl cation is too unstable to form, so there is no {{SN1}}, and there is no {{SN2}} at an {{sp2}} carbon either."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Three carbons with Br on the middle one, in methanol. One substrate has a C=C that includes the carbon carrying Br."
+    },
+    {
+     "t": "Decide the mechanism from the conditions",
+     "h": "Methanol alone: weak nucleophile, polar protic solvent. The route available is {{SN1}}."
+    },
+    {
+     "t": "Ask whether each carbocation can form",
+     "h": "2-Bromopropane gives a secondary carbocation: possible. 2-Bromopropene would give a vinyl cation, with the positive charge on an {{sp2}} carbon of a double bond: the lecture says vinyl-LG, no {{SN1}}."
+    },
+    {
+     "t": "Decide",
+     "h": "The alkyl bromide reacts. The vinyl bromide does not react by either mechanism."
+    }
+   ],
+   "answer": "2-Bromopropane reacts faster. Difference: an alkyl against a vinyl carbon.",
+   "rule": "Vinyl: no SN1 and no SN2. Allyl is the one that reacts well; do not mix them up."
+  }
+ },
+ {
+  "id": "rate-pairs-023",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CI + CC(=O)[O-].[Na+]>CH3OH>COC(C)=O]]",
+    "ok": false,
+    "why": "Methanol is polar protic: it hydrogen bonds to the acetate anion and makes it less reactive."
+   },
+   {
+    "h": "[[rxn:CI + CC(=O)[O-].[Na+]>DMF>COC(C)=O]]",
+    "ok": true,
+    "why": "DMF is polar aprotic: it does not hydrogen bond to acetate, so the anion is free to attack."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same substrate and nucleophile. The solvent is DMF or methanol."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Methyl iodide with an anionic nucleophile: {{SN2}}."
+    },
+    {
+     "t": "Classify the solvents",
+     "h": "DMF, {{HCON(CH3)2}}, has no O-H or N-H: polar aprotic. Methanol has an O-H: polar protic. The lecture's summary: {{SN2}} likes polar aprotic solvents, because a protic solvent solvates the nucleophile."
+    }
+   ],
+   "answer": "The reaction in DMF is faster. Difference: the solvent.",
+   "rule": "Polar aprotic solvents (DMSO, DMF, acetone, acetonitrile) speed up SN2 with anions."
+  }
+ },
+ {
+  "id": "rate-pairs-024",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Br>80% H2O;20% acetone>CC(C)(C)O]]",
+    "ok": true,
+    "why": "More water makes the solvent more polar and more protic. That stabilizes the transition state for ionization, which is developing charges, and {{SN1}} goes faster."
+   },
+   {
+    "h": "[[rxn:CC(C)(C)Br>20% H2O;80% acetone>CC(C)(C)O]]",
+    "ok": false,
+    "why": "The trap is to think of acetone as the faster solvent because polar aprotic is good for {{SN2}}. This is {{SN1}}: the less polar, mostly aprotic mixture stabilizes the ionizing transition state less."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same tertiary bromide, same nucleophile (water). The solvent mixture is mostly water or mostly acetone."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Tertiary halide, water as the only nucleophile, no strong base: {{SN1}}."
+    },
+    {
+     "t": "Connect solvent to the slow step",
+     "h": "In the rate-determining step a neutral molecule becomes a carbocation and a bromide ion. The lecture: increasing the polarity of the solvent increases the rate of {{SN1}}, because it stabilizes the transition state of the rate-determining step more than the starting compound. Polar protic solvents favour {{SN1}}."
+    }
+   ],
+   "answer": "The reaction in 80% water is faster. Difference: the solvent polarity.",
+   "rule": "SN1: more polar, protic solvent, faster. SN2 with an anion: polar aprotic, faster."
+  }
+ },
+ {
+  "id": "rate-pairs-025",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCN(CC)CC + CCI>25% H2O;75% CH3CH2OH>CC[N+](CC)(CC)CC.[I-]]]",
+    "ok": false,
+    "why": "The rule that protic solvents slow {{SN2}} is about anionic nucleophiles. Here the nucleophile is a neutral amine and charge is being created, so the less polar mixture is the slower one."
+   },
+   {
+    "h": "[[rxn:CCN(CC)CC + CCI>50% H2O;50% CH3CH2OH>CC[N+](CC)(CC)CC.[I-]]]",
+    "ok": true,
+    "why": "The reactants are neutral and the transition state has a partial positive charge on N and a partial negative charge on I. The more polar solvent stabilizes the transition state more than the starting materials and lowers {{Ea}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same amine, same iodide. The solvent is 50:50 or 25:75 water to ethanol. More water means more polar."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "A neutral nucleophile attacking a primary iodide: {{SN2}}."
+    },
+    {
+     "t": "Compare charge in the starting materials and the transition state",
+     "h": "Start: two neutral molecules. Transition state: N is becoming positive and I is becoming negative. Charge is being created."
+    },
+    {
+     "t": "Apply the lecture's argument",
+     "h": "A more polar solvent stabilizes the charged transition state more than the neutral starting materials: the barrier drops. This is the lecture's example, and its reaction B (50:50) is the faster one."
+    }
+   ],
+   "answer": "The reaction in 50:50 water and ethanol is faster. Difference: the solvent polarity.",
+   "rule": "Ask whether charge is created or destroyed on the way to the transition state. Created: a more polar solvent is faster."
+  }
+ },
+ {
+  "id": "rate-pairs-026",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:C[S+](C)C + [OH-]>25% H2O;75% CH3CH2OH>CO + CSC]]",
+    "ok": true,
+    "why": "Both reactants are ions, and the transition state is spreading out and destroying that charge. The less polar solvent stabilizes the starting ions less, so the barrier is lower."
+   },
+   {
+    "h": "[[rxn:C[S+](C)C + [OH-]>50% H2O;50% CH3CH2OH>CO + CSC]]",
+    "ok": false,
+    "why": "The more polar solvent solvates the two starting ions strongly. It stabilizes the transition state too, but to a lesser degree, so the barrier is higher. This is the opposite of the neutral amine case."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same reactants, {{HO-}} and the trimethylsulfonium ion. The solvent is 25:75 or 50:50 water to ethanol."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Hydroxide attacks a methyl carbon and dimethyl sulfide leaves: {{SN2}}."
+    },
+    {
+     "t": "Compare charge in the starting materials and the transition state",
+     "h": "Start: an anion and a cation, both fully charged and well solvated. Transition state: the charges are only partial, on the way to two neutral products. Charge is being destroyed."
+    },
+    {
+     "t": "Apply the lecture's argument",
+     "h": "The more polar solvent stabilizes the starting materials more than the transition state (greater solvation), which raises the barrier. The lecture's reaction A, in the less polar solvent, is the faster one."
+    }
+   ],
+   "answer": "The reaction in 25:75 water and ethanol (the less polar solvent) is faster. Difference: the solvent polarity.",
+   "rule": "Charge destroyed on the way to the transition state: a less polar solvent is faster."
+  }
+ },
+ {
+  "id": "rate-pairs-027",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CCBr + [Na+].[N-]=[N+]=[N-]>DMF>CCN=[N+]=[N-]]]\n<b>0.10 M</b> bromoethane, 0.10 M {{NaN3}}",
+    "ok": false,
+    "why": "The same reaction with one third of the substrate: one third of the rate."
+   },
+   {
+    "h": "[[rxn:CCBr + [Na+].[N-]=[N+]=[N-]>DMF>CCN=[N+]=[N-]]]\n<b>0.30 M</b> bromoethane, 0.10 M {{NaN3}}",
+    "ok": true,
+    "why": "{{SN2}}: rate = k[RBr][{{N3-}}]. Three times the substrate concentration, three times the rate."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same reaction and solvent, same azide concentration. The bromoethane concentration is 0.30 M or 0.10 M."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Primary halide, good nucleophile, polar aprotic solvent: {{SN2}}."
+    },
+    {
+     "t": "Write the rate law",
+     "h": "rate = k[RBr][Nu]. The rate is proportional to each concentration, so tripling [RBr] triples the rate."
+    }
+   ],
+   "answer": "The flask with 0.30 M bromoethane is faster. Difference: the substrate concentration.",
+   "rule": "SN2 is first order in the substrate and first order in the nucleophile."
+  }
+ },
+ {
+  "id": "rate-pairs-028",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Br>H2O>CC(C)(C)O]]\n<b>0.20 M</b> 2-bromo-2-methylpropane",
+    "ok": true,
+    "why": "{{SN1}}: rate = k[t-BuBr]. Twice the substrate, twice the rate, as in trial B of the lecture's data."
+   },
+   {
+    "h": "[[rxn:CC(C)(C)Br>H2O>CC(C)(C)O]]\n<b>0.10 M</b> 2-bromo-2-methylpropane",
+    "ok": false,
+    "why": "Half the substrate concentration gives half the rate. The substrate is the one species in the {{SN1}} rate law."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same tertiary bromide in water. Its concentration is 0.20 M or 0.10 M."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Tertiary halide in water, no strong base: {{SN1}}."
+    },
+    {
+     "t": "Write the rate law",
+     "h": "rate = k[t-BuBr]: unimolecular. The lecture's data: doubling [t-BuBr] doubles the rate, doubling [{{H2O}}] changes nothing. The substrate concentration counts in {{SN1}}; only the nucleophile concentration does not."
+    }
+   ],
+   "answer": "The flask with 0.20 M substrate is faster. Difference: the substrate concentration.",
+   "rule": "SN1: rate = k[substrate]. The substrate still counts; the nucleophile does not."
+  }
+ },
+ {
+  "id": "rate-pairs-029",
+  "type": "rate-pairs",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "layout": "pair",
+  "stem": "Circle the reaction that is faster.",
+  "choices": [
+   {
+    "h": "[[rxn:CC(C)(C)Br + [Na+].[OH-]>H2O>CC(C)=C]]\n0.10 M 2-bromo-2-methylpropane, <b>0.10 M</b> NaOH",
+    "ok": false,
+    "why": "The trap is to see a tertiary halide, call it unimolecular and say that the hydroxide concentration cannot matter. The product is the alkene and the reaction is {{E2}}: hydroxide is in the rate law."
+   },
+   {
+    "h": "[[rxn:CC(C)(C)Br + [Na+].[OH-]>H2O>CC(C)=C]]\n0.10 M 2-bromo-2-methylpropane, <b>1.0 M</b> NaOH",
+    "ok": true,
+    "why": "With a strong base a tertiary halide reacts by {{E2}}: rate = k[t-BuBr][{{HO-}}]. Ten times the hydroxide, ten times the rate."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the one thing that differs",
+     "h": "Same tertiary bromide at the same concentration, same solvent. The NaOH concentration is 1.0 M or 0.10 M."
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Tertiary carbon: no {{SN2}}. Hydroxide is a strong base, and the product drawn is 2-methylpropene, not the alcohol. This is the lecture's example of {{E2}}."
+    },
+    {
+     "t": "Write the rate law",
+     "h": "The lecture's data for tert-butyl bromide with NaOH: doubling [{{HO-}}] doubles the rate. rate = k[t-BuBr][{{HO-}}], bimolecular."
+    },
+    {
+     "t": "Decide",
+     "h": "More base, faster {{E2}}: the 1.0 M flask. Had the reagent been water alone ({{SN1}}), the amount of nucleophile would not have mattered."
+    }
+   ],
+   "answer": "The flask with 1.0 M NaOH is faster. Difference: the base concentration, which counts because the mechanism is E2.",
+   "rule": "Tertiary does not always mean unimolecular: with a strong base it is E2, rate = k[RX][base]."
+  }
+ }
+]

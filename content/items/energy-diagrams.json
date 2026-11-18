@@ -1,0 +1,753 @@
+[
+ {
+  "id": "energy-diagrams-001",
+  "type": "energy-diagrams",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "tert-Butyl bromide reacts with NaOH by {{E2}}. The reaction is exothermic. Which diagram represents it?",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Diagram 1\n[[energy:R=0,TS1=22,I=12,TS2=16,P=-10]]",
+    "ok": false,
+    "why": "Exothermic, but two humps with a valley: an intermediate. This is the shape of {{SN1}} or {{E1}}, not of a concerted reaction."
+   },
+   {
+    "h": "Diagram 2\n[[energy:R=0,TS1=24,I=14,TS2=20,P=8]]",
+    "ok": false,
+    "why": "Two steps and endothermic: wrong on both counts."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS=20,P=-10]]",
+    "ok": true,
+    "why": "One hump (concerted, the transition state holds both the base and the substrate) and the products below the starting materials."
+   },
+   {
+    "h": "Diagram 4\n[[energy:R=0,TS=22,P=8]]",
+    "ok": false,
+    "why": "One hump is right, but the products end higher than the starting materials: endothermic."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Decide how many steps",
+     "h": "{{E2}} is concerted: the base takes the hydrogen, the π bond forms and bromide leaves all at once. One step means one hump and no valley.",
+     "ask": {
+      "q": "How many transition states does a concerted reaction have?",
+      "a": "One."
+     }
+    },
+    {
+     "t": "Remove the wrong shapes",
+     "h": "Diagrams 1 and 2 have two humps with a valley. A valley is an intermediate, and {{E2}} has none."
+    },
+    {
+     "t": "Read exothermic",
+     "h": "Exothermic means the products end below the starting materials. Diagram 3 ends at -10. Diagram 4 ends at +8.",
+     "ask": {
+      "q": "Where do you look to decide exothermic or endothermic?",
+      "a": "Only at the two ends, left and right."
+     }
+    },
+    {
+     "t": "Check every word",
+     "h": "{{E2}}: one hump. Exothermic: ends lower. Diagram 3."
+    }
+   ],
+   "answer": "Diagram 3.",
+   "rule": "One hump = concerted. End below start = exothermic."
+  }
+ },
+ {
+  "id": "energy-diagrams-002",
+  "type": "energy-diagrams",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Use the diagram (energies in kcal/mol). What are {{Ea}} of the rate-determining step and {{dH}} of the reaction?\n[[energy:R=0,TS1=22,I=12,TS2=16,P=-8]]",
+  "choices": [
+   {
+    "h": "{{Ea}} = 22, {{dH}} = -8",
+    "ok": true,
+    "why": "The highest peak is 22 above the starting materials, and the products are 8 below them."
+   },
+   {
+    "h": "{{Ea}} = 16, {{dH}} = -8",
+    "ok": false,
+    "why": "16 is the height of the second peak, which is not the highest point, and it was not measured from the intermediate either."
+   },
+   {
+    "h": "{{Ea}} = 4, {{dH}} = -8",
+    "ok": false,
+    "why": "4 is the barrier of the second step (16 - 12). The rate-determining step is the first."
+   },
+   {
+    "h": "{{Ea}} = 22, {{dH}} = -20",
+    "ok": false,
+    "why": "-20 is the drop from the intermediate to the products. {{dH}} is measured from the starting materials."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the transition states and the intermediate",
+     "h": "Two peaks (22 and 16) and one valley (12): two steps, one intermediate.",
+     "ask": {
+      "q": "How many intermediates?",
+      "a": "One, the valley at 12."
+     }
+    },
+    {
+     "t": "Find the rate-determining step",
+     "h": "The highest point is the first peak, 22. Step 1 is the rds.",
+     "ask": {
+      "q": "Which step is rate-determining?",
+      "a": "The first, because its peak is the highest point."
+     }
+    },
+    {
+     "t": "Measure its barrier",
+     "h": "{{Ea}} = peak minus the level before the step = 22 - 0 = 22 kcal/mol."
+    },
+    {
+     "t": "Measure the heat of reaction",
+     "h": "{{dH}} = products minus starting materials = -8 - 0 = -8 kcal/mol. Negative: exothermic.",
+     "ask": {
+      "q": "Do the peaks matter for {{dH}}?",
+      "a": "No. Only the two ends."
+     }
+    },
+    {
+     "t": "For comparison",
+     "h": "The second step has its own barrier, 16 - 12 = 4 kcal/mol, measured from the intermediate."
+    }
+   ],
+   "answer": "Ea = 22 kcal/mol and ΔH = -8 kcal/mol.",
+   "rule": "Ea: up to the peak from the level before it. ΔH: end minus start."
+  }
+ },
+ {
+  "id": "energy-diagrams-003",
+  "type": "energy-diagrams",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "The lecture drew every step of the {{SN1}} reaction of tert-butyl bromide with water: ionization, attack of water, then loss of {{H+}}. Which diagram shows all three steps?\n[[rxn:CC(C)(C)Br + O>>CC(C)(C)O + Br]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Diagram 1\n[[energy:R=0,TS1=22,I=14,TS2=17,P=-6]]",
+    "ok": false,
+    "why": "Two peaks show only ionization and attack of water. The question asks for all three steps, including the loss of {{H+}}."
+   },
+   {
+    "h": "Diagram 2\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=-2,TS3=2,P=-6|I1=carbocation,I2=protonated alcohol]]",
+    "ok": true,
+    "why": "Three peaks, two valleys (carbocation, then protonated alcohol), and the first peak is the highest."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS1=10,I1=4,TS2=14,I2=-2,TS3=22,P=-6]]",
+    "ok": false,
+    "why": "Three steps, but the last peak is the highest. That would make the proton transfer the slow step, and the lecture's rds is ionization."
+   },
+   {
+    "h": "Diagram 4\n[[energy:R=0,TS=22,P=-6]]",
+    "ok": false,
+    "why": "One hump is a concerted reaction. {{SN1}} has a carbocation intermediate."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the steps",
+     "h": "Three steps need three peaks.",
+     "ask": {
+      "q": "How many intermediates lie between three steps?",
+      "a": "Two."
+     }
+    },
+    {
+     "t": "Name the valleys",
+     "h": "After step 1: the carbocation. After step 2: the protonated alcohol, {{(CH3)3C-OH2+}}. Both have full bonds and sit in valleys."
+    },
+    {
+     "t": "Place the highest peak",
+     "h": "Ionization is the rate-determining step, so the first peak (ts1) is the highest point.",
+     "ask": {
+      "q": "Which peak is the highest?",
+      "a": "The first."
+     }
+    },
+    {
+     "t": "Choose",
+     "h": "Three peaks, two valleys, first peak highest: diagram 2."
+    }
+   ],
+   "answer": "Diagram 2.",
+   "rule": "Steps = peaks. The SN1 slow step is the first one."
+  }
+ },
+ {
+  "id": "energy-diagrams-004",
+  "type": "energy-diagrams",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "In this two-step reaction, which step is rate-determining, and what is the barrier of that step?\n[[energy:R=0,TS1=12,I=6,TS2=20,P=-5]]",
+  "choices": [
+   {
+    "h": "Step 2, barrier 14",
+    "ok": true,
+    "why": "The second peak is the highest point, and the step leading to it starts from the intermediate at 6."
+   },
+   {
+    "h": "Step 1, barrier 12",
+    "ok": false,
+    "why": "The first step is not automatically the slow one. Its peak, 12, is lower than the second peak."
+   },
+   {
+    "h": "Step 2, barrier 25",
+    "ok": false,
+    "why": "25 is the drop from the second peak to the products. A barrier is measured upwards, from the level before the peak."
+   },
+   {
+    "h": "Step 1, barrier 6",
+    "ok": false,
+    "why": "6 is the energy of the intermediate, which is a valley and not a barrier."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the highest point",
+     "h": "The second peak, at 20, is higher than the first, at 12.",
+     "ask": {
+      "q": "Is the first step always the slow one?",
+      "a": "No. The slow step is the one with the highest transition state."
+     }
+    },
+    {
+     "t": "Name the rds",
+     "h": "The step that climbs to the highest point is step 2, from the intermediate to the products."
+    },
+    {
+     "t": "Measure that step's barrier",
+     "h": "A step's barrier starts at the level in front of it. Step 2 starts at the intermediate, 6, so its barrier is 20 - 6 = 14.",
+     "ask": {
+      "q": "From which level is the second step's barrier measured?",
+      "a": "From the intermediate, at 6."
+     }
+    },
+    {
+     "t": "Compare with SN1",
+     "h": "This diagram is not {{SN1}}: there the first peak is the highest."
+    }
+   ],
+   "answer": "Step 2, with a barrier of 14 kcal/mol.",
+   "rule": "The rate-determining step is the one with the highest peak, wherever it comes."
+  }
+ },
+ {
+  "id": "energy-diagrams-005",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "How many transition states and how many intermediates does this reaction have?\n[[energy:R=0,TS=18,P=-10]]",
+  "choices": [
+   {
+    "h": "1 transition state, 0 intermediates",
+    "ok": true,
+    "why": "A single hump: one concerted step."
+   },
+   {
+    "h": "0 transition states, 1 intermediate",
+    "ok": false,
+    "why": "The top of the hump is a transition state. An intermediate is a valley."
+   },
+   {
+    "h": "1 transition state, 1 intermediate",
+    "ok": false,
+    "why": "There is no valley between peaks, so nothing here is an intermediate."
+   },
+   {
+    "h": "2 transition states, 1 intermediate",
+    "ok": false,
+    "why": "That describes a two-hump diagram."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Count peaks",
+     "h": "One peak: one transition state."
+    },
+    {
+     "t": "Count valleys between peaks",
+     "h": "None: no intermediate."
+    },
+    {
+     "t": "Name the type",
+     "h": "One step with no intermediate is a concerted reaction, like {{SN2}} or {{E2}}."
+    }
+   ],
+   "answer": "One transition state, no intermediates.",
+   "rule": "Peaks are transition states, valleys are intermediates."
+  }
+ },
+ {
+  "id": "energy-diagrams-006",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which diagram shows an <b>endothermic</b> reaction that takes place in <b>one concerted step</b>?",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Diagram 1\n[[energy:R=0,TS1=20,I=10,TS2=16,P=6]]",
+    "ok": false,
+    "why": "Endothermic, but two humps and a valley: two steps."
+   },
+   {
+    "h": "Diagram 2\n[[energy:R=0,TS=20,P=-6]]",
+    "ok": false,
+    "why": "One step, but the products are lower: exothermic."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS1=20,I=10,TS2=16,P=-6]]",
+    "ok": false,
+    "why": "Two steps and exothermic."
+   },
+   {
+    "h": "Diagram 4\n[[energy:R=0,TS=20,P=6]]",
+    "ok": true,
+    "why": "One hump, and the products end above the starting materials."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Concerted",
+     "h": "One hump only: diagrams 2 and 4."
+    },
+    {
+     "t": "Endothermic",
+     "h": "Products above the starting materials: of those two, diagram 4."
+    },
+    {
+     "t": "Check",
+     "h": "Diagram 4: one hump, ends at +6."
+    }
+   ],
+   "answer": "Diagram 4.",
+   "rule": "Shape gives the number of steps. The ends give exothermic or endothermic."
+  }
+ },
+ {
+  "id": "energy-diagrams-007",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "What is {{dH}} for this reaction (energies in kcal/mol)?\n[[energy:R=0,TS=18,P=-10]]",
+  "choices": [
+   {
+    "h": "-10 kcal/mol",
+    "ok": true,
+    "why": "The products are 10 below the starting materials."
+   },
+   {
+    "h": "+18 kcal/mol",
+    "ok": false,
+    "why": "18 is {{Ea}}, the height of the barrier."
+   },
+   {
+    "h": "-28 kcal/mol",
+    "ok": false,
+    "why": "28 is the drop from the transition state to the products, which is the barrier of the reverse reaction."
+   },
+   {
+    "h": "+10 kcal/mol",
+    "ok": false,
+    "why": "The sign is wrong: the products are lower, so heat is given out."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Use only the ends",
+     "h": "Starting materials at 0, products at -10."
+    },
+    {
+     "t": "Subtract",
+     "h": "{{dH}} = -10 - 0 = -10 kcal/mol."
+    },
+    {
+     "t": "Name it",
+     "h": "Negative: exothermic. The 18 is {{Ea}}."
+    }
+   ],
+   "answer": "-10 kcal/mol (exothermic).",
+   "rule": "ΔH = products minus starting materials."
+  }
+ },
+ {
+  "id": "energy-diagrams-008",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "What is {{Ea}} of the <b>second</b> step (energies in kcal/mol)?\n[[energy:R=0,TS1=20,I=11,TS2=16,P=-4]]",
+  "choices": [
+   {
+    "h": "5",
+    "ok": true,
+    "why": "From the intermediate at 11 up to the second peak at 16."
+   },
+   {
+    "h": "16",
+    "ok": false,
+    "why": "Measured from the starting materials. The second step begins at the intermediate."
+   },
+   {
+    "h": "20",
+    "ok": false,
+    "why": "That is the barrier of the first step."
+   },
+   {
+    "h": "9",
+    "ok": false,
+    "why": "9 is the drop from the first peak to the intermediate, not a barrier."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the second step",
+     "h": "From the intermediate (11) over the second peak (16) to the products."
+    },
+    {
+     "t": "Measure from the level before it",
+     "h": "16 - 11 = 5 kcal/mol."
+    },
+    {
+     "t": "Sanity check",
+     "h": "The second step is fast: its barrier is much smaller than the first step's 20."
+    }
+   ],
+   "answer": "5 kcal/mol.",
+   "rule": "A step's Ea is measured from the valley in front of it."
+  }
+ },
+ {
+  "id": "energy-diagrams-009",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "tert-Butyl bromide gives 2-methylpropene by {{E1}} when heated in water. Which diagram fits?\n[[rxn:CC(C)(C)Br>H2O;heat>CC(C)=C]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Diagram 1\n[[energy:R=0,TS1=22,I=14,TS2=17,P=3|I=carbocation]]",
+    "ok": true,
+    "why": "Two humps with the carbocation between them, and ionization, the first hump, is the highest point."
+   },
+   {
+    "h": "Diagram 2\n[[energy:R=0,TS=22,P=3]]",
+    "ok": false,
+    "why": "One hump is {{E2}}, the concerted elimination with a strong base. {{E1}} goes through a carbocation."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]",
+    "ok": false,
+    "why": "Two steps, but the second peak is the highest. In {{E1}} the slow step is the ionization, which comes first."
+   },
+   {
+    "h": "Diagram 4\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=8,TS3=12,P=3]]",
+    "ok": false,
+    "why": "Three steps. {{E1}} has two: ionization, then loss of the proton directly from the carbocation."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "List the steps of E1",
+     "h": "Step 1: the C-Br bond ionizes to the carbocation (slow). Step 2: water removes a hydrogen from the carbon next to the cationic carbon and the C=C forms."
+    },
+    {
+     "t": "Translate",
+     "h": "Two steps: two peaks and one valley, the carbocation. The slow first step has the higher peak."
+    },
+    {
+     "t": "Choose",
+     "h": "Diagram 1."
+    }
+   ],
+   "answer": "Diagram 1.",
+   "rule": "E1 has the same first step and the same intermediate as SN1."
+  }
+ },
+ {
+  "id": "energy-diagrams-010",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "This is the diagram for tert-butyl bromide reacting with water. What sits in the valley marked X?\n[[energy:R=0,TS1=22,X=14,TS2=17,P=-6]]",
+  "choices": [
+   {
+    "h": "The tert-butyl carbocation, [[mol:C[C+](C)C]]",
+    "ok": true,
+    "why": "The intermediate formed by ionization, as in the lecture diagram: carbocation, {{Br-}} and {{H2O}} in the valley."
+   },
+   {
+    "h": "The transition state [{{(CH3)3C}}<sup>δ+</sup>···Br<sup>δ-</sup>]‡",
+    "ok": false,
+    "why": "A transition state is a peak. This species is the first peak, not the valley."
+   },
+   {
+    "h": "tert-Butyl alcohol",
+    "ok": false,
+    "why": "That is the product, at the right-hand end."
+   },
+   {
+    "h": "A carbon with five bonds, to three {{CH3}}, Br and {{OH2}}",
+    "ok": false,
+    "why": "That is the idea of an {{SN2}} transition state, which is neither a valley nor possible at a tertiary carbon."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Valley or peak",
+     "h": "X is a valley between two peaks, so it is an intermediate with full bonds."
+    },
+    {
+     "t": "What step 1 makes",
+     "h": "The C-Br bond breaks: the tert-butyl carbocation and bromide."
+    },
+    {
+     "t": "Answer",
+     "h": "The carbocation (with {{Br-}} and water alongside)."
+    }
+   ],
+   "answer": "The tert-butyl carbocation.",
+   "rule": "Valley = intermediate. In SN1 and E1 it is the carbocation."
+  }
+ },
+ {
+  "id": "energy-diagrams-011",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "What is {{Ea}} for the <b>reverse</b> reaction, products going back to starting materials (energies in kcal/mol)?\n[[energy:R=0,TS=20,P=-8]]",
+  "choices": [
+   {
+    "h": "28",
+    "ok": true,
+    "why": "From -8 up to 20."
+   },
+   {
+    "h": "20",
+    "ok": false,
+    "why": "That is the forward barrier, measured from the starting materials."
+   },
+   {
+    "h": "12",
+    "ok": false,
+    "why": "20 - 8: the sign of the product level was dropped. The products are at -8, so the gap is 20 + 8."
+   },
+   {
+    "h": "8",
+    "ok": false,
+    "why": "8 is the size of {{dH}}, not a barrier."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read from right to left",
+     "h": "The reverse reaction starts at the products, -8."
+    },
+    {
+     "t": "Climb to the same peak",
+     "h": "20 - (-8) = 28 kcal/mol."
+    },
+    {
+     "t": "Connect",
+     "h": "The reverse barrier of an exothermic reaction is the forward barrier plus the heat given out: 20 + 8."
+    }
+   ],
+   "answer": "28 kcal/mol.",
+   "rule": "Both directions share one transition state. Each barrier is measured from its own starting level."
+  }
+ },
+ {
+  "id": "energy-diagrams-012",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "Two reactions are run at the same temperature. Which is faster, and why?\nReaction A: [[energy:R=0,TS=25,P=-20]]\nReaction B: [[energy:R=0,TS=15,P=-3]]",
+  "choices": [
+   {
+    "h": "B, because its {{Ea}} is smaller",
+    "ok": true,
+    "why": "15 against 25. Fewer molecules have enough energy to cross the higher barrier of A."
+   },
+   {
+    "h": "A, because it is more exothermic",
+    "ok": false,
+    "why": "How much heat is released does not set the rate. A has the higher barrier and is slower."
+   },
+   {
+    "h": "A, because its transition state is higher in energy",
+    "ok": false,
+    "why": "A higher transition state means a larger barrier and a slower reaction."
+   },
+   {
+    "h": "They are equally fast, because both are exothermic and one step",
+    "ok": false,
+    "why": "Same shape, different barriers. The rates differ."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the barriers",
+     "h": "A: 25. B: 15."
+    },
+    {
+     "t": "Read the heats",
+     "h": "A: -20. B: -3. A gives out more heat."
+    },
+    {
+     "t": "Decide what controls rate",
+     "h": "The rate depends on the barrier, {{Ea}}. The lower barrier wins, whatever the heat of reaction."
+    }
+   ],
+   "answer": "B, because its Ea is smaller.",
+   "rule": "Rate comes from Ea. ΔH says how far downhill, not how fast."
+  }
+ },
+ {
+  "id": "energy-diagrams-013",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "Here is the full diagram for tert-butyl bromide and water. How many intermediates are there, and in which transition state is the C-Br bond partly broken?\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=-2,TS3=2,P=-6]]",
+  "choices": [
+   {
+    "h": "2 intermediates, TS1",
+    "ok": true,
+    "why": "The valleys are the carbocation and the protonated alcohol. Bromide leaves in the first step."
+   },
+   {
+    "h": "1 intermediate, TS1",
+    "ok": false,
+    "why": "The protonated alcohol, {{(CH3)3C-OH2+}}, is an intermediate too. It is the second valley."
+   },
+   {
+    "h": "3 intermediates, TS1",
+    "ok": false,
+    "why": "The three peaks were counted. Peaks are transition states."
+   },
+   {
+    "h": "2 intermediates, TS2",
+    "ok": false,
+    "why": "By TS2 the bromide has already gone. TS2 is water bonding to the carbocation."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the valleys between peaks",
+     "h": "Two: the carbocation and the protonated alcohol."
+    },
+    {
+     "t": "Match steps to peaks",
+     "h": "TS1: ionization, C-Br breaking. TS2: water attacking the carbocation, C-O forming. TS3: a second water removing {{H+}}, O-H breaking."
+    },
+    {
+     "t": "Answer",
+     "h": "Two intermediates, and the C-Br bond is partly broken in TS1."
+    }
+   ],
+   "answer": "Two intermediates. TS1.",
+   "rule": "Each peak belongs to one step: know which bond changes in each."
+  }
+ },
+ {
+  "id": "energy-diagrams-014",
+  "type": "energy-diagrams",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "For an exothermic substitution reaction of R-Br with a nucleophile Nu, these rates were measured. Which diagram fits?<table><tr><th>trial</th><th>[R-Br]</th><th>[Nu]</th><th>relative rate</th></tr><tr><td>A</td><td>1</td><td>1</td><td>1</td></tr><tr><td>B</td><td>2</td><td>1</td><td>2</td></tr><tr><td>C</td><td>1</td><td>2</td><td>1</td></tr><tr><td>D</td><td>2</td><td>2</td><td>2</td></tr></table>",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Diagram 1\n[[energy:R=0,TS=20,P=-8]]",
+    "ok": false,
+    "why": "One hump is {{SN2}}, where rate = k[R-Br][Nu]. The table shows the rate does not depend on [Nu]."
+   },
+   {
+    "h": "Diagram 2\n[[energy:R=0,TS1=14,I=8,TS2=22,P=-8]]",
+    "ok": false,
+    "why": "Two steps, but the second peak is highest. If the step with the nucleophile were slow, [Nu] would be in the rate law."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS1=22,I=12,TS2=16,P=-8]]",
+    "ok": true,
+    "why": "Rate = k[R-Br] means {{SN1}}: two humps, the first one highest, and the products lower for an exothermic reaction."
+   },
+   {
+    "h": "Diagram 4\n[[energy:R=0,TS1=24,I=14,TS2=20,P=8]]",
+    "ok": false,
+    "why": "The right shape for {{SN1}}, but the products end higher: endothermic."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Get the rate law from the table",
+     "h": "Doubling [R-Br] doubles the rate. Doubling [Nu] changes nothing. Rate = k[R-Br]: unimolecular."
+    },
+    {
+     "t": "Name the mechanism",
+     "h": "The nucleophile is not in the slow step, so the substrate ionizes first: {{SN1}}."
+    },
+    {
+     "t": "Translate to a diagram",
+     "h": "A carbocation valley between two humps, the first hump higher."
+    },
+    {
+     "t": "Apply exothermic",
+     "h": "Products below the starting materials: diagram 3."
+    }
+   ],
+   "answer": "Diagram 3.",
+   "rule": "Rate law first, then shape, then the ends."
+  }
+ }
+]

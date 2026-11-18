@@ -1,0 +1,39 @@
+{
+  "id": "all-elim-products",
+  "title": "Draw every elimination product",
+  "exam": "Q7B",
+  "points": 50,
+  "asks": "A halide (or dihalide) is treated with base. Draw all the products.",
+  "know": [
+    {"h": "<b>An elimination removes the leaving group and one hydrogen from a carbon next to it</b> (a beta carbon). The C=C forms between those two carbons.", "from": "Lecture 11/12, p. 1"},
+    {"h": "<b>Each different beta carbon that has a hydrogen gives a different alkene</b> (regioisomers). Beta carbons that are equivalent by symmetry give the same alkene, so count it once.", "from": "Lecture 11/12, p. 2 to 4"},
+    {"h": "<b>A beta carbon with no hydrogen gives nothing.</b> A halide with no beta hydrogen at all (methyl, or {{(CH3)3CCH2Br}}) cannot eliminate.", "from": "Flow chart"},
+    {"h": "<b>E and Z.</b> A C=C has two geometric isomers when each of its carbons carries two different groups. If either carbon carries two identical groups (two H, or two {{CH3}}), there is only one alkene.", "from": "Lecture 11/12, p. 2; standard"},
+    {"h": "<b>The lecture example</b>: 2-bromo-3-methylpentane with {{NaOCH2CH3}} gives three alkenes, 3-methyl-1-pentene and the two geometric isomers of 3-methyl-2-pentene.", "from": "Lecture 11/12, p. 2"},
+    {"h": "<b>In a six-membered ring the C=C can only be cis</b>, so a ring alkene has no E and Z pair. A double bond from a ring carbon to an outside carbon (exocyclic) is a separate regioisomer.", "from": "standard"},
+    {"h": "<b>Two equivalents of strong base with a dihalide means two {{E2}} reactions</b>: HX is lost twice and the products have two pi bonds. The formula drops by 2 HX: {{C4H8Br2}} gives {{C4H6}}.", "from": "FA24 Exam 2, Q7B"},
+    {"h": "<b>Three kinds of product with two pi bonds</b>: an alkyne (C≡C), a cumulated diene or allene (C=C=C), and a conjugated diene (C=C-C=C).", "from": "FA24 Exam 2, Q7B"},
+    {"h": "<b>The second elimination starts from a bromoalkene.</b> The hydrogen again comes from a carbon next to the C-Br carbon. If that hydrogen is on the alkene carbon, the product is an alkyne (Br on the double bond) or an allene (Br next to the double bond).", "from": "FA24 Exam 2, Q7B"},
+    {"h": "<b>Different routes can end at the same product.</b> In the exam question 1,2-butadiene forms from both bromoalkenes. Draw each product once.", "from": "FA24 Exam 2, Q7B"},
+    {"h": "<b>Which is major</b>, if asked: the more substituted alkene (Saytzeff), and E rather than Z, because the two larger groups are farther apart.", "from": "Lecture 11/12, p. 4; standard"},
+    {"h": "<b>One stereoisomer, one geometry.</b> When the beta carbon has only one hydrogen and both carbons are stereocentres, the anti-periplanar requirement allows only one of E or Z. A beta {{CH2}} has two hydrogens, so both E and Z can form from it.", "from": "Lecture 11/12, p. 2 to 3"},
+    {"h": "<b>Skill: be systematic.</b> Work through the beta carbons in order and name or number each product so that duplicates are easy to spot.", "from": "standard"}
+  ],
+  "method": [
+    "Circle the carbon with the leaving group and mark every carbon next to it. Cross out any that has no hydrogen.",
+    "For each marked carbon, remove one of its hydrogens and the leaving group and draw the C=C. Drop duplicates that come from symmetry.",
+    "Test each alkene for E and Z: does each alkene carbon carry two different groups? If yes, draw both isomers.",
+    "With a dihalide and two equivalents of base, the alkenes from the first round still carry a halogen. Repeat the first three steps on each of them.",
+    "Collect the products, draw each once, and check the formula (one HX lost per elimination).",
+    "If the question asks, mark the major product: the most substituted alkene, E over Z."
+  ],
+  "pitfalls": [
+    {"h": "Forgetting that an alkene such as 2-pentene is two compounds, E and Z."},
+    {"h": "Drawing E and Z for an alkene that has two identical groups on one carbon, such as 2-methyl-2-butene."},
+    {"h": "Missing a beta carbon, most often a {{CH3}} branch on the carbon that carries the leaving group."},
+    {"h": "Stopping after one elimination when the question gives two equivalents of base."},
+    {"h": "Leaving out the allene, or counting the same product twice because it was reached by two routes."},
+    {"h": "Making a double bond to a carbon that is not next to the leaving group."}
+  ],
+  "links": {"read": ["e2", "choose"]}
+}

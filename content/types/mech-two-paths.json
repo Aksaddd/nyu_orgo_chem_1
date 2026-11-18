@@ -1,0 +1,41 @@
+{
+  "id": "mech-two-paths",
+  "title": "Two conditions, one product: E2 and E1 mechanisms, and what the NMR says",
+  "exam": "Q2B",
+  "points": 70,
+  "asks": "One substrate gives the same product under two sets of conditions. Draw both mechanisms and interpret a clue from the spectrum.",
+  "know": [
+    {"h": "<b>The reagent picks the mechanism.</b> The same halide can lose HX in one step or in two. A strong base does not wait: it pulls off a hydrogen while the leaving group leaves ({{E2}}). With only a weak base (the solvent), the leaving group must leave first ({{E1}}).", "from": "Lecture 11/10, p. 4 and 11/12, p. 1"},
+    {"h": "<b>Strong bases to recognize</b>: {{HO-}}, alkoxides ({{CH3O-}}, {{CH3CH2O-}}, {{(CH3)3CO-}}), {{H2N-}}, and hydride {{H-}} (NaH is {{Na+}} and {{H-}}). <b>Weak bases</b>: {{H2O}} and alcohols ({{CH3OH}}, {{CH3CH2OH}}) used as the solvent with nothing added.", "from": "Lecture 10/29, p. 1 and 11/12, p. 2"},
+    {"h": "<b>{{E2}}</b>: one concerted step, no intermediate, three arrows. Base lone pair to the hydrogen; the C-H bond to the new C=C; the C-LG bond to the leaving group. rate = k[RX][base]. The hydrogen and the leaving group are anti-periplanar.", "from": "Lecture 11/12, p. 1 to 3"},
+    {"h": "<b>{{E1}}</b>: two steps. Step 1 (slow): the C-LG bond breaks and leaves a carbocation. Step 2: the weak base takes a hydrogen from a carbon next to the positive carbon, and the C-H electrons form the C=C. rate = k[RX].", "from": "Lecture 11/10, p. 4"},
+    {"h": "<b>The carbocation must be stable</b> for {{E1}} or {{SN1}}: tertiary is good, secondary is possible, primary and methyl never form. A neighbouring benzene ring or C=C stabilizes it by resonance.", "from": "Lecture 11/10, p. 2; flow chart"},
+    {"h": "<b>{{E1}} and {{SN1}} share the carbocation</b>, so a solvent-only flask always holds some substitution product too: an alcohol in water, an ether in an alcohol. Higher temperature favours {{E1}}, lower temperature favours {{SN1}}.", "from": "Lecture 11/10, p. 4"},
+    {"h": "<b>{{SN2}} never happens at a tertiary carbon</b> (relative rate 0), so a strong base with a tertiary halide gives {{E2}} only. That is why {{NaOH}} with tert-butyl bromide gives the alkene and no alcohol.", "from": "Lecture 11/10, p. 1 and 11/12, p. 1"},
+    {"h": "<b>On a secondary carbon the pair is {{SN2}} and {{SN1}}</b>: a good nucleophile that is a weak base (such as {{HS-}}) in a polar aprotic solvent attacks from the back in one step and <b>inverts</b> the carbon. The solvent alone (water) lets the leaving group ionize first, and the planar cation is attacked on either face: a <b>racemic</b> product, formed in three steps (ionize, attack, lose {{H+}}).", "from": "Lecture 11/03, p. 2 to 4 and 11/10, p. 3"},
+    {"h": "<b>Tosylate ({{OTs}})</b> is a good leaving group, like bromide or iodide.", "from": "Lecture 11/05, p. 2"},
+    {"h": "<b>Where the base ends up.</b> In {{E2}} the base leaves bonded to the hydrogen it took: {{H-}} becomes {{H2}}, {{CH3O-}} becomes {{CH3OH}}, {{HO-}} becomes {{H2O}}. In {{E1}} the neutral solvent becomes {{H3O+}} or {{CH3OH2+}}.", "from": "FA24 Exam 2, Q2B"},
+    {"h": "<b>The n + 1 rule.</b> A hydrogen with n equivalent hydrogens on the neighbouring carbon appears as n + 1 lines: no neighbours, a singlet; 1, a doublet; 2, a triplet; 3, a quartet; 6, a septet.", "from": "Lecture 10/22, p. 3; FA24 Exam 2, Q2B"},
+    {"h": "<b>Counting signals.</b> Hydrogens in the same environment give one signal, so a very symmetrical molecule gives very few signals. An electronegative atom (O, F) pulls electron density away from the hydrogens near it: they are less shielded and their signal stands apart.", "from": "Lecture 10/22, p. 2 to 3"},
+    {"h": "<b>A small extra signal means a by-product.</b> Ask what else the reagent could have done. A strong base can also act as a nucleophile (hydride replacing the halide by H). A solvent can also attack the carbocation ({{SN1}}). Draw the by-product and check that it explains the signal.", "from": "FA24 Exam 2, Q2B"},
+    {"h": "<b>Energy diagrams.</b> {{E2}} and {{SN2}}: one hump. {{E1}} and {{SN1}}: two humps with the carbocation in the valley, and the first hump (ionization) is the higher one.", "from": "Lecture 11/10, p. 2 and 11/12, p. 1"}
+  ],
+  "method": [
+    "Classify the carbon that carries the leaving group (tertiary, secondary, benzylic) and mark the hydrogens on the carbons next to it.",
+    "Read each set of conditions and label the reagent: strong base, good nucleophile that is a weak base, or solvent alone.",
+    "For the strong base, draw one step with three arrows (E2). For a good nucleophile on a secondary carbon, draw one step with two arrows and invert the carbon (SN2).",
+    "For the solvent alone, break the bond to the leaving group first and draw the carbocation. Then draw the second step: the solvent takes a neighbouring hydrogen (E1), or attacks the positive carbon and then loses a proton (SN1).",
+    "Write every product of each flask, including what the base and the leaving group became.",
+    "Turn the spectral clue into a structure: lines minus one is the number of neighbouring hydrogens, and the number of signals tells you the symmetry. Draw the fragment that fits.",
+    "Ask which reagent could have made that fragment and by which reaction, and say why the other flask cannot make it."
+  ],
+  "pitfalls": [
+    {"h": "Drawing a carbocation in the strong-base reaction. E2 has no intermediate: all three arrows go in one drawing."},
+    {"h": "Using {{HO-}} or {{CH3O-}} as the base in the solvent-only reaction. Only the neutral solvent is in that flask, and it leaves as {{H3O+}} or {{CH3OH2+}}."},
+    {"h": "Sending the base or nucleophile into a tertiary carbon. SN2 does not happen there."},
+    {"h": "Starting an arrow at a hydrogen atom or at a positive charge. Arrows start at electrons: a lone pair or a bond."},
+    {"h": "Reading a septet as seven hydrogens. It is one kind of hydrogen with six neighbours."},
+    {"h": "Stopping the SN1 mechanism at the protonated alcohol, or drawing only one enantiomer of the product."}
+  ],
+  "links": {"read": ["sn1-e1", "e2", "nmr", "choose"]}
+}

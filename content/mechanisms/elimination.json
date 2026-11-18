@@ -1,0 +1,291 @@
+[
+  {
+    "id": "e2-3-bromo-3-ethylpentane-hydride",
+    "title": "E2: 3-bromo-3-ethylpentane and sodium hydride",
+    "class": "E2",
+    "types": ["mech-two-paths"],
+    "from": "site, after FA24 Exam 2, Q2B",
+    "overall": "[[rxn:CCC(Br)(CC)CC>NaH>CC=C(CC)CC + [HH] + [Na+].[Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[H-:1].[H:2][CH:3]([CH3:4])[C:5]([CH2:6][CH3:7])([CH2:8][CH3:9])[Br:10]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"bond": [3, 5]}},
+          {"from": {"bond": [5, 10]}, "to": {"atom": 10}}
+        ],
+        "say": "Hydride takes a hydrogen from one of the {{CH2}} groups next to the C-Br carbon. The C-H electrons become the C=C and bromide leaves, all in the same step. Hydride and the hydrogen it took leave as {{H2}}.",
+        "why": "NaH is {{Na+}} and {{H-}}, a very strong base. The carbon that carries Br is tertiary, so its back side is blocked and {{SN2}} cannot happen. A strong base does not wait for bromide to leave by itself: rate = k[RBr][{{H-}}].",
+        "hints": [
+          "Hydride has the electrons. Will it act as a base or try to reach a carbon with three ethyl groups on it?",
+          "A base takes a hydrogen from a carbon next to the C-Br carbon. All three {{CH2}} groups are equivalent, so pick any one.",
+          "Three arrows: hydride lone pair to H, the C-H bond to the C-C bond, the C-Br bond to Br."
+        ]
+      }
+    ],
+    "product": "[H:1][H:2].[CH:3]([CH3:4])=[C:5]([CH2:6][CH3:7])[CH2:8][CH3:9].[Br-:10]",
+    "takeaway": "Tertiary halide plus a strong base: E2, one step, three arrows, no intermediate."
+  },
+  {
+    "id": "e1-3-bromo-3-ethylpentane-water",
+    "title": "E1: 3-bromo-3-ethylpentane in water",
+    "class": "E1",
+    "types": ["mech-two-paths"],
+    "from": "site, after FA24 Exam 2, Q2B",
+    "overall": "[[rxn:CCC(Br)(CC)CC + O>>CC=C(CC)CC + [OH3+] + [Br-]]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH2:2][C:3]([CH2:4][CH3:5])([CH2:6][CH3:7])[Br:8]",
+        "arrows": [
+          {"from": {"bond": [3, 8]}, "to": {"atom": 8}}
+        ],
+        "say": "The C-Br bond breaks by itself. Bromine takes both electrons and a tertiary carbocation is left.",
+        "why": "Water is a weak base and a poor nucleophile, so nothing pushes bromide out. The halide can ionize because the carbocation is tertiary and water, a polar protic solvent, stabilizes both ions. Only the halide is in this slow step: rate = k[RBr].",
+        "hints": [
+          "There is no strong base in the flask, so water does nothing in the first step.",
+          "Break the C-Br bond. Which atom keeps the electrons?"
+        ]
+      },
+      {
+        "name": "Water removes a neighbouring hydrogen",
+        "species": "[OH2:9].[H:10][CH:2]([CH3:1])[C+:3]([CH2:4][CH3:5])[CH2:6][CH3:7].[Br-:8]",
+        "adds": ["O"],
+        "arrows": [
+          {"from": {"lp": 9}, "to": {"bond": [9, 10]}},
+          {"from": {"bond": [10, 2]}, "to": {"bond": [2, 3]}}
+        ],
+        "say": "Water is the base. A lone pair on oxygen takes a hydrogen from a {{CH2}} next to the positive carbon, and the C-H electrons become the C=C.",
+        "why": "A hydrogen next to a carbocation is acidic enough for a weak base like water to remove. If water attacks the positive carbon instead, the product is the {{SN1}} alcohol: the two reactions share this carbocation.",
+        "hints": [
+          "Water is the only base present.",
+          "The positive carbon has no hydrogen of its own. Take one from a {{CH2}} next to it.",
+          "Two arrows: O lone pair to H, the C-H bond to the C-C bond."
+        ]
+      }
+    ],
+    "product": "[H:10][OH2+:9].[CH3:1][CH:2]=[C:3]([CH2:4][CH3:5])[CH2:6][CH3:7].[Br-:8]",
+    "takeaway": "E1 is two steps: the leaving group leaves first, then a weak base takes a neighbouring hydrogen. The base leaves as {{H3O+}}."
+  },
+  {
+    "id": "e2-2-bromo-2-methylbutane-methoxide",
+    "title": "E2: 2-bromo-2-methylbutane and methoxide (Saytzeff alkene)",
+    "class": "E2",
+    "types": ["mech-two-paths", "zaitsev-hofmann"],
+    "from": "site",
+    "overall": "[[rxn:CCC(C)(C)Br + C[O-].[Na+]>CH3OH>CC=C(C)C + CO + [Na+].[Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:1][O-:2].[H:3][CH:4]([CH3:5])[C:6]([CH3:7])([CH3:8])[Br:9]",
+        "arrows": [
+          {"from": {"lp": 2}, "to": {"bond": [2, 3]}},
+          {"from": {"bond": [3, 4]}, "to": {"bond": [4, 6]}},
+          {"from": {"bond": [6, 9]}, "to": {"atom": 9}}
+        ],
+        "say": "Methoxide takes a hydrogen from the {{CH2}} next to the C-Br carbon. The C-H electrons become the C=C as bromide leaves.",
+        "why": "Methoxide is a strong base and the carbon is tertiary, so the reaction is {{E2}}. Methoxide is small, so it can reach the inner {{CH2}}, and taking that hydrogen gives the more substituted (Saytzeff) alkene, 2-methyl-2-butene.",
+        "hints": [
+          "Strong base, tertiary carbon. Substitution or elimination?",
+          "Two kinds of neighbouring hydrogen: on the {{CH2}} and on the {{CH3}} groups. A small base gives the more substituted alkene.",
+          "Three arrows: O lone pair to H, the C-H bond to the C-C bond, the C-Br bond to Br."
+        ]
+      }
+    ],
+    "product": "[CH3:1][O:2][H:3].[CH:4]([CH3:5])=[C:6]([CH3:7])[CH3:8].[Br-:9]",
+    "takeaway": "A small strong base with a good leaving group gives the Saytzeff alkene by E2."
+  },
+  {
+    "id": "e1-2-bromo-2-methylbutane-methanol",
+    "title": "E1: 2-bromo-2-methylbutane in methanol",
+    "class": "E1",
+    "types": ["mech-two-paths"],
+    "from": "site",
+    "overall": "[[rxn:CCC(C)(C)Br + CO>heat>CC=C(C)C + C[OH2+] + [Br-]]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH2:2][C:3]([CH3:4])([CH3:5])[Br:6]",
+        "arrows": [
+          {"from": {"bond": [3, 6]}, "to": {"atom": 6}}
+        ],
+        "say": "With no strong base present, the C-Br bond breaks first. Bromide leaves with both electrons and a tertiary carbocation remains.",
+        "why": "Methanol is a weak base, so it cannot pull a hydrogen off the halide directly. It is a polar protic solvent, which helps the tertiary halide ionize. rate = k[RBr].",
+        "hints": [
+          "Methanol alone is not a strong base. What has to happen first?",
+          "One arrow: the C-Br bond to Br."
+        ]
+      },
+      {
+        "name": "Methanol removes a neighbouring hydrogen",
+        "species": "[CH3:7][OH:8].[H:9][CH:2]([CH3:1])[C+:3]([CH3:4])[CH3:5].[Br-:6]",
+        "adds": ["CO"],
+        "arrows": [
+          {"from": {"lp": 8}, "to": {"bond": [8, 9]}},
+          {"from": {"bond": [9, 2]}, "to": {"bond": [2, 3]}}
+        ],
+        "say": "A lone pair on the oxygen of methanol takes a hydrogen from the {{CH2}} next to the positive carbon. The C-H electrons become the C=C.",
+        "why": "Losing the hydrogen from the {{CH2}} gives the more substituted alkene. If methanol attacks the positive carbon instead, the {{SN1}} ether forms: same carbocation, different second step.",
+        "hints": [
+          "The base is neutral methanol, not methoxide.",
+          "Two arrows: O lone pair to H, the C-H bond to the C-C bond."
+        ]
+      }
+    ],
+    "product": "[CH3:7][OH+:8][H:9].[CH3:1][CH:2]=[C:3]([CH3:4])[CH3:5].[Br-:6]",
+    "takeaway": "Solvent alone with a tertiary halide: ionize first, then the solvent takes a hydrogen. Two steps, three arrows in all."
+  },
+  {
+    "id": "sn2-2-butyl-tosylate-hydrosulfide",
+    "title": "SN2 with inversion: (S)-2-butyl tosylate and hydrosulfide",
+    "class": "SN2",
+    "types": ["mech-two-paths"],
+    "from": "site, after Lecture 11/10, p. 3",
+    "overall": "[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + [Na+].[SH-]>DMSO>CC[C@@H](C)S + [Na+].[O-]S(=O)(=O)c1ccc(C)cc1]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[SH-:1].[CH3:2][CH2:3][C@H:4]([CH3:5])[O:6][S:7](=[O:8])(=[O:9])[c:10]1[cH:11][cH:12][c:13]([CH3:14])[cH:15][cH:16]1",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 4]}},
+          {"from": {"bond": [4, 6]}, "to": {"atom": 6}}
+        ],
+        "say": "A lone pair on sulfur attacks the carbon from the side opposite the tosylate, and the C-O bond breaks at the same time. The other three groups on the carbon flip over: inversion.",
+        "why": "{{HS-}} is an excellent nucleophile (126,000 in the lecture table) and a weak base, the carbon is secondary, and DMSO is polar aprotic: every condition for {{SN2}}. rate = k[ROTs][{{HS-}}].",
+        "hints": [
+          "Which species has a lone pair and a negative charge?",
+          "The nucleophile attacks the carbon that carries the leaving group, from the back.",
+          "Two arrows: S lone pair to carbon, the C-O bond to oxygen."
+        ]
+      }
+    ],
+    "product": "[SH:1][C@@H:4]([CH2:3][CH3:2])[CH3:5].[O-:6][S:7](=[O:8])(=[O:9])[c:10]1[cH:11][cH:12][c:13]([CH3:14])[cH:15][cH:16]1",
+    "takeaway": "SN2: one step, two arrows, back-side attack. One enantiomer gives one enantiomer, inverted."
+  },
+  {
+    "id": "sn1-2-butyl-tosylate-water",
+    "title": "SN1 with racemization: 2-butyl tosylate in water",
+    "class": "SN1",
+    "types": ["mech-two-paths"],
+    "from": "Lecture 11/10, p. 3",
+    "overall": "[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + O>>CC[C@H](C)O + CC[C@@H](C)O]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH2:2][C@H:3]([CH3:4])[O:5][S:6](=[O:7])(=[O:8])[c:9]1[cH:10][cH:11][c:12]([CH3:13])[cH:14][cH:15]1",
+        "arrows": [
+          {"from": {"bond": [3, 5]}, "to": {"atom": 5}}
+        ],
+        "say": "The C-O bond to the tosylate breaks by itself. Tosylate leaves with both electrons and a secondary carbocation remains.",
+        "why": "Water is a poor nucleophile, so it does not push the leaving group out. Tosylate is a good leaving group and water is a polar protic solvent that stabilizes the ions, so the bond ionizes. rate = k[ROTs].",
+        "hints": [
+          "No good nucleophile is present. What happens first?",
+          "One arrow: the C-O bond to the tosylate oxygen."
+        ]
+      },
+      {
+        "name": "Water attacks the carbocation",
+        "species": "[OH2:16].[CH3:1][CH2:2][CH+:3][CH3:4]",
+        "adds": ["O"],
+        "arrows": [
+          {"from": {"lp": 16}, "to": {"bond": [16, 3]}}
+        ],
+        "say": "A lone pair on water attacks the positive carbon. The carbocation is flat, so water can come from the top face or the bottom face equally.",
+        "why": "The carbocation is {{sp2}} and planar, with an empty p orbital open on both faces. Attack on one face gives the R alcohol and attack on the other gives the S alcohol, in equal amounts: a racemic mixture.",
+        "hints": [
+          "The electron-poor atom is the positive carbon.",
+          "One arrow: O lone pair to the positive carbon."
+        ]
+      },
+      {
+        "name": "A second water removes the extra proton",
+        "species": "[OH2:17].[H:18][OH+:16][CH:3]([CH2:2][CH3:1])[CH3:4]",
+        "adds": ["O"],
+        "arrows": [
+          {"from": {"lp": 17}, "to": {"bond": [17, 18]}},
+          {"from": {"bond": [18, 16]}, "to": {"atom": 16}}
+        ],
+        "say": "The oxygen that just bonded has three bonds and a positive charge. Another water takes one of its hydrogens, and the O-H electrons stay on oxygen.",
+        "why": "A protonated alcohol is a strong acid, so the solvent removes the proton at once. This leaves the neutral alcohol and {{H3O+}}.",
+        "hints": [
+          "The product so far has a positive oxygen. How does it become neutral?",
+          "Two arrows: lone pair of the new water to H, the O-H bond to oxygen."
+        ]
+      }
+    ],
+    "product": "[H:18][OH2+:17].[OH:16][CH:3]([CH2:2][CH3:1])[CH3:4]",
+    "takeaway": "SN1 with water is three steps: ionize, attack, lose a proton. The flat carbocation gives both enantiomers."
+  },
+  {
+    "id": "double-e2-3-4-dibromohexane-amide",
+    "title": "Two E2 reactions in a row: 3,4-dibromohexane to 3-hexyne",
+    "class": "E2",
+    "types": ["all-elim-products"],
+    "from": "site, after FA24 Exam 2, Q7B",
+    "overall": "[[rxn:CCC(Br)C(Br)CC>2 NaNH2>CCC#CCC + N + [Na+].[Br-]]]",
+    "steps": [
+      {
+        "name": "First E2: to the bromoalkene",
+        "species": "[NH2-:1].[H:2][C:3]([CH2:4][CH3:5])([Br:6])[CH:7]([Br:8])[CH2:9][CH3:10]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"bond": [3, 7]}},
+          {"from": {"bond": [7, 8]}, "to": {"atom": 8}}
+        ],
+        "say": "The first equivalent of base takes the hydrogen from one CHBr carbon. Its C-H electrons form the C=C and the bromide on the other carbon leaves. The product is 3-bromo-3-hexene.",
+        "why": "Amide ({{H2N-}}) is a very strong base and the halide is secondary: {{E2}}. The hydrogen and the bromine that leave are on neighbouring carbons.",
+        "hints": [
+          "Which Br leaves: the one on the carbon losing the hydrogen, or the one on the carbon next to it?",
+          "Three arrows: N lone pair to H, the C-H bond to the C-C bond, the other carbon's C-Br bond to Br."
+        ]
+      },
+      {
+        "name": "Second E2: to the alkyne",
+        "species": "[NH2-:11].[H:12][C:7](=[C:3]([Br:6])[CH2:4][CH3:5])[CH2:9][CH3:10]",
+        "adds": ["[NH2-]"],
+        "arrows": [
+          {"from": {"lp": 11}, "to": {"bond": [11, 12]}},
+          {"from": {"bond": [12, 7]}, "to": {"bond": [7, 3]}},
+          {"from": {"bond": [3, 6]}, "to": {"atom": 6}}
+        ],
+        "say": "The second equivalent of base takes the hydrogen on the alkene carbon next to the C-Br carbon. The C-H electrons become the second pi bond and the last bromide leaves.",
+        "why": "The bromoalkene still has a leaving group and a hydrogen on the next carbon, so a strong base can do {{E2}} again. Taking the hydrogen from the alkene carbon gives the alkyne. Taking one from the {{CH2}} on the other side of the C-Br carbon would give the allene instead.",
+        "hints": [
+          "The remaining Br is on a C=C carbon. Which neighbouring carbon has the hydrogen that leads to a triple bond?",
+          "Three arrows again: N lone pair to H, the C-H bond to the C=C (making it C≡C), the C-Br bond to Br."
+        ]
+      }
+    ],
+    "product": "[NH2:11][H:12].[CH3:5][CH2:4][C:3]#[C:7][CH2:9][CH3:10].[Br-:6]",
+    "takeaway": "Two equivalents of strong base remove HBr twice. Each elimination is an ordinary three-arrow E2."
+  },
+  {
+    "id": "e2-2-bromo-2-methylbutane-tert-butoxide",
+    "title": "E2 with a bulky base: 2-bromo-2-methylbutane and tert-butoxide (Hofmann alkene)",
+    "class": "E2",
+    "types": ["zaitsev-hofmann"],
+    "from": "site",
+    "overall": "[[rxn:CCC(C)(C)Br + CC(C)(C)[O-].[K+]>(CH3)3COH>C=C(C)CC + CC(C)(C)O + [K+].[Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:1][C:2]([CH3:3])([CH3:4])[O-:5].[H:6][CH2:7][C:8]([CH3:9])([CH2:10][CH3:11])[Br:12]",
+        "arrows": [
+          {"from": {"lp": 5}, "to": {"bond": [5, 6]}},
+          {"from": {"bond": [6, 7]}, "to": {"bond": [7, 8]}},
+          {"from": {"bond": [8, 12]}, "to": {"atom": 12}}
+        ],
+        "say": "tert-Butoxide takes a hydrogen from an end {{CH3}} group. The C-H electrons become the C=C as bromide leaves.",
+        "why": "tert-Butoxide is a strong base but very bulky. The hydrogens of a {{CH3}} on the outside of the molecule are easier for it to reach than the hydrogens of the inner {{CH2}}. The result is the less substituted (Hofmann) alkene, 2-methyl-1-butene.",
+        "hints": [
+          "This base is large. Which hydrogens are the easiest to reach?",
+          "Take a hydrogen from a {{CH3}} attached to the C-Br carbon.",
+          "Three arrows: O lone pair to H, the C-H bond to the C-C bond, the C-Br bond to Br."
+        ]
+      }
+    ],
+    "product": "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][H:6].[CH2:7]=[C:8]([CH3:9])[CH2:10][CH3:11].[Br-:12]",
+    "takeaway": "Same halide, bulky base: the hydrogen comes from the least crowded carbon and the Hofmann alkene is major."
+  }
+]

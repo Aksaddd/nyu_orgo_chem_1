@@ -52,7 +52,7 @@
         else if (i === n - 1) h += tx(x + 20, y + 14, custom || (/^P/i.test(p.name) ? "products" : p.name), "end");
         else h += tx(x, y + 14, custom || (/^I\d*$/i.test(p.name) ? "intermediate" : p.name));
       });
-      if (ea && F.top >= 0) { const x = X(F.top, n), y = Y(pts[F.top].e); h += arrow(x, yR, y + 3, "var(--arrow, #c2410c)") + tx(x + 6, (yR + y) / 2 + 8, "Ea", "start", ' font-style="italic" font-weight="600"') }
+      if (ea && F.top >= 0) { const x = X(F.top, n), y = Y(pts[F.top].e); h += arrow(x, yR, y + 3, "var(--arrow, #c2410c)") + tx(x - 5, (yR + y) / 2 + 8, "Ea", "end", ' font-style="italic" font-weight="600"') }
       if (dh && Math.abs(F.dh) > 0) { const y = Y(pts[n - 1].e); h += `<line x1="${f1(xN + 20)}" y1="${f1(y)}" x2="${f1(xN + 34)}" y2="${f1(y)}" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="3 3"/>` + arrow(xN + 28, yR, y, "var(--arrow, #c2410c)") + tx(xN + 33, (yR + y) / 2 + 4, "ΔH", "start", ' font-weight="600"') }
     }
     const F = facts(pts), s = document.createElementNS("http://www.w3.org/2000/svg", "svg");

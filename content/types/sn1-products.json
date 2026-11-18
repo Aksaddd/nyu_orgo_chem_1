@@ -1,0 +1,40 @@
+{
+  "id": "sn1-products",
+  "title": "SN1 and E1 products: racemization and the shared carbocation",
+  "exam": "Lecture 11/10",
+  "asks": "A substrate ionizes in a polar protic solvent. Draw the substitution and elimination products and their stereochemistry.",
+  "know": [
+    {"h": "<b>The conditions.</b> {{SN1}} and {{E1}} need four things: a substrate that gives a stable carbocation, a good leaving group, a polar protic solvent (water or an alcohol), and a poor nucleophile that is also a weak base. In practice the solvent is the only nucleophile and the only base in the flask.", "from": "Lecture 11/10, p. 4 and 5"},
+    {"h": "<b>Which carbons ionize.</b> Tertiary ionizes fastest, then secondary. Primary and methyl never do: no {{SN1}}, no {{E1}}. Allylic and benzylic carbons do ionize, even when they are primary or secondary, because the neighbouring pi electrons share the charge. A vinyl carbon (the leaving group on a C=C carbon) never ionizes.", "from": "Lecture 11/10, p. 2; flowchart"},
+    {"h": "<b>The rate law.</b> rate = k[substrate]. The slow step is the ionization of the substrate alone, so adding more nucleophile changes nothing.", "from": "Lecture 11/10, p. 1 and 2"},
+    {"h": "<b>{{SN1}} with water or an alcohol is three steps.</b> (1) The leaving group leaves and a carbocation forms. (2) A lone pair on the oxygen of the solvent attacks the positive carbon. (3) A second solvent molecule removes the extra proton from the positive oxygen. Be able to draw all three with arrows.", "from": "Lecture 11/10, p. 2"},
+    {"h": "<b>What the product is.</b> In water the substitution product is an alcohol, R-OH. In an alcohol R'OH it is an ether, R-OR'. The new oxygen group comes from the solvent, so read the solvent before you draw.", "from": "Lecture 11/10, p. 1 and 2"},
+    {"h": "<b>Racemization.</b> The carbocation is flat ({{sp2}}, three groups in one plane). The nucleophile can approach from either face, so one enantiomer of starting material gives both enantiomers of product in equal amounts: a racemic mixture. The lecture example is 2-butyl tosylate in water.", "from": "Lecture 11/10, p. 3"},
+    {"h": "<b>A second stereocentre changes the word.</b> If the molecule has another stereocentre that is not touched, attack on the two faces gives two <b>diastereomers</b>, not a racemic mixture.", "from": "standard"},
+    {"h": "<b>{{E1}} shares the carbocation.</b> Instead of attacking the positive carbon, a solvent molecule takes a hydrogen from the carbon next to it, and the C-H electrons become the C=C. {{E1}} is two steps, and its first step is the same as in {{SN1}}.", "from": "Lecture 11/10, p. 4"},
+    {"h": "<b>Temperature decides the ratio.</b> {{SN1}} is favoured at lower temperature and {{E1}} at high temperature. Both products usually form together.", "from": "Lecture 11/10, p. 4; flowchart"},
+    {"h": "<b>Which alkene.</b> Every different carbon next to the positive carbon that has a hydrogen gives an alkene. The more substituted alkene (Saytzeff, also spelled Zaitsev) is the major elimination product. The double bond always includes the carbon that carried the leaving group.", "from": "Lecture 11/12, p. 4; flowchart"},
+    {"h": "<b>Leaving groups.</b> {{I-}}, {{Br-}}, {{Cl-}} and tosylate ({{TsO-}}) are good leaving groups. {{HO-}} and {{F-}} are not, so an alcohol or a fluoride does not ionize under these conditions.", "from": "Lecture 11/05, p. 2; 11/10, p. 3"},
+    {"h": "<b>An allylic cation has two positive ends.</b> Its charge is shared by the two end carbons of the three-carbon unit. The nucleophile can bond to either end, so two substitution products can form, one of them with the double bond moved.", "from": "Lecture 10/22, p. 3; standard"},
+    {"h": "<b>Carbocations can rearrange.</b> Before you finish, check whether a neighbouring hydrogen or carbon group could move to give a more stable cation. That question has its own page: carbocation rearrangements.", "from": "flowchart"},
+    {"h": "<b>Skill.</b> Be able to draw the carbocation (three bonds, a plus sign, no wedges), and both enantiomers of the product with a wedge and a dash.", "from": "standard"}
+  ],
+  "method": [
+    "Classify the carbon that carries the leaving group. Tertiary, secondary, allylic and benzylic can ionize. Primary, methyl and vinyl cannot.",
+    "Read the conditions. A polar protic solvent with no strong base and no good nucleophile means the carbocation route. If a strong base such as {{HO-}} or {{RO-}} is present, stop: that is {{E2}}, not this page.",
+    "Remove the leaving group with its electrons and draw the carbocation, flat, with its plus sign.",
+    "Ask whether the charge is anywhere else: resonance in an allylic or benzylic cation, or a shift to a more stable cation.",
+    "Substitution: bond the solvent's oxygen to the positive carbon, then take the extra hydrogen off the oxygen. If that carbon is a stereocentre, draw both faces.",
+    "Elimination: take a hydrogen from each different neighbouring carbon in turn and draw each alkene. Mark the most substituted one as major.",
+    "Say which product the conditions favour: heat favours the alkene, a lower temperature favours substitution."
+  ],
+  "pitfalls": [
+    {"h": "Drawing only the inverted product. Inversion belongs to {{SN2}}. {{SN1}} at a stereocentre gives both enantiomers."},
+    {"h": "Stopping after the solvent attacks, with the hydrogen and a positive charge still on oxygen. The third step, loss of the proton, is part of the mechanism and the product is neutral."},
+    {"h": "Using {{HO-}} or {{RO-}} as the nucleophile or the base. In water or an alcohol with nothing added, only the neutral solvent is there."},
+    {"h": "Ionizing a primary, methyl or vinyl carbon. Those carbocations do not form."},
+    {"h": "Writing \"racemic\" when the molecule keeps another stereocentre. The two products are then diastereomers."},
+    {"h": "Putting the double bond between two carbons that do not include the carbon the leaving group left."}
+  ],
+  "links": {"read": ["sn1-e1", "choose"]}
+}

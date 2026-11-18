@@ -1,0 +1,86 @@
+{
+ "id": "fastest-substrate",
+ "title": "Which substrate reacts fastest",
+ "exam": "Q3C",
+ "points": 25,
+ "asks": "Several alkyl halides are listed. Pick the one that reacts fastest (or slowest) by the mechanism named.",
+ "know": [
+  {
+   "h": "<b>{{SN2}} order</b>: methyl > primary > secondary >>> tertiary (no {{SN2}}). Steric hindrance slows the approaching nucleophile, which must reach the back of the carbon that carries the leaving group.",
+   "from": "Lecture 11/05, p. 1"
+  },
+  {
+   "h": "<b>The lecture's {{SN2}} numbers</b>, to memorize: allyl 1.3; methyl 1; ethyl 0.033; isobutyl 0.003; isopropyl 0.00083; tert-butyl 0; vinyl 0.",
+   "from": "Figure 7.3"
+  },
+  {
+   "h": "<b>Allyl</b> ({{CH2=CHCH2-LG}}, leaving group on the {{sp3}} carbon next to a C=C) is faster than methyl in {{SN2}}: the neighbouring pi bond stabilizes the transition state.",
+   "from": "Figure 7.3"
+  },
+  {
+   "h": "<b>Vinyl</b> ({{CH2=CH-LG}}, leaving group on a carbon of the C=C) does not react by {{SN2}} (the back of an {{sp2}} carbon cannot be reached) or by {{SN1}} (a vinyl cation is too unstable). The same holds for a leaving group on a benzene ring.",
+   "from": "Figure 7.3; Lecture 11/10, p. 2; standard"
+  },
+  {
+   "h": "<b>Isobutyl</b>, {{(CH3)2CHCH2-LG}}, is primary but branched on the next carbon: 0.003, ten times slower than ethyl and still faster than isopropyl (0.00083). More branching next door (three methyl groups) is slower again.",
+   "from": "Figure 7.3; standard"
+  },
+  {
+   "h": "<b>{{SN1}} order</b>: tertiary > secondary; primary and methyl do not react by {{SN1}}. Allyl does; vinyl does not. The slow step makes a carbocation, so the rate follows carbocation stability.",
+   "from": "Lecture 11/10, p. 2"
+  },
+  {
+   "h": "<b>Resonance stabilizes a carbocation</b>: an allylic cation shares its positive charge between two carbons, so an allylic halide ionizes faster than the matching halide without the double bond.",
+   "from": "Lecture 10/22, p. 3; Lecture 11/10, p. 2"
+  },
+  {
+   "h": "<b>{{E2}} order</b>: tertiary > secondary > primary. The transition state is becoming an alkene, and more substituted alkenes are more stable. Branching on the alpha and beta carbons favours {{E2}} over {{SN2}}.",
+   "from": "Flowchart handout; standard"
+  },
+  {
+   "h": "<b>{{E2}} needs a beta hydrogen</b>: a hydrogen on the carbon next to the one that carries the leaving group. A methyl halide has none, and neither does a compound such as {{(CH3)3CCH2Br}}.",
+   "from": "Flowchart handout; Lecture 11/12, p. 1"
+  },
+  {
+   "h": "<b>Skill</b>: classify a carbon as methyl, primary, secondary or tertiary by counting the carbons attached to the carbon that carries the leaving group, in chains and in rings.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>Skill</b>: tell allyl from vinyl and benzyl from aryl by finding exactly which carbon carries the leaving group and whether it is {{sp3}} or {{sp2}}.",
+   "from": "standard"
+  }
+ ],
+ "method": [
+  "Read the mechanism named ({{SN2}}, {{SN1}} or {{E2}}) and whether the question asks for the fastest or the slowest.",
+  "In each compound find the carbon that carries the leaving group and classify it: methyl, primary, secondary, tertiary, allyl, or vinyl/aryl.",
+  "Cross out the compounds that cannot react by that mechanism: tertiary and vinyl for {{SN2}}; methyl, primary and vinyl for {{SN1}}; no beta hydrogen for {{E2}}.",
+  "Apply the order for the mechanism: {{SN2}} by sterics (allyl > methyl > primary > secondary), {{SN1}} and {{E2}} by substitution (tertiary > secondary > primary).",
+  "If two compounds are in the same class, look at branching on the next carbon ({{SN2}}) or at resonance in the carbocation ({{SN1}}).",
+  "Check your choice against the lecture's numbers and against the word fastest or slowest in the question."
+ ],
+ "pitfalls": [
+  {
+   "h": "Using the {{SN1}} order for an {{SN2}} question, or the reverse. They are opposite: tertiary is zero in {{SN2}} and best in {{SN1}}."
+  },
+  {
+   "h": "Confusing allyl (1.3, the fastest {{SN2}} substrate, and able to do {{SN1}}) with vinyl (0 for both)."
+  },
+  {
+   "h": "Answering fastest when the question asks for slowest."
+  },
+  {
+   "h": "Treating all primary halides as equal, or placing isobutyl (0.003) below isopropyl (0.00083) because it has more carbons."
+  },
+  {
+   "h": "Picking the most branched compound for {{E2}} without checking that it has a hydrogen on the next carbon."
+  }
+ ],
+ "links": {
+  "read": [
+   "sn2-2",
+   "sn1-e1",
+   "e2",
+   "choose"
+  ]
+ }
+}

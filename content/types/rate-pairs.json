@@ -1,0 +1,102 @@
+{
+ "id": "rate-pairs",
+ "title": "Circle the faster reaction",
+ "exam": "Q2A",
+ "points": 30,
+ "asks": "Two reactions differ in one thing. Circle the one that goes faster.",
+ "know": [
+  {
+   "h": "<b>Rate laws.</b> {{SN2}}: rate = k[substrate][nucleophile]. {{SN1}}: rate = k[substrate] only. {{E2}}: rate = k[substrate][base]. A change in the nucleophile (its strength or its concentration) changes the rate of {{SN2}} but not of {{SN1}}.",
+   "from": "Lecture 11/03, p. 3; 11/10, p. 1; 11/12, p. 1"
+  },
+  {
+   "h": "<b>What each mechanism needs.</b> {{SN2}}: low sterics, good nucleophile, good leaving group, polar aprotic solvent. {{SN1}}: stable carbocation, poor nucleophile, good leaving group, polar protic solvent.",
+   "from": "Lecture 11/10, p. 5"
+  },
+  {
+   "h": "<b>Substrate in {{SN2}}</b> (relative rates): allyl 1.3; methyl 1; ethyl 0.033; isobutyl 0.003; isopropyl 0.00083; tert-butyl 0; vinyl 0. Steric hindrance slows the approaching nucleophile.",
+   "from": "Figure 7.3"
+  },
+  {
+   "h": "<b>Substrate in {{SN1}}</b>: tertiary > secondary; primary and methyl do not react by {{SN1}}. Allyl does (the carbocation is stabilized by resonance); vinyl does not.",
+   "from": "Lecture 11/10, p. 2"
+  },
+  {
+   "h": "<b>Vinyl and aryl halides</b> (leaving group on an {{sp2}} carbon of a C=C or a benzene ring) do not undergo {{SN2}} or {{SN1}}. A better leaving group does not rescue them. Allyl and benzyl halides, with the leaving group on the {{sp3}} carbon next door, react well.",
+   "from": "Figure 7.3; Lecture 11/10, p. 2; standard"
+  },
+  {
+   "h": "<b>Nucleophile strength</b> (relative {{SN2}} rates): {{HC≡C-}} 126,000; {{HS-}} 126,000; {{I-}} 80,000; {{HO-}} 16,000; {{N3-}} 8,000; {{NH3}} 8,000; {{Cl-}} 1,000; {{CH3CO2-}} 630; {{CH3OH}} 1; {{H2O}} 1. An anion beats its conjugate acid; a bulky nucleophile such as tert-butoxide is slow.",
+   "from": "Table 7.5"
+  },
+  {
+   "h": "<b>Leaving group</b>: the weaker the base, the better it leaves. I > Br > Cl >> F among the halides (HI {{pKa}} -10, HBr -9, HCl -8, HF 4). Tosylate, OTs, is a good leaving group. {{HO-}} and {{RO-}} are strong bases and poor leaving groups: an alcohol with {{HS-}} gives no reaction.",
+   "from": "Lecture 11/05, p. 2; pKa table"
+  },
+  {
+   "h": "The leaving group leaves in the rate-determining step of both {{SN2}} and {{SN1}}, so a better leaving group speeds up both.",
+   "from": "Lecture 11/10, p. 2 and 5"
+  },
+  {
+   "h": "<b>Solvent types.</b> Polar protic (hydrogen bond donors): {{H2O}}, {{CH3OH}}, {{CH3CH2OH}}, acetic acid. Polar aprotic: DMSO, DMF, acetone, acetonitrile.",
+   "from": "Lecture 11/10, p. 3; solvent table"
+  },
+  {
+   "h": "<b>Solvent and {{SN2}}</b>: with an anionic nucleophile, a polar aprotic solvent is faster, because a protic solvent hydrogen bonds to the nucleophile and holds it back.",
+   "from": "Lecture 11/10, p. 3 and 5"
+  },
+  {
+   "h": "<b>Solvent and {{SN1}}</b>: increasing the polarity of the solvent increases the rate, because the transition state of the ionization is stabilized more than the neutral starting compound.",
+   "from": "Lecture 11/10, p. 3"
+  },
+  {
+   "h": "<b>Solvent polarity and charge.</b> If charge is created on the way to the transition state (neutral amine and alkyl iodide), a more polar solvent is faster. If charge is destroyed ({{HO-}} and a sulfonium cation), a less polar solvent is faster.",
+   "from": "Lecture 11/05, p. 3 to 4"
+  },
+  {
+   "h": "<b>Skill</b>: compare the two reactions item by item (substrate carbon, leaving group, nucleophile, solvent, concentrations) and name the single difference before thinking about rates.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>Skill</b>: decide the mechanism from the substrate and conditions (methyl or primary with a good nucleophile: {{SN2}}; tertiary with no strong base in a protic solvent: {{SN1}}; tertiary with a strong base: {{E2}}).",
+   "from": "Flowchart handout"
+  }
+ ],
+ "method": [
+  "Compare the two reactions piece by piece and name the one thing that differs: nucleophile, leaving group, substrate carbon, solvent or concentration.",
+  "Find the carbon that carries the leaving group. If it is an {{sp2}} carbon (vinyl or aryl), that reaction does not go, and the other one wins.",
+  "Decide the mechanism from the substrate class and the conditions: {{SN2}}, {{SN1}} or {{E2}}.",
+  "Ask whether the thing that differs appears in that mechanism's rate law or in its rate-determining step.",
+  "Apply the matching rule or number: nucleophile table, leaving group order, Figure 7.3, carbocation stability, or solvent type.",
+  "Circle the faster reaction and say in one line what differs and why it matters for this mechanism."
+ ],
+ "pitfalls": [
+  {
+   "h": "Ranking substrates before reading the conditions: tertiary is the slowest in {{SN2}} and the fastest in {{SN1}}."
+  },
+  {
+   "h": "Choosing the better leaving group when it sits on a vinyl or aryl carbon. No {{SN2}} and no {{SN1}} happen there."
+  },
+  {
+   "h": "Mixing up allyl (leaving group next to the double bond: fast) and vinyl (leaving group on the double bond: no reaction)."
+  },
+  {
+   "h": "Saying that polar aprotic solvents are always faster. That is true for {{SN2}} with an anionic nucleophile; {{SN1}} is faster in polar protic solvents."
+  },
+  {
+   "h": "Saying that concentration of the nucleophile or base never matters for a tertiary halide. With a strong base the reaction is {{E2}}, and the base is in the rate law."
+  },
+  {
+   "h": "Treating all primary halides as equal: branching on the next carbon (isobutyl, 0.003) slows {{SN2}} about tenfold."
+  }
+ ],
+ "links": {
+  "read": [
+   "sn2-1",
+   "sn2-2",
+   "sn1-e1",
+   "e2",
+   "choose"
+  ]
+ }
+}

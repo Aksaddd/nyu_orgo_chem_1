@@ -1,0 +1,234 @@
+[
+  {
+    "id": "williamson-why-001", "type": "williamson-why", "role": "worked", "kind": "written", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q5A", "pts": 80, "time": 12,
+    "stem": "Sodium isopropoxide and bromoethane give ethyl isopropyl ether in good yield. Sodium ethoxide and 2-bromopropane give very little of the same ether. Explain, with the mechanism of each reaction and the products that are actually formed.\n[[rxn:CC(C)[O-].[Na+] + CCBr>>CCOC(C)C]]\n[[rxn:CC[O-].[Na+] + CC(C)Br>>\"very little ether\"]]",
+    "model": "<p><b>The reaction that works is {{SN2}}.</b> The halide is primary. A lone pair on the isopropoxide oxygen attacks the {{CH2}} of bromoethane from the back and bromide leaves.</p>\n[[mech:sn2-isopropoxide-bromoethane]]\n<p><b>The reaction that fails is {{E2}}.</b> Now the halide is secondary, so backside attack is slow (isopropyl 0.00083 against ethyl 0.033). Ethoxide is a strong base (ethanol has {{pKa}} about 16), so it removes a beta hydrogen instead.</p>\n[[mech:e2-2-bromopropane-ethoxide]]\n<p>The second flask holds mostly propene, ethanol and {{Br-}}, with only a little ether from {{SN2}}.</p><p><b>Lesson:</b> the halide should be methyl or primary. The branched group goes in the alkoxide.</p>",
+    "rubric": [
+      {"pts": 20, "h": "SN2 mechanism for the good route: O lone pair to the CH2 carbon, C-Br bond to Br, ether and bromide as products"},
+      {"pts": 15, "h": "Says the second halide is secondary, so backside attack is hindered and SN2 is slow"},
+      {"pts": 10, "h": "Says ethoxide is a strong base"},
+      {"pts": 25, "h": "E2 mechanism with three correct arrows: O lone pair to a beta H, C-H bond to C=C, C-Br bond to Br"},
+      {"pts": 10, "h": "Propene, ethanol and bromide given as the actual products (a little ether is acceptable)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "The oxygen carries an ethyl group and an isopropyl group. Pair 1: isopropoxide with bromoethane. Pair 2: ethoxide with 2-bromopropane.", "ask": {"q": "What is different between the two pairs?", "a": "Only which piece carries the leaving group: a primary carbon in pair 1, a secondary carbon in pair 2."}},
+        {"t": "Classify the halide carbon", "h": "Bromoethane is primary; 2-bromopropane is secondary. The lecture rates are 0.033 and 0.00083, so backside attack is about forty times slower on the secondary carbon.", "ask": {"q": "Which carbon does the nucleophile have to reach?", "a": "The carbon bonded to bromine. Its class decides, not the shape of the alkoxide."}},
+        {"t": "Judge the alkoxides as bases", "h": "Both are strong bases: ethanol {{pKa}} 15.9, isopropanol 16.5. Wherever {{SN2}} is slow, a strong base takes a beta hydrogen instead.", "ask": {"q": "Is base strength what separates the two routes?", "a": "No. Both alkoxides are strong bases. The halide is what differs."}},
+        {"t": "Draw the route that works", "h": "{{SN2}}, one step, two arrows: the oxygen lone pair goes to the {{CH2}} carbon from the side opposite bromine, and the C-Br bond goes to bromine. A primary halide with a strong base that is not bulky substitutes."},
+        {"t": "Draw the route that fails", "h": "{{E2}}, one step, three arrows: the ethoxide lone pair goes to a hydrogen on a {{CH3}} of 2-bromopropane, the C-H bond becomes the C=C, and the C-Br bond goes to bromine. The hydrogen and the bromine are anti-periplanar."},
+        {"t": "Write what is in the flask", "h": "Propene (a gas), ethanol and {{Br-}}. The ethoxide has become ethanol: it is not part of the alkene."},
+        {"t": "State the lesson", "h": "Put the leaving group on the less hindered piece."}
+      ],
+      "answer": "Isopropoxide with bromoethane: SN2 at a primary carbon gives the ether. Ethoxide with 2-bromopropane: a strong base with a secondary halide gives mostly E2 (propene, ethanol, bromide).",
+      "rule": "Williamson: methyl or primary halide, branched group in the alkoxide."
+    }
+  },
+  {
+    "id": "williamson-why-002", "type": "williamson-why", "role": "worked", "kind": "written", "diff": 2, "src": "site", "pts": 80, "time": 12,
+    "stem": "Sodium phenoxide and iodomethane give methyl phenyl ether. Sodium methoxide and bromobenzene give no ether at all. Explain, with a mechanism for the reaction that works.\n[[rxn:[O-]c1ccccc1.[Na+] + CI>>COc1ccccc1]]\n[[nr:C[O-].[Na+] + Brc1ccccc1>>COc1ccccc1]]",
+    "model": "<p><b>Works: {{SN2}} at a methyl carbon.</b> The phenoxide oxygen attacks {{CH3I}} from the back and iodide leaves. A methyl carbon is unhindered and has no beta hydrogen, and iodide is an excellent leaving group.</p>\n[[mech:sn2-phenoxide-iodomethane]]\n<p><b>Fails: the carbon that carries Br is {{sp2}}, part of the benzene ring.</b> The back of the C-Br bond points into the ring, so a nucleophile cannot reach it: no {{SN2}} (the lecture rate for a leaving group on an {{sp2}} carbon is 0). An aryl cation is too unstable to form, so there is no {{SN1}} either. Bromobenzene is recovered unchanged.</p><p><b>Lesson:</b> the ring must arrive already bonded to oxygen, as the phenoxide. The alkyl group is the halide.</p>",
+    "rubric": [
+      {"pts": 25, "h": "SN2 mechanism: O lone pair to the CH3 carbon, C-I bond to I, methyl phenyl ether and iodide as products"},
+      {"pts": 10, "h": "Says why this is easy: methyl carbon unhindered, no beta hydrogen, iodide a good leaving group"},
+      {"pts": 15, "h": "Identifies the C-Br carbon of bromobenzene as sp2 (aryl)"},
+      {"pts": 15, "h": "Says an sp2 carbon cannot undergo SN2: backside attack is blocked by the ring"},
+      {"pts": 10, "h": "Says there is no SN1 either (aryl cation too unstable), so no reaction"},
+      {"pts": 5, "h": "Lesson: make aryl ethers from the phenoxide and an alkyl halide"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "The oxygen carries a methyl group and a benzene ring. Pair 1: phenoxide with iodomethane. Pair 2: methoxide with bromobenzene.", "ask": {"q": "In each pair, what kind of carbon carries the leaving group?", "a": "Pair 1: a methyl carbon ({{sp3}}). Pair 2: a ring carbon ({{sp2}})."}},
+        {"t": "Pair 1 is the best case for SN2", "h": "A methyl halide can only substitute: rate 1 on the lecture scale, no beta hydrogen, no carbocation. Two arrows: oxygen lone pair to carbon, C-I bond to iodine."},
+        {"t": "Why pair 2 cannot do SN2", "h": "{{SN2}} needs the nucleophile to come in exactly opposite the leaving group. On a benzene ring that side of the carbon is the inside of the ring. The lecture gives rate 0 for a leaving group on a C=C carbon; a ring carbon is the same.", "ask": {"q": "Where would the nucleophile have to stand for a backside attack on C-Br?", "a": "Inside the ring, which is impossible."}},
+        {"t": "Why pair 2 cannot do SN1", "h": "Ionization would put a positive charge on an {{sp2}} ring carbon. That cation is very unstable (lecture: vinyl gives no {{SN1}}), so it does not form.", "ask": {"q": "Phenoxide is a weaker base than methoxide. Does that matter here?", "a": "No. Phenol has {{pKa}} 10, so phenoxide is a weak base, but it only has to attack a methyl carbon. The halide decides."}},
+        {"t": "What is in the second flask", "h": "Bromobenzene and sodium methoxide, unchanged. Methoxide in methanol does not remove HBr from a benzene ring either: the product would need a triple bond inside a six-membered ring."},
+        {"t": "State the lesson", "h": "An {{sp2}} carbon can never be the electrophile of a Williamson synthesis. Bring the ring in as {{ArO-}}."}
+      ],
+      "answer": "Phenoxide with iodomethane: SN2 at a methyl carbon. Methoxide with bromobenzene: the leaving group is on an sp2 carbon, so neither SN2 nor SN1 can happen and there is no reaction.",
+      "rule": "No substitution at an sp2 carbon: the aryl group must be the alkoxide."
+    }
+  },
+  {
+    "id": "williamson-why-003", "type": "williamson-why", "role": "worked", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "Which pair of reagents is the best way to make benzyl tert-butyl ether?\n[[mol:CC(C)(C)OCc1ccccc1]]",
+    "choices": [
+      {"h": "[[mol:CC(C)(C)[O-]]] and [[mol:BrCc1ccccc1]]", "ok": true, "why": "The halide is primary and has no beta hydrogen (the next carbon is a ring carbon with no H), so even a bulky strong base can only substitute: {{SN2}}."},
+      {"h": "[[mol:[O-]Cc1ccccc1]] and [[mol:CC(C)(C)Br]]", "ok": false, "why": "The halide is tertiary: no {{SN2}}. The alkoxide is a strong base and gives {{E2}}: 2-methylpropene, benzyl alcohol and bromide."},
+      {"h": "[[mol:CC(C)(C)O]] and [[mol:OCc1ccccc1]] with NaOH", "ok": false, "why": "Two alcohols have no leaving group: {{HO-}} is a strong base and a poor leaving group, so nothing is displaced."},
+      {"h": "[[mol:CC(C)(C)[O-]]] and [[mol:Brc1ccccc1]]", "ok": false, "why": "The bromine is on an {{sp2}} ring carbon, which cannot undergo {{SN2}}. The product wanted also has a {{CH2}} between the ring and the oxygen, which this pair does not contain."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "On one side of the oxygen is a tert-butyl group, on the other a benzyl group ({{CH2}} attached to a ring). The pairs are tert-butoxide with benzyl bromide, or the benzyl alkoxide with tert-butyl bromide.", "ask": {"q": "Which of the two halides is tertiary?", "a": "tert-Butyl bromide. It can never be the electrophile of an {{SN2}} reaction."}},
+        {"t": "Classify benzyl bromide", "h": "The carbon bonded to bromine is a {{CH2}}: primary. Its only neighbour is a ring carbon that carries no hydrogen, so there is no beta hydrogen to remove.", "ask": {"q": "tert-Butoxide is bulky and a strong base. Why does it not eliminate here?", "a": "There is no beta hydrogen on benzyl bromide, so {{E2}} is impossible. Substitution is the only thing left."}},
+        {"t": "Reject the tertiary halide", "h": "The benzyl alkoxide with tert-butyl bromide gives {{E2}}: 2-methylpropene and benzyl alcohol, no ether. This is the exam's failing route with a different alkoxide."},
+        {"t": "Reject the decoys", "h": "Two alcohols lack a leaving group. Bromobenzene has its bromine on the ring itself: wrong carbon, and an {{sp2}} carbon does not substitute.", "ask": {"q": "Benzyl bromide and bromobenzene both contain a ring and a bromine. What is the difference?", "a": "In benzyl bromide the bromine is on an {{sp3}} {{CH2}} next to the ring. In bromobenzene it is on an {{sp2}} ring carbon."}}
+      ],
+      "answer": "tert-Butoxide with benzyl bromide",
+      "rule": "The bulky piece is the alkoxide; the halide is methyl or primary, best with no beta hydrogen."
+    }
+  },
+  {
+    "id": "williamson-why-004", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "Which pair gives this ether in good yield?\n[[mol:CCC(C)(C)OC]]",
+    "choices": [
+      {"h": "[[mol:CCC(C)(C)[O-]]] and [[mol:CBr]]", "ok": true, "why": "The halide is methyl: unhindered, no beta hydrogen, {{SN2}} only. The tertiary group is safely in the alkoxide."},
+      {"h": "[[mol:C[O-]]] and [[mol:CCC(C)(C)Br]]", "ok": false, "why": "This puts the leaving group on the tertiary carbon. No {{SN2}} there: methoxide, a strong base, gives alkenes by {{E2}}."},
+      {"h": "[[mol:C[O-]]] and [[mol:CCC(C)CBr]]", "ok": false, "why": "This halide is primary and would substitute, but the oxygen ends up on the {{CH2}}: an isomer of the target, not the target."},
+      {"h": "[[mol:CCC(C)(C)O]] and [[mol:CO]]", "ok": false, "why": "Two neutral alcohols: no good nucleophile and no leaving group ({{HO-}} is a poor leaving group)."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "The oxygen carries a methyl group and a tertiary group. Either the tertiary alkoxide attacks a methyl halide, or methoxide attacks a tertiary halide."},
+        {"t": "Classify the halides", "h": "Bromomethane: methyl, {{SN2}} rate 1. The tertiary bromide: {{SN2}} rate 0."},
+        {"t": "Check the product of each remaining choice", "h": "A primary halide with the same carbons puts the oxygen on the wrong carbon. Two alcohols do not react."}
+      ],
+      "answer": "The tertiary alkoxide with bromomethane",
+      "rule": "Tertiary carbon on the oxygen side, methyl on the halide side."
+    }
+  },
+  {
+    "id": "williamson-why-005", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "A student tries to make tert-butyl methyl ether this way. What does the flask contain at the end?\n[[rxn:CC(C)(C)Br + C[O-].[Na+]>CH3OH>\"?\"]]",
+    "choices": [
+      {"h": "[[mol:CC(C)=C]], [[mol:CO]] and [[mol:[Br-]]]", "ok": true, "why": "{{E2}}: methoxide takes a beta hydrogen and becomes methanol, the C-H electrons make the C=C, bromide leaves."},
+      {"h": "[[mol:CC(C)(C)OC]] and [[mol:[Br-]]]", "ok": false, "why": "This would need {{SN2}} at a tertiary carbon, which does not happen: three methyl groups block the back of the carbon."},
+      {"h": "[[mol:CC(C)(C)O]] and [[mol:[Br-]]]", "ok": false, "why": "There is no water or hydroxide in the flask to supply an OH, and a strong base is present, so the halide does not wait to ionize."},
+      {"h": "Unchanged starting materials", "ok": false, "why": "Blocking {{SN2}} does not stop the reaction. The nine beta hydrogens are on the outside of the molecule, easy for a strong base to reach."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the halide", "h": "Tertiary: no {{SN2}}."},
+        {"t": "Classify the reagent", "h": "Methoxide is a strong base (methanol {{pKa}} 15.5). Tertiary halide with a strong base: {{E2}}."},
+        {"t": "Follow the three arrows", "h": "Base to H gives methanol. The C-H bond becomes the C=C of 2-methylpropene. The C-Br bond goes to bromine: bromide."}
+      ],
+      "answer": "2-Methylpropene, methanol and bromide ion",
+      "rule": "Alkoxide with a tertiary halide: E2, never an ether."
+    }
+  },
+  {
+    "id": "williamson-why-006", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "Alkoxides are strong bases. With which halide is elimination impossible, whatever alkoxide is used?",
+    "choices": [
+      {"h": "[[mol:CI]]", "ok": true, "why": "There is no carbon next to the C-I carbon, so there is no beta hydrogen to remove. Only {{SN2}} can happen."},
+      {"h": "[[mol:CCBr]]", "ok": false, "why": "Bromoethane has three beta hydrogens. It usually substitutes, but a bulky strong base can eliminate it."},
+      {"h": "[[mol:CC(C)Br]]", "ok": false, "why": "Six beta hydrogens on a secondary halide: with an alkoxide, {{E2}} is the main reaction."},
+      {"h": "[[mol:CC(C)(C)Br]]", "ok": false, "why": "Nine beta hydrogens on a tertiary halide: with an alkoxide, {{E2}} is the only reaction."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recall what E2 needs", "h": "A hydrogen on the carbon next to the one that carries the leaving group."},
+        {"t": "Look for beta hydrogens", "h": "Iodomethane has one carbon only. The other three halides all have beta hydrogens."},
+        {"t": "Use it", "h": "This is why the exam's good route used {{CH3I}} with the bulky alkoxide."}
+      ],
+      "answer": "Iodomethane",
+      "rule": "No beta hydrogen, no elimination."
+    }
+  },
+  {
+    "id": "williamson-why-007", "type": "williamson-why", "role": "practice", "kind": "written", "diff": 2, "src": "site", "pts": 80, "time": 12,
+    "stem": "<p>A student wants this ether and tries both pairs.</p>\n[[mol:COC1(C)CCCCC1]]\n<p>Pair 1: [[mol:CC1([O-])CCCCC1]] and [[mol:CI]]. Pair 2: [[mol:C[O-]]] and [[mol:CC1(I)CCCCC1]].</p><p>Which pair gives the ether? Give its mechanism. Say what the other pair gives instead: name the mechanism, describe its arrows and draw the major alkene.</p>",
+    "model": "<p><b>Pair 1 gives the ether by {{SN2}}.</b> The oxygen lone pair attacks the methyl carbon from the back; the C-I electrons go to iodine.</p>\n[[rxn:CC1([O-])CCCCC1 + CI>>COC1(C)CCCCC1 + [I-]]]\n<p><b>Pair 2 gives no ether.</b> The iodide is tertiary, so {{SN2}} is impossible. Methoxide is a strong base: {{E2}}. Three arrows: the methoxide lone pair takes an axial hydrogen from a ring carbon next to the C-I carbon, the C-H electrons form the C=C, the C-I electrons go to iodine.</p>\n[[rxn:CC1(I)CCCCC1 + C[O-]>>CC1=CCCCC1 + CO + [I-]]]\n<p>The major alkene is 1-methylcyclohexene, the more substituted one (Saytzeff). A little [[mol:C=C1CCCCC1]] forms when the hydrogen comes from the {{CH3}}.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Chooses pair 1"},
+      {"pts": 20, "h": "SN2 for pair 1: O lone pair to CH3, C-I bond to I, ether and iodide"},
+      {"pts": 10, "h": "Pair 2: the halide is tertiary, so no SN2"},
+      {"pts": 10, "h": "Methoxide is a strong base, mechanism named as E2"},
+      {"pts": 15, "h": "Three E2 arrows described or drawn correctly"},
+      {"pts": 10, "h": "1-Methylcyclohexene, methanol and iodide as the products"},
+      {"pts": 5, "h": "Gives a reason for the major alkene (more substituted) or mentions the minor one"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the two halides", "h": "Iodomethane is methyl. 1-Iodo-1-methylcyclohexane has its iodine on a carbon with three carbon neighbours: tertiary."},
+        {"t": "Pair 1", "h": "A methyl halide can only do {{SN2}}. The tertiary alkoxide is bulky, but the methyl carbon is wide open."},
+        {"t": "Pair 2", "h": "Tertiary halide with a strong base: {{E2}}. The base takes a hydrogen from a carbon next to C-I: a ring {{CH2}} or the {{CH3}}."},
+        {"t": "Choose the alkene", "h": "Removing a ring hydrogen gives the C=C inside the ring with three carbon groups on it. Removing a methyl hydrogen gives a C=C with two. The more substituted alkene is the major product with a small base."}
+      ],
+      "answer": "Pair 1 (the alkoxide with iodomethane) gives the ether by SN2. Pair 2 gives 1-methylcyclohexene, methanol and iodide by E2.",
+      "rule": "Tertiary halide plus alkoxide: E2, more substituted alkene."
+    }
+  },
+  {
+    "id": "williamson-why-008", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "This alkoxide, a single enantiomer with the (S) configuration, reacts with iodomethane in DMSO. What is the product?\n[[rxn:C[C@H]([O-])c1ccccc1 + CI>DMSO>\"?\"]]",
+    "choices": [
+      {"h": "[[mol:C[C@H](OC)c1ccccc1]]", "ok": true, "why": "The new bond is from oxygen to the {{CH3}} of iodomethane. None of the four bonds to the stereocentre is made or broken, so its arrangement is unchanged: still (S)."},
+      {"h": "[[mol:C[C@@H](OC)c1ccccc1]]", "ok": false, "why": "This applies inversion to the wrong carbon. {{SN2}} inverts the carbon that is attacked, which is the {{CH3}} of iodomethane."},
+      {"h": "An equal mixture of [[mol:C[C@H](OC)c1ccccc1]] and [[mol:C[C@@H](OC)c1ccccc1]]", "ok": false, "why": "A racemic mixture needs a planar carbocation at the stereocentre. Nothing leaves from that carbon here."},
+      {"h": "[[mol:C=Cc1ccccc1]]", "ok": false, "why": "Elimination removes H and a leaving group from the halide. Iodomethane has no beta hydrogen, and the {{O-}} on the alkoxide is not a leaving group."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the nucleophile and the electrophile", "h": "The alkoxide oxygen attacks; the methyl carbon of {{CH3I}} is attacked."},
+        {"t": "Ask which bonds change", "h": "O-{{CH3}} is made, C-I is broken. The C-O bond at the stereocentre is already there and stays."},
+        {"t": "Apply the stereochemistry rule to the right atom", "h": "Inversion happens at the methyl carbon, where it cannot be seen. The stereocentre keeps its four groups in the same arrangement."}
+      ],
+      "answer": "The (S) ether: the configuration is retained.",
+      "rule": "A stereocentre on the alkoxide is untouched. Inversion belongs to the carbon that loses the leaving group."
+    }
+  },
+  {
+    "id": "williamson-why-009", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "Which pair gives ethyl phenyl ether?\n[[mol:CCOc1ccccc1]]",
+    "choices": [
+      {"h": "[[mol:[O-]c1ccccc1]] and [[mol:CCBr]]", "ok": true, "why": "The halide is primary and phenoxide is a weak base (phenol {{pKa}} 10), so it substitutes: {{SN2}} at the {{CH2}}."},
+      {"h": "[[mol:CC[O-]]] and [[mol:Brc1ccccc1]]", "ok": false, "why": "The bromine is on an {{sp2}} ring carbon: no {{SN2}} and no {{SN1}}. Nothing happens."},
+      {"h": "[[mol:CC[O-]]] and [[mol:BrC1CCCCC1]]", "ok": false, "why": "That ring is cyclohexane, not benzene. It is a secondary halide, and ethoxide would mostly eliminate it to cyclohexene."},
+      {"h": "[[mol:Oc1ccccc1]] and [[mol:CCO]]", "ok": false, "why": "Two neutral O-H compounds: no leaving group and no anionic nucleophile."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "Phenoxide with a bromoethane, or ethoxide with bromobenzene."},
+        {"t": "Classify the halide carbons", "h": "Bromoethane: primary, {{sp3}}. Bromobenzene: {{sp2}}, which never substitutes."},
+        {"t": "Read the ring carefully", "h": "A hexagon with alternating double bonds is benzene. A plain hexagon is cyclohexane, a different compound with a secondary carbon."}
+      ],
+      "answer": "Phenoxide with bromoethane",
+      "rule": "Aryl ethers: the ring is the nucleophile, never the electrophile."
+    }
+  },
+  {
+    "id": "williamson-why-010", "type": "williamson-why", "role": "practice", "kind": "written", "diff": 3, "src": "site", "pts": 80, "time": 12,
+    "stem": "A student plans to make tert-butyl isopropyl ether by a Williamson synthesis. Show that both possible pairs fail. For each pair, name the mechanism that takes over, describe its arrows and draw the products.\n[[mol:CC(C)OC(C)(C)C]]",
+    "model": "<p>The two pairs are isopropoxide with tert-butyl bromide, and tert-butoxide with 2-bromopropane.</p><p><b>Pair A.</b> The halide is tertiary: no {{SN2}}. Isopropoxide is a strong base: {{E2}}. The oxygen lone pair takes a hydrogen from a {{CH3}}, the C-H electrons form the C=C, the C-Br electrons go to bromine.</p>\n[[rxn:CC(C)[O-] + CC(C)(C)Br>>CC(C)=C + CC(C)O + [Br-]]]\n<p><b>Pair B.</b> The halide is secondary, and tert-butoxide is a strong base that is also bulky, so it is a poor nucleophile: {{E2}} again, with the same three arrows.</p>\n[[rxn:CC(C)(C)[O-] + CC(C)Br>>CC=C + CC(C)(C)O + [Br-]]]\n<p><b>Conclusion.</b> A Williamson synthesis needs a methyl or primary halide on one side. This ether has a secondary carbon on one side of the oxygen and a tertiary carbon on the other, so neither pair works.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Writes both alkoxide and halide pairs correctly"},
+      {"pts": 10, "h": "Pair A: tertiary halide cannot undergo SN2"},
+      {"pts": 15, "h": "Pair A: E2 named, three arrows correct"},
+      {"pts": 10, "h": "Pair A products: 2-methylpropene, isopropanol, bromide"},
+      {"pts": 15, "h": "Pair B: secondary halide with a strong, bulky base gives E2; three arrows correct"},
+      {"pts": 10, "h": "Pair B products: propene, tert-butanol, bromide"},
+      {"pts": 10, "h": "Conclusion: neither side offers a methyl or primary halide"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Cut the ether both ways", "h": "One side of the oxygen is isopropyl (secondary), the other is tert-butyl (tertiary). Whichever side becomes the halide, it is hindered."},
+        {"t": "Pair A: tertiary halide", "h": "{{SN2}} rate 0. Any alkoxide is a strong base, so {{E2}} gives 2-methylpropene. The base leaves as isopropanol."},
+        {"t": "Pair B: secondary halide, bulky base", "h": "A secondary halide with an ordinary alkoxide already gives mostly {{E2}} (the exam's 2-bromopropane with ethoxide). A bulky alkoxide is an even poorer nucleophile, so the product is propene and tert-butanol."},
+        {"t": "Draw the conclusion", "h": "The trap is assuming that one of the two routes must work. Check both before answering."}
+      ],
+      "answer": "Both pairs give E2: pair A gives 2-methylpropene and isopropanol, pair B gives propene and tert-butanol. No ether either way.",
+      "rule": "No methyl or primary carbon on either side of the oxygen: no Williamson route."
+    }
+  },
+  {
+    "id": "williamson-why-011", "type": "williamson-why", "role": "practice", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "Potassium tert-butoxide is to be turned into an ether. Which halide gives the best yield of ether?\n[[mol:CC(C)(C)[O-]]]",
+    "choices": [
+      {"h": "[[mol:CI]]", "ok": true, "why": "A methyl halide has no beta hydrogen and an open carbon. Even a bulky, strongly basic alkoxide can only substitute: this is the exam's good route."},
+      {"h": "[[mol:CC(C)CBr]]", "ok": false, "why": "Primary, but branched on the next carbon ({{SN2}} rate 0.003) and it has a beta hydrogen. A bulky strong base with a primary halide gives {{E2}}: 2-methylpropene."},
+      {"h": "[[mol:CC(C)Br]]", "ok": false, "why": "A secondary halide with a bulky strong base gives {{E2}}: propene and tert-butanol."},
+      {"h": "[[mol:Brc1ccccc1]]", "ok": false, "why": "The bromine is on an {{sp2}} carbon, which cannot undergo {{SN2}}: no ether."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Size up the alkoxide", "h": "tert-Butoxide is a strong base (tert-butanol {{pKa}} 17.0) and a poor nucleophile because of its bulk. It will eliminate whenever it can."},
+        {"t": "Ask which halide cannot be eliminated", "h": "Only iodomethane has no beta hydrogen. (Bromobenzene cannot be attacked at all.)"},
+        {"t": "Do not stop at \"primary\"", "h": "The flowchart sends a primary halide with a bulky strong base to {{E2}}, and branching next to the carbon makes {{SN2}} slower still."}
+      ],
+      "answer": "Iodomethane",
+      "rule": "A bulky alkoxide needs a methyl halide."
+    }
+  }
+]

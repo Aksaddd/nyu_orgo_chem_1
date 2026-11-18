@@ -1,0 +1,613 @@
+[
+ {
+  "id": "ts-drawing-001",
+  "type": "ts-drawing",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Sketch the transition state of this {{SN2}} reaction. Show partial bonds, partial charges and the geometry at carbon.\n[[rxn:[SH-] + CCBr>>CCS + [Br-]]]",
+  "pts": 20,
+  "time": 5,
+  "model": "<p>[HS<sup>δ-</sup>···C···Br<sup>δ-</sup>]‡</p><p>The drawing: the carbon in the middle, with a dotted line to S on one side and a dotted line to Br on the exact opposite side (180°). The {{CH3}} group is drawn straight up from the carbon, one H on a wedge and one H on a dash, so that these three groups are in one plane. A δ- on S and a δ- on Br. Square brackets around everything, with ‡ outside.</p>\n[[energy:R=0,TS=18,P=-10|TS=transition state]]",
+  "rubric": [
+   {
+    "pts": 5,
+    "h": "Dotted (partial) bonds S···C and C···Br"
+   },
+   {
+    "pts": 5,
+    "h": "S and Br on opposite sides of carbon, in a line"
+   },
+   {
+    "pts": 4,
+    "h": "The other three groups in one plane (one up, one wedge, one dash)"
+   },
+   {
+    "pts": 4,
+    "h": "δ- on both S and Br"
+   },
+   {
+    "pts": 2,
+    "h": "Brackets and double dagger"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Which bonds change",
+     "h": "The S-C bond forms and the C-Br bond breaks, both in the same step.",
+     "ask": {
+      "q": "How many dotted bonds will the drawing have?",
+      "a": "Two: S···C and C···Br."
+     }
+    },
+    {
+     "t": "Geometry",
+     "h": "Sulfur attacks from the back, so S, C and Br are on one line. The other three groups on that carbon ({{CH3}}, H, H) lie in a plane at right angles to the line.",
+     "ask": {
+      "q": "What is the S-C-Br angle?",
+      "a": "180°."
+     }
+    },
+    {
+     "t": "Charges",
+     "h": "The starting materials carry one negative charge, on sulfur. In the transition state it is shared: δ- on S and δ- on Br.",
+     "ask": {
+      "q": "What must the partial charges add up to?",
+      "a": "-1, the total charge of the starting materials."
+     }
+    },
+    {
+     "t": "Finish the drawing",
+     "h": "Square brackets and a double dagger. The carbon has five groups around it, which is why crowding matters."
+    },
+    {
+     "t": "Place it on the diagram",
+     "h": "It is the single peak of the one-step energy diagram.\n[[energy:R=0,TS=18,P=-10|TS=transition state]]"
+    }
+   ],
+   "answer": "[HS<sup>δ-</sup>···C···Br<sup>δ-</sup>]‡ with S, C and Br in a line and CH3, H, H in a plane.",
+   "rule": "SN2 transition state: two dotted bonds 180° apart, three groups in a plane, charge shared between nucleophile and leaving group."
+  }
+ },
+ {
+  "id": "ts-drawing-002",
+  "type": "ts-drawing",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Sketch the transition state for the {{E2}} reaction of 2-bromopropane with ethoxide. Show every partial bond and the partial charges.\n[[rxn:CC(C)Br + CC[O-]>>CC=C + CCO + [Br-]]]",
+  "pts": 20,
+  "time": 6,
+  "model": "<p>[{{CH3CH2O}}<sup>δ-</sup>···H···{{CH2}}···{{CH(CH3)}}···Br<sup>δ-</sup>]‡</p><p>The drawing: the two carbons joined by one solid line and one dotted line (the π bond forming). A dotted line from the end carbon to H and a dotted line from that H to the oxygen of ethoxide. A dotted line from the middle carbon to Br. The H is drawn pointing up and the Br pointing down, on opposite sides (anti-periplanar). δ- on O and δ- on Br. Brackets and ‡.</p>",
+  "rubric": [
+   {
+    "pts": 5,
+    "h": "Partial bonds O···H and H···C"
+   },
+   {
+    "pts": 4,
+    "h": "Partial double bond between the two carbons"
+   },
+   {
+    "pts": 4,
+    "h": "Partial bond C···Br"
+   },
+   {
+    "pts": 3,
+    "h": "δ- on O and δ- on Br"
+   },
+   {
+    "pts": 3,
+    "h": "H and Br on opposite sides (anti-periplanar)"
+   },
+   {
+    "pts": 1,
+    "h": "Brackets and double dagger"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Write the three arrows",
+     "h": "Ethoxide oxygen to a β hydrogen. The C-H electrons to the space between the two carbons. The C-Br electrons to bromine.",
+     "ask": {
+      "q": "How many bonds change in this one step?",
+      "a": "Four: O-H forms, C-H breaks, the π bond forms, C-Br breaks."
+     }
+    },
+    {
+     "t": "Draw each changing bond dotted",
+     "h": "O···H, H···C, a dotted second line between the two carbons, and C···Br. The C-C σ bond stays solid."
+    },
+    {
+     "t": "Charges",
+     "h": "One negative charge in total, shared by the atoms at the two ends: δ- on O and δ- on Br.",
+     "ask": {
+      "q": "Which atoms carry the partial charges?",
+      "a": "The base's oxygen and the leaving bromine."
+     }
+    },
+    {
+     "t": "Geometry",
+     "h": "The H being removed and the Br are on opposite sides of the C-C bond: anti-periplanar, which gives the best orbital overlap."
+    },
+    {
+     "t": "Finish",
+     "h": "Brackets and a double dagger. Both the base and the substrate are inside the brackets, which matches rate = k[RBr][base]."
+    }
+   ],
+   "answer": "[CH3CH2O<sup>δ-</sup>···H···CH2···CH(CH3)···Br<sup>δ-</sup>]‡ with a partial double bond between the carbons and H anti to Br.",
+   "rule": "E2 transition state: base, H, both carbons and the leaving group, four partial bonds, H and LG anti."
+  }
+ },
+ {
+  "id": "ts-drawing-003",
+  "type": "ts-drawing",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "The first step of the {{SN1}} reaction of tert-butyl bromide is ionization, and it is strongly endothermic. According to Hammond's postulate, which species does its transition state most resemble?\n[[energy:R=0,TS1=22,I=17,TS2=19,P=-6|I=carbocation]]",
+  "choices": [
+   {
+    "h": "The tert-butyl carbocation and bromide ion",
+    "ok": true,
+    "why": "The step is endothermic, so the transition state is late and close in energy and structure to the carbocation."
+   },
+   {
+    "h": "tert-Butyl bromide",
+    "ok": false,
+    "why": "That would be an early transition state, which belongs to an exothermic step. This step is uphill."
+   },
+   {
+    "h": "tert-Butyl alcohol, the final product",
+    "ok": false,
+    "why": "Hammond's postulate compares a transition state with the two ends of its own step. The alcohol is formed in later steps."
+   },
+   {
+    "h": "Exactly halfway between tert-butyl bromide and the carbocation",
+    "ok": false,
+    "why": "A halfway transition state fits a step with no energy change. Here the two ends differ greatly in energy."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the step",
+     "h": "Ionization goes from tert-butyl bromide up to the carbocation and bromide.",
+     "ask": {
+      "q": "Is this step uphill or downhill?",
+      "a": "Uphill: endothermic."
+     }
+    },
+    {
+     "t": "Apply Hammond's postulate",
+     "h": "The transition state resembles whichever neighbour is closer to it in energy. On the diagram the carbocation valley is just below the first peak, and the starting material is far below.",
+     "ask": {
+      "q": "Which neighbour is closer in energy to the first peak?",
+      "a": "The carbocation."
+     }
+    },
+    {
+     "t": "Describe the transition state",
+     "h": "It is late: the C-Br bond is almost broken, the carbon is nearly planar and carries most of a positive charge. [{{(CH3)3C}}<sup>δ+</sup>···Br<sup>δ-</sup>]‡."
+    },
+    {
+     "t": "Use it",
+     "h": "Anything that stabilizes the carbocation also stabilizes this transition state. That is why a tertiary substrate ionizes faster than a secondary one."
+    }
+   ],
+   "answer": "The carbocation (with bromide).",
+   "rule": "Endothermic step: late transition state, like the product of that step."
+  }
+ },
+ {
+  "id": "ts-drawing-004",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which description fits the transition state of the {{SN2}} reaction of {{HO-}} with {{CH3I}}?",
+  "choices": [
+   {
+    "h": "O and I on opposite sides of the carbon, each joined to it by a dotted bond, with δ- on both and the three H's in one plane",
+    "ok": true,
+    "why": "This is the lecture's [Nu···C···LG] picture."
+   },
+   {
+    "h": "O and I on the same side of the carbon, each joined by a dotted bond",
+    "ok": false,
+    "why": "Front-side attack. The nucleophile comes in opposite the leaving group."
+   },
+   {
+    "h": "A methyl cation, {{CH3+}}, with {{I-}} and {{HO-}} nearby",
+    "ok": false,
+    "why": "That describes an intermediate of an {{SN1}} reaction. {{SN2}} has no intermediate, and a methyl cation never forms."
+   },
+   {
+    "h": "Carbon with five full bonds: three to H, one to O and one to I",
+    "ok": false,
+    "why": "The bonds to O and I are partial, not full. Carbon cannot hold five full bonds."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Bonds",
+     "h": "O-C forming and C-I breaking at the same time: two dotted bonds."
+    },
+    {
+     "t": "Geometry",
+     "h": "Backside attack: O and I on opposite sides, the three H's in a plane between them."
+    },
+    {
+     "t": "Charges",
+     "h": "One negative charge shared: δ- on O and δ- on I."
+    }
+   ],
+   "answer": "[HO<sup>δ-</sup>···CH3···I<sup>δ-</sup>]‡ with O and I 180° apart.",
+   "rule": "SN2 transition state: Nu and LG opposite, both partly bonded."
+  }
+ },
+ {
+  "id": "ts-drawing-005",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "In the transition state of the {{E2}} reaction of tert-butyl bromide with hydroxide, which bonds are drawn as partial (dotted) bonds?\n[[rxn:CC(C)(C)Br + [OH-]>>CC(C)=C + O + [Br-]]]",
+  "choices": [
+   {
+    "h": "O···H, H···C, the second bond between the two carbons, and C···Br",
+    "ok": true,
+    "why": "All four bonds change in the single concerted step."
+   },
+   {
+    "h": "Only C···Br",
+    "ok": false,
+    "why": "That is the transition state of an ionization ({{E1}} or {{SN1}}). In {{E2}} the base and the hydrogen are involved too."
+   },
+   {
+    "h": "O···H and H···C only",
+    "ok": false,
+    "why": "This is only the proton transfer. The π bond is forming and the bromide is leaving in the same step."
+   },
+   {
+    "h": "O···C and C···Br",
+    "ok": false,
+    "why": "That is an {{SN2}} transition state, with the oxygen attacking carbon. In {{E2}} the base takes a hydrogen."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the arrows",
+     "h": "Three arrows: O lone pair to H, C-H bond to C=C, C-Br bond to Br."
+    },
+    {
+     "t": "List the bonds they touch",
+     "h": "O-H (forming), C-H (breaking), C=C π (forming), C-Br (breaking)."
+    },
+    {
+     "t": "Compare with lecture",
+     "h": "[HO···H···C···C···Br]: four dotted connections."
+    }
+   ],
+   "answer": "O···H, H···C, the second C···C bond and C···Br.",
+   "rule": "Every bond an arrow starts from or points to is partial in the transition state."
+  }
+ },
+ {
+  "id": "ts-drawing-006",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which is the transition state for the rate-determining step of the {{SN1}} reaction of tert-butyl bromide in water?",
+  "choices": [
+   {
+    "h": "[{{(CH3)3C}}<sup>δ+</sup>···Br<sup>δ-</sup>]‡",
+    "ok": true,
+    "why": "One stretched bond, positive charge growing on carbon and negative on bromine, no nucleophile."
+   },
+   {
+    "h": "[{{H2O}}<sup>δ+</sup>···{{C(CH3)3}}···Br<sup>δ-</sup>]‡",
+    "ok": false,
+    "why": "This has the nucleophile bonding as the bromide leaves, which is an {{SN2}} transition state. The rate law, rate = k[t-BuBr], shows water is not involved."
+   },
+   {
+    "h": "[{{(CH3)3C}}<sup>δ-</sup>···Br<sup>δ+</sup>]‡",
+    "ok": false,
+    "why": "The charges are reversed. Bromine is the more electronegative atom and takes the bonding electrons."
+   },
+   {
+    "h": "{{(CH3)3C+}} and {{Br-}}",
+    "ok": false,
+    "why": "These are the intermediate and the leaving group after the step, with full charges and no partial bond. A transition state has a partial bond."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name the step",
+     "h": "Ionization: the C-Br bond breaks by itself."
+    },
+    {
+     "t": "Charges",
+     "h": "The neutral molecule is becoming a cation and an anion: δ+ on carbon, δ- on bromine."
+    },
+    {
+     "t": "Who is in it",
+     "h": "Only the substrate. Water joins after this step, so it is not bonded to carbon here."
+    }
+   ],
+   "answer": "[(CH3)3C<sup>δ+</sup>···Br<sup>δ-</sup>]‡",
+   "rule": "SN1 slow step: only the C-LG bond is stretched."
+  }
+ },
+ {
+  "id": "ts-drawing-007",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "A one-step reaction has this energy diagram. According to Hammond's postulate, what does its transition state look like?\n[[energy:R=0,TS=5,P=-25]]",
+  "choices": [
+   {
+    "h": "Like the starting materials: the new bond has only just started to form",
+    "ok": true,
+    "why": "The peak is closest in energy to the starting materials, so it is closest to them in structure."
+   },
+   {
+    "h": "Like the products: the new bond is almost fully formed",
+    "ok": false,
+    "why": "That is a late transition state, which goes with an endothermic step. The postulate was applied backwards."
+   },
+   {
+    "h": "Exactly halfway between starting materials and products",
+    "ok": false,
+    "why": "Halfway fits a step whose two ends have the same energy."
+   },
+   {
+    "h": "Like an intermediate, with full bonds",
+    "ok": false,
+    "why": "There is no intermediate in a one-step reaction, and a transition state never has only full bonds."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the diagram",
+     "h": "The products are far below the starting materials: strongly exothermic. The barrier is small."
+    },
+    {
+     "t": "Find the nearer neighbour",
+     "h": "The peak is only 5 above the start and 30 above the end. It is close in energy to the starting materials."
+    },
+    {
+     "t": "Translate into structure",
+     "h": "An early transition state: the new bond has barely begun to form and the old bond has barely begun to break."
+    }
+   ],
+   "answer": "It resembles the starting materials (an early transition state).",
+   "rule": "Exothermic step: early, reactant-like transition state."
+  }
+ },
+ {
+  "id": "ts-drawing-008",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Sketch the transition state of reaction A from the lecture homework, and say what is special about it.\n[[rxn:[I-] + CI>>IC + [I-]]]",
+  "pts": 15,
+  "time": 4,
+  "model": "<p>[I<sup>δ-</sup>···{{CH3}}···I<sup>δ-</sup>]‡</p><p>The carbon is in the middle with a dotted bond to an iodine on each side, in a straight line. The three H's are in a plane: one up, one wedge, one dash. Each iodine carries δ-. Because the nucleophile and the leaving group are the same and the products are the same as the starting materials, the reaction is neither exothermic nor endothermic. By Hammond's postulate the transition state is neither early nor late: it is symmetric, with two equal partial bonds and the charge shared equally.</p>\n[[energy:R=0,TS=20,P=0]]",
+  "rubric": [
+   {
+    "pts": 4,
+    "h": "Two dotted C···I bonds on opposite sides of carbon"
+   },
+   {
+    "pts": 3,
+    "h": "Three H's in a plane and δ- on each iodine"
+   },
+   {
+    "pts": 4,
+    "h": "Says starting materials and products have the same energy"
+   },
+   {
+    "pts": 4,
+    "h": "Concludes the transition state is symmetric (halfway), with equal partial bonds"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Bonds",
+     "h": "One C-I bond forms while the other C-I bond breaks."
+    },
+    {
+     "t": "Geometry",
+     "h": "The two iodines are on opposite sides of the carbon, 180° apart, and the three hydrogens are in a plane."
+    },
+    {
+     "t": "Symmetry",
+     "h": "The group that enters is the same as the group that leaves, and the starting materials and products are identical, so the energy change is zero. The transition state is exactly halfway: the two C···I partial bonds are the same length and each iodine carries half of the negative charge."
+    }
+   ],
+   "answer": "[I<sup>δ-</sup>···CH3···I<sup>δ-</sup>]‡, perfectly symmetric.",
+   "rule": "Same group in and out: no energy change, symmetric transition state."
+  }
+ },
+ {
+  "id": "ts-drawing-009",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Triethylamine reacts with iodoethane by {{SN2}}. Which partial charges belong on the transition state?\n[[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC.[I-]]]",
+  "choices": [
+   {
+    "h": "δ+ on N and δ- on I",
+    "ok": true,
+    "why": "The lecture's transition state for this reaction. Nitrogen is losing a share of its lone pair and iodine is gaining the bonding pair."
+   },
+   {
+    "h": "δ- on N and δ- on I",
+    "ok": false,
+    "why": "This is the pattern for an anionic nucleophile. Triethylamine is neutral, and two δ- would not add up to zero."
+   },
+   {
+    "h": "δ- on N and δ+ on I",
+    "ok": false,
+    "why": "Reversed. The nucleophile gives electrons away and the leaving group takes them."
+   },
+   {
+    "h": "No charges, because both starting materials are neutral",
+    "ok": false,
+    "why": "The products are ions, so charge must be developing in the transition state."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Charges at the start",
+     "h": "Both molecules are neutral: total charge zero."
+    },
+    {
+     "t": "Follow the electrons",
+     "h": "Nitrogen gives its lone pair to carbon and becomes positive. Iodine takes the C-I electrons and becomes negative."
+    },
+    {
+     "t": "Write the partial charges",
+     "h": "δ+ on N, δ- on I. They add up to zero, as they must."
+    }
+   ],
+   "answer": "δ+ on N and δ- on I.",
+   "rule": "Partial charges in the transition state add up to the charge of the starting materials."
+  }
+ },
+ {
+  "id": "ts-drawing-010",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site",
+  "stem": "Reactions B and C from the lecture homework both make a C-O bond to the carbon of {{CH3I}}. Sketch the two transition states, compare their geometry, and say which reaction is slower and why.<br>B: {{HO-}} with {{CH3I}}. C: {{(CH3)3CO-}} with {{CH3I}}.",
+  "pts": 20,
+  "time": 7,
+  "model": "<p>B: [HO<sup>δ-</sup>···{{CH3}}···I<sup>δ-</sup>]‡ &nbsp; C: [{{(CH3)3CO}}<sup>δ-</sup>···{{CH3}}···I<sup>δ-</sup>]‡</p><p>In each drawing the oxygen and the iodine are on opposite sides of the carbon (180°), joined to it by dotted bonds, the three H's are in one plane, and O and I each carry δ-. Both reactions are exothermic, so by Hammond's postulate both transition states are early (reactant-like).</p><p>The difference is the size of the nucleophile. The carbon has five groups around it in the transition state, and the three methyl groups of tert-butoxide crowd the H's on that carbon. The transition state of C is higher in energy, {{Ea}} is larger, and <b>C is slower</b>.</p>",
+  "rubric": [
+   {
+    "pts": 6,
+    "h": "Both transition states drawn with O and I opposite, dotted bonds, δ- on O and I"
+   },
+   {
+    "pts": 3,
+    "h": "Three H's in a plane, carbon with five neighbours"
+   },
+   {
+    "pts": 6,
+    "h": "tert-Butoxide is bulky and crowds the transition state, raising its energy"
+   },
+   {
+    "pts": 3,
+    "h": "C is the slower reaction"
+   },
+   {
+    "pts": 2,
+    "h": "Uses Hammond's postulate: exothermic, so early transition states"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the common picture",
+     "h": "Both are {{SN2}}: [RO<sup>δ-</sup>···{{CH3}}···I<sup>δ-</sup>]‡ with O and I 180° apart and the three H's in a plane."
+    },
+    {
+     "t": "What differs",
+     "h": "The group on oxygen. In B it is H. In C it is a tert-butyl group with three methyl groups."
+    },
+    {
+     "t": "Geometry and crowding",
+     "h": "In the transition state the carbon has five neighbours. The three H's are flattened into a plane right beside the incoming oxygen, and in C the bulky tert-butyl group bumps into them."
+    },
+    {
+     "t": "Energy and rate",
+     "h": "Crowding raises the energy of the transition state of C, so {{Ea}} is larger and C is slower. The lecture calls tert-butoxide a poor nucleophile: bulkier nucleophile, less nucleophilic."
+    },
+    {
+     "t": "Hammond",
+     "h": "Both reactions are exothermic (a strong base displaces iodide, a very weak base), so both transition states are early and resemble the starting materials."
+    }
+   ],
+   "answer": "Same shape, but the tert-butoxide transition state is more crowded and higher in energy, so C is slower.",
+   "rule": "Bulk on the nucleophile crowds the five-coordinate transition state."
+  }
+ },
+ {
+  "id": "ts-drawing-011",
+  "type": "ts-drawing",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "In the {{SN1}} reaction of tert-butyl bromide with water, the second step is attack of water on the carbocation. This step is strongly exothermic. What does its transition state resemble?\n[[energy:R=0,TS1=22,I=17,TS2=19,P=-6|I=carbocation]]",
+  "choices": [
+   {
+    "h": "The carbocation with a water molecule nearby, the C-O bond only just beginning to form",
+    "ok": true,
+    "why": "The step is exothermic, so its transition state is early and looks like the start of that step, which is the carbocation."
+   },
+   {
+    "h": "The protonated alcohol, with the C-O bond almost fully formed",
+    "ok": false,
+    "why": "A product-like transition state belongs to an endothermic step. This step runs steeply downhill."
+   },
+   {
+    "h": "tert-Butyl bromide",
+    "ok": false,
+    "why": "The bromide left in the first step. The second step starts from the carbocation."
+   },
+   {
+    "h": "The product, because the second step is the one that leads to the product",
+    "ok": false,
+    "why": "Leading to the product does not make it product-like. What matters is which end of the step is closer in energy."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Pick out the step",
+     "h": "From the carbocation valley (17) over the second peak (19) down to the product."
+    },
+    {
+     "t": "Exothermic or endothermic",
+     "h": "Strongly exothermic: the step ends far below where it starts."
+    },
+    {
+     "t": "Apply Hammond's postulate",
+     "h": "The second peak is only 2 above the carbocation and far above the product, so it resembles the carbocation and water: the C-O bond has barely started to form."
+    },
+    {
+     "t": "Notice the pattern",
+     "h": "Both transition states of the {{SN1}} reaction resemble the carbocation, because the carbocation is the high-energy species next to each of them."
+    }
+   ],
+   "answer": "The carbocation and water (an early transition state).",
+   "rule": "Each transition state resembles its nearest neighbour in energy. Around a carbocation, that is the carbocation."
+  }
+ }
+]

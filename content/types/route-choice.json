@@ -1,0 +1,38 @@
+{
+  "id": "route-choice",
+  "title": "Pick the efficient route and explain",
+  "exam": "Q6A",
+  "points": 50,
+  "asks": "Two routes to the same product are drawn. Circle the one that gives a clean reaction and explain the choice.",
+  "know": [
+    {"h": "<b>A clean route is one in which the reagents can do only one thing.</b> For each route ask: what else could this nucleophile do to this substrate? A route with a competing reaction gives a mixture.", "from": "FA24 Exam 2, Q6A"},
+    {"h": "<b>Methyl halides can only do {{SN2}}.</b> The carbon is unhindered, there is no beta hydrogen (no {{E2}}), and a methyl cation never forms (no {{SN1}} or {{E1}}).", "from": "flowchart"},
+    {"h": "<b>Primary halides do {{SN2}}</b> with good nucleophiles, even strong bases that are not bulky. A bulky strong base such as tert-butoxide gives {{E2}}. Branching on the next carbon slows {{SN2}} and favours {{E2}}: isobutyl 0.003 against ethyl 0.033.", "from": "flowchart; Lecture 11/10, Figure 7.3"},
+    {"h": "<b>Secondary halides are the crossroads.</b> A strong base ({{HO-}}, {{RO-}}) gives mostly {{E2}}. A weak base that is a fair or good nucleophile (acetate, {{HS-}}, {{N3-}}, {{I-}}) gives {{SN2}}. A poor, neutral nucleophile in a polar protic solvent gives {{SN1}} and {{E1}}.", "from": "flowchart; FA24 Exam 2, Q7A"},
+    {"h": "<b>Tertiary halides never do {{SN2}}.</b> With a strong base they give {{E2}}; with water or an alcohol alone they ionize and give {{SN1}} and {{E1}} products together.", "from": "flowchart; Lecture 11/10, p. 4; Lecture 11/12, p. 1"},
+    {"h": "<b>Base strength is read from the {{pKa}} of the conjugate acid.</b> Acetic acid 4, {{H2S}} 10 (lecture value), phenol 10, water 15.7, alcohols about 16. Acetate, {{HS-}} and phenoxide are weak bases; hydroxide and alkoxides are strong bases.", "from": "pKa table; Lecture 10/29"},
+    {"h": "<b>Solvent.</b> Polar aprotic solvents (DMSO, DMF, acetone) favour {{SN2}}: they leave the anion unsolvated and very nucleophilic. Polar protic solvents (water, alcohols) solvate anions and favour {{SN1}} and {{E1}}.", "from": "Lecture 11/10, p. 3 and 5; FA24 Exam 2, Q6A"},
+    {"h": "<b>Leaving groups.</b> {{I-}}, {{Br-}}, {{Cl-}} and tosylate are good. {{HO-}} is a strong base and a poor leaving group, and {{F-}} is poor too: an alcohol does not react with a nucleophile until it is made into a tosylate.", "from": "Lecture 11/05, p. 2"},
+    {"h": "<b>An anion beats its neutral conjugate acid as a nucleophile</b>: {{HO-}} 16,000 against {{H2O}} 1; methoxide against methanol.", "from": "Table 7.5; FA24 Exam 2, Q2A"},
+    {"h": "<b>Vinyl and aryl halides do not substitute</b> ({{SN2}} rate 0, no {{SN1}}), however good the leaving group.", "from": "Lecture 11/10, Figure 7.3; FA24 Exam 2, Q2A"},
+    {"h": "<b>Stereochemistry.</b> {{SN2}} inverts the carbon that is attacked. {{SN1}} gives a racemic mixture through a planar carbocation. A stereocentre where no bond is made or broken stays as it was.", "from": "Lecture 11/03, p. 2; Lecture 11/10, p. 3"},
+    {"h": "<b>If the target is an alkene, the logic turns round.</b> A strong base gives clean {{E2}}; water alone gives mostly the {{SN1}} alcohol. On a cyclohexane the hydrogen and the leaving group must both be axial (trans-diaxial).", "from": "Lecture 11/12, p. 1 and 3; FA24 Exam 2, Q3D"},
+    {"h": "<b>Skill:</b> write the explanation in three parts: why the chosen route can do only the wanted reaction, what the other route does instead (name the mechanism), and what by-product it gives.", "from": "FA24 Exam 2, Q6A"}
+  ],
+  "method": [
+    "Find the bond that is made in the product, and in each route say which piece is the nucleophile and which carries the leaving group.",
+    "Classify the carbon that carries the leaving group in each route: methyl, primary, secondary, tertiary or {{sp2}}.",
+    "Judge each nucleophile as a base from the {{pKa}} of its conjugate acid, and note whether it is bulky.",
+    "Read the solvent (polar aprotic or polar protic) and the temperature.",
+    "Run each route through the flowchart and list everything it can do. Circle the route with only one outcome, and check that it is the outcome wanted (ether, alkene, the right enantiomer).",
+    "Write the explanation: the chosen route's single mechanism, then the competing mechanism and by-product of the other route."
+  ],
+  "pitfalls": [
+    {"h": "Forgetting that an alkoxide is a strong base. With a secondary or tertiary halide it eliminates."},
+    {"h": "Choosing by the leaving group or the solvent before classifying the carbon. Substrate first, then base strength, then solvent."},
+    {"h": "Saying a secondary halide cannot do {{SN2}}. With a weak base that is a good nucleophile, in a polar aprotic solvent, it does, with inversion."},
+    {"h": "Writing only \"less hindered\" as the explanation. Name the competing reaction ({{E2}}) and its product (the alkene)."},
+    {"h": "Not noticing that the target is an alkene or a single enantiomer, so that the usual choice is reversed."}
+  ],
+  "links": {"read": ["choose", "sn2-2", "sn1-e1", "e2"]}
+}

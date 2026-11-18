@@ -1,0 +1,39 @@
+{
+  "id": "products-from-formula",
+  "title": "Draw the products from their molecular formulas",
+  "exam": "Q6B",
+  "points": 50,
+  "asks": "A reaction gives two products whose molecular formulas are given. Draw each.",
+  "know": [
+    {"h": "<b>Each {{SN2}} reaction makes one bond from the nucleophile to carbon and breaks one bond from carbon to the leaving group.</b> A dihalide can do this twice, once at each end. A dinucleophile can do it twice, once with each charged atom.", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>Write each piece as a formula.</b> The piece from a dihalide is its carbon chain (1,2-diiodoethane gives {{C2H4}} plus two iodines). The piece from the nucleophile is everything except its sodium ions (ethane-1,2-dithiolate is {{C2H4S2}}).", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>Count the halogens in the product formula.</b> Each halogen still present is one end of a dihalide that has not reacted. No halogen means every end has reacted.", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>Count the nucleophile atoms</b> (S, O or N) in the formula to find how many nucleophile pieces the product contains, and count carbons to find how many dihalide pieces.", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>One dihalide plus one dinucleophile with no halogen left is a ring.</b> The second {{SN2}} is intramolecular. On the exam: {{C4H8S2}} is 1,4-dithiane.", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>Two halogens left and one dinucleophile is an open chain</b> with the dinucleophile in the middle and a dihalide piece on each end. On the exam: {{C6H12S2I2}} is {{ICH2CH2SCH2CH2SCH2CH2I}}.", "from": "FA24 Exam 2, Q6B"},
+    {"h": "<b>Hydrogens do not change in an {{SN2}} reaction with an anion.</b> Every {{CH2}} stays a {{CH2}}. If a drawing has lost or gained hydrogens, or has a C=C, it is wrong for this kind of question.", "from": "standard"},
+    {"h": "<b>Ring size</b> is the number of atoms in the nucleophile piece from one charged atom to the other, plus the carbons of the dihalide from one halogen to the other. S-C-C-S (4) plus C-C (2) is a six-membered ring. Five- and six-membered rings close easily.", "from": "Lecture 10/27, Table 5.1; FA24 Exam 2, Q6B"},
+    {"h": "<b>Thiolates are excellent nucleophiles and weak bases</b> ({{HS-}} 126,000; a thiol has {{pKa}} about 10.5), and primary iodides and bromides are the best {{SN2}} substrates, so these reactions are clean substitutions with no elimination.", "from": "Table 7.5; pKa table"},
+    {"h": "<b>Know which atom attacks.</b> Cyanide and acetylide attack with carbon, so each substitution adds carbons to the chain. Azide adds three nitrogens. Sulfide ({{S^2-}}) has two charges on one atom and can bond to two carbons.", "from": "Table 7.5; standard"},
+    {"h": "<b>Two equivalents of a nucleophile with one charge</b> replace both halogens and give an open chain. One equivalent replaces one halogen. No ring can form, because each nucleophile is used up after one bond.", "from": "standard"},
+    {"h": "<b>The ratio of the reagents decides the open-chain product.</b> Excess dihalide leaves a halogen on each end. Excess dinucleophile leaves a nucleophile atom on each end, which an acid workup turns into S-H or O-H.", "from": "standard"},
+    {"h": "<b>Skill:</b> after drawing, count C, H and every other atom of your structure and compare with the formula given. Only C-nucleophile bonds are made: never S-S, O-O or a bond between two carbons of different pieces (unless the nucleophile is a carbon anion).", "from": "FA24 Exam 2, Q6B"}
+  ],
+  "method": [
+    "Write the formula of each piece: the carbon chain of the dihalide, and the nucleophile without its counter-ions.",
+    "For each product formula, count the halogens left and the nucleophile atoms, and work out how many of each piece it contains. Check that the carbons and hydrogens add up.",
+    "Remember what one {{SN2}} does: one C-X bond becomes one C-nucleophile bond, and nothing else changes.",
+    "If no halogen is left and there is one of each piece, join both ends: draw the ring and count its atoms.",
+    "If halogens are left, put the nucleophile piece in the middle and a dihalide piece on each end (or the reverse if nucleophile atoms are left over).",
+    "Count the atoms of each drawing against its formula before moving on."
+  ],
+  "pitfalls": [
+    {"h": "Stopping after one substitution and never asking what the second charged atom does. It attacks again: the same chain (a ring) or a second molecule (a chain)."},
+    {"h": "Drawing an S-S or O-O bond to make the formula fit. {{SN2}} at carbon makes only bonds from the nucleophile to carbon."},
+    {"h": "Changing the number of hydrogens: drawing a C=C, or adding H to a sulfur that has already bonded twice."},
+    {"h": "Drawing an isomeric ring with the right formula but the wrong connections, for example both sulfurs on one carbon when they came from a two-carbon dihalide."},
+    {"h": "Forgetting that cyanide and acetylide bring their own carbons into the product."},
+    {"h": "Drawing two separate small molecules for one formula. A molecular formula describes one molecule."}
+  ],
+  "links": {"read": ["sn2-1", "sn2-2"]}
+}

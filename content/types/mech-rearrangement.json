@@ -1,0 +1,41 @@
+{
+  "id": "mech-rearrangement",
+  "title": "Carbocation rearrangements and ring expansion",
+  "exam": "Q9",
+  "points": 100,
+  "asks": "A leaving group departs next to a strained ring or a more substituted carbon. Draw the mechanisms that give the rearranged products.",
+  "know": [
+    {"h": "<b>Carbocation stability.</b> Tertiary is more stable than secondary. Primary and methyl cations do not form. A cation is also stabilized by resonance: next to a C=C (allylic), next to a benzene ring (benzylic), or on a carbon bonded to an oxygen that has a lone pair.", "from": "Lecture 11/10, p. 2; flowchart"},
+    {"h": "<b>Carbocations can rearrange.</b> In a 1,2-shift, a group on the carbon next to the positive carbon moves over together with the two electrons of its bond. The positive charge then sits on the carbon the group left.", "from": "flowchart"},
+    {"h": "<b>Hydride shift.</b> If the neighbouring carbon has a hydrogen and would make a more stable cation, the hydrogen moves with its bonding pair (as H:⁻, a hydride, never as {{H+}}). Secondary becomes tertiary.", "from": "standard"},
+    {"h": "<b>Methyl (alkyl) shift.</b> If the neighbouring carbon has no hydrogen, a methyl or other carbon group moves with its bonding pair in the same way. The carbon skeleton of the product is then different from the starting material's.", "from": "standard"},
+    {"h": "<b>The arrow.</b> A shift is one curved arrow. It starts in the middle of the bond that moves (C-H or C-C) and ends at the positive carbon. Then redraw the cation with the plus sign on the carbon that lost the group.", "from": "standard"},
+    {"h": "<b>Ring expansion.</b> When the positive carbon is attached to a strained ring, a ring C-C bond of the neighbouring ring carbon is the group that shifts. The positive carbon becomes a ring member, the ring grows by one carbon, and the charge moves into the ring. This is the 11/10 homework and the idea of exam Question 9.", "from": "Lecture 11/10, p. 5; FA24 Exam 2, Q9"},
+    {"h": "<b>Why a four-membered ring expands.</b> Cyclobutane has angle strain (90° instead of 109.5°) and torsional strain. From the lecture table, a {{CH2}} in cyclobutane is at +1.7 kcal/mol, in cyclopentane at −3.7, and in a strain-free chain at −4.9. That makes about 26 kcal/mol of strain in cyclobutane against about 6 in cyclopentane.", "from": "Lecture 10/20, p. 2; Table 5.1"},
+    {"h": "<b>A shift must pay.</b> It happens only when the new cation is more stable or ring strain is relieved. A tertiary cation with only secondary positions around it stays where it is.", "from": "standard"},
+    {"h": "<b>After the shift, finish as usual.</b> {{SN1}}: the solvent's oxygen attacks the new positive carbon and a second solvent molecule removes the proton. {{E1}}: the solvent removes a hydrogen from a carbon next to the new positive carbon.", "from": "Lecture 11/10, p. 2 and 4"},
+    {"h": "<b>Expect a mixture.</b> The first cation can also react before it rearranges. The homework, (1-bromoethyl)cyclobutane in ethanol, has an {{SN1}} product and {{E1}} products without rearrangement and another set with rearrangement. Be able to draw all of them.", "from": "Lecture 11/10, p. 5"},
+    {"h": "<b>The exam's leaving group.</b> HONO turns an {{NH2}} group into {{N2+}} (the exam tells you this). {{N2}} then leaves with the C-N electrons, and a carbocation is left. From there the question is an ordinary rearrangement.", "from": "FA24 Exam 2, Q9"},
+    {"h": "<b>A positive carbon that carries OH becomes a ketone.</b> A lone pair on the oxygen makes a second bond to the positive carbon (C⁺-OH is the same ion as C=O⁺-H), and water removes the proton from oxygen: C=O.", "from": "FA24 Exam 2, Q9"},
+    {"h": "<b>Two bonds that can move give two products.</b> If the neighbouring carbon has two different ring bonds, each can migrate, and each gives its own product. If the two bonds are equivalent, there is one product.", "from": "FA24 Exam 2, Q9"},
+    {"h": "<b>Skill.</b> Number the carbons before you move anything, keep the numbers in the new drawing, and count the ring atoms and the hydrogens at the end.", "from": "standard"}
+  ],
+  "method": [
+    "Analyze the product first if it is given: count the ring atoms, find the carbon that carried the leaving group, and see what moved.",
+    "Remove the leaving group with its electrons and draw the first carbocation.",
+    "Look at every carbon next to the positive carbon. Would moving one of its hydrogens, a methyl group, or a ring bond give a more stable cation or open a strained ring?",
+    "Draw one arrow from the bond that moves to the positive carbon. Redraw the skeleton with numbers, and put the plus sign on the carbon the group left.",
+    "If two different groups could move, follow each path separately: each gives a product.",
+    "Finish each cation: solvent attacks and loses a proton ({{SN1}}), solvent removes a neighbouring hydrogen ({{E1}}), or, if the positive carbon carries OH, the lone pair comes in and the O-H proton leaves (a ketone).",
+    "Check the atom count of each product against the starting material."
+  ],
+  "pitfalls": [
+    {"h": "Starting the shift arrow at the hydrogen atom or at the plus sign. The arrow starts at the bond, because the group moves with its two electrons."},
+    {"h": "Forgetting to move the plus sign. After the shift the charge is on the carbon that lost the group, not on the carbon that gained it."},
+    {"h": "Moving a group from two carbons away. Shifts are 1,2: only from the carbon directly next to the positive carbon."},
+    {"h": "In a ring expansion, moving the bond that joins the positive carbon to the ring, or a C-H bond. The bond that moves is a ring bond of the neighbouring ring carbon."},
+    {"h": "Drawing only the rearranged product when the question asks for the products with and without rearrangement."},
+    {"h": "Rearranging a cation that is already the most stable one available."}
+  ],
+  "links": {"read": ["sn1-e1", "rings-1", "beyond"]}
+}

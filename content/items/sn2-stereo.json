@@ -181,7 +181,7 @@
     },
     {
      "t": "Invert",
-     "h": "The tosylate was on a wedge in the drawing, so the new C-O bond to acetate goes on a dash. The ethyl and methyl groups stay put.",
+     "h": "The new C-O bond to acetate goes on the face opposite the C-OTs bond: if the tosylate is drawn on a wedge, the acetate is drawn on a dash, and the other way round. The ethyl and methyl groups stay put.",
      "ask": {
       "q": "Is the oxygen now on the stereocentre the same oxygen as before?",
       "a": "No. It is an acetate oxygen. The old one left with the tosylate."
@@ -344,9 +344,9 @@
     "why": "Both faces would be attacked only if a planar carbocation formed ({{SN1}})."
    },
    {
-    "h": "[[ring:1d:CN,4u:CH3]]",
+    "h": "[[mol:CC1CCC=CC1]]",
     "ok": false,
-    "why": "Here both groups were flipped, which leaves the molecule trans. The methyl carbon is not attacked and cannot change."
+    "why": "This is elimination. Cyanide is a good nucleophile and a weak base, so it substitutes."
    }
   ],
   "solution": {
@@ -401,7 +401,7 @@
     },
     {
      "t": "Invert",
-     "h": "Iodine was on a wedge in the drawing, so the azide nitrogen goes on a dash at the same carbon."
+     "h": "The azide nitrogen bonds to the same carbon on the face opposite iodine: if iodine is drawn on a wedge, the azide goes on a dash, and the other way round."
     },
     {
      "t": "Label",

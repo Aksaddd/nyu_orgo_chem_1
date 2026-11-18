@@ -1,0 +1,38 @@
+{
+  "id": "mech-intramolecular",
+  "title": "Analyze the product first: intramolecular SN2 and epoxides",
+  "exam": "Q4B",
+  "points": 50,
+  "asks": "A reactant and an unexpected product are given. Work out which atoms ended up where, then draw the mechanism step by step.",
+  "know": [
+    {"h": "<b>Analyze the product before drawing any arrow.</b> Number the carbons of the reactant, find each one in the product, and list the bonds that are new and the bonds that are gone. The mechanism has to make exactly those changes.", "from": "FA24 Exam 2, Q4B"},
+    {"h": "<b>An epoxide is an electrophile because of ring strain.</b> Its angles are 60°, like cyclopropane (angle strain and torsional strain). Opening the ring releases the strain, so the ring oxygen can leave as an alkoxide, which an ordinary ether or alcohol oxygen cannot do.", "from": "Lecture 10/20, p. 1; Lecture 11/05, p. 2"},
+    {"h": "<b>A strong nucleophile opens an epoxide by {{SN2}} at the less hindered ring carbon</b>, from the side opposite the oxygen. Two arrows: nucleophile lone pair to carbon, the C-O ring bond onto oxygen. The oxygen stays on the other ring carbon as {{O-}}.", "from": "FA24 Exam 2, Q4B"},
+    {"h": "<b>An intramolecular {{SN2}}</b> has the nucleophile and the leaving group in the same molecule. The arrows are the same two as in any {{SN2}}, the attack is still from the back, and the carbon attacked is still inverted. The result is a ring.", "from": "FA24 Exam 2, Q4B; Lecture 11/05, p. 1"},
+    {"h": "<b>Halohydrin to epoxide.</b> An OH and a halogen on neighbouring carbons, plus a base: the base removes the O-H proton (alcohol {{pKa}} about 16, water 15.7), then the {{O-}} displaces the halide next door and a three-membered ring closes.", "from": "standard; pKa table"},
+    {"h": "<b>Backside attack needs the {{O-}} and the leaving group anti to each other.</b> On a cyclohexane that means both axial, one up and one down (trans-diaxial): the trans halohydrin closes, the cis one cannot. It is the same geometry as {{E2}}.", "from": "standard; Lecture 11/12, p. 3"},
+    {"h": "<b>Count the ring.</b> Ring size is the nucleophile atom plus every carbon from its own carbon to the carbon that carries the leaving group. Five- and six-membered rings are nearly strain free (cyclopentane and cyclohexane in the lecture table) and close easily.", "from": "Lecture 10/27, Table 5.1"},
+    {"h": "<b>Ring closure beats reaction with a second molecule</b> when it makes a three-, five- or six-membered ring, because the two reacting ends are tied together and meet all the time.", "from": "standard; FA24 Exam 2, Q4B and Q6B"},
+    {"h": "<b>Where the internal nucleophile comes from.</b> A base removes a proton (NaH or NaOH on O-H; NaOH on S-H, {{pKa}} about 10.5); or an epoxide is opened; or a first {{SN2}} leaves a charge behind (sulfide, a dithiolate). A neutral amine needs no base: it attacks first and loses its proton afterwards.", "from": "pKa table; Table 7.5; FA24 Exam 2, Q6B"},
+    {"h": "<b>Sodium hydride is a base here.</b> {{H-}} takes the O-H proton and leaves as {{H2}} gas.", "from": "FA24 Exam 2, Q2B"},
+    {"h": "<b>The direct substitution trap.</b> In Q4B, methoxide attacking the C-Cl carbon directly would give an isomer with the same formula but with {{OCH3}} on the wrong carbon and the old epoxide untouched. Always check where the new group sits.", "from": "FA24 Exam 2, Q4B"},
+    {"h": "<b>Skills:</b> every arrow starts at an electron pair (a lone pair or a bond) and ends at an atom or between two atoms; draw each intermediate with its charge; the total charge is the same before and after each step; show the leaving group as its ion at the end.", "from": "FA24 Exam 2, Q4B rubric"}
+  ],
+  "method": [
+    "Number the carbons in the reactant and find each one in the product.",
+    "List what changed: the new bonds, the broken bonds, where the outside nucleophile ended up, and which leaving group is gone.",
+    "Find the first step: which electron-rich atom must attack which carbon to put the new group where the product has it? If there is an O-H or S-H and a base, the first step is a proton transfer.",
+    "Draw that step and the intermediate, with its negative (or positive) charge on the right atom.",
+    "Find the internal nucleophile and the leaving group, count the atoms of the ring that will form, and draw the ring-closing {{SN2}} from the back.",
+    "Finish any proton transfer, then compare with the given product atom by atom and write the leaving group as its ion."
+  ],
+  "pitfalls": [
+    {"h": "Letting the outside nucleophile displace the halide directly because that is the familiar reaction. The product shows that it did not."},
+    {"h": "Skipping the intermediate, or drawing it without its charge. The alkoxide is worth points and it is the nucleophile of the next step."},
+    {"h": "Miscounting the ring: count the nucleophile atom and every carbon up to and including the one that carries the leaving group."},
+    {"h": "Starting an arrow at a hydrogen or at a positive charge instead of at a lone pair or a bond."},
+    {"h": "Opening the epoxide at the more hindered carbon with a strong nucleophile, when nothing in the product requires it."},
+    {"h": "Forgetting that the ring-closing step is a backside attack: the carbon attacked is inverted, and on a ring the two groups must be trans."}
+  ],
+  "links": {"read": ["sn2-1", "sn2-2", "rings-1", "choose"]}
+}

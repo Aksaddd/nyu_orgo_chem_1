@@ -19,8 +19,9 @@
 .chair-palette { gap: 6px; }
 .chair-palette .chip, .chair-row .chip { cursor: pointer; }
 .chair-palette .chip[aria-pressed="true"], .chair-row .chip[aria-pressed="true"] { outline: 2px solid var(--accent, #0071e3); outline-offset: 1px; font-weight: 600; }
-.chair-lab .btn[aria-pressed="true"], .chair-ask .seg .btn[aria-pressed="true"] { outline: 2px solid var(--accent, #0071e3); outline-offset: 1px; font-weight: 600; }
-.chair-lab .btn[aria-pressed="true"]::before, .chair-ask .seg .btn[aria-pressed="true"]::before, .chair-row .chip[aria-pressed="true"]::before { content: "\2713\00a0"; }
+.chair-lab .btn[aria-pressed="true"] { outline: 2px solid var(--accent, #0071e3); outline-offset: 1px; font-weight: 600; }
+/* a pressed toggle carries a tick as well as its colour */
+.chair-lab .btn[aria-pressed="true"]::before, .chair-ask .seg button[aria-pressed="true"]::before, .chair-row .chip[aria-pressed="true"]::before { content: "\2713\00a0"; }
 
 /* the pressable positions on the flat ring */
 .rp { cursor: pointer; outline: none; }

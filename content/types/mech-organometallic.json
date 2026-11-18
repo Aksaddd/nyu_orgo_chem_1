@@ -1,0 +1,39 @@
+{
+  "id": "mech-organometallic",
+  "title": "A mechanism from a reagent you know: Grignard and organolithium",
+  "exam": "Q1D",
+  "points": 55,
+  "asks": "A Grignard or organolithium reagent meets a new partner. Draw the mechanism step by step from what you know about the reagent.",
+  "know": [
+    {"h": "<b>Organolithium reagents, R-Li.</b> Made from R-Br (or R-Cl) and lithium metal, 2 equivalents, in pentane. The products are R-Li and LiBr.", "from": "Lecture 10/29, p. 5"},
+    {"h": "<b>Grignard reagents, R-MgX.</b> Made from R-X and magnesium metal in diethyl ether. The magnesium ends up between the carbon and the halogen.", "from": "Lecture 10/29, p. 5"},
+    {"h": "<b>Where the electrons are.</b> The C-Li and C-Mg bonds are polarized {{d-}} on carbon and {{d+}} on the metal. Think of both reagents as R:⁻ with {{Li+}} or ⁺MgX beside it. In the alkyl halide the carbon was {{d+}}: making the reagent turns the carbon from electron poor to electron rich.", "from": "Lecture 10/29, p. 5; 11/03, p. 1"},
+    {"h": "<b>R:⁻ is a very strong base.</b> Its conjugate acid is an alkane, {{pKa}} 50 to 60. {{H3C-}} is the strongest base on the lecture's list.", "from": "Lecture 10/29, p. 1, 2 and 4"},
+    {"h": "<b>The acids it will meet</b> (memorize): carboxylic acid 4, {{H2O}} 15.7, alcohol R-OH about 16, terminal alkyne C-H 25, amine N-H 38. All are far below 50, so every one of them gives its proton to R:⁻.", "from": "Lecture 10/29, p. 1"},
+    {"h": "<b>With water: R-H.</b> {{CH3Li}} + {{H2O}} gives {{CH4}} and {{Li+}} {{-OH}}. Two arrows: from the C-metal bond to an H of water, and from that H-O bond onto oxygen.", "from": "Lecture 11/03, p. 1"},
+    {"h": "<b>With {{D2O}}: R-D.</b> The same two arrows. The D ends up on the carbon that carried the metal, which is the carbon that carried the halogen.", "from": "Lecture 11/03, p. 1"},
+    {"h": "<b>With an alcohol or a terminal alkyne: R-H again.</b> An alcohol gives R-H and an alkoxide. A terminal alkyne gives R-H and an acetylide ion, because the hydrogen on an {{sp}} carbon has {{pKa}} 25. Hydrogens on {{sp3}} carbons are not touched.", "from": "Lecture 10/29, p. 1 and 2"},
+    {"h": "<b>With {{CO2}}: a new C-C bond.</b> {{CO2}} has no acidic hydrogen, so R:⁻ acts as a nucleophile. It attacks the <b>carbon</b> of O=C=O, which is electron poor because two oxygens pull on it, and the electrons of one C=O pi bond move onto that oxygen. The intermediate is a carboxylate, {{RCO2-}} ⁺MgX.", "from": "FA24 Exam 2, Q1D"},
+    {"h": "<b>Acid comes last.</b> \"1) {{CO2}}; 2) {{H3O+}}\" means two separate steps. In the second, the carboxylate takes a proton from {{H3O+}} and becomes R-COOH. If acid were present in the first step it would protonate R:⁻ to R-H and nothing else would happen.", "from": "FA24 Exam 2, Q1D"},
+    {"h": "<b>Base or nucleophile.</b> If the partner has an acidic hydrogen (O-H, N-H, or the H of a terminal alkyne), the reagent takes that hydrogen. If it has none, the reagent attacks the electron-poor atom.", "from": "Lecture 11/03, p. 1; FA24 Exam 2, Q1D"},
+    {"h": "<b>Why pentane and ether.</b> These solvents have no acidic hydrogen. Water or an alcohol would destroy the reagent as fast as it formed. For the same reason the halide used to make the reagent must not contain an O-H or N-H group.", "from": "Lecture 10/29, p. 5; 11/03, p. 1"},
+    {"h": "<b>Skill.</b> Start the first arrow at the C-metal bond (that is where the electrons are), never at the metal atom, and write the counter-ion with its charge next to each anion.", "from": "FA24 Exam 2, Q1D"}
+  ],
+  "method": [
+    "Rewrite the reagent as R:⁻ with {{Li+}} or ⁺MgX, and mark the carbon that is bonded to the metal.",
+    "Look at the partner. Does it have a hydrogen with a {{pKa}} far below 50 (O-H, O-D, N-H, alkyne C-H)? Then the mechanism is a proton transfer to carbon: two arrows.",
+    "If it has no acidic hydrogen, find its electron-poor atom (a carbon bonded to electronegative atoms). Attack that atom, and move a pi bond's electrons onto the electronegative atom so that no atom has too many bonds.",
+    "Draw the intermediate with its charges and its counter-ion.",
+    "If a second step with acid is written, protonate the anion now: lone pair to H, H-O bond onto the oxygen of water.",
+    "Check: every arrow starts at an electron pair (a bond or a lone pair), and the total charge is the same before and after each step."
+  ],
+  "pitfalls": [
+    {"h": "Attacking an oxygen of {{CO2}}. The oxygens are electron rich. The carbon is the electron-poor atom."},
+    {"h": "Starting the arrow at Mg or Li, or drawing it from the partner to the reagent. The electrons are in the C-metal bond."},
+    {"h": "Writing the acid in the same step as {{CO2}}. Acid destroys the reagent: R:⁻ + {{H+}} gives R-H."},
+    {"h": "Forgetting the workup and leaving the product as a carboxylate when the question shows the neutral acid."},
+    {"h": "Putting the D of {{D2O}} on a carbon other than the one that carried the metal."},
+    {"h": "Taking a {{CH3}} hydrogen of a terminal alkyne. The acidic hydrogen is the one on the triple-bond carbon."}
+  ],
+  "links": {"read": ["organometallics", "acids"]}
+}

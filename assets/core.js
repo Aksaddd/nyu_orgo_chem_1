@@ -131,7 +131,7 @@
     },
     // ids for a session. mode "review": due only · "learn": new ones of the given types, easiest first · "mixed": due, then the weakest types, never two of a type in a row
     pick({ types = null, n = 10, mode = "mixed", kinds = null, roles = ["practice", "exam"] } = {}) {
-      const all = L.all(), want = id => { const x = data.index[id]; return x && roles.includes(x[2]) && (!types || types.includes(x[0])) && (!kinds || kinds.includes(x[1])) };
+      const all = L.all(), side = new Set(data.blueprint.filter(t => t.group === "foundation").map(t => t.id)), want = id => { const x = data.index[id]; return x && roles.includes(x[2]) && (types ? types.includes(x[0]) : !side.has(x[0])) && (!kinds || kinds.includes(x[1])) };
       const pool = Object.keys(data.index).filter(want), t = now();
       const due = pool.filter(id => all[id] && all[id].n && all[id].due <= t).sort((a, b) => all[a].due - all[b].due);
       if (mode === "review") return spread(due.slice(0, n));
@@ -225,7 +225,7 @@
     const bar = el("nav", { id: "orgoBar", class: "obar", "aria-label": "CHEM 225" },
       el("a", { class: "obar-home", href: ORGO.base + "index.html" }, el("b", {}, C.name || "CHEM 225"), el("span", {}, C.title || "Organic Chemistry I")),
       el("div", { class: "obar-links" }, ORGO.portals.map(([label, folder]) => el("a", { href: ORGO.base + folder + "index.html", class: at(folder) ? "on" : "", "aria-current": at(folder) ? "page" : null }, label))),
-      el("button", { class: "icon-btn", "aria-label": "Appearance: light, dark or automatic", title: "Appearance", on: { click: () => { const order = ["auto", "light", "dark"], t = store.raw("theme") || "auto", n = order[(order.indexOf(t) + 1) % 3]; store.setRaw("theme", n); appearance(); ui.toast("Appearance: " + ({ auto: "automatic", light: "light", dark: "dark" })[n]) } } }, "◐"));
+      el("button", { class: "btn small ghost", "aria-label": "Appearance: light, dark or automatic", title: "Appearance", on: { click: () => { const order = ["auto", "light", "dark"], t = store.raw("theme") || "auto", n = order[(order.indexOf(t) + 1) % 3]; store.setRaw("theme", n); appearance(); ui.toast("Appearance: " + ({ auto: "automatic", light: "light", dark: "dark" })[n]) } } }, "Light / Dark"));
     document.body.insertBefore(bar, document.body.firstChild);
   };
   if (!ORGO.inEureka) { appearance(); if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", appearance) }

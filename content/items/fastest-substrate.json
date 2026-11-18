@@ -1,0 +1,867 @@
+[
+ {
+  "id": "fastest-substrate-001",
+  "type": "fastest-substrate",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest with NaSH in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:CBr|me]]",
+    "ok": true,
+    "why": "A methyl carbon has only hydrogens on it, so nothing blocks the back side: relative rate 1 in the lecture figure, the fastest of these four."
+   },
+   {
+    "h": "[[mol:CCCBr|me]]",
+    "ok": false,
+    "why": "Primary is good for {{SN2}}, but one alkyl group already slows the approach: a primary halide such as ethyl is 0.033."
+   },
+   {
+    "h": "[[mol:CC(C)Br|me]]",
+    "ok": false,
+    "why": "Secondary: two alkyl groups crowd the back side. Isopropyl is 0.00083."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Br|me]]",
+    "ok": false,
+    "why": "This is the {{SN1}} order. A tertiary carbon is completely blocked: {{SN2}} rate 0."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the mechanism named in the question",
+     "h": "{{SN2}}: one step, the nucleophile attacks the back of the carbon while the leaving group leaves. The first requirement on the lecture's list is low sterics.",
+     "ask": {
+      "q": "Which property of the substrate decides the {{SN2}} rate?",
+      "a": "How crowded the carbon carrying the leaving group is."
+     }
+    },
+    {
+     "t": "Check what is the same",
+     "h": "All four have the same leaving group (Br) and meet the same nucleophile, so only the carbon skeleton matters."
+    },
+    {
+     "t": "Classify each carbon that carries Br",
+     "h": "Count the carbons attached to it: 0 (methyl), 1 (primary), 2 (secondary), 3 (tertiary).",
+     "ask": {
+      "q": "What class is the carbon in 2-bromopropane?",
+      "a": "Secondary: it has two carbons attached."
+     }
+    },
+    {
+     "t": "Apply the order",
+     "h": "Methyl > primary > secondary >>> tertiary (no {{SN2}}). Lecture numbers: 1, 0.033, 0.00083, 0.",
+     "ask": {
+      "q": "How much faster is methyl than ethyl?",
+      "a": "About 30 times (1 against 0.033)."
+     }
+    },
+    {
+     "t": "Answer",
+     "h": "Bromomethane, the methyl halide."
+    }
+   ],
+   "answer": "A, bromomethane",
+   "rule": "SN2 rate: methyl > primary > secondary >>> tertiary."
+  }
+ },
+ {
+  "id": "fastest-substrate-002",
+  "type": "fastest-substrate",
+  "role": "worked",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these bromides by their rate of {{SN2}} reaction with NaCN.",
+  "order": "fastest first",
+  "items": [
+   {
+    "h": "[[mol:C=CCBr|me]]"
+   },
+   {
+    "h": "[[mol:CCBr|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)CBr|me]]"
+   },
+   {
+    "h": "[[mol:C=CBr|me]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries Br in each",
+     "h": "3-Bromopropene: an {{sp3}} {{CH2}} next to a C=C (allyl). Bromoethane: a plain primary carbon (ethyl). 1-Bromo-2-methylpropane: a primary carbon whose neighbour carries two methyl groups (isobutyl). Bromoethene: a carbon of the C=C itself (vinyl).",
+     "ask": {
+      "q": "Which of the four has Br on an {{sp2}} carbon?",
+      "a": "Bromoethene, the vinyl bromide."
+     }
+    },
+    {
+     "t": "Recall the lecture figure",
+     "h": "Figure 7.3: allyl 1.3, methyl 1, ethyl 0.033, isobutyl 0.003, isopropyl 0.00083, tert-butyl 0, vinyl 0.",
+     "ask": {
+      "q": "What are the numbers for these four?",
+      "a": "Allyl 1.3, ethyl 0.033, isobutyl 0.003, vinyl 0."
+     }
+    },
+    {
+     "t": "Explain allyl at the top",
+     "h": "In the transition state the reacting carbon is flat, with a p orbital shared between the nucleophile and the leaving group. The pi bond next door overlaps with that orbital and stabilizes the transition state, so allyl is faster even than methyl."
+    },
+    {
+     "t": "Explain isobutyl below ethyl",
+     "h": "Both are primary. The branch on the neighbouring carbon sits in the path of the nucleophile, which costs about a factor of ten.",
+     "ask": {
+      "q": "Is every primary halide equally fast?",
+      "a": "No. Branching on the next carbon slows {{SN2}}."
+     }
+    },
+    {
+     "t": "Explain vinyl at the bottom",
+     "h": "The back of an {{sp2}} carbon lies in the plane of the double bond, blocked by the other carbon and its groups. Rate 0."
+    },
+    {
+     "t": "Write the order",
+     "h": "Allyl > ethyl > isobutyl > vinyl."
+    }
+   ],
+   "answer": "3-bromopropene (1.3) > bromoethane (0.033) > 1-bromo-2-methylpropane (0.003) > bromoethene (0)",
+   "rule": "Figure 7.3: allyl 1.3, methyl 1, ethyl 0.033, isobutyl 0.003, isopropyl 0.00083, tert-butyl 0, vinyl 0."
+  }
+ },
+ {
+  "id": "fastest-substrate-003",
+  "type": "fastest-substrate",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest in an {{SN1}} reaction with water?",
+  "choices": [
+   {
+    "h": "[[mol:CCCBr|me]]",
+    "ok": false,
+    "why": "This is the {{SN2}} favourite, but the question asks for {{SN1}}. A primary carbocation is too unstable to form: no {{SN1}}."
+   },
+   {
+    "h": "[[mol:CC(C)Br|me]]",
+    "ok": false,
+    "why": "A secondary carbocation can form, so {{SN1}} is possible, but it is less stable than a tertiary one and forms more slowly."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Br|me]]",
+    "ok": true,
+    "why": "Ionization gives the tert-butyl cation, a tertiary carbocation, the most stable of these. The lecture's own {{SN1}} example is this compound in water."
+   },
+   {
+    "h": "[[mol:C=CBr|me]]",
+    "ok": false,
+    "why": "The Br is on a carbon of the double bond. A vinyl cation does not form: the lecture says vinyl-LG, no {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the mechanism named in the question",
+     "h": "{{SN1}}: the slow step is the leaving group leaving on its own, to give a carbocation. rate = k[RX].",
+     "ask": {
+      "q": "What does the rate-determining step of {{SN1}} produce?",
+      "a": "A carbocation (and the leaving group as an anion)."
+     }
+    },
+    {
+     "t": "Turn the question into one about carbocations",
+     "h": "The more stable the carbocation, the lower the barrier to making it. So rank the carbocations each substrate would give.",
+     "ask": {
+      "q": "Which property decides the {{SN1}} rate?",
+      "a": "The stability of the carbocation that forms."
+     }
+    },
+    {
+     "t": "Classify each carbon that carries Br",
+     "h": "Primary, secondary, tertiary, and vinyl ({{sp2}})."
+    },
+    {
+     "t": "Apply the lecture's order",
+     "h": "Tertiary > secondary; primary and methyl do not react by {{SN1}}; vinyl does not either.",
+     "ask": {
+      "q": "Is the {{SN1}} order the same as the {{SN2}} order?",
+      "a": "No, it is the reverse: tertiary is best for {{SN1}} and does not react by {{SN2}}."
+     }
+    },
+    {
+     "t": "Answer",
+     "h": "2-Bromo-2-methylpropane (tert-butyl bromide)."
+    }
+   ],
+   "answer": "C, 2-bromo-2-methylpropane",
+   "rule": "SN1 rate: tertiary > secondary >> primary, methyl, vinyl (none)."
+  }
+ },
+ {
+  "id": "fastest-substrate-004",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts <b>slowest</b> with NaI in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:CCl|me]]",
+    "ok": false,
+    "why": "Methyl is the least hindered and the fastest of these: 1 in the lecture figure. Check whether the question asks for fastest or slowest."
+   },
+   {
+    "h": "[[mol:CCCl|me]]",
+    "ok": false,
+    "why": "Primary: 0.033. Slower than methyl, but far from the slowest."
+   },
+   {
+    "h": "[[mol:CC(C)Cl|me]]",
+    "ok": false,
+    "why": "Secondary is slow, 0.00083, but it still reacts."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Cl|me]]",
+    "ok": true,
+    "why": "Tertiary: three methyl groups block the back side completely. Lecture figure: 0, no {{SN2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name what SN2 needs",
+     "h": "A clear path to the back of the carbon that carries the leaving group."
+    },
+    {
+     "t": "Classify each carbon",
+     "h": "Methyl, primary, secondary, tertiary. Same leaving group each time."
+    },
+    {
+     "t": "Apply the order and read the question again",
+     "h": "Methyl > primary > secondary >>> tertiary: 1, 0.033, 0.00083, 0. The question asks for the slowest, which is the tertiary chloride."
+    }
+   ],
+   "answer": "D, 2-chloro-2-methylpropane",
+   "rule": "Tertiary halides do not undergo SN2."
+  }
+ },
+ {
+  "id": "fastest-substrate-005",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank these chlorides by their rate of {{SN1}} reaction in water.",
+  "order": "fastest first",
+  "items": [
+   {
+    "h": "[[mol:CCC(C)(C)Cl]]"
+   },
+   {
+    "h": "[[mol:CCC(C)Cl]]"
+   },
+   {
+    "h": "[[mol:CCCCCl]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name what SN1 needs",
+     "h": "A stable carbocation, because the slow step is ionization."
+    },
+    {
+     "t": "Classify each carbon that carries Cl",
+     "h": "2-Chloro-2-methylbutane: tertiary. 2-Chlorobutane: secondary. 1-Chlorobutane: primary."
+    },
+    {
+     "t": "Apply the lecture's order",
+     "h": "Tertiary > secondary > primary. A primary carbocation does not form, so the primary chloride does not react by {{SN1}} at all."
+    }
+   ],
+   "answer": "tertiary (2-chloro-2-methylbutane) > secondary (2-chlorobutane) > primary (1-chlorobutane, no SN1)",
+   "rule": "SN1 rate follows carbocation stability: tertiary > secondary >> primary."
+  }
+ },
+ {
+  "id": "fastest-substrate-006",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "fixed": true,
+  "stem": "These are the four isomers of {{C4H9Br}}. Which reacts fastest with NaCN in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:CCCCBr]]",
+    "ok": true,
+    "why": "Primary, with an unbranched {{CH2}} next door: like ethyl, 0.033. The least hindered of the four."
+   },
+   {
+    "h": "[[mol:CC(C)CBr]]",
+    "ok": false,
+    "why": "Also primary, so it looks like a tie. The two methyl groups on the next carbon get in the way: isobutyl is 0.003, about ten times slower."
+   },
+   {
+    "h": "[[mol:CCC(C)Br]]",
+    "ok": false,
+    "why": "Secondary: like isopropyl, 0.00083."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Br]]",
+    "ok": false,
+    "why": "Tertiary: 0. This would be the answer for {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify each carbon that carries Br",
+     "h": "Primary (1-bromobutane), primary with branching next door (1-bromo-2-methylpropane), secondary (2-bromobutane), tertiary (2-bromo-2-methylpropane)."
+    },
+    {
+     "t": "Rank by class",
+     "h": "Primary beats secondary beats tertiary. That leaves the two primary bromides."
+    },
+    {
+     "t": "Break the tie with the lecture figure",
+     "h": "Ethyl 0.033, isobutyl 0.003. Branching on the neighbouring carbon slows the nucleophile, so the straight chain wins."
+    }
+   ],
+   "answer": "A, 1-bromobutane",
+   "rule": "Among primary halides, the one with no branching next to the reacting carbon is fastest."
+  }
+ },
+ {
+  "id": "fastest-substrate-007",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound does <b>not</b> react with NaCN by {{SN2}} at all?",
+  "choices": [
+   {
+    "h": "[[mol:CCI|me]]",
+    "ok": false,
+    "why": "Primary: 0.033 in the lecture figure. A good {{SN2}} substrate."
+   },
+   {
+    "h": "[[mol:CC(C)I|me]]",
+    "ok": false,
+    "why": "Secondary is slow, 0.00083, but not zero."
+   },
+   {
+    "h": "[[mol:C=CCI|me]]",
+    "ok": false,
+    "why": "The iodine is on the {{sp3}} carbon next to the double bond: allyl, the fastest entry in the figure (1.3). Do not confuse it with vinyl."
+   },
+   {
+    "h": "[[mol:C=CI|me]]",
+    "ok": true,
+    "why": "The iodine is on a carbon of the double bond: vinyl. Lecture figure: 0. The nucleophile cannot attack the back of an {{sp2}} carbon."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries I in each",
+     "h": "Primary {{sp3}}, secondary {{sp3}}, allylic {{sp3}}, and an {{sp2}} carbon of a C=C."
+    },
+    {
+     "t": "Recall which entries are zero",
+     "h": "Figure 7.3 has two zeros: tert-butyl and vinyl."
+    },
+    {
+     "t": "Match",
+     "h": "There is no tertiary iodide in the list. Iodoethene is the vinyl compound: rate 0, even with the best halide leaving group."
+    }
+   ],
+   "answer": "D, iodoethene (vinyl iodide)",
+   "rule": "Zero SN2: tertiary and vinyl (and aryl)."
+  }
+ },
+ {
+  "id": "fastest-substrate-008",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest with NaI in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:CCl|me]]",
+    "ok": false,
+    "why": "The usual answer, and the trap. Methyl is 1 in the lecture figure, but one entry is above it."
+   },
+   {
+    "h": "[[mol:C=CCCl|me]]",
+    "ok": true,
+    "why": "Allyl: 1.3 in the lecture figure. The pi bond next to the reacting carbon stabilizes the transition state, which more than makes up for the extra carbon."
+   },
+   {
+    "h": "[[mol:CCCl|me]]",
+    "ok": false,
+    "why": "Primary: 0.033."
+   },
+   {
+    "h": "[[mol:CC(C)Cl|me]]",
+    "ok": false,
+    "why": "Secondary: 0.00083."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries Cl in each",
+     "h": "Methyl, allyl (an {{sp3}} {{CH2}} next to C=C), primary, secondary."
+    },
+    {
+     "t": "Recall the top of the lecture figure",
+     "h": "Allyl 1.3, methyl 1, ethyl 0.033, isopropyl 0.00083."
+    },
+    {
+     "t": "Explain why allyl is on top",
+     "h": "The simple order methyl > primary > secondary is about sterics. Allyl adds an electronic effect: the neighbouring pi bond overlaps with the p orbital on the carbon in the transition state and lowers its energy."
+    }
+   ],
+   "answer": "B, 3-chloropropene (allyl chloride)",
+   "rule": "Allyl (1.3) is the one substrate faster than methyl (1) in SN2."
+  }
+ },
+ {
+  "id": "fastest-substrate-009",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these bromides by their rate of {{SN2}} reaction with NaSH.",
+  "order": "fastest first",
+  "items": [
+   {
+    "h": "[[mol:CBr|me]]"
+   },
+   {
+    "h": "[[mol:CCBr|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)CBr|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)Br|me]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify each carbon that carries Br",
+     "h": "Methyl; primary (ethyl); primary with two methyl groups on the next carbon (isobutyl); secondary (isopropyl)."
+    },
+    {
+     "t": "Place the easy ones",
+     "h": "Methyl first (1), ethyl second (0.033)."
+    },
+    {
+     "t": "Decide between isobutyl and isopropyl",
+     "h": "Isobutyl has more carbons and looks more crowded, but its reacting carbon is still primary: 0.003. Isopropyl has two groups on the reacting carbon itself: 0.00083. Crowding on the reacting carbon costs more than crowding next door."
+    }
+   ],
+   "answer": "bromomethane (1) > bromoethane (0.033) > 1-bromo-2-methylpropane (0.003) > 2-bromopropane (0.00083)",
+   "rule": "Branched primary (isobutyl 0.003) is still faster than secondary (isopropyl 0.00083)."
+  }
+ },
+ {
+  "id": "fastest-substrate-010",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest in an {{SN1}} reaction in methanol?",
+  "choices": [
+   {
+    "h": "[[mol:CCl|me]]",
+    "ok": false,
+    "why": "A methyl cation never forms: no {{SN1}}."
+   },
+   {
+    "h": "[[mol:CCCCl|me]]",
+    "ok": false,
+    "why": "A primary carbocation is too unstable to form: no {{SN1}}."
+   },
+   {
+    "h": "[[mol:C=CCl|me]]",
+    "ok": false,
+    "why": "Vinyl: the lecture says no {{SN1}}. A positive charge on an {{sp2}} carbon of a double bond is very unstable."
+   },
+   {
+    "h": "[[mol:C=CCCl|me]]",
+    "ok": true,
+    "why": "Allyl: the carbocation is stabilized by resonance, with the positive charge shared by the two end carbons. The lecture lists allyl-LG as a substrate that does {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name what SN1 needs",
+     "h": "A carbocation stable enough to form in the slow step."
+    },
+    {
+     "t": "Draw the carbocation from each",
+     "h": "Methyl cation, primary cation, vinyl cation, allyl cation."
+    },
+    {
+     "t": "Look for stabilization",
+     "h": "Only the allyl cation has any: two resonance forms, [[mol:C=C[CH2+]]] and [[mol:[CH2+]C=C]]. The lecture: primary and methyl, no {{SN1}}; vinyl, no {{SN1}}; allyl, yes."
+    }
+   ],
+   "answer": "D, 3-chloropropene (allyl chloride)",
+   "rule": "Resonance makes an allyl cation possible: allyl halides can react by SN1, vinyl halides cannot."
+  }
+ },
+ {
+  "id": "fastest-substrate-011",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank these bromides by their rate of {{E2}} reaction with {{NaOCH2CH3}} in ethanol.",
+  "order": "fastest first",
+  "items": [
+   {
+    "h": "[[mol:CC(C)(C)Br|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)Br|me]]"
+   },
+   {
+    "h": "[[mol:CCBr|me]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name what E2 needs",
+     "h": "A strong base, a hydrogen on the carbon next to the one carrying the leaving group, and that hydrogen anti to the leaving group. All three have such hydrogens."
+    },
+    {
+     "t": "Classify each carbon that carries Br",
+     "h": "Tertiary, secondary, primary."
+    },
+    {
+     "t": "Apply the order",
+     "h": "{{E2}} gets faster with more substitution: tertiary > secondary > primary. The transition state already looks like the alkene, and a more substituted alkene is more stable. The flowchart says the same: more branching on the alpha and beta carbons favours {{E2}} over {{SN2}}. With ethoxide the primary bromide gives mostly {{SN2}} instead."
+    }
+   ],
+   "answer": "tertiary (2-bromo-2-methylpropane) > secondary (2-bromopropane) > primary (bromoethane)",
+   "rule": "E2 rate: tertiary > secondary > primary, the opposite of SN2."
+  }
+ },
+ {
+  "id": "fastest-substrate-012",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest in an {{E2}} reaction with {{NaOCH3}}?",
+  "choices": [
+   {
+    "h": "[[mol:CCCCCBr]]",
+    "ok": false,
+    "why": "Primary: the slowest {{E2}} of those that can react, and with methoxide it mostly does {{SN2}}."
+   },
+   {
+    "h": "[[mol:CCCC(C)Br]]",
+    "ok": false,
+    "why": "Secondary: {{E2}} goes well, but the tertiary bromide is faster."
+   },
+   {
+    "h": "[[mol:CCC(C)(C)Br]]",
+    "ok": true,
+    "why": "Tertiary, with hydrogens on three neighbouring carbons. It gives the most substituted alkene through the most stable transition state, and it cannot be diverted into {{SN2}}."
+   },
+   {
+    "h": "[[mol:CC(C)(C)CBr]]",
+    "ok": false,
+    "why": "It looks the most branched, but look at the carbon next to the {{CH2Br}}: it carries three methyl groups and no hydrogen. With no beta hydrogen there is no {{E2}} at all."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Check that each one can do E2",
+     "h": "{{E2}} removes a hydrogen from the carbon next to the one carrying Br. 1-Bromo-2,2-dimethylpropane has no hydrogen there, so it cannot eliminate."
+    },
+    {
+     "t": "Classify the rest",
+     "h": "1-Bromopentane: primary. 2-Bromopentane: secondary. 2-Bromo-2-methylbutane: tertiary."
+    },
+    {
+     "t": "Apply the order",
+     "h": "{{E2}} rate: tertiary > secondary > primary. The lecture's {{E2}} example is a tertiary bromide with a strong base."
+    }
+   ],
+   "answer": "C, 2-bromo-2-methylbutane",
+   "rule": "E2 needs a beta hydrogen; among substrates that have one, tertiary is fastest."
+  }
+ },
+ {
+  "id": "fastest-substrate-013",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "fixed": true,
+  "stem": "All four are primary bromides. Which reacts <b>slowest</b> with NaCN in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:CCBr|me]]",
+    "ok": false,
+    "why": "Ethyl: 0.033, the fastest of these."
+   },
+   {
+    "h": "[[mol:CCCCBr]]",
+    "ok": false,
+    "why": "A longer chain, but the carbon next to the {{CH2Br}} is unbranched: about the same as ethyl."
+   },
+   {
+    "h": "[[mol:CC(C)CBr]]",
+    "ok": false,
+    "why": "Isobutyl: two methyl groups on the next carbon, 0.003. Slow, but one compound here is worse."
+   },
+   {
+    "h": "[[mol:CC(C)(C)CBr]]",
+    "ok": true,
+    "why": "Three methyl groups on the next carbon. Whichever way the molecule turns, one of them sits behind the reacting carbon. It continues the trend ethyl 0.033, isobutyl 0.003 and is the slowest."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "See that class alone cannot decide",
+     "h": "Every carbon that carries Br is primary. Look one carbon further."
+    },
+    {
+     "t": "Count the methyl groups on the neighbouring carbon",
+     "h": "Bromoethane: none (it is a {{CH3}}). 1-Bromobutane: none (one chain carbon). 1-Bromo-2-methylpropane: two. 1-Bromo-2,2-dimethylpropane: three."
+    },
+    {
+     "t": "Extend the lecture's trend",
+     "h": "Figure 7.3 shows that branching next door costs a factor of ten: ethyl 0.033, isobutyl 0.003. A third methyl group blocks the back side even more. This compound (neopentyl bromide) is not in the lecture figure, but the trend is clear."
+    }
+   ],
+   "answer": "D, 1-bromo-2,2-dimethylpropane",
+   "rule": "The more branching on the carbon next to the reacting carbon, the slower the SN2."
+  }
+ },
+ {
+  "id": "fastest-substrate-014",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 2,
+  "src": "site",
+  "stem": "Rank these bromides by their rate of {{SN2}} reaction with NaSH.",
+  "order": "fastest first",
+  "items": [
+   {
+    "h": "[[mol:BrCC1CCCCC1]]"
+   },
+   {
+    "h": "[[mol:BrC1CCCCC1]]"
+   },
+   {
+    "h": "[[mol:CC1(Br)CCCCC1]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries Br in each",
+     "h": "(Bromomethyl)cyclohexane: a {{CH2}} outside the ring, primary. Bromocyclohexane: a ring carbon with two ring neighbours, secondary. 1-Bromo-1-methylcyclohexane: a ring carbon that also carries a methyl group, tertiary."
+    },
+    {
+     "t": "Apply the order",
+     "h": "Primary > secondary >>> tertiary (no {{SN2}})."
+    },
+    {
+     "t": "Check the primary one for branching",
+     "h": "Its neighbouring carbon is a branched ring carbon, like isobutyl (0.003). That is still above secondary (isopropyl 0.00083), so the order stands."
+    }
+   ],
+   "answer": "primary, (bromomethyl)cyclohexane > secondary, bromocyclohexane > tertiary, 1-bromo-1-methylcyclohexane (no SN2)",
+   "rule": "Classify the carbon that carries the leaving group, whether it is in a ring or not."
+  }
+ },
+ {
+  "id": "fastest-substrate-015",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts fastest in an {{SN1}} reaction in ethanol?",
+  "choices": [
+   {
+    "h": "[[mol:BrC1CCCCC1]]",
+    "ok": false,
+    "why": "A plain secondary bromide. It can ionize, but its carbocation has no extra stabilization."
+   },
+   {
+    "h": "[[mol:BrC1=CCCCC1]]",
+    "ok": false,
+    "why": "The Br is on a carbon of the double bond: vinyl. No {{SN1}}, however close the double bond is."
+   },
+   {
+    "h": "[[mol:BrC1C=CCCC1]]",
+    "ok": true,
+    "why": "The Br is on an {{sp3}} carbon next to the double bond: a secondary, allylic bromide. The carbocation is stabilized by resonance, so it forms fastest."
+   },
+   {
+    "h": "[[mol:BrCC1CCCCC1]]",
+    "ok": false,
+    "why": "Primary: a primary carbocation does not form. No {{SN1}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries Br in each",
+     "h": "Secondary; vinyl ({{sp2}}); secondary and allylic; primary."
+    },
+    {
+     "t": "Remove those that cannot ionize",
+     "h": "The lecture: primary, no {{SN1}}; vinyl, no {{SN1}}. That leaves the two secondary bromides."
+    },
+    {
+     "t": "Compare the two carbocations",
+     "h": "The cyclohexyl cation has its charge on one carbon. The cation from 3-bromocyclohexene is allylic: the charge is shared by two carbons through resonance. The more stable cation forms faster."
+    }
+   ],
+   "answer": "C, 3-bromocyclohexene",
+   "rule": "Allylic beats plain secondary in SN1; vinyl does not react."
+  }
+ },
+ {
+  "id": "fastest-substrate-016",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound is the slowest of the four in {{SN2}} and the fastest of the four in {{SN1}}?",
+  "choices": [
+   {
+    "h": "[[mol:CI|me]]",
+    "ok": false,
+    "why": "The reverse: methyl is the fastest of these in {{SN2}} and does not react by {{SN1}}."
+   },
+   {
+    "h": "[[mol:CCI|me]]",
+    "ok": false,
+    "why": "Primary: good in {{SN2}}, no {{SN1}}."
+   },
+   {
+    "h": "[[mol:CC(C)I|me]]",
+    "ok": false,
+    "why": "Secondary is in the middle for both mechanisms: slow {{SN2}} (0.00083) and slower {{SN1}} than tertiary."
+   },
+   {
+    "h": "[[mol:CC(C)(C)I|me]]",
+    "ok": true,
+    "why": "Tertiary: {{SN2}} rate 0 because the carbon is blocked, and the fastest {{SN1}} because it gives the most stable carbocation."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Write the SN2 order",
+     "h": "Methyl > primary > secondary >>> tertiary: sterics."
+    },
+    {
+     "t": "Write the SN1 order",
+     "h": "Tertiary > secondary >> primary and methyl (none): carbocation stability."
+    },
+    {
+     "t": "Find the compound at the bottom of one and the top of the other",
+     "h": "The two orders are opposite. The tertiary iodide is last in {{SN2}} and first in {{SN1}}."
+    }
+   ],
+   "answer": "D, 2-iodo-2-methylpropane",
+   "rule": "The SN1 and SN2 substrate orders are the reverse of each other."
+  }
+ },
+ {
+  "id": "fastest-substrate-017",
+  "type": "fastest-substrate",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "Which compound reacts <b>slowest</b> with NaCN in an {{SN2}} reaction?",
+  "choices": [
+   {
+    "h": "[[mol:C=CCBr|me]]",
+    "ok": false,
+    "why": "This is allyl, not vinyl: the Br is on the {{sp3}} carbon next to the double bond. It is the fastest of the four, 1.3."
+   },
+   {
+    "h": "[[mol:CBr|me]]",
+    "ok": false,
+    "why": "Methyl: 1. Second fastest here."
+   },
+   {
+    "h": "[[mol:CC(C)CBr|me]]",
+    "ok": false,
+    "why": "It has the most carbons and a branch, which makes it look the most hindered. The reacting carbon is still primary: isobutyl is 0.003."
+   },
+   {
+    "h": "[[mol:CC(C)Br|me]]",
+    "ok": true,
+    "why": "Secondary: two methyl groups on the reacting carbon itself. Isopropyl is 0.00083, the lowest of these four."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries Br in each",
+     "h": "Allyl, methyl, primary with branching next door (isobutyl), secondary (isopropyl)."
+    },
+    {
+     "t": "Check that none is zero",
+     "h": "No tertiary and no vinyl compound is in the list, so all four react and the numbers must be compared."
+    },
+    {
+     "t": "Use the lecture figure",
+     "h": "Allyl 1.3, methyl 1, isobutyl 0.003, isopropyl 0.00083. The secondary bromide is the slowest, about four times slower than isobutyl."
+    }
+   ],
+   "answer": "D, 2-bromopropane",
+   "rule": "Know the two close numbers: isobutyl 0.003, isopropyl 0.00083."
+  }
+ }
+]

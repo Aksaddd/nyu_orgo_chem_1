@@ -1,0 +1,40 @@
+{
+  "id": "williamson-why",
+  "title": "Why one ether synthesis works and the other fails",
+  "exam": "Q5A",
+  "points": 80,
+  "asks": "Two ways of joining the same two pieces are tried. One gives the ether, the other does not. Explain with structures and mechanisms.",
+  "know": [
+    {"h": "<b>The Williamson ether synthesis is an {{SN2}} reaction.</b> An alkoxide ({{RO-}}) attacks the carbon that carries a leaving group from the back, and the leaving group leaves in the same step: two arrows, no intermediate.", "from": "Lecture 11/05, p. 1 (reaction C); FA24 Exam 2, Q5A"},
+    {"h": "<b>Every unsymmetrical ether can be cut two ways.</b> For R-O-R', the oxygen can arrive on R ({{RO-}} with R'-X) or on R' ({{R'O-}} with R-X). The pieces are the same; only the piece that carries the leaving group changes.", "from": "standard"},
+    {"h": "<b>The carbon that carries the leaving group decides.</b> {{SN2}} rates: methyl 1, ethyl (primary) 0.033, isopropyl (secondary) 0.00083, tert-butyl (tertiary) 0. Tertiary halides never do {{SN2}}.", "from": "Lecture 11/10, Figure 7.3"},
+    {"h": "<b>Alkoxides are strong bases.</b> Their conjugate acids are alcohols: methanol {{pKa}} 15.5, ethanol 15.9, isopropanol 16.5, tert-butanol 17.0. Where {{SN2}} is slow, a strong base eliminates instead.", "from": "Lecture 10/29, Table 6.8"},
+    {"h": "<b>Strong base with a tertiary halide gives {{E2}} only.</b> In lecture, tert-butyl bromide with NaOH gave 2-methylpropene and no alcohol: rate = k[RBr][base].", "from": "Lecture 11/12, p. 1; flowchart"},
+    {"h": "<b>Strong base with a secondary halide gives mostly {{E2}}.</b> 2-Bromopropane with ethoxide gives mostly propene and only a little ether.", "from": "FA24 Exam 2, Q7A; flowchart"},
+    {"h": "<b>The {{E2}} mechanism has three arrows</b>: base lone pair to a beta hydrogen, the C-H bond to the new C=C, the C-X bond to X. The hydrogen and the leaving group are anti-periplanar. The products are the alkene, the conjugate acid of the base (an alcohol) and the halide ion.", "from": "Lecture 11/12, p. 1 to 3"},
+    {"h": "<b>A methyl halide can only substitute.</b> It has no beta hydrogen, so {{E2}} is impossible, and a methyl cation never forms, so there is no {{SN1}} or {{E1}}. A benzyl halide also has no beta hydrogen on an {{sp3}} carbon.", "from": "flowchart"},
+    {"h": "<b>Bulk hurts far more on the halide than on the alkoxide.</b> tert-Butoxide is a poor nucleophile, yet it still attacks the open carbon of {{CH3I}} and gives tert-butyl methyl ether.", "from": "Lecture 11/05, p. 1 and 3; FA24 Exam 2, Q5A"},
+    {"h": "<b>A bulky strong base with a primary halide that has beta hydrogens is sent to {{E2}} by the flowchart.</b> So the safest partner for a bulky alkoxide is a methyl halide.", "from": "flowchart"},
+    {"h": "<b>No {{SN2}} and no {{SN1}} at an {{sp2}} carbon</b> (vinyl or aryl: rate 0). An aryl ether must be made from the phenoxide ({{ArO-}}) and an alkyl halide. Phenol has {{pKa}} 10, so its anion is easy to make and is a weak base.", "from": "Lecture 11/10, Figure 7.3; FA24 Exam 2, Q2A and Q1A"},
+    {"h": "<b>Two alcohols do not make an ether this way.</b> A neutral alcohol is a poor nucleophile ({{CH3OH}} 1 against {{HO-}} 16,000) and {{HO-}} is a strong base and a poor leaving group.", "from": "Lecture 11/05, p. 2, Table 7.5"},
+    {"h": "<b>Skills:</b> draw the {{SN2}} step with two arrows, draw the {{E2}} step with three arrows, and write the products the failed route really gives. A stereocentre on the alkoxide carbon is untouched, because no bond to it is made or broken.", "from": "FA24 Exam 2, Q5A rubric"}
+  ],
+  "method": [
+    "Cut the ether on each side of the oxygen and write the two alkoxide and halide pairs.",
+    "In each pair, classify the carbon that carries the leaving group: methyl, primary, secondary, tertiary or {{sp2}}.",
+    "Pick the pair whose halide is methyl or primary, best of all one with no beta hydrogen. The branched or ring piece goes in the alkoxide.",
+    "For the pair that works, draw the {{SN2}} step: oxygen lone pair to carbon from the back, C-X bond to X, and the ether as product.",
+    "For the pair that fails, say why {{SN2}} cannot happen (three alkyl groups block the back of a tertiary carbon, or the carbon is {{sp2}}).",
+    "Then say what happens instead: an alkoxide is a strong base, so draw the {{E2}} step with three arrows and write the alkene, the alcohol and the halide ion. If the carbon is {{sp2}}, write no reaction.",
+    "Finish with the lesson in one line: methyl or primary halide, bulky group in the alkoxide."
+  ],
+  "pitfalls": [
+    {"h": "Judging the route by the bulk of the alkoxide. The class of the halide carbon decides: tert-butoxide with {{CH3I}} works, methoxide with a tertiary halide does not."},
+    {"h": "Writing \"no reaction\" for an alkoxide with a tertiary halide. {{E2}} does happen: draw the alkene, the alcohol and the halide ion."},
+    {"h": "Calling the failed route {{SN1}} or {{E1}}. A strong base is present, so it removes a beta hydrogen in one step before the halide can ionize."},
+    {"h": "Drawing the {{E2}} arrow from the base to carbon, or leaving out the conjugate acid of the base (methanol from methoxide) in the products."},
+    {"h": "Explaining only the reaction that works. Most of the points are for why the other fails and what it gives."},
+    {"h": "Inverting a stereocentre that belongs to the alkoxide. Inversion happens at the carbon that is attacked, which is on the halide."}
+  ],
+  "links": {"read": ["choose", "sn2-2", "e2"]}
+}

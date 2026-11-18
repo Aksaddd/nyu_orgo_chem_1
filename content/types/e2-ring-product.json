@@ -1,0 +1,39 @@
+{
+  "id": "e2-ring-product",
+  "title": "E2 on a cyclohexane ring: which alkene forms",
+  "exam": "Q3D",
+  "points": 25,
+  "asks": "A substituted cyclohexyl halide meets a strong base. Circle the major elimination product.",
+  "know": [
+    {"h": "<b>{{E2}} needs the hydrogen and the leaving group anti-periplanar</b>: on neighbouring carbons, in one plane, pointing in opposite directions. The lecture calls this the most important factor for {{E2}}.", "from": "Lecture 11/12, p. 2 to 3"},
+    {"h": "<b>On a chair, anti-periplanar means trans-diaxial</b>: the leaving group axial, and an axial hydrogen on the next carbon. Neighbouring axial bonds point opposite ways, one up and one down.", "from": "FA24 Exam 2, Q3D; standard"},
+    {"h": "<b>An equatorial leaving group cannot react.</b> What lies anti to an equatorial bond is a ring C-C bond, never a hydrogen. (The lecture's Newman projection shows an equatorial group anti to a ring carbon.)", "from": "Lecture 10/27, p. 2; standard"},
+    {"h": "<b>The ring flip</b> turns every axial group equatorial and every equatorial group axial. Up stays up and down stays down, so cis and trans do not change.", "from": "Lecture 10/27, p. 1"},
+    {"h": "<b>The chair that reacts is the one with the leaving group axial</b>, even when it is the less stable chair. If it is the less stable chair, the reaction is slower but it still goes through that chair.", "from": "FA24 Exam 2, Q3D"},
+    {"h": "<b>Reading a wedge and dash drawing as a chair.</b> Axial bonds alternate up, down, up, down around the ring. So if an up group is axial on C1, an up group on C2 is equatorial and a down group on C2 is axial.", "from": "Lecture 10/27, p. 1; standard"},
+    {"h": "<b>Cis neighbour</b> (leaving group and R on the same face of C1 and C2): with the leaving group axial, R is equatorial, so C2 has an axial hydrogen. The double bond can form toward R.", "from": "standard"},
+    {"h": "<b>Trans neighbour</b> (opposite faces): with the leaving group axial, R is axial too, so the hydrogen on C2 is equatorial and cannot leave. The double bond must form on the other side, away from R.", "from": "FA24 Exam 2, Q3D"},
+    {"h": "<b>Saytzeff (Zaitsev) rule</b>: when two different axial hydrogens are available, the more substituted alkene is the major product. Geometry is checked first, the rule second.", "from": "Lecture 11/12, p. 4"},
+    {"h": "<b>A tert-butyl group locks the ring.</b> Axial tert-butyl costs 5.5 kcal/mol (K = 11,916), so the chair with tert-butyl equatorial is the only one that matters. The other groups are then fixed as axial or equatorial by being cis or trans to it.", "from": "Lecture 10/27, Table 5.3"},
+    {"h": "<b>Carbons that are not part of the reaction keep their configuration.</b> A substituent on a wedge stays on a wedge unless its carbon becomes part of the C=C.", "from": "FA24 Exam 2, Q3D"},
+    {"h": "<b>Strong base plus a secondary ring halide or tosylate gives mostly {{E2}}</b>. Cl, Br, I and {{OTs}} are all leaving groups that work. The ether from substitution is at most a minor product.", "from": "Flow chart; FA24 Exam 2, Q6A"},
+    {"h": "<b>Only hydrogens on the two ring carbons next to the leaving group count.</b> Hydrogens on a methyl substituent on C2 are one carbon too far away.", "from": "Lecture 11/12, p. 3"}
+  ],
+  "method": [
+    "Confirm it is E2: a strong base and a leaving group on a ring carbon.",
+    "Number the ring from the carbon with the leaving group, and note whether each substituent is up (wedge) or down (dash).",
+    "Draw the chair in which the leaving group is axial, and work out whether each other group is axial or equatorial in that chair.",
+    "Look at the two neighbouring carbons. Each one has an axial position pointing away from the leaving group: does it hold a hydrogen or a substituent?",
+    "Every axial hydrogen found gives one alkene, with the double bond between its carbon and the leaving-group carbon. With two choices, the more substituted alkene is major.",
+    "Draw the product: remove that hydrogen and the leaving group, and keep every other group on its original wedge or dash."
+  ],
+  "pitfalls": [
+    {"h": "Circling the Zaitsev alkene without checking that its hydrogen can be anti to the leaving group."},
+    {"h": "Working from the more stable chair when the leaving group is equatorial in it. That chair does not react."},
+    {"h": "Removing an equatorial hydrogen. An equatorial hydrogen is gauche to an axial leaving group, not anti."},
+    {"h": "Changing the wedge or dash of a carbon that takes no part in the reaction."},
+    {"h": "Choosing the substitution product when the question asks for the elimination product."},
+    {"h": "Thinking the ring flip can turn a trans pair into a cis pair. It cannot: only axial and equatorial change."}
+  ],
+  "links": {"read": ["e2", "rings-2", "choose"]}
+}

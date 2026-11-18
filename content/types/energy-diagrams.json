@@ -1,0 +1,96 @@
+{
+ "id": "energy-diagrams",
+ "title": "Read the energy diagram",
+ "exam": "Q3B",
+ "points": 25,
+ "asks": "Several reaction-coordinate diagrams are drawn. Pick the one that fits the reaction described.",
+ "know": [
+  {
+   "h": "A reaction-coordinate diagram plots energy (up) against the progress of the reaction (left to right): starting materials on the left, products on the right.",
+   "from": "Lecture 11/03, p. 3"
+  },
+  {
+   "h": "Every <b>peak</b> is a transition state. Every <b>valley</b> between two peaks is an intermediate. The number of steps equals the number of peaks, and the number of intermediates is one fewer.",
+   "from": "Lecture 11/03, p. 3; Lecture 11/10, p. 2"
+  },
+  {
+   "h": "{{Ea}} of a step is the height from the level just before the step up to its peak. For the first step that is from the starting materials. For a later step it is from the intermediate in front of it.",
+   "from": "Lecture 11/05, p. 3; standard"
+  },
+  {
+   "h": "{{dH}} is the products' level minus the starting materials' level. Products lower: <b>exothermic</b> (negative). Products higher: <b>endothermic</b> (positive). The peaks do not enter into it.",
+   "from": "standard; FA24 Exam 2, Q3B"
+  },
+  {
+   "h": "The <b>rate-determining step</b> (rds) is the one whose transition state is the highest point of the whole diagram.",
+   "from": "Lecture 11/10, p. 2"
+  },
+  {
+   "h": "<b>Concerted reactions have one hump.</b> {{SN2}}: one hump from start to product, no intermediate. {{E2}}: one hump as well.",
+   "from": "Lecture 11/03, p. 3; Lecture 11/12, p. 1"
+  },
+  {
+   "h": "<b>{{SN1}} has a valley for the carbocation.</b> The first hump (ionization, ts1) is the highest point and is the rds. The second hump (attack of the nucleophile) is lower.",
+   "from": "Lecture 11/10, p. 2"
+  },
+  {
+   "h": "Drawn in full for tert-butyl bromide and water, {{SN1}} has three steps: ionization, attack of water to give the protonated alcohol, and loss of {{H+}} to a second water. That is three peaks and two valleys (the carbocation and the protonated alcohol).",
+   "from": "Lecture 11/10, p. 2"
+  },
+  {
+   "h": "{{E1}} shares the first step and the carbocation with {{SN1}}. Its second step is removal of a hydrogen next to the cationic carbon: two humps, the first one higher.",
+   "from": "Lecture 11/10, p. 4"
+  },
+  {
+   "h": "The exam question: an exothermic {{SN1}} is the diagram with two humps, a valley between them, the first hump higher, and the products below the starting materials.",
+   "from": "FA24 Exam 2, Q3B"
+  },
+  {
+   "h": "<b>Rate comes from {{Ea}}, not from {{dH}}.</b> A very exothermic reaction can still be slow if its barrier is high.",
+   "from": "Lecture 11/05, p. 3 to 4; standard"
+  },
+  {
+   "h": "The rate law tells you the shape. If the nucleophile's concentration is in the rate law, it is in the rate-determining transition state: one hump ({{SN2}}, {{E2}}). If only the substrate is in the rate law, the slow step is ionization: two or more humps ({{SN1}}, {{E1}}).",
+   "from": "Lecture 11/03, p. 3; Lecture 11/10, p. 1; Lecture 11/12, p. 1"
+  },
+  {
+   "h": "For the reverse reaction, read the same diagram from right to left: its {{Ea}} is the height from the products up to the peak.",
+   "from": "standard"
+  }
+ ],
+ "method": [
+  "Count the humps: one means concerted (SN2 or E2), two or more means there are intermediates (SN1 or E1).",
+  "Mark each valley between humps as an intermediate and name it (for SN1 and E1, the carbocation).",
+  "Find the highest peak: the step that climbs to it is the rate-determining step.",
+  "Compare the right-hand end with the left-hand end: lower is exothermic, higher is endothermic.",
+  "For a number, subtract levels: Ea is peak minus the level before that step, and ΔH is products minus starting materials.",
+  "Check every word of the question (exothermic, SN1, rate-determining) against the diagram you picked."
+ ],
+ "pitfalls": [
+  {
+   "h": "Calling a peak an intermediate. Intermediates are valleys. Peaks are transition states."
+  },
+  {
+   "h": "Reading exothermic or endothermic from the height of a hump instead of from the two ends."
+  },
+  {
+   "h": "Choosing a two-hump diagram for {{SN1}} without checking that the first hump is the higher one."
+  },
+  {
+   "h": "Measuring {{Ea}} of a later step from the starting materials instead of from the intermediate before it."
+  },
+  {
+   "h": "Deciding which reaction is faster from {{dH}}. The barrier decides."
+  },
+  {
+   "h": "Stopping at the right shape and missing one word of the question, such as exothermic."
+  }
+ ],
+ "links": {
+  "read": [
+   "sn2-1",
+   "sn1-e1",
+   "e2"
+  ]
+ }
+}

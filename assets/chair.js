@@ -215,8 +215,8 @@
   // ------------------------------------------------------------------ the chair drawing
   // Two fixed sets of ring points. Opposite ring bonds are parallel, and x0 − x1 + x2 = 0, which makes "vertical" the true
   // axial direction of this projection. Form A is the mirror image of form B, with carbon 1 kept at the left tip.
-  const SC = 1.5, LB = 30;
-  const PB = [[-60, 17], [-34, -17], [26, -3], [60, -17], [34, 17], [-26, 3]].map(p => [p[0] * SC, p[1] * SC]);
+  const SC = 1.5, LAX = 34, LEQ = 30;
+  const PB = [[-64, 25], [-46, -15], [18, -7], [64, -25], [46, 15], [-18, 7]].map(p => [p[0] * SC, p[1] * SC]);
   const PA = PB.map((_, j) => { const p = PB[mod6(3 - j)]; return [-p[0], p[1]] });
   function norm(o) {
     o = o || {}; const hl = new Set(), hc = new Set();
@@ -229,12 +229,12 @@
       const c = i + 1, here = subs.filter(s => s.c === c), p = P[i];
       const q1 = P[mod6(i + 1)], q2 = P[mod6(i + 2)], e = unit(q1[0] - q2[0], q1[1] - q2[1]);     // equatorial: parallel to the ring bond one bond away, pointing out
       const upC = axUp(c, form);
-      nums.push([p[0] - e[0] * 10, p[1] - e[1] * 10 + 3]);
+      nums.push([p[0] - 6.5, upC ? p[1] - 6 : p[1] + 14]);          // the number sits beside the axial bond, on its left; the letter a sits on its right
       for (const f of ["u", "d"]) {
         const sub = here.find(s => s.face === f), key = c + f, lit = o.hl.has(key);
         const mode = sub ? "g" : (o.H || lit) ? "h" : here.length ? "stub" : null; if (!mode) continue;
         const ax = (f === "u") === upC, d = ax ? [0, f === "u" ? -1 : 1] : e;
-        const len = mode === "g" ? LB : mode === "h" ? 22 : 15, fs = mode === "g" ? 12 : 10;
+        const len = mode === "g" ? (ax ? LAX : LEQ) : mode === "h" ? 22 : 15, fs = mode === "g" ? 12 : 10;
         const x2 = p[0] + d[0] * len, y2 = p[1] + d[1] * len, side = Math.abs(d[0]) > 0.8;
         // the letter a or e sits beside the bond, on the side away from this carbon's other bond
         let n = [d[1], -d[0]]; if (ax) n = [1, 0]; else if ((n[1] > 0) !== upC) n = [-n[0], -n[1]];
@@ -251,7 +251,7 @@
       items: a.items.map((x, k) => { const y = b.items[k], s = src.items[k]; return Object.assign({}, s, { x1: L(x.x1, y.x1), y1: L(x.y1, y.y1), x2: L(x.x2, y.x2), y2: L(x.y2, y.y2), lx: L(x.lx, y.lx), ly: L(x.ly, y.ly), ex: L(x.ex, y.ex), ey: L(x.ey, y.ey) }) }) };
   }
   function paint(G, o) {
-    const box = [-92, -28, 92, 28];
+    const box = [-98, -40, 98, 40];
     let h = `<polygon points="${G.P.map(p => f1(p[0]) + "," + f1(p[1])).join(" ")}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>`;
     o.hc.forEach(c => { const p = G.P[c - 1]; h += `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="6.5" fill="${HLC}" fill-opacity=".55"/>` });
     G.items.forEach(it => {
@@ -290,7 +290,7 @@
       const a2 = [a[0] + (b[0] - a[0]) * 0.15 + m[0] * 5, a[1] + (b[1] - a[1]) * 0.15 + m[1] * 5], b2 = [b[0] + (a[0] - b[0]) * 0.15 + m[0] * 5, b[1] + (a[1] - b[1]) * 0.15 + m[1] * 5];
       h += `<line x1="${f1(a2[0])}" y1="${f1(a2[1])}" x2="${f1(b2[0])}" y2="${f1(b2[1])}" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`;
     }
-    if (o.num) P.forEach((p, i) => { const q = unit(p[0], p[1]), k = R - (pick ? 12 : o.dbl ? 11 : 9); h += `<text class="ch-num" x="${f1(q[0] * k)}" y="${f1(q[1] * k + 3)}" text-anchor="middle" font-size="9" fill="currentColor" fill-opacity=".62">${i + 1}</text>` });
+    if (o.num) P.forEach((p, i) => { const q = unit(p[0], p[1]), k = R - (pick ? 12 : o.dbl ? 15 : 9); h += `<text class="ch-num" x="${f1(q[0] * k)}" y="${f1(q[1] * k + 3)}" text-anchor="middle" font-size="9" fill="currentColor" fill-opacity=".62">${i + 1}</text>` });
     for (let i = 0; i < 6; i++) {
       const c = i + 1, here = subs.filter(s => s.c === c), faces = ["u", "d"].filter(f => pick || here.some(s => s.face === f)), p = P[i], plain = o.plain && o.plain.includes(c);
       faces.forEach(f => {
@@ -437,7 +437,7 @@
       const picks = subs.map(() => null), rows = [], check = el("button", { class: "btn primary", type: "button", disabled: true }, "Check");
       subs.forEach((s, i) => {
         const seg = el("span", { class: "seg", role: "group", "aria-label": `${noun(s.g)} on carbon ${s.c}` }), mark = el("span", { class: "chair-rowmark" });
-        ["ax", "eq"].forEach(p => seg.appendChild(el("button", { type: "button", class: "btn small", "aria-pressed": "false", data: { p }, on: { click: e => { picks[i] = p; [...seg.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === p))); check.disabled = picks.some(x => !x); e.preventDefault() } } }, POS[p])));
+        ["ax", "eq"].forEach(p => seg.appendChild(el("button", { type: "button", "aria-pressed": "false", data: { p }, on: { click: e => { picks[i] = p; [...seg.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === p))); check.disabled = picks.some(x => !x); e.preventDefault() } } }, POS[p])));
         rows.push({ seg, mark }); box.appendChild(el("div", { class: "chair-row" }, el("span", {}, `${cap(noun(s.g))} on carbon ${s.c} (${FACE[s.face]})`), seg, mark));
       });
       check.addEventListener("click", () => {
