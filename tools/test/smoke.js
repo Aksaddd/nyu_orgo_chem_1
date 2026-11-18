@@ -2,8 +2,9 @@
 // End-to-end check in a real browser, from file:// (no server): opens every page, draws every reading, mounts every
 // question, worked example and mechanism, and fails if anything throws, logs an error, or leaves a figure undrawn.
 //   node tools/test/smoke.js            (needs Playwright; not part of tools/test/run.js)
-// From file:// the class is on its own, outside Eureka. Its front page and its reader are then alone/index.html and
-// alone/read/index.html: index.html and read/index.html are Eureka's pages and only send the browser there (step 0).
+// From file:// the class is on its own, outside Eureka. Its front page, its reader and Word Roots are then alone/index.html,
+// alone/read/index.html and alone/roots/index.html: index.html, read/index.html and roots/index.html are Eureka's pages
+// and only send the browser there (step 0).
 // Eureka's reader itself (read/index.html with read/chapters.js) needs Eureka around it and is not opened here: the build
 // checks its data (node tools/build.js --check), and it is tried in a browser inside a Eureka site.
 const { chromium } = require("playwright"), path = require("path");
@@ -22,16 +23,30 @@ const quiet = u => /shared\/(platform\.js|maison\.css)|_vercel/.test(u);
   const counts = {};
 
   // 0. outside Eureka, Eureka's two pages lead to the class's own, with the chapter asked for
-  for (const [p, to] of [["read/index.html#rings-1", "alone/read/index.html#rings-1"], ["index.html", "alone/index.html"]]) {
+  for (const [p, to] of [["read/index.html#rings-1", "alone/read/index.html#rings-1"], ["index.html", "alone/index.html"], ["roots/index.html#questions", "alone/roots/index.html#questions"]]) {
     leaving = true; where = p; await page.goto(url(p)); await page.waitForTimeout(900); leaving = false;
     const at = page.url(), n = await page.evaluate(() => (document.getElementById("app") || document.body).textContent.trim().length);
     if (!at.endsWith(to)) note(p, "does not lead to " + to + " (it is at " + at.replace(/.*\//, "") + ")");
     if (n < 40) note(p, "leads to an empty page");
   }
   // 1. every page opens and draws something
-  for (const p of ["alone/index.html", "alone/read/index.html", "exam/index.html", "drill/index.html", "mechanisms/index.html", "mock/index.html", "lab/index.html", "foundations/index.html", "review/index.html", "archive/index.html", "syllabus/index.html"]) {
+  for (const p of ["alone/index.html", "alone/read/index.html", "alone/roots/index.html", "exam/index.html", "drill/index.html", "mechanisms/index.html", "mock/index.html", "lab/index.html", "foundations/index.html", "review/index.html", "archive/index.html", "syllabus/index.html"]) {
     await open(p); const n = await page.evaluate(() => document.getElementById("app").textContent.trim().length); if (n < 40) note(p, "the page is empty");
   }
+  // 1b. Word Roots: both views, a section's exam block, a root opened from a question kind, and one drill question answered
+  await open("alone/roots/index.html#concepts", 500);
+  const wr = await page.evaluate(async () => {
+    const out = [], wait = ms => new Promise(r => setTimeout(r, ms)), n = s => document.querySelectorAll(s).length;
+    if (n(".grp") < 10 || n(".root") < 80) out.push(`the concept view shows ${n(".grp")} sections and ${n(".root")} roots`);
+    const d = document.querySelector(".onexam"); if (!d) out.push("no On the exam block"); else { d.open = true; await wait(50); if (!d.querySelector(".kgo")) out.push("an On the exam block has no link to practise") }
+    document.querySelector('.xtab[data-v="kinds"]').click(); await wait(100);
+    if (n(".kind") < 30) out.push(`the view by exam question shows ${n(".kind")} kinds`);
+    const chip = document.querySelector(".rchip"); if (!chip) out.push("no root in the view by exam question"); else { chip.click(); await wait(100); if (!document.getElementById("r" + chip.dataset.r)) out.push("a root of a question kind does not open its card") }
+    document.getElementById("drillBtn").click(); await wait(100);
+    const opt = document.querySelector(".opt"); if (!opt) out.push("the drill shows no question"); else { opt.click(); await wait(50); if (document.getElementById("fb").hidden) out.push("an answer in the drill shows no feedback") }
+    return out;
+  });
+  wr.forEach(t => note("word roots", t));
   // 2. every reading, with its expanders open
   await open("alone/read/index.html"); const chapters = await page.evaluate(() => (ORGO.data.chapterList || []).map(c => c.id)); counts.readings = chapters.length;
   for (const id of chapters) {

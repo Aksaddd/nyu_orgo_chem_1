@@ -304,6 +304,14 @@ entry; `parts` breaks the word into pieces with their meanings, and `lit` gives 
 that helps memory. Plain text only: no tokens, since the text is shown by Eureka's lookup card and Word Bank, which do
 not draw structures. Definitions use the lecture's values where a number appears.
 
+An entry without `parts` takes them from the Word Roots list (`roots/roots.js`, through `fill()` in `tools/wordroots.js`),
+so a card and the Word Roots page say the same: the roots whose example terms are the entry's term or its plural, and,
+where the root's letters show in the term itself, the roots whose example terms are one of its other spellings or a
+phrase built on it (`primary carbon` gives `prim-` to `primary`), in the order they sit in the word. Write `parts` only
+where the list cannot give them (`alkoxide`: alk- + ox- + -ide), and spell each root as `roots.js` does, so the card
+shows its origin. A word whose own roots should show on its card, such as `quartet` or `oxirane`, is an entry of its own,
+not another spelling of a wider entry, whose card would open instead.
+
 A double-tap opens the entry whose spelling the tapped word reads as: Eureka's lookup (`shared/lookup.js`) lowercases it,
 spells out the Greek letters (α β γ δ π σ as alpha, beta, gamma, delta, pi, sigma), keeps letters, digits, `+` and `-`,
 and also tries the singular (`norm()` and `forms()` there). So the build checks every term and spelling the same way,

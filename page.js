@@ -19,6 +19,7 @@
     ["Molecule Lab", "lab/", "Chairs, Newman projections, 3D models, energy diagrams and the pKa ladder."],
     ["Foundations", "foundations/", "The few ideas everything else rests on, and a short check of them."],
     ["Review List", "review/", "Every question you missed or flagged, ready to practise again."],
+    ["Word Roots", "roots/", "The Greek and Latin parts of the course's terms, sorted by what they describe, with the exam questions they help with."],
     ["Archive", "archive/", "The original lecture notes, the old exam and the flow chart."],
     ["Syllabus", "syllabus/", "What the unit covers and how the exam is set."]
   ];
