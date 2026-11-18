@@ -8,6 +8,7 @@
 .v3d-flip-ctl { display: flex; gap: 12px; align-items: center; flex-wrap: wrap }
 .v3d-flip-ctl label { font-weight: 600 }
 .v3d-slider { flex: 1 1 200px; min-width: 160px; accent-color: var(--accent); min-height: 32px }
+@media (pointer: coarse) { .v3d-slider { min-height: 44px } }
 .v3d-caption { font-weight: 600; margin: 0 }
 
 .lab-intro { margin: 0 0 14px; max-width: 70ch }
