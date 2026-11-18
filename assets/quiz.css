@@ -188,6 +188,8 @@ html.cb :is(.q, .mock-item) { container: orgo-q / inline-size; }
    mock exam's item is not a .q, so both are given the spacing the choices get */
 html.px-space1 :is(.q-stem, .mock-item) { line-height: 1.8; word-spacing: .08em; }
 html.px-space2 :is(.q-stem, .mock-item) { line-height: 2.1; word-spacing: .16em; letter-spacing: .03em; }
+/* and "Easier letters" (the same file's letters and spacing) reaches a mock exam's item too */
+html.px-font .mock-item { font-family: "Atkinson Hyperlegible", "OpenDyslexic", Verdana, "Trebuchet MS", "Comic Sans MS", sans-serif; letter-spacing: .035em; word-spacing: .12em; }
 
 /* ---- printing a mock exam: stems and choices, no controls */
 @media print {
