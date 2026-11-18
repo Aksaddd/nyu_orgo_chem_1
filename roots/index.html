@@ -174,7 +174,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
   const BASE = (window.COURSE && window.COURSE.base) || "../";   // CHEM 225: links start from the class's folder, so they also hold on the class's own page (alone/roots/)
   const nextStep = (cls = "btn ghost") => `<a class="${cls}" href="${BASE}exam/index.html">Go to the Exam 2 Lab →</a>`;   // CHEM 225: the next step is the exam's question kinds
   // Saved per exam: m = mastered roots, r = roots marked for review. Only this page uses it.
-  const SKEY = "orgo-roots-v1";
+  const SKEY = "orgo-roots-v1";   // CHEM 225
   let ST = {}; try { ST = JSON.parse(localStorage.getItem(SKEY) || "{}") || {} } catch (e) { }
   const st = () => { const S = (ST[ex] = ST[ex] || { m: {}, r: {} }); S.x = S.x || {}; return S };   // m mastered · r review · x missed (last answer wrong)
   const saveST = () => { try { localStorage.setItem(SKEY, JSON.stringify(ST)) } catch (e) { } };
@@ -224,6 +224,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
   const OPEN = new Set(), qn = k => k.group === "exam" ? k.exam + " " : "";
   const onExam = g => { const L = (meta(g).exam || []).map(([id, how]) => [kindOf(id), how]); return L.length ? `<details class="onexam" data-g="${esc(g)}"${OPEN.has(g) ? " open" : ""}><summary><span class="oxh">On the exam</span><span class="oxs">${L.length} kinds of question: ${L.map(([k]) => esc(qn(k) + (k.short || k.title))).join(" · ")}</span></summary>${L.map(([k, how]) => `<div class="kq"><div class="kt"><b>${esc(k.title)}</b><span class="kmeta">${esc(kmeta(k))}</span></div><p>${esc(how)} ${practise(k)}</p></div>`).join("")}</details>` : "" };
   const list = () => view === "kinds" ? kinds() : concepts();   // CHEM 225: the view on show
+  // CHEM 225: the shared page's list() as the concept view, with this class's examples in the tip, "Jump to a section", and "On the exam"
   function concepts() {
     const q = query.trim().toLowerCase();
     const hit = r => !q || [r.root, r.mean, r.orig, ...r.exs.flat()].join(" ").toLowerCase().includes(q);
