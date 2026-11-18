@@ -6,7 +6,7 @@
 (() => {
   const ORGO = window.ORGO, el = ORGO.el, L = ORGO.learn, D = ORGO.data, KEY = "mock-v1", HIST = "mock-history-v1", RUN = "mock-run-v1", V = 1, DAY = 864e5;
   const ONSCREEN = ["mcq", "multi", "numeric", "rank", "classify"];
-  let app, tick = null, live = null;      // live: what keeps the sitting on screen, until its result is saved
+  let app, tick = null, live = null, unkept = false;      // live: what keeps the sitting on screen, until its result is saved; unkept: this browser refused the last save
   const r1 = x => Math.round(x * 10) / 10;
   const btn = (label, cls, click, act) => el("button", { type: "button", class: "btn" + (cls ? " " + cls : ""), data: act ? { act } : null, on: { click } }, label);
   const typeName = id => { const t = ORGO.type(id); return t ? (t.short || t.title) : id };
@@ -34,8 +34,9 @@
     try { const old = ORGO.store.get(KEY, []); if (ORGO.store.raw(HIST) == null && Array.isArray(old) && old.length) ORGO.store.set(HIST, old.filter(a => a && a.max).map(a => ({ at: a.at, right: a.score, total: a.max, pct: Math.round(a.score / a.max * 100), secs: a.secs })).slice(-50)) } catch (e) { }
     if (!ORGO.quiz || !ORGO.quiz._widget) { app.appendChild(el("p", { class: "callout warn" }, "The question engine did not load. Reload the page.")); return }
     Promise.all(["exam", "mock"].map(n => ORGO.need(n).catch(() => null))).then(() => landing());
-    // a sitting open and not yet saved is written before the page goes, and the browser asks before it leaves
-    window.addEventListener("beforeunload", e => { if (!live) return; live(); e.preventDefault(); e.returnValue = true });      // returnValue: browsers before the standard
+    // a sitting open and not yet saved is written before the page goes. It comes back when the page is opened again, so the
+    // browser asks before leaving only when this browser could not keep it (Eureka also reloads the page after another device saves)
+    window.addEventListener("beforeunload", e => { if (!live) return; live(); if (unkept) { e.preventDefault(); e.returnValue = true } });      // returnValue: browsers before the standard
     window.addEventListener("pagehide", () => { if (live) live() });
     document.addEventListener("visibilitychange", () => { if (live && document.visibilityState === "hidden") live() });
   });
@@ -137,7 +138,7 @@
       const s = { v: V, id: x.id, at, timed, crossed: [...crossed], answers };
       if (done) Object.assign(s, { done: 1, used: used == null ? null : r1(used), marks }); else if (timed && running) s.endAt = endAt; else if (timed) s.left = r1(left);
       const str = JSON.stringify(s); if (str === last) return;
-      if (ORGO.store.set(RUN, s)) last = str; else if (!warned) { warned = true; ORGO.ui.toast("This browser cannot keep your exam as you go. A reload would lose it.", 6000) }
+      unkept = !ORGO.store.set(RUN, s); if (!unkept) last = str; else if (!warned) { warned = true; ORGO.ui.toast("This browser cannot keep your exam as you go. A reload would lose it.", 6000) }
     }
 
     const title = el("h1", { class: "mock-title", tabindex: "-1" }, x.title), printBtn = btn("Print this exam", "small", () => window.print(), "print");
