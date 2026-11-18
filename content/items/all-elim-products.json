@@ -1,0 +1,273 @@
+[
+  {
+    "id": "all-elim-products-001", "type": "all-elim-products", "role": "worked", "kind": "written", "diff": 3, "src": "site, after FA24 Exam 2, Q7B", "time": 10, "pts": 50,
+    "stem": "3,4-Dibromohexane is treated with two equivalents of a strong base ({{NaNH2}}). Draw all the products with the formula {{C6H10}}, including geometric isomers.\n[[mol:CCC(Br)C(Br)CC]]",
+    "model": "<p>Two equivalents of base mean two {{E2}} eliminations: the molecule loses HBr twice. Every product is {{C6H10}}, with two pi bonds.</p><p><b>First elimination.</b> The hydrogen can come from either side of a C-Br carbon. The molecule is symmetrical, so there are only two bromoalkenes:</p>\n[[rxn:CCC(Br)C(Br)CC>base>CCC(Br)=CCC + CC=CC(Br)CC]]\n<p>These are 3-bromo-3-hexene (H from the other CHBr carbon) and 4-bromo-2-hexene (H from the {{CH2}}).</p><p><b>Second elimination.</b> Again the hydrogen comes from a carbon next to the C-Br carbon:</p><ul><li>3-bromo-3-hexene, H from the alkene CH: <b>3-hexyne</b></li><li>3-bromo-3-hexene, H from the {{CH2}} next to the C-Br carbon: <b>2,3-hexadiene</b></li><li>4-bromo-2-hexene, H from the alkene CH: 2,3-hexadiene again</li><li>4-bromo-2-hexene, H from the {{CH2}}: <b>2,4-hexadiene</b></li></ul><p>The route to the alkyne:</p>\n[[mech:double-e2-3-4-dibromohexane-amide]]\n<p>The alkyne and the allene:</p>\n[[mol:CCC#CCC]]\n[[mol:CC=C=CCC]]\n<p>In 2,4-hexadiene each double bond has an H and a carbon group on both of its carbons, so each can be E or Z. Because the molecule is symmetrical, E,Z and Z,E are the same compound: three geometric isomers.</p>\n[[mol:C/C=C/C=C/C]]\n[[mol:C/C=C/C=C\\C]]\n[[mol:C/C=C\\C=C/C]]",
+    "rubric": [
+      {"pts": 10, "h": "Says that two equivalents of base cause two E2 eliminations (loss of two HBr)"},
+      {"pts": 10, "h": "3-Hexyne is drawn"},
+      {"pts": 10, "h": "2,3-Hexadiene (the allene) is drawn"},
+      {"pts": 10, "h": "2,4-Hexadiene is drawn"},
+      {"pts": 5, "h": "The three geometric isomers of 2,4-hexadiene: E,E; E,Z; Z,Z"},
+      {"pts": 5, "h": "Shows where each comes from: the two bromoalkenes, or which hydrogen is removed in each step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the equivalents", "h": "Two Br, two equivalents of strong base: two {{E2}} reactions. {{C6H12Br2}} minus 2 HBr is {{C6H10}}.", "ask": {"q": "How many pi bonds does each product have?", "a": "Two: one triple bond, or two double bonds."}},
+        {"t": "First E2, systematically", "h": "Take the Br on C3. Its neighbours are C2 (a {{CH2}}) and C4 (the other CHBr). H from C4 gives 3-bromo-3-hexene. H from C2 gives 4-bromo-2-hexene. Starting from the Br on C4 gives the same two by symmetry.", "ask": {"q": "Why only two bromoalkenes, when the exam's 2,3-dibromobutane also gave two?", "a": "Both molecules are symmetrical, so the two C-Br carbons are equivalent."}},
+        {"t": "Second E2 on 3-bromo-3-hexene", "h": "The Br is on a C=C carbon. H from the other alkene carbon: a triple bond, 3-hexyne. H from the {{CH2}} on the other side: two double bonds sharing a carbon, 2,3-hexadiene."},
+        {"t": "Second E2 on 4-bromo-2-hexene", "h": "The Br is next to the C=C. H from the alkene carbon: 2,3-hexadiene again. H from the {{CH2}}: a new C=C next to the old one, 2,4-hexadiene.", "ask": {"q": "Which product has been found twice?", "a": "2,3-Hexadiene. Draw it once."}},
+        {"t": "Check for E and Z", "h": "3-Hexyne: none (a triple bond is linear). 2,3-Hexadiene: not E/Z. 2,4-Hexadiene: both double bonds can be E or Z, giving E,E, E,Z and Z,Z.", "ask": {"q": "Why three and not four?", "a": "The molecule is symmetrical end to end, so E,Z and Z,E are the same."}},
+        {"t": "Collect", "h": "Three constitutional isomers, as in the exam question: an alkyne, a cumulated diene and a conjugated diene. The conjugated diene comes as three geometric isomers."}
+      ],
+      "answer": "3-Hexyne, 2,3-hexadiene, and 2,4-hexadiene (E,E; E,Z; Z,Z).",
+      "rule": "Dihalide plus two equivalents of base: alkyne, allene and conjugated diene. Then check each C=C for E and Z."
+    }
+  },
+  {
+    "id": "all-elim-products-002", "type": "all-elim-products", "role": "worked", "kind": "written", "diff": 2, "src": "site, after Lecture 11/12, p. 2", "time": 6, "pts": 30,
+    "stem": "3-Bromo-2-methylpentane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Draw every alkene that can form, and circle the one you expect to be major.\n[[mol:CC(C)C(Br)CC]]",
+    "model": "<p>Strong base, secondary bromide: {{E2}}. The carbon with Br (C3) has two neighbours with hydrogens: C2 (one H) and C4 (two H).</p><p><b>H from C2</b>: the double bond is C2=C3. C2 carries two methyl groups, so there is no E and Z: one alkene, 2-methyl-2-pentene.</p>\n[[mol:CC(C)=CCC]]\n<p><b>H from C4</b>: the double bond is C3=C4. Each alkene carbon has an H and a carbon group, so there are two alkenes, (E)- and (Z)-4-methyl-2-pentene.</p>\n[[mol:C/C=C/C(C)C]]\n[[mol:C/C=C\\C(C)C]]\n<p>Three alkenes in all. <b>Major: 2-methyl-2-pentene</b>, the most substituted (three carbons on the C=C, against two).</p>",
+    "rubric": [
+      {"pts": 8, "h": "2-Methyl-2-pentene drawn"},
+      {"pts": 8, "h": "(E)-4-Methyl-2-pentene drawn"},
+      {"pts": 8, "h": "(Z)-4-Methyl-2-pentene drawn"},
+      {"pts": 6, "h": "2-Methyl-2-pentene chosen as major because it is the most substituted (Saytzeff), and no E/Z pair drawn for it"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "Br is on C3. Next to it: C2, a CH with two methyls, and C4, a {{CH2}}.", "ask": {"q": "Can the methyl groups on C2 lose a hydrogen in this reaction?", "a": "No. They are two carbons away from the C-Br carbon."}},
+        {"t": "Remove H from C2", "h": "C2=C3. Check for E/Z: C2 has two identical groups ({{CH3}} and {{CH3}}). One alkene only.", "ask": {"q": "What is the test for E and Z?", "a": "Each C=C carbon must carry two different groups."}},
+        {"t": "Remove H from C4", "h": "C3=C4. C3 has H and isopropyl, C4 has H and {{CH3}}: two different groups on each. Draw E and Z."},
+        {"t": "Pick the major product", "h": "Ethoxide is a small base and Br a good leaving group: Saytzeff. C2=C3 is trisubstituted, C3=C4 is disubstituted.", "ask": {"q": "Among the two 4-methyl-2-pentenes, which is the larger share?", "a": "E, where the two carbon groups are on opposite sides."}}
+      ],
+      "answer": "2-Methyl-2-pentene (major), (E)-4-methyl-2-pentene and (Z)-4-methyl-2-pentene.",
+      "rule": "One alkene per kind of neighbouring hydrogen, then test each for E and Z."
+    }
+  },
+  {
+    "id": "all-elim-products-003", "type": "all-elim-products", "role": "worked", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "3-Bromo-3-methylhexane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. How many different alkenes can form? Count E and Z isomers separately.\n[[mol:CCCC(C)(Br)CC]]",
+    "choices": [
+      {"h": "2", "ok": false, "why": "This counts only the two ring-free chain directions and forgets both the methyl branch and the E and Z isomers."},
+      {"h": "3", "ok": false, "why": "This counts the three regioisomers (one per neighbouring carbon) but not their geometric isomers. Two of the three exist as E and Z."},
+      {"h": "4", "ok": false, "why": "This finds E and Z for the two chain alkenes but misses the alkene made by taking a hydrogen from the {{CH3}} branch."},
+      {"h": "5", "ok": true, "why": "Three neighbouring carbons give three regioisomers. 3-Methyl-2-hexene and 3-methyl-3-hexene each have E and Z; 2-ethyl-1-pentene has only one form. 2 + 2 + 1 = 5."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find every neighbour", "h": "The C-Br carbon (C3) is tertiary. It has three neighbours with hydrogens: C2 (a {{CH2}}), C4 (a {{CH2}}) and the {{CH3}} branch.", "ask": {"q": "Which neighbour is most often forgotten?", "a": "The {{CH3}} branch on the C-Br carbon."}},
+        {"t": "H from C2", "h": "C2=C3: 3-methyl-2-hexene. C2 has H and {{CH3}}; C3 has {{CH3}} and propyl. Different on both: E and Z.\n[[mol:C/C=C(\\C)CCC]] [[mol:C/C=C(/C)CCC]]"},
+        {"t": "H from C4", "h": "C3=C4: 3-methyl-3-hexene. C3 has {{CH3}} and ethyl; C4 has H and ethyl. Different on both: E and Z.\n[[mol:CC/C=C(\\C)CC]] [[mol:CC/C=C(/C)CC]]", "ask": {"q": "Both alkene carbons carry an ethyl group. Does that prevent E and Z?", "a": "No. The test is two different groups on the same carbon, and each carbon passes."}},
+        {"t": "H from the methyl branch", "h": "The C=C goes to the branch carbon: 2-ethyl-1-pentene. The end carbon has two H: one form only.\n[[mol:C=C(CC)CCC]]"},
+        {"t": "Add up", "h": "2 + 2 + 1 = 5.", "ask": {"q": "Which would be the minor products with this small base?", "a": "2-Ethyl-1-pentene, the least substituted."}}
+      ],
+      "answer": "5",
+      "rule": "Count neighbours first, then E and Z for each."
+    }
+  },
+  {
+    "id": "all-elim-products-004", "type": "all-elim-products", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "2-Bromobutane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. How many different alkenes can form? Count E and Z isomers separately.\n[[mol:CCC(C)Br]]",
+    "choices": [
+      {"h": "1", "ok": false, "why": "This sees only one direction of elimination. The C-Br carbon has two different neighbours, C1 and C3."},
+      {"h": "2", "ok": false, "why": "1-Butene and 2-butene are the two regioisomers, but 2-butene is two compounds: E and Z."},
+      {"h": "3", "ok": true, "why": "H from C1 gives 1-butene (one form). H from C3 gives 2-butene, which has E and Z. 1 + 2 = 3."},
+      {"h": "4", "ok": false, "why": "This draws E and Z for 1-butene as well. Its end carbon has two hydrogens, so it has only one form."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "Br is on C2. Neighbours: C1 (a {{CH3}}) and C3 (a {{CH2}})."},
+        {"t": "Draw the regioisomers", "h": "H from C1: 1-butene. H from C3: 2-butene.\n[[mol:C=CCC]]"},
+        {"t": "Test for E and Z", "h": "1-Butene: the end carbon has two H, no isomers. 2-Butene: each carbon has H and {{CH3}}, so E and Z.\n[[mol:C/C=C/C]] [[mol:C/C=C\\C]]"}
+      ],
+      "answer": "3: 1-butene, (E)-2-butene and (Z)-2-butene.",
+      "rule": "A C=C carbon with two identical groups has no E and Z."
+    }
+  },
+  {
+    "id": "all-elim-products-005", "type": "all-elim-products", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 5, "pts": 30,
+    "stem": "2-Bromopentane is treated with {{NaOCH3}} in {{CH3OH}}. Draw every alkene that can form and circle the major product.\n[[mol:CCCC(C)Br]]",
+    "model": "<p>{{E2}}. The carbon with Br (C2) has two neighbours: C1 (a {{CH3}}) and C3 (a {{CH2}}).</p><p>H from C1: 1-pentene.</p>\n[[mol:C=CCCC]]\n<p>H from C3: 2-pentene, which exists as E and Z.</p>\n[[mol:C/C=C/CC]]\n[[mol:C/C=C\\CC]]\n<p><b>Major: (E)-2-pentene.</b> 2-Pentene is the more substituted alkene (Saytzeff: small base, good leaving group), and E is the more stable of its two forms.</p>",
+    "rubric": [
+      {"pts": 8, "h": "1-Pentene drawn"},
+      {"pts": 8, "h": "(E)-2-Pentene drawn"},
+      {"pts": 8, "h": "(Z)-2-Pentene drawn"},
+      {"pts": 6, "h": "(E)-2-Pentene, or 2-pentene, circled as major with the reason: more substituted"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "C1 and C3. Both have hydrogens."},
+        {"t": "Draw one alkene from each", "h": "C1=C2 is 1-pentene. C2=C3 is 2-pentene."},
+        {"t": "Test for E and Z", "h": "1-Pentene: two H on the end carbon, one form. 2-Pentene: H and {{CH3}} on one carbon, H and ethyl on the other: E and Z."},
+        {"t": "Choose the major product", "h": "Disubstituted beats monosubstituted. This is the same pattern as the lecture's 2-hexyl bromide: 72% 2-hexene, 28% 1-hexene."}
+      ],
+      "answer": "1-Pentene, (E)-2-pentene (major) and (Z)-2-pentene.",
+      "rule": "A secondary halide in the middle of a chain usually gives three alkenes."
+    }
+  },
+  {
+    "id": "all-elim-products-006", "type": "all-elim-products", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "Each of these bromides is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which one can give only <b>one</b> alkene?",
+    "choices": [
+      {"h": "[[mol:BrC1CCCCC1]]\nBromocyclohexane", "ok": true, "why": "The two neighbouring carbons are equivalent, so both directions give the same alkene, cyclohexene. A double bond in a six-membered ring has no E and Z pair."},
+      {"h": "[[mol:CCC(C)Br]]\n2-Bromobutane", "ok": false, "why": "Three alkenes: 1-butene, (E)-2-butene and (Z)-2-butene."},
+      {"h": "[[mol:CCC(C)(C)Br]]\n2-Bromo-2-methylbutane", "ok": false, "why": "Two alkenes: 2-methyl-2-butene (H from the {{CH2}}) and 2-methyl-1-butene (H from a {{CH3}}). Neither has E and Z."},
+      {"h": "[[mol:CCC(Br)CC]]\n3-Bromopentane", "ok": false, "why": "The two neighbours are equivalent, so there is one regioisomer, 2-pentene. But 2-pentene is two compounds, E and Z."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Count different neighbours", "h": "Bromocyclohexane: one kind. 2-Bromobutane: two kinds. 2-Bromo-2-methylbutane: two kinds ({{CH2}}, and the two equivalent {{CH3}}). 3-Bromopentane: one kind."},
+        {"t": "Test for E and Z", "h": "Cyclohexene: a ring alkene, one form. 2-Pentene from 3-bromopentane: E and Z."},
+        {"t": "Decide", "h": "Only bromocyclohexane passes both tests: one kind of neighbour and no geometric isomers."}
+      ],
+      "answer": "Bromocyclohexane (it gives only cyclohexene).",
+      "rule": "One alkene needs one kind of neighbouring hydrogen and no E/Z."
+    }
+  },
+  {
+    "id": "all-elim-products-007", "type": "all-elim-products", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 5, "pts": 30,
+    "stem": "1-Bromo-1-methylcyclohexane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Draw every alkene that can form and circle the major product.\n[[mol:CC1(Br)CCCCC1]]",
+    "model": "<p>Tertiary bromide, strong base: {{E2}}. The C-Br carbon has three neighbours: two ring {{CH2}} groups, which are equivalent, and the {{CH3}}.</p><p>H from a ring {{CH2}}: the double bond is in the ring. 1-Methylcyclohexene.</p>\n[[mol:CC1=CCCCC1]]\n<p>H from the {{CH3}}: the double bond points out of the ring. Methylenecyclohexane.</p>\n[[mol:C=C1CCCCC1]]\n<p>Two alkenes. Neither has E and Z: a double bond in a six-membered ring can only be cis, and the outside {{CH2}} has two identical H.</p><p><b>Major: 1-methylcyclohexene</b>, the more substituted alkene (three carbons on the C=C, against two).</p>",
+    "rubric": [
+      {"pts": 10, "h": "1-Methylcyclohexene drawn"},
+      {"pts": 10, "h": "Methylenecyclohexane drawn (H taken from the methyl group)"},
+      {"pts": 5, "h": "No extra isomers: the two ring directions are the same, and there is no E/Z"},
+      {"pts": 5, "h": "1-Methylcyclohexene chosen as major (more substituted, Saytzeff)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "Ring C2, ring C6 and the methyl carbon. C2 and C6 are mirror images of each other across the molecule: equivalent."},
+        {"t": "Draw one alkene per kind", "h": "Ring {{CH2}}: 1-methylcyclohexene. Methyl: methylenecyclohexane."},
+        {"t": "Test for E and Z", "h": "None for either."},
+        {"t": "Choose the major product", "h": "Small base, good leaving group: Saytzeff. The ring alkene is trisubstituted, the outside one disubstituted."}
+      ],
+      "answer": "1-Methylcyclohexene (major) and methylenecyclohexane.",
+      "rule": "A methyl branch on the C-LG carbon is a neighbour too."
+    }
+  },
+  {
+    "id": "all-elim-products-008", "type": "all-elim-products", "role": "practice", "kind": "written", "diff": 2, "src": "site, after FA24 Exam 2, Q7B", "time": 7, "pts": 30,
+    "stem": "1,2-Dibromopropane is treated with two equivalents of a strong base ({{NaNH2}}). Draw the products with the formula {{C3H4}} and show how each arises.\n[[mol:CC(Br)CBr]]",
+    "model": "<p>Two {{E2}} eliminations: {{C3H6Br2}} loses 2 HBr to give {{C3H4}}.</p><p><b>First elimination.</b> Three bromoalkenes are possible:</p>\n[[rxn:CC(Br)CBr>base>CC=CBr + CC(Br)=C + C=CCBr]]\n<p>1-Bromopropene (Br leaves from C2, H from C1), 2-bromopropene (Br leaves from C1, H from C2) and 3-bromopropene (Br leaves from C2, H from the {{CH3}}).</p><p><b>Second elimination.</b></p><ul><li>1-bromopropene, H from the other alkene carbon: <b>propyne</b></li><li>2-bromopropene, H from the alkene {{CH2}}: propyne again</li><li>2-bromopropene, H from the {{CH3}}: <b>propadiene</b> (allene)</li><li>3-bromopropene, H from the alkene CH next to the C-Br carbon: propadiene again</li></ul><p>Two products:</p>\n[[mol:CC#C]]\n[[mol:C=C=C]]",
+    "rubric": [
+      {"pts": 6, "h": "Two E2 eliminations, loss of 2 HBr"},
+      {"pts": 9, "h": "Propyne drawn"},
+      {"pts": 9, "h": "Propadiene (allene) drawn"},
+      {"pts": 6, "h": "Routes shown through the bromoalkenes, or by naming the hydrogen removed in each step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the equivalents", "h": "Two Br and two equivalents of base: two eliminations, two pi bonds in the product."},
+        {"t": "First E2 from each Br", "h": "Br on C2: neighbours C1 and C3, giving 1-bromopropene and 3-bromopropene. Br on C1: neighbour C2, giving 2-bromopropene."},
+        {"t": "Second E2 on each bromoalkene", "h": "Find the carbon next to the remaining C-Br carbon that has a hydrogen. A triple bond forms when Br is on the C=C and the H comes from the other alkene carbon. An allene forms when the new double bond shares a carbon with the old one."},
+        {"t": "Remove duplicates", "h": "Four routes, two different products. A three-carbon chain cannot hold a conjugated diene, so there is no third product here."}
+      ],
+      "answer": "Propyne and propadiene.",
+      "rule": "Follow every bromoalkene through the second elimination, then draw each product once."
+    }
+  },
+  {
+    "id": "all-elim-products-009", "type": "all-elim-products", "role": "practice", "kind": "mcq", "diff": 3, "src": "site, after FA24 Exam 2, Q7B", "fixed": true,
+    "stem": "On the exam, 2,3-dibromobutane and two equivalents of base gave three products. Here both bromines are on the <b>same</b> carbon. 2,2-Dibromobutane is treated with two equivalents of a strong base. Which of these {{C4H6}} compounds can <b>not</b> form?\n[[mol:CCC(Br)(Br)C]]",
+    "choices": [
+      {"h": "[[mol:CC#CC]]\n2-Butyne", "ok": false, "why": "It forms. First E2 with H from C3 gives 2-bromo-2-butene; second E2 with H from the alkene CH gives the triple bond between C2 and C3."},
+      {"h": "[[mol:CCC#C]]\n1-Butyne", "ok": false, "why": "It forms. First E2 with H from C1 gives 2-bromo-1-butene; second E2 with H from the alkene {{CH2}} gives the triple bond between C1 and C2."},
+      {"h": "[[mol:C=C=CC]]\n1,2-Butadiene", "ok": false, "why": "It forms. From either bromoalkene, taking the second H from the carbon on the other side of C2 gives two double bonds that share C2."},
+      {"h": "[[mol:C=CC=C]]\n1,3-Butadiene", "ok": true, "why": "Every C=C made by elimination must include the carbon that carried the leaving group. Both Br are on C2, so both new pi bonds include C2. 1,3-Butadiene needs a C3=C4 double bond, which does not include C2."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "State the rule for each elimination", "h": "The new pi bond is between the C-Br carbon and a neighbour. Here the C-Br carbon is C2 both times."},
+        {"t": "List what C2 can do", "h": "Two pi bonds from C2: both to C1 (1-butyne), both to C3 (2-butyne), or one each way (1,2-butadiene)."},
+        {"t": "Test 1,3-butadiene", "h": "It has a double bond between C3 and C4. Neither carbon ever held a leaving group, so that bond cannot be made."},
+        {"t": "Compare with the exam", "h": "With the Br atoms on C2 and C3, the second pi bond can start from C3 and reach C4. That is why 2,3-dibromobutane gives 1,3-butadiene and 2,2-dibromobutane does not."}
+      ],
+      "answer": "1,3-Butadiene cannot form.",
+      "rule": "Every new pi bond includes a carbon that carried a leaving group."
+    }
+  },
+  {
+    "id": "all-elim-products-010", "type": "all-elim-products", "role": "practice", "kind": "written", "diff": 3, "src": "site, after FA24 Exam 2, Q7B", "time": 12, "pts": 50,
+    "stem": "2,3-Dibromopentane is treated with two equivalents of a strong base ({{NaNH2}}). Draw all the products with the formula {{C5H8}}, including geometric isomers.\n[[mol:CCC(Br)C(C)Br]]",
+    "model": "<p>Two {{E2}} eliminations. This dibromide is not symmetrical, so the first elimination gives four bromoalkenes:</p>\n[[rxn:CCC(Br)C(C)Br>base>C=CC(Br)CC + CC=C(Br)CC + CC(Br)=CCC + CC=CC(C)Br]]\n<p>Br from C2 with H from C1: 3-bromo-1-pentene. Br from C2 with H from C3: 3-bromo-2-pentene. Br from C3 with H from C2: 2-bromo-2-pentene. Br from C3 with H from C4: 4-bromo-2-pentene.</p><p><b>Second elimination</b> from each:</p><ul><li>3-bromo-1-pentene: H from the alkene CH gives <b>1,2-pentadiene</b>; H from the {{CH2}} gives <b>1,3-pentadiene</b></li><li>3-bromo-2-pentene: H from the alkene CH gives <b>2-pentyne</b>; H from the {{CH2}} gives <b>2,3-pentadiene</b></li><li>2-bromo-2-pentene: H from the alkene CH gives 2-pentyne; H from the {{CH3}} gives 1,2-pentadiene</li><li>4-bromo-2-pentene: H from the alkene CH gives 2,3-pentadiene; H from the {{CH3}} gives 1,3-pentadiene</li></ul><p>Four constitutional isomers:</p>\n[[mol:CC#CCC]]\n[[mol:C=C=CCC]]\n[[mol:CC=C=CC]]\n<p>and 1,3-pentadiene, whose inner double bond has H and a carbon group on each carbon, so it is E or Z:</p>\n[[mol:C=C/C=C/C]]\n[[mol:C=C/C=C\\C]]",
+    "rubric": [
+      {"pts": 10, "h": "2-Pentyne drawn"},
+      {"pts": 10, "h": "1,2-Pentadiene drawn"},
+      {"pts": 10, "h": "2,3-Pentadiene drawn"},
+      {"pts": 10, "h": "1,3-Pentadiene drawn"},
+      {"pts": 5, "h": "Both E and Z forms of 1,3-pentadiene"},
+      {"pts": 5, "h": "Systematic route shown: the four bromoalkenes, or the hydrogen removed in each step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the equivalents", "h": "Two eliminations: {{C5H10Br2}} minus 2 HBr is {{C5H8}}."},
+        {"t": "First E2: four routes", "h": "Each Br has two neighbouring carbons with hydrogens, and no two routes are equivalent because the molecule is not symmetrical. Four bromoalkenes."},
+        {"t": "Second E2: two routes each", "h": "Each bromoalkene has two carbons next to its C-Br carbon with a hydrogen. Eight routes in all."},
+        {"t": "Sort the eight results", "h": "They pair up: each of the four products appears twice. An alkyne, two different allenes and a conjugated diene."},
+        {"t": "Check for E and Z", "h": "Only 1,3-pentadiene qualifies: its C3=C4 bond has H and vinyl on one carbon, H and {{CH3}} on the other. Its C1=C2 bond has two H on C1, so no isomers there."}
+      ],
+      "answer": "2-Pentyne, 1,2-pentadiene, 2,3-pentadiene, (E)-1,3-pentadiene and (Z)-1,3-pentadiene.",
+      "rule": "An unsymmetrical dihalide gives more products. A table of routes keeps them straight."
+    }
+  },
+  {
+    "id": "all-elim-products-011", "type": "all-elim-products", "role": "practice", "kind": "mcq", "diff": 3, "src": "Lecture 11/12, p. 2 (homework)",
+    "stem": "The lecture drew three alkenes from 2-bromo-3-methylpentane. For the single stereoisomer shown, (2S,3S), which of the three does <b>not</b> form in an anti-periplanar {{E2}} reaction with {{NaOCH2CH3}}?\n[[mol:C[C@H](Br)[C@@H](C)CC]]",
+    "choices": [
+      {"h": "[[mol:C=CC(C)CC]]\n3-Methyl-1-pentene", "ok": false, "why": "It forms. C1 is a {{CH3}} with three hydrogens, and rotation about the C1-C2 bond always puts one of them anti to Br."},
+      {"h": "[[mol:C/C=C(\\C)CC]]\n(E)-3-Methyl-2-pentene", "ok": false, "why": "It forms, and it is the major product. With the single H on C3 anti to Br, the two methyl groups are on the same side, which is the E alkene."},
+      {"h": "[[mol:C/C=C(/C)CC]]\n(Z)-3-Methyl-2-pentene", "ok": true, "why": "C3 has only one hydrogen. When it is anti to Br, the positions of the other groups are fixed, and they give the E alkene. The Z alkene would need the other stereoisomer at C2 or C3, or a syn elimination."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "Br is on C2. Neighbours: C1 ({{CH3}}, three H) and C3 (one H, one {{CH3}}, one ethyl)."},
+        {"t": "C1: no restriction", "h": "A {{CH3}} can always turn one of its hydrogens anti to Br. 3-Methyl-1-pentene forms."},
+        {"t": "C3: one hydrogen, one conformation", "h": "Follow the lecture's steps: draw the conformation with the C3-H anti to the C2-Br. Everything else is now fixed in place: the {{CH3}} on C2 and the {{CH3}} on C3 are on the same side."},
+        {"t": "Eliminate and name", "h": "Groups on the same side stay on the same side in the alkene. Methyls on the same side of 3-methyl-2-pentene is the E isomer (the higher-priority groups, {{CH3}} on C2 and ethyl on C3, are opposite). Z cannot form from this stereoisomer."}
+      ],
+      "answer": "(Z)-3-Methyl-2-pentene does not form.",
+      "rule": "One hydrogen on the neighbouring stereocentre: anti elimination gives one geometric isomer only."
+    }
+  },
+  {
+    "id": "all-elim-products-012", "type": "all-elim-products", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 6, "pts": 30,
+    "stem": "3-Chloro-3-methylpentane is treated with {{NaOCH3}} in {{CH3OH}}. Draw every alkene that can form, and say which regioisomer is major.\n[[mol:CCC(C)(Cl)CC]]",
+    "model": "<p>Tertiary chloride, strong base: {{E2}}. The C-Cl carbon has three neighbours: two {{CH2}} groups, which are equivalent, and the {{CH3}} branch.</p><p>H from a {{CH2}}: 3-methyl-2-pentene. One alkene carbon has H and {{CH3}}, the other has {{CH3}} and ethyl: E and Z.</p>\n[[mol:C/C=C(\\C)CC]]\n[[mol:C/C=C(/C)CC]]\n<p>H from the {{CH3}} branch: 2-ethyl-1-butene. The end carbon has two H: one form.</p>\n[[mol:C=C(CC)CC]]\n<p>Three alkenes. <b>Major regioisomer: 3-methyl-2-pentene</b> (trisubstituted; 2-ethyl-1-butene is disubstituted).</p>",
+    "rubric": [
+      {"pts": 8, "h": "(E)-3-Methyl-2-pentene drawn"},
+      {"pts": 8, "h": "(Z)-3-Methyl-2-pentene drawn"},
+      {"pts": 8, "h": "2-Ethyl-1-butene drawn (H from the methyl branch)"},
+      {"pts": 6, "h": "3-Methyl-2-pentene named as the major regioisomer because it is more substituted"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbours", "h": "Two ethyl {{CH2}} groups (equivalent, since the two ethyl groups are identical) and one {{CH3}}."},
+        {"t": "Draw one alkene per kind", "h": "{{CH2}}: C2=C3, 3-methyl-2-pentene. {{CH3}}: the double bond goes to the branch, 2-ethyl-1-butene."},
+        {"t": "Test for E and Z", "h": "3-Methyl-2-pentene passes on both carbons. 2-Ethyl-1-butene fails: two H on one carbon (and two ethyls on the other)."},
+        {"t": "Choose the major regioisomer", "h": "Methoxide is small and chloride is a good leaving group: Saytzeff, the trisubstituted alkene."}
+      ],
+      "answer": "(E)- and (Z)-3-methyl-2-pentene (major regioisomer) and 2-ethyl-1-butene.",
+      "rule": "Equivalent neighbours count once. Different neighbours each give an alkene."
+    }
+  },
+  {
+    "id": "all-elim-products-013", "type": "all-elim-products", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "1-Bromo-2,2-dimethylpropane is heated with the strong, bulky base {{KOC(CH3)3}}. How many alkenes can form by {{E2}}?\n[[mol:CC(C)(C)CBr]]",
+    "choices": [
+      {"h": "0", "ok": true, "why": "The only carbon next to the C-Br carbon is the central carbon, and it carries three methyl groups and no hydrogen. With no hydrogen on a neighbouring carbon, E2 is impossible."},
+      {"h": "1", "ok": false, "why": "This takes a hydrogen from one of the methyl groups. They are two carbons away from the C-Br carbon, so a C=C to them cannot form by E2."},
+      {"h": "2", "ok": false, "why": "There are not two kinds of neighbouring hydrogen here. There is none at all."},
+      {"h": "3", "ok": false, "why": "Three methyl groups do not mean three alkenes: none of them is next to the C-Br carbon."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the C-Br carbon", "h": "It is the {{CH2}} at the end."},
+        {"t": "Find its neighbours", "h": "One neighbour only: the central carbon, bonded to three {{CH3}} groups and the {{CH2}}Br. It has no hydrogen."},
+        {"t": "Conclude", "h": "E2 removes a hydrogen from the carbon next to the leaving group. No such hydrogen, no elimination, however strong the base. The flow chart makes the same point for methyl halides."}
+      ],
+      "answer": "0",
+      "rule": "No hydrogen on a neighbouring carbon: no E2."
+    }
+  }
+]

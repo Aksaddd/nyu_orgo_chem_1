@@ -1,0 +1,641 @@
+[
+ {
+  "id": "foundations-001",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A1",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "How many hydrogen atoms does this molecule have?\n[[mol:C1CCC=CC1]]",
+  "answer": 10,
+  "lo": 10,
+  "hi": 10,
+  "unit": "H",
+  "solution": {
+   "steps": [
+    {"t": "Count the carbons", "h": "Six corners, so six carbons. Each carbon needs four bonds in total."},
+    {"t": "Fill in the hydrogens", "h": "The four carbons with only single bonds each show two bonds to the ring, so each has two hydrogens: 8. The two carbons of the double bond each show three bonds (one single, one double), so each has one hydrogen: 2."},
+    {"t": "Add", "h": "8 + 2 = 10. The formula is {{C6H10}}. Answering 12 means every carbon was treated as a {{CH2}}, and the double bond was missed."}
+   ],
+   "answer": "10 hydrogens ({{C6H10}})",
+   "rule": "Hydrogens on a carbon = 4 − the bonds you can see. A double bond counts as two."
+  }
+ },
+ {
+  "id": "foundations-002",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A1",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "An oxygen atom in a structure has three bonds and one lone pair. What is its formal charge?",
+  "choices": [
+   {"h": "+1", "ok": true, "why": "6 valence electrons − 2 lone pair electrons − 3 bonds = +1. This is the oxygen of {{H3O+}}."},
+   {"h": "0", "ok": false, "why": "Neutral oxygen has two bonds and two lone pairs (6 − 4 − 2 = 0). This one has swapped a lone pair for a third bond."},
+   {"h": "−1", "ok": false, "why": "That is oxygen with one bond and three lone pairs (6 − 6 − 1 = −1), as in {{HO-}}. More bonds make an atom more positive, not more negative."},
+   {"h": "+2", "ok": false, "why": "Each bond counts once, not twice: the atom owns one electron of each shared pair. 6 − 2 − 3 = +1."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Write the formula", "h": "Formal charge = valence electrons − lone pair electrons − number of bonds."},
+    {"t": "Put in the numbers", "h": "Oxygen has 6 valence electrons. One lone pair is 2 electrons. Three bonds count 3. So 6 − 2 − 3 = +1."},
+    {"t": "Check against a known case", "h": "{{H3O+}} has exactly this oxygen: three O-H bonds, one lone pair, charge +1."}
+   ],
+   "answer": "+1",
+   "rule": "Formal charge = valence electrons − lone pair electrons − bonds."
+  }
+ },
+ {
+  "id": "foundations-003",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A2",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which of these bonds is the most polar?",
+  "choices": [
+   {"h": "C-F", "ok": true, "why": "Fluorine (4.0) and carbon (2.5) differ by 1.5, the largest difference of the four."},
+   {"h": "C-Br", "ok": false, "why": "Bromine (2.8) is only 0.3 above carbon. Bromide is the better leaving group, but that is about the stability of the anion, not about how polar the bond is."},
+   {"h": "C-H", "ok": false, "why": "Carbon (2.5) and hydrogen (2.1) are close, so a C-H bond is nearly nonpolar."},
+   {"h": "C-N", "ok": false, "why": "Nitrogen (3.0) is 0.5 above carbon: polar, but much less than C-F."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Recall the values", "h": "F 4.0, N 3.0, Br 2.8, C 2.5, H 2.1."},
+    {"t": "Take the differences from carbon", "h": "C-F 1.5, C-N 0.5, C-Br 0.3, C-H 0.4 (with carbon the negative end). The largest difference gives the most polar bond."}
+   ],
+   "answer": "C-F",
+   "rule": "Bond polarity follows the difference in electronegativity."
+  }
+ },
+ {
+  "id": "foundations-004",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A2",
+  "kind": "classify",
+  "diff": 1,
+  "src": "site",
+  "stem": "Is the carbon named in each line electron poor (δ+) or electron rich (δ−)?",
+  "bins": ["electron poor (δ+)", "electron rich (δ−)"],
+  "items": [
+   {"h": "the carbon of {{CH3Br}}", "bin": "electron poor (δ+)", "why": "Bromine (2.8) is more electronegative than carbon (2.5) and pulls the bonding electrons toward itself."},
+   {"h": "the carbon of {{CH3Li}}", "bin": "electron rich (δ−)", "why": "Carbon (2.5) is far more electronegative than lithium (1.0), so the electrons of the C-Li bond sit on carbon."},
+   {"h": "the C=O carbon of acetone [[mol:CC(C)=O]]", "bin": "electron poor (δ+)", "why": "Oxygen (3.5) pulls the electrons of both bonds of the C=O toward itself."},
+   {"h": "the carbon bonded to Mg in {{CH3MgBr}}", "bin": "electron rich (δ−)", "why": "Carbon (2.5) is more electronegative than magnesium (1.2). The carbon behaves like a carbanion."},
+   {"h": "the carbon of {{CH3OH}}", "bin": "electron poor (δ+)", "why": "Oxygen (3.5) is more electronegative than carbon (2.5)."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find the atom bonded to carbon", "h": "In each case ask what carbon is attached to besides hydrogen: Br, Li, O, Mg, O."},
+    {"t": "Compare electronegativities", "h": "Br and O are above carbon, so they take electrons from it and carbon is δ+. Li and Mg are metals, well below carbon, so carbon takes the electrons and is δ−."}
+   ],
+   "answer": "δ+: the carbons of {{CH3Br}}, acetone's C=O and {{CH3OH}}. δ−: the carbons bonded to Li and to Mg.",
+   "rule": "Carbon bonded to O, N or a halogen is δ+. Carbon bonded to a metal is δ−."
+  }
+ },
+ {
+  "id": "foundations-005",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A3",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Hydroxide reacts with bromomethane.\n[[rxn:[OH-] + CBr>>CO + [Br-]]]\nWhich sentence describes a correct curved arrow for the bond that forms?",
+  "choices": [
+   {"h": "It starts at a lone pair on oxygen and ends at the carbon.", "ok": true, "why": "The electrons that make the new O-C bond are a lone pair on oxygen, and they end up shared with carbon."},
+   {"h": "It starts at the carbon and ends at the oxygen.", "ok": false, "why": "This shows the carbon moving to the oxygen. An arrow follows electrons, not atoms, and this carbon has no electron pair to give."},
+   {"h": "It starts at the minus sign of hydroxide and ends at the bromine.", "ok": false, "why": "A charge sign is a label, not a pair of electrons, so no arrow starts there. And the new bond is to carbon, not to bromine."},
+   {"h": "It starts at the C-Br bond and ends at the oxygen.", "ok": false, "why": "The electrons of the C-Br bond go to bromine, which leaves with them. They do not form the O-C bond."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find the electrons", "h": "Hydroxide's oxygen has three lone pairs and a negative charge. It is the electron rich partner, the nucleophile."},
+    {"t": "Find where they go", "h": "The carbon of bromomethane is δ+ because bromine pulls electrons away from it. The arrow runs from an oxygen lone pair to that carbon."},
+    {"t": "Complete the step", "h": "Carbon cannot hold five bonds, so a second arrow takes the C-Br bonding pair onto bromine, which leaves as {{Br-}}."}
+   ],
+   "answer": "From a lone pair on oxygen to the carbon.",
+   "rule": "An arrow's tail is on a lone pair or a bond. Its head is where those electrons end up."
+  }
+ },
+ {
+  "id": "foundations-006",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A3",
+  "kind": "classify",
+  "diff": 1,
+  "src": "site",
+  "stem": "Sort each species by how it usually reacts.",
+  "bins": ["nucleophile (Lewis base)", "electrophile (Lewis acid)"],
+  "items": [
+   {"h": "{{-CN}}", "bin": "nucleophile (Lewis base)", "why": "It has a lone pair on carbon and a negative charge: electrons to give."},
+   {"h": "{{NH3}}", "bin": "nucleophile (Lewis base)", "why": "It is neutral, but nitrogen has a lone pair it can give. A nucleophile does not need a charge."},
+   {"h": "{{(CH3)3C+}}", "bin": "electrophile (Lewis acid)", "why": "The central carbon has only six electrons and an empty orbital. It accepts a pair."},
+   {"h": "{{CH3Br}}, at carbon", "bin": "electrophile (Lewis acid)", "why": "The carbon is δ+ and can accept a pair as bromide leaves. An electrophile does not need a full positive charge."},
+   {"h": "{{BF3}}", "bin": "electrophile (Lewis acid)", "why": "Boron has six electrons and an empty p orbital. The lone pairs on fluorine are held too tightly to make it a nucleophile."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Look for electrons to give", "h": "A lone pair, especially with a negative charge, makes a nucleophile: {{-CN}} and {{NH3}}."},
+    {"t": "Look for a place to put electrons", "h": "An empty orbital or a δ+ atom with a group that can leave makes an electrophile: the carbocation, {{BF3}} and the carbon of {{CH3Br}}."}
+   ],
+   "answer": "Nucleophiles: {{-CN}} and {{NH3}}. Electrophiles: {{(CH3)3C+}}, {{CH3Br}} and {{BF3}}.",
+   "rule": "Nucleophiles give an electron pair. Electrophiles accept one."
+  }
+ },
+ {
+  "id": "foundations-007",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A4",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Acetic acid ({{pKa}} 4) is a much stronger acid than ethanol ({{pKa}} about 16). What is the main reason?\n[[mol:CC(=O)O]]\n[[mol:CCO]]",
+  "choices": [
+   {"h": "In acetate the negative charge is shared between two oxygens by resonance. In ethoxide it stays on one.", "ok": true, "why": "A charge spread over two atoms is lower in energy, so acetate is the more stable conjugate base and its acid is stronger."},
+   {"h": "The C=O group weakens the O-H bond of acetic acid, so it breaks more easily.", "ok": false, "why": "Acidity is decided by the stability of the conjugate base, not by how strong the O-H bond is. Look at what is left after the proton is gone."},
+   {"h": "The ethyl group of ethoxide donates electrons, which makes ethoxide the more stable anion.", "ok": false, "why": "Pushing electron density toward an atom that is already negative makes the anion less stable, not more. And ethoxide is the less stable of the two."},
+   {"h": "Acetate is the larger ion, and larger ions spread their charge better.", "ok": false, "why": "The size argument is about the atom that carries the charge, and compares atoms in one column. Here the charge is on oxygen in both ions."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Remove the proton from each", "h": "Acetic acid gives acetate, {{CH3CO2-}}. Ethanol gives ethoxide, {{CH3CH2O-}}. In both the charge is on oxygen, so electronegativity and size are the same."},
+    {"t": "Look for charge sharing", "h": "Acetate has a second resonance structure with the charge on the other oxygen. The real ion has half the charge on each. Ethoxide has no such structure."},
+    {"t": "Conclude", "h": "Acetate is more stable, so acetic acid gives up its proton more easily: twelve {{pKa}} units more easily."}
+   ],
+   "answer": "Resonance in the conjugate base.",
+   "rule": "To compare acids, compare their conjugate bases. Shared charge is stable charge."
+  }
+ },
+ {
+  "id": "foundations-008",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A4",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank the halide ions by stability in solution.",
+  "order": "most stable anion (weakest base) first",
+  "items": [
+   {"h": "{{I-}}"},
+   {"h": "{{Br-}}"},
+   {"h": "{{Cl-}}"},
+   {"h": "{{F-}}"}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Notice where the atoms sit", "h": "All four are in one column of the periodic table. Down a column, size decides, not electronegativity."},
+    {"t": "Apply size", "h": "Iodide is the largest, so its one negative charge is spread over the most space. Fluoride is the smallest and has the most concentrated charge."},
+    {"t": "Check against the acids", "h": "The lecture values agree: HI −10, HBr −9, HCl −8, HF 4. The strongest acid has the most stable conjugate base. Putting fluoride first is the usual mistake: it comes from using electronegativity down a column."}
+   ],
+   "answer": "{{I-}} > {{Br-}} > {{Cl-}} > {{F-}}",
+   "rule": "Across a row use electronegativity. Down a column use size."
+  }
+ },
+ {
+  "id": "foundations-009",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A5",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Ethyne has {{pKa}} 25 and ammonia has {{pKa}} 38.\n[[eq:C#C + [NH2-]>>C#[C-] + N]]\nThe equilibrium constant for this reaction as written is 10<sup>x</sup>. What is x?",
+  "answer": 13,
+  "lo": 12.9,
+  "hi": 13.1,
+  "note": "A positive exponent: the reaction lies far to the right.",
+  "solution": {
+   "steps": [
+    {"t": "Find the two acids", "h": "On the left the acid is ethyne ({{pKa}} 25). On the right the acid is ammonia ({{pKa}} 38), the conjugate acid of {{NH2-}}."},
+    {"t": "Decide the direction", "h": "Ammonia has the higher {{pKa}}, so it is the weaker acid. Equilibrium favours the weaker acid: the right side."},
+    {"t": "Take the difference", "h": "x = {{pKa}} of the product acid − {{pKa}} of the reactant acid = 38 − 25 = 13. An answer of −13 has the subtraction the wrong way round."}
+   ],
+   "answer": "x = 13, so {{Keq}} = 10<sup>13</sup>, far to the right.",
+   "rule": "{{Keq}} = 10 to the power (product acid {{pKa}} − reactant acid {{pKa}})."
+  }
+ },
+ {
+  "id": "foundations-010",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A5",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "Acetic acid has {{pKa}} 4 and methanol has {{pKa}} 15.5. Which statement about this equilibrium is correct?\n[[eq:CC(=O)O + C[O-]>>CC(=O)[O-] + CO]]",
+  "choices": [
+   {"h": "It lies to the right, with {{Keq}} about 10<sup>11.5</sup>.", "ok": true, "why": "Methanol is the weaker acid, so its side is favoured, and the exponent is 15.5 − 4 = 11.5."},
+   {"h": "It lies to the left, because acetic acid is the stronger acid and the stronger acid is favoured.", "ok": false, "why": "The stronger acid is the one that gives its proton away, so it is used up. Equilibrium favours the weaker acid."},
+   {"h": "It lies to the right, with {{Keq}} about 11.5.", "ok": false, "why": "The direction is right, but {{pKa}} is a logarithm. A difference of 11.5 units means a factor of 10<sup>11.5</sup>, not 11.5."},
+   {"h": "It is about even, because each side has one neutral molecule and one anion.", "ok": false, "why": "Counting charges says nothing about how stable each anion is. Acetate is far more stable than methoxide."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find the two acids", "h": "Left: acetic acid, {{pKa}} 4. Right: methanol, {{pKa}} 15.5."},
+    {"t": "Choose the side", "h": "The weaker acid (higher {{pKa}}) is methanol, so the right side is favoured."},
+    {"t": "Size", "h": "{{Keq}} = 10<sup>(15.5 − 4)</sup> = 10<sup>11.5</sup>."}
+   ],
+   "answer": "To the right, {{Keq}} about 10<sup>11.5</sup>.",
+   "rule": "Equilibrium favours the weaker acid, by a factor of ten for each {{pKa}} unit."
+  }
+ },
+ {
+  "id": "foundations-011",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A6",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "At 25 °C an equilibrium A ⇌ B has {{Keq}} = 100. By how many kcal/mol is B lower in free energy than A?",
+  "answer": 2.7,
+  "lo": 2.6,
+  "hi": 2.8,
+  "unit": "kcal/mol",
+  "note": "1.36 kcal/mol for each factor of ten: 2 × 1.36 = 2.72.",
+  "solution": {
+   "steps": [
+    {"t": "Recall the conversion", "h": "At 25 °C, {{dG}}° = −1.36 × log {{Keq}} in kcal/mol. Each factor of ten is worth 1.36 kcal/mol."},
+    {"t": "Count the factors of ten", "h": "100 is 10<sup>2</sup>, so log {{Keq}} = 2 and {{dG}}° = −2.72 kcal/mol. B is lower by 2.7 kcal/mol."},
+    {"t": "Check the size", "h": "An answer of 136 treats the relation as a straight multiplication by {{Keq}}. Energies in this unit are a few kcal/mol, never hundreds."}
+   ],
+   "answer": "2.7 kcal/mol ({{dG}}° = −2.7 kcal/mol)",
+   "rule": "At 25 °C each factor of ten in {{Keq}} is 1.36 kcal/mol."
+  }
+ },
+ {
+  "id": "foundations-012",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A6",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "For A ⇌ B at 25 °C, {{dG}}° = +1.36 kcal/mol. What is the mixture at equilibrium?",
+  "choices": [
+   {"h": "About 10 A for every 1 B.", "ok": true, "why": "A positive {{dG}}° means B is higher in energy, and 1.36 kcal/mol is one factor of ten, so {{Keq}} = 0.1."},
+   {"h": "About 10 B for every 1 A.", "ok": false, "why": "That is {{dG}}° = −1.36. A positive value means the product side is uphill."},
+   {"h": "No B at all, because a reaction with a positive {{dG}}° does not happen.", "ok": false, "why": "A positive {{dG}}° means less than half is product, not none. Here about 9% of the mixture is B."},
+   {"h": "About 1.36 A for every 1 B.", "ok": false, "why": "The relation is logarithmic. 1.36 kcal/mol is a factor of ten, not a factor of 1.36."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Read the sign", "h": "{{dG}}° is positive, so B lies above A and A is favoured."},
+    {"t": "Read the size", "h": "1.36 kcal/mol is exactly one factor of ten at 25 °C, so {{Keq}} = [B]/[A] = 10<sup>−1</sup> = 0.1."}
+   ],
+   "answer": "About 10 to 1 in favour of A.",
+   "rule": "The sign of {{dG}}° gives the favoured side. Every 1.36 kcal/mol is a factor of ten."
+  }
+ },
+ {
+  "id": "foundations-013",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A7",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "This diagram shows a reaction with two steps (energies in kcal/mol).\n[[energy:R=0,TS1=22,I=12,TS2=15,P=-6]]\nWhich step is rate-determining, and why?",
+  "choices": [
+   {"h": "Step 1, because its transition state is the highest point on the path.", "ok": true, "why": "The rate is set by the highest barrier that must be crossed from the reactants: 22 kcal/mol."},
+   {"h": "Step 2, because it is the step that forms the product.", "ok": false, "why": "Which step makes the product does not matter. Step 2 only has to climb from 12 to 15, so it is fast."},
+   {"h": "Neither: the reaction is fast because the product is 6 kcal/mol below the reactant.", "ok": false, "why": "The drop of 6 kcal/mol says how far the reaction goes, not how fast. Rate comes from the barrier."},
+   {"h": "The intermediate at 12, because it is the least stable species.", "ok": false, "why": "An intermediate is a valley, a species, not a step. The least stable points on the path are the transition states."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Name the points", "h": "Peaks are transition states (22 and 15). The valley between them (12) is an intermediate. Two peaks, two steps."},
+    {"t": "Find the highest peak", "h": "The first peak, at 22, is the highest point. Getting over it is the slow part. The second step needs only 3 more kcal/mol from the intermediate."}
+   ],
+   "answer": "Step 1: it has the highest transition state.",
+   "rule": "The rate-determining step is the one that crosses the highest peak."
+  }
+ },
+ {
+  "id": "foundations-014",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A7",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "A reaction A + B → P goes in two steps. Step 1, slow: A → I. Step 2, fast: I + B → P. What happens to the rate if the concentration of B is doubled?",
+  "choices": [
+   {"h": "Nothing. The rate stays the same.", "ok": true, "why": "B enters after the slow step. The rate law is rate = k[A], and B is not in it."},
+   {"h": "The rate doubles.", "ok": false, "why": "That would be true if B took part in the slow step. A rate law is not read off the overall equation: it lists only what is in the rate-determining step."},
+   {"h": "The rate goes up four times.", "ok": false, "why": "That is a reaction second order in B. Here B is not in the rate law at all."},
+   {"h": "The rate is cut in half.", "ok": false, "why": "More of a reagent does not slow this reaction. B simply waits for I to be made."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find the slow step", "h": "Step 1 is slow, and only A takes part in it."},
+    {"t": "Write the rate law", "h": "rate = k[A]. Every I that forms is used at once by B, however much B there is, so the supply of I is the bottleneck."},
+    {"t": "Answer", "h": "Doubling B changes nothing. Doubling A would double the rate."}
+   ],
+   "answer": "No change: rate = k[A].",
+   "rule": "The rate law contains only what takes part in the rate-determining step."
+  }
+ },
+ {
+  "id": "foundations-015",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A8",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "This is the energy diagram of a single step (energies in kcal/mol).\n[[energy:R=0,TS=20,P=17]]\nWhat does the transition state look like?",
+  "choices": [
+   {"h": "Mostly like the product, because it is much closer to the product in energy.", "ok": true, "why": "Hammond's postulate: a transition state resembles the stable species nearest to it in energy. Here that is the product, 3 kcal/mol below it."},
+   {"h": "Mostly like the reactant, because the step starts from the reactant.", "ok": false, "why": "Where the step starts does not decide it. The reactant is 20 kcal/mol away in energy, and the product only 3."},
+   {"h": "Exactly halfway between reactant and product, as every transition state is.", "ok": false, "why": "A transition state is the highest point, not the midpoint. It sits early in a downhill step and late in an uphill one."},
+   {"h": "Nothing can be said, because a transition state cannot be observed.", "ok": false, "why": "It cannot be observed, which is exactly why Hammond's postulate is useful: it lets you infer the structure from the energies."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Is the step uphill or downhill", "h": "The product (17) is far above the reactant (0), so the step is uphill."},
+    {"t": "Apply Hammond's postulate", "h": "The peak (20) is 3 away from the product and 20 away from the reactant. It resembles the product: a late transition state."}
+   ],
+   "answer": "Like the product (a late transition state).",
+   "rule": "Uphill step: late, product-like transition state. Downhill step: early, reactant-like."
+  }
+ },
+ {
+  "id": "foundations-016",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A8",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Two similar reactants each form a high-energy intermediate in an uphill step. Intermediate X lies 12 kcal/mol above its reactant, and intermediate Y lies 18 kcal/mol above its reactant. Which intermediate forms faster?",
+  "choices": [
+   {"h": "X, because the transition state resembles the intermediate, so the more stable intermediate has the lower barrier.", "ok": true, "why": "In an uphill step the transition state is product-like. What lowers the intermediate lowers the transition state as well."},
+   {"h": "Y, because a higher-energy species is more reactive and so forms faster.", "ok": false, "why": "A high-energy species reacts onward quickly once it exists, but it is harder to make. Forming it means climbing a higher hill."},
+   {"h": "They form at the same rate, because stability is about equilibrium and has nothing to do with rate.", "ok": false, "why": "Stability of the product does not always predict rate, but it does when the transition state resembles the product, as in an uphill step."},
+   {"h": "It cannot be decided without knowing the final products.", "ok": false, "why": "The rate of this step depends on its own barrier, and nothing after the intermediate changes that."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Both steps are uphill", "h": "So both transition states are late and resemble the intermediates they lead to."},
+    {"t": "Compare the intermediates", "h": "X is 6 kcal/mol more stable than Y, relative to its reactant. A transition state that looks like X is lower than one that looks like Y."},
+    {"t": "Conclude", "h": "The barrier to X is lower, so X forms faster."}
+   ],
+   "answer": "X, the more stable intermediate, forms faster.",
+   "rule": "In an uphill step, the more stable the intermediate, the faster it forms."
+  }
+ },
+ {
+  "id": "foundations-017",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A9",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "fixed": true,
+  "stem": "These are three conformations of butane, seen down the bond between carbons 2 and 3. Which is lowest in energy?",
+  "choices": [
+   {"h": "[[newman:CH3,H,H|H,CH3,H|60]]", "ok": true, "why": "Staggered, with the two methyl groups 180° apart (anti). Nothing is eclipsed and nothing is crowded."},
+   {"h": "[[newman:CH3,H,H|CH3,H,H|60]]", "ok": false, "why": "Staggered, but the methyl groups are 60° apart (gauche) and bump into each other. This costs 0.9 kcal/mol more than anti."},
+   {"h": "[[newman:CH3,H,H|CH3,H,H|0]]", "ok": false, "why": "Every bond is eclipsed and the two methyl groups are directly in line. This is the highest-energy shape of the three."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Staggered or eclipsed", "h": "In the eclipsed drawing the back bonds sit right behind the front ones: torsional strain. The other two are staggered."},
+    {"t": "Where are the big groups", "h": "Of the two staggered shapes, one has the methyl groups opposite (anti) and one has them next to each other (gauche). Gauche adds 0.9 kcal/mol of steric strain."}
+   ],
+   "answer": "The anti conformation: staggered, methyl groups 180° apart.",
+   "rule": "Staggered beats eclipsed, and anti beats gauche by 0.9 kcal/mol."
+  }
+ },
+ {
+  "id": "foundations-018",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A9",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "A conformation has two gauche interactions between methyl groups and carbon chains, and no other strain. How much higher in energy is it than a conformation with none?",
+  "answer": 1.8,
+  "lo": 1.7,
+  "hi": 1.9,
+  "unit": "kcal/mol",
+  "note": "Two gauche interactions at 0.9 kcal/mol each.",
+  "solution": {
+   "steps": [
+    {"t": "Recall the cost of one", "h": "One gauche interaction between two carbon groups costs 0.9 kcal/mol."},
+    {"t": "Add them", "h": "Strain energies add: 2 × 0.9 = 1.8 kcal/mol. This is exactly how the cost of an axial methyl group on a cyclohexane is worked out."}
+   ],
+   "answer": "1.8 kcal/mol",
+   "rule": "Each gauche interaction costs 0.9 kcal/mol, and the costs add."
+  }
+ },
+ {
+  "id": "foundations-019",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A10",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "What is the relationship between (2R,3R)-2-bromo-3-chlorobutane and (2R,3S)-2-bromo-3-chlorobutane?",
+  "choices": [
+   {"h": "Diastereomers", "ok": true, "why": "One centre is the same (2R) and one is opposite (3R against 3S). Stereoisomers that are not mirror images are diastereomers."},
+   {"h": "Enantiomers", "ok": false, "why": "The mirror image of (2R,3R) is (2S,3S): every centre has to be opposite. Here only one is."},
+   {"h": "The same compound", "ok": false, "why": "Carbon 3 has a different configuration, and the two ends of this molecule are different, so no rotation makes them identical."},
+   {"h": "Constitutional isomers", "ok": false, "why": "The atoms are connected in the same order in both. Only the arrangement in space differs, so they are stereoisomers."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Same connectivity", "h": "Both are 2-bromo-3-chlorobutane, so they are stereoisomers, not constitutional isomers."},
+    {"t": "Compare centre by centre", "h": "Carbon 2: R and R, the same. Carbon 3: R and S, opposite. All opposite would be enantiomers. Some the same and some opposite is diastereomers."}
+   ],
+   "answer": "Diastereomers",
+   "rule": "All centres inverted: enantiomers. Some but not all: diastereomers."
+  }
+ },
+ {
+  "id": "foundations-020",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A10",
+  "kind": "classify",
+  "diff": 2,
+  "src": "site",
+  "stem": "The drawings show no wedges or dashes. Can each compound exist as a pair of enantiomers (chiral), or not (achiral)?",
+  "bins": ["chiral", "achiral"],
+  "items": [
+   {"h": "[[mol:CCC(C)Cl]]", "bin": "chiral", "why": "The carbon holding Cl has four different groups: Cl, H, {{CH3}} and {{CH2CH3}}."},
+   {"h": "[[mol:CC(C)Cl]]", "bin": "achiral", "why": "The carbon holding Cl has two {{CH3}} groups. Two identical groups means it is not a chirality centre."},
+   {"h": "[[mol:CCC(Cl)CC]]", "bin": "achiral", "why": "The carbon holding Cl has two {{CH2CH3}} groups. It looks like the first compound, but the two sides are the same."},
+   {"h": "[[mol:FC(Cl)Br]]", "bin": "chiral", "why": "The carbon has F, Cl, Br and H: four different groups."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find the candidate carbon", "h": "In each molecule only the carbon bearing the halogens could be a chirality centre. Write out its four groups, including the hydrogen that is not drawn."},
+    {"t": "Look for a repeat", "h": "2-chloropropane has two methyl groups and 3-chloropentane has two ethyl groups, so they are achiral. 2-chlorobutane and bromochlorofluoromethane have four different groups, so they are chiral."}
+   ],
+   "answer": "Chiral: 2-chlorobutane and CHBrClF. Achiral: 2-chloropropane and 3-chloropentane.",
+   "rule": "A chirality centre needs four different groups. Compare whole groups, not just the first atom."
+  }
+ },
+ {
+  "id": "foundations-021",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A11",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "What is the shape at the positive carbon of this cation?\n[[mol:C[C+](C)C]]",
+  "choices": [
+   {"h": "{{sp2}}: three bonds in a plane 120° apart, with an empty p orbital above and below the plane.", "ok": true, "why": "Three groups and no lone pair gives a trigonal planar carbon. The orbital left over is an empty p orbital, open on both faces."},
+   {"h": "{{sp3}}: tetrahedral, with one corner of the tetrahedron empty.", "ok": false, "why": "Carbon is {{sp3}} when it has four groups (bonds or lone pairs) around it. With only three, it flattens out so the bonding electrons are held in orbitals with more s character."},
+   {"h": "{{sp2}}: three bonds in a plane, with a lone pair in the p orbital.", "ok": false, "why": "A lone pair there would make the carbon negative, a carbanion. A carbocation's p orbital is empty: that is what the plus sign means."},
+   {"h": "{{sp}}: linear, because the carbon has lost a group.", "ok": false, "why": "Linear carbon has two groups. This carbon still has three."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Count the groups", "h": "The positive carbon has three bonds and no lone pair: three groups."},
+    {"t": "Assign the geometry", "h": "Three groups means {{sp2}} and trigonal planar, 120° apart. The one p orbital not used in bonding is perpendicular to the plane and holds no electrons."}
+   ],
+   "answer": "{{sp2}}, trigonal planar, with an empty p orbital.",
+   "rule": "A carbocation is flat, and its empty p orbital can be reached from either face."
+  }
+ },
+ {
+  "id": "foundations-022",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A11",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "In this Newman projection, which group on the back carbon is anti-periplanar to the bromine on the front carbon?\n[[newman:Br,H,H|CH3,D,H|60]]",
+  "choices": [
+   {"h": "D", "ok": true, "why": "D is on the back carbon, directly opposite Br: a dihedral angle of 180°."},
+   {"h": "{{CH3}}", "ok": false, "why": "The methyl group is next to Br, 60° away. That is gauche, not anti."},
+   {"h": "The H on the back carbon", "ok": false, "why": "That hydrogen is also 60° from Br, on the other side: gauche."},
+   {"h": "The two H atoms on the front carbon", "ok": false, "why": "Those are on the same carbon as Br. Anti-periplanar describes groups on two neighbouring carbons."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Find Br", "h": "Br is on the front carbon, pointing straight up."},
+    {"t": "Look straight across", "h": "Anti-periplanar means 180° apart across the C-C bond. The back group pointing straight down is D. The other two back groups are 60° from Br."}
+   ],
+   "answer": "D, the back group directly opposite Br.",
+   "rule": "Anti-periplanar: on neighbouring carbons, in one plane, 180° apart."
+  }
+ },
+ {
+  "id": "foundations-023",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A12",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank these carbocations by stability.",
+  "order": "most stable first",
+  "items": [
+   {"h": "[[mol:C[C+](C)C]]"},
+   {"h": "[[mol:C[CH+]C]]"},
+   {"h": "[[mol:C[CH2+]]]"},
+   {"h": "[[mol:[CH3+]]]"}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Count the alkyl groups on the positive carbon", "h": "Three (tertiary), two (secondary), one (primary), none (methyl)."},
+    {"t": "Apply the trend", "h": "Each alkyl group shares electron density with the empty p orbital, so more alkyl groups means a more stable cation. Reversing the order usually comes from thinking that fewer groups means less strain: here the issue is electrons, not space."}
+   ],
+   "answer": "tertiary > secondary > primary > methyl",
+   "rule": "Carbocation stability: tertiary, secondary, primary, methyl."
+  }
+ },
+ {
+  "id": "foundations-024",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A12",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Both of these cations are primary. Which is more stable, and why?\n[[mol:C=C[CH2+]]]\n[[mol:CC[CH2+]]]",
+  "choices": [
+   {"h": "The first (allyl), because resonance shares the positive charge between the two end carbons.", "ok": true, "why": "The π electrons of the double bond can shift toward the positive carbon, giving a second structure with the charge on the other end."},
+   {"h": "They are equally stable, because both are primary.", "ok": false, "why": "Counting alkyl groups is only part of the picture. Resonance is a separate and stronger effect."},
+   {"h": "The second (propyl), because {{sp3}} carbons donate electrons better than {{sp2}} carbons.", "ok": false, "why": "An {{sp2}} carbon does pull a little harder through the σ bond, but sharing the charge through the π system outweighs that by far."},
+   {"h": "The first (allyl), because it has fewer hydrogens.", "ok": false, "why": "Right cation, wrong reason. The number of hydrogens does not stabilize a charge. The second resonance structure does."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Look next to the positive carbon", "h": "In the first cation the positive carbon is beside a C=C. In the second it is beside a {{CH2}}."},
+    {"t": "Draw the resonance structure", "h": "Move the π electrons toward the positive carbon: the double bond shifts and the charge appears on the far carbon. The charge is shared by two carbons, so the allyl cation is much more stable than an ordinary primary cation."}
+   ],
+   "answer": "The allyl cation, by resonance.",
+   "rule": "A cation next to a double bond or a benzene ring is stabilized by resonance."
+  }
+ },
+ {
+  "id": "foundations-025",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A13",
+  "kind": "classify",
+  "diff": 1,
+  "src": "site",
+  "stem": "Sort these solvents.",
+  "bins": ["polar protic", "polar aprotic"],
+  "items": [
+   {"h": "methanol [[mol:CO]]", "bin": "polar protic", "why": "It has an O-H bond, so it can hydrogen bond to anions."},
+   {"h": "acetone [[mol:CC(C)=O]]", "bin": "polar aprotic", "why": "It has an oxygen and six hydrogens, but every hydrogen is on carbon. There is no O-H."},
+   {"h": "DMSO [[mol:CS(C)=O]]", "bin": "polar aprotic", "why": "Very polar, but all its hydrogens are on carbon."},
+   {"h": "acetic acid [[mol:CC(=O)O]]", "bin": "polar protic", "why": "It has an O-H bond."},
+   {"h": "acetonitrile [[mol:CC#N]]", "bin": "polar aprotic", "why": "It contains nitrogen, but no N-H bond. All its hydrogens are on carbon."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "Look for H on O or N", "h": "Methanol and acetic acid each have an O-H. They are protic."},
+    {"t": "Check the rest", "h": "Acetone, DMSO and acetonitrile have O, S or N, and they have hydrogens, but never a hydrogen on O or N. They are aprotic. Having both an oxygen and hydrogens somewhere in the molecule is not enough."}
+   ],
+   "answer": "Protic: methanol and acetic acid. Aprotic: acetone, DMSO and acetonitrile.",
+   "rule": "Protic means a hydrogen on oxygen or nitrogen."
+  }
+ },
+ {
+  "id": "foundations-026",
+  "type": "foundations",
+  "role": "practice",
+  "axiom": "A13",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Sodium fluoride and sodium iodide are dissolved in methanol. Which ion is held most tightly by hydrogen bonds from the solvent?",
+  "choices": [
+   {"h": "{{F-}}", "ok": true, "why": "It is a small anion with concentrated charge, so the δ+ hydrogens of methanol's O-H groups bind it strongly."},
+   {"h": "{{I-}}", "ok": false, "why": "Iodide is large and its charge is spread out, so each hydrogen bond to it is weak. Bigger does not mean better solvated."},
+   {"h": "{{Na+}}", "ok": false, "why": "A cation is solvated by the lone pairs on methanol's oxygen. A hydrogen bond needs an electron rich acceptor, so it goes to anions."},
+   {"h": "All three equally", "ok": false, "why": "Solvation depends on the sign of the charge and on how concentrated it is."}
+  ],
+  "solution": {
+   "steps": [
+    {"t": "What does a hydrogen bond need", "h": "A δ+ hydrogen (on O or N) and an electron rich atom to accept it. So hydrogen bonds from methanol go to the anions."},
+    {"t": "Compare the anions", "h": "Fluoride is much smaller than iodide, so its charge is more concentrated and it holds the solvent's hydrogens more strongly. It sits in a tight cage of methanol molecules."}
+   ],
+   "answer": "{{F-}}",
+   "rule": "Protic solvents hydrogen bond to anions, and most strongly to small ones."
+  }
+ }
+]
