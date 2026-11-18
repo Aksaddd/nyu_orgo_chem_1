@@ -1,0 +1,228 @@
+[
+  {
+    "id": "products-from-formula-001", "type": "products-from-formula", "role": "worked", "kind": "written", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q6B", "pts": 50, "time": 8,
+    "stem": "1,2-Dibromoethane reacts with the dianion of benzene-1,2-diol. Two of the products have the formulas {{C8H8O2}} and {{C10H12Br2O2}}. Draw each.\n[[rxn:BrCCBr + [O-]c1ccccc1[O-]>>\"C8H8O2\" + \"C10H12Br2O2\"]]",
+    "model": "<p>{{C8H8O2}}: one dianion and one dibromide, both bromines gone. Two {{SN2}} reactions, the second one intramolecular, close a six-membered ring.</p>\n[[mol:C1COc2ccccc2O1]]\n<p>{{C10H12Br2O2}}: one dianion and two dibromides. Each oxygen attacks a different molecule of dibromide, and each dibromide keeps one bromine.</p>\n[[mol:BrCCOc1ccccc1OCCBr]]",
+    "rubric": [
+      {"pts": 20, "h": "C8H8O2: the ring with O-CH2-CH2-O fused to the benzene ring"},
+      {"pts": 20, "h": "C10H12Br2O2: the open chain with a BrCH2CH2O group on each ring oxygen"},
+      {"pts": 5, "h": "Says each product comes from two SN2 reactions, the ring from an intramolecular second step"},
+      {"pts": 5, "h": "Shows the count of pieces or checks the formulas"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "The dibromide is {{C2H4Br2}}: a {{C2H4}} chain with a bromine on each end. The dianion is {{C6H4O2}} with two negative charges.", "ask": {"q": "What does one {{SN2}} reaction change?", "a": "One C-Br bond becomes one C-O bond. One {{Br-}} leaves and one negative charge on oxygen is used up."}},
+        {"t": "Decode the first formula", "h": "{{C8H8O2}} has no bromine and two oxygens. {{C6H4O2}} plus {{C2H4}} is {{C8H8O2}}: one of each piece, and both ends of the dibromide have reacted.", "ask": {"q": "One dianion, one dibromide, no bromine left. What shape must it be?", "a": "A ring: the second oxygen attacks the other end of the same two-carbon chain."}},
+        {"t": "Draw and count the ring", "h": "O, C, C, O and the two ring carbons that carry the oxygens: a six-membered ring fused to the benzene ring."},
+        {"t": "Decode the second formula", "h": "{{C10H12Br2O2}} has two bromines and two oxygens. {{C6H4O2}} plus two {{C2H4Br}} is {{C10H12Br2O2}}: one dianion and two dibromides, each having lost one bromine.", "ask": {"q": "Where is the dianion in this product, in the middle or at an end?", "a": "In the middle. Each of its oxygens is bonded to a different {{CH2CH2Br}} chain."}},
+        {"t": "Say why it is clean", "h": "Phenoxide oxygens are good nucleophiles and weak bases (phenol {{pKa}} 10), and the carbons attacked are primary: {{SN2}}, not elimination."},
+        {"t": "Check both drawings", "h": "Count every atom of each structure against its formula. Every {{CH2}} of the dibromide is still a {{CH2}}."}
+      ],
+      "answer": "C8H8O2 is the six-membered cyclic diether fused to the benzene ring. C10H12Br2O2 is the benzene ring with two OCH2CH2Br groups on neighbouring carbons.",
+      "rule": "No halogen left and one of each piece: a ring. Two halogens left: the dinucleophile is in the middle."
+    }
+  },
+  {
+    "id": "products-from-formula-002", "type": "products-from-formula", "role": "worked", "kind": "written", "diff": 2, "src": "site", "pts": 50, "time": 8,
+    "stem": "1,4-Dibromobutane and sodium sulfide ({{Na2S}}) give two products, {{C4H8S}} and {{C8H16Br2S}}. Draw each, and write the mechanism that leads to the first.\n[[rxn:BrCCCCBr + [Na+].[Na+].[S-2]>>\"C4H8S\" + \"C8H16Br2S\"]]",
+    "model": "<p>{{C4H8S}}: one sulfide and one dibromide. The sulfur bonds to both ends of the same chain: a five-membered ring.</p>\n[[mol:C1CCSC1]]\n[[mech:thiolane-sulfide-dibromobutane]]\n<p>{{C8H16Br2S}}: one sulfide and two dibromides. After the first {{SN2}} the thiolate attacks a second molecule of dibromide instead of its own chain.</p>\n[[mol:BrCCCCSCCCCBr]]",
+    "rubric": [
+      {"pts": 15, "h": "C4H8S: the five-membered ring with one sulfur"},
+      {"pts": 15, "h": "C8H16Br2S: Br(CH2)4S(CH2)4Br"},
+      {"pts": 15, "h": "Mechanism to the ring: two SN2 steps with correct arrows and the thiolate intermediate"},
+      {"pts": 5, "h": "Counts the pieces or checks the formulas"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "The dibromide is a {{C4H8}} chain with a bromine on each end. The nucleophile is one sulfur atom with two negative charges.", "ask": {"q": "How many carbons can one sulfide ion bond to?", "a": "Two. It has two negative charges, so it can do {{SN2}} twice and end up neutral."}},
+        {"t": "Decode the first formula", "h": "{{C4H8S}}: one {{C4H8}} chain, one sulfur, no bromine. Both ends of one chain are on the same sulfur.", "ask": {"q": "How big is the ring?", "a": "Five atoms: the sulfur and four carbons."}},
+        {"t": "Decode the second formula", "h": "{{C8H16Br2S}}: two {{C4H8}} chains, one sulfur, two bromines. The sulfur is in the middle and each chain keeps its far bromine."},
+        {"t": "Write the mechanism", "h": "Sulfide attacks an end carbon and bromide leaves: a thiolate. The thiolate then attacks either the other end of its own chain (the ring) or a second dibromide (the open chain).", "ask": {"q": "Which reagent in excess favours the open chain?", "a": "The dibromide: the thiolate then meets another dibromide molecule more often."}},
+        {"t": "Check", "h": "No hydrogens gained or lost: eight in the ring, sixteen in the chain."}
+      ],
+      "answer": "C4H8S is the five-membered cyclic sulfide (thiolane). C8H16Br2S is bis(4-bromobutyl) sulfide.",
+      "rule": "A nucleophile with two charges on one atom bonds to two carbons: the same chain gives a ring, two chains give a sulfide in the middle."
+    }
+  },
+  {
+    "id": "products-from-formula-003", "type": "products-from-formula", "role": "worked", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "1,4-Dibromobutane is treated with two equivalents of NaCN in DMSO. The product is {{C6H8N2}}. Which structure is it?\n[[rxn:BrCCCCBr + [Na+].[C-]#N>DMSO>\"C6H8N2\"]]",
+    "choices": [
+      {"h": "[[mol:N#CCCCCC#N]]", "ok": true, "why": "Each cyanide replaces one bromine and brings its own carbon: four {{CH2}} groups plus two CN groups is {{C6H8N2}}."},
+      {"h": "[[mol:N#CCCCCBr]]", "ok": false, "why": "This is what one equivalent gives: {{C5H8BrN}}. It still has a bromine and has only one nitrogen."},
+      {"h": "[[mol:N#CCCC#N]]", "ok": false, "why": "This counts the nitrile carbons as part of the four-carbon chain. It is {{C4H4N2}}: two carbons and four hydrogens short."},
+      {"h": "[[mol:C=CCCC#N]]", "ok": false, "why": "This has an elimination at one end: {{C5H7N}}. Cyanide with a primary halide substitutes, and the formula has two nitrogens."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "A {{C4H8}} chain with two bromines, and cyanide, CN, which attacks with its carbon.", "ask": {"q": "How many nitrogens are in the product, and what does that tell you?", "a": "Two, so two cyanides are in it: both bromines have been replaced."}},
+        {"t": "Add up", "h": "{{C4H8}} plus two CN is {{C6H8N2}}. The formula matches a chain with a nitrile at each end.", "ask": {"q": "Why can there be no ring here?", "a": "Each cyanide has one charge and makes one bond. Once bonded it cannot attack again."}},
+        {"t": "Count the carbons carefully", "h": "The chain between the two nitrile carbons is still four {{CH2}} groups. The product has six carbons, not four.", "ask": {"q": "How many hydrogens should the product have?", "a": "Eight: the four {{CH2}} groups are unchanged."}},
+        {"t": "Reject by formula", "h": "A bromine left, too few carbons, or a C=C: each wrong choice fails the count."}
+      ],
+      "answer": "Hexanedinitrile, NC(CH2)4CN",
+      "rule": "Two equivalents of a singly charged nucleophile: both halogens replaced, open chain. Cyanide adds a carbon each time."
+    }
+  },
+  {
+    "id": "products-from-formula-004", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "1,3-Dibromopropane reacts with two equivalents of sodium methanethiolate. The product is {{C5H12S2}}. Which structure is it?\n[[rxn:BrCCCBr + C[S-].[Na+]>>\"C5H12S2\"]]",
+    "choices": [
+      {"h": "[[mol:CSCCCSC]]", "ok": true, "why": "Each thiolate replaces one bromine: {{C3H6}} plus two {{CH3S}} groups is {{C5H12S2}}."},
+      {"h": "[[mol:CSCCCBr]]", "ok": false, "why": "Only one substitution: {{C4H9BrS}}. The formula has two sulfurs and no bromine."},
+      {"h": "[[mol:C1CSC1]]", "ok": false, "why": "A ring would need one sulfur to bond to both ends, but each sulfur already carries a {{CH3}} and has only one charge. This is {{C3H6S}}."},
+      {"h": "[[mol:C=CCSC]]", "ok": false, "why": "Elimination at one end gives {{C4H8S}}. Thiolates are weak bases and excellent nucleophiles: they substitute."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "{{C3H6}} with two bromines; {{CH3S-}} with one charge."},
+        {"t": "Count sulfurs and halogens", "h": "Two sulfurs, no bromine: two thiolates, both ends substituted."},
+        {"t": "Add up", "h": "{{C3H6}} plus two {{CH3S}} is {{C5H12S2}}."}
+      ],
+      "answer": "CH3S(CH2)3SCH3",
+      "rule": "A nucleophile with one charge makes one bond: two equivalents give an open chain."
+    }
+  },
+  {
+    "id": "products-from-formula-005", "type": "products-from-formula", "role": "practice", "kind": "written", "diff": 1, "src": "site", "pts": 30, "time": 5,
+    "stem": "1,4-Dibromobutane and sodium azide ({{NaN3}}) in DMF give {{C4H8N6}} when two equivalents of azide are used, and mostly {{C4H8BrN3}} when one equivalent is used. Draw both products.\n[[mol:BrCCCCBr]]",
+    "model": "<p>{{C4H8N6}}: six nitrogens are two azide groups. Both bromines are replaced.</p>\n[[mol:[N-]=[N+]=NCCCCN=[N+]=[N-]]]\n<p>{{C4H8BrN3}}: three nitrogens are one azide group. One bromine is replaced and one is left.</p>\n[[mol:[N-]=[N+]=NCCCCBr]]",
+    "rubric": [
+      {"pts": 12, "h": "C4H8N6: an azide group on each end of the four-carbon chain"},
+      {"pts": 12, "h": "C4H8BrN3: an azide on one end, bromine on the other"},
+      {"pts": 6, "h": "Reasoning: nitrogens divided by three gives the number of azides; each SN2 replaces one bromine"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "{{C4H8}} with two bromines; azide, {{N3-}}, a good nucleophile (8,000 on the lecture scale) with one charge."},
+        {"t": "Count nitrogens", "h": "Six nitrogens: two azides. Three nitrogens: one azide."},
+        {"t": "Count bromines", "h": "None left in the first product; one left in the second."},
+        {"t": "Check hydrogens", "h": "Eight in both: the four {{CH2}} groups are unchanged."}
+      ],
+      "answer": "N3(CH2)4N3 and N3(CH2)4Br",
+      "rule": "The number of equivalents decides how many halogens are replaced."
+    }
+  },
+  {
+    "id": "products-from-formula-006", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 1, "src": "site", "fixed": true,
+    "stem": "1,5-Dibromopentane and sodium sulfide give this ring. What is its molecular formula?\n[[rxn:BrCCCCCBr + [Na+].[Na+].[S-2]>>C1CCSCC1]]",
+    "choices": [
+      {"h": "{{C5H10S}}", "ok": true, "why": "Five {{CH2}} groups and one sulfur. Both bromines have left as bromide."},
+      {"h": "{{C5H10Br2S}}", "ok": false, "why": "This adds sulfur without removing the bromines. Each C-S bond is made by pushing a bromide out."},
+      {"h": "{{C5H12S}}", "ok": false, "why": "Two hydrogens too many: this is an open-chain compound. The ring has only {{CH2}} groups."},
+      {"h": "{{C10H20Br2S}}", "ok": false, "why": "This is the other product, the open chain with two dibromide pieces on one sulfur."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Count the ring atoms", "h": "Five carbons and one sulfur."},
+        {"t": "Count hydrogens", "h": "Each carbon is a {{CH2}}: ten hydrogens. Sulfur carries none."},
+        {"t": "Account for the bromines", "h": "Two {{SN2}} reactions, two bromide ions lost."}
+      ],
+      "answer": "C5H10S",
+      "rule": "Product formula = the pieces minus the leaving groups."
+    }
+  },
+  {
+    "id": "products-from-formula-007", "type": "products-from-formula", "role": "practice", "kind": "written", "diff": 2, "src": "site", "pts": 50, "time": 8,
+    "stem": "Dibromomethane reacts with propane-1,3-dithiolate. Two of the products are {{C4H8S2}} and {{C5H10Br2S2}}. Draw each.\n[[rxn:BrCBr + [S-]CCC[S-]>>\"C4H8S2\" + \"C5H10Br2S2\"]]",
+    "model": "<p>{{C4H8S2}}: one dithiolate and one {{CH2}}. Both sulfurs bond to the same carbon and close a six-membered ring.</p>\n[[mol:C1CSCSC1]]\n<p>{{C5H10Br2S2}}: one dithiolate and two dibromomethanes. Each sulfur attacks a different {{CH2Br2}}, which keeps one bromine.</p>\n[[mol:BrCSCCCSCBr]]",
+    "rubric": [
+      {"pts": 20, "h": "C4H8S2: six-membered ring with one CH2 between the two sulfurs (1,3-dithiane)"},
+      {"pts": 20, "h": "C5H10Br2S2: BrCH2S(CH2)3SCH2Br"},
+      {"pts": 5, "h": "Says both come from two SN2 reactions"},
+      {"pts": 5, "h": "Counts the pieces or checks the formulas"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "Dibromomethane is one {{CH2}} with two bromines. The dithiolate is {{C3H6S2}}."},
+        {"t": "First formula", "h": "{{C3H6S2}} plus {{CH2}} is {{C4H8S2}}, no bromine: a ring. The single carbon sits between the two sulfurs: S, C, S, then three carbons, six atoms."},
+        {"t": "Second formula", "h": "{{C3H6S2}} plus two {{CH2Br}} is {{C5H10Br2S2}}: the dithiolate in the middle, a {{CH2Br}} on each sulfur."},
+        {"t": "Avoid the look-alike", "h": "The exam's {{C4H8S2}} was a ring with two carbons between the sulfurs on each side. Same formula, different ring: here the pieces are one carbon and three carbons."}
+      ],
+      "answer": "C4H8S2 is 1,3-dithiane. C5H10Br2S2 is BrCH2S(CH2)3SCH2Br.",
+      "rule": "The formula gives the pieces; the pieces give the connections. Keep each piece intact."
+    }
+  },
+  {
+    "id": "products-from-formula-008", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "1,5-Dibromopentane is warmed with excess methylamine (the extra amine removes the N-H protons). One product is {{C6H13N}}. Which structure is it?\n[[rxn:BrCCCCCBr + CN>>\"C6H13N\"]]",
+    "choices": [
+      {"h": "[[mol:CN1CCCCC1]]", "ok": true, "why": "One nitrogen, no bromine: the same nitrogen has attacked both ends of the chain, losing a proton each time. Five {{CH2}} groups, N and {{CH3}}: {{C6H13N}}."},
+      {"h": "[[mol:CNCCCCCNC]]", "ok": false, "why": "Two amines, one at each end: {{C7H18N2}}. The formula has only one nitrogen."},
+      {"h": "[[mol:CNCCCCCBr]]", "ok": false, "why": "This stops after one substitution: {{C6H14BrN}}. The formula has no bromine."},
+      {"h": "[[mol:CC1CCCCN1]]", "ok": false, "why": "The formula fits, but the methyl has moved from nitrogen to carbon. No bond to the methyl carbon is made or broken in an {{SN2}} at the chain ends."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "A {{C5H10}} chain with two bromines; methylamine, {{CH3NH2}}, a neutral nucleophile with two N-H bonds."},
+        {"t": "Count nitrogens and halogens", "h": "One nitrogen, no bromine: one amine has reacted with both ends."},
+        {"t": "Follow the hydrogens", "h": "{{C5H10}} plus {{CH3N}} is {{C6H13N}}: the amine has lost both of its N-H hydrogens, one after each {{SN2}}."},
+        {"t": "Keep the pieces intact", "h": "The {{CH3}} stays on nitrogen. Ring: N plus five carbons, six atoms."}
+      ],
+      "answer": "The six-membered ring with N-CH3 (1-methylpiperidine)",
+      "rule": "An amine with two N-H bonds can act as a dinucleophile on one atom."
+    }
+  },
+  {
+    "id": "products-from-formula-009", "type": "products-from-formula", "role": "practice", "kind": "written", "diff": 2, "src": "site", "pts": 50, "time": 8,
+    "stem": "1,4-Dibromobutane reacts with sodium acetylide. With two equivalents the product is {{C8H10}}; with one equivalent it is mostly {{C6H9Br}}. Draw both.\n[[rxn:BrCCCCBr + [Na+].[C-]#C>>\"C8H10\"]]",
+    "model": "<p>{{C8H10}}: both bromines replaced. Each acetylide attacks with its charged carbon and adds two carbons.</p>\n[[mol:C#CCCCCC#C]]\n<p>{{C6H9Br}}: one bromine replaced.</p>\n[[mol:C#CCCCCBr]]",
+    "rubric": [
+      {"pts": 20, "h": "C8H10: a terminal alkyne at each end of the four-carbon chain"},
+      {"pts": 20, "h": "C6H9Br: an alkyne at one end, bromine at the other"},
+      {"pts": 5, "h": "Says acetylide attacks through carbon (SN2 at a primary carbon), adding two carbons each time"},
+      {"pts": 5, "h": "Checks the formulas"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "{{C4H8}} with two bromines; acetylide, {{HC≡C-}}, which is {{C2H}} with one charge on carbon. It is a top nucleophile in the lecture table (126,000)."},
+        {"t": "First formula", "h": "{{C4H8}} plus two {{C2H}} is {{C8H10}}: both ends substituted."},
+        {"t": "Second formula", "h": "{{C4H8Br}} plus one {{C2H}} is {{C6H9Br}}: one end substituted."},
+        {"t": "Draw the new bonds in the right place", "h": "The new C-C bond is to the carbon that carried the charge. The other alkyne carbon keeps its hydrogen."}
+      ],
+      "answer": "HC≡C(CH2)4C≡CH and HC≡C(CH2)4Br",
+      "rule": "Carbon nucleophiles lengthen the chain: count their carbons in the formula."
+    }
+  },
+  {
+    "id": "products-from-formula-010", "type": "products-from-formula", "role": "practice", "kind": "written", "diff": 3, "src": "site, a variation on FA24 Exam 2, Q6B", "pts": 50, "time": 8,
+    "stem": "On the exam, 1,2-diiodoethane and ethane-1,2-dithiolate gave {{C4H8S2}} and {{C6H12S2I2}}. This time a large excess of the dithiolate is used, and dilute acid is added at the end. The products are {{C4H8S2}} and {{C6H14S4}}. Draw both, and explain why the open-chain product has changed.\n[[rxn:ICCI + [S-]CC[S-]>;then H3O+>\"C4H8S2\" + \"C6H14S4\"]]",
+    "model": "<p>{{C4H8S2}} is the same ring as before: one of each piece, two {{SN2}} reactions.</p>\n[[mol:C1CSCCS1]]\n<p>{{C6H14S4}}: four sulfurs are two dithiolates, and there is no iodine, so both ends of one diiodide have reacted. With dithiolate in excess, each end of the diiodide meets a different dithiolate. The two outer sulfurs are left as thiolates, and the acid turns them into S-H.</p>\n[[mol:SCCSCCSCCS]]",
+    "rubric": [
+      {"pts": 15, "h": "C4H8S2: 1,4-dithiane"},
+      {"pts": 20, "h": "C6H14S4: HSCH2CH2SCH2CH2SCH2CH2SH"},
+      {"pts": 10, "h": "Explanation: with excess dithiolate the diiodide is in the middle and thiolate ends are left over, protonated by the acid"},
+      {"pts": 5, "h": "Counts the pieces or checks the formulas"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "The diiodide is {{C2H4}} with two iodines. The dithiolate is {{C2H4S2}} with two charges."},
+        {"t": "Count sulfurs and halogens in the new formula", "h": "Four sulfurs: two dithiolates. No iodine: one diiodide with both ends substituted. Carbons: three {{C2H4}} units, six."},
+        {"t": "Account for the hydrogens", "h": "Three {{C2H4}} units give twelve hydrogens. The other two come from the acid: the two sulfurs that never found a carbon are protonated to S-H."},
+        {"t": "Explain the switch", "h": "Excess diiodide puts a diiodide on each end of a dithiolate (the exam). Excess dithiolate puts a dithiolate on each end of a diiodide (here)."}
+      ],
+      "answer": "C4H8S2 is 1,4-dithiane. C6H14S4 is the open chain HS-CH2CH2-S-CH2CH2-S-CH2CH2-SH.",
+      "rule": "The reagent in excess ends up on the outside of the open-chain product."
+    }
+  },
+  {
+    "id": "products-from-formula-011", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "1,3-Dibromopropane and ethane-1,2-dithiolate give the ring {{C5H10S2}}, and also a little of a compound {{C10H20S4}}. Which structure is {{C10H20S4}}?\n[[rxn:BrCCCBr + [S-]CC[S-]>>\"C5H10S2\" + \"C10H20S4\"]]",
+    "choices": [
+      {"h": "[[mol:C1CCSCCSCCCSCCS1]]", "ok": true, "why": "Two dithiolates and two dibromides joined alternately into one large ring: every three-carbon chain sits between two sulfurs, every sulfur is bonded to two carbons, and no bromine is left."},
+      {"h": "[[mol:C1CSCCSC1.C1CSCCSC1]]", "ok": false, "why": "These are two separate molecules of the small ring, each {{C5H10S2}}. A molecular formula describes one molecule."},
+      {"h": "[[mol:C1CCSSCCSCCCSCC1]]", "ok": false, "why": "The atom count fits, but this has an S-S bond and a five-carbon chain. {{SN2}} at carbon only makes C-S bonds here, and the pieces stay intact."},
+      {"h": "[[mol:SCCSCCCSCCS]]", "ok": false, "why": "An open chain of two dithiolates and one dibromide is {{C7H16S4}}, and it would need acid to put H on the end sulfurs."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write the pieces", "h": "The dibromide gives {{C3H6}}; the dithiolate is {{C2H4S2}}. One of each is {{C5H10S2}}, the seven-membered ring."},
+        {"t": "Decode the new formula", "h": "{{C10H20S4}} is exactly twice {{C5H10S2}}: two dibromides and two dithiolates in one molecule, with no bromine and no S-H."},
+        {"t": "Decide the shape", "h": "No ends left over means a ring. Join the pieces alternately: dithiolate, {{C3H6}}, dithiolate, {{C3H6}}, and back to the start."},
+        {"t": "Test each choice against the pieces", "h": "Every sulfur must be bonded to one two-carbon chain and one three-carbon chain. Only the large ring passes."}
+      ],
+      "answer": "The large ring made of two dithiolates and two three-carbon chains, joined alternately",
+      "rule": "A formula that is double the small ring is one molecule built from two of each piece."
+    }
+  }
+]
