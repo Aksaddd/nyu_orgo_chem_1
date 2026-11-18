@@ -7,8 +7,8 @@
   "goals": [
     "Describe what a spectrometer does: light in, specific frequencies absorbed, structure out",
     "Explain why nuclei in a magnetic field have two energy states and how the gap depends on the field",
-    "Explain shielding with the relation {{B0}} − B<sub>e</sub> = net magnetic field",
-    "Count the {{1H}} and {{13C}} signals of a molecule by finding the different environments",
+    "Explain shielding: the field of the electrons subtracts from the external field, and the nucleus feels the net field",
+    "Count the 1H and 13C signals of a molecule by finding the different environments",
     "Use the n + 1 rule to say what a septet means"
   ],
   "sections": [

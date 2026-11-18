@@ -1,0 +1,647 @@
+[
+ {
+  "id": "chair-both-001",
+  "type": "chair-both",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH3,2u:CH(CH3)2",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2u:CH(CH3)2]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "Methyl is on a wedge (up) and isopropyl is on a wedge (up), on carbons 1 and 2. Same face: <b>cis</b>-1,2.",
+     "ask": {
+      "q": "Are the two groups on the same face of the ring?",
+      "a": "Yes: cis."
+     }
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C2 isopropyl equatorial. After the flip: C1 methyl equatorial, C2 isopropyl axial.\n[[chair:1u:CH3,2u:CH(CH3)2|A]]\n[[chair:1u:CH3,2u:CH(CH3)2|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has one axial group, but not the same one. Axial methyl costs 1.74 kcal/mol (Table 5.3). Axial isopropyl costs 2.61 kcal/mol (Table 5.3). Circle the chair with the larger group, isopropyl, equatorial: it is better by 0.87 kcal/mol.",
+     "ask": {
+      "q": "Which group costs more when it is axial?",
+      "a": "Isopropyl. So the better chair has it equatorial."
+     }
+    },
+    {
+     "t": "Name the relationship",
+     "h": "In one chair methyl is axial, in the other isopropyl is axial. These shapes cannot be laid on top of each other and they are not mirror images. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy.",
+     "ask": {
+      "q": "Can the flipped chair be laid exactly on the first one? If not, is it the mirror image?",
+      "a": "Neither. Different energies already rule both out: diastereomers."
+     }
+    }
+   ],
+   "answer": "The chair with isopropyl equatorial (and methyl axial) is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-002",
+  "type": "chair-both",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1d:Cl,2d:Cl",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1d:Cl,2d:Cl]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two Cl groups are on a dash (down) and a dash (down), on carbons 1 and 2. Same face: <b>cis</b>-1,2.",
+     "ask": {
+      "q": "Are the two groups on the same face of the ring?",
+      "a": "Yes: cis."
+     }
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 Cl equatorial, C2 Cl axial. After the flip: C1 Cl axial, C2 Cl equatorial.\n[[chair:1d:Cl,2d:Cl|A]]\n[[chair:1d:Cl,2d:Cl|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial Cl and one equatorial Cl. Same cost in both (about 0.53 kcal/mol (a literature value: the lecture table lists only alkyl groups)): equal in energy, K = 1. Circle neither.",
+     "ask": {
+      "q": "How many axial groups does each chair have?",
+      "a": "One each, and it is the same group. The energies are equal."
+     }
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Try to lay the flipped chair on the first one: it does not fit, however it is turned. But the mirror image of the first chair is exactly the flipped chair. Non-superimposable mirror images are <b>enantiomers</b>. The lecture calls them conformational enantiomers. They interconvert by the ring flip, which is why the molecule as a whole is achiral.",
+     "ask": {
+      "q": "Can the flipped chair be laid exactly on the first one? If not, is it the mirror image?",
+      "a": "It cannot be superimposed, but it is the mirror image: enantiomers."
+     }
+    }
+   ],
+   "answer": "The two chairs are equal in energy. The two chairs are enantiomers.",
+   "rule": "cis-1,2 with identical groups: equal energy, mirror-image chairs (enantiomers)."
+  }
+ },
+ {
+  "id": "chair-both-003",
+  "type": "chair-both",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH3,3d:CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,3d:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two methyl groups are on a wedge (up) and a dash (down), on carbons 1 and 3. Opposite faces: <b>trans</b>-1,3.",
+     "ask": {
+      "q": "Are the two groups on the same face of the ring?",
+      "a": "No: trans."
+     }
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C3 methyl equatorial. After the flip: C1 methyl equatorial, C3 methyl axial.\n[[chair:1u:CH3,3d:CH3|A]]\n[[chair:1u:CH3,3d:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial methyl and one equatorial methyl. Same cost in both (1.74 kcal/mol (Table 5.3)): equal in energy, K = 1. Circle neither.",
+     "ask": {
+      "q": "How many axial groups does each chair have?",
+      "a": "One each, and it is the same group. The energies are equal."
+     }
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Turn the flipped chair over like a pancake, about the line through C2 and C5. C1 and C3 trade places and it lands exactly on the first chair: one axial group, one equatorial group, on the same carbons and faces. The two chairs are the <b>same</b>.",
+     "ask": {
+      "q": "Can the flipped chair be laid exactly on the first one? If not, is it the mirror image?",
+      "a": "Yes, after turning it. The chairs are the same."
+     }
+    }
+   ],
+   "answer": "The two chairs are equal in energy. The two chairs are the same.",
+   "rule": "Identical groups, one axial and one equatorial at 1,3 (trans) or 1,4 (cis): the flip gives back the same chair."
+  }
+ },
+ {
+  "id": "chair-both-004",
+  "type": "chair-both",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:C(CH3)3,4d:OH",
+  "given": "ring",
+  "ask": [
+   "cis-trans",
+   "stable",
+   "relationship"
+  ],
+  "stem": "Is this isomer cis or trans? Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:C(CH3)3,4d:OH]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "tert-butyl is on a wedge (up) and OH is on a dash (down), on carbons 1 and 4. Opposite faces: <b>trans</b>-1,4.",
+     "ask": {
+      "q": "Are the two groups on the same face of the ring?",
+      "a": "No: trans."
+     }
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 tert-butyl axial, C4 OH axial. After the flip: C1 tert-butyl equatorial, C4 OH equatorial.\n[[chair:1u:C(CH3)3,4d:OH|A]]\n[[chair:1u:C(CH3)3,4d:OH|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: 5.5 kcal/mol (Table 5.3) for tert-butyl plus about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups) for OH. Circle the chair with both groups equatorial.",
+     "ask": {
+      "q": "Which chair has an axial group to pay for?",
+      "a": "Only the one with both groups axial. The other has none."
+     }
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy.",
+     "ask": {
+      "q": "Can the flipped chair be laid exactly on the first one? If not, is it the mirror image?",
+      "a": "Neither. Different energies already rule both out: diastereomers."
+     }
+    }
+   ],
+   "answer": "trans. The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-005",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:CH3,2d:CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2d:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two methyl groups are on a wedge (up) and a dash (down), on carbons 1 and 2. Opposite faces: <b>trans</b>-1,2."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C2 methyl axial. After the flip: C1 methyl equatorial, C2 methyl equatorial.\n[[chair:1u:CH3,2d:CH3|A]]\n[[chair:1u:CH3,2d:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: 2 x 1.74 = 3.48 kcal/mol (Table 5.3). Circle the chair with both groups equatorial."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy. Each chair on its own is chiral, and so is the molecule, but the two chairs are not mirror images of each other."
+    }
+   ],
+   "answer": "The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-006",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:CH3,3u:CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,3u:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two methyl groups are on a wedge (up) and a wedge (up), on carbons 1 and 3. Same face: <b>cis</b>-1,3."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C3 methyl axial. After the flip: C1 methyl equatorial, C3 methyl equatorial.\n[[chair:1u:CH3,3u:CH3|A]]\n[[chair:1u:CH3,3u:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: 2 x 1.74 = 3.48 kcal/mol (Table 5.3). The two axial groups also crowd each other on the same face, so the real cost is higher still. Circle the chair with both groups equatorial."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy."
+    }
+   ],
+   "answer": "The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-007",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH3,4u:CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,4u:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two methyl groups are on a wedge (up) and a wedge (up), on carbons 1 and 4. Same face: <b>cis</b>-1,4."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C4 methyl equatorial. After the flip: C1 methyl equatorial, C4 methyl axial.\n[[chair:1u:CH3,4u:CH3|A]]\n[[chair:1u:CH3,4u:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial methyl and one equatorial methyl. Same cost in both (1.74 kcal/mol (Table 5.3)): equal in energy, K = 1. Circle neither."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Spin the flipped chair half a turn about the vertical axis through the middle of the ring. C1 and C4 trade places and it lands exactly on the first chair: one axial group, one equatorial group, both still up or both still down. The two chairs are the <b>same</b>."
+    }
+   ],
+   "answer": "The two chairs are equal in energy. The two chairs are the same.",
+   "rule": "Identical groups, one axial and one equatorial at 1,3 (trans) or 1,4 (cis): the flip gives back the same chair."
+  }
+ },
+ {
+  "id": "chair-both-008",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:CH3,4d:CH3",
+  "given": "ring",
+  "ask": [
+   "cis-trans",
+   "stable",
+   "relationship"
+  ],
+  "stem": "Is this isomer cis or trans? Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,4d:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two methyl groups are on a wedge (up) and a dash (down), on carbons 1 and 4. Opposite faces: <b>trans</b>-1,4."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C4 methyl axial. After the flip: C1 methyl equatorial, C4 methyl equatorial.\n[[chair:1u:CH3,4d:CH3|A]]\n[[chair:1u:CH3,4d:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: 2 x 1.74 = 3.48 kcal/mol (Table 5.3). Circle the chair with both groups equatorial."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy."
+    }
+   ],
+   "answer": "trans. The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-009",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH2CH3,2u:CH2CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH2CH3,2u:CH2CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two ethyl groups are on a wedge (up) and a wedge (up), on carbons 1 and 2. Same face: <b>cis</b>-1,2."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 ethyl axial, C2 ethyl equatorial. After the flip: C1 ethyl equatorial, C2 ethyl axial.\n[[chair:1u:CH2CH3,2u:CH2CH3|A]]\n[[chair:1u:CH2CH3,2u:CH2CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial ethyl and one equatorial ethyl. Same cost in both (1.79 kcal/mol (Table 5.3)): equal in energy, K = 1. Circle neither."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Try to lay the flipped chair on the first one: it does not fit, however it is turned. But the mirror image of the first chair is exactly the flipped chair. Non-superimposable mirror images are <b>enantiomers</b>. The lecture calls them conformational enantiomers. They interconvert by the ring flip, which is why the molecule as a whole is achiral."
+    }
+   ],
+   "answer": "The two chairs are equal in energy. The two chairs are enantiomers.",
+   "rule": "cis-1,2 with identical groups: equal energy, mirror-image chairs (enantiomers)."
+  }
+ },
+ {
+  "id": "chair-both-010",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1d:CH3,4d:C(CH3)3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1d:CH3,4d:C(CH3)3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "Methyl is on a dash (down) and tert-butyl is on a dash (down), on carbons 1 and 4. Same face: <b>cis</b>-1,4."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl equatorial, C4 tert-butyl axial. After the flip: C1 methyl axial, C4 tert-butyl equatorial.\n[[chair:1d:CH3,4d:C(CH3)3|A]]\n[[chair:1d:CH3,4d:C(CH3)3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has one axial group, but not the same one. Axial tert-butyl costs 5.5 kcal/mol (Table 5.3). Axial methyl costs 1.74 kcal/mol (Table 5.3). Circle the chair with the larger group, tert-butyl, equatorial: it is better by 3.76 kcal/mol."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "In one chair tert-butyl is axial, in the other methyl is axial. These shapes cannot be laid on top of each other and they are not mirror images. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy. With K = 11,916 for tert-butyl, the chair with tert-butyl axial is hardly present at all."
+    }
+   ],
+   "answer": "The chair with tert-butyl equatorial (and methyl axial) is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-011",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH3,3d:CH2CH3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,3d:CH2CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "Methyl is on a wedge (up) and ethyl is on a dash (down), on carbons 1 and 3. Opposite faces: <b>trans</b>-1,3."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C3 ethyl equatorial. After the flip: C1 methyl equatorial, C3 ethyl axial.\n[[chair:1u:CH3,3d:CH2CH3|A]]\n[[chair:1u:CH3,3d:CH2CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has one axial group, but not the same one. Axial methyl costs 1.74 kcal/mol (Table 5.3). Axial ethyl costs 1.79 kcal/mol (Table 5.3). Circle the chair with the larger group, ethyl, equatorial: it is better by 0.05 kcal/mol, only slightly."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "In one chair methyl is axial, in the other ethyl is axial. These shapes cannot be laid on top of each other and they are not mirror images. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy. The trap is to call the chairs equal because methyl and ethyl are nearly the same size. Nearly is not equal: the groups are different, so the chairs are different."
+    }
+   ],
+   "answer": "The chair with ethyl equatorial (and methyl axial) is more stable, but only slightly. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-012",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1d:Br,3u:Br",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1d:Br,3u:Br]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two Br groups are on a dash (down) and a wedge (up), on carbons 1 and 3. Opposite faces: <b>trans</b>-1,3."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 Br equatorial, C3 Br axial. After the flip: C1 Br axial, C3 Br equatorial.\n[[chair:1d:Br,3u:Br|A]]\n[[chair:1d:Br,3u:Br|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial Br and one equatorial Br. Same cost in both (about 0.5 kcal/mol (a literature value: the lecture table lists only alkyl groups)): equal in energy, K = 1. Circle neither."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Turn the flipped chair over like a pancake, about the line through C2 and C5. C1 and C3 trade places and it lands exactly on the first chair: one axial group, one equatorial group, on the same carbons and faces. The two chairs are the <b>same</b>."
+    }
+   ],
+   "answer": "The two chairs are equal in energy. The two chairs are the same.",
+   "rule": "Identical groups, one axial and one equatorial at 1,3 (trans) or 1,4 (cis): the flip gives back the same chair."
+  }
+ },
+ {
+  "id": "chair-both-013",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:OH,3u:CH3",
+  "given": "ring",
+  "ask": [
+   "cis-trans",
+   "stable",
+   "relationship"
+  ],
+  "stem": "Is this isomer cis or trans? Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:OH,3u:CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "OH is on a wedge (up) and methyl is on a wedge (up), on carbons 1 and 3. Same face: <b>cis</b>-1,3."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 OH axial, C3 methyl axial. After the flip: C1 OH equatorial, C3 methyl equatorial.\n[[chair:1u:OH,3u:CH3|A]]\n[[chair:1u:OH,3u:CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups) for OH plus 1.74 kcal/mol (Table 5.3) for methyl. The two axial groups also crowd each other on the same face, so the real cost is higher still. Circle the chair with both groups equatorial."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy."
+    }
+   ],
+   "answer": "cis. The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-014",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:CH3,2d:OH",
+  "given": "ring",
+  "ask": [
+   "cis-trans",
+   "stable",
+   "relationship"
+  ],
+  "stem": "Is this isomer cis or trans? Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2d:OH]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "Methyl is on a wedge (up) and OH is on a dash (down), on carbons 1 and 2. Opposite faces: <b>trans</b>-1,2."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C2 OH axial. After the flip: C1 methyl equatorial, C2 OH equatorial.\n[[chair:1u:CH3,2d:OH|A]]\n[[chair:1u:CH3,2d:OH|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "One chair has both groups equatorial and pays nothing. The other has both axial: 1.74 kcal/mol (Table 5.3) for methyl plus about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups) for OH. Circle the chair with both groups equatorial."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "The two chairs are different shapes of the same molecule that cannot be laid on top of each other, and they are not mirror images: one has two equatorial groups, the other two axial groups. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy."
+    }
+   ],
+   "answer": "trans. The chair with both groups equatorial is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ },
+ {
+  "id": "chair-both-015",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH2CH3,4u:CH2CH3",
+  "given": "ring",
+  "ask": [
+   "cis-trans",
+   "stable",
+   "relationship"
+  ],
+  "stem": "Is this isomer cis or trans? Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH2CH3,4u:CH2CH3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "The two ethyl groups are on a wedge (up) and a wedge (up), on carbons 1 and 4. Same face: <b>cis</b>-1,4."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 ethyl axial, C4 ethyl equatorial. After the flip: C1 ethyl equatorial, C4 ethyl axial.\n[[chair:1u:CH2CH3,4u:CH2CH3|A]]\n[[chair:1u:CH2CH3,4u:CH2CH3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has exactly one axial ethyl and one equatorial ethyl. Same cost in both (1.79 kcal/mol (Table 5.3)): equal in energy, K = 1. Circle neither."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "Equal energy means the chairs are either the same or mirror images, so test it. Spin the flipped chair half a turn about the vertical axis through the middle of the ring. C1 and C4 trade places and it lands exactly on the first chair: one axial group, one equatorial group, both still up or both still down. The two chairs are the <b>same</b>."
+    }
+   ],
+   "answer": "cis. The two chairs are equal in energy. The two chairs are the same.",
+   "rule": "Identical groups, one axial and one equatorial at 1,3 (trans) or 1,4 (cis): the flip gives back the same chair."
+  }
+ },
+ {
+  "id": "chair-both-016",
+  "type": "chair-both",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH3,2u:C(CH3)3",
+  "given": "ring",
+  "ask": [
+   "stable",
+   "relationship"
+  ],
+  "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2u:C(CH3)3]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the faces",
+     "h": "Methyl is on a wedge (up) and tert-butyl is on a wedge (up), on carbons 1 and 2. Same face: <b>cis</b>-1,2."
+    },
+    {
+     "t": "Draw the two chairs",
+     "h": "Put each group on its carbon, up or down as in the flat drawing, then flip the ring: axial and equatorial swap, up and down do not. No wedges on a chair. First chair: C1 methyl axial, C2 tert-butyl equatorial. After the flip: C1 methyl equatorial, C2 tert-butyl axial.\n[[chair:1u:CH3,2u:C(CH3)3|A]]\n[[chair:1u:CH3,2u:C(CH3)3|B]]"
+    },
+    {
+     "t": "Compare the energies",
+     "h": "Each chair has one axial group, but not the same one. Axial methyl costs 1.74 kcal/mol (Table 5.3). Axial tert-butyl costs 5.5 kcal/mol (Table 5.3). Circle the chair with the larger group, tert-butyl, equatorial: it is better by 3.76 kcal/mol."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "In one chair methyl is axial, in the other tert-butyl is axial. These shapes cannot be laid on top of each other and they are not mirror images. They are <b>diastereomers</b>. Quick test: chairs with different energies can only be diastereomers, because identical shapes and mirror images always have the same energy."
+    }
+   ],
+   "answer": "The chair with tert-butyl equatorial (and methyl axial) is more stable. The two chairs are diastereomers.",
+   "rule": "Chairs of different energy are diastereomers. Larger group equatorial; both equatorial beats both axial."
+  }
+ }
+]

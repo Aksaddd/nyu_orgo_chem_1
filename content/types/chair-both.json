@@ -1,0 +1,87 @@
+{
+ "id": "chair-both",
+ "title": "Draw both chairs, circle the more stable, name their relationship",
+ "exam": "Q8",
+ "points": 100,
+ "asks": "A disubstituted cyclohexane is drawn flat with wedges and dashes. Draw both chairs, circle the more stable one, and say whether the two chairs are the same, enantiomers or diastereomers.",
+ "know": [
+  {
+   "h": "The lecture's procedure: 1. draw the chairs. 2. decide which, if either, is more stable. 3. compare the chairs: same, enantiomers or diastereomers.",
+   "from": "Lecture 10/27, p. 3"
+  },
+  {
+   "h": "A wedge means up and a dash means down. On a chair, up and down are shown by the direction of the bond: <b>no wedges or dashes when drawing chairs</b>.",
+   "from": "Lecture 10/27, p. 1"
+  },
+  {
+   "h": "Axial bonds alternate up and down around the ring. If the axial bond at C1 points up, an up group is axial at C1, C3 and C5 and equatorial at C2, C4 and C6.",
+   "from": "standard"
+  },
+  {
+   "h": "The <b>ring flip</b> swaps axial and equatorial at every carbon and leaves up and down alone. For unsubstituted cyclohexane K = 1.",
+   "from": "Lecture 10/27, p. 1"
+  },
+  {
+   "h": "What the two chairs look like: cis-1,2, trans-1,3 and cis-1,4 have one axial and one equatorial group in each chair. trans-1,2, cis-1,3 and trans-1,4 have both equatorial in one chair and both axial in the other.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>Axial groups cost energy</b> (two gauche interactions with the ring). Cost in kcal/mol and K: methyl 1.74 (19.5); ethyl 1.79 (21.2); propyl 2.21 (43.4); isopropyl 2.61 (86.0); tert-butyl 5.5 (11,916).",
+   "from": "Table 5.3; Lecture 10/27, p. 2"
+  },
+  {
+   "h": "More stable chair: both equatorial beats both axial. With one axial group in each chair, the chair with the <b>larger group equatorial</b> wins, even if only slightly (ethyl against methyl: 1.79 against 1.74).",
+   "from": "Exam key Q8(i)"
+  },
+  {
+   "h": "<b>Same</b>: the flipped chair can be turned to lie exactly on the first one. <b>Enantiomers</b>: it cannot, but it is the mirror image. <b>Diastereomers</b>: neither.",
+   "from": "Lecture 10/27, p. 3 to 4"
+  },
+  {
+   "h": "Chairs that are the same or enantiomers always have equal energy. So if the two chairs differ in energy, they are <b>diastereomers</b>.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>cis-1,2 with two identical groups</b> (the lecture's cis-1,2-dimethylcyclohexane): the chairs are equal in energy and are non-superimposable mirror images, conformational enantiomers. The molecule itself is achiral.",
+   "from": "Lecture 10/27, p. 4"
+  },
+  {
+   "h": "<b>Identical groups, trans-1,3 or cis-1,4</b>: one axial and one equatorial in each chair, equal energy, and the flipped chair is the same chair turned around.",
+   "from": "standard"
+  },
+  {
+   "h": "Skill: be able to draw a chair, add each group up or down on the right carbon, and draw its ring flip with every group on the same carbon and face.",
+   "from": "Lecture 10/27, p. 1 and 4"
+  }
+ ],
+ "method": [
+  "Read the flat drawing: which carbons, and is each group up (wedge) or down (dash)? Same face is cis.",
+  "Draw the first chair and place each group up or down on its carbon. See which are axial and which equatorial.",
+  "Draw the ring flip: every axial group becomes equatorial and the reverse, and up stays up.",
+  "Add up the axial costs in each chair and circle the cheaper one. If the costs are equal, say so.",
+  "If the energies differ, the chairs are diastereomers.",
+  "If the energies are equal, test whether one chair can be turned to lie on the other (same) or is only its mirror image (enantiomers)."
+ ],
+ "pitfalls": [
+  {
+   "h": "Calling the chairs of cis-1-ethyl-2-methylcyclohexane equal or enantiomers because ethyl and methyl are nearly the same size. The groups differ, so the chairs are diastereomers."
+  },
+  {
+   "h": "Calling every pair of equal-energy chairs the same. For cis-1,2 with identical groups they are enantiomers."
+  },
+  {
+   "h": "Drawing wedges and dashes on a chair, or moving a group to the other face during the flip."
+  },
+  {
+   "h": "Circling a chair when the two are equal in energy. Write that they are equal."
+  },
+  {
+   "h": "Answering the relationship for two different molecules (cis against trans). The question is about the two chairs of one molecule."
+  }
+ ],
+ "links": {
+  "read": [
+   "rings-2"
+  ]
+ }
+}

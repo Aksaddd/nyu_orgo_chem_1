@@ -1,0 +1,87 @@
+{
+ "id": "chair-read",
+ "title": "A chair is drawn: cis or trans, is it the most stable, and if not draw the one that is",
+ "exam": "Q4A",
+ "points": 50,
+ "asks": "A disubstituted cyclohexane is drawn as a chair. Say cis or trans, say whether it is the most stable conformation, and if not draw the most stable one.",
+ "know": [
+  {
+   "h": "A chair has two kinds of positions. The six <b>axial</b> bonds are vertical. The six <b>equatorial</b> bonds point out around the middle of the ring, each one parallel to the ring bonds one bond away.",
+   "from": "Lecture 10/27, p. 1; Lecture 10/20, p. 3"
+  },
+  {
+   "h": "Axial bonds <b>alternate</b> up, down, up, down around the ring. On every carbon the equatorial bond points to the opposite face from the axial bond: where the axial bond is up, the equatorial bond is the down one.",
+   "from": "standard; Exam key Q4A"
+  },
+  {
+   "h": "<b>cis</b> means both groups on the same face of the ring (both up or both down). <b>trans</b> means opposite faces. Up and down are about faces, not about axial and equatorial.",
+   "from": "Lecture 10/27, p. 4; standard"
+  },
+  {
+   "h": "<b>1,2 pattern</b>: one axial and one equatorial is cis. Two equatorial, or two axial, is trans. Two equatorial neighbours look as if they point the same way, but they are trans.",
+   "from": "Exam key Q4A"
+  },
+  {
+   "h": "<b>1,3 pattern</b> (the reverse of 1,2): two equatorial, or two axial, is cis. One axial and one equatorial is trans.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>1,4 pattern</b> (the same as 1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans.",
+   "from": "Exam key Q4A"
+  },
+  {
+   "h": "The <b>ring flip</b> turns every axial group equatorial and every equatorial group axial. Up stays up and down stays down, so cis stays cis and trans stays trans.",
+   "from": "Lecture 10/27, p. 1"
+  },
+  {
+   "h": "<b>Axial groups cost energy</b>: an axial group has two gauche interactions with the ring. An equatorial group has none.",
+   "from": "Lecture 10/27, p. 2"
+  },
+  {
+   "h": "The numbers to know (cost of an axial group, kcal/mol, and K): methyl 1.74 (19.5); ethyl 1.79 (21.2); propyl 2.21 (43.4); isopropyl 2.61 (86.0); tert-butyl 5.5 (11,916). The larger the group, the more it costs.",
+   "from": "Table 5.3"
+  },
+  {
+   "h": "The most stable chair has the most groups equatorial. If one group must be axial, the <b>larger group goes equatorial</b>.",
+   "from": "Exam key Q4A"
+  },
+  {
+   "h": "Size here means crowding near the ring, not the size of the atom. Halogens, including iodine, and OH cost less when axial than any alkyl group, because a single atom on a long bond stays clear of the ring. COOH and {{NH2}} cost a little less than methyl.",
+   "from": "A-value table (literature values); Exam key Q4A"
+  },
+  {
+   "h": "Skill: be able to redraw a chair after the ring flip, with each group on the same carbon and the same face, and with no wedges or dashes.",
+   "from": "Lecture 10/27, p. 1"
+  }
+ ],
+ "method": [
+  "For each group, decide whether its bond is vertical (axial) or points outward (equatorial).",
+  "For each group, decide whether it is up or down: an axial group points straight up or down, and an equatorial group points to the face opposite the axial bond on its carbon.",
+  "Same face is cis, opposite faces is trans. Check against the pattern for 1,2, 1,3 or 1,4.",
+  "Picture the ring flip: every axial group becomes equatorial and the reverse.",
+  "Compare the two chairs: both equatorial beats everything, and when one group must be axial the larger group should be equatorial.",
+  "If the drawn chair is not the better one, draw the flipped chair with each group on the same carbon and the same face."
+ ],
+ "pitfalls": [
+  {
+   "h": "Calling two equatorial neighbours cis because both seem to point sideways. They are trans."
+  },
+  {
+   "h": "Using the 1,2 pattern for a 1,3 pair. At 1,3 two equatorial groups are cis."
+  },
+  {
+   "h": "Changing cis to trans when drawing the ring flip. The flip never changes up and down."
+  },
+  {
+   "h": "Putting the group with the biggest atom equatorial. Iodine or bromine costs less when axial than methyl does."
+  },
+  {
+   "h": "Saying a chair with one axial group cannot be the most stable. For a cis-1,2, trans-1,3 or cis-1,4 pair one group is always axial."
+  }
+ ],
+ "links": {
+  "read": [
+   "rings-2"
+  ]
+ }
+}

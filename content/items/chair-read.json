@@ -1,0 +1,678 @@
+[
+ {
+  "id": "chair-read-001",
+  "type": "chair-read",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH(CH3)2,2u:Cl",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH(CH3)2,2u:Cl|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Isopropyl on C1 is on a vertical bond: <b>axial</b>. Cl on C2 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial isopropyl points straight up. At C2 the axial bond points down, so the equatorial bond is the up one: Cl is <b>up</b>.",
+     "ask": {
+      "q": "At C2 the axial bond points down. Is the equatorial bond there the up one or the down one?",
+      "a": "The up one. The two bonds on a ring carbon always point to opposite faces."
+     }
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. On neighbouring carbons (1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans.",
+     "ask": {
+      "q": "Are the two groups on the same face or on opposite faces?",
+      "a": "The same face: cis."
+     }
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial isopropyl costs 2.61 kcal/mol (Table 5.3). Axial Cl would cost about 0.53 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, isopropyl, is axial here. This chair is <b>not</b> the most stable one.",
+     "ask": {
+      "q": "Which of the two groups costs more when it is axial?",
+      "a": "Isopropyl. It is the one that should be equatorial."
+     }
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1u:CH(CH3)2,2u:Cl|B]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip: isopropyl equatorial, Cl axial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-002",
+  "type": "chair-read",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 2,
+  "src": "FA24 Exam 2, Q4A(1)",
+  "subs": "1u:NH2,2d:OCH3",
+  "given": "chairB",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:NH2,2d:OCH3|B]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "{{NH2}} on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. {{OCH3}} on C2 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points down, so the equatorial bond is the up one: {{NH2}} is <b>up</b>. At C2 the axial bond points up, so the equatorial bond is the down one: {{OCH3}} is <b>down</b>.",
+     "ask": {
+      "q": "At C1 the axial bond points down. Is the equatorial bond there the up one or the down one?",
+      "a": "The up one. The two bonds on a ring carbon always point to opposite faces."
+     }
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. This is the classic trap: two equatorial neighbours both seem to point sideways, but one is up and one is down. On neighbouring carbons (1,2): two equatorial, or two axial, is trans. One axial and one equatorial is cis.",
+     "ask": {
+      "q": "Are the two groups on the same face or on opposite faces?",
+      "a": "Opposite faces: trans."
+     }
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are equatorial, so there is no axial group to pay for. The ring flip would make both axial. This chair is the most stable one.",
+     "ask": {
+      "q": "What would the ring flip do to these two groups?",
+      "a": "Make both axial, which costs energy. So the drawn chair is the better one."
+     }
+    }
+   ],
+   "answer": "trans; yes, this is the most stable chair (both groups equatorial).",
+   "rule": "1,2: equatorial and equatorial (or axial and axial) is trans."
+  }
+ },
+ {
+  "id": "chair-read-003",
+  "type": "chair-read",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH3,3u:OH",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH3,3u:OH|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Methyl on C1 is on a vertical bond: <b>axial</b>. OH on C3 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial methyl points straight up. The axial OH points straight up.",
+     "ask": {
+      "q": "If the axial bond at one carbon points up, which way does the axial bond at the next carbon point?",
+      "a": "Down. Axial bonds alternate around the ring."
+     }
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. Two axial groups two carbons apart point the same way and sit close together on one face of the ring. For 1,3: two equatorial, or two axial, is cis. One axial and one equatorial is trans.",
+     "ask": {
+      "q": "Are the two groups on the same face or on opposite faces?",
+      "a": "The same face: cis."
+     }
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are axial. Axial groups cost energy: 1.74 kcal/mol (Table 5.3) for methyl and about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups) for OH, and at 1,3 the two axial groups also crowd each other. The ring flip puts both equatorial, where they cost nothing. This chair is <b>not</b> the most stable one.",
+     "ask": {
+      "q": "What would the ring flip do to these two groups?",
+      "a": "Make both equatorial, which removes all the axial cost."
+     }
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1u:CH3,3u:OH|B]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip, with both groups equatorial.",
+   "rule": "1,3: equatorial and equatorial (or axial and axial) is cis; axial and equatorial is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-004",
+  "type": "chair-read",
+  "role": "worked",
+  "kind": "chair",
+  "diff": 3,
+  "src": "FA24 Exam 2, Q4A(3)",
+  "subs": "1u:I,4u:CH2CH3",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:I,4u:CH2CH3|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "I on C1 is on a vertical bond: <b>axial</b>. Ethyl on C4 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial I points straight up. At C4 the axial bond points down, so the equatorial bond is the up one: ethyl is <b>up</b>.",
+     "ask": {
+      "q": "At C4 the axial bond points down. Is the equatorial bond there the up one or the down one?",
+      "a": "The up one. The two bonds on a ring carbon always point to opposite faces."
+     }
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. For 1,4: one axial and one equatorial is cis. Two equatorial, or two axial, is trans.",
+     "ask": {
+      "q": "Are the two groups on the same face or on opposite faces?",
+      "a": "The same face: cis."
+     }
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial I costs about 0.47 kcal/mol (a literature value: the lecture table lists only alkyl groups). Axial ethyl would cost 1.79 kcal/mol (Table 5.3). The larger group, ethyl, is already equatorial. This chair is the most stable one. Do not judge by the size of the atom alone: iodine is a big atom, but its long C-I bond holds it away from the ring, so it costs little when axial. Ethyl is the larger group here.",
+     "ask": {
+      "q": "Which of the two groups costs more when it is axial?",
+      "a": "Ethyl. It is the one that should be equatorial."
+     }
+    }
+   ],
+   "answer": "cis; yes, this is the most stable chair (the larger group, ethyl, is equatorial).",
+   "rule": "1,4: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-005",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "FA24 Exam 2, Q4A(4)",
+  "subs": "1d:NH2,2u:Br",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:NH2,2u:Br|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "{{NH2}} on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. Br on C2 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points up, so the equatorial bond is the down one: {{NH2}} is <b>down</b>. At C2 the axial bond points down, so the equatorial bond is the up one: Br is <b>up</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. This is the classic trap: two equatorial neighbours both seem to point sideways, but one is up and one is down. On neighbouring carbons (1,2): two equatorial, or two axial, is trans. One axial and one equatorial is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are equatorial, so there is no axial group to pay for. The ring flip would make both axial. This chair is the most stable one."
+    }
+   ],
+   "answer": "trans; yes, this is the most stable chair (both groups equatorial).",
+   "rule": "1,2: equatorial and equatorial (or axial and axial) is trans."
+  }
+ },
+ {
+  "id": "chair-read-006",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "FA24 Exam 2, Q4A(2)",
+  "subs": "1d:OH,2d:CH(CH3)2",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:OH,2d:CH(CH3)2|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "OH on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. Isopropyl on C2 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points up, so the equatorial bond is the down one: OH is <b>down</b>. The axial isopropyl points straight down."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are down: same face, so <b>cis</b>. On neighbouring carbons (1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial isopropyl costs 2.61 kcal/mol (Table 5.3). Axial OH would cost about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, isopropyl, is axial here. This chair is <b>not</b> the most stable one."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1d:OH,2d:CH(CH3)2|B]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip: isopropyl equatorial, OH axial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-007",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "FA24 Exam 2, Q4A(5)",
+  "subs": "1u:COOH,2u:Br",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:COOH,2u:Br|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "COOH on C1 is on a vertical bond: <b>axial</b>. Br on C2 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial COOH points straight up. At C2 the axial bond points down, so the equatorial bond is the up one: Br is <b>up</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. On neighbouring carbons (1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial COOH costs about 1.4 kcal/mol (a literature value: the lecture table lists only alkyl groups). Axial Br would cost about 0.5 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, COOH, is axial here. This chair is <b>not</b> the most stable one. COOH is the larger group: a carbon with two oxygens on it, against a single atom on a long bond."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1u:COOH,2u:Br|B]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip: COOH equatorial, Br axial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-008",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:CH3,4d:CH2CH3",
+  "given": "chairB",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH3,4d:CH2CH3|B]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Methyl on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. Ethyl on C4 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points down, so the equatorial bond is the up one: methyl is <b>up</b>. At C4 the axial bond points up, so the equatorial bond is the down one: ethyl is <b>down</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. For 1,4: two equatorial, or two axial, is trans. One axial and one equatorial is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are equatorial, so there is no axial group to pay for. The ring flip would make both axial. This chair is the most stable one."
+    }
+   ],
+   "answer": "trans; yes, this is the most stable chair (both groups equatorial).",
+   "rule": "1,4: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-009",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1d:CH3,3d:CH(CH3)2",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:CH3,3d:CH(CH3)2|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Methyl on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. Isopropyl on C3 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points up, so the equatorial bond is the down one: methyl is <b>down</b>. At C3 the axial bond points up, so the equatorial bond is the down one: isopropyl is <b>down</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are down: same face, so <b>cis</b>. Do not carry the 1,2 habit over: two equatorial groups at 1,3 are on the same face. For 1,3: two equatorial, or two axial, is cis. One axial and one equatorial is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are equatorial, so there is no axial group to pay for. The ring flip would make both axial. This chair is the most stable one."
+    }
+   ],
+   "answer": "cis; yes, this is the most stable chair (both groups equatorial).",
+   "rule": "1,3: equatorial and equatorial (or axial and axial) is cis; axial and equatorial is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-010",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:C(CH3)3,2u:CH3",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:C(CH3)3,2u:CH3|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "tert-butyl on C1 is on a vertical bond: <b>axial</b>. Methyl on C2 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial tert-butyl points straight up. At C2 the axial bond points down, so the equatorial bond is the up one: methyl is <b>up</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. On neighbouring carbons (1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial tert-butyl costs 5.5 kcal/mol (Table 5.3). Axial methyl would cost 1.74 kcal/mol (Table 5.3). The larger group, tert-butyl, is axial here. This chair is <b>not</b> the most stable one. An axial tert-butyl group is the most expensive one in the lecture table (K = 11,916 in favour of equatorial), so this chair is almost never seen."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1u:C(CH3)3,2u:CH3|B]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip: tert-butyl equatorial, methyl axial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-011",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH3,2d:CH2CH3",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH3,2d:CH2CH3|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Methyl on C1 is on a vertical bond: <b>axial</b>. Ethyl on C2 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial methyl points straight up. The axial ethyl points straight down."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. Two axial neighbours point in opposite directions, one straight up and one straight down. On neighbouring carbons (1,2): two equatorial, or two axial, is trans. One axial and one equatorial is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are axial. Axial groups cost energy: 1.74 kcal/mol (Table 5.3) for methyl and 1.79 kcal/mol (Table 5.3) for ethyl. The ring flip puts both equatorial, where they cost nothing. This chair is <b>not</b> the most stable one."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still trans.\n[[chair:1u:CH3,2d:CH2CH3|B]]"
+    }
+   ],
+   "answer": "trans; no. The most stable chair is the ring flip, with both groups equatorial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-012",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 2,
+  "src": "site",
+  "subs": "1u:CH3,3d:C(CH3)3",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH3,3d:C(CH3)3|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Methyl on C1 is on a vertical bond: <b>axial</b>. tert-butyl on C3 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial methyl points straight up. At C3 the axial bond points up, so the equatorial bond is the down one: tert-butyl is <b>down</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. For 1,3: one axial and one equatorial is trans. Two equatorial, or two axial, is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial methyl costs 1.74 kcal/mol (Table 5.3). Axial tert-butyl would cost 5.5 kcal/mol (Table 5.3). The larger group, tert-butyl, is already equatorial. This chair is the most stable one."
+    }
+   ],
+   "answer": "trans; yes, this is the most stable chair (the larger group, tert-butyl, is equatorial).",
+   "rule": "1,3: equatorial and equatorial (or axial and axial) is cis; axial and equatorial is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-013",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:CH(CH3)2,3d:F",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:CH(CH3)2,3d:F|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Isopropyl on C1 is on a vertical bond: <b>axial</b>. F on C3 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial isopropyl points straight up. At C3 the axial bond points up, so the equatorial bond is the down one: F is <b>down</b>."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. For 1,3: one axial and one equatorial is trans. Two equatorial, or two axial, is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial isopropyl costs 2.61 kcal/mol (Table 5.3). Axial F would cost about 0.3 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, isopropyl, is axial here. This chair is <b>not</b> the most stable one."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still trans.\n[[chair:1u:CH(CH3)2,3d:F|B]]"
+    }
+   ],
+   "answer": "trans; no. The most stable chair is the ring flip: isopropyl equatorial, F axial.",
+   "rule": "1,3: equatorial and equatorial (or axial and axial) is cis; axial and equatorial is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-014",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1d:Ph,4d:OH",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:Ph,4d:OH|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Phenyl on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. OH on C4 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points up, so the equatorial bond is the down one: phenyl is <b>down</b>. The axial OH points straight down."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are down: same face, so <b>cis</b>. For 1,4: one axial and one equatorial is cis. Two equatorial, or two axial, is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial OH costs about 0.9 kcal/mol (a literature value: the lecture table lists only alkyl groups). Axial phenyl would cost about 2.8 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, phenyl, is already equatorial. This chair is the most stable one."
+    }
+   ],
+   "answer": "cis; yes, this is the most stable chair (the larger group, phenyl, is equatorial).",
+   "rule": "1,4: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-015",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 1,
+  "src": "site",
+  "subs": "1u:Cl,4d:CH3",
+  "given": "chairA",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:Cl,4d:CH3|A]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Cl on C1 is on a vertical bond: <b>axial</b>. Methyl on C4 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. The axial Cl points straight up. The axial methyl points straight down."
+    },
+    {
+     "t": "cis or trans",
+     "h": "One group is up and one is down: opposite faces, so <b>trans</b>. For 1,4: two equatorial, or two axial, is trans. One axial and one equatorial is cis."
+    },
+    {
+     "t": "Most stable?",
+     "h": "Both groups are axial. Axial groups cost energy: about 0.53 kcal/mol (a literature value: the lecture table lists only alkyl groups) for Cl and 1.74 kcal/mol (Table 5.3) for methyl. The ring flip puts both equatorial, where they cost nothing. This chair is <b>not</b> the most stable one."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still trans.\n[[chair:1u:Cl,4d:CH3|B]]"
+    }
+   ],
+   "answer": "trans; no. The most stable chair is the ring flip, with both groups equatorial.",
+   "rule": "1,4: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ },
+ {
+  "id": "chair-read-016",
+  "type": "chair-read",
+  "role": "practice",
+  "kind": "chair",
+  "diff": 3,
+  "src": "site",
+  "subs": "1u:Br,2u:CH3",
+  "given": "chairB",
+  "ask": [
+   "cis-trans",
+   "stable"
+  ],
+  "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:Br,2u:CH3|B]]",
+  "solution": {
+   "steps": [
+    {
+     "t": "Axial or equatorial",
+     "h": "Br on C1 points outward, roughly parallel to the ring bonds one bond away: <b>equatorial</b>. Methyl on C2 is on a vertical bond: <b>axial</b>."
+    },
+    {
+     "t": "Up or down",
+     "h": "Every ring carbon has one bond that points more up and one that points more down. Axial bonds alternate up, down, up around the ring. At C1 the axial bond points down, so the equatorial bond is the up one: Br is <b>up</b>. The axial methyl points straight up."
+    },
+    {
+     "t": "cis or trans",
+     "h": "Both groups are up: same face, so <b>cis</b>. On neighbouring carbons (1,2): one axial and one equatorial is cis. Two equatorial, or two axial, is trans."
+    },
+    {
+     "t": "Most stable?",
+     "h": "One group must be axial in either chair, so the question is which. Axial methyl costs 1.74 kcal/mol (Table 5.3). Axial Br would cost about 0.5 kcal/mol (a literature value: the lecture table lists only alkyl groups). The larger group, methyl, is axial here. This chair is <b>not</b> the most stable one. The trap is the big bromine atom: its long C-Br bond keeps it away from the ring, so methyl is the group that needs the equatorial position."
+    },
+    {
+     "t": "Draw the ring flip",
+     "h": "Flip the ring: every axial group becomes equatorial and every equatorial group becomes axial. Up stays up and down stays down, so the molecule is still cis.\n[[chair:1u:Br,2u:CH3|A]]"
+    }
+   ],
+   "answer": "cis; no. The most stable chair is the ring flip: methyl equatorial, Br axial.",
+   "rule": "1,2: axial and equatorial is cis; equatorial and equatorial (or axial and axial) is trans. Larger group equatorial."
+  }
+ }
+]
