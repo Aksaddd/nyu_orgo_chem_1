@@ -61,6 +61,7 @@
 .mech-result { font-size: 1.25rem; font-weight: 700; margin: 0 }
 
 .lab-model { text-align: left; font: inherit; color: var(--ink) }
+.card.lab-model { display: flex; flex-direction: column; align-items: flex-start; gap: 4px }      /* the name, then the note under it (.card.tap is a block) */
 
 @media (max-width: 560px) {
   .rung-btn { grid-template-columns: 1fr auto; }

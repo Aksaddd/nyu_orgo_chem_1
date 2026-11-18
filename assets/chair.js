@@ -335,7 +335,7 @@
 
   // ------------------------------------------------------------------ small UI pieces
   const put = (host, node) => { host.textContent = ""; host.appendChild(node); return host };
-  const stepsList = texts => el("div", { class: "steps" }, texts.map((t, i) => el("div", { class: "step" }, el("span", { class: "step-n" }, String(i + 1)), el("div", {}, t))));
+  const stepsList = texts => el("div", { class: "steps" }, texts.map(t => el("div", { class: "step" }, el("div", {}, t))));      // .step draws the number itself (orgo.css): the text is its one other child, or it falls into the number's narrow column
   const KIT = "Your model kit is allowed on the exam. Build this ring and flip it in your hands: it is the surest way to check a chair.";
   const where = (subs, form) => subs.length ? subs.map(s => `${cap(noun(s.g))} on carbon ${s.c}: ${POS[C.pos(s, form)]}.`).join(" ") : "Every position holds a hydrogen.";
   function chairCard(subs, form, an, o) {

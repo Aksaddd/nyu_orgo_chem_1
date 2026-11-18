@@ -99,7 +99,7 @@
       const gone = el("p", { class: "callout warn mock-gone", hidden: true }, "Crossed out. This question will not be graded.");
       const body = el("div", { class: "mock-q-body" }, (q.parts || []).map(p => {
         const ids = p.items || (p.item ? [p.item] : []), rec = { q, part: p, entries: [] }; parts.push(rec);
-        return el("div", { class: "mock-part" }, el("h3", {}, `Part ${p.label}`, el("span", { class: "badge" }, `${p.pts} points`)), ids.length ? ids.map(id => {
+        return el("div", { class: "mock-part" }, el("h3", {}, p.label ? `Part ${p.label}` : "The whole question", el("span", { class: "badge" }, `${p.pts} points`)), ids.length ? ids.map(id => {
           const item = D.items[id];
           if (!item) return el("p", { class: "muted" }, "This part is not written yet. It is left out of the total.");
           const w = ONSCREEN.includes(item.kind) ? ORGO.quiz._widget(item, { defer: true }) : null;

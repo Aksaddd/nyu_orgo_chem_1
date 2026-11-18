@@ -52,7 +52,7 @@
       past.append(el("div", { class: "grid" }, qs.map(q => el("a", { class: "card tap q-card", href: "#q" + q.n },
         el("span", { class: "eyebrow" }, "Question " + q.n),
         el("span", { class: "type-title" }, q.title || ""),
-        el("span", { class: "muted small" }, (q.parts || []).map(p => "Part " + p.label + ": " + pts(p.pts)).join(" · "))))));
+        el("span", { class: "muted small" }, (q.parts || []).map(p => p.label ? "Part " + p.label + ": " + pts(p.pts) : pts(p.pts)).join(" · "))))));      // a question in one part has no letter
     });
   }
 
@@ -81,7 +81,7 @@
       parts.forEach(p => {
         const ids = p.items || (p.item ? [p.item] : []), t = O.type(p.type), pages = p.pages || (p.page ? [p.page] : q.pages) || [];
         const sec = el("section", { class: "card q-part stack", "aria-labelledby": "h-part-" + p.label },
-          el("div", { class: "row q-part-head" }, el("h2", { id: "h-part-" + p.label }, "Part " + p.label), el("span", { class: "badge" }, pts(p.pts))),
+          el("div", { class: "row q-part-head" }, el("h2", { id: "h-part-" + p.label }, p.label ? "Part " + p.label : "The whole question"), el("span", { class: "badge" }, pts(p.pts))),
           el("p", { class: "small" }, t ? ["This trains: ", el("a", { href: "#" + t.id }, t.title)] : null),
           pages.length ? el("div", { class: "btn-row" }, paperButton(pages, q.n)) : null);
         ids.forEach(id => { const d = el("div", { class: "q-item" }); sec.append(d); slots.push([id, d]); all.push(id) });
