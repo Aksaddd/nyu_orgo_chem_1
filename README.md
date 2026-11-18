@@ -33,6 +33,7 @@ It can also be published as it is with GitHub Pages (Settings, Pages, deploy fro
 | Molecule Lab | `lab/` | Build and flip chairs, watch the ring flip in 3D, turn a Newman projection, compare energy diagrams, climb the pKa ladder, walk the SN1/SN2/E1/E2 flow chart |
 | Foundations | `foundations/` | The thirteen ideas the unit is built on, with a 26-question check that says which to revisit |
 | Review List | `review/` | Everything missed or flagged |
+| Word Roots | `roots/` | The Greek and Latin parts of the course's terms in 12 sections by concept, each with the kinds of Exam 2 question its roots help with, a view by exam question, and a quiz; inside Eureka the roots also show on the dictionary's cards (`node tools/check-roots.js` checks the list) |
 | Archive | `archive/` | The original files (`archive/files/`) and a picture of every page |
 | Syllabus | `syllabus/` | What the unit covers and the format of the past exam |
 
@@ -96,8 +97,8 @@ Eureka keeps four things on its side for this class, all described in its `docs/
 `shared/wardrobe.js`. Eureka's Study Plan card is used, with the progress this class keeps (see "The front page" in `docs/dev/ARCHITECTURE.md`).
 
 The front page, `index.html`, is a copy of ECON 101's, changed only where this class differs: the hero and its countdown,
-nine cards (readings, practice, the exam lab, mechanisms, mock exams, the review list, the molecule lab, foundations and
-the archive), a "Good to know" section, and Eureka's Study Plan card, which the student switches on in Settings. The
+ten cards (readings, practice, the exam lab, mechanisms, mock exams, the review list, the molecule lab, foundations, word
+roots and the archive), a "Good to know" section, and Eureka's Study Plan card, which the student switches on in Settings. The
 class's own dashboard, with its own plan, is used only when the folder is opened outside Eureka (`alone/`).
 
 ## A note on the material
