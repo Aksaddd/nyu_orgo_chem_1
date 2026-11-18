@@ -114,13 +114,15 @@
   function room(x, run, timed) {
     const exam = x.exam, qs = exam.questions, choose = exam.choose || 7, drop = Math.max(0, qs.length - choose), crossed = new Set(), crossers = {};
     const total = (exam.minutes || 110) * 60, at = run ? run.at : Date.now();
-    let left = total, endAt = 0, running = false, over = false, done = false, used = null, last = "", checked = 0, warned = false;
+    let left = total, endAt = 0, running = false, over = false, done = false, used = null, last = "", checked = 0, warned = false, rest = null, hide = [];
     stopClock(); app.textContent = ""; document.body.classList.add("mock-room"); window.scrollTo(0, 0);
 
     // timer: none in a sitting without the timer
     const time = timed ? el("span", { class: "mock-time", role: "timer", "aria-label": "Time left" }, clock(left)) : null, state = timed ? el("span", { class: "badge mock-state" }, "Running") : null;
     const pause = timed ? btn("Pause", "small", () => (running ? halt() : go()), "pause") : null;
-    const paint = () => { if (!timed) return; time.textContent = clock(left); state.textContent = over ? "Time is up" : running ? "Running" : "Paused"; pause.textContent = running ? "Pause" : "Resume"; pause.disabled = over };
+    const paint = () => { if (!timed) return; time.textContent = clock(left); state.textContent = over ? "Time is up" : running ? "Running" : "Paused"; pause.textContent = running ? "Pause" : "Resume"; pause.disabled = over; cover() };
+    // while a timed sitting is paused its questions are hidden, so the clock keeps showing the time the student used
+    function cover() { if (!rest) return; const off = timed && !running && !over && !done; rest.hidden = !off; hide.forEach(n => n.hidden = off) }
     function go(end) { if (over || !timed) return; running = true; endAt = end || Date.now() + left * 1000; paint(); keep() }
     function halt() { if (!running) return; left = Math.max(0, (endAt - Date.now()) / 1000); running = false; paint(); keep() }
     function beat() {
@@ -178,7 +180,9 @@
       return sec;
     });
     app.append(...blocks);
-    app.appendChild(el("div", { class: "btn-row mock-end" }, btn("Finish and mark", "primary", askFinish, "finish")));
+    const end = el("div", { class: "btn-row mock-end" }, btn("Finish and mark", "primary", askFinish, "finish")); app.appendChild(end);
+    rest = el("section", { class: "card mock-paused", role: "status" }, el("h2", {}, "Paused"), el("p", { class: "muted" }, "The questions are hidden while the clock is stopped, so the time on the clock stays the time you used. Resume when you are ready to go on."), el("div", { class: "btn-row" }, btn("Resume", "primary", () => go(), "resume")));
+    rest.hidden = true; app.insertBefore(rest, blocks[0] || end); hide = blocks.concat([end]);
     // a sitting opened again: its crossed-out questions, then its clock, which ran on while the page was closed unless paused
     if (run) (run.crossed || []).forEach(n => { if (crossers[n] && !crossed.has(n) && crossed.size < drop) crossers[n](true) });
     live = keep; tick = setInterval(beat, 500);
@@ -197,7 +201,7 @@
     // ---------------------------------------------------------------- marking
     // back: the marks given before the page was closed, when a finished sitting is opened again
     function marking(back) {
-      halt(); done = true; if (!back) used = timed ? total - left : null;
+      halt(); done = true; cover(); if (!back) used = timed ? total - left : null;
       document.body.classList.remove("mock-room"); document.body.classList.add("mock-marking");
       const open = qs.filter(q => !crossed.has(q.n)), graded = new Set(open.slice(0, choose).map(q => q.n));
       note.remove(); app.querySelectorAll(".mock-end, .mock-cross, .mock-how").forEach(n => n.remove());

@@ -39,7 +39,7 @@ Two cautions. This note was written from this class's `docs/dev/ARCHITECTURE.md`
 ## 5. Pen-and-paper mock exams marked against rubrics
 
 - **What it is.** A mock exam in the real exam's format: the same number of questions, the same choice rule, a time limit. The student writes on paper, then sees each model answer beside its rubric and ticks each line full, half or none. The score is points earned over points possible, and each part reports to the schedule in section 1.
-- **Files here.** `mock/`, `content/mock/<id>.json`, `content/exam.json` for the original exam; history in `orgo-mock-v1`.
+- **Files here.** `mock/`, `content/mock/<id>.json`, `content/exam.json` for the original exam; history in `orgo-mock-v1`; the sitting in progress in `orgo-mock-run-v1`, which must stay on the device (Eureka's `account.js` lists it in `LOCAL`).
 - **Would extend.** Nothing shared today: a new shared page. It depends on written questions from section 2.
 - **Data change.** Mock files that list questions, parts, points and question ids. Points per question must add up, and the build checks that.
 - **Size.** Medium for the page, after section 2 exists. Large per class for writing mocks that are honest copies of the exam's format.

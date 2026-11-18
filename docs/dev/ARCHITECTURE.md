@@ -507,8 +507,16 @@ ORGO.newman.lab(el)                                        turn butane's back ca
 All under the prefix `orgo-`: `orgo-items-v1` (every answer), `orgo-exam-date` (shared with Eureka's Settings),
 `orgo-today-v1` (what was done today towards the plan), `orgo-prefs-v1` (the class's own reader: text size), `orgo-read-v1`
 (the readings: see below), `orgo-notes-v1` (highlights and notes made in Eureka's reader), `orgo-mock-v1` (mock exam
-history), `orgo-diag-v1` (the foundations diagnostic), `orgo-drill-v1` (a summary in the shape Eureka's library reads
+history: each attempt also says whether it was timed, and `secs` is null for one sat without the timer),
+`orgo-mock-run-v1` (the mock exam sitting in progress, on this device only: Eureka's account sync leaves it out),
+`orgo-diag-v1` (the foundations diagnostic), `orgo-drill-v1` (a summary in the shape Eureka's library reads
 for its progress bar), `orgo-theme` (only used outside Eureka).
+
+`orgo-mock-run-v1` is `{v: 1, id, at, timed, endAt or left, crossed, answers}`: `at` when the sitting started, `endAt`
+while the clock runs (it runs on while the page is closed, as in the exam) or `left` in seconds while it is paused,
+`crossed` the crossed-out questions, `answers` each on-screen answer by item id (the control's `get()`); after Finish
+also `done`, `used` and the rubric `marks`. It is removed when the result is saved, by Leave, by Start again, and when it
+is more than a day old. While a timed sitting is paused its questions are hidden, so the clock shows the time used.
 
 `orgo-read-v1` has two shapes. Inside Eureka the reader keeps `{chapterId: {at, a, w, wOld, finished, done, gem}}`:
 `at` the passage reached, `a` the answers by question id (`{ok, p, o, n, lv}`, with the choices as their exact text),
