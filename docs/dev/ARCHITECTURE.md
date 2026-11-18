@@ -286,7 +286,7 @@ ORGO.inEureka                  true when Eureka's platform.js loaded
 ORGO.data                      {blueprint, types, items, mechs, mols, chapters, tables, skills, errors, glossary, mocks, conf}
 ORGO.reg(part)                 merge a generated data file into ORGO.data (data files call this)
 ORGO.need(...names)            Promise: load generated data files by name ("t/nuc-pairs", "read/rings-1", "mech") once
-ORGO.fmt(str)                  expand {{formula}} markup to HTML
+ORGO.fmt(str)                  expand {{formula}} markup to HTML: <span class="chem" data-lk>, one word for Eureka's dictionary
 ORGO.fill(el)                  replace every [[token]] inside el with its drawing (calls the token handlers below)
 ORGO.html(str)                 fmt + a DocumentFragment with tokens filled
 ORGO.tokens                    {mol: fn(arg, inline) -> Element, rxn, eq, eqr, eql, nr, ring, chair, newman, energy, mech, view3d, fig, lec}
@@ -297,13 +297,22 @@ ORGO.store.set(key, value)
 ORGO.store.update(key, fn, fallback)
 ORGO.on(name, fn) / ORGO.emit(name, detail)     page-level events ("answer", "progress", "theme")
 ORGO.ui.toast(text)
-ORGO.ui.sheet({title, body, actions})           a modal sheet; returns {close}
+ORGO.ui.sheet({title, body, actions})           a modal sheet; returns {close}. Tab and Shift+Tab stay inside it, Escape
+                                                closes it (the top one, when sheets lie over each other) and gives the focus back
+ORGO.ui.covered()                               true while a sheet covers the page: ours (.veil) or one of Eureka's (…-veil)
 ORGO.ui.tabs(el, [{id, label, render}])         accessible tabs
 ORGO.ui.ring(fraction, label)                   a progress ring Element
 ORGO.ui.bar()                                   builds the top bar when not in Eureka
-ORGO.eureka.right(id) / .wrong(id) / .done(what)   tell Eureka's XP and companion, if present
+ORGO.eureka.right(id) / .wrong(id) / .done(what)   tell Eureka's XP and companion, if present. The event carries the
+                               question's level as q.d ("orgo1" to "orgo3"); course.js deckBonus turns it into the XP tier:
+                               level 1 Easy (10 XP), 2 Medium (20), 3 Hard (35), before Eureka's streak multiplier
+ORGO.prefs()                   Eureka's preferences ("eureka-prefs"), read fresh; {} outside Eureka
 ORGO.reduced                   true when the reader asked for less motion (OS setting or Eureka's preference)
 ```
+
+Inside Eureka, `core.js` sets the appearance (`data-theme`, `data-night`, `color-scheme`, the theme colour) from Eureka's
+`a104-theme` by the rule of `applyTheme` in `shared/settings.js`, before the page first paints; `settings.js` arrives
+later through `eureka.js` and sets the same values. A page that sets `window.ORGO_EMBED` loads `settings.js` itself.
 
 ### Scheduling and mastery: `ORGO.learn` (in `core.js`)
 
@@ -311,13 +320,22 @@ One record per item, in `orgo-items-v1`:
 
 ```
 { "<item id>": { n: attempts, ok: correct, streak, box: 0..5, due: epoch ms, last: epoch ms, conf: 0..2, flag: bool,
-                 first: epoch ms, hist: [[epoch ms, score 0..1, conf, seconds], … last 12] } }
+                 first: epoch ms, qn: attempts that were part of another answer,
+                 hist: [[epoch ms, score 0..1, conf, seconds, 1 if "after a day or more", 1 if part of another answer], … last 12] } }
 ```
 
+Every reader of the records takes them through `sane()`: a record without its history list, or with counts that are not
+numbers (an older version, a merge between devices), is mended in memory and never stops a page from drawing.
+
 ```
-ORGO.learn.record(id, {score, conf, secs, quiet})   score 0..1 (1 right, 0 wrong, in between for rubric-graded work).
+ORGO.learn.record(id, {score, conf, secs, hinted, quiet, inner})
+                                             score 0..1 (1 right, 0 wrong, in between for rubric-graded work).
+                                             hinted: finished with help (the trainer's last hint, or "Show me"): kept as
+                                               a miss of at most HELPED (0.75), and no event goes to Eureka
                                              quiet: the record, the schedule and the summary change, and no event goes
-                                             to Eureka (for a caller that sends its own, like the reader)
+                                               to Eureka (for a caller that sends its own, like the reader, or none)
+                                             inner: part of an answer that its caller records (a mechanism drawn inside a
+                                               question): quiet, and not counted again in stats() or in delayed accuracy
 ORGO.learn.state(id)                         the record, or null
 ORGO.learn.flag(id, on)
 ORGO.learn.due(now)                          ids whose review is due, most overdue first
@@ -325,19 +343,31 @@ ORGO.learn.pick({types, n, mode})            ids for a session. mode "review" (d
                                              "mixed" (due first, then weakest types, interleaved so that no two
                                              neighbours share a type)
 ORGO.learn.mastery(typeId)                   {level 0..4, label, seen, total, recent, delayed}
-ORGO.learn.examDate() / setExamDate(iso)     stored in orgo-prefs-v1
-ORGO.learn.daysLeft()
+ORGO.learn.stats()                           {answered: one per marked answer, items, delayed, delayedN, due}
+ORGO.learn.examDate() / setExamDate(iso)     stored in orgo-exam-date as YYYY-MM-DDTHH:MM, the form Eureka's Settings
+                                             writes and reads as local time (a bare date from an older version is
+                                             rewritten once when the page loads)
+ORGO.learn.daysLeft()                        days to the exam's hour, a fraction (paces the plan)
+ORGO.learn.calendarDays()                    whole calendar days to the exam's day, as Settings counts "in N days":
+                                             0 on the day, negative after it, null without a date
 ORGO.learn.plan()                            today's session: [{step, title, detail, href, count, done}]
+ORGO.learn.did(kind, n)                      n done today towards a step of the plan ("review", "mixed", "learn", "paper")
 ```
 
 Rules, all from the research in `docs/learning-science.md`:
 
-- **Successive relearning.** A missed item comes back in the same session after at least three other items, until it is
-  answered right once. Then it returns on later days.
+- **Successive relearning.** A missed question (under 0.8) comes back in the same session after up to three other
+  questions, at most twice, and only while another question is left to stand between the tries: straight after its
+  worked solution a try would test nothing. Once it is answered right it stops coming back. A miss is due again at once,
+  so one still missed at the end of the session is due now; the summary says so and lists it.
 - **Spacing sized to the exam.** After a correct answer the gap grows through 1, 2, 4, 7, 14 days, but is cut so that
-  at least two more reviews fit before the exam date when one is set.
+  at least two more reviews fit before the exam date when one is set. A right answer within 12 hours of a miss of the
+  same question keeps its box (at least 1): it comes back no later than a question that was right the first time.
 - **Mastery is delayed, not same-day.** Levels: 0 new, 1 seen, 2 practising, 3 solid (three right in a row on different
-  questions of the type), 4 retained (right again after a day or more). The number shown first is delayed accuracy.
+  questions of the type), 4 retained (right again after a day or more). "After a day or more" means on a later calendar
+  day than the last answer to that question, and at least six hours after it. The number shown first is delayed accuracy.
+- **Help is not a right answer.** A mechanism finished on its last hint or with "Show me" is recorded as a miss, sends
+  no XP event, and the question says it was done with help and will come back.
 - **Mixed by default.** Once a type has been met, its questions arrive mixed with others, because choosing the approach
   is the skill the exam tests.
 - **Confidence before feedback** on written and mechanism work (guess, unsure, sure), so that confident errors are
@@ -371,15 +401,21 @@ an extra arrow; otherwise the first hint.
 ### `mech.js`: the mechanism trainer
 
 ```
-ORGO.mech.mount(el, mechId, {mode})    mode "watch" (step through, arrows animate, read say/why)
-                                           "complete" (some arrows drawn, the student adds the missing ones)
-                                           "solo" (the student draws every arrow of every step)
-                                           "paper" (draw it on paper first, then reveal step by step and self-check)
+ORGO.mech.mount(el, mechId, {mode, onDone, inQuestion})
+                                       mode "watch" (step through, arrows animate, read say/why)
+                                            "complete" (some arrows drawn, the student adds the missing ones)
+                                            "solo" (the student draws every arrow of every step)
+                                            "paper" (draw it on paper first, then reveal step by step and self-check)
+                                       onDone({score, helped, mode}) when a run is finished (score null when watched)
+                                       inQuestion: the trainer is part of a question (quiz.js): only "solo" and "paper"
+                                       are offered, and the run is recorded as part of the question's answer
 ORGO.mech.card(mechId)                 a compact static view: overall reaction and all steps with arrows (for solutions)
 ```
 
-A step is checked before the next is shown. A hint is offered only after an attempt; a step finished on the last hint
-does not count toward mastery. Each finished mechanism reports `ORGO.learn.record("mech:" + id, …)`.
+A step is checked before the next is shown. A hint is offered only after an attempt; a step finished on the last hint,
+or shown with "Show me", does not count: the run is recorded as hinted (a miss, and no event). Each finished run that
+was drawn reports `ORGO.learn.record("mech:" + id, …)` once, with `inner` inside a question, so that the question's own
+record is the one answer and the one event. Watching records nothing.
 
 ### `chair.js`: cyclohexanes
 
@@ -408,13 +444,37 @@ rotation-reflections (enantiomers); anything else is diastereomers.
 ### `quiz.js`: questions
 
 ```
-ORGO.quiz.mount(el, item, {onDone, review})     draw one item of any kind and handle the whole exchange:
+ORGO.quiz.mount(el, item, {onDone, review, keys})  draw one item of any kind and handle the whole exchange:
                                                  answer -> (confidence) -> right/wrong with the reason for the chosen
-                                                 answer -> worked solution, step by step -> record
-ORGO.quiz.session(el, ids, {title, onEnd})      a run of items with a progress strip; misses come back; ends with a summary
+                                                 answer -> worked solution, step by step -> record. review: record
+                                                 nothing. keys: number keys choose (only where one question is on screen)
+ORGO.quiz.session(el, ids, {title, onEnd, kind})  a run of items with a progress strip; misses come back; ends with a
+                                                 summary. kind ("review", "mixed", "learn", "paper") is the plan step the
+                                                 answers count towards; without it they count towards none
 ORGO.quiz.worked(el, item)                      a worked example: steps revealed one at a time, with its "ask" prompts
 ORGO.quiz.solution(item)                        the solution block as an Element
+ORGO.quiz._widget(item, {defer, onPick, onSubmit})  an answer control on its own (the mock exam): {el, ready(), touched(),
+                                                 need, mark(), get(), set(state)}. get() and set() save and restore what
+                                                 the student entered, by place in the item, never by place on screen
+                                                 (the comment at `const W` in quiz.js has every kind's state)
 ```
+
+In a session, number keys choose (key 3 is the choice tagged C, while it is shown), and once the question is finished,
+Enter and the right arrow press "Next question" or "See the summary", as Eureka's list of keys says. A key does nothing
+when it is typed into a field or pressed on a control of its own, when a sheet (ours or Eureka's) is open, or when it
+is held down.
+
+Eureka's question preferences (`ORGO.prefs()`):
+- **Keep answers in the same order** (`fixedOrder`): an order made from the question's id, the same on every visit.
+  Not the written order, in which the right choice comes first in most questions. An item with `fixed` keeps its
+  written order in any case.
+- **Fewer choices at once** (`fewer`): in a question mounted on its own (not the mock exam room), with four choices or
+  more, the right one and one other are shown, each under its own letter, with "Show all N choices", as
+  `shared/prefs.js` does in the other classes.
+- **Explanations** (`explain`): Eureka hides and shows what has the class `explain` (the reason of a choice, a numeric
+  question's note, the reason on a sorting line). The marks, the expected answer and the right bin are never inside it.
+  With "When I ask", or "When I miss" after a right answer, the worked solution (`.q-solution`) waits behind "Show the
+  worked solution". Eureka reads a finished question as `section.q[data-kind]` with `data-done="1"` and `data-score`.
 
 Written items: the stem, a timer suggestion and "I have written my answer" come first; then the model answer beside the
 rubric, each rubric line ticked full, half or none; the score is points earned over points possible.
@@ -432,7 +492,8 @@ ORGO.newman.lab(el)                                        turn butane's back ca
 
 ## Storage keys
 
-All under the prefix `orgo-`: `orgo-items-v1` (every answer), `orgo-prefs-v1` (exam date, daily minutes), `orgo-read-v1`
+All under the prefix `orgo-`: `orgo-items-v1` (every answer), `orgo-exam-date` (shared with Eureka's Settings),
+`orgo-today-v1` (what was done today towards the plan), `orgo-prefs-v1` (the class's own reader: text size), `orgo-read-v1`
 (the readings: see below), `orgo-notes-v1` (highlights and notes made in Eureka's reader), `orgo-mock-v1` (mock exam
 history), `orgo-diag-v1` (the foundations diagnostic), `orgo-drill-v1` (a summary in the shape Eureka's library reads
 for its progress bar), `orgo-theme` (only used outside Eureka).
