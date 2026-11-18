@@ -22,7 +22,7 @@
 <style>
 /* Layout (same organization as ECON 101): frosted nav → hero (course, countdown, Continue)
    → module bar (which modules go with the exam) → exam panel with module cards in a fixed order:
-   Read · Practice · Exam 2 Lab · Mechanisms · Mock Exam · Review List · Molecule Lab · Foundations · Archive
+   Read · Practice · Exam 2 Lab · Mechanisms · Mock Exam · Review List · Molecule Lab · Foundations · Word Roots · Archive
    → How it works + legend → where the questions come from → footer.
    Visual language: Apple (system font, #f5f5f7, Apple blue, borderless cards, pills, frosted bars). */
 :root{
@@ -246,7 +246,7 @@ html .know .how{background:none;box-shadow:none;border-radius:0;padding:0;border
 <header class="gnav"><div class="inner">
   <a class="eureka" href="../index.html#classes" title="Back to your classes on Eureka"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Eureka</a><a class="brand" href="index.html">CHEM 225</a>
   <nav aria-label="Modules">
-    <a href="read/index.html">Read</a><a href="drill/index.html">Practice</a><a href="exam/index.html">Exam 2 Lab</a><a href="mechanisms/index.html">Mechanisms</a><a href="mock/index.html">Mock Exam</a><a href="syllabus/index.html">Syllabus</a><a href="review/index.html">Review List</a><a href="lab/index.html">Molecule Lab</a><a href="foundations/index.html">Foundations</a><a href="archive/index.html">Archive</a><a href="#companions" class="comp-link" title="Study companions: a little company for your inner child">Companions<span class="new-tag comp-new">New</span></a>
+    <a href="read/index.html">Read</a><a href="drill/index.html">Practice</a><a href="exam/index.html">Exam 2 Lab</a><a href="mechanisms/index.html">Mechanisms</a><a href="mock/index.html">Mock Exam</a><a href="syllabus/index.html">Syllabus</a><a href="review/index.html">Review List</a><a href="lab/index.html">Molecule Lab</a><a href="foundations/index.html">Foundations</a><a href="roots/index.html">Word Roots</a><a href="archive/index.html">Archive</a><a href="#companions" class="comp-link" title="Study companions: a little company for your inner child">Companions<span class="new-tag comp-new">New</span></a>
   </nav>
   <button type="button" class="setbtn" id="settingsBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Settings</span></button>
 </div></header>
@@ -281,6 +281,7 @@ html .know .how{background:none;box-shadow:none;border-radius:0;padding:0;border
   <li><a href="review/index.html"><span class="ico i-yellow"><svg viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2.5 4L17 12H6"/></svg></span>Review List</a></li>
   <li><a href="lab/index.html"><span class="ico i-purple"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>Molecule Lab</a></li>
   <li><a href="foundations/index.html"><span class="ico i-teal"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20v-6h12v6M9 14V8h6v6"/></svg></span>Foundations</a></li>
+  <li><a href="roots/index.html"><span class="ico t i-purple">Aa</span>Word Roots</a></li>
   <li><a href="archive/index.html"><span class="ico i-blue"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="5" rx="1.5"/><path d="M5.5 9.5v8a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-8M10 13.5h4"/></svg></span>Archive</a></li>
   <li><a href="#companions" class="comp-link" data-tip="Study companions: a little company for your inner child."><span class="ico t">✦</span>Companions<span class="new-tag comp-new" style="margin:0">New</span></a></li>
 </ul></nav>
@@ -318,7 +319,7 @@ html .know .how{background:none;box-shadow:none;border-radius:0;padding:0;border
     <div class="ctext"><div><h3>The Cat Café</h3><p id="cafeTxt">Your cats and today's guests are hanging out. Step inside to meet them, pick a breed and coat, and bring one home to study.</p></div><span class="plink">Step inside ›</span></div>
   </button>
   <details class="exampanel" data-ep="course" open>
-    <summary class="ephead"><span class="eptext"><h2 id="ep">Exam 2</h2><p>Rings and conformations, NMR, acids and bases, organometallics, SN2, SN1, E1 and E2: the lectures of October 20 to November 12. <span id="examWhen">Set your exam date in Settings for a countdown.</span></p><span class="eptools">Read &amp; Learn · Practice · Exam 2 Lab · Mechanisms · Mock Exam · Review List · Molecule Lab · Foundations · Archive</span></span><span class="epgo" aria-hidden="true"></span></summary>
+    <summary class="ephead"><span class="eptext"><h2 id="ep">Exam 2</h2><p>Rings and conformations, NMR, acids and bases, organometallics, SN2, SN1, E1 and E2: the lectures of October 20 to November 12. <span id="examWhen">Set your exam date in Settings for a countdown.</span></p><span class="eptools">Read &amp; Learn · Practice · Exam 2 Lab · Mechanisms · Mock Exam · Review List · Molecule Lab · Foundations · Word Roots · Archive</span></span><span class="epgo" aria-hidden="true"></span></summary>
     <div class="cards">
       <article class="card" id="readCard">
         <div class="chead"><span class="ico i-teal"></span>
@@ -367,6 +368,12 @@ html .know .how{background:none;box-shadow:none;border-radius:0;padding:0;border
           <div><h3><a href="foundations/index.html">Foundations</a></h3>
           <p>A 26-question check of the ideas this unit is built on, and a refresher for each one you miss.</p></div></div>
         <div class="prow"><span class="ptext" id="diagTxt">Not taken yet</span><a class="plink ghost" href="foundations/index.html">Open</a></div>
+      </article>
+      <article class="card">
+        <div class="chead"><span class="ico t i-purple">Aa</span>
+          <div><h3><a href="roots/index.html">Word Roots</a></h3>
+          <p>94 Greek and Latin roots, sorted by what they describe, each section with the exam questions it helps with. <i>Nucleo-</i> (nucleus) + <i>-phile</i> (loving) = nucleus-loving.</p></div></div>
+        <div class="prow"><span class="ptext" id="rootsTxt">Not started</span><a class="plink ghost" href="roots/index.html">Open</a></div>
       </article>
       <article class="card">
         <div class="chead"><span class="ico i-blue ico-arch"></span>
@@ -454,6 +461,7 @@ html .know .how{background:none;box-shadow:none;border-radius:0;padding:0;border
     if (Array.isArray(h) && h.length) { const l = h[h.length - 1]; $("mockLast").textContent = `Last exam: ${l.pct}% (${l.right}/${l.total}) · ${h.length} taken` }
   } catch (e) { }
   try { const d = read("orgo-diag-v1"); if (d && d.at) $("diagTxt").textContent = "Checked " + new Date(d.at).toLocaleDateString("en-US", { month: "short", day: "numeric" }) } catch (e) { }
+  try { const rs = read("orgo-roots-v1") || {}, n = Object.keys((rs.exam2 || {}).m || {}).length; if (n) $("rootsTxt").textContent = `${n} of 94 mastered` } catch (e) { }   // the Word Roots page's marks (roots/index.html)
   // Review List: what that page lists. A question counts once if its last answer was wrong (score under 0.8) or it is flagged.
   try {
     const seen = new Set();
