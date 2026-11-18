@@ -132,8 +132,9 @@
         const r = all[id] || { n: 0, ok: 0, streak: 0, box: 0, first: t, hist: [] }, was = r.hist[r.hist.length - 1];
         // "after a day or more": on a later calendar day than the last answer to this question, and at least six hours after it
         const spaced = !!r.last && t - r.last >= DAY / 4 && new Date(r.last).toDateString() !== new Date(t).toDateString();
-        // right within 12 hours of a miss of the same question: its solution was just read, so the gap does not grow
-        const relearn = !!was && was[1] < 0.8 && t - was[0] < DAY / 2;
+        // right within 12 hours of the last answer to the same question does not grow the gap: after a miss its solution was
+        // just read, and after a right answer it is the same retrieval again (three runs of a mechanism in a row are not spacing)
+        const relearn = !!was && t - was[0] < DAY / 2;
         r.n++; r.last = t; if (inner) r.qn = (r.qn || 0) + 1;
         if (score >= 0.8) { r.ok++; r.streak++; r.box = relearn ? Math.max(1, r.box) : Math.min(5, r.box + 1) } else if (score >= 0.4) { r.streak = 0; r.box = Math.max(1, Math.min(r.box, 2)) } else { r.streak = 0; r.box = 0 }
         let gap = score >= 0.8 ? GAPS[r.box] : 0;      // a miss is due again at once

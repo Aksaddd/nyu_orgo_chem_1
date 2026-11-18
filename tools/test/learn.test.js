@@ -77,6 +77,14 @@ test("right on the retry within 12 hours of a miss keeps the box", () => {
   assert.strictEqual(v.L.record("q1", { score: 1 }).box, 2);
 });
 
+test("right again within 12 hours of a right answer keeps the box: massed practice is not spacing", () => {
+  const t = load(); let r;
+  for (let k = 0; k < 3; k++) { r = t.L.record("m1", { score: 1 }); t.set(t.now() + 3 * 60e3) }   // three runs in a row, three minutes apart
+  assert.deepStrictEqual([r.box, days(r)], [1, 1], "box 1 and due in a day, as after one right answer");
+  t.set(t.now() + 13 * H); assert.strictEqual(t.L.record("m1", { score: 1 }).box, 2, "13 hours later the gap grows");
+  t.set(t.now() + 11 * H); assert.strictEqual(t.L.record("m1", { score: 1 }).box, 2, "11 hours after that it does not");
+});
+
 test("'after a day or more' means a later calendar day and at least six hours", () => {
   const flag = (a, b) => { const t = load(); t.set(a); t.L.record("q1", { score: 1 }); t.set(b); return t.L.record("q1", { score: 1 }).hist[1][4] };
   assert.strictEqual(flag("2026-11-18T08:00:00-05:00", "2026-11-18T20:30:00-05:00"), 0, "12.5 hours, the same day");

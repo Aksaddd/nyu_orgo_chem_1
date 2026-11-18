@@ -362,8 +362,9 @@ Rules, all from the research in `docs/learning-science.md`:
   worked solution a try would test nothing. Once it is answered right it stops coming back. A miss is due again at once,
   so one still missed at the end of the session is due now; the summary says so and lists it.
 - **Spacing sized to the exam.** After a correct answer the gap grows through 1, 2, 4, 7, 14 days, but is cut so that
-  at least two more reviews fit before the exam date when one is set. A right answer within 12 hours of a miss of the
-  same question keeps its box (at least 1): it comes back no later than a question that was right the first time.
+  at least two more reviews fit before the exam date when one is set. A right answer within 12 hours of the last answer to
+  the same question keeps its box (at least 1): after a miss it comes back no later than a question that was right the
+  first time, and the same question answered again minutes later (three runs of a mechanism in a row) is not spacing.
 - **Mastery is delayed, not same-day.** Levels: 0 new, 1 seen, 2 practising, 3 solid (three right in a row on different
   questions of the type), 4 retained (right again after a day or more). "After a day or more" means on a later calendar
   day than the last answer to that question, and at least six hours after it. The number shown first is delayed accuracy.
