@@ -5,7 +5,8 @@
 (() => {
   const ORGO = window.ORGO, el = ORGO.el, app = document.getElementById("app");
   const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const nice = s => esc(s).replace(/\b(SN1|SN2)\b/g, x => ORGO.formula(x));
+  // SN1 and SN2 drawn as the class draws formulas (ORGO.fmt): one word for Eureka's dictionary (data-lk), not "S", "N" and "1"
+  const nice = s => ORGO.fmt(esc(s).replace(/\b(SN1|SN2)\b/g, "{{$1}}"));
   const withHtml = (node, html) => { node.innerHTML = html; return node };
   const list = () => ORGO.data.mechList || [];
   const state = id => (ORGO.learn && ORGO.learn.state ? ORGO.learn.state("mech:" + id) : null);

@@ -146,10 +146,12 @@
       } });
       tabs.push({ id: "practice", label: "Practice", render: p => {
         const host = el("div", { class: "practice-host" }); p.append(host);
-        let ids = []; try { ids = L.pick({ types: [id], n: 10, mode: "mixed" }) } catch (e) { console.error(e) }
+        let ids = [], running = false, warn = null;      // running: the session has a question on screen that is not finished yet
+        try { ids = L.pick({ types: [id], n: 10, mode: "mixed" }) } catch (e) { console.error(e) }
         if (!ids.length) host.append(el("p", { class: "muted" }, canGen ? "No written practice questions for this type yet. Use endless practice below." : "No practice questions for this type yet."));
         else if (!hasQuiz("session")) host.append(noQuiz());
-        else { try { O.quiz.session(host, ids, { title: (bp && bp.short) || title }) } catch (e) { console.error("session", e); host.append(noQuiz()) } }
+        // no kind: practice of one type ticks no step of the study plan (not "Practise, mixed")
+        else { try { running = true; O.quiz.session(host, ids, { title: (bp && bp.short) || title, onEnd: () => { running = false; if (warn) warn.remove() } }) } catch (e) { console.error("session", e); running = false; host.append(noQuiz()) } }
         if (canGen && hasQuiz("mount")) {
           const box = el("div", { class: "endless stack" }), count = el("p", { class: "muted small", role: "status" }); let n = 0;
           const next = () => {
@@ -158,16 +160,26 @@
             n++; count.textContent = "Endless practice, question " + n;
             const slot = el("div", {}), more = el("button", { class: "btn primary", type: "button", hidden: true, on: { click: next } }, "Another one");
             box.append(count, slot, el("div", { class: "btn-row" }, more));
-            try { O.quiz.mount(slot, item, { onDone: () => { more.hidden = false } }) } catch (e) { console.error("endless", e); more.hidden = false }
+            // the number keys may answer it: it is the one open question on the page (see begin)
+            try { O.quiz.mount(slot, item, { keys: true, onDone: () => { more.hidden = false } }) } catch (e) { console.error("endless", e); more.hidden = false }
             setTimeout(() => { more.hidden = false }, 60000);       // never leave the reader stuck if a question does not report back
           };
-          p.append(el("div", { class: "panel endless-wrap stack" }, el("h2", {}, "Endless practice"), el("p", { class: "muted small" }, "Fresh questions made on the spot, one after another. They do not run out."),
-            el("div", { class: "btn-row" }, el("button", { class: "btn", type: "button", on: { click: e => { e.currentTarget.hidden = true; next() } } }, "Endless practice")), box));
+          // One open question at a time, so that a number key answers the question in front of the student and never one
+          // further up: endless practice started while the session still runs closes the session (its answers are saved).
+          const begin = e => {
+            e.currentTarget.hidden = true;
+            if (running) { running = false; if (warn) warn.remove(); host.replaceWith(el("div", { class: "practice-host" }, el("p", { class: "muted" }, "The practice session is closed. The answers you gave in it are saved."),
+              el("div", { class: "btn-row" }, el("button", { class: "btn small", type: "button", on: { click: () => tabsCtl.show("practice") } }, "Start a new practice session")))) }
+            next();
+          };
+          if (running) warn = el("span", {}, " Starting them closes the practice session above.");
+          p.append(el("div", { class: "panel endless-wrap stack" }, el("h2", {}, "Endless practice"), el("p", { class: "muted small" }, "Fresh questions made on the spot, one after another. They do not run out.", warn),
+            el("div", { class: "btn-row" }, el("button", { class: "btn", type: "button", on: { click: begin } }, "Endless practice")), box));
         }
       } });
       const host = el("div", { class: "type-tabs" }); app.append(host);
       const first = (t && (t.know || []).length) ? "know" : worked.length ? "worked" : "practice";
-      O.ui.tabs(host, tabs, mastery(id).level >= 1 && practice.length ? "practice" : first);
+      const tabsCtl = O.ui.tabs(host, tabs, mastery(id).level >= 1 && practice.length ? "practice" : first);
     });
   }
 
@@ -185,7 +197,9 @@
     const host = el("div", { class: "paper-host" }); app.append(host);
     let ended = false;
     loadFor(ids).then(() => {
-      try { O.quiz.session(host, ids, { title: "On paper", onEnd: () => { if (ended) return; ended = true; L.did("paper", 2); O.emit("progress", {}) } }) }
+      // "On paper" is done when every question of the pair was answered and marked, none skipped. The session gets no kind,
+      // so it ticks nothing itself; the fixed 2 lets the step be done when only one paper question exists.
+      try { O.quiz.session(host, ids, { title: "On paper", onEnd: r => { if (ended) return; ended = true; if (r && r.total && !(r.skipped || []).length) { L.did("paper", 2); O.emit("progress", {}) } } }) }
       catch (e) { console.error("paper", e); host.append(noQuiz()) }
     });
   }
