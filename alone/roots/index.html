@@ -158,6 +158,10 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 @keyframes rflash{0%,40%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:var(--shadow)}}
 .root.flash{animation:rflash 1.6s ease-out}
 @media (prefers-reduced-motion:reduce){.root.flash{animation:none;box-shadow:0 0 0 3px var(--accent)}}
+/* CHEM 225: a line never breaks inside a root's hyphen ("-onium") or a formula's bond ("R-NH3+"), and the note at the foot of the
+   page scrolls clear of the floating drill button */
+.nw{white-space:nowrap}
+.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 </style>
 </head><body data-page="roots">
 <div class="wrap">
@@ -189,10 +193,17 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
   const isM = r => !!st().m[r.root], isR = r => !!st().r[r.root], isX = r => !isM(r) && !!st().x[r.root];
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // CHEM 225: esc(), and no line break inside a root's hyphen ("(-onium") or a formula's bond ("R-NH3+", "C-Cl")
+  const nb = s => esc(s).replace(/(^|[\s(])(-[a-z]+)/g, '$1<span class="nw">$2</span>').replace(/[A-Za-z0-9)]+(?:-[A-Z(][A-Za-z0-9()+]*)+/g, m => `<span class="nw">${m}</span>`);
   const shuffle = a => { a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const j = Math.random() * (k + 1) | 0; [a[k], a[j]] = [a[j], a[k]] } return a };
-  // CHEM 225: one exam. The hash or the last visit picks the view instead: by concept (#concepts) or by exam question (#questions)
+  // CHEM 225: one exam. The hash or the last visit picks the view instead: by concept (#concepts, or a section's #g-) or by exam
+  // question (#questions, or a kind's #k-). The address follows the view, so a reload keeps it, and a root opened from a kind
+  // of question is a step in the browser's history, so Back returns to that kind (openRoot(), and "popstate" at the end)
   const fromHash = location.hash.slice(1), VIEWS = { concepts: "concepts", questions: "kinds" };
-  let ex = EX[0], view = VIEWS[fromHash] || (localStorage.getItem(KEY) === "kinds" ? "kinds" : "concepts"), query = "", quiz = null;
+  const viewOf = h => VIEWS[h] || (/^k-/.test(h) ? "kinds" : /^g-/.test(h) ? "concepts" : "");
+  const here = () => { try { history.replaceState({ view }, "", view === "kinds" ? "#questions" : "#concepts") } catch (e) { } };
+  let ex = EX[0], view = viewOf(fromHash) || (localStorage.getItem(KEY) === "kinds" ? "kinds" : "concepts"), query = "", quiz = null;
+  try { if (!(history.state && history.state.view)) history.replaceState({ view }, "") } catch (e) { }
   // CHEM 225: no reading settings of its own: Eureka's settings.js sets the reading font and size on every page
 
   const all = e => R[e].groups.flatMap(([g, rows]) => rows.map(([root, mean, orig, exs]) => ({ g, root, mean, orig, exs }))).map((r, i) => (r.i = i, r));   // CHEM 225: i, the root's place, names its card (r12) for the links from the second view
@@ -204,7 +215,8 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
   const practise = k => `<a class="kgo" href="${BASE}exam/index.html#${encodeURIComponent(k.id)}" aria-label="Practise ${esc(k.short || k.title)} in the Exam 2 Lab">Practise →</a>`;
   const named = (line, roots) => { const e = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); return roots.filter(r => r === "R / S" ? /\b(rectus|sinister)\b/i.test(line) : r === "E / Z" ? /\b(entgegen|zusammen)\b/i.test(line) : r === "p" ? /\bp means\b/i.test(line) : /-/.test(r) ? new RegExp("(^|[^A-Za-z])" + e(r) + "(?![A-Za-z])", "i").test(line) : new RegExp("\\(\\s*" + e(r) + "\\b|\\b" + e(r) + "\\s*\\(|\\+\\s*" + e(r) + "\\b|\\b" + e(r) + "\\s*\\+", "i").test(line)) };
   const LINES = () => { const rs = all(ex).map(r => r.root); return R[ex].groups.flatMap(([g, , m]) => ((m || {}).exam || []).map(([id, how]) => ({ g, id, how, roots: named(how, rs) }))) };
-  const KINDS = () => { const L = LINES(), at = id => { const i = BP.findIndex(t => t.id === id); return i < 0 ? 999 : i }; return [...new Set(L.map(l => l.id))].sort((a, b) => at(a) - at(b)).map(id => ({ k: kindOf(id), lines: L.filter(l => l.id === id) })) };
+  const bpAt = id => { const i = BP.findIndex(t => t.id === id); return i < 0 ? 999 : i };   // a kind's place on the exam: Q1A to Q9, then the lecture kinds
+  const KINDS = () => { const L = LINES(); return [...new Set(L.map(l => l.id))].sort((a, b) => bpAt(a) - bpAt(b)).map(id => ({ k: kindOf(id), lines: L.filter(l => l.id === id) })) };
   // The letters of a root to highlight inside a term: "rhin- / -rrhine" → ["rrhin", "rhin"]
   const keys = root => root.split(/[/ ]/).map(s => s.replace(/[^a-zA-Z]/g, "").toLowerCase()).filter(s => s.length > 1).sort((a, b) => b.length - a.length);
   function mark(term, root) {
@@ -222,15 +234,16 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
   // CHEM 225: one exam, so the switch above the list picks the view: by concept (the sections) or by exam question (the kinds)
   function tabs() {
     $("xtabs").innerHTML = [["concepts", "By concept", `${all(ex).length} roots in ${R[ex].groups.length} sections`], ["kinds", "By exam question", `${KINDS().length} kinds of question`]].map(([v, b, s]) => `<button class="xtab" role="tab" aria-selected="${v === view}" data-v="${v}"><b>${b}</b><span>${s}</span></button>`).join("");
-    $("xtabs").querySelectorAll(".xtab").forEach(b => b.onclick = () => { view = b.dataset.v; try { localStorage.setItem(KEY, view) } catch (e) { } quiz = null; query = ""; tabs(); list() });
+    $("xtabs").querySelectorAll(".xtab").forEach(b => b.onclick = () => { view = b.dataset.v; try { localStorage.setItem(KEY, view) } catch (e) { } quiz = null; query = ""; here(); tabs(); list() });
   }
 
   const meta = g => (R[ex].groups.find(x => x[0] === g) || [])[2] || {};
   const slug = g => "g-" + g.toLowerCase().replace(/[^a-z]+/g, "-");
   // CHEM 225: under a section's heading, the kinds of Exam 2 question its roots help with: the kind, its place on the Fall 2024 exam, how
-  // the roots help, and a link to practise it. Folded, with the kinds named on its first line, so the roots stay in view; it stays open once opened
+  // the roots help, and a link to practise it. Folded, with the kinds named on its first line, so the roots stay in view; it stays open once opened.
+  // The kinds go in the exam's order, as in the second view
   const OPEN = new Set(), qn = k => k.group === "exam" ? k.exam + " " : "";
-  const onExam = g => { const L = (meta(g).exam || []).map(([id, how]) => [kindOf(id), how]); return L.length ? `<details class="onexam" data-g="${esc(g)}"${OPEN.has(g) ? " open" : ""}><summary><span class="oxh">On the exam</span><span class="oxs">${L.length} kinds of question: ${L.map(([k]) => esc(qn(k) + (k.short || k.title))).join(" · ")}</span></summary>${L.map(([k, how]) => `<div class="kq"><div class="kt"><b>${esc(k.title)}</b><span class="kmeta">${esc(kmeta(k))}</span></div><p>${esc(how)} ${practise(k)}</p></div>`).join("")}</details>` : "" };
+  const onExam = g => { const L = (meta(g).exam || []).map(([id, how]) => [kindOf(id), how]).sort((a, b) => bpAt(a[0].id) - bpAt(b[0].id)); return L.length ? `<details class="onexam" data-g="${esc(g)}"${OPEN.has(g) ? " open" : ""}><summary><span class="oxh">On the exam</span><span class="oxs">${L.length} kinds of question: ${L.map(([k]) => esc(qn(k) + (k.short || k.title))).join(" · ")}</span></summary>${L.map(([k, how]) => `<div class="kq"><div class="kt"><b>${esc(k.title)}</b><span class="kmeta">${esc(kmeta(k))}</span></div><p>${nb(how)} ${practise(k)}</p></div>`).join("")}</details>` : "" };
   const list = () => view === "kinds" ? kinds() : concepts();   // CHEM 225: the view on show
   // CHEM 225: the shared page's list() as the concept view, with this class's examples in the tip, "Jump to a section", and "On the exam"
   function concepts() {
@@ -240,12 +253,12 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
     const leftIn = g => all(ex).filter(r => r.g === g && !isM(r)).length, missIn = g => all(ex).filter(r => r.g === g && isX(r)).length;
     $("app").innerHTML = `
       ${panel()}
-      <p class="sub">${esc(R[ex].sub)}</p>
+      <p class="sub">${nb(R[ex].sub)}</p>
       <div class="tip"><b>How to use it:</b> split a new word into its parts. <i>Nucleo-</i> (nucleus) + <i>-phile</i> (loving) = nucleus-loving: a species that seeks a positive centre. <i>Anti-</i> (opposite) + <i>peri-</i> (near) + <i>planar</i> (in one plane) = on opposite sides and in one plane: the line-up E2 needs.</div>
       <div class="tools"><input class="search" id="search" type="search" placeholder="Search a root, meaning or term…" value="${esc(query)}" aria-label="Search roots"></div>
       ${q ? "" : `<nav class="jump" aria-label="Jump to a section">${groups.map(([g, rs]) => `<a href="#${slug(g)}">${esc(g)}<span class="n">${rs.length}</span></a>`).join("")}</nav>`}
       ${groups.length ? groups.map(([g, rs]) => { const m = meta(g), left = leftIn(g); return `<section class="grp" id="${slug(g)}">
-        <div class="ghead"><div><h2>${esc(g)}</h2>${m.sub ? `<p>${esc(m.sub)}</p>` : ""}</div>
+        <div class="ghead"><div><h2>${esc(g)}</h2>${m.sub ? `<p>${nb(m.sub)}</p>` : ""}</div>
           <div class="row">${missIn(g) ? `<button class="gbtn x" type="button" data-gx="${esc(g)}">↻ Retry ${missIn(g)} missed</button>` : ""}${left ? `<button class="gbtn" type="button" data-g="${esc(g)}"><span class="play"></span>Drill ${left === rs.length ? `these ${left}` : `the ${left} left`}</button>` : `<span class="gcount">✓ All ${rs.length} mastered</span>`}</div></div>
         ${q ? "" : onExam(g) /* CHEM 225 */}
         <div class="grid">${rs.map(card).join("")}</div></section>` }).join("") : `<p class="none">No roots match “${esc(query)}”.</p>`}
@@ -264,7 +277,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
     const q = query.trim().toLowerCase(), A = all(ex), byRoot = new Map(A.map(r => [r.root, r]));
     const hit = x => !q || [x.k.title, x.k.short || "", x.k.exam || "", ...x.lines.flatMap(l => [l.g, l.how, ...l.roots])].join(" ").toLowerCase().includes(q);
     const ks = KINDS().filter(hit), groups = [["exam", "On the Fall 2024 exam"], ["lecture", "From the lectures"]].map(([k, name]) => [name, ks.filter(x => (x.k.group === "exam" ? "exam" : "lecture") === k)]).filter(([, l]) => l.length);
-    const chip = root => { const r = byRoot.get(root); return r ? `<button class="rchip${isM(r) ? " m" : ""}" type="button" data-r="${r.i}" title="Open ${esc(r.root)} in the list"><b>${esc(r.root)}</b> ${esc(r.mean)}</button>` : "" };
+    const chip = (root, k) => { const r = byRoot.get(root); return r ? `<button class="rchip${isM(r) ? " m" : ""}" type="button" data-r="${r.i}" data-k="${esc(k)}" title="Open ${esc(r.root)} in the list"><b>${esc(r.root)}</b> ${esc(r.mean)}</button>` : "" };
     const leftOf = x => kRoots(KIND + x.k.id).filter(rt => byRoot.has(rt) && !isM(byRoot.get(rt))).length;
     $("app").innerHTML = `
       <p class="sub">Every kind of question on Exam 2, with the roots that help with it and how. Tap a root to see its examples, or drill the roots of one kind before you practise it.</p>
@@ -272,21 +285,24 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
       ${q ? "" : `<nav class="jump" aria-label="Jump to a kind of question">${ks.map(x => `<a href="#k-${esc(x.k.id)}">${esc(qn(x.k) + (x.k.short || x.k.title))}</a>`).join("")}</nav>`}
       ${groups.length ? groups.map(([name, l]) => `<section class="grp" id="${slug(name)}"><div class="ghead"><div><h2>${esc(name)}</h2><p>${l.length} kinds of question</p></div></div>
         ${l.map(x => { const left = leftOf(x); return `<article class="kind" id="k-${esc(x.k.id)}"><div class="kt"><h3>${esc(x.k.title)}</h3><span class="kmeta">${esc(kmeta(x.k))}</span></div>
-          ${x.lines.map(li => `<div class="kl"><span class="ks">${esc(li.g)}</span><div class="rchips">${li.roots.map(chip).join("")}</div><p>${esc(li.how)}</p></div>`).join("")}
+          ${x.lines.map(li => `<div class="kl"><span class="ks">Roots from ${esc(li.g)}</span><div class="rchips">${li.roots.map(rt => chip(rt, x.k.id)).join("")}</div><p>${nb(li.how)}</p></div>`).join("") /* CHEM 225: the label names the section the roots come from, not the line's topic */}
           <div class="row">${left ? `<button class="gbtn" type="button" data-k="${esc(x.k.id)}"><span class="play"></span>Drill its ${left} root${left > 1 ? "s" : ""}</button>` : `<span class="gcount">✓ Its roots are mastered</span>`}${practise(x.k)}</div></article>` }).join("")}</section>`).join("") : `<p class="none">No question matches “${esc(query)}”.</p>`}
       ${q ? "" : `<div class="row" style="justify-content:center;padding-top:6px">${nextStep()}</div>`}`;
     document.querySelectorAll(".gbtn[data-k]").forEach(b => b.onclick = () => startDrill(KIND + b.dataset.k));
-    document.querySelectorAll(".rchip").forEach(b => b.onclick = () => openRoot(+b.dataset.r));
+    document.querySelectorAll(".rchip").forEach(b => b.onclick = () => openRoot(+b.dataset.r, b.dataset.k));
     const s = $("search");
     s.oninput = () => { query = s.value; const pos = s.selectionStart; list(); const n = $("search"); n.focus(); n.setSelectionRange(pos, pos) };
     watchFab();
   }
-  // CHEM 225: from a kind to a root: the concept view, scrolled to the root's card, which flashes
-  function openRoot(i) {
+  // CHEM 225: from a kind to a root: the concept view, scrolled to the root's card, which flashes. The kind it came from stays
+  // in the browser's history, so Back returns to it
+  function openRoot(i, k) {
+    if (k) try { history.replaceState({ view: "kinds", k }, "", "#questions"); history.pushState({ view: "concepts", r: i }, "", "#concepts") } catch (e) { }
     view = "concepts"; try { localStorage.setItem(KEY, view) } catch (e) { } query = ""; quiz = null; tabs(); list();
     const c = $("r" + i); if (!c) return; c.scrollIntoView({ block: "center" }); c.classList.remove("flash"); void c.offsetWidth; c.classList.add("flash");
   }
-  const card = r => `<article class="root${isM(r) ? " done" : ""}" id="r${r.i}"><div class="rt"><b>${esc(r.root)}</b><span class="mean">${esc(r.mean)}</span>${isM(r) ? `<span class="badge m">✓ Mastered</span>` : (isX(r) ? `<span class="badge x">✗ Missed</span>` : "") + (isR(r) ? `<span class="badge r">⚑ Review</span>` : "")}</div><span class="orig">${esc(r.orig)}</span><ul class="ex">${r.exs.map(([t, m]) => `<li><span class="term">${mark(t, r.root)}</span>: ${esc(m)}</li>`).join("")}</ul></article>`;   // CHEM 225: the card's id, for the links from the second view
+  // CHEM 225: the card's id, for the links from the second view; a term is one word for the dictionary (data-lk), although its root is marked inside it
+  const card = r => `<article class="root${isM(r) ? " done" : ""}" id="r${r.i}"><div class="rt"><b>${esc(r.root)}</b><span class="mean">${esc(r.mean)}</span>${isM(r) ? `<span class="badge m">✓ Mastered</span>` : (isX(r) ? `<span class="badge x">✗ Missed</span>` : "") + (isR(r) ? `<span class="badge r">⚑ Review</span>` : "")}</div><span class="orig">${nb(r.orig)}</span><ul class="ex">${r.exs.map(([t, m]) => `<li><span class="term" data-lk>${mark(t, r.root)}</span>: ${nb(m)}</li>`).join("")}</ul></article>`;
 
   // ===== Progress panel: how much of the pool is left
   function counts() { const a = all(ex), m = a.filter(isM).length, r = a.filter(x => !isM(x) && isR(x)).length, x = a.filter(isX).length; return { total: a.length, m, r, x, left: a.length - m } }
@@ -323,7 +339,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 
   // ===== Drill: every root left in the pool, review-marked ones first. Mastered roots leave the pool.
   const STOP = new Set(["a", "an", "the", "of", "to", "on", "and", "or", "by", "for", "from", "it", "its", "ending", "latin", "greek", "in", "bond", "bonds", "carbons", "letter"]);   // CHEM 225: and words that roots share without meaning the same: -ene and -yne (bond), meth- to but- (one carbon, two carbons), alpha and beta (letter)
-  const SAME = { charged: "ion", joined: "together" };   // CHEM 225: meanings that say the same in other words (ion and cation, jug- and con-)
+  const SAME = { charged: "ion", joined: "together", across: "opposite", going: "moving" };   // CHEM 225: meanings that say the same in other words (ion and cation, jug- and con-, trans and anti-, ion and kinet-)
   const words = m => new Set(m.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 1 && !STOP.has(w)).map(w => (SAME[w] || w).slice(0, 5)));   // CHEM 225: a word by its first five letters, so loosen and loosening (solvo-, -lysis) or plane and planes clash; one letter (the C of C=C) is no meaning
   const clash = (a, b) => { const A = words(a.mean); return [...words(b.mean)].some(w => A.has(w)) };   // e.g. allo- and altru- both mean "other"
   function item(r) {
@@ -357,7 +373,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
       <div class="qtop"><span>${esc(scopeName(quiz))} · ${quiz.i + 1} of ${quiz.items.length} this round · <b id="leftN">${counts().left}</b> left in the pool</span><button class="chip" id="quit" type="button">Back to the list</button></div>
       <p class="qbig">${dir ? `Which root means “${esc(r.mean)}”?` : `What does <code>${esc(r.root)}</code> mean?`}</p>
       <div class="opts">${it.opts.map((o, k) => `<button class="opt" data-k="${k}" type="button"><span class="bub">${"ABCD"[k]}</span><span>${esc(dir ? o.root : o.mean)}</span></button>`).join("")}</div>
-      <p class="fb" id="fb" hidden><span class="missnote" id="missNote" hidden>Missed: you'll get to retry this one. </span><b>${esc(r.root)}</b> = ${esc(r.mean)}. As in <b>${mark(ex1[0], r.root)}</b>: ${esc(ex1[1])}.</p>
+      <p class="fb" id="fb" hidden><span class="missnote" id="missNote" hidden>Missed: you'll get to retry this one. </span><b>${esc(r.root)}</b> = ${esc(r.mean)}. As in <b data-lk>${mark(ex1[0], r.root)}</b>: ${nb(ex1[1])}.</p>
       <div class="row marks"><button class="mk m" id="mkM" type="button" aria-pressed="${isM(r)}">✓ Mastered</button><button class="mk r" id="mkR" type="button" aria-pressed="${isR(r)}">⚑ Review</button>
         <button class="btn" id="next" type="button" hidden>${quiz.i + 1 < quiz.items.length ? "Next →" : "Finish round"}</button></div>
     </article>`;
@@ -394,6 +410,15 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
     $("back").onclick = () => { quiz = null; list() };
   }
 
+  // CHEM 225: Back (or Forward) to an entry of the other view: that view, at the kind or root it was on. Within one view (a jump
+  // link) the browser keeps its own place
+  addEventListener("popstate", e => {
+    const s = e.state || {}, want = s.view || viewOf(location.hash.slice(1)) || view;
+    if (want === view && !quiz) return;
+    view = want; quiz = null; query = ""; try { localStorage.setItem(KEY, view) } catch (e) { } tabs(); list();
+    const el = s.k ? document.getElementById("k-" + s.k) : s.r != null ? $("r" + s.r) : document.getElementById(location.hash.slice(1));
+    if (el) el.scrollIntoView({ block: s.r != null ? "center" : "start" });
+  });
   tabs(); list();
 })();
 </script>
