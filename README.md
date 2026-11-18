@@ -11,7 +11,9 @@ folder. Progress is kept in the student's own browser (local storage, keys start
 
 ## Opening it
 
-Open `index.html`, or serve the folder with any static server and visit http://localhost:8000/:
+Open `index.html`, or serve the folder with any static server and visit http://localhost:8000/. Inside Eureka that file is the
+class's front page (see "In Eureka" below). On its own, where Eureka's `../shared/platform.js` is absent, it sends the
+visitor to `alone/index.html`, the class's own dashboard, which `page.js` draws:
 
 ```bash
 python3 -m http.server 8000
@@ -42,7 +44,7 @@ It can also be published as it is with GitHub Pages (Settings, Pages, deploy fro
 answer before you reread; come back on later days (the review schedule shrinks its gaps to fit the exam date); mix the
 question types, because choosing the approach is the skill the exam tests; study worked examples that fade into your own
 work; write mechanisms and chairs by hand and take a timed mock, because that is the form of the exam. The number the
-dashboard puts first is accuracy after a day or more, not today's score.
+dashboard of the class on its own (`alone/`) puts first is accuracy after a day or more, not today's score.
 
 `docs/prerequisites.md` sets out what a student needs before this unit. `docs/backporting.md` lists what this class adds
 beyond Eureka's shared engine and how to bring each piece to the other classes.
@@ -91,7 +93,12 @@ node tools/build-classes.js
 Eureka keeps four things on its side for this class, all described in its `docs/adding-a-class.md`: the storage prefix
 `orgo-` in `shared/account.js` (sync) and `shared/prefs.js` (download and reset), the class-bar drawings for the kinds
 `exam`, `mechanisms`, `lab` and `foundations` in `shared/icons.js`, and the eleven reading badges in
-`shared/wardrobe.js`. Eureka's Study Plan card is not used, because the dashboard here has its own plan.
+`shared/wardrobe.js`. Eureka's Study Plan card is used, with the progress this class keeps (see "The front page" in `docs/dev/ARCHITECTURE.md`).
+
+The front page, `index.html`, is a copy of ECON 101's, changed only where this class differs: the hero and its countdown,
+nine cards (readings, practice, the exam lab, mechanisms, mock exams, the review list, the molecule lab, foundations and
+the archive), a "Good to know" section, and Eureka's Study Plan card, which the student switches on in Settings. The
+class's own dashboard, with its own plan, is used only when the folder is opened outside Eureka (`alone/`).
 
 ## A note on the material
 

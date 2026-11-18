@@ -16,7 +16,7 @@
   code: "5192f344100426d7f1cd0438219fae75cbe180a69dbae837e804b47c40f62737",
   // the questions that are marked: the practice bank and the past exam (tools/build.js says when this number is out of date)
   progress: [["orgo-drill-v1", 453]],
-  portals: {"main":[["Readings","read/","read"],["Exam 2 Lab","exam/","exam"],["Practice","drill/","drill"],["Mechanisms","mechanisms/","mechanisms"],["Mock Exam","mock/","mock"]],"more":[["Molecule Lab","lab/","lab"],["Foundations","foundations/","foundations"],["Review List","review/","review"],["Archive","archive/","archive"],["Syllabus","syllabus/","syllabus"]]},
+  portals: {"main":[["Readings","read/","read"],["Practice","drill/","drill"],["Exam 2 Lab","exam/","exam"],["Mechanisms","mechanisms/","mechanisms"],["Mock Exam","mock/","mock"],["Syllabus","syllabus/","syllabus"]],"more":[["Review List","review/","review"],["Molecule Lab","lab/","lab"],["Foundations","foundations/","foundations"],["Archive","archive/","archive"]]},
   art: `<g fill="none" stroke="#f3ead2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M28 118 L62 96 L104 112 L172 84 L138 106 L96 90 Z"/></g>
     <g stroke="#ffd166" stroke-width="4" stroke-linecap="round"><path d="M62 96V62M138 106V140M172 84V50M28 118V152"/></g>
     <g fill="#ffd166"><circle cx="62" cy="56" r="7"/><circle cx="138" cy="146" r="7"/></g>
