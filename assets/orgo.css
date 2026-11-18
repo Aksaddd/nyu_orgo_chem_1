@@ -24,6 +24,12 @@ html[data-night] {
   --bg: #0a0f1c; --surface: #131a2b; --surface-2: #1b2438; --line: #2a3550; --muted: #9aa6c0;
   --shadow: 0 0 0 .5px rgba(150,180,255,.12);
 }
+/* Eureka's "Colour-blind safe marking" (html.px-cb, shared/prefs.js): blue and orange in place of green and red on every right
+   and wrong state, through these tokens. The orange is darker than Eureka's #c25e00 so that the words on a mark stay above
+   4.5:1 (#c25e00 gives 3.8:1). Dark and Stars take the lighter pair Eureka uses there; Stars sets green and red of its own
+   (maison.css, html:root[data-night]), so the dark rule is one step more specific. */
+html.px-cb { --good: #0057b8; --good-bg: #e3eefb; --bad: #a84e00; --bad-bg: #fbeedd; }
+html.px-cb:is([data-theme="dark"], [data-night]):root { --good: #7db8ff; --good-bg: #10263f; --bad: #ffb061; --bad-bg: #3a2510; }
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px }

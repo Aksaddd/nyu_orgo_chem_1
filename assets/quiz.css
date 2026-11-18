@@ -26,6 +26,10 @@
 @media (max-width: 420px) { .q .opts.pair, .mock-ans .opts.pair { grid-template-columns: 1fr; } }
 .opt { flex-wrap: wrap; }
 .q .opt.right::after, .q .opt.wrong::after, .mock-ans .opt.right::after, .mock-ans .opt.wrong::after { content: none; }   /* our own mark carries the tick and the word */
+/* so does Eureka's "Colour-blind safe marking" label (shared/prefs.js), which outranks the rule above: a choice never says
+   "Missed, this one applies" and "Not this" at once. A wrong row is dashed, as Eureka dashes a wrong choice. */
+html.px-cb :is(.q, .mock-ans) .opt:is(.right, .wrong)::after { content: none; }
+html.px-cb :is(.rank-row, .cls-row).wrong { border-style: dashed; }
 .opt[disabled] { opacity: 1; color: var(--ink); cursor: default; }
 .opt .opt-k { flex: none; min-width: 1.2em; font-family: var(--mono); font-size: .85em; color: var(--muted); }
 .opt .opt-h { flex: 1 1 0; min-width: 0; }
