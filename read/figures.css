@@ -78,6 +78,7 @@ body:is(.er-sepia, .er-dark) .rd-prose :is(.rc-more > summary, .rc-src a, .rc-go
 .rd-prose th, .rd-prose td, .rd-q > table th, .rd-q > table td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: middle }
 .rd-prose th, .rd-q > table th { font-weight: 650 }
 .rd-sec .rd-q > table { color: var(--er-text) }      /* a table under a question is the question's own text, in the passage's ink */
+body.er-flip .rd-sec .rd-q > table { color: inherit }      /* where Eureka's reader stands the questions on the appearance's own surface (a page on the other side of light and dark from the appearance), the table keeps the appearance's ink, as the question does */
 .rd-q > p:empty { display: none }      /* a question whose text ends in a table leaves an empty paragraph behind */
 
 /* ---------- drawings inside questions, choices and explanations */
