@@ -1,0 +1,90 @@
+{
+ "id": "acid-base-eq",
+ "title": "Which way does the equilibrium lie",
+ "exam": "Lecture 10/29",
+ "asks": "An acid and a base are mixed. Say which side is favoured, estimate K, or choose a base strong enough to do the job.",
+ "know": [
+  {
+   "h": "<b>Every proton transfer has an acid on each side</b>: the species that gives the proton on the left, and the species that would give it back on the right. Be able to find both.",
+   "from": "Lecture 10/29, p. 4"
+  },
+  {
+   "h": "<b>The equilibrium favours the weaker acid</b> (the higher {{pKa}}), which always sits with the weaker base. The stronger acid and stronger base are the pair that react.",
+   "from": "Lecture 10/29, p. 4"
+  },
+  {
+   "h": "<b>Lecture examples</b>: {{H2O}} (15.7) + {{HO-}} gives {{HO-}} + {{H2O}} (15.7), K = 1. {{H2O}} (15.7) + {{NH2-}} gives {{HO-}} + {{NH3}} (38), to the right. {{NH3}} (38) + {{CH3-}} gives {{NH2-}} + {{CH4}} (50 to 60), to the right.",
+   "from": "Lecture 10/29, p. 4"
+  },
+  {
+   "h": "<b>K as a power of ten</b>: {{pKa}} = -log {{Ka}}, so K = 10<sup>x</sup> with x = {{pKa}} of the acid on the product side minus {{pKa}} of the acid on the reactant side. A positive x favours products.",
+   "from": "Lecture 10/29, p. 2; standard"
+  },
+  {
+   "h": "<b>Numbers to have ready</b>: H-I -10, H-Br -9, H-Cl -8, {{H3O+}} -1.5, {{RCO2H}} 4, H-F 4, {{H2S}} 10, phenol 10, {{RNH3+}} about 10.5, water 15.7, alcohols 16 (tert-butanol 17), terminal alkyne 25, {{NH3}} 38, alkane 50 to 60.",
+   "from": "Lecture 10/29, p. 1 to 3; pKa table"
+  },
+  {
+   "h": "<b>Is this base strong enough?</b> A base deprotonates an acid essentially completely when the base's conjugate acid has a {{pKa}} several units above that of the acid. Be able to write the conjugate acid of any base.",
+   "from": "standard"
+  },
+  {
+   "h": "<b>Common bases by the {{pKa}} of their conjugate acids</b>: acetate 4; {{HS-}} 10; {{HO-}} 15.7; {{CH3O-}} and {{CH3CH2O-}} about 16; {{(CH3)3CO-}} 17; acetylide 25; {{NH2-}} 38; R-Li and R-MgX 50 to 60.",
+   "from": "Lecture 10/29, p. 1 to 5"
+  },
+  {
+   "h": "<b>Use the value of the species as drawn.</b> An ammonium ion {{RNH3+}} is about 10.5, a neutral amine N-H is 38. {{H3O+}} is -1.5, water is 15.7.",
+   "from": "FA24 Exam 2, Q1A; pKa table"
+  },
+  {
+   "h": "<b>Organolithium (R-Li) and Grignard (R-MgX) reagents act as R:<sup>-</sup></b>: the carbon carries the electron density, and they are very strong bases.",
+   "from": "Lecture 10/29, p. 5; Lecture 11/03, p. 1"
+  },
+  {
+   "h": "<b>Water destroys them</b>: {{CH3Li}} + {{H2O}} gives {{CH4}} + LiOH. The carbon lone pair takes H from water and the H-O electrons go to oxygen. Water is about 15.7 and methane 50 to 60, so K is 10<sup>34</sup> or more.",
+   "from": "Lecture 11/03, p. 1"
+  },
+  {
+   "h": "<b>So they are made without any O-H</b>: R-Li from R-Br and 2 Li in pentane, R-MgX from R-X and Mg in diethyl ether. Any O-H, N-H, S-H or terminal alkyne C-H protonates them.",
+   "from": "Lecture 10/29, p. 5"
+  },
+  {
+   "h": "<b>{{D2O}} puts D where the metal was</b>: 2-bromopropane, then Mg in ether, then {{D2O}}, gives propane with D on the middle carbon. {{H2O}} gives plain propane.",
+   "from": "Lecture 11/03, p. 1 (homework)"
+  }
+ ],
+ "method": [
+  "Find the proton that moves, and mark the acid on the left and the acid on the right.",
+  "Write the {{pKa}} of each of those two acids, for the species exactly as drawn (mind charges).",
+  "The side with the higher {{pKa}} is favoured. If the two values are equal, K = 1.",
+  "For K, subtract: {{pKa}} of the product-side acid minus {{pKa}} of the reactant-side acid is the exponent. Check that its sign agrees with the previous step.",
+  "To choose a base, write the conjugate acid of each candidate and keep those whose {{pKa}} is above that of the acid to be deprotonated.",
+  "If R-Li or R-MgX is present, treat it as a carbanion and look for any hydrogen more acidic than an alkane: it will be removed first."
+ ],
+ "pitfalls": [
+  {
+   "h": "Favouring the side with the stronger acid. The equilibrium collects the weaker acid and the weaker base."
+  },
+  {
+   "h": "Subtracting the wrong way round and getting the sign of the exponent wrong. Check it against which side holds the weaker acid."
+  },
+  {
+   "h": "Using 38 for an ammonium ion or 11 for a neutral amine. Match the number to the charge that is drawn."
+  },
+  {
+   "h": "Assuming hydroxide or an alkoxide can deprotonate anything. They cannot remove a terminal alkyne hydrogen (25) or an amine N-H (38)."
+  },
+  {
+   "h": "Treating a Grignard or organolithium reagent as stable to water or alcohols, or putting the acid workup in the same step as the reagent."
+  },
+  {
+   "h": "Comparing an acid with a base directly. Always compare two acids: the acid, and the conjugate acid of the base."
+  }
+ ],
+ "links": {
+  "read": [
+   "acids",
+   "organometallics"
+  ]
+ }
+}

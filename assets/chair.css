@@ -1,1 +1,66 @@
-/* CHEM 225 · chair */
+/* CHEM 225 · chairs, flat rings, Newman projections and energy diagrams (chair.js, newman.js, energy.js) */
+
+/* ---- the drawings: ink follows the page, axial and equatorial bonds take --ax and --eq (plus the letters a and e) */
+.chair-svg, .ring-svg, .newman-svg, .energy-svg { max-width: 100%; height: auto; color: var(--ink, #1d1d1f); font-family: var(--font, system-ui, -apple-system, "Segoe UI", sans-serif); overflow: visible; vertical-align: middle; }
+.chair-svg.inline, .ring-svg.inline, .newman-svg.inline { height: 4.2em; width: auto; }
+.energy-svg.inline { height: 6em; width: auto; }
+.chair-svg text, .ring-svg text, .newman-svg text, .energy-svg text { user-select: none; }
+
+/* ---- the chair lab */
+.chair-lab-main { display: grid; gap: 16px; grid-template-columns: minmax(220px, 290px) minmax(0, 1fr); align-items: start; }
+.chair-picker { text-align: center; }
+.chair-pick svg { width: 100%; max-width: 280px; height: auto; }
+.chair-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.chair-fig { margin: 0; padding: 10px 12px; border: 1px solid var(--line, #d2d2d7); border-radius: var(--radius, 12px); background: var(--surface, #fff); }
+.chair-stage { text-align: center; }
+.chair-stage svg { width: 100%; max-width: 380px; height: auto; }
+.chair-fig figcaption { font-size: 0.9rem; line-height: 1.45; margin-top: 6px; }
+.chair-fig figcaption .badge { margin-left: 6px; }
+.chair-palette { gap: 6px; }
+.chair-palette .chip, .chair-row .chip { cursor: pointer; }
+.chair-palette .chip[aria-pressed="true"], .chair-row .chip[aria-pressed="true"] { outline: 2px solid var(--accent, #0071e3); outline-offset: 1px; font-weight: 600; }
+.chair-lab .btn[aria-pressed="true"], .chair-ask .seg .btn[aria-pressed="true"] { outline: 2px solid var(--accent, #0071e3); outline-offset: 1px; font-weight: 600; }
+.chair-lab .btn[aria-pressed="true"]::before, .chair-ask .seg .btn[aria-pressed="true"]::before, .chair-row .chip[aria-pressed="true"]::before { content: "\2713\00a0"; }
+
+/* the pressable positions on the flat ring */
+.rp { cursor: pointer; outline: none; }
+.rp:hover .rp-hit { stroke: var(--line, #b8b8bd); stroke-width: 1.5; }
+.rp:focus-visible .rp-hit { stroke: var(--accent, #0071e3); stroke-width: 2.5; }
+.rp.on .rp-hit { fill: var(--hl, #ffd60a); fill-opacity: 0.22; }
+
+/* ---- chair questions */
+.chair-given, .chair-template { text-align: center; }
+.chair-given svg { max-width: min(100%, 360px); }
+.chair-template svg { max-width: min(100%, 320px); }
+.chair-q { font-weight: 600; margin: 0; }
+.chair-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.chair-row > span:first-child { min-width: 14em; }
+.chair-opts-fig { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.chair-opts-fig .opt { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.chair-tag { font-style: italic; }
+.chair-task .explain .chair-pair, .chair-task .explain .chair-template { margin-top: 10px; }
+
+/* ---- Newman lab */
+.newman-main { display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr); gap: 16px; align-items: center; }
+.newman-fig { text-align: center; }
+.newman-fig svg { width: 100%; max-width: 200px; height: auto; }
+.newman-plot svg { width: 100%; max-width: 460px; height: auto; }
+.newman-range { width: 100%; max-width: 460px; }
+.newman-say { min-height: 2.6em; margin: 0; }
+
+/* ---- energy lab */
+.energy-main { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(200px, 1fr); gap: 16px; align-items: start; }
+.energy-fig svg { width: 100%; max-width: 520px; height: auto; }
+.energy-set { border: 1px solid var(--line, #d2d2d7); border-radius: var(--radius, 12px); padding: 8px 12px; margin: 0; }
+.energy-set legend { font-weight: 600; padding: 0 4px; }
+.energy-row { display: grid; grid-template-columns: minmax(7em, auto) minmax(0, 1fr); gap: 8px; align-items: center; }
+.energy-row input { width: 100%; }
+.energy-out p { margin: 0; }
+
+@media (max-width: 760px) {
+  .chair-lab-main, .newman-main, .energy-main { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .chair-pair { grid-template-columns: minmax(0, 1fr); }
+  .chair-row > span:first-child { min-width: 0; }
+}

@@ -1,0 +1,89 @@
+{
+ "id": "acid-rank",
+ "title": "Rank acids and bases, and say which factor decides",
+ "exam": "Lecture 10/29",
+ "asks": "Several acids (or bases) are given. Put them in order and name the factor that stabilizes the conjugate base.",
+ "know": [
+  {
+   "h": "<b>Acid strength is decided by the conjugate base.</b> The more stable the base left behind, the stronger the acid. Be able to draw the conjugate base of anything you are asked to rank.",
+   "from": "Lecture 10/29, p. 2"
+  },
+  {
+   "h": "<b>Six factors stabilize a base</b>: Induction, Size, Hybridization, Aromaticity, Resonance, Electronegativity.",
+   "from": "Lecture 10/29, p. 2"
+  },
+  {
+   "h": "<b>Electronegativity</b> (charged atoms in the same row): the more electronegative atom holds the charge better. Acids: {{H2O}} (15.7) > {{NH3}} (38) > {{CH4}} (50 to 60).",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>Size</b> (charged atoms in the same column): the larger atom spreads out the charge. {{H2S}} (10) is a stronger acid than {{H2O}} (15.7), and H-I (-10) > H-Br (-9) > H-Cl (-8) > H-F (4).",
+   "from": "Lecture 10/29, p. 1 and 3"
+  },
+  {
+   "h": "<b>Hybridization</b>: more s character holds the lone pair closer to the nucleus. Acetylene ({{sp}}, 25) is a far stronger acid than ethane ({{sp3}}, 60).",
+   "from": "Lecture 10/29, p. 2"
+  },
+  {
+   "h": "<b>Resonance</b>: a charge shared by several atoms is more stable. Carboxylic acid 4 (two oxygens), phenol 10 (oxygen and the ring), alcohol 16 (one oxygen).",
+   "from": "FA24 Exam 2, Q1A; Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>Induction</b>: electronegative atoms near the charge pull electron density through the bonds. {{CF3CO2H}} (-1.5) against {{RCO2H}} (4). More such atoms, and closer, give a larger effect.",
+   "from": "Lecture 10/29, p. 2"
+  },
+  {
+   "h": "<b>Aromaticity</b>: if losing the proton leaves an aromatic ion (a flat ring with six pi electrons, as from cyclopentadiene), the acid is much stronger than expected.",
+   "from": "Lecture 10/29, p. 2; standard"
+  },
+  {
+   "h": "<b>Periodic trend for bases</b>: basicity increases to the left across a row and going up a column. {{HS-}} < {{HO-}} < {{H2N-}} < {{H3C-}}, with {{H3C-}} the strongest base.",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>To rank bases, rank their conjugate acids and reverse the order.</b> The stronger the acid, the weaker its conjugate base.",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>Solvent effect on alcohols</b>: in solution methanol 15.5 (most acidic), water 15.7, ethanol 15.9, isopropanol 16.5, tert-butanol 17.0 (least acidic). Small methoxide is surrounded by many solvent molecules. Bulky tert-butoxide is less solvated. Solvation gives stabilization.",
+   "from": "Lecture 10/29, p. 3 to 4 (Table 6.8)"
+  },
+  {
+   "h": "<b>Gas phase</b>: with no solvent the relative acidity of the alcohols runs the other way, and tert-butanol is the most acidic.",
+   "from": "Lecture 10/29, p. 3"
+  }
+ ],
+ "method": [
+  "Decide whether you are ranking acids or bases, and which end the question wants first.",
+  "Draw the conjugate base of each acid (or, for bases, the conjugate acid of each) and find the atom that carries the charge.",
+  "If the charged atoms differ: same row, use electronegativity; same column, use size.",
+  "If the charged atom is the same, look for resonance, then hybridization, then induction by nearby electronegative atoms, then aromaticity of the anion.",
+  "If none of those differ, as with simple alcohols, it is solvation: the smaller ion is better solvated in solution, and the order reverses in the gas phase.",
+  "Check the order against the {{pKa}} values you know, and write the factor in one word next to each comparison."
+ ],
+ "pitfalls": [
+  {
+   "h": "Using electronegativity down a column: putting H-F above H-I, or water above {{H2S}}. In a column, size decides."
+  },
+  {
+   "h": "Ranking bases in the same order as their conjugate acids. The order must be reversed."
+  },
+  {
+   "h": "Explaining the alcohol order by methyl groups pushing electrons. The lecture's reason is solvation, and the gas-phase reversal proves it."
+  },
+  {
+   "h": "Missing the words gas phase and giving the solution order."
+  },
+  {
+   "h": "Calling the effect of the fluorines in {{CF3CO2H}} resonance or electronegativity. It acts through the bonds from a neighbouring atom: induction."
+  },
+  {
+   "h": "Answering aromaticity because a benzene ring is present. Phenol's acidity is resonance. Aromaticity is the factor only when the conjugate base becomes aromatic."
+  }
+ ],
+ "links": {
+  "read": [
+   "acids"
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "id": "ring-strain",
+ "title": "Ring strain: angle strain, torsional strain and the numbers",
+ "exam": "Lecture 10/20, 10/27",
+ "asks": "Compare cycloalkanes: where the strain comes from, how many eclipsing interactions, which ring is most stable and why.",
+ "know": [
+  {
+   "h": "<b>Ring strain</b> has two parts: 1. <b>angle strain</b> (C-C-C angles forced away from the tetrahedral 109.5°) and 2. <b>torsional strain</b> (eclipsed C-H bonds on neighbouring carbons).",
+   "from": "Lecture 10/20, p. 1"
+  },
+  {
+   "h": "Angles to know: cyclopropane 60°; flat cyclobutane 90° (puckered, 88°); flat cyclopentane 108°; flat cyclohexane 120°; chair cyclohexane 111.5°.",
+   "from": "Lecture 10/20, p. 1 to 3"
+  },
+  {
+   "h": "A flat ring of n carbons has <b>2n eclipsing C-H/C-H interactions</b>: cyclopropane 6, cyclobutane 8, cyclopentane 10, cyclohexane 12.",
+   "from": "Lecture 10/20, p. 1 to 3"
+  },
+  {
+   "h": "<b>Bent bonds</b>: in cyclopropane the {{sp3}} orbitals cannot point along the lines between the carbons, so they overlap off the axis. Less overlap means a weaker bond: C-C is 65 kcal/mol in cyclopropane against 88 in propane.",
+   "from": "Lecture 10/20, p. 1"
+  },
+  {
+   "h": "<b>Rings pucker to relieve torsional strain</b>. Cyclobutane puckers (relieves some torsional strain; the angle goes from 90° to 88°). Cyclopentane has two puckered energy minima: lots of torsional strain relieved, at the expense of angle strain.",
+   "from": "Lecture 10/20, p. 2"
+  },
+  {
+   "h": "The <b>chair</b> of cyclohexane has no angle strain and no torsional strain: all carbons are tetrahedral and all C-H bonds on adjacent carbons are staggered.",
+   "from": "Lecture 10/20, p. 3"
+  },
+  {
+   "h": "Heats of formation per {{CH2}}, kcal/mol: cyclopropane +4.2; cyclobutane +1.7; cyclopentane -3.7; cyclohexane -4.9 (most stable); cycloheptane -4.0; strain-free chain -4.9.",
+   "from": "Table 5.1"
+  },
+  {
+   "h": "Strain per {{CH2}} is the heat of formation per {{CH2}} minus the strain-free value (-4.9). Multiply by the number of {{CH2}} groups for the whole ring: cyclopropane 3 x 9.1 = 27.3; cyclobutane 4 x 6.6 = 26.4; cyclohexane 0.",
+   "from": "Table 5.1; standard"
+  },
+  {
+   "h": "A chair has six <b>axial</b> hydrogens (vertical) and six <b>equatorial</b> hydrogens (around the middle). The ring flip swaps them, and for cyclohexane itself K = 1.",
+   "from": "Lecture 10/27, p. 1"
+  },
+  {
+   "h": "<b>Axial groups cost energy</b>. An axial methyl is gauche to two ring carbons (C3 and C5), like gauche butane twice. An equatorial methyl is anti to both, like anti butane.",
+   "from": "Lecture 10/27, p. 2"
+  },
+  {
+   "h": "Cost of an axial group and K: methyl 1.74 kcal/mol (K = 19.5); ethyl 1.79 (21.2); propyl 2.21 (43.4); isopropyl 2.61 (86.0); tert-butyl 5.5 (11,916).",
+   "from": "Table 5.3"
+  },
+  {
+   "h": "K is the ratio of equatorial to axial molecules. The fraction equatorial is K / (K + 1): for methyl, 19.5 / 20.5 = 95%.",
+   "from": "standard"
+  },
+  {
+   "h": "Skill: be able to draw a Newman projection down a ring bond and say whether two groups are eclipsed, gauche or anti.",
+   "from": "Lecture 10/20, p. 1; Lecture 10/27, p. 2"
+  }
+ ],
+ "method": [
+  "Decide which kind of strain the question is about: angles (angle strain) or eclipsed bonds (torsional strain). Many rings have both.",
+  "For angle strain, compare the ring's angle with 109.5°.",
+  "For torsional strain in a flat ring, count 2 eclipsing C-H/C-H interactions per ring bond.",
+  "If the ring is puckered, say what it gains (less torsional strain) and what it pays (angle strain).",
+  "For stability, use the heat of formation per {{CH2}}: more negative is more stable, and -4.9 means strain free.",
+  "For a substituted chair, count axial groups and use Table 5.3 for the cost and K."
+ ],
+ "pitfalls": [
+  {
+   "h": "Saying a ring has only angle strain. Flat rings also have eclipsed hydrogens, and in cyclopentane torsional strain is the main problem."
+  },
+  {
+   "h": "Saying puckering fixes the angles. Puckering relieves torsional strain and costs some angle strain."
+  },
+  {
+   "h": "Mixing up per {{CH2}} and per molecule, or reading a heat of formation as the strain. Strain is measured from -4.9 per {{CH2}}."
+  },
+  {
+   "h": "Assuming bigger rings are always more stable. Cycloheptane (-4.0) is less stable per {{CH2}} than cyclohexane (-4.9)."
+  },
+  {
+   "h": "Reading K as an energy, or a large K as proof that the ring cannot flip."
+  }
+ ],
+ "links": {
+  "read": [
+   "rings-1",
+   "rings-2"
+  ]
+ }
+}

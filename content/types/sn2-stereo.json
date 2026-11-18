@@ -1,0 +1,95 @@
+{
+ "id": "sn2-stereo",
+ "title": "Draw the SN2 product with its stereochemistry",
+ "exam": "Lecture 11/03, 11/05",
+ "asks": "A substrate with a stereocentre meets a good nucleophile. Draw the product, showing inversion.",
+ "know": [
+  {
+   "h": "{{SN2}} is <b>concerted</b>: the nucleophile bonds to carbon while the leaving group leaves, in one step with no intermediate. Rate = k[nucleophile][electrophile].",
+   "from": "Lecture 11/03, p. 3"
+  },
+  {
+   "h": "The nucleophile attacks the carbon from the side <b>opposite</b> the leaving group (backside attack). In the transition state the nucleophile, the carbon and the leaving group lie on one line, and the other three groups lie in one plane.",
+   "from": "Lecture 11/03, p. 4"
+  },
+  {
+   "h": "As the leaving group goes, the three other groups flip to the other side, like an umbrella in the wind. The result is <b>inversion</b> at the electrophilic carbon.",
+   "from": "Lecture 11/03, p. 2 and p. 4"
+  },
+  {
+   "h": "<b>One enantiomer gives one enantiomer.</b> The lecture example uses deuterium to make the carbon a stereocentre:\n[[rxn:[2H][C@H](C)Cl + [OH-]>>[2H][C@@H](C)O + [Cl-]]]\n(R)-1-chloro-1-deuterioethane gives (S)-1-deuterioethanol.",
+   "from": "Lecture 11/03, p. 2"
+  },
+  {
+   "h": "<b>Deuterium (D)</b> is an isotope of hydrogen. It is drawn as its own group and it ranks above H when you assign R or S, so a carbon carrying H, D and two other different groups is a stereocentre.",
+   "from": "Lecture 11/03, p. 2; standard"
+  },
+  {
+   "h": "<b>On a ring, a wedge becomes a dash.</b> The lecture example (Walden inversion): 3-iodocyclohexanone with I on a wedge and NaSH give the thiol with SH on a dash.\n[[rxn:O=C1CCC[C@H](I)C1 + [SH-].[Na+]>>O=C1CCC[C@@H](S)C1 + [Na+].[I-]]]",
+   "from": "Lecture 11/05, p. 1"
+  },
+  {
+   "h": "If the ring has a second substituent, inversion at the attacked carbon turns <b>cis into trans</b> and <b>trans into cis</b>, because the other substituent stays where it was.",
+   "from": "standard, from Lecture 11/05, p. 1"
+  },
+  {
+   "h": "<b>Only the carbon that loses the leaving group inverts.</b> Every other stereocentre in the molecule keeps its wedge or dash.",
+   "from": "Lecture 11/05, p. 1: inversion at the electrophile atom"
+  },
+  {
+   "h": "Inversion describes the <b>geometry</b>. The R or S label usually changes too, but not always: the nucleophile may have a different priority from the leaving group. Draw the inverted product first, then assign R or S from scratch.",
+   "from": "standard"
+  },
+  {
+   "h": "How to draw it: copy the skeleton, remove the leaving group, and put the nucleophile on the same carbon with the opposite kind of bond (wedge where the leaving group was dashed, dash where it was wedged).",
+   "from": "standard"
+  },
+  {
+   "h": "{{SN2}} needs an open carbon: methyl (1) > primary (ethyl 0.033) > secondary (isopropyl 8.3 × 10<sup>-4</sup>) >>> tertiary (0, no {{SN2}}). A tertiary stereocentre does not give an inverted product.",
+   "from": "Lecture 11/05, p. 1; Lecture 11/10, Figure 7.3"
+  },
+  {
+   "h": "Good leaving groups: {{I-}}, {{Br-}}, {{Cl-}} and tosylate ({{TsO-}}). In a tosylate the bond that breaks is the <b>C-O</b> bond: the whole OTs group leaves. {{HO-}} and {{F-}} are poor leaving groups.",
+   "from": "Lecture 11/05, p. 2"
+  },
+  {
+   "h": "Contrast with {{SN1}}: a planar carbocation is attacked on either face, which gives a racemic mixture. Inversion belongs to {{SN2}} only.",
+   "from": "Lecture 11/10, p. 3"
+  }
+ ],
+ "method": [
+  "Find the leaving group and the carbon that carries it, and check that the carbon is methyl, primary or secondary (a tertiary carbon gives no SN2).",
+  "Find the atom of the nucleophile that attacks.",
+  "Copy the whole skeleton without the leaving group, leaving every other wedge and dash exactly as it was.",
+  "Attach the nucleophile to the carbon that lost the leaving group, on the opposite face: a wedge becomes a dash and a dash becomes a wedge.",
+  "On a ring, say whether the product is cis or trans. It is the opposite of the starting material.",
+  "If R or S is asked, assign it afresh on the product from the priorities of its four groups.",
+  "Write the leaving group as the by-product, with the counter-ion of the nucleophile."
+ ],
+ "pitfalls": [
+  {
+   "h": "Drawing the nucleophile on the same face the leaving group was on (retention)."
+  },
+  {
+   "h": "Drawing both enantiomers or writing racemic. That is {{SN1}}, where a planar carbocation forms."
+  },
+  {
+   "h": "Flipping a stereocentre that was not attacked. Only the carbon that carried the leaving group changes."
+  },
+  {
+   "h": "Writing S for the product only because the starting material was R, without ranking the four groups again."
+  },
+  {
+   "h": "Leaving the oxygen of a tosylate on the carbon. The C-O bond breaks and the whole OTs group leaves."
+  },
+  {
+   "h": "Drawing an inverted product at a tertiary carbon, where {{SN2}} does not happen."
+  }
+ ],
+ "links": {
+  "read": [
+   "sn2-1",
+   "sn2-2"
+  ]
+ }
+}

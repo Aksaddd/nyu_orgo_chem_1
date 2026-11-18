@@ -1,0 +1,101 @@
+{
+ "id": "mech-id",
+ "title": "Name the mechanism: SN1, SN2, E1 or E2",
+ "exam": "Q1B",
+ "points": 15,
+ "asks": "A reaction and its conditions are given. Say which mechanism operates and which species acts as the base or nucleophile.",
+ "know": [
+  {
+   "h": "<b>{{SN2}}</b> is one step: the nucleophile attacks the back of the carbon as the leaving group leaves. Rate = k[nucleophile][substrate], no intermediate, inversion.",
+   "from": "Lecture 11/03, p. 3 to 4"
+  },
+  {
+   "h": "<b>{{SN1}}</b> is stepwise: the leaving group leaves first to give a carbocation (the slow step), then a nucleophile adds. Rate = k[substrate] only.",
+   "from": "Lecture 11/10, p. 1 to 2"
+  },
+  {
+   "h": "<b>{{E1}}</b> starts from the same carbocation as {{SN1}}: a weak base, usually the solvent, removes a hydrogen from the carbon next to the positive carbon and the alkene forms.",
+   "from": "Lecture 11/10, p. 4"
+  },
+  {
+   "h": "<b>{{E2}}</b> is one step: a strong base removes a hydrogen from the carbon next to the leaving group while the leaving group leaves. Rate = k[substrate][base].",
+   "from": "Lecture 11/12, p. 1 to 2"
+  },
+  {
+   "h": "<b>Classify the carbon that carries the leaving group.</b> {{SN2}}: methyl > primary > secondary, and tertiary does not react. {{SN1}} and {{E1}}: tertiary > secondary, and primary and methyl never react this way because their carbocations are too unstable.",
+   "from": "Lecture 11/05, p. 1; Lecture 11/10, p. 2"
+  },
+  {
+   "h": "<b>Strong bases</b> have conjugate acids with {{pKa}} near 16 or above: {{HO-}} (15.7), {{CH3O-}} (15.5), {{CH3CH2O-}} (15.9), {{(CH3)3CO-}} (17) and hydride from NaH. A strong base makes the reaction bimolecular: {{E2}}, or {{SN2}} on a methyl or primary carbon.",
+   "from": "pKa table; flowchart; FA24 Exam 2, Q2B"
+  },
+  {
+   "h": "<b>tert-Butoxide is a strong base and a poor nucleophile</b> because it is bulky. It gives {{E2}} even with a primary halide. On a methyl halide it can only do {{SN2}}, because there is no hydrogen to remove.",
+   "from": "Lecture 11/05, p. 3; flowchart; FA24 Exam 2, Q5A"
+  },
+  {
+   "h": "<b>Weak bases that are good nucleophiles</b> attack carbon instead of removing a hydrogen: {{HS-}} (126,000 in the lecture table, {{pKa}} of {{H2S}} 10), {{I-}} (80,000), {{N3-}} (8,000), cyanide, and acetate (630, {{pKa}} of the acid 4). They give {{SN2}} on methyl, primary and secondary carbons.",
+   "from": "Table 7.5; pKa table; flowchart"
+  },
+  {
+   "h": "<b>Neutral water and alcohols</b> are poor nucleophiles (relative rate 1) and weak bases. With a tertiary or secondary substrate they wait for the carbocation: the solvent is then the nucleophile ({{SN1}}) or the base ({{E1}}). There is no hydroxide or alkoxide in the flask unless it was added.",
+   "from": "Table 7.5; FA24 Exam 2, Q1B"
+  },
+  {
+   "h": "<b>Solvents.</b> Polar protic solvents are hydrogen-bond donors (water, methanol, ethanol, acetic acid) and favor {{SN1}} and {{E1}}. Polar aprotic solvents (DMSO, DMF, acetone, acetonitrile) favor {{SN2}}.",
+   "from": "Lecture 11/10, p. 3 and 5; solvents table"
+  },
+  {
+   "h": "<b>The flowchart.</b> Methyl: {{SN2}}. Primary: {{SN2}}, except {{E2}} with a bulky strong base. Secondary: strong base gives {{E2}}; a weak base that is a fair nucleophile in a polar aprotic solvent gives {{SN2}}; a weak base and poor nucleophile in a polar protic solvent gives {{SN1}} and {{E1}}. Tertiary: strong base gives {{E2}}; otherwise {{SN1}} and {{E1}}.",
+   "from": "Flowchart handout"
+  },
+  {
+   "h": "<b>Heat favors elimination.</b> tert-Butyl bromide in water gives the alcohol by {{SN1}} at lower temperature and more alkene by {{E1}} at high temperature, from the same carbocation.",
+   "from": "Lecture 11/10, p. 4; flowchart"
+  },
+  {
+   "h": "<b>A leaving group on a double-bond carbon (vinyl) does neither {{SN1}} nor {{SN2}}.</b> An allyl substrate does both.",
+   "from": "Lecture 11/10, p. 1 to 2"
+  },
+  {
+   "h": "<b>Skill: read the role from the product.</b> A species that ends up bonded to the carbon acted as the nucleophile. A species that ends up carrying one more hydrogen, next to a new C=C, acted as the base.",
+   "from": "standard"
+  }
+ ],
+ "method": [
+  "Find the leaving group and classify its carbon: methyl, primary, secondary or tertiary (and check that the carbon is not part of a double bond).",
+  "Name the reagent: a strong base (small or bulky), a weak base that is a good nucleophile, or nothing but a neutral solvent.",
+  "Name the solvent: polar protic or polar aprotic. It matters most for a secondary carbon.",
+  "Walk the flowchart: a strong base means a bimolecular reaction ({{E2}}, or {{SN2}} on methyl and unhindered primary); a neutral solvent alone on a tertiary or secondary carbon means a carbocation ({{SN1}} and {{E1}}).",
+  "Look at the product asked about and the temperature: a substitution product comes from {{SN1}} or {{SN2}}, an alkene from {{E1}} or {{E2}}, and heat raises the share of elimination.",
+  "State the role of each species: the one that bonds to carbon is the nucleophile, the one that takes the hydrogen is the base, and it must be a species that is really in the flask."
+ ],
+ "pitfalls": [
+  {
+   "h": "Writing hydroxide or an alkoxide as the base when the flask holds only water or an alcohol. In a solvolysis the neutral solvent is the base or the nucleophile."
+  },
+  {
+   "h": "Calling an elimination {{E2}} when there is no strong base. With only a weak base the alkene comes from the carbocation: {{E1}}."
+  },
+  {
+   "h": "Choosing {{SN1}} for a tertiary halide in water when NaOH has been added. A strong base gives {{E2}}, and the alcohol is not formed."
+  },
+  {
+   "h": "Choosing {{SN1}} or {{E1}} for a primary or methyl halide because the solvent is protic. Those carbocations never form."
+  },
+  {
+   "h": "Treating tert-butoxide as a nucleophile on a primary halide, or expecting it to eliminate a methyl halide that has no hydrogen on a neighbouring carbon."
+  },
+  {
+   "h": "Sending a good nucleophile that is a weak base ({{HS-}}, {{N3-}}, acetate) down the {{E2}} path just because it has a negative charge."
+  }
+ ],
+ "links": {
+  "read": [
+   "choose",
+   "sn1-e1",
+   "e2",
+   "sn2-2"
+  ]
+ }
+}

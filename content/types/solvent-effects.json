@@ -1,0 +1,88 @@
+{
+ "id": "solvent-effects",
+ "title": "How the solvent changes the rate",
+ "exam": "Lecture 11/05, 11/10",
+ "asks": "A reaction is run in two solvents. Say which is faster and why, in terms of how the solvent treats the starting materials and the transition state.",
+ "know": [
+  {
+   "h": "The rate is set by {{Ea}}, the gap between the starting materials and the transition state. A solvent changes the rate only when it stabilizes one of these two more than the other.",
+   "from": "Lecture 11/05, p. 3 to 4"
+  },
+  {
+   "h": "<b>Solvation is stabilization.</b> Polar solvent molecules surround a charge and lower its energy. The more charge a species has, and the more concentrated it is, the more a polar solvent stabilizes it.",
+   "from": "Lecture notes, Table 6.8; Lecture 11/05, p. 3"
+  },
+  {
+   "h": "<b>The method:</b> write the charges on the starting materials, sketch the transition state with its partial charges, and compare. More charge in the transition state than at the start: a more polar solvent is faster. Less charge (or the same charge spread out): a more polar solvent is slower.",
+   "from": "Lecture 11/05, p. 3 to 4"
+  },
+  {
+   "h": "<b>Lecture case 1, neutral to charged.</b> Triethylamine and iodoethane are neutral. The transition state has δ+ on N and δ- on I. The more polar solvent (50:50 {{H2O}}:ethanol against 25:75) stabilizes the transition state more than the starting materials, lowers {{Ea}}, and is <b>faster</b>.\n[[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC.[I-]]]",
+   "from": "Lecture 11/05, p. 3"
+  },
+  {
+   "h": "<b>Lecture case 2, charged to neutral.</b> {{HO-}} and {{(CH3)3S+}} are both fully charged and well solvated. In the transition state [HO<sup>δ-</sup>···{{CH3}}···S<sup>δ+</sup>] the charge is being destroyed. The more polar solvent stabilizes the starting materials more than the transition state, raises {{Ea}}, and is <b>slower</b>.\n[[rxn:[OH-] + C[S+](C)C>>CO + CSC]]",
+   "from": "Lecture 11/05, p. 4"
+  },
+  {
+   "h": "<b>{{SN1}}:</b> increase the polarity of the solvent and the rate goes up. The substrate is neutral, and the transition state of the rate-determining step has δ+ on carbon and δ- on the leaving group, so a polar solvent stabilizes it more than the starting compound.",
+   "from": "Lecture 11/10, p. 3"
+  },
+  {
+   "h": "<b>Solvent types.</b> Polar protic solvents are hydrogen-bond donors: water, methanol, ethanol, acetic acid. Polar aprotic solvents have no O-H or N-H: DMSO, DMF, acetone, acetonitrile. Hexane and pentane are nonpolar.",
+   "from": "Lecture 11/10, p. 3; solvents table"
+  },
+  {
+   "h": "In a water and ethanol mixture, more water means a more polar solvent.",
+   "from": "Lecture 11/05, p. 3"
+  },
+  {
+   "h": "<b>Anionic nucleophiles.</b> A protic solvent hydrogen-bonds to an anion and holds it in a cage. That lowers the energy of the starting nucleophile more than it lowers the transition state, where the charge is spread over two atoms, so {{SN2}} is slower. A polar aprotic solvent dissolves the salt but cannot hydrogen-bond to the anion, so the nucleophile is free and {{SN2}} is faster.",
+   "from": "Lecture 11/10, p. 5 and flowchart (polar protic solvates negative ions); standard"
+  },
+  {
+   "h": "The course summary: {{SN2}} is favoured by a <b>polar aprotic</b> solvent, {{SN1}} and {{E1}} by a <b>polar protic</b> solvent.",
+   "from": "Lecture 11/10, p. 5"
+  },
+  {
+   "h": "A polar solvent stabilizes <b>both</b> the starting materials and the transition state when both carry charge. The answer is about which is stabilized more.",
+   "from": "Lecture 11/05, p. 4"
+  },
+  {
+   "h": "Be able to sketch the two energy curves: for case 1 the top of the hill drops in the more polar solvent, for case 2 the starting level drops more than the top.",
+   "from": "Lecture 11/05, p. 3 to 4"
+  }
+ ],
+ "method": [
+  "Write the charge on each starting material: neutral, a full plus or a full minus.",
+  "Sketch the transition state of the rate-determining step and put the partial charges on it.",
+  "Decide what happens to charge on the way up: created, destroyed, or spread over more atoms.",
+  "Decide which the more polar solvent stabilizes more, the starting materials or the transition state.",
+  "Turn that into the barrier: transition state stabilized more means a lower Ea and a faster reaction, starting materials stabilized more means a higher Ea and a slower reaction.",
+  "If the nucleophile is an anion, also ask whether the solvent is protic (hydrogen bonds hold the anion back) or aprotic (the anion is free)."
+ ],
+ "pitfalls": [
+  {
+   "h": "Saying that a more polar solvent always makes a reaction faster. It depends on where the charge is."
+  },
+  {
+   "h": "Comparing the starting materials with the products. The rate depends on the transition state."
+  },
+  {
+   "h": "Calling acetone, DMSO or DMF protic because they are polar. Protic means an O-H or N-H that can donate a hydrogen bond."
+  },
+  {
+   "h": "Saying a polar solvent destabilizes the transition state. It stabilizes both levels, one more than the other."
+  },
+  {
+   "h": "Choosing a protic solvent for an {{SN2}} reaction with an anionic nucleophile because the salt dissolves well in it."
+  }
+ ],
+ "links": {
+  "read": [
+   "sn2-2",
+   "sn1-e1",
+   "choose"
+  ]
+ }
+}

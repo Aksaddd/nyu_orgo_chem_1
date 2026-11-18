@@ -1,0 +1,280 @@
+[
+  {
+    "id": "sn2-isopropoxide-bromoethane",
+    "title": "SN2: isopropoxide and bromoethane (the ether route that works)",
+    "class": "SN2",
+    "types": ["williamson-why"],
+    "overall": "[[rxn:CC(C)[O-] + CCBr>>CCOC(C)C + [Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:6][CH:5]([CH3:7])[O-:1].[CH2:2]([CH3:3])[Br:4]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 4]}, "to": {"atom": 4}}
+        ],
+        "say": "A lone pair on the alkoxide oxygen attacks the {{CH2}} carbon of bromoethane from the side opposite bromine. At the same time the C-Br electrons leave with bromine.",
+        "why": "The carbon that carries bromine is primary: only one small {{CH3}} group stands in the way, so backside attack is easy. The branching is on the alkoxide, where it does little harm, because oxygen reaches the carbon with its lone pair, not with its alkyl groups.",
+        "hints": ["Which atom has a lone pair and a negative charge to give?", "The electrophile is the carbon bonded to bromine. Attack it from the back.", "Two arrows: O lone pair to the {{CH2}} carbon, then the C-Br bond to Br."]
+      }
+    ],
+    "product": "[CH3:6][CH:5]([CH3:7])[O:1][CH2:2][CH3:3].[Br-:4]",
+    "takeaway": "In a Williamson ether synthesis the halide should be methyl or primary. Put the branched group in the alkoxide."
+  },
+  {
+    "id": "e2-2-bromopropane-ethoxide",
+    "title": "E2: 2-bromopropane and ethoxide (the ether route that fails)",
+    "class": "E2",
+    "types": ["williamson-why", "route-choice"],
+    "overall": "[[rxn:CC[O-] + CC(C)Br>>CC=C + CCO + [Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:8][CH2:7][O-:1].[H:2][CH2:3][CH:4]([CH3:6])[Br:5]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"bond": [3, 4]}},
+          {"from": {"bond": [4, 5]}, "to": {"atom": 5}}
+        ],
+        "say": "Ethoxide takes a hydrogen from a {{CH3}} group next to the C-Br carbon. The C-H electrons become the pi bond of propene and bromide leaves, all at once.",
+        "why": "Ethoxide is a strong base (ethanol has {{pKa}} about 16) and the carbon that carries bromine is secondary. Reaching the back of that carbon is slow, and six beta hydrogens sit on the outside of the molecule, so the base removes one of them instead. The hydrogen and the bromine are anti-periplanar.",
+        "hints": ["A strong base meets a hindered carbon. What does a base take?", "Pick a hydrogen on a carbon next to the C-Br carbon.", "Three arrows: O lone pair to H, the C-H bond to C=C, the C-Br bond to Br."]
+      }
+    ],
+    "product": "[CH3:8][CH2:7][O:1][H:2].[CH2:3]=[CH:4][CH3:6].[Br-:5]",
+    "takeaway": "A strong base with a secondary halide gives mostly the alkene. The base ends up as its conjugate acid, not as part of an ether."
+  },
+  {
+    "id": "sn2-phenoxide-iodomethane",
+    "title": "SN2: phenoxide and iodomethane",
+    "class": "SN2",
+    "types": ["williamson-why"],
+    "overall": "[[rxn:[O-]c1ccccc1 + CI>>COc1ccccc1 + [I-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[O-:1][c:5]1[cH:6][cH:7][cH:8][cH:9][cH:10]1.[CH3:2][I:3]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"atom": 3}}
+        ],
+        "say": "A lone pair on the phenoxide oxygen attacks the methyl carbon from the side opposite iodine, and iodide leaves.",
+        "why": "The new bond is made at the {{sp3}} methyl carbon, the least hindered electrophile there is, and iodide is an excellent leaving group. The ring carbon is never attacked, so it does not matter that an {{sp2}} carbon cannot do {{SN2}}: the ring arrives already bonded to oxygen.",
+        "hints": ["Which piece carries the negative charge?", "The carbon bonded to iodine is the electrophile.", "Two arrows: O lone pair to {{CH3}}, then the C-I bond to I."]
+      }
+    ],
+    "product": "[CH3:2][O:1][c:5]1[cH:6][cH:7][cH:8][cH:9][cH:10]1.[I-:3]",
+    "takeaway": "To make an aryl ether, the ring must come in as the nucleophile (ArO-) and the alkyl group as the halide."
+  },
+  {
+    "id": "sn2-cyclohexanolate-bromomethane",
+    "title": "SN2: sodium cyclohexanolate and bromomethane in DMSO",
+    "class": "SN2",
+    "types": ["route-choice"],
+    "overall": "[[rxn:[O-]C1CCCCC1 + CBr>DMSO>COC1CCCCC1 + [Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[O-:1][CH:4]1[CH2:5][CH2:6][CH2:7][CH2:8][CH2:9]1.[CH3:2][Br:3]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"atom": 3}}
+        ],
+        "say": "The alkoxide oxygen attacks the methyl carbon from the back and bromide leaves.",
+        "why": "Bromomethane can only do {{SN2}}: its carbon is unhindered and it has no beta hydrogen, so there is nothing for the base to remove. DMSO is polar aprotic: it leaves the alkoxide unsolvated and very nucleophilic.",
+        "hints": ["The ring carries the nucleophile here. Which atom attacks?", "Two arrows: O lone pair to {{CH3}}, then the C-Br bond to Br."]
+      }
+    ],
+    "product": "[CH3:2][O:1][CH:4]1[CH2:5][CH2:6][CH2:7][CH2:8][CH2:9]1.[Br-:3]",
+    "takeaway": "A methyl halide has no beta hydrogen, so even a strong base can only substitute."
+  },
+  {
+    "id": "e2-bromocyclohexane-methoxide",
+    "title": "E2: bromocyclohexane and methoxide in methanol",
+    "class": "E2",
+    "types": ["route-choice"],
+    "overall": "[[rxn:C[O-] + BrC1CCCCC1>CH3OH>C1=CCCCC1 + CO + [Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:10][O-:1].[H:2][CH:3]1[CH:4]([Br:5])[CH2:6][CH2:7][CH2:8][CH2:9]1",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"bond": [3, 4]}},
+          {"from": {"bond": [4, 5]}, "to": {"atom": 5}}
+        ],
+        "say": "Methoxide takes an axial hydrogen from the carbon next to the C-Br carbon. The C-H electrons become the C=C of cyclohexene and bromide leaves.",
+        "why": "The halide is secondary and methoxide is a strong base (methanol has {{pKa}} 15.5), so removing a beta hydrogen is faster than reaching the back of the ring carbon. On a ring the hydrogen and the bromine must both be axial, one up and one down, to be anti-periplanar.",
+        "hints": ["Secondary halide, strong base: which mechanism wins?", "Take a hydrogen from a ring carbon next to the one that carries bromine.", "Three arrows: O lone pair to H, the C-H bond to C=C, the C-Br bond to Br."]
+      }
+    ],
+    "product": "[CH3:10][O:1][H:2].[CH:3]1=[CH:4][CH2:6][CH2:7][CH2:8][CH2:9]1.[Br-:5]",
+    "takeaway": "A secondary halide with an alkoxide gives mostly the alkene, so this is the wrong way round for an ether."
+  },
+  {
+    "id": "halohydrin-epoxide-chloropropanol",
+    "title": "Halohydrin to epoxide: 1-chloropropan-2-ol and hydroxide",
+    "class": "SN2",
+    "types": ["mech-intramolecular"],
+    "overall": "[[rxn:CC(O)CCl + [OH-]>>CC1CO1 + O + [Cl-]]]",
+    "steps": [
+      {
+        "name": "Hydroxide removes the O-H proton",
+        "species": "[OH-:1].[H:2][O:3][CH:4]([CH3:7])[CH2:5][Cl:6]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"atom": 3}}
+        ],
+        "say": "A lone pair on hydroxide takes the hydrogen of the O-H group. The O-H electrons stay on oxygen, which becomes an alkoxide.",
+        "why": "This is an acid and base step between two oxygens: water has {{pKa}} 15.7 and an alcohol about 16, so K is close to 1 and some alkoxide is always present. The alkoxide is a far better nucleophile than the neutral alcohol.",
+        "hints": ["The product has no O-H. What must happen to that hydrogen first?", "Two arrows: hydroxide lone pair to H, then the O-H bond onto oxygen."]
+      },
+      {
+        "name": "The alkoxide displaces chloride next door",
+        "species": "[O-:3][CH:4]([CH3:7])[CH2:5][Cl:6]",
+        "arrows": [
+          {"from": {"lp": 3}, "to": {"bond": [3, 5]}},
+          {"from": {"bond": [5, 6]}, "to": {"atom": 6}}
+        ],
+        "say": "The alkoxide oxygen attacks the neighbouring {{CH2}} carbon from the side opposite chlorine. Chloride leaves and the three-membered ring closes.",
+        "why": "The nucleophile and the electrophile are in the same molecule, one carbon apart, so they meet constantly: this intramolecular {{SN2}} is fast even though it makes a strained ring. The carbon attacked is primary and chloride is a good leaving group.",
+        "hints": ["Which carbon carries the leaving group?", "The oxygen attacks from the back, so O and Cl must be anti to each other.", "Two arrows: {{O-}} lone pair to the C-Cl carbon, then the C-Cl bond to Cl."]
+      }
+    ],
+    "product": "[O:3]1[CH:4]([CH3:7])[CH2:5]1.[Cl-:6]",
+    "takeaway": "OH and a halogen on neighbouring carbons plus a base: deprotonate, then close the epoxide by an internal backside attack."
+  },
+  {
+    "id": "thf-from-4-bromobutanol-hydride",
+    "title": "A five-membered ring: 4-bromobutan-1-ol and sodium hydride",
+    "class": "SN2",
+    "types": ["mech-intramolecular"],
+    "overall": "[[rxn:OCCCCBr + [Na+].[H-]>>C1CCOC1 + [H][H] + [Na+].[Br-]]]",
+    "steps": [
+      {
+        "name": "Hydride removes the O-H proton",
+        "species": "[H-:1].[H:2][O:3][CH2:4][CH2:5][CH2:6][CH2:7][Br:8]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 3]}, "to": {"atom": 3}}
+        ],
+        "say": "The electron pair of hydride takes the O-H hydrogen and makes {{H2}} gas. The O-H electrons stay on oxygen: an alkoxide.",
+        "why": "Hydride is a very strong base and the O-H (about {{pKa}} 16) is by far the most acidic hydrogen in the molecule. The {{H2}} bubbles away, so this step cannot go back.",
+        "hints": ["What is the most acidic hydrogen in the molecule?", "Two arrows: the hydride pair to H, then the O-H bond onto oxygen."]
+      },
+      {
+        "name": "The alkoxide closes the ring",
+        "species": "[O-:3][CH2:4][CH2:5][CH2:6][CH2:7][Br:8]",
+        "arrows": [
+          {"from": {"lp": 3}, "to": {"bond": [3, 7]}},
+          {"from": {"bond": [7, 8]}, "to": {"atom": 8}}
+        ],
+        "say": "The chain curls round and the alkoxide oxygen attacks the carbon that carries bromine from the back. Bromide leaves and a five-membered ring is formed.",
+        "why": "Count the ring: the oxygen plus four carbons is five atoms. Five- and six-membered rings have almost no strain and their two ends are close together, so the internal {{SN2}} beats any reaction between two separate molecules. The carbon attacked is primary.",
+        "hints": ["Which atom is the nucleophile now, and which carbon is the electrophile?", "Count the atoms that will be in the ring: O plus the four carbons.", "Two arrows: {{O-}} lone pair to the C-Br carbon, then the C-Br bond to Br."]
+      }
+    ],
+    "product": "[O:3]1[CH2:4][CH2:5][CH2:6][CH2:7]1.[Br-:8]",
+    "takeaway": "A nucleophile and a leaving group four or five atoms apart in one chain close a five- or six-membered ring."
+  },
+  {
+    "id": "piperidine-from-5-bromopentylamine",
+    "title": "A six-membered ring: 5-bromopentan-1-amine, then hydroxide",
+    "class": "SN2",
+    "types": ["mech-intramolecular"],
+    "overall": "[[rxn:NCCCCCBr>;then NaOH>C1CCNCC1]]",
+    "steps": [
+      {
+        "name": "The amine nitrogen closes the ring",
+        "species": "[H:8][NH:1][CH2:2][CH2:3][CH2:4][CH2:5][CH2:6][Br:7]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 6]}},
+          {"from": {"bond": [6, 7]}, "to": {"atom": 7}}
+        ],
+        "say": "The lone pair on nitrogen attacks the carbon that carries bromine from the back. Bromide leaves and a six-membered ring closes. Nitrogen now has four bonds and a positive charge.",
+        "why": "A neutral amine is already a good nucleophile (ammonia is 8,000 on the lecture scale), so no base is needed first. The nitrogen plus five carbons makes a six-membered ring, which is strain free, and the carbon attacked is primary.",
+        "hints": ["There is no base yet. Which atom has a lone pair it can use?", "Count the ring: N plus five carbons.", "Two arrows: N lone pair to the C-Br carbon, then the C-Br bond to Br."]
+      },
+      {
+        "name": "Hydroxide removes the extra N-H proton",
+        "adds": ["[OH-]"],
+        "species": "[OH-:9].[H:8][NH+:1]1[CH2:2][CH2:3][CH2:4][CH2:5][CH2:6]1",
+        "arrows": [
+          {"from": {"lp": 9}, "to": {"bond": [9, 8]}},
+          {"from": {"bond": [8, 1]}, "to": {"atom": 1}}
+        ],
+        "say": "A lone pair on hydroxide takes one N-H hydrogen. The N-H electrons go back onto nitrogen as its lone pair, and the charge is gone.",
+        "why": "A neutral nucleophile gives a positively charged product, so a proton has to come off at the end. An ammonium ion has {{pKa}} about 10.5 and water 15.7, so hydroxide removes the proton completely.",
+        "hints": ["Nitrogen has four bonds and a positive charge. What does it need to lose?", "Two arrows: hydroxide lone pair to H, then the N-H bond onto nitrogen."]
+      }
+    ],
+    "product": "[H:8][OH:9].[NH:1]1[CH2:2][CH2:3][CH2:4][CH2:5][CH2:6]1",
+    "takeaway": "A neutral internal nucleophile (N-H, O-H) attacks first and loses its proton afterwards. An anionic one is made first by a base."
+  },
+  {
+    "id": "epoxide-opening-thf-methoxide",
+    "title": "Epoxide opening, then an intramolecular SN2 that closes a five-membered ring",
+    "class": "SN2",
+    "types": ["mech-intramolecular"],
+    "overall": "[[rxn:CC(Cl)CCC1CO1 + C[O-]>CH3OH>COCC1CCC(C)O1 + [Cl-]]]",
+    "steps": [
+      {
+        "name": "Methoxide opens the epoxide at its CH2",
+        "species": "[CH3:1][O-:2].[CH2:3]1[O:4][CH:5]1[CH2:6][CH2:7][CH:8]([CH3:10])[Cl:9]",
+        "arrows": [
+          {"from": {"lp": 2}, "to": {"bond": [2, 3]}},
+          {"from": {"bond": [3, 4]}, "to": {"atom": 4}}
+        ],
+        "say": "A lone pair on methoxide attacks the {{CH2}} carbon of the epoxide from the side opposite the ring oxygen. The C-O ring bond breaks onto oxygen, which becomes an alkoxide.",
+        "why": "The product has {{OCH3}} on the end {{CH2}}, so that is where methoxide attacked. The epoxide {{CH2}} is the least hindered electrophilic carbon, and the strain of the three-membered ring lets an alkoxide leave, which it normally cannot do.",
+        "hints": ["Look at the product first: which carbon is bonded to {{OCH3}}?", "The leaving group of this {{SN2}} step is the ring oxygen. It stays attached to the other ring carbon.", "Two arrows: methoxide lone pair to the ring {{CH2}}, then that C-O bond onto oxygen."]
+      },
+      {
+        "name": "The alkoxide displaces chloride and closes the ring",
+        "species": "[CH3:1][O:2][CH2:3][CH:5]([O-:4])[CH2:6][CH2:7][CH:8]([CH3:10])[Cl:9]",
+        "arrows": [
+          {"from": {"lp": 4}, "to": {"bond": [4, 8]}},
+          {"from": {"bond": [8, 9]}, "to": {"atom": 9}}
+        ],
+        "say": "The new alkoxide oxygen attacks the carbon that carries chlorine, three carbons along the chain, from the back. Chloride leaves and a five-membered ring closes.",
+        "why": "The ring oxygen of the product is bonded to the old epoxide CH and to the old C-Cl carbon, so those two must be joined through oxygen. O plus four carbons is a five-membered ring: strain free and quick to close, because the two ends are held near each other.",
+        "hints": ["In the product, which two carbons is the ring oxygen bonded to?", "Count the ring atoms: the O and the four carbons from the old epoxide CH to the C-Cl carbon.", "Two arrows: {{O-}} lone pair to the C-Cl carbon, then the C-Cl bond to Cl."]
+      }
+    ],
+    "product": "[CH3:1][O:2][CH2:3][CH:5]1[O:4][CH:8]([CH3:10])[CH2:7][CH2:6]1.[Cl-:9]",
+    "takeaway": "Opening an epoxide makes an alkoxide inside the molecule. If a leaving group is within reach, that alkoxide closes a new ring."
+  },
+  {
+    "id": "thiolane-sulfide-dibromobutane",
+    "title": "Two SN2 reactions on one sulfur: sulfide and 1,4-dibromobutane",
+    "class": "SN2",
+    "types": ["products-from-formula", "mech-intramolecular"],
+    "overall": "[[rxn:BrCCCCBr + [Na+].[Na+].[S-2]>>C1CCSC1 + [Na+].[Br-] + [Na+].[Br-]]]",
+    "steps": [
+      {
+        "name": "Sulfide displaces the first bromide",
+        "species": "[S-2:1].[CH2:2]([Br:6])[CH2:3][CH2:4][CH2:5][Br:7]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 2]}},
+          {"from": {"bond": [2, 6]}, "to": {"atom": 6}}
+        ],
+        "say": "A lone pair on sulfide attacks one end carbon from the back and that bromide leaves. Sulfur still carries one negative charge: it is now a thiolate.",
+        "why": "Sulfur anions are excellent nucleophiles ({{HS-}} is 126,000 on the lecture scale) and a primary bromide is an ideal {{SN2}} substrate. Sulfide started with two negative charges, so after one substitution it can attack again.",
+        "hints": ["Sulfide has two negative charges. How many bonds can it make?", "Two arrows: S lone pair to an end carbon, then that C-Br bond to Br."]
+      },
+      {
+        "name": "The thiolate closes the ring",
+        "species": "[S-:1][CH2:2][CH2:3][CH2:4][CH2:5][Br:7]",
+        "arrows": [
+          {"from": {"lp": 1}, "to": {"bond": [1, 5]}},
+          {"from": {"bond": [5, 7]}, "to": {"atom": 7}}
+        ],
+        "say": "The thiolate sulfur attacks the other end carbon of its own chain from the back. The second bromide leaves and a five-membered ring closes.",
+        "why": "The formula {{C4H8S}} has one sulfur, four carbons and no bromine, so both C-Br carbons must end up on the same sulfur. S plus four carbons is a five-membered ring, which closes faster than the thiolate can find a second molecule of dibromide.",
+        "hints": ["The product has no bromine and only one sulfur. Where must the second C-S bond go?", "Two arrows: {{S-}} lone pair to the other C-Br carbon, then the C-Br bond to Br."]
+      }
+    ],
+    "product": "[S:1]1[CH2:2][CH2:3][CH2:4][CH2:5]1.[Br-:7]",
+    "takeaway": "A nucleophile with two negative charges can substitute twice. If both leaving groups are in one chain, the second substitution closes a ring."
+  }
+]

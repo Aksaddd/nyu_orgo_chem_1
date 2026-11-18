@@ -14,7 +14,7 @@
   const get = id => ((ORGO.data || {}).mechs || {})[id] || null;
   const ready = () => !!(ORGO.mol && ORGO.mol.stage);
   const titled = (tag, cls, text) => { const e = el(tag, { class: cls }); e.innerHTML = nice(text); return e };
-  const talk = s => [el("p", { class: "mech-say" }, ORGO.html(s.say || "")), s.why ? el("div", { class: "callout info mech-why" }, el("b", {}, "Why. "), ORGO.html(s.why)) : null];
+  const talk = s => [el("p", { class: "mech-say" }, ORGO.html(s.say || "")), s.why ? el("div", { class: "panel mech-why" }, el("b", {}, "Why. "), ORGO.html(s.why)) : null];
   const joins = s => s.adds && s.adds.length ? el("p", { class: "small muted mech-adds" }, ORGO.html("Joins in this step: " + s.adds.map(x => "[[mol:" + x + "]]").join(" and "))) : null;
 
   function mount(host, id, o = {}) {
@@ -88,7 +88,7 @@
       const task = el("p", { class: "mech-task" }, mode === "complete" ? (lone ? "This step has one arrow. Draw it." : "One arrow of this step is missing. Add it.") + how : "Draw every arrow of this step, then press Check." + how);
       const ctl = put(box, { species: s.species, arrows: givenArrows, mode: "input" });
       const fb = el("div", { class: "mech-feedback", role: "status", "aria-live": "polite" }), hintBox = el("div", { class: "mech-hints", "aria-live": "polite" }), hints = s.hints || [];
-      const drawHints = () => { hintBox.textContent = ""; hints.slice(0, r.hints).forEach((h, k) => hintBox.appendChild(el("p", { class: "callout info" }, el("b", {}, "Hint " + (k + 1) + " of " + hints.length + ". "), ORGO.html(h)))) };
+      const drawHints = () => { hintBox.textContent = ""; hints.slice(0, r.hints).forEach((h, k) => hintBox.appendChild(el("p", { class: "panel mech-hint" }, el("b", {}, "Hint " + (k + 1) + " of " + hints.length + ". "), ORGO.html(h)))) };
       const hintBtn = button("Hint", () => { if (r.hints < hints.length) { r.hints++; if (r.hints === hints.length) r.last = true; drawHints() } hintBtn.disabled = r.hints >= hints.length });
       const showBtn = button("Show me", () => { r.done = true; r.helped = true; r.score = 0; render("step") }, "ghost");
       const offer = () => { hintBtn.hidden = !(r.fails >= 1 && hints.length); hintBtn.disabled = r.hints >= hints.length; showBtn.hidden = r.fails < 2 };
@@ -144,7 +144,7 @@
         : mode === "paper" ? "You ticked " + ticks + " of " + plural(n, "step") + "." + (ticks < n ? " Redraw the steps you missed before you move on." : "")
         : "You drew " + own + " of " + plural(n, "step") + " on your own." + (own < n ? " Steps that were shown do not count yet, so come back to this one." : "");
       const row = el("div", { class: "btn-row" }, button("Again", () => { reset(); render("step") }), HARDER[mode] ? button(HARDER[mode][1], () => setMode(HARDER[mode][0]), "primary") : null);
-      body.append(head, box, m.takeaway ? el("div", { class: "callout info mech-takeaway" }, el("b", {}, "Takeaway. "), ORGO.html(m.takeaway)) : "", el("p", { class: "mech-sum", role: "status" }, sum), row);
+      body.append(head, box, m.takeaway ? el("div", { class: "panel mech-takeaway" }, el("b", {}, "Takeaway. "), ORGO.html(m.takeaway)) : "", el("p", { class: "mech-sum", role: "status" }, sum), row);
       return head;
     }
 

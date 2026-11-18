@@ -1,0 +1,714 @@
+[
+ {
+  "id": "sub-vs-elim-001",
+  "type": "sub-vs-elim",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site, after FA24 Exam 2, Q7A",
+  "stem": "Bromocyclohexane gives mostly a substitution product with NaSH in DMF, but mostly an elimination product with {{NaOCH3}} in methanol. Explain, naming the reactions and drawing the products.\n[[mol:BrC1CCCCC1]]",
+  "pts": 50,
+  "time": 8,
+  "model": "Bromocyclohexane is a secondary halide, so {{SN2}} and {{E2}} compete and the reagent decides.<br>{{HS-}} is a weak base (its conjugate acid {{H2S}} has {{pKa}} 10) but an excellent nucleophile, so it attacks the carbon: mostly <b>{{SN2}}</b>.\n[[rxn:BrC1CCCCC1>NaSH;DMF>SC1CCCCC1]]\n{{CH3O-}} is a strong base (its conjugate acid {{CH3OH}} has {{pKa}} 15.5). It removes a hydrogen from the next carbon faster than it can reach the hindered secondary carbon: mostly <b>{{E2}}</b>, with a little {{SN2}} ether.\n[[rxn:BrC1CCCCC1>NaOCH3;CH3OH>C1=CCCCC1]]\nThe stronger the base, the more elimination.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Secondary halide: both substitution and elimination are possible"
+   },
+   {
+    "pts": 15,
+    "h": "{{HS-}} is a weak base and a good nucleophile: {{SN2}} named, thiol drawn"
+   },
+   {
+    "pts": 15,
+    "h": "{{CH3O-}} is a strong base: {{E2}} named, cyclohexene drawn"
+   },
+   {
+    "pts": 10,
+    "h": "Base strength tied to the {{pKa}} of the conjugate acids (10 against 15.5)"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "The carbon that carries Br is secondary. On a secondary carbon {{SN2}} is slow but possible, and {{E2}} is possible too, so they compete.",
+     "ask": {
+      "q": "Why is a secondary halide the class where the reagent matters most?",
+      "a": "Methyl and primary favor SN2, tertiary cannot do SN2 at all. Secondary sits in between."
+     }
+    },
+    {
+     "t": "Say what changes",
+     "h": "The substrate is the same. Only the reagent changes: {{HS-}} or {{CH3O-}}."
+    },
+    {
+     "t": "Compare the bases",
+     "h": "{{H2S}} has {{pKa}} 10 (lecture value), methanol 15.5. Methoxide is the stronger base by more than five powers of ten.",
+     "ask": {
+      "q": "Which is the stronger base, and how do you know?",
+      "a": "Methoxide: its conjugate acid has the higher pKa."
+     }
+    },
+    {
+     "t": "Compare the nucleophiles",
+     "h": "{{HS-}} is at the top of the lecture's table (126,000). So {{HS-}} is the better nucleophile and the weaker base: it attacks carbon."
+    },
+    {
+     "t": "Name the reactions",
+     "h": "{{HS-}}: {{SN2}}, giving cyclohexanethiol. Methoxide: {{E2}}, giving cyclohexene, with a little ether by {{SN2}}.",
+     "ask": {
+      "q": "Why not SN1 and E1?",
+      "a": "Both reagents are anions that react with the halide before it can ionize."
+     }
+    },
+    {
+     "t": "Write the link",
+     "h": "Stronger base, more elimination. Better nucleophile and weaker base, more substitution."
+    }
+   ],
+   "answer": "{{HS-}}: weak base, good nucleophile, {{SN2}}. {{CH3O-}}: strong base, {{E2}}.",
+   "rule": "On a secondary halide a stronger base gives more E2, and a weak base that is a good nucleophile gives SN2."
+  },
+  "note": "Lecture value for the pKa of H2S is 10. Most tables give about 7. The argument is the same with either number."
+ },
+ {
+  "id": "sub-vs-elim-002",
+  "type": "sub-vs-elim",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Sodium ethoxide in ethanol reacts with 1-bromobutane to give mostly an ether, but with 2-bromo-2-methylpropane it gives only an alkene. Explain, naming the reactions and drawing the products.",
+  "pts": 40,
+  "time": 7,
+  "model": "The reagent is the same strong, small base. The substrate changes.<br>1-Bromobutane is primary and unhindered: ethoxide can reach the back of the carbon, so the main reaction is <b>{{SN2}}</b>.\n[[rxn:CCCCBr>NaOCH2CH3;CH3CH2OH>CCCCOCC]]\n2-Bromo-2-methylpropane is tertiary: three methyl groups block the back of the carbon, so {{SN2}} is impossible (relative rate 0). Ethoxide is a strong base, so it removes a hydrogen from a methyl group instead: <b>{{E2}}</b>.\n[[rxn:CC(C)(C)Br>NaOCH2CH3;CH3CH2OH>CC(C)=C]]\nMore branching at the carbon with the leaving group means less substitution and more elimination.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Primary carbon is unhindered: {{SN2}} named"
+   },
+   {
+    "pts": 5,
+    "h": "Ether product drawn"
+   },
+   {
+    "pts": 10,
+    "h": "Tertiary carbon cannot undergo {{SN2}}: steric hindrance"
+   },
+   {
+    "pts": 10,
+    "h": "Ethoxide is a strong base: {{E2}} named"
+   },
+   {
+    "pts": 5,
+    "h": "Alkene product drawn"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Say what changes",
+     "h": "The reagent is the same in both experiments. The substrate goes from primary to tertiary.",
+     "ask": {
+      "q": "What kind of reagent is ethoxide?",
+      "a": "A strong base that is small, so it can also act as a nucleophile."
+     }
+    },
+    {
+     "t": "Primary substrate",
+     "h": "The flowchart for a primary halide with a non-bulky strong base: {{SN2}}. The lecture's relative {{SN2}} rate for ethyl is 0.033."
+    },
+    {
+     "t": "Tertiary substrate",
+     "h": "The relative {{SN2}} rate for tert-butyl is 0: steric hindrance stops the nucleophile.",
+     "ask": {
+      "q": "What is left for a tertiary halide and a strong base?",
+      "a": "E2."
+     }
+    },
+    {
+     "t": "Why E2 still works",
+     "h": "The base does not need to reach the crowded carbon. It takes a hydrogen from a methyl group on the outside, and there are nine of them."
+    },
+    {
+     "t": "Write the link",
+     "h": "Branching slows {{SN2}} and leaves {{E2}}: primary gives mostly substitution, tertiary gives only elimination."
+    }
+   ],
+   "answer": "Primary: {{SN2}}, butyl ethyl ether. Tertiary: {{E2}}, 2-methylpropene.",
+   "rule": "Increased branching at the carbon with the leaving group favors E2 over SN2."
+  }
+ },
+ {
+  "id": "sub-vs-elim-003",
+  "type": "sub-vs-elim",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site, after Lecture 11/10, p. 4",
+  "stem": "tert-Butyl bromide in water gives mostly the alcohol at lower temperature. When the mixture is heated, the share of 2-methylpropene rises. Which explanation is correct?\n[[rxn:CC(C)(C)Br>H2O;>CC(C)(C)O + CC(C)=C]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Heating produces hydroxide, a strong base, so the mechanism changes to {{E2}}",
+    "ok": false,
+    "why": "Heating water does not make it a strong base. The lecture needed added NaOH to get {{E2}}."
+   },
+   {
+    "h": "Both products come from the same carbocation. {{SN1}} is favored at lower temperature and {{E1}} at high temperature",
+    "ok": true,
+    "why": "This is the lecture's statement: one intermediate, two fates, and heat favors elimination."
+   },
+   {
+    "h": "Heating changes the substitution from {{SN1}} to {{SN2}}, which is slower, so less alcohol forms",
+    "ok": false,
+    "why": "A tertiary carbon cannot undergo {{SN2}} at any temperature."
+   },
+   {
+    "h": "At high temperature the alcohol forms by {{E1}} and the alkene by {{SN1}}",
+    "ok": false,
+    "why": "The names are swapped: substitution ({{SN1}}) gives the alcohol and elimination ({{E1}}) gives the alkene."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary halide, water only: no strong base, polar protic solvent. The carbocation mechanisms operate.",
+     "ask": {
+      "q": "Which two mechanisms share a carbocation?",
+      "a": "SN1 and E1."
+     }
+    },
+    {
+     "t": "Match products to mechanisms",
+     "h": "Water adds to the cation: {{SN1}}, the alcohol. Water removes a hydrogen next to the cation: {{E1}}, the alkene."
+    },
+    {
+     "t": "Apply the temperature rule",
+     "h": "The lecture marks {{SN1}} as favored at lower temperature and {{E1}} as favored at high temperature.",
+     "ask": {
+      "q": "Does the base change on heating?",
+      "a": "No. It is water in both cases."
+     }
+    },
+    {
+     "t": "Reject the others",
+     "h": "No hydroxide is present, a tertiary carbon never does {{SN2}}, and the last choice swaps the names."
+    }
+   ],
+   "answer": "Same carbocation: {{SN1}} at lower temperature, more {{E1}} at high temperature.",
+   "rule": "High temperature favors elimination."
+  }
+ },
+ {
+  "id": "sub-vs-elim-004",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site, after FA24 Exam 2, Q7A",
+  "stem": "Which reagent gives the largest share of elimination product with 2-bromopropane?\n[[mol:CC(C)Br]]",
+  "choices": [
+   {
+    "h": "sodium acetate, {{CH3CO2Na}}",
+    "ok": false,
+    "why": "Acetate is a weak base ({{pKa}} of acetic acid 4): it gives mostly {{SN2}}."
+   },
+   {
+    "h": "sodium hydrosulfide, NaSH",
+    "ok": false,
+    "why": "{{HS-}} is a weak base and an excellent nucleophile: {{SN2}}."
+   },
+   {
+    "h": "sodium ethoxide, {{NaOCH2CH3}}",
+    "ok": true,
+    "why": "Ethoxide is the only strong base here ({{pKa}} of ethanol 15.9): mostly {{E2}}, giving propene."
+   },
+   {
+    "h": "sodium iodide, NaI",
+    "ok": false,
+    "why": "Iodide is an extremely weak base ({{pKa}} of HI -10) and a good nucleophile: {{SN2}} only."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "Secondary: {{SN2}} and {{E2}} compete, and the reagent decides."
+    },
+    {
+     "t": "Rank the bases",
+     "h": "Conjugate acid {{pKa}}: HI -10, acetic acid 4, {{H2S}} 10, ethanol 15.9. Ethoxide is by far the strongest base."
+    },
+    {
+     "t": "Apply the rule",
+     "h": "A better base favors {{E2}} over {{SN2}}."
+    }
+   ],
+   "answer": "Sodium ethoxide",
+   "rule": "The strongest base gives the most elimination."
+  }
+ },
+ {
+  "id": "sub-vs-elim-005",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "1-Bromobutane gives mostly substitution with sodium methoxide but mostly elimination with potassium tert-butoxide. Both are strong bases. Explain, naming the reactions and drawing the products.",
+  "pts": 40,
+  "time": 7,
+  "model": "1-Bromobutane is primary: {{SN2}} and {{E2}} are the only possibilities (no primary carbocation forms).<br>Methoxide is a strong base but small. It reaches the back of the unhindered primary carbon: <b>{{SN2}}</b>.\n[[rxn:CCCCBr>NaOCH3;CH3OH>CCCCOC]]\ntert-Butoxide is about as strong a base but it is bulky, which makes it a poor nucleophile. It cannot reach the carbon, so it removes a hydrogen from carbon 2, which is easy to reach: <b>{{E2}}</b>.\n[[rxn:CCCCBr>KOC(CH3)3;(CH3)3COH>CCC=C]]\nThe difference is size, not base strength.",
+  "rubric": [
+   {
+    "pts": 5,
+    "h": "Primary halide: only {{SN2}} and {{E2}} are possible"
+   },
+   {
+    "pts": 10,
+    "h": "Methoxide is small: {{SN2}} named, ether drawn"
+   },
+   {
+    "pts": 15,
+    "h": "tert-Butoxide is bulky, so a poor nucleophile"
+   },
+   {
+    "pts": 10,
+    "h": "{{E2}} named, 1-butene drawn"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "Primary. The flowchart: {{SN2}} with a good nucleophile or a small strong base, {{E2}} with a bulky strong base."
+    },
+    {
+     "t": "Compare the reagents",
+     "h": "Both are strong bases ({{pKa}} of methanol 15.5, of tert-butyl alcohol 17). They differ in bulk."
+    },
+    {
+     "t": "Explain with sterics",
+     "h": "{{SN2}} needs the oxygen to reach the back of a carbon. {{E2}} needs it only to touch a hydrogen on the outside. Bulk blocks the first far more than the second."
+    },
+    {
+     "t": "Name and draw",
+     "h": "Methoxide: {{SN2}}, butyl methyl ether. tert-Butoxide: {{E2}}, 1-butene."
+    }
+   ],
+   "answer": "Methoxide: {{SN2}}. tert-Butoxide: {{E2}}, because it is too bulky to be a nucleophile.",
+   "rule": "A bulky strong base eliminates even from a primary halide."
+  }
+ },
+ {
+  "id": "sub-vs-elim-006",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "2-Bromopropane reacts with sodium ethoxide in ethanol to give propene and a little ethyl isopropyl ether. Which change raises the share of propene further?",
+  "choices": [
+   {
+    "h": "Raise the temperature",
+    "ok": true,
+    "why": "High temperature favors elimination."
+   },
+   {
+    "h": "Lower the temperature",
+    "ok": false,
+    "why": "This moves the balance toward substitution, the opposite of what is wanted."
+   },
+   {
+    "h": "Replace sodium ethoxide with sodium acetate",
+    "ok": false,
+    "why": "Acetate is a much weaker base ({{pKa}} 4 against 15.9): it gives mostly {{SN2}}, so less propene."
+   },
+   {
+    "h": "Replace sodium ethoxide with NaSH",
+    "ok": false,
+    "why": "{{HS-}} is a weak base and an excellent nucleophile: mostly {{SN2}}, so less propene."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name the two reactions",
+     "h": "Propene comes from {{E2}}, the ether from {{SN2}}."
+    },
+    {
+     "t": "List what favors E2",
+     "h": "A stronger base, a bulkier base, a more branched substrate, a higher temperature."
+    },
+    {
+     "t": "Test the choices",
+     "h": "Only raising the temperature is on that list. Acetate and {{HS-}} are weaker bases and better at substitution."
+    }
+   ],
+   "answer": "Raise the temperature.",
+   "rule": "High temperature favors elimination. A weaker base favors substitution."
+  }
+ },
+ {
+  "id": "sub-vs-elim-007",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "With sodium ethoxide in ethanol, 1-bromopropane gives mainly substitution, while 2-bromopropane gives mainly elimination. Explain, naming the reactions and drawing the major product of each.",
+  "pts": 40,
+  "time": 7,
+  "model": "The reagent, ethoxide, is a strong base and a small nucleophile in both cases. The substrate changes.<br>1-Bromopropane is primary: the carbon is easy to reach, so <b>{{SN2}}</b> is fast and wins.\n[[rxn:CCCBr>NaOCH2CH3;CH3CH2OH>CCCOCC]]\n2-Bromopropane is secondary: the extra methyl group on the carbon slows {{SN2}} (lecture relative rates: ethyl 0.033, isopropyl 0.00083). Removing a hydrogen from a neighbouring carbon is not slowed, so <b>{{E2}}</b> wins.\n[[rxn:CC(C)Br>NaOCH2CH3;CH3CH2OH>CC=C]]\nMore branching at the carbon with the leaving group favors {{E2}} over {{SN2}}.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Primary: unhindered, {{SN2}} named"
+   },
+   {
+    "pts": 5,
+    "h": "Ethyl propyl ether drawn"
+   },
+   {
+    "pts": 10,
+    "h": "Secondary: more hindered, so {{SN2}} is slower"
+   },
+   {
+    "pts": 10,
+    "h": "Strong base then gives {{E2}}, named"
+   },
+   {
+    "pts": 5,
+    "h": "Propene drawn"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Say what changes",
+     "h": "Same reagent, a strong small base. The substrate goes from primary to secondary."
+    },
+    {
+     "t": "Use the SN2 numbers",
+     "h": "Ethyl 0.033, isopropyl 0.00083: one more methyl group on the carbon makes {{SN2}} about forty times slower."
+    },
+    {
+     "t": "Think about E2",
+     "h": "The base attacks a hydrogen, not the carbon, so the extra methyl group does not get in its way."
+    },
+    {
+     "t": "Name and draw",
+     "h": "Primary: {{SN2}}, ethyl propyl ether. Secondary: {{E2}}, propene."
+    }
+   ],
+   "answer": "Primary: {{SN2}}. Secondary: {{E2}}, because branching slows {{SN2}} but not {{E2}}.",
+   "rule": "Branching at the carbon with the leaving group favors E2 over SN2."
+  }
+ },
+ {
+  "id": "sub-vs-elim-008",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site, after FA24 Exam 2, Q5A and Q6A",
+  "stem": "A student wants isopropyl methyl ether and has two plans. Plan 1: sodium isopropoxide and iodomethane. Plan 2: sodium methoxide and 2-iodopropane. Which plan gives more ether? Explain, naming the reactions.\n[[mol:CC(C)OC]]",
+  "pts": 50,
+  "time": 9,
+  "model": "<b>Plan 1 is better.</b><br>Plan 1: the electrophile is a methyl halide. It is unhindered and has no hydrogen on a neighbouring carbon, so elimination is impossible. The alkoxide can only attack the carbon: <b>{{SN2}}</b>, giving the ether cleanly.\n[[rxn:CC(C)[O-].[Na+] + CI>>CC(C)OC + [Na+].[I-]]]\nPlan 2: the electrophile is a secondary halide and methoxide is a strong base ({{pKa}} of methanol 15.5). <b>{{E2}}</b> competes with {{SN2}} and wins, so much of the halide becomes propene and only some becomes the ether.\n[[rxn:CC(C)I>NaOCH3;CH3OH>CC=C + CC(C)OC]]\nPut the more branched group in the alkoxide and use the methyl or primary halide.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Plan 1 chosen"
+   },
+   {
+    "pts": 15,
+    "h": "Methyl halide: {{SN2}} only, no neighbouring hydrogen, so no elimination"
+   },
+   {
+    "pts": 15,
+    "h": "Secondary halide with a strong base: {{E2}} named as the competing reaction"
+   },
+   {
+    "pts": 10,
+    "h": "Propene drawn as the by-product of plan 2"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the electrophile in each plan",
+     "h": "Plan 1: iodomethane, a methyl halide. Plan 2: 2-iodopropane, a secondary halide. Both nucleophiles are alkoxides, which are strong bases."
+    },
+    {
+     "t": "Plan 1",
+     "h": "Methyl: {{SN2}} only. The alkoxide being a little bulky does not matter, because there is no hydrogen it could remove instead."
+    },
+    {
+     "t": "Plan 2",
+     "h": "Secondary with a strong base: the flowchart gives {{E2}}. Propene forms and ether is lost."
+    },
+    {
+     "t": "Generalize",
+     "h": "The past exam made the same point twice: tert-butoxide with iodomethane works, and sodium cyclohexanolate with bromomethane beats bromocyclohexane with methoxide."
+    }
+   ],
+   "answer": "Plan 1: {{SN2}} on a methyl halide, no elimination possible. Plan 2 loses material to {{E2}}.",
+   "rule": "To make an ether, give the alkoxide the bulky group and use a methyl or primary halide."
+  }
+ },
+ {
+  "id": "sub-vs-elim-009",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "2-Bromobutane gives mostly substitution with sodium azide in DMF but mostly elimination with sodium hydroxide. Which explanation is correct?",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "Azide is a weak base and a good nucleophile, so it reacts by {{SN2}}. Hydroxide is a strong base, so it reacts mostly by {{E2}}",
+    "ok": true,
+    "why": "Secondary halide: the reagent decides, and base strength tips the balance toward elimination."
+   },
+   {
+    "h": "Azide reacts by {{SN1}} because it is a weak base. Hydroxide reacts by {{E1}}",
+    "ok": false,
+    "why": "Both are anions that react with the halide directly. Neither waits for a carbocation."
+   },
+   {
+    "h": "Hydroxide is the better nucleophile (16,000 against 8,000), so it should give more substitution. The result must come from the solvent alone",
+    "ok": false,
+    "why": "Hydroxide is the better nucleophile in the table, but it is also a strong base, and on a secondary carbon the strong base eliminates."
+   },
+   {
+    "h": "Azide is too bulky to remove a hydrogen",
+    "ok": false,
+    "why": "Azide is not bulky. It does not eliminate because it is a weak base."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "Secondary: {{SN2}} and {{E2}} compete."
+    },
+    {
+     "t": "Compare the reagents",
+     "h": "Azide: weak base, good nucleophile. Hydroxide: strong base ({{pKa}} of water 15.7)."
+    },
+    {
+     "t": "Apply the flowchart",
+     "h": "Secondary, aprotic solvent, weak base and fair nucleophile: {{SN2}}. Secondary with a strong base: {{E2}}."
+    }
+   ],
+   "answer": "Azide: {{SN2}}. Hydroxide: mostly {{E2}}.",
+   "rule": "A better base favors E2 over SN2."
+  }
+ },
+ {
+  "id": "sub-vs-elim-010",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site, after Lecture 11/12, p. 1",
+  "stem": "tert-Butyl bromide in water alone gives mostly tert-butyl alcohol. With NaOH in water, the alcohol is not formed and the only product is 2-methylpropene. Explain, naming the reactions.\n[[mol:CC(C)(C)Br]]",
+  "pts": 50,
+  "time": 9,
+  "model": "The substrate is tertiary, so {{SN2}} is impossible in both experiments.<br><b>Water alone.</b> Water is a weak base and a poor nucleophile, so the bromide ionizes first to the tert-butyl cation. Water adds to the cation: <b>{{SN1}}</b>, the alcohol. A little alkene forms from the same cation by {{E1}}. Rate = k[t-BuBr].\n[[rxn:CC(C)(C)Br>H2O;>CC(C)(C)O]]\n<b>With NaOH.</b> Hydroxide is a strong base. It removes a hydrogen from a methyl group in the same step in which bromide leaves: <b>{{E2}}</b>. Rate = k[t-BuBr][hydroxide]. This is faster than ionization, so no carbocation forms and no alcohol is made.\n[[rxn:CC(C)(C)Br>NaOH;H2O>CC(C)=C]]\nHydroxide cannot make the alcohol by {{SN2}} either, because the carbon is tertiary.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Tertiary: no {{SN2}}"
+   },
+   {
+    "pts": 15,
+    "h": "Water alone: carbocation, {{SN1}} named, water as the nucleophile"
+   },
+   {
+    "pts": 15,
+    "h": "NaOH: strong base, {{E2}} named, hydroxide as the base"
+   },
+   {
+    "pts": 10,
+    "h": "Why no alcohol with NaOH: {{E2}} is faster than ionization, and hydroxide cannot attack a tertiary carbon"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "Tertiary: the possible mechanisms are {{SN1}}, {{E1}} and {{E2}}."
+    },
+    {
+     "t": "Water alone",
+     "h": "No strong base, polar protic solvent: the carbocation path. At lower temperature substitution ({{SN1}}) is the main result."
+    },
+    {
+     "t": "Add hydroxide",
+     "h": "Tertiary plus strong base: {{E2}}. The lecture's rate data show the rate doubling when the hydroxide doubles."
+    },
+    {
+     "t": "Explain the missing alcohol",
+     "h": "It is tempting to say that hydroxide should make the alcohol faster. It cannot: {{SN2}} is blocked, and the bromide is consumed by {{E2}} before it has time to ionize."
+    }
+   ],
+   "answer": "Water alone: {{SN1}}. With NaOH: {{E2}}, because a strong base eliminates and a tertiary carbon cannot undergo {{SN2}}.",
+   "rule": "Adding a strong base to a tertiary halide switches the mechanism from SN1 and E1 to E2."
+  }
+ },
+ {
+  "id": "sub-vs-elim-011",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "2-Bromopropane gives much more substitution with NaSH than with NaOH. A student writes four explanations. Which one is correct?",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "{{HS-}} is the stronger base, so it attacks carbon harder",
+    "ok": false,
+    "why": "{{HS-}} is the weaker base: {{pKa}} of {{H2S}} is 10 in lecture, of water 15.7. And base strength is about taking a proton, not attacking carbon."
+   },
+   {
+    "h": "{{HS-}} is a weaker base than {{HO-}} but a better nucleophile, so it favors {{SN2}}, while the strong base {{HO-}} favors {{E2}}",
+    "ok": true,
+    "why": "Both halves matter: lecture table 126,000 against 16,000 for nucleophilicity, and {{pKa}} 10 against 15.7 for basicity."
+   },
+   {
+    "h": "{{HS-}} reacts by {{SN1}}, which cannot give an alkene",
+    "ok": false,
+    "why": "{{HS-}} is an anionic nucleophile that attacks directly, and a carbocation could lose a proton to give an alkene anyway."
+   },
+   {
+    "h": "Sulfur is larger than oxygen, so {{HS-}} is too bulky to reach a hydrogen",
+    "ok": false,
+    "why": "Size down a column makes sulfur more polarizable and a better nucleophile. It is not steric bulk of the kind tert-butoxide has."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate",
+     "h": "Secondary: {{SN2}} and {{E2}} compete."
+    },
+    {
+     "t": "Compare basicity",
+     "h": "Down a column basicity falls: {{HS-}} is the weaker base ({{pKa}} 10 against 15.7)."
+    },
+    {
+     "t": "Compare nucleophilicity",
+     "h": "Down a column nucleophilicity rises: {{HS-}} 126,000, {{HO-}} 16,000."
+    },
+    {
+     "t": "Combine",
+     "h": "Better nucleophile and weaker base: more {{SN2}}. Better base: more {{E2}}."
+    }
+   ],
+   "answer": "{{HS-}} is the weaker base and the better nucleophile: {{SN2}}. {{HO-}} is the strong base: {{E2}}.",
+   "rule": "Nucleophilicity and basicity run in opposite directions down a column."
+  },
+  "note": "Lecture value for the pKa of H2S is 10. Most tables give about 7, which makes the same point more strongly."
+ },
+ {
+  "id": "sub-vs-elim-012",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Each of these halides is treated with sodium methoxide in methanol. Which one gives the largest share of elimination product?",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "[[mol:CI]]",
+    "ok": false,
+    "why": "Methyl: there is no hydrogen on a neighbouring carbon, so no elimination at all. Only {{SN2}}."
+   },
+   {
+    "h": "[[mol:CCCCBr]]",
+    "ok": false,
+    "why": "Primary with a small strong base: mostly {{SN2}}."
+   },
+   {
+    "h": "[[mol:CCC(C)Br]]",
+    "ok": false,
+    "why": "Secondary with a strong base: mostly {{E2}}, but some {{SN2}} still occurs."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Br]]",
+    "ok": true,
+    "why": "Tertiary: {{SN2}} is impossible, so with a strong base the only reaction is {{E2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify each",
+     "h": "Methyl, primary, secondary, tertiary."
+    },
+    {
+     "t": "Recall the SN2 order",
+     "h": "Methyl > primary > secondary, tertiary none. As {{SN2}} gets slower, {{E2}} takes a larger share."
+    },
+    {
+     "t": "Pick the extreme",
+     "h": "Tertiary: no substitution at all with a strong base."
+    }
+   ],
+   "answer": "2-Bromo-2-methylpropane, the tertiary bromide",
+   "rule": "More branching, more elimination. Methyl: none. Tertiary with a strong base: all."
+  }
+ },
+ {
+  "id": "sub-vs-elim-013",
+  "type": "sub-vs-elim",
+  "role": "practice",
+  "kind": "written",
+  "diff": 1,
+  "src": "site, after Lecture 11/10, p. 4",
+  "stem": "1-Chloro-1-methylcyclohexane is dissolved in methanol with nothing else added. At 25 °C the main product is an ether. In hot methanol much more alkene forms. Name the two reactions and explain the effect of temperature.\n[[mol:CC1(Cl)CCCCC1]]",
+  "pts": 30,
+  "time": 6,
+  "model": "The chloride is tertiary and methanol is a neutral, polar protic solvent, so the chloride ionizes to a tertiary carbocation. Both products come from this one intermediate.<br>Methanol adds to the cation: <b>{{SN1}}</b>, the ether.\n[[rxn:CC1(Cl)CCCCC1>CH3OH;25 °C>COC1(C)CCCCC1]]\nMethanol removes a hydrogen from a carbon next to the cation: <b>{{E1}}</b>, the alkene.\n[[rxn:CC1(Cl)CCCCC1>CH3OH;heat>CC1=CCCCC1]]\n{{SN1}} is favored at lower temperature and {{E1}} at high temperature: high temperature favors elimination.",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "Tertiary halide, neutral protic solvent: a carbocation, the same one for both products"
+   },
+   {
+    "pts": 10,
+    "h": "{{SN1}} named for the ether and {{E1}} named for the alkene"
+   },
+   {
+    "pts": 10,
+    "h": "High temperature favors elimination"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary, no strong base, polar protic solvent: {{SN1}} and {{E1}}."
+    },
+    {
+     "t": "Match products to mechanisms",
+     "h": "Ether: methanol as the nucleophile, {{SN1}}. Alkene: methanol as the base, {{E1}}."
+    },
+    {
+     "t": "Apply the temperature rule",
+     "h": "The lecture's example is tert-butyl bromide in water: {{SN1}} favored at lower temperature, {{E1}} at high temperature. The same holds here."
+    }
+   ],
+   "answer": "{{SN1}} gives the ether, {{E1}} gives the alkene, and heat favors {{E1}}.",
+   "rule": "SN1 and E1 share a carbocation, and high temperature favors elimination."
+  }
+ }
+]

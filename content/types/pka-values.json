@@ -1,0 +1,94 @@
+{
+ "id": "pka-values",
+ "title": "Give the approximate pKa",
+ "exam": "Q1A",
+ "points": 15,
+ "asks": "A compound is drawn. Write its approximate pKa.",
+ "know": [
+  {
+   "h": "<b>{{pKa}} = -log {{Ka}}</b>. The lower the {{pKa}}, the stronger the acid. Each unit is a factor of ten.",
+   "from": "Lecture 10/29, p. 2"
+  },
+  {
+   "h": "<b>The {{pKa}} of a compound is the {{pKa}} of its most acidic hydrogen.</b> Be able to find that hydrogen: look at the functional groups, not the carbon chain.",
+   "from": "FA24 Exam 2, Q1A"
+  },
+  {
+   "h": "<b>Strong acids, all below zero</b>: H-I -10, H-Br -9, H-Cl -8, {{H3O+}} -1.5, {{CF3CO2H}} -1.5.",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>About 4</b>: a carboxylic acid {{RCO2H}}, and H-F.",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>About 10</b>: phenol (O-H on a benzene ring) and {{H2S}}. A thiol R-SH and an ammonium ion {{RNH3+}} are about 10 to 11.",
+   "from": "FA24 Exam 2, Q1A; Lecture 10/29, p. 3; pKa table"
+  },
+  {
+   "h": "<b>About 16</b>: water 15.7 and alcohols. In solution: methanol 15.5, ethanol 15.9, isopropanol 16.5, tert-butanol 17.0.",
+   "from": "Lecture 10/29, p. 3 (Table 6.8)"
+  },
+  {
+   "h": "<b>25</b>: a terminal alkyne, a hydrogen on a triple-bond carbon ({{sp}}, 50% s character).",
+   "from": "Lecture 10/29, p. 1 to 2"
+  },
+  {
+   "h": "<b>38</b>: the N-H of ammonia or a neutral amine.",
+   "from": "Lecture 10/29, p. 1"
+  },
+  {
+   "h": "<b>50 to 60</b>: an alkane C-H. The exam key accepts about 50 for pentane.",
+   "from": "Lecture 10/29, p. 2; FA24 Exam 2, Q1A"
+  },
+  {
+   "h": "<b>Estimate by analogy.</b> The carbon skeleton hardly matters: cyclohexanol is an alcohol (16), 1-butyne a terminal alkyne (25), propanoic acid a carboxylic acid (4), p-cresol a phenol (10), diisopropylamine an amine (38), butane an alkane (50).",
+   "from": "standard"
+  },
+  {
+   "h": "<b>The amine trap.</b> A neutral amine is drawn: the acid is its N-H, 38. The value of about 11 belongs to the ammonium ion, the amine's conjugate acid, and applies only when the nitrogen is drawn with a positive charge.",
+   "from": "FA24 Exam 2, Q1A"
+  },
+  {
+   "h": "<b>Be able to draw the conjugate base and say what stabilizes it</b>: resonance for phenol and carboxylic acids, hybridization for the alkyne, size for S-H and H-X, induction for {{CF3CO2H}}. The reason lets you rebuild a number you have forgotten.",
+   "from": "Lecture 10/29, p. 2 to 3"
+  },
+  {
+   "h": "<b>The lecture's numbers are the answers.</b> Write {{H2S}} 10 (tables say 7), H-F 4 (tables 3.2), {{CF3CO2H}} -1.5 (tables about 0), amine N-H 38 (tables 36 to 38).",
+   "from": "Lecture 10/29, p. 1 and 3"
+  }
+ ],
+ "method": [
+  "Read the drawing exactly: note every O-H, S-H, N-H and every charge.",
+  "List the kinds of hydrogen in the molecule and name the functional group each belongs to.",
+  "Pick the most acidic kind, in this order: {{CO2H}} (4), phenol O-H or S-H or a charged N-H (about 10), alcohol O-H (16), alkyne C-H on the triple bond (25), neutral N-H (38), any other C-H (50 to 60).",
+  "Write the ladder value for that group. Ignore extra alkyl groups and rings that are not attached to the acidic atom.",
+  "Adjust only for something the lecture taught: fluorines next to a {{CO2H}} (down to -1.5), a bulkier alcohol (up toward 17).",
+  "Check that the number makes sense by picturing the conjugate base and what stabilizes it."
+ ],
+ "pitfalls": [
+  {
+   "h": "Writing 11 for a neutral amine. That is the {{pKa}} of its conjugate acid. The neutral amine's N-H is 38."
+  },
+  {
+   "h": "Quoting the wrong hydrogen: the {{CH3}} of propyne (50) in place of the hydrogen on the triple bond (25), or the less acidic of two functional groups."
+  },
+  {
+   "h": "Writing 10 for any O-H near a ring. Only an O-H directly on a benzene ring is a phenol. Cyclohexanol is 16 and benzoic acid is 4."
+  },
+  {
+   "h": "Giving H-F a negative value like the other hydrogen halides. H-F is 4."
+  },
+  {
+   "h": "Copying the oxygen value onto sulfur: {{H2S}} and thiols are about 10, not 16."
+  },
+  {
+   "h": "Giving 25 to an alkyne with no hydrogen on the triple bond. Only a terminal alkyne has that hydrogen."
+  }
+ ],
+ "links": {
+  "read": [
+   "acids"
+  ]
+ }
+}

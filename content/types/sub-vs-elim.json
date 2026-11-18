@@ -1,0 +1,86 @@
+{
+ "id": "sub-vs-elim",
+ "title": "Substitution or elimination: explain the change in product ratio",
+ "exam": "Q7A",
+ "points": 50,
+ "asks": "The same substrate gives different amounts of substitution and elimination with two different reagents. Explain, naming the reactions.",
+ "know": [
+  {
+   "h": "<b>Substitution and elimination compete.</b> The same anion can attack the carbon that carries the leaving group ({{SN2}}) or remove a hydrogen from the carbon next to it ({{E2}}). A carbocation can add a nucleophile ({{SN1}}) or lose a neighbouring hydrogen ({{E1}}).",
+   "from": "Lecture 11/10, p. 4; Lecture 11/12, p. 1"
+  },
+  {
+   "h": "<b>A better base favors {{E2}} over {{SN2}}. A better nucleophile favors {{SN2}} over {{E2}}.</b>",
+   "from": "Flowchart"
+  },
+  {
+   "h": "<b>Judge base strength by the {{pKa}} of the conjugate acid.</b> Strong bases: {{HO-}} (water 15.7), {{CH3O-}} (methanol 15.5), {{CH3CH2O-}} (ethanol 15.9), {{(CH3)3CO-}} (tert-butyl alcohol 17). Weak bases: {{HS-}} ({{H2S}} 10 in lecture), acetate (acetic acid 4), {{I-}} (HI -10).",
+   "from": "pKa table"
+  },
+  {
+   "h": "<b>Judge nucleophilicity by the lecture table</b> (relative {{SN2}} rate): {{HS-}} 126,000; {{I-}} 80,000; {{HO-}} 16,000; {{N3-}} 8,000; acetate 630; water and methanol 1.",
+   "from": "Table 7.5"
+  },
+  {
+   "h": "<b>A secondary halide is where the reagent decides.</b> A weak base that is a good nucleophile gives mostly {{SN2}}. A strong base gives mostly {{E2}}, with a little {{SN2}}.",
+   "from": "FA24 Exam 2, Q7A; flowchart"
+  },
+  {
+   "h": "<b>The substrate changes the ratio.</b> More branching on the carbon with the leaving group, or on the carbon next to it, slows {{SN2}} (ethyl 0.033, isobutyl 0.003, isopropyl 0.00083, tert-butyl 0) and so favors {{E2}}. Methyl: only {{SN2}}. Primary: mostly {{SN2}}. Secondary with a strong base: mostly {{E2}}. Tertiary with a strong base: only {{E2}}.",
+   "from": "Figure 7.3; flowchart"
+  },
+  {
+   "h": "<b>A bulky base favors elimination.</b> tert-Butoxide is a strong base and a poor nucleophile: it cannot reach the carbon, but it can reach a hydrogen on the outside of the molecule. It gives {{E2}} even with a primary halide.",
+   "from": "Lecture 11/05, p. 3; flowchart"
+  },
+  {
+   "h": "<b>A methyl halide cannot eliminate</b>: there is no hydrogen on a neighbouring carbon. This is why an ether is best made from the alkoxide of the bulky group and a methyl or primary halide.",
+   "from": "FA24 Exam 2, Q5A and Q6A"
+  },
+  {
+   "h": "<b>High temperature favors elimination.</b> For tert-butyl bromide in water, {{SN1}} (the alcohol) is favored at lower temperature and {{E1}} (the alkene) at high temperature.",
+   "from": "Lecture 11/10, p. 4; flowchart"
+  },
+  {
+   "h": "<b>With no strong base, a tertiary halide reacts through its carbocation</b> ({{SN1}} and {{E1}}). Adding a strong base changes the mechanism to {{E2}}: tert-butyl bromide gives the alcohol in water alone, but only the alkene with NaOH.",
+   "from": "Lecture 11/12, p. 1"
+  },
+  {
+   "h": "<b>Skill: name both reactions and draw both products.</b> A full answer says which mechanism makes the substitution product, which makes the elimination product, and which property of the reagent, substrate or temperature tips the balance.",
+   "from": "FA24 Exam 2, Q7A rubric"
+  }
+ ],
+ "method": [
+  "Classify the carbon that carries the leaving group: this tells you which mechanisms are possible at all.",
+  "Say what is being changed between the two experiments: the reagent, the substrate, or the temperature.",
+  "If the reagent changes, compare base strength (the {{pKa}} of each conjugate acid) and bulk, and compare nucleophilicity.",
+  "If the substrate changes, compare how hindered the carbon is and whether a hydrogen on a neighbouring carbon exists.",
+  "Name the substitution reaction and the elimination reaction ({{SN2}} and {{E2}} with an anionic reagent, {{SN1}} and {{E1}} in a neutral protic solvent), and draw the product of each.",
+  "Finish with one sentence that links cause to result, for example: stronger base, more {{E2}}."
+ ],
+ "pitfalls": [
+  {
+   "h": "Explaining the change without naming the reactions. The question asks for the names: {{SN2}} and {{E2}}, or {{SN1}} and {{E1}}."
+  },
+  {
+   "h": "Calling acetate or {{HS-}} a strong base because it has a negative charge. Use the {{pKa}} of the conjugate acid."
+  },
+  {
+   "h": "Using {{SN1}} and {{E1}} for a secondary halide with an anionic reagent. A good nucleophile or strong base reacts before the halide can ionize."
+  },
+  {
+   "h": "Saying only that one reagent is the stronger nucleophile. The balance depends on base strength as well: ethoxide is a fair nucleophile but a much stronger base than acetate."
+  },
+  {
+   "h": "Forgetting that a methyl halide cannot eliminate and a tertiary halide cannot do {{SN2}}."
+  }
+ ],
+ "links": {
+  "read": [
+   "choose",
+   "e2",
+   "sn2-2",
+   "sn1-e1"
+  ]
+ }
+}

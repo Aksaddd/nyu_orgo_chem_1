@@ -1,0 +1,507 @@
+[
+  {
+    "id": "sn1-2butyl-tosylate-water",
+    "title": "SN1 at a stereocentre: 2-butyl tosylate in water",
+    "class": "SN1",
+    "types": ["sn1-products"],
+    "from": "Lecture 11/10, page 3",
+    "overall": "[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + O>>CCC(C)O + Cc1ccc(cc1)S(=O)(=O)O]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH2:2][C@H:3]([CH3:4])[O:5][S:6](=[O:7])(=[O:8])[c:9]1[cH:10][cH:11][c:12]([CH3:13])[cH:14][cH:15]1",
+        "arrows": [{"from": {"bond": [3, 5]}, "to": {"atom": 5}}],
+        "say": "The C-O bond to the tosylate breaks by itself. Both electrons leave with oxygen, and a secondary carbocation is left behind.",
+        "why": "Tosylate is a very good leaving group: its negative charge is shared by three oxygens. Water is a polar protic solvent that stabilizes both ions, and it is too poor a nucleophile to attack before the bond breaks. Only the substrate is in this step: rate = k[ROTs].",
+        "hints": ["No nucleophile takes part in the first step.", "Break the bond between carbon and the leaving group. Which atom keeps the electrons?", "One arrow: from the C-O bond to the tosylate oxygen."]
+      },
+      {
+        "name": "Water attacks the flat carbocation",
+        "species": "[OH2:16].[CH3:1][CH2:2][CH+:3][CH3:4].[O-:5][S:6](=[O:7])(=[O:8])[c:9]1[cH:10][cH:11][c:12]([CH3:13])[cH:14][cH:15]1",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 16}, "to": {"bond": [16, 3]}}],
+        "say": "A lone pair on water's oxygen attacks the positive carbon. The carbon is flat, so water can come in from the top face or the bottom face.",
+        "why": "The cationic carbon is {{sp2}} with an empty p orbital that sticks out equally on both faces. Attack on one face gives the R alcohol and attack on the other gives the S alcohol, in equal amounts: a racemic mixture. The wedge of the starting material has been forgotten.",
+        "hints": ["The carbocation is electron poor. What nearby has a lone pair?", "One arrow: from a lone pair on water's oxygen to the positive carbon."]
+      },
+      {
+        "name": "A second water removes the proton",
+        "species": "[OH2:19].[CH3:1][CH2:2][CH:3]([CH3:4])[O+:16]([H:17])[H:18]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 19}, "to": {"bond": [19, 17]}}, {"from": {"bond": [17, 16]}, "to": {"atom": 16}}],
+        "say": "Another water takes one hydrogen from the positive oxygen. The O-H electrons stay on that oxygen, which becomes neutral.",
+        "why": "An oxygen with three bonds and a positive charge is a strong acid, so the solvent takes the proton. The product is the alcohol, not its conjugate acid.",
+        "hints": ["The oxygen is positive and carries two hydrogens: one must go.", "Two arrows: water's lone pair to H, then the O-H bond back onto the positive oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH2:2][CH:3]([CH3:4])[O:16][H:18].[H:17][OH2+:19]",
+    "takeaway": "One enantiomer in, both enantiomers out: the planar carbocation is attacked on either face, so SN1 gives a racemic mixture."
+  },
+  {
+    "id": "sn1-methylcyclohexyl-bromide-methanol",
+    "title": "SN1 with an alcohol: 1-bromo-1-methylcyclohexane in methanol",
+    "class": "SN1",
+    "types": ["sn1-products"],
+    "from": "Lecture 11/10, pages 2 and 4",
+    "overall": "[[rxn:CC1(Br)CCCCC1 + CO>>COC1(C)CCCCC1 + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][C:2]1([Br:3])[CH2:4][CH2:5][CH2:6][CH2:7][CH2:8]1",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-Br bond breaks by itself and leaves a tertiary carbocation in the ring.",
+        "why": "The carbon is tertiary: three carbon groups stabilize the positive charge, and SN2 is impossible. Methanol is a polar protic solvent and a poor nucleophile, so nothing happens until the bromide has left. rate = k[RBr].",
+        "hints": ["Nothing attacks in the first step.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "Methanol attacks the carbocation",
+        "species": "[CH3:9][OH:10].[CH3:1][C+:2]1[CH2:4][CH2:5][CH2:6][CH2:7][CH2:8]1.[Br-:3]",
+        "adds": ["CO"],
+        "arrows": [{"from": {"lp": 10}, "to": {"bond": [10, 2]}}],
+        "say": "A lone pair on the oxygen of methanol attacks the positive carbon. Oxygen now has three bonds and a positive charge.",
+        "why": "The solvent is the nucleophile. It is neutral, so the first thing it makes is a positively charged oxygen that still carries its hydrogen.",
+        "hints": ["Which atom of methanol has lone pairs?", "One arrow: from an oxygen lone pair to the positive carbon."]
+      },
+      {
+        "name": "A second methanol removes the proton",
+        "species": "[CH3:12][OH:13].[CH3:1][C:2]1([O+:10]([H:11])[CH3:9])[CH2:4][CH2:5][CH2:6][CH2:7][CH2:8]1.[Br-:3]",
+        "adds": ["CO"],
+        "arrows": [{"from": {"lp": 13}, "to": {"bond": [13, 11]}}, {"from": {"bond": [11, 10]}, "to": {"atom": 10}}],
+        "say": "Another methanol takes the hydrogen from the positive oxygen. The O-H electrons stay on that oxygen and the ether is neutral.",
+        "why": "With a neutral nucleophile there is always a third step: the proton has to come off. Leaving it on is the most common way to lose points on this mechanism.",
+        "hints": ["The product is a neutral ether. What is still on the oxygen that should not be?", "Two arrows: methanol's lone pair to H, then the O-H bond onto the positive oxygen."]
+      }
+    ],
+    "product": "[CH3:1][C:2]1([O:10][CH3:9])[CH2:4][CH2:5][CH2:6][CH2:7][CH2:8]1.[CH3:12][OH+:13][H:11].[Br-:3]",
+    "takeaway": "SN1 in an alcohol gives an ether in three steps: leave, attack, lose the proton. The solvent is the nucleophile and also the base."
+  },
+  {
+    "id": "e1-methylcyclohexyl-bromide-methanol",
+    "title": "E1 from the same cation: 1-bromo-1-methylcyclohexane in warm methanol",
+    "class": "E1",
+    "types": ["sn1-products"],
+    "from": "Lecture 11/10, page 4",
+    "overall": "[[rxn:CC1(Br)CCCCC1>CH3OH;heat>CC1=CCCCC1 + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][C:2]1([Br:3])[CH2:4][CH2:5][CH2:6][CH2:7][CH2:8]1",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The same first step as SN1: the C-Br bond breaks and leaves the tertiary carbocation.",
+        "why": "SN1 and E1 share this intermediate. The product is decided by what the solvent does to the cation next.",
+        "hints": ["It starts exactly like SN1.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "Methanol removes a ring hydrogen next to the positive carbon",
+        "species": "[CH3:10][OH:11].[CH3:1][C+:2]1[CH:4]([H:9])[CH2:5][CH2:6][CH2:7][CH2:8]1.[Br-:3]",
+        "adds": ["CO"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 9]}}, {"from": {"bond": [9, 4]}, "to": {"bond": [4, 2]}}],
+        "say": "Methanol acts as a base. It takes a hydrogen from a ring carbon next to the positive carbon, and the C-H electrons become the C=C.",
+        "why": "A hydrogen next to a carbocation is acidic, so a weak base is enough. Taking a ring hydrogen puts the double bond inside the ring with three carbon groups on it, the more substituted alkene (Zaitsev). Taking a hydrogen from the {{CH3}} would give the less substituted alkene, the minor one.",
+        "hints": ["Methanol is the only base in the flask.", "The hydrogen comes from a carbon next to the positive carbon, never from the positive carbon itself.", "Two arrows: oxygen lone pair to H, then the C-H bond to the bond between the two carbons."]
+      }
+    ],
+    "product": "[CH3:10][OH+:11][H:9].[CH3:1][C:2]1=[CH:4][CH2:5][CH2:6][CH2:7][CH2:8]1.[Br-:3]",
+    "takeaway": "E1 is the same ionization followed by loss of a neighbouring hydrogen. The more substituted alkene is the major elimination product."
+  },
+  {
+    "id": "sn1-allylic-chloride-water",
+    "title": "SN1 through an allylic cation: one cation, two carbons to attack",
+    "class": "SN1",
+    "types": ["sn1-products"],
+    "from": "Lecture 10/22, page 3 (the allyl cation) and 11/10, page 2 (allyl-LG: SN1 yes)",
+    "overall": "[[rxn:C=CC(C)(C)Cl + O>>CC(C)=CCO + Cl]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH2:1]=[CH:2][C:3]([CH3:4])([CH3:5])[Cl:6]",
+        "arrows": [{"from": {"bond": [3, 6]}, "to": {"atom": 6}}],
+        "say": "The C-Cl bond breaks by itself. The cation that forms is tertiary and sits next to a C=C.",
+        "why": "A carbocation next to a double bond is allylic: the pi electrons can share the positive charge, so it forms easily.",
+        "hints": ["Nothing attacks in the first step.", "One arrow: from the C-Cl bond to chlorine."]
+      },
+      {
+        "name": "The same cation, drawn the other way (resonance)",
+        "species": "[CH2:1]=[CH:2][C+:3]([CH3:4])[CH3:5].[Cl-:6]",
+        "arrows": [{"from": {"bond": [1, 2]}, "to": {"bond": [2, 3]}}],
+        "say": "Move the pi electrons toward the positive carbon. The double bond is now between the middle carbons and the positive charge is on the end {{CH2}}.",
+        "why": "This is not a reaction step. It is the second drawing of one and the same cation, whose positive charge is shared by two carbons. A nucleophile can bond to either of them.",
+        "hints": ["Which electrons sit right next to the empty orbital?", "One arrow: from the C=C pi bond to the bond between the middle carbon and the positive carbon."]
+      },
+      {
+        "name": "Water attacks the end carbon",
+        "species": "[OH2:7].[CH2+:1][CH:2]=[C:3]([CH3:4])[CH3:5].[Cl-:6]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 7}, "to": {"bond": [7, 1]}}],
+        "say": "A lone pair on water attacks the end carbon, which carries part of the positive charge.",
+        "why": "Attack at this carbon gives the alcohol with the OH on the end and the double bond moved. Attack at the other positive carbon (the tertiary one) gives the alcohol with the OH where the chlorine was. Both alcohols form.",
+        "hints": ["Either carbon that shares the charge can be attacked. This path uses the end one.", "One arrow: from a lone pair on water to the {{CH2}} carbon."]
+      },
+      {
+        "name": "A second water removes the proton",
+        "species": "[OH2:10].[H:8][O+:7]([H:9])[CH2:1][CH:2]=[C:3]([CH3:4])[CH3:5].[Cl-:6]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 10}, "to": {"bond": [10, 8]}}, {"from": {"bond": [8, 7]}, "to": {"atom": 7}}],
+        "say": "Another water takes a hydrogen from the positive oxygen and leaves the neutral alcohol.",
+        "why": "A neutral nucleophile always needs this last proton transfer.",
+        "hints": ["The oxygen is positive and has two hydrogens.", "Two arrows: water's lone pair to H, then the O-H bond onto the positive oxygen."]
+      }
+    ],
+    "product": "[H:8][OH2+:10].[H:9][O:7][CH2:1][CH:2]=[C:3]([CH3:4])[CH3:5].[Cl-:6]",
+    "takeaway": "An allylic cation has its charge on two carbons, so SN1 gives two substitution products: one with the nucleophile where the leaving group was, one with it at the other end and the double bond moved."
+  },
+  {
+    "id": "hydride-shift-3methyl2butyl-water",
+    "title": "A 1,2-hydride shift: 2-bromo-3-methylbutane in water",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Lecture 11/10 (SN1) and the flowchart: carbocations can rearrange",
+    "overall": "[[rxn:CC(Br)C(C)C + O>>CCC(C)(C)O + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH:2]([Br:3])[CH:4]([CH3:6])[CH3:7]",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-Br bond breaks by itself and leaves a secondary carbocation.",
+        "why": "A secondary halide in a polar protic solvent with no strong base or good nucleophile: the only way forward is ionization.",
+        "hints": ["Nothing attacks in the first step.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "1,2-Hydride shift: secondary becomes tertiary",
+        "species": "[CH3:1][CH+:2][C:4]([H:5])([CH3:6])[CH3:7].[Br-:3]",
+        "arrows": [{"from": {"bond": [4, 5]}, "to": {"bond": [5, 2]}}],
+        "say": "The hydrogen on the next carbon moves over with both electrons of its C-H bond. The positive charge is now on the carbon the hydrogen left.",
+        "why": "The carbon next door has one hydrogen and two methyl groups. If that hydrogen moves with its bonding pair, the charge lands on a carbon with three carbon groups: a tertiary cation, more stable than the secondary one. The shift is faster than attack by the weak nucleophile.",
+        "hints": ["Look at the carbon next to the positive carbon. Would a positive charge be more stable there?", "The hydrogen moves with its two electrons (a hydride), not as a proton.", "One arrow: from the C-H bond to the positive carbon."]
+      },
+      {
+        "name": "Water attacks the tertiary carbocation",
+        "species": "[OH2:8].[CH3:1][CH2:2][C+:4]([CH3:6])[CH3:7].[Br-:3]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 8}, "to": {"bond": [8, 4]}}],
+        "say": "A lone pair on water attacks the new positive carbon.",
+        "why": "The nucleophile bonds to wherever the positive charge is when it arrives. After the shift, that is the tertiary carbon.",
+        "hints": ["Where is the positive charge now?", "One arrow: from a lone pair on water to the tertiary carbon."]
+      },
+      {
+        "name": "A second water removes the proton",
+        "species": "[OH2:11].[CH3:1][CH2:2][C:4]([CH3:6])([CH3:7])[O+:8]([H:9])[H:10].[Br-:3]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 9]}}, {"from": {"bond": [9, 8]}, "to": {"atom": 8}}],
+        "say": "Another water takes a hydrogen from the positive oxygen. The product is the tertiary alcohol.",
+        "why": "The last step of every SN1 with a neutral nucleophile.",
+        "hints": ["The oxygen is positive and has two hydrogens.", "Two arrows: water's lone pair to H, then the O-H bond onto the positive oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH2:2][C:4]([CH3:6])([CH3:7])[O:8][H:10].[H:9][OH2+:11].[Br-:3]",
+    "takeaway": "If a hydrogen on the next carbon can move over and leave a more stable cation, it does. The OH ends up on a carbon that never carried the bromine."
+  },
+  {
+    "id": "methyl-shift-33dimethyl2butyl-water",
+    "title": "A 1,2-methyl shift: 2-bromo-3,3-dimethylbutane in water",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Lecture 11/10 (SN1) and the flowchart: carbocations can rearrange",
+    "overall": "[[rxn:CC(Br)C(C)(C)C + O>>CC(C)C(C)(C)O + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH:2]([Br:3])[C:4]([CH3:5])([CH3:6])[CH3:7]",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-Br bond breaks by itself and leaves a secondary carbocation.",
+        "why": "Secondary halide, polar protic solvent, no strong base and no good nucleophile: ionization.",
+        "hints": ["Nothing attacks in the first step.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "1,2-Methyl shift: secondary becomes tertiary",
+        "species": "[CH3:1][CH+:2][C:4]([CH3:5])([CH3:6])[CH3:7].[Br-:3]",
+        "arrows": [{"from": {"bond": [4, 5]}, "to": {"bond": [5, 2]}}],
+        "say": "The carbon next door has no hydrogen, only methyl groups. One methyl moves over with the two electrons of its C-C bond, and the positive charge lands on the carbon it left.",
+        "why": "The neighbouring carbon is quaternary, so there is no hydrogen to shift. A methyl group can move in the same way, with its bonding pair. The result is a tertiary cation, more stable than the secondary one.",
+        "hints": ["Is there a hydrogen on the carbon next to the positive carbon?", "A whole methyl group can move with its bonding electrons.", "One arrow: from the C-{{CH3}} bond to the positive carbon."]
+      },
+      {
+        "name": "Water attacks the tertiary carbocation",
+        "species": "[OH2:8].[CH3:1][CH:2]([CH3:5])[C+:4]([CH3:6])[CH3:7].[Br-:3]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 8}, "to": {"bond": [8, 4]}}],
+        "say": "A lone pair on water attacks the new positive carbon.",
+        "why": "The carbon skeleton has changed: the product has two methyl groups on each of the two middle carbons, not three on one.",
+        "hints": ["Where is the positive charge now?", "One arrow: from a lone pair on water to the tertiary carbon."]
+      },
+      {
+        "name": "A second water removes the proton",
+        "species": "[OH2:11].[CH3:1][CH:2]([CH3:5])[C:4]([CH3:6])([CH3:7])[O+:8]([H:9])[H:10].[Br-:3]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 9]}}, {"from": {"bond": [9, 8]}, "to": {"atom": 8}}],
+        "say": "Another water takes a hydrogen from the positive oxygen. The product is the tertiary alcohol.",
+        "why": "The last step of every SN1 with a neutral nucleophile.",
+        "hints": ["The oxygen is positive and has two hydrogens.", "Two arrows: water's lone pair to H, then the O-H bond onto the positive oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH:2]([CH3:5])[C:4]([CH3:6])([CH3:7])[O:8][H:10].[H:9][OH2+:11].[Br-:3]",
+    "takeaway": "No hydrogen next door? An alkyl group can shift instead. Count the carbons on each atom of the product: the skeleton has changed."
+  },
+  {
+    "id": "ring-expansion-bromoethylcyclobutane-sn1",
+    "title": "Ring expansion, then SN1: (1-bromoethyl)cyclobutane in ethanol",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Lecture 11/10, page 5, homework",
+    "overall": "[[rxn:CC(Br)C1CCC1 + CCO>>CCOC1CCCC1C + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH:2]([Br:3])[CH:4]1[CH2:5][CH2:6][CH2:7]1",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-Br bond breaks by itself. The secondary carbocation sits on the carbon attached to the four-membered ring.",
+        "why": "Secondary halide in ethanol, a polar protic solvent and a poor nucleophile: ionization.",
+        "hints": ["Nothing attacks in the first step.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "A ring bond shifts: four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][CH:4]1[CH2:5][CH2:6][CH2:7]1.[Br-:3]",
+        "arrows": [{"from": {"bond": [4, 5]}, "to": {"bond": [5, 2]}}],
+        "say": "One ring C-C bond of the carbon next to the positive carbon swings over to the positive carbon. That carbon is now part of the ring, the ring has five members, and the positive charge is on the ring carbon the bond left.",
+        "why": "This is a 1,2-alkyl shift in which the group that moves is a ring carbon. A four-membered ring is strained (90° angles, eclipsed hydrogens). A five-membered ring has very little strain, so the shift is strongly downhill even though the cation is secondary before and after.",
+        "hints": ["The carbon next to the positive carbon is in a strained ring. Which of its bonds could move?", "Move a ring C-C bond, not the C-H bond.", "One arrow: from a ring bond of the neighbouring carbon to the positive carbon. Then redraw the ring and count five carbons."]
+      },
+      {
+        "name": "Ethanol attacks the ring carbocation",
+        "species": "[CH3:8][CH2:9][OH:10].[CH3:1][CH:2]1[CH2:5][CH2:6][CH2:7][CH+:4]1.[Br-:3]",
+        "adds": ["CCO"],
+        "arrows": [{"from": {"lp": 10}, "to": {"bond": [10, 4]}}],
+        "say": "A lone pair on the oxygen of ethanol attacks the positive ring carbon, the one next to the carbon that carries the methyl group.",
+        "why": "The nucleophile bonds to the carbon that is positive when it arrives. That carbon is flat, so ethanol can add on either face: both the cis and the trans ether form.",
+        "hints": ["Where is the positive charge after the shift?", "One arrow: from an oxygen lone pair to the positive ring carbon."]
+      },
+      {
+        "name": "A second ethanol removes the proton",
+        "species": "[CH3:12][CH2:13][OH:14].[CH3:1][CH:2]1[CH2:5][CH2:6][CH2:7][CH:4]1[O+:10]([H:11])[CH2:9][CH3:8].[Br-:3]",
+        "adds": ["CCO"],
+        "arrows": [{"from": {"lp": 14}, "to": {"bond": [14, 11]}}, {"from": {"bond": [11, 10]}, "to": {"atom": 10}}],
+        "say": "Another ethanol takes the hydrogen from the positive oxygen. The product is the neutral ether.",
+        "why": "Ethanol is a neutral nucleophile, so the proton must come off at the end.",
+        "hints": ["The ether oxygen still carries a hydrogen and a positive charge.", "Two arrows: ethanol's lone pair to H, then the O-H bond onto the positive oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH:2]1[CH2:5][CH2:6][CH2:7][CH:4]1[O:10][CH2:9][CH3:8].[CH3:12][CH2:13][OH+:14][H:11].[Br-:3]",
+    "takeaway": "A cation next to a strained ring pulls a ring bond over: the ring grows by one carbon and the charge moves into the ring. The nucleophile then adds to the new positive carbon."
+  },
+  {
+    "id": "ring-expansion-bromoethylcyclobutane-e1",
+    "title": "Ring expansion, then E1: (1-bromoethyl)cyclobutane in warm ethanol",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Lecture 11/10, page 5, homework",
+    "overall": "[[rxn:CC(Br)C1CCC1>CH3CH2OH;heat>CC1=CCCC1 + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][CH:2]([Br:3])[CH:4]1[CH2:5][CH2:6][CH2:7]1",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-Br bond breaks by itself and leaves the secondary carbocation next to the four-membered ring.",
+        "why": "E1 and SN1 start with the same ionization.",
+        "hints": ["It starts exactly like SN1.", "One arrow: from the C-Br bond to bromine."]
+      },
+      {
+        "name": "A ring bond shifts: four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][CH:4]1[CH2:5][CH2:6][CH2:7]1.[Br-:3]",
+        "arrows": [{"from": {"bond": [4, 5]}, "to": {"bond": [5, 2]}}],
+        "say": "A ring C-C bond moves to the positive carbon. The ring now has five carbons, with the methyl group on one ring carbon and the positive charge on the ring carbon next to it.",
+        "why": "Relief of ring strain drives the shift: cyclobutane is strained, cyclopentane hardly at all.",
+        "hints": ["Which bond next to the positive carbon belongs to the strained ring?", "One arrow: from a ring bond of the neighbouring carbon to the positive carbon."]
+      },
+      {
+        "name": "Ethanol removes the hydrogen on the methyl-bearing carbon",
+        "species": "[CH3:8][CH2:9][OH:10].[CH3:1][C:2]1([H:11])[CH2:5][CH2:6][CH2:7][CH+:4]1.[Br-:3]",
+        "adds": ["CCO"],
+        "arrows": [{"from": {"lp": 10}, "to": {"bond": [10, 11]}}, {"from": {"bond": [11, 2]}, "to": {"bond": [2, 4]}}],
+        "say": "Ethanol acts as a base. It takes the hydrogen from the ring carbon that carries the methyl group, and the C-H electrons become the C=C.",
+        "why": "The positive carbon has two neighbours with hydrogens. Taking the hydrogen from the carbon that carries the methyl group gives the alkene with three carbon groups on the double bond (Zaitsev, major). Taking one from the ring {{CH2}} on the other side gives the less substituted alkene (minor).",
+        "hints": ["Ethanol is the only base in the flask.", "Which neighbouring hydrogen gives the more substituted double bond?", "Two arrows: oxygen lone pair to H, then the C-H bond to the bond between the two ring carbons."]
+      }
+    ],
+    "product": "[CH3:8][CH2:9][OH+:10][H:11].[CH3:1][C:2]1=[CH:4][CH2:7][CH2:6][CH2:5]1.[Br-:3]",
+    "takeaway": "A rearranged cation can also lose a neighbouring hydrogen. The alkene then has a carbon skeleton different from the starting material's."
+  },
+  {
+    "id": "ring-expansion-aminoalcohol-ch2",
+    "title": "Ring expansion to a ketone: the ring CH2 migrates",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Modelled on FA24 Exam 2, Q9",
+    "overall": "[[rxn:CC(N)C1(O)CCC1C>HONO>CC1CCC(C)C1=O]]",
+    "steps": [
+      {
+        "name": "Nitrogen leaves",
+        "species": "[CH3:1][CH:2]([N+:3]#[N:4])[C:5]1([OH:6])[CH2:8][CH2:9][CH:10]1[CH3:11]",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "HONO has turned the {{NH2}} into {{N2+}} (this is given). The C-N bond breaks, both electrons go to nitrogen, and {{N2}} gas leaves a secondary carbocation.",
+        "why": "{{N2}} is an excellent leaving group: it is a very stable neutral molecule. The cation it leaves sits next to the carbon that carries the OH, which is part of a strained four-membered ring.",
+        "hints": ["Which group is the leaving group here?", "One arrow: from the C-N bond to the positive nitrogen."]
+      },
+      {
+        "name": "1,2-Shift of the ring CH2: four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][C:5]1([OH:6])[CH2:8][CH2:9][CH:10]1[CH3:11]",
+        "arrows": [{"from": {"bond": [5, 8]}, "to": {"bond": [8, 2]}}],
+        "say": "The bond from the C-OH carbon to the ring {{CH2}} swings over to the positive carbon. The ring now has five carbons and the positive charge is on the carbon that carries the OH.",
+        "why": "Two things pull this shift along: the strained four-membered ring becomes a five-membered ring, and the positive charge lands on a carbon bonded to oxygen, whose lone pair can share it.",
+        "hints": ["The C-OH carbon has two ring bonds. This path moves the one to the {{CH2}}.", "One arrow: from that ring C-C bond to the positive carbon."]
+      },
+      {
+        "name": "An oxygen lone pair shares the charge",
+        "species": "[CH3:1][CH:2]1[CH2:8][CH2:9][CH:10]([CH3:11])[C+:5]1[OH:6]",
+        "arrows": [{"from": {"lp": 6}, "to": {"bond": [6, 5]}}],
+        "say": "A lone pair on oxygen forms a second bond to the positive carbon. Now every atom has an octet, and the positive charge is on oxygen.",
+        "why": "This is resonance: the carbocation and the C=O⁺-H form are two drawings of one ion. The second drawing is the better one because carbon and oxygen both have full octets.",
+        "hints": ["Which neighbour of the positive carbon has a lone pair?", "One arrow: from an oxygen lone pair to the C-O bond."]
+      },
+      {
+        "name": "Water removes the proton",
+        "species": "[OH2:12].[CH3:1][CH:2]1[CH2:8][CH2:9][CH:10]([CH3:11])[C:5]1=[O+:6][H:7]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 12}, "to": {"bond": [12, 7]}}, {"from": {"bond": [7, 6]}, "to": {"atom": 6}}],
+        "say": "Water takes the hydrogen from the positive oxygen. The O-H electrons stay on oxygen and the ketone is neutral.",
+        "why": "A protonated ketone is a very strong acid, so the solvent removes the proton at once.",
+        "hints": ["The oxygen is positive and still has its hydrogen.", "Two arrows: water's lone pair to H, then the O-H bond onto oxygen."]
+      }
+    ],
+    "product": "[H:7][OH2+:12].[CH3:1][CH:2]1[CH2:8][CH2:9][CH:10]([CH3:11])[C:5]1=[O:6]",
+    "takeaway": "When the ring CH2 migrates, the two methyl-bearing carbons end up on either side of the C=O: 2,5-dimethylcyclopentanone."
+  },
+  {
+    "id": "ring-expansion-aminoalcohol-chme",
+    "title": "Ring expansion to a ketone: the ring CH(CH3) migrates",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "Modelled on FA24 Exam 2, Q9",
+    "overall": "[[rxn:CC(N)C1(O)CCC1C>HONO>CC1C(C)CCC1=O]]",
+    "steps": [
+      {
+        "name": "Nitrogen leaves",
+        "species": "[CH3:1][CH:2]([N+:3]#[N:4])[C:5]1([OH:6])[CH2:8][CH2:9][CH:10]1[CH3:11]",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The same first step: the C-N bond breaks, {{N2}} leaves, and a secondary carbocation is left next to the C-OH carbon of the ring.",
+        "why": "Both products come from this one carbocation. They differ only in which ring bond moves next.",
+        "hints": ["Which group is the leaving group here?", "One arrow: from the C-N bond to the positive nitrogen."]
+      },
+      {
+        "name": "1,2-Shift of the ring CH(CH3): four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][C:5]1([OH:6])[CH2:8][CH2:9][CH:10]1[CH3:11]",
+        "arrows": [{"from": {"bond": [5, 10]}, "to": {"bond": [10, 2]}}],
+        "say": "This time the other ring bond of the C-OH carbon moves: the one to the ring carbon that carries a methyl group. Again the ring grows to five carbons and the charge lands on the C-OH carbon.",
+        "why": "The C-OH carbon has two different ring bonds. Either can migrate, each relieves the same ring strain, and each puts the charge next to oxygen. That is why two products form.",
+        "hints": ["The C-OH carbon has two ring bonds. This path moves the one to the {{CH(CH3)}} carbon.", "One arrow: from that ring C-C bond to the positive carbon."]
+      },
+      {
+        "name": "An oxygen lone pair shares the charge",
+        "species": "[CH3:1][CH:2]1[CH:10]([CH3:11])[CH2:9][CH2:8][C+:5]1[OH:6]",
+        "arrows": [{"from": {"lp": 6}, "to": {"bond": [6, 5]}}],
+        "say": "A lone pair on oxygen forms a second bond to the positive carbon, giving the C=O⁺-H form.",
+        "why": "Resonance: with the lone pair shared, carbon and oxygen both have full octets.",
+        "hints": ["Which neighbour of the positive carbon has a lone pair?", "One arrow: from an oxygen lone pair to the C-O bond."]
+      },
+      {
+        "name": "Water removes the proton",
+        "species": "[OH2:12].[CH3:1][CH:2]1[CH:10]([CH3:11])[CH2:9][CH2:8][C:5]1=[O+:6][H:7]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 12}, "to": {"bond": [12, 7]}}, {"from": {"bond": [7, 6]}, "to": {"atom": 6}}],
+        "say": "Water takes the hydrogen from the positive oxygen and leaves the neutral ketone.",
+        "why": "A protonated ketone is a very strong acid, so the solvent removes the proton at once.",
+        "hints": ["The oxygen is positive and still has its hydrogen.", "Two arrows: water's lone pair to H, then the O-H bond onto oxygen."]
+      }
+    ],
+    "product": "[H:7][OH2+:12].[CH3:1][CH:2]1[CH:10]([CH3:11])[CH2:9][CH2:8][C:5]1=[O:6]",
+    "takeaway": "When the ring CH(CH3) migrates, the two methyl-bearing carbons end up next to each other: 2,3-dimethylcyclopentanone."
+  },
+  {
+    "id": "isopropylmagnesium-bromide-d2o",
+    "title": "A Grignard reagent and heavy water: putting D on carbon",
+    "class": "Organometallic",
+    "types": ["mech-organometallic", "organometallic-synthesis"],
+    "from": "Lecture 11/03, page 1 (mechanism with water; the propene homework)",
+    "overall": "[[rxn:CC(C)[Mg]Br + [2H]O[2H]>>CC(C)[2H]]]",
+    "steps": [
+      {
+        "name": "Deuteron transfer",
+        "species": "[CH3:1][CH:2]([CH3:3])[Mg:4][Br:5].[2H:6][O:7][2H:8]",
+        "arrows": [{"from": {"bond": [2, 4]}, "to": {"bond": [2, 6]}}, {"from": {"bond": [6, 7]}, "to": {"atom": 7}}],
+        "say": "The electrons of the C-Mg bond take a D from {{D2O}}. The D-O electrons stay on oxygen.",
+        "why": "The carbon bonded to magnesium behaves as a carbanion, R:⁻, a very strong base. {{D2O}} is water with deuterium in place of hydrogen and is just as acidic ({{pKa}} about 15.7, against 50 to 60 for the alkane). The carbon picks up D exactly where the magnesium was.",
+        "hints": ["Think of the reagent as R:⁻ and ⁺MgBr. Where are the electrons?", "A strong base takes the acidic atom of {{D2O}}.", "Two arrows: C-Mg bond to D, then the D-O bond onto oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH:2]([CH3:3])[2H:6].[Mg+:4][Br:5].[O-:7][2H:8]",
+    "takeaway": "R-MgX plus {{D2O}} gives R-D. The D goes on the carbon that carried the metal, which is the carbon that carried the halogen."
+  },
+  {
+    "id": "butyllithium-propyne",
+    "title": "An organolithium reagent and a terminal alkyne",
+    "class": "Organometallic",
+    "types": ["mech-organometallic"],
+    "from": "Lecture 10/29, pages 1, 2 and 5 (pKa 25 against 50 to 60)",
+    "overall": "[[rxn:CCCC[Li] + CC#C>>CCCC + CC#[C-].[Li+]]]",
+    "steps": [
+      {
+        "name": "Proton transfer",
+        "species": "[CH3:1][CH2:2][CH2:3][CH2:4][Li:5].[H:6][C:7]#[C:8][CH3:9]",
+        "arrows": [{"from": {"bond": [4, 5]}, "to": {"bond": [4, 6]}}, {"from": {"bond": [6, 7]}, "to": {"atom": 7}}],
+        "say": "The electrons of the C-Li bond take the hydrogen from the triple-bond carbon. The C-H electrons stay on that carbon as a lone pair.",
+        "why": "The hydrogen on an {{sp}} carbon has {{pKa}} 25. The conjugate acid of the butyl carbanion is butane, {{pKa}} 50 to 60. The stronger acid loses its proton to the stronger base, and the equilibrium lies far to the right. The {{CH3}} hydrogens of propyne are ordinary {{sp3}} C-H and are left alone.",
+        "hints": ["Which hydrogen of propyne is the acidic one?", "Treat C-Li as a carbanion. A base takes a proton.", "Two arrows: C-Li bond to H, then the C-H bond onto the alkyne carbon."]
+      }
+    ],
+    "product": "[CH3:1][CH2:2][CH2:3][CH2:4][H:6].[Li+:5].[C-:7]#[C:8][CH3:9]",
+    "takeaway": "A terminal alkyne is acidic enough (pKa 25) to protonate an organometallic reagent. The products are the alkane and a new carbanion, the acetylide."
+  },
+  {
+    "id": "ethylmagnesium-bromide-ethanol",
+    "title": "A Grignard reagent and an alcohol",
+    "class": "Organometallic",
+    "types": ["mech-organometallic"],
+    "from": "Lecture 10/29, page 5 and 11/03, page 1",
+    "overall": "[[rxn:CC[Mg]Br + CCO>>CC + CC[O-]]]",
+    "steps": [
+      {
+        "name": "Proton transfer",
+        "species": "[CH3:1][CH2:2][Mg:3][Br:4].[H:5][O:6][CH2:7][CH3:8]",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"bond": [2, 5]}}, {"from": {"bond": [5, 6]}, "to": {"atom": 6}}],
+        "say": "The electrons of the C-Mg bond take the O-H hydrogen of ethanol. The O-H electrons stay on oxygen as an alkoxide.",
+        "why": "An alcohol has {{pKa}} about 16 and ethane 50 to 60. The reagent is a far stronger base than the alkoxide it makes, so the proton transfer is complete. The carbon does not attack the carbon of ethanol: the acidic hydrogen is taken first, and it is taken fast.",
+        "hints": ["Which hydrogen of ethanol is acidic?", "Think R:⁻. A strong base meets an O-H.", "Two arrows: C-Mg bond to H, then the H-O bond onto oxygen."]
+      }
+    ],
+    "product": "[CH3:1][CH2:2][H:5].[Mg+:3][Br:4].[O-:6][CH2:7][CH3:8]",
+    "takeaway": "Any O-H destroys a Grignard or organolithium reagent: R:⁻ becomes R-H. This is why they are made in ether or pentane, never in water or an alcohol."
+  },
+  {
+    "id": "grignard-co2-cyclohexyl",
+    "title": "An alkyl Grignard reagent and carbon dioxide",
+    "class": "Organometallic",
+    "types": ["mech-organometallic"],
+    "from": "Modelled on FA24 Exam 2, Q1D",
+    "overall": "[[rxn:Br[Mg]C1CCCCC1>1) CO2;2) H3O+>OC(=O)C1CCCCC1]]",
+    "steps": [
+      {
+        "name": "The carbanion-like carbon attacks carbon dioxide",
+        "species": "[CH:1]1([Mg:7][Br:8])[CH2:2][CH2:3][CH2:4][CH2:5][CH2:6]1.[O:9]=[C:10]=[O:11]",
+        "arrows": [{"from": {"bond": [1, 7]}, "to": {"bond": [1, 10]}}, {"from": {"bond": [10, 11]}, "to": {"atom": 11}}],
+        "say": "The electrons of the C-Mg bond attack the carbon of {{CO2}}. So that this carbon keeps four bonds, the electrons of one C=O pi bond move onto that oxygen.",
+        "why": "The carbon bonded to magnesium is {{d-}}: the reagent is R:⁻. {{CO2}} has no acidic hydrogen to give, so the reagent acts as a nucleophile. The carbon of O=C=O is electron poor because two oxygens pull on it, and the oxygens are electron rich. Electron rich attacks electron poor.",
+        "hints": ["Where are the electrons in the Grignard reagent?", "Which atom of O=C=O is electron poor?", "Two arrows: C-Mg bond to the carbon of {{CO2}}, then one C=O pi bond onto its oxygen."]
+      },
+      {
+        "name": "Acid workup protonates the carboxylate",
+        "species": "[H:12][OH2+:13].[CH:1]1([C:10](=[O:9])[O-:11])[CH2:2][CH2:3][CH2:4][CH2:5][CH2:6]1.[Mg+:7][Br:8]",
+        "adds": ["[OH3+]"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 12]}}, {"from": {"bond": [12, 13]}, "to": {"atom": 13}}],
+        "say": "Acid is added only now, as a separate second step. A lone pair on the negative oxygen takes a proton from {{H3O+}}.",
+        "why": "Acid present at the start would protonate R:⁻ to R-H and no C-C bond would form. After the first step the carbanion is gone, and {{H3O+}} ({{pKa}} −1.5) easily protonates the carboxylate (the acid has {{pKa}} about 4).",
+        "hints": ["The product is the neutral acid, so the O⁻ needs a proton.", "Two arrows: O⁻ lone pair to H, then the H-O bond onto the oxygen of water."]
+      }
+    ],
+    "product": "[CH:1]1([C:10](=[O:9])[O:11][H:12])[CH2:2][CH2:3][CH2:4][CH2:5][CH2:6]1.[OH2:13].[Mg+:7][Br:8]",
+    "takeaway": "R-MgX, then {{CO2}}, then acid gives R-COOH: one carbon more than the halide the reagent was made from."
+  }
+]

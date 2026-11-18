@@ -1,0 +1,90 @@
+{
+ "id": "nmr-signals",
+ "title": "NMR: how many signals, and what a multiplet tells you",
+ "exam": "Lecture 10/22",
+ "asks": "A structure is given. Say how many proton or carbon signals it shows, or what a splitting pattern reveals.",
+ "know": [
+  {
+   "h": "In spectroscopy a sample <b>absorbs specific frequencies</b> of light, and those frequencies tell us the structure. The energy absorbed, hν, equals the gap between a lower and a higher energy state.",
+   "from": "Lecture 10/22, p. 1"
+  },
+  {
+   "h": "Each proton is a tiny magnet. In an external magnetic field most are aligned <b>with</b> the field (lower energy) and some <b>against</b> it (higher energy). The gap between the two grows as the field {{B0}} gets stronger.",
+   "from": "Lecture 10/22, p. 1 to 2"
+  },
+  {
+   "h": "There are two kinds to know: {{1H}} NMR looks at the hydrogens, {{13C}} NMR looks at the carbons.",
+   "from": "Lecture 10/22, p. 2"
+  },
+  {
+   "h": "<b>Shielding</b>: electrons have their own magnetic field, which counters the external field. The nucleus feels a net field of {{B0}} minus the electrons' field.",
+   "from": "Lecture 10/22, p. 2"
+  },
+  {
+   "h": "An electronegative atom pulls electron density away from the hydrogens near it, so they are <b>less shielded</b> and feel a larger net field. In fluoroethane the {{CH2}} next to F and the {{CH3}} are in different environments.",
+   "from": "Lecture 10/22, p. 2"
+  },
+  {
+   "h": "<b>One signal for each different environment.</b> Nuclei in the same environment (equivalent nuclei) share a signal. Fluoroethane: two {{1H}} signals and two {{13C}} signals.",
+   "from": "Lecture 10/22, p. 3"
+  },
+  {
+   "h": "The three hydrogens of a {{CH3}} are always equivalent, because the group spins. The two hydrogens of a {{CH2}} in an open chain are equivalent in the molecules of this course.",
+   "from": "standard"
+  },
+  {
+   "h": "Groups that are swapped by a mirror plane or by turning the molecule around are equivalent: the two {{CH3}} groups of propane or acetone give one signal.",
+   "from": "standard"
+  },
+  {
+   "h": "A double bond does not rotate. In bromoethene all three hydrogens are different: three signals.",
+   "from": "Lecture 10/22, p. 3"
+  },
+  {
+   "h": "<b>Resonance</b> can make atoms equivalent: the two end {{CH2}} groups of the allyl cation are the same, and the middle CH is different.",
+   "from": "Lecture 10/22, p. 3"
+  },
+  {
+   "h": "<b>The n + 1 rule</b>: a hydrogen with n equivalent hydrogens on the next carbon appears as n + 1 lines. 0 neighbours: singlet. 1: doublet. 2: triplet. 3: quartet. 6: septet.",
+   "from": "Lecture 10/22, p. 3; Exam key Q2B"
+  },
+  {
+   "h": "Patterns to recognize: an <b>ethyl</b> group is a triplet (3 H) and a quartet (2 H). An <b>isopropyl</b> group is a doublet (6 H) and a <b>septet</b> (1 H). A tert-butyl or isolated {{CH3}} group is a singlet.",
+   "from": "Exam key Q2B; standard"
+  },
+  {
+   "h": "Equivalent hydrogens do not split each other, and a carbon with no hydrogens still gives a {{13C}} signal.",
+   "from": "standard"
+  }
+ ],
+ "method": [
+  "Draw the structure with every hydrogen (or number every carbon).",
+  "Look for symmetry: a mirror plane, two identical ends, or resonance that makes atoms the same.",
+  "Group the atoms into environments. Atoms swapped by symmetry, and the hydrogens of one {{CH3}}, go in the same group.",
+  "Count the groups: that is the number of signals.",
+  "For splitting, pick one group of hydrogens, count the hydrogens on the directly attached carbons (n), and write n + 1 lines.",
+  "To read a multiplet backwards, subtract one from the number of lines to get the number of neighbours, then ask which group has that many."
+ ],
+ "pitfalls": [
+  {
+   "h": "Counting hydrogens, or counting groups, instead of environments: propane has eight hydrogens and three carbons but two {{1H}} signals."
+  },
+  {
+   "h": "Missing symmetry, so that equivalent groups are counted twice."
+  },
+  {
+   "h": "Using the hydrogens' own number in the n + 1 rule. The rule counts the neighbours."
+  },
+  {
+   "h": "Treating the two hydrogens of a ={{CH2}} as equivalent when the other end of the double bond carries two different groups."
+  },
+  {
+   "h": "Leaving out carbons with no hydrogens (C=O, a ring carbon carrying a group) when counting {{13C}} signals."
+  }
+ ],
+ "links": {
+  "read": [
+   "nmr"
+  ]
+ }
+}

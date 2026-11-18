@@ -1,0 +1,923 @@
+[
+ {
+  "id": "acid-rank-001",
+  "type": "acid-rank",
+  "role": "worked",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank these four compounds as acids and say which factor decides each step.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:S]]"
+   },
+   {
+    "h": "[[mol:O]]"
+   },
+   {
+    "h": "[[mol:N]]"
+   },
+   {
+    "h": "[[mol:C]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Take one proton from each: {{HS-}}, {{HO-}}, {{H2N-}}, {{H3C-}}. The acid with the most stable conjugate base is the strongest acid.",
+     "ask": {
+      "q": "Where is the negative charge in each conjugate base?",
+      "a": "On S, O, N and C."
+     }
+    },
+    {
+     "t": "Compare the three in the same row",
+     "h": "C, N and O are in the same row. Electronegativity increases to the right, so oxygen holds a negative charge best and carbon worst. Acidity: {{H2O}} > {{NH3}} > {{CH4}}.",
+     "ask": {
+      "q": "Which factor is this?",
+      "a": "Electronegativity."
+     }
+    },
+    {
+     "t": "Compare O with S",
+     "h": "S is below O in the same column. Here the lecture's rule is size: the larger atom spreads out the charge, so {{HS-}} is more stable than {{HO-}} and {{H2S}} is the stronger acid.",
+     "ask": {
+      "q": "Sulfur is less electronegative than oxygen. Why does that not make {{H2S}} the weaker acid?",
+      "a": "Within a column size decides, not electronegativity."
+     }
+    },
+    {
+     "t": "Check with the numbers",
+     "h": "{{H2S}} 10, {{H2O}} 15.7, {{NH3}} 38, {{CH4}} 50 to 60."
+    },
+    {
+     "t": "Turn it around for the bases",
+     "h": "The lecture writes the same list as bases: {{HS-}} < {{HO-}} < {{H2N-}} < {{H3C-}}, with {{H3C-}} the strongest base. Strongest acid, weakest conjugate base."
+    }
+   ],
+   "answer": "{{H2S}} > {{H2O}} > {{NH3}} > {{CH4}}. Across the row: electronegativity. Down the column: size.",
+   "rule": "Across a row use electronegativity; down a column use size."
+  }
+ },
+ {
+  "id": "acid-rank-002",
+  "type": "acid-rank",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Trifluoroacetic acid ({{pKa}} -1.5) is a much stronger acid than acetic acid ({{pKa}} 4). Which factor decides?\n[[mol:OC(=O)C(F)(F)F]] [[mol:CC(=O)O]]",
+  "choices": [
+   {
+    "h": "Induction",
+    "ok": true,
+    "why": "The three fluorines pull electron density through the sigma bonds, away from the carboxylate. That spreads out the charge and stabilizes the conjugate base."
+   },
+   {
+    "h": "Resonance",
+    "ok": false,
+    "why": "Both carboxylates have exactly the same resonance: the charge shared by two oxygens. Resonance explains why both are far below an alcohol, not why they differ from each other."
+   },
+   {
+    "h": "Electronegativity",
+    "ok": false,
+    "why": "Close, but this factor is about the atom that carries the charge, and that is oxygen in both. Fluorine acts from a distance, through the bonds: that is induction."
+   },
+   {
+    "h": "Size",
+    "ok": false,
+    "why": "The charge is on oxygen in both conjugate bases. The atom holding the charge is the same size."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "{{CF3CO2-}} and {{CH3CO2-}}. In both, the charge is on the two oxygens of a carboxylate.",
+     "ask": {
+      "q": "What do the two conjugate bases have in common?",
+      "a": "The same charged atoms and the same resonance."
+     }
+    },
+    {
+     "t": "Find the difference",
+     "h": "The only difference is {{CF3}} in place of {{CH3}}: three fluorines one carbon away from the carboxylate."
+    },
+    {
+     "t": "Decide how fluorine acts",
+     "h": "Fluorine is not the atom holding the charge and it is not part of a pi system with it. It pulls electron density through the sigma bonds. That is induction.",
+     "ask": {
+      "q": "Would one fluorine do as much as three?",
+      "a": "No. Each fluorine adds to the pull, so three do more than one."
+     }
+    },
+    {
+     "t": "State the consequence",
+     "h": "A more stable base is a weaker base, and its acid is stronger: 5.5 {{pKa}} units, a factor of about 300,000.",
+     "ask": {
+      "q": "Which is the weaker base, {{CF3CO2-}} or {{CH3CO2-}}?",
+      "a": "{{CF3CO2-}}, the conjugate base of the stronger acid."
+     }
+    }
+   ],
+   "answer": "Induction",
+   "rule": "Same charged atom, same resonance, electronegative atoms nearby: induction."
+  }
+ },
+ {
+  "id": "acid-rank-003",
+  "type": "acid-rank",
+  "role": "worked",
+  "kind": "rank",
+  "diff": 2,
+  "src": "site",
+  "stem": "Rank these alcohols by acidity <b>in solution</b>, and explain the order. Then say what happens to the order in the gas phase.",
+  "order": "most acidic in solution first",
+  "items": [
+   {
+    "h": "[[mol:CO|me]]"
+   },
+   {
+    "h": "[[mol:CCO|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)O|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)(C)O|me]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Methoxide, ethoxide, isopropoxide, tert-butoxide. In every one the charge is on an oxygen attached to an {{sp3}} carbon.",
+     "ask": {
+      "q": "Do electronegativity, size of the charged atom, resonance or hybridization differ among these?",
+      "a": "No. All four are the same on those counts, so something else decides."
+     }
+    },
+    {
+     "t": "Bring in the solvent",
+     "h": "In solution, solvent molecules gather around the charged oxygen and stabilize it. The lecture: solvation gives stabilization."
+    },
+    {
+     "t": "Compare how well each is solvated",
+     "h": "Methoxide is small, so many solvent molecules surround it. tert-Butoxide has a large nonpolar group, so fewer solvent molecules fit around the charge. Better solvated means more stable base, stronger acid.",
+     "ask": {
+      "q": "Which alkoxide is the strongest base in solution?",
+      "a": "tert-Butoxide, the least solvated."
+     }
+    },
+    {
+     "t": "Check with the lecture table",
+     "h": "Methanol 15.5, ethanol 15.9, isopropanol 16.5, tert-butanol 17.0. Water, at 15.7, falls between methanol and ethanol."
+    },
+    {
+     "t": "Gas phase",
+     "h": "With no solvent there is no solvation to favour the small ion, and the relative acidity runs the other way: tert-butanol is the most acidic and methanol the least.",
+     "ask": {
+      "q": "What does the reversal tell you about the solution order?",
+      "a": "That it is caused by the solvent, not by something built into the molecules."
+     }
+    }
+   ],
+   "answer": "In solution: methanol > ethanol > isopropanol > tert-butanol (solvation of the alkoxide). In the gas phase the order reverses.",
+   "rule": "Smaller alkoxide, more solvation, stronger acid. No solvent, reversed order."
+  }
+ },
+ {
+  "id": "acid-rank-004",
+  "type": "acid-rank",
+  "role": "worked",
+  "kind": "rank",
+  "diff": 2,
+  "src": "site",
+  "stem": "Rank these <b>bases</b>.",
+  "order": "strongest base first",
+  "items": [
+   {
+    "h": "[[mol:C[CH2-]]]"
+   },
+   {
+    "h": "[[mol:[NH2-]]]"
+   },
+   {
+    "h": "[[mol:[C-]#C]]"
+   },
+   {
+    "h": "[[mol:CC[O-]]]"
+   },
+   {
+    "h": "[[mol:CC(=O)[O-]]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Turn each base into its conjugate acid",
+     "h": "Add a proton to each: ethane, ammonia, acetylene, ethanol, acetic acid.",
+     "ask": {
+      "q": "Why look at the conjugate acids?",
+      "a": "Because the ladder lists acids. The weaker the acid, the stronger its conjugate base."
+     }
+    },
+    {
+     "t": "Write the {{pKa}} of each conjugate acid",
+     "h": "Ethane 50 to 60 (the lecture uses 60 here), ammonia 38, acetylene 25, ethanol 16, acetic acid 4."
+    },
+    {
+     "t": "Order the bases",
+     "h": "Highest {{pKa}} of the conjugate acid, strongest base: ethyl anion > amide > acetylide > ethoxide > acetate.",
+     "ask": {
+      "q": "Which of the five is the weakest base?",
+      "a": "Acetate: its conjugate acid is the strongest acid of the five."
+     }
+    },
+    {
+     "t": "Name the factors",
+     "h": "Ethyl anion against acetylide: both carbanions, {{sp3}} against {{sp}}, hybridization. Carbon, nitrogen, oxygen anions: electronegativity. Ethoxide against acetate: both on oxygen, but acetate shares the charge between two oxygens, resonance.",
+     "ask": {
+      "q": "Acetylide is a carbanion. Why is it a weaker base than amide, a nitrogen anion?",
+      "a": "Its lone pair is in an {{sp}} orbital. The numbers settle it: 25 against 38."
+     }
+    },
+    {
+     "t": "Sanity check",
+     "h": "The most stable anion, acetate, is the weakest base, and the least stable, the {{sp3}} carbanion, is the strongest."
+    }
+   ],
+   "answer": "{{CH3CH2-}} > {{NH2-}} > {{HC≡C-}} > {{CH3CH2O-}} > {{CH3CO2-}}",
+   "rule": "To rank bases, rank their conjugate acids and reverse the order."
+  }
+ },
+ {
+  "id": "acid-rank-005",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank the hydrogen halides as acids.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:I]]"
+   },
+   {
+    "h": "[[mol:Br]]"
+   },
+   {
+    "h": "[[mol:Cl]]"
+   },
+   {
+    "h": "[[mol:F]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "{{I-}}, {{Br-}}, {{Cl-}}, {{F-}}: four ions from the same column."
+    },
+    {
+     "t": "Use the column rule",
+     "h": "Down a column the ion gets larger and spreads out the charge. Iodide is the most stable, fluoride the least."
+    },
+    {
+     "t": "Check with the numbers",
+     "h": "H-I -10, H-Br -9, H-Cl -8, H-F 4. The big gap is between H-Cl and H-F."
+    },
+    {
+     "t": "Name the trap",
+     "h": "Fluorine is the most electronegative, which tempts you to put H-F first. Electronegativity is the rule across a row. In a column the rule is size."
+    }
+   ],
+   "answer": "H-I > H-Br > H-Cl > H-F. Factor: size.",
+   "rule": "Down a column: bigger atom, stronger acid."
+  }
+ },
+ {
+  "id": "acid-rank-006",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank these three O-H acids.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:CC(=O)O]]"
+   },
+   {
+    "h": "[[mol:Oc1ccccc1]]"
+   },
+   {
+    "h": "[[mol:CCO]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Acetate, phenoxide, ethoxide. In all three the charge starts on oxygen, so electronegativity and size cannot separate them."
+    },
+    {
+     "t": "Look for resonance",
+     "h": "Ethoxide: none, the charge stays on one oxygen. Phenoxide: the charge is delocalized into the ring. Acetate: the charge is shared equally by two oxygens."
+    },
+    {
+     "t": "Order by how well the charge is shared",
+     "h": "Two equivalent oxygens is the best arrangement, sharing with ring carbons is next, no sharing is worst."
+    },
+    {
+     "t": "Check with the numbers",
+     "h": "Acetic acid 4, phenol 10, ethanol 16: six units for each step."
+    }
+   ],
+   "answer": "Acetic acid (4) > phenol (10) > ethanol (16). Factor: resonance.",
+   "rule": "4, 10, 16: resonance onto oxygen beats resonance onto carbon beats none."
+  }
+ },
+ {
+  "id": "acid-rank-007",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Phenol ({{pKa}} 10) is about a million times more acidic than cyclohexanol ({{pKa}} about 16). Which factor decides?\n[[mol:Oc1ccccc1]] [[mol:OC1CCCCC1]]",
+  "choices": [
+   {
+    "h": "Resonance",
+    "ok": true,
+    "why": "The charge of phenoxide is delocalized from oxygen into the ring. Cyclohexanol's conjugate base has no pi system next to the oxygen, so its charge stays put."
+   },
+   {
+    "h": "Aromaticity",
+    "ok": false,
+    "why": "The mistake is seeing a benzene ring and choosing the word that goes with it. As a factor, aromaticity means the conjugate base <b>becomes</b> aromatic when the proton leaves. Phenol's ring is aromatic before and after."
+   },
+   {
+    "h": "Electronegativity",
+    "ok": false,
+    "why": "The charge is on oxygen in both conjugate bases. The charged atom is the same."
+   },
+   {
+    "h": "Hybridization",
+    "ok": false,
+    "why": "Hybridization is the factor when the lone pair of the conjugate base sits on atoms of different hybridization, as in acetylene against ethane. Here the charge is on oxygen in both, and what differs is that phenoxide can share it with the ring."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Phenoxide and cyclohexoxide: an {{O-}} on a benzene ring and an {{O-}} on a saturated ring."
+    },
+    {
+     "t": "Ask where the charge can go",
+     "h": "In phenoxide a lone pair on oxygen can be pushed into the ring, placing the charge on three ring carbons in turn. In the saturated ring there is nowhere for it to go."
+    },
+    {
+     "t": "Name the factor",
+     "h": "Sharing a charge through a pi system is resonance. The exam key gives exactly this reason for phenol's value of 10."
+    }
+   ],
+   "answer": "Resonance",
+   "rule": "Phenol 10 against alcohol 16: the phenoxide charge is delocalized into the ring."
+  }
+ },
+ {
+  "id": "acid-rank-008",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 2,
+  "src": "site",
+  "stem": "Rank these hydrocarbons as acids.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:C#C]]"
+   },
+   {
+    "h": "[[mol:C=C]]"
+   },
+   {
+    "h": "[[mol:CC]]"
+   }
+  ],
+  "note": "Lecture values: acetylene 25, ethane 60. Tables put ethylene at about 44, in between.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Three carbanions. The lone pair is in an {{sp}} orbital in acetylide, an {{sp2}} orbital in the vinyl anion and an {{sp3}} orbital in the ethyl anion."
+    },
+    {
+     "t": "Compare s character",
+     "h": "{{sp}} is 50% s, {{sp2}} is 33%, {{sp3}} is 25%. An s orbital is closer to the nucleus than a p orbital, so more s character means the electrons are held more tightly and the anion is more stable."
+    },
+    {
+     "t": "Order them",
+     "h": "Acetylene > ethylene > ethane. The lecture gives the two ends: acetylene 25 and ethane 60."
+    }
+   ],
+   "answer": "Acetylene > ethylene > ethane. Factor: hybridization.",
+   "rule": "More s character, more stable carbanion: {{sp}} > {{sp2}} > {{sp3}}."
+  }
+ },
+ {
+  "id": "acid-rank-009",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 1,
+  "src": "site",
+  "stem": "Rank the halide ions as <b>bases</b>.",
+  "order": "strongest base first",
+  "items": [
+   {
+    "h": "[[mol:[F-]]]"
+   },
+   {
+    "h": "[[mol:[Cl-]]]"
+   },
+   {
+    "h": "[[mol:[Br-]]]"
+   },
+   {
+    "h": "[[mol:[I-]]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Use the lecture's periodic trend",
+     "h": "Basicity increases going up a column. Fluoride is at the top."
+    },
+    {
+     "t": "Check with the conjugate acids",
+     "h": "H-F 4, H-Cl -8, H-Br -9, H-I -10. The weakest acid, H-F, has the strongest conjugate base."
+    },
+    {
+     "t": "Say why",
+     "h": "Fluoride is the smallest ion, so its charge is the most concentrated and the most eager to find a proton. Iodide spreads its charge over a large volume."
+    },
+    {
+     "t": "Connect to leaving groups",
+     "h": "The order of leaving-group ability is the reverse: iodide is the best leaving group and fluoride the worst."
+    }
+   ],
+   "answer": "{{F-}} > {{Cl-}} > {{Br-}} > {{I-}}. Factor: size.",
+   "rule": "Basicity increases up a column and to the left across a row."
+  }
+ },
+ {
+  "id": "acid-rank-010",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these alcohols by acidity in the <b>gas phase</b>.",
+  "order": "most acidic in the gas phase first",
+  "items": [
+   {
+    "h": "[[mol:CC(C)(C)O|me]]"
+   },
+   {
+    "h": "[[mol:CC(C)O|me]]"
+   },
+   {
+    "h": "[[mol:CCO|me]]"
+   },
+   {
+    "h": "[[mol:CO|me]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Recall the solution order",
+     "h": "In solution: methanol 15.5, ethanol 15.9, isopropanol 16.5, tert-butanol 17.0. Methanol is the most acidic because methoxide is the best solvated."
+    },
+    {
+     "t": "Remove the solvent",
+     "h": "In the gas phase there are no solvent molecules, so the advantage of the small, well solvated ion is gone."
+    },
+    {
+     "t": "Reverse the order",
+     "h": "The lecture: in the gas phase the relative acidity runs the other way, and tert-butanol is the most acidic."
+    },
+    {
+     "t": "Read the question twice",
+     "h": "The trap is automatic: the solution order is the one you memorized. The words gas phase turn it upside down."
+    }
+   ],
+   "answer": "tert-Butanol > isopropanol > ethanol > methanol (the reverse of the solution order).",
+   "rule": "Solution: methanol most acidic. Gas phase: tert-butanol most acidic."
+  }
+ },
+ {
+  "id": "acid-rank-011",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "In solution, methanol ({{pKa}} 15.5) is more acidic than tert-butanol ({{pKa}} 17.0). What is the reason?",
+  "choices": [
+   {
+    "h": "Methoxide is surrounded by more solvent molecules than tert-butoxide, so it is the more stable base",
+    "ok": true,
+    "why": "This is the lecture's explanation: the large nonpolar group of tert-butoxide keeps solvent away from the charge. Solvation gives stabilization."
+   },
+   {
+    "h": "The three methyl groups of tert-butoxide push electron density onto oxygen and destabilize it",
+    "ok": false,
+    "why": "This is the common wrong explanation. If it were the cause, tert-butanol would also be the weakest acid in the gas phase. There it is the strongest."
+   },
+   {
+    "h": "Methoxide is stabilized by resonance",
+    "ok": false,
+    "why": "Methoxide has no pi system. Its charge sits on one oxygen, exactly as in tert-butoxide."
+   },
+   {
+    "h": "Oxygen is more electronegative in methanol",
+    "ok": false,
+    "why": "Electronegativity belongs to the element. The charged atom is oxygen in both."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Compare the conjugate bases",
+     "h": "Methoxide and tert-butoxide: same charged atom, no resonance in either, same hybridization. None of the six structural factors separates them."
+    },
+    {
+     "t": "Look outside the molecule",
+     "h": "The lecture calls this a solvent effect. Solvent molecules stabilize an ion by gathering around its charge."
+    },
+    {
+     "t": "Compare the access",
+     "h": "Around methoxide there is room for many solvent molecules. Around tert-butoxide the nonpolar bulk leaves room for fewer."
+    },
+    {
+     "t": "Test the explanation",
+     "h": "Take the solvent away and the order reverses, which is what an explanation based on solvation predicts."
+    }
+   ],
+   "answer": "Better solvation of the smaller alkoxide",
+   "rule": "When the charged atom is identical, look at how well the solvent can reach it."
+  }
+ },
+ {
+  "id": "acid-rank-012",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "tert-Butanol is the least acidic of the simple alcohols in solution but the most acidic of them in the gas phase. What does this show?",
+  "choices": [
+   {
+    "h": "The solution order is caused by solvation of the alkoxides, not by anything built into the molecules",
+    "ok": true,
+    "why": "Removing the solvent removed the effect and reversed the order. So the solvent was the cause of the solution order."
+   },
+   {
+    "h": "Alkyl groups always destabilize a negative charge on a neighbouring atom",
+    "ok": false,
+    "why": "If that were so, tert-butanol would be the weakest acid everywhere. The gas-phase result is the evidence against this idea."
+   },
+   {
+    "h": "{{pKa}} values cannot be compared between any two compounds",
+    "ok": false,
+    "why": "Too strong. Values measured in the same solvent are compared all the time. The point is that a small difference between similar ions can come from the solvent."
+   },
+   {
+    "h": "tert-Butoxide is a weaker base than methoxide in solution",
+    "ok": false,
+    "why": "The reverse. In solution tert-butanol is the weaker acid (17.0 against 15.5), so tert-butoxide is the stronger base."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "State the two facts",
+     "h": "Solution: methanol 15.5 is the most acidic and tert-butanol 17.0 the least. Gas phase: the other way round."
+    },
+    {
+     "t": "Ask what changed",
+     "h": "The molecules are the same in both experiments. Only the solvent was removed."
+    },
+    {
+     "t": "Draw the conclusion",
+     "h": "The solution order must come from the solvent. Small methoxide is well solvated and stabilized, bulky tert-butoxide is not."
+    },
+    {
+     "t": "Use it",
+     "h": "In solution, the bulky alkoxide is the stronger base. That is why potassium tert-butoxide is chosen when a strong base is wanted."
+    }
+   ],
+   "answer": "The solution order is a solvation effect.",
+   "rule": "If removing the solvent reverses a trend, the solvent caused it."
+  }
+ },
+ {
+  "id": "acid-rank-013",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these five acids. They come from five different parts of the ladder.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:OC(=O)C(F)(F)F]]"
+   },
+   {
+    "h": "[[mol:CC(=O)O]]"
+   },
+   {
+    "h": "[[mol:S]]"
+   },
+   {
+    "h": "[[mol:CCO]]"
+   },
+   {
+    "h": "[[mol:C#C]]"
+   }
+  ],
+  "note": "Uses the lecture's value of 10 for hydrogen sulfide. With the usual table value of 7 the order is the same.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen in each",
+     "h": "Two carboxylic acid O-H groups, an S-H, an alcohol O-H and an {{sp}} C-H."
+    },
+    {
+     "t": "Write the lecture values",
+     "h": "{{CF3CO2H}} -1.5, {{CH3CO2H}} 4, {{H2S}} 10, ethanol 16, acetylene 25."
+    },
+    {
+     "t": "Order by {{pKa}}",
+     "h": "Lowest number first: {{CF3CO2H}} > {{CH3CO2H}} > {{H2S}} > ethanol > acetylene."
+    },
+    {
+     "t": "Name the factor at each step",
+     "h": "Induction (three fluorines); resonance (carboxylate against a single atom); size (S against O); electronegativity (O against C), partly offset by the {{sp}} hybridization that keeps acetylene at 25 and not 50."
+    }
+   ],
+   "answer": "{{CF3CO2H}} (-1.5) > {{CH3CO2H}} (4) > {{H2S}} (10) > {{CH3CH2OH}} (16) > HC≡CH (25)",
+   "rule": "When the compounds are unrelated, rank by the numbers, then explain each step with one factor."
+  }
+ },
+ {
+  "id": "acid-rank-014",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these <b>bases</b> as they behave in solution.",
+  "order": "strongest base first",
+  "items": [
+   {
+    "h": "[[mol:[NH2-]]]"
+   },
+   {
+    "h": "[[mol:CC(C)(C)[O-]|me]]"
+   },
+   {
+    "h": "[[mol:C[O-]|me]]"
+   },
+   {
+    "h": "[[mol:[SH-]]]"
+   },
+   {
+    "h": "[[mol:CC(=O)[O-]]]"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Write the conjugate acids and their values",
+     "h": "Ammonia 38, tert-butanol 17.0, methanol 15.5, hydrogen sulfide 10, acetic acid 4."
+    },
+    {
+     "t": "Reverse the acid order",
+     "h": "The weakest acid has the strongest conjugate base: amide > tert-butoxide > methoxide > hydrosulfide > acetate."
+    },
+    {
+     "t": "Look at the close pair",
+     "h": "tert-Butoxide and methoxide are only 1.5 units apart. tert-Butoxide is the stronger base because its bulk keeps solvent away from the charge, so it is less stabilized."
+    },
+    {
+     "t": "Name the other factors",
+     "h": "Amide against the alkoxides: electronegativity (N against O). Hydrosulfide against methoxide: size (S against O). Acetate: resonance."
+    }
+   ],
+   "answer": "{{NH2-}} > {{(CH3)3CO-}} > {{CH3O-}} > {{HS-}} > {{CH3CO2-}}",
+   "rule": "Strong base, weak conjugate acid. Among alkoxides in solution, the bulkiest is the strongest base."
+  }
+ },
+ {
+  "id": "acid-rank-015",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Water ({{pKa}} 15.7) is a far stronger acid than ammonia ({{pKa}} 38). Which factor decides?",
+  "choices": [
+   {
+    "h": "Electronegativity",
+    "ok": true,
+    "why": "O and N are in the same row. Oxygen is more electronegative, so it holds the negative charge of {{HO-}} better than nitrogen holds that of {{H2N-}}."
+   },
+   {
+    "h": "Size",
+    "ok": false,
+    "why": "O and N are in the same row and are close in size. Size is the rule for a column, as in {{H2S}} against {{H2O}}."
+   },
+   {
+    "h": "Resonance",
+    "ok": false,
+    "why": "Neither hydroxide nor amide has a pi system to share the charge with."
+   },
+   {
+    "h": "Induction",
+    "ok": false,
+    "why": "Induction is the pull of electronegative atoms near the charged atom. Here the difference is the charged atom itself."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "{{HO-}} and {{H2N-}}: the charge is on O in one and on N in the other."
+    },
+    {
+     "t": "Place the atoms in the periodic table",
+     "h": "Same row, oxygen to the right of nitrogen."
+    },
+    {
+     "t": "Apply the row rule",
+     "h": "Across a row, the more electronegative atom stabilizes a negative charge better. Hydroxide is the more stable, weaker base, so water is the stronger acid."
+    }
+   ],
+   "answer": "Electronegativity",
+   "rule": "Different charged atoms in the same row: electronegativity."
+  }
+ },
+ {
+  "id": "acid-rank-016",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Which is the stronger acid, and why?\n[[mol:CCO]] [[mol:CCS]]",
+  "choices": [
+   {
+    "h": "Ethanethiol: sulfur is larger and spreads out the charge",
+    "ok": true,
+    "why": "S is below O in the column. The larger thiolate ion is more stable than ethoxide, just as {{HS-}} is more stable than {{HO-}} ({{H2S}} 10 against {{H2O}} 15.7)."
+   },
+   {
+    "h": "Ethanol: oxygen is more electronegative than sulfur",
+    "ok": false,
+    "why": "Oxygen is more electronegative, but that is the rule for a row. O and S are in the same column, where size decides."
+   },
+   {
+    "h": "Ethanethiol: sulfur is more electronegative than oxygen",
+    "ok": false,
+    "why": "Right compound, wrong reason, and the reason is false: sulfur is less electronegative than oxygen. On a question that asks for the factor, this loses the points."
+   },
+   {
+    "h": "They are about the same: both are R-X-H with X in group 16",
+    "ok": false,
+    "why": "Being in the same group is what makes size the deciding factor. The difference is about five to six {{pKa}} units."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "{{CH3CH2O-}} and {{CH3CH2S-}}: same structure, the charge on O or on S."
+    },
+    {
+     "t": "Place the atoms",
+     "h": "Same column, sulfur one row below oxygen."
+    },
+    {
+     "t": "Apply the column rule",
+     "h": "The larger atom spreads the charge over more volume and is more stable. The thiol is the stronger acid, about 10 to 11 against 16."
+    }
+   ],
+   "answer": "Ethanethiol, because of size",
+   "rule": "Same column: size. A thiol is more acidic than the matching alcohol."
+  }
+ },
+ {
+  "id": "acid-rank-017",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "rank",
+  "diff": 3,
+  "src": "site",
+  "stem": "Rank these three carboxylic acids.",
+  "order": "strongest acid first",
+  "items": [
+   {
+    "h": "[[mol:CCC(Cl)C(=O)O]]"
+   },
+   {
+    "h": "[[mol:ClCCCC(=O)O]]"
+   },
+   {
+    "h": "[[mol:CCCC(=O)O]]"
+   }
+  ],
+  "note": "The lecture's example of induction is trifluoroacetic acid against a carboxylic acid. Table values for these three: 2.9, 4.5, 4.8.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Three carboxylates. Resonance is the same in all three, so it cannot separate them."
+    },
+    {
+     "t": "Find the difference",
+     "h": "A chlorine, an electronegative atom, on the carbon next to the carboxylate, three carbons away, or absent."
+    },
+    {
+     "t": "Apply induction",
+     "h": "Chlorine pulls electron density through the sigma bonds and stabilizes the carboxylate. The pull weakens with every bond it has to pass through, so the chlorine on carbon 2 helps a lot and the chlorine on carbon 4 helps only a little."
+    },
+    {
+     "t": "Order them",
+     "h": "2-Chlorobutanoic acid > 4-chlorobutanoic acid > butanoic acid."
+    }
+   ],
+   "answer": "2-Chlorobutanoic acid > 4-chlorobutanoic acid > butanoic acid. Factor: induction, which falls off with distance.",
+   "rule": "Induction: more electronegative atoms, and closer to the charge, give the stronger acid."
+  }
+ },
+ {
+  "id": "acid-rank-018",
+  "type": "acid-rank",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "Cyclopentadiene has a {{pKa}} of about 16, while cyclopentane, like any alkane, is 50 to 60. Both lose a hydrogen from an {{sp3}} carbon. Which factor explains the difference?\n[[mol:C1C=CC=C1]] [[mol:C1CCCC1]]",
+  "note": "The value of about 16 for cyclopentadiene is a table value, not a lecture number. The lecture lists aromaticity as one of the six factors.",
+  "choices": [
+   {
+    "h": "Aromaticity",
+    "ok": true,
+    "why": "Removing a proton from the {{CH2}} of cyclopentadiene leaves a lone pair that joins the two double bonds: a flat ring with six pi electrons, which is aromatic. Gaining aromaticity makes this conjugate base unusually stable."
+   },
+   {
+    "h": "Hybridization",
+    "ok": false,
+    "why": "The hydrogen that leaves is on an {{sp3}} carbon in both compounds, as the question says. The mistake is crediting the {{sp2}} carbons nearby."
+   },
+   {
+    "h": "Induction",
+    "ok": false,
+    "why": "There are no electronegative atoms in either molecule: both are hydrocarbons."
+   },
+   {
+    "h": "Size",
+    "ok": false,
+    "why": "The charge is on carbon in both conjugate bases."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the conjugate bases",
+     "h": "Cyclopentyl anion: a lone pair on one {{sp3}} carbon, nothing to help. Cyclopentadienyl anion: a lone pair next to two double bonds in a five-membered ring."
+    },
+    {
+     "t": "Count the pi electrons",
+     "h": "Two double bonds give four electrons and the lone pair gives two more: six electrons in a ring of five p orbitals. The charge is shared equally by all five carbons."
+    },
+    {
+     "t": "Name the factor",
+     "h": "A conjugate base that is aromatic is especially stable. This is the A in the lecture's list of six factors, and it is worth far more than ordinary resonance: over thirty {{pKa}} units here."
+    }
+   ],
+   "answer": "Aromaticity",
+   "rule": "If losing the proton makes the ring aromatic, the acid is far stronger than its hybridization suggests."
+  }
+ }
+]

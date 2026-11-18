@@ -1,0 +1,1068 @@
+[
+ {
+  "id": "pka-values-001",
+  "type": "pka-values",
+  "role": "worked",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCC#C]]",
+  "answer": 25,
+  "lo": 24,
+  "hi": 26,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find every kind of hydrogen",
+     "h": "1-Butyne has three kinds: the H on the triple-bond carbon, the {{CH2}} hydrogens and the {{CH3}} hydrogens.",
+     "ask": {
+      "q": "Which carbon carries the hydrogen you care about?",
+      "a": "The end carbon of the triple bond, the sp carbon."
+     }
+    },
+    {
+     "t": "Pick the most acidic one",
+     "h": "The {{pKa}} of a compound is the {{pKa}} of its most acidic hydrogen. A hydrogen on an {{sp}} carbon (about 25) is far more acidic than one on an {{sp3}} carbon (50 to 60), so the alkyne C-H is the answer.",
+     "ask": {
+      "q": "Roughly how many powers of ten separate an alkyne C-H from an alkane C-H?",
+      "a": "At least 25: {{pKa}} 25 against 50 to 60."
+     }
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value for a terminal alkyne, H-C≡C-H, is 25. Swapping the other H for an ethyl group changes almost nothing, so 1-butyne is also 25."
+    },
+    {
+     "t": "Say why",
+     "h": "Take the proton away and the lone pair sits in an {{sp}} orbital. That orbital is 50% s character, so the electrons are held close to the nucleus and the anion is more stable than an {{sp3}} carbanion. The factor is hybridization.",
+     "ask": {
+      "q": "What is the s character of an {{sp3}} orbital?",
+      "a": "25%."
+     }
+    },
+    {
+     "t": "Write the number",
+     "h": "About 25. The exam asked the same thing with propyne."
+    }
+   ],
+   "answer": "about 25",
+   "rule": "A hydrogen on a triple-bond carbon: 25. The alkyl group attached does not change it."
+  }
+ },
+ {
+  "id": "pka-values-002",
+  "type": "pka-values",
+  "role": "worked",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CC(C)NC(C)C]]",
+  "answer": 38,
+  "lo": 35,
+  "hi": 40,
+  "note": "Lecture value for an amine N-H: 38. Tables give about 36 for diisopropylamine.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Look at what is drawn",
+     "h": "Diisopropylamine is drawn as the <b>neutral</b> amine: nitrogen has two carbon groups, one hydrogen and a lone pair. There is no positive charge.",
+     "ask": {
+      "q": "Is this compound an acid or a base in everyday use?",
+      "a": "A base. That is exactly why the question is a trap: you are asked for its {{pKa}} as an acid."
+     }
+    },
+    {
+     "t": "Find the most acidic hydrogen",
+     "h": "The choices are the N-H and the C-H bonds. N is more electronegative than C, so the N-H is the more acidic: amine N-H about 38, alkane C-H 50 to 60."
+    },
+    {
+     "t": "Avoid the trap",
+     "h": "The number 11 that many people remember belongs to the <b>ammonium ion</b>, {{R2NH2+}}, the conjugate acid of the amine. That species is not drawn here. The exam key for diethylamine is 38, not 11.",
+     "ask": {
+      "q": "What would have to be drawn for the answer to be about 11?",
+      "a": "The protonated amine, with four bonds to nitrogen and a positive charge."
+     }
+    },
+    {
+     "t": "Use the analogy",
+     "h": "The lecture gives {{RNH2}} as 38. A second alkyl group on nitrogen does not move the value much, so write 38.",
+     "ask": {
+      "q": "What is the conjugate base of this acid?",
+      "a": "The amide ion {{R2N-}}, a very strong base."
+     }
+    },
+    {
+     "t": "Write the number",
+     "h": "About 38. Anything from 35 to 40 counts as approximate."
+    }
+   ],
+   "answer": "about 38",
+   "rule": "Neutral amine: the acid is the N-H, 38. Only the charged ammonium ion is about 10 to 11."
+  }
+ },
+ {
+  "id": "pka-values-003",
+  "type": "pka-values",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "Which hydrogen is the acidic one, and what is the approximate {{pKa}} of this compound?\n[[mol:C#CCCCO]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "The O-H, about 16",
+    "ok": true,
+    "why": "An alcohol O-H (about 16) is the most acidic hydrogen in the molecule, and the {{pKa}} of a compound is that of its most acidic hydrogen."
+   },
+   {
+    "h": "The H on the triple-bond carbon, about 25",
+    "ok": false,
+    "why": "That hydrogen is acidic, and 25 is its correct value, but the O-H is nine units more acidic. The mistake is stopping at the first acidic hydrogen you recognize."
+   },
+   {
+    "h": "A {{CH2}} hydrogen, about 50",
+    "ok": false,
+    "why": "These are ordinary {{sp3}} C-H bonds, the least acidic hydrogens here. The mistake is reading the carbon chain instead of the functional groups."
+   },
+   {
+    "h": "The O-H, about 10",
+    "ok": false,
+    "why": "Right hydrogen, wrong number. 10 is phenol, where the O is on a benzene ring and the charge is delocalized by resonance. This O is on an {{sp3}} carbon: an ordinary alcohol, 16."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "List the kinds of hydrogen",
+     "h": "There are three: the O-H, the H on the {{sp}} carbon, and the {{CH2}} hydrogens.",
+     "ask": {
+      "q": "What are the ladder values for these three kinds?",
+      "a": "O-H of an alcohol about 16; alkyne C-H 25; alkane C-H 50 to 60."
+     }
+    },
+    {
+     "t": "Compare the conjugate bases",
+     "h": "Removing the O-H puts the charge on oxygen, an electronegative atom. Removing the alkyne H puts it on an {{sp}} carbon. Removing a {{CH2}} hydrogen puts it on an {{sp3}} carbon with nothing to help."
+    },
+    {
+     "t": "Choose the lowest number",
+     "h": "The lowest {{pKa}} belongs to the most acidic hydrogen: the O-H at 16.",
+     "ask": {
+      "q": "A base strong enough to remove only one hydrogen would take which?",
+      "a": "The O-H. It is nine powers of ten more acidic than the alkyne C-H."
+     }
+    },
+    {
+     "t": "Check for anything that would change 16",
+     "h": "The triple bond is three carbons away from the oxygen and is not conjugated with it, so there is no resonance. An ordinary alcohol: 16."
+    }
+   ],
+   "answer": "The O-H, about 16",
+   "rule": "With two functional groups, quote the more acidic one: the lower {{pKa}}."
+  }
+ },
+ {
+  "id": "pka-values-004",
+  "type": "pka-values",
+  "role": "worked",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:OC(=O)C(F)(F)F]]",
+  "answer": -1.5,
+  "lo": -2,
+  "hi": 1,
+  "note": "Lecture value -1.5. Most tables give 0 to 0.5.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The only hydrogen is the O-H of a carboxylic acid group.",
+     "ask": {
+      "q": "What is the ladder value for an ordinary carboxylic acid?",
+      "a": "About 4."
+     }
+    },
+    {
+     "t": "Ask what is different here",
+     "h": "The carbon next to the {{CO2H}} carries three fluorines. Fluorine is the most electronegative element, and it pulls electron density toward itself through the bonds."
+    },
+    {
+     "t": "Decide the direction",
+     "h": "Pulling electron density away from the carboxylate spreads out its negative charge and stabilizes it. A more stable conjugate base means a stronger acid, so the {{pKa}} must be <b>lower</b> than 4.",
+     "ask": {
+      "q": "Which of the six factors is this?",
+      "a": "Induction."
+     }
+    },
+    {
+     "t": "Recall the lecture number",
+     "h": "The lecture puts {{CF3CO2H}} at -1.5, the same as {{H3O+}}: about five and a half units stronger than acetic acid.",
+     "ask": {
+      "q": "Is the conjugate base still stabilized by resonance?",
+      "a": "Yes. Resonance over the two oxygens gives 4; induction by three fluorines takes it down to -1.5."
+     }
+    },
+    {
+     "t": "Write the number",
+     "h": "About -1.5. If the number is forgotten, an answer near 0 with the word induction still shows the right idea."
+    }
+   ],
+   "answer": "about -1.5",
+   "rule": "{{RCO2H}} 4; {{CF3CO2H}} -1.5, because three fluorines stabilize the carboxylate by induction."
+  }
+ },
+ {
+  "id": "pka-values-005",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:OC1CCCCC1]]",
+  "answer": 16,
+  "lo": 15,
+  "hi": 18,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H. Every other hydrogen is an {{sp3}} C-H."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The oxygen sits on an {{sp3}} carbon of a saturated ring, so this is an ordinary alcohol like ethanol: about 16."
+    },
+    {
+     "t": "Check the reason",
+     "h": "It is not phenol. Cyclohexane has no double bonds, so the charge of the alkoxide stays on oxygen with no resonance. Do not write 10."
+    }
+   ],
+   "answer": "about 16",
+   "rule": "O-H on an {{sp3}} carbon: alcohol, 16. O-H on a benzene ring: phenol, 10."
+  }
+ },
+ {
+  "id": "pka-values-006",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCCC]]",
+  "answer": 50,
+  "lo": 48,
+  "hi": 62,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Butane has only {{sp3}} C-H bonds. Any one of them is the acid."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value for an alkane, R-H, is 50 to 60. The exam key for pentane is about 50."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The conjugate base is an {{sp3}} carbanion: carbon is not electronegative, the orbital has only 25% s character, and there is no resonance. Nothing stabilizes it, so alkanes sit at the top of the ladder."
+    }
+   ],
+   "answer": "about 50 (anything from 50 to 60)",
+   "rule": "Alkane C-H: 50 to 60, the weakest acid on the ladder."
+  }
+ },
+ {
+  "id": "pka-values-007",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCC(=O)O]]",
+  "answer": 4,
+  "lo": 3.5,
+  "hi": 5,
+  "note": "Lecture value for RCO2H: 4. Tables give 4.87 for propanoic acid.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H of the {{CO2H}} group."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "A carboxylic acid, {{RCO2H}}: 4 in the lecture. Propanoic acid is acetic acid with one more carbon, and the extra {{CH2}} changes almost nothing."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The negative charge of the carboxylate is shared equally by two oxygens (resonance). That is why it is twelve units more acidic than an alcohol."
+    }
+   ],
+   "answer": "about 4",
+   "rule": "Carboxylic acid: 4 (to 5)."
+  }
+ },
+ {
+  "id": "pka-values-008",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:OC(=O)c1ccccc1]]",
+  "answer": 4,
+  "lo": 3.5,
+  "hi": 5,
+  "note": "Tables give 4.2 for benzoic acid.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H of the {{CO2H}} group. The ring hydrogens are {{sp2}} C-H bonds and are far less acidic."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "A {{CO2H}} group is a carboxylic acid whatever it is attached to: about 4."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Do not write 10 because you see a benzene ring. Phenol has the O-H directly on the ring. Here the ring carries a {{CO2H}} group, and the charge of the conjugate base is shared by the two oxygens of the carboxylate."
+    }
+   ],
+   "answer": "about 4",
+   "rule": "Name the functional group that holds the H, not the ring next to it: {{CO2H}} is 4."
+  }
+ },
+ {
+  "id": "pka-values-009",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:O]]",
+  "answer": 15.7,
+  "lo": 15,
+  "hi": 16,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Either O-H of water."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "Water is 15.7 in the lecture, just below the ordinary alcohols (about 16)."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The conjugate base is hydroxide. Oxygen is electronegative, but the whole charge sits on one small atom, so water is a weak acid. The number is worth knowing exactly because it is the reference point for every equilibrium in water."
+    }
+   ],
+   "answer": "15.7",
+   "rule": "Water 15.7; hydronium -1.5. Learn the pair."
+  }
+ },
+ {
+  "id": "pka-values-010",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CO]]",
+  "answer": 15.5,
+  "lo": 15,
+  "hi": 16.5,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "Methanol is 15.5 in the lecture's table of alcohols: the most acidic simple alcohol in solution, a little below water (15.7) and ethanol (15.9)."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Methoxide is the smallest alkoxide, so the most solvent molecules can crowd around its charge. More solvation means a more stable base and a slightly stronger acid."
+    }
+   ],
+   "answer": "about 15.5 (about 16 is accepted as approximate)",
+   "rule": "Alcohols in solution: methanol 15.5, ethanol 15.9, isopropanol 16.5, tert-butanol 17."
+  }
+ },
+ {
+  "id": "pka-values-011",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:Cl]]",
+  "answer": -8,
+  "lo": -9,
+  "hi": -6,
+  "note": "Lecture value -8. Many tables give -7.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The only hydrogen: H-Cl."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture's strong acids go H-I -10, H-Br -9, H-Cl -8."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Chloride is a large ion compared with fluoride and spreads out its charge, so it is a very weak base and H-Cl is a very strong acid: stronger than {{H3O+}} (-1.5)."
+    }
+   ],
+   "answer": "about -8",
+   "rule": "H-Cl -8, H-Br -9, H-I -10: one unit per step down the column."
+  }
+ },
+ {
+  "id": "pka-values-012",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:Br]]",
+  "answer": -9,
+  "lo": -10,
+  "hi": -8,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The only hydrogen: H-Br."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value is -9, between H-Cl (-8) and H-I (-10)."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Bromide is larger than chloride and spreads the charge over more volume, so it is a slightly weaker base and H-Br is a slightly stronger acid. Bromide's stability is also why it is a good leaving group."
+    }
+   ],
+   "answer": "about -9",
+   "rule": "Down the halogens the acid gets stronger: size."
+  }
+ },
+ {
+  "id": "pka-values-013",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:I]]",
+  "answer": -10,
+  "lo": -11,
+  "hi": -9,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The only hydrogen: H-I."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "H-I is the strongest acid on the lecture's ladder: -10."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Iodine is the least electronegative of the four halogens, yet H-I is the strongest acid. Within a column size decides, not electronegativity: iodide is the largest halide and spreads its charge the most."
+    }
+   ],
+   "answer": "about -10",
+   "rule": "In a column, the bigger atom gives the stronger acid: H-I -10 is the bottom of the ladder."
+  }
+ },
+ {
+  "id": "pka-values-014",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:F]]",
+  "answer": 4,
+  "lo": 3,
+  "hi": 4.5,
+  "note": "Lecture value 4. Tables give 3.2.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The only hydrogen: H-F."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value is 4, the same as a carboxylic acid. It is the odd one out among the hydrogen halides: the others are all negative."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Fluoride is small, so its charge is concentrated and it is the strongest base of the halides. That makes H-F a weak acid, twelve units weaker than H-Cl, and fluoride a poor leaving group."
+    }
+   ],
+   "answer": "about 4 (about 3 is also accepted)",
+   "rule": "H-F is a weak acid, 4. Do not give it a negative number like the other H-X acids."
+  }
+ },
+ {
+  "id": "pka-values-015",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:[OH3+]]]",
+  "answer": -1.5,
+  "lo": -2,
+  "hi": 0,
+  "note": "Lecture value -1.5. Tables give -1.7.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Any of the three O-H bonds of the hydronium ion."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value for {{H3O+}} is -1.5."
+    },
+    {
+     "t": "Check the reason",
+     "h": "This acid carries a positive charge. Losing a proton gives neutral water, a very stable molecule, so hydronium is a strong acid. It is the strongest acid that can exist in water, which is why it is the acid of every aqueous workup."
+    }
+   ],
+   "answer": "about -1.5",
+   "rule": "{{H3O+}} -1.5 and {{H2O}} 15.7: same atoms, 17 units apart because of the charge."
+  }
+ },
+ {
+  "id": "pka-values-016",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:S]]",
+  "answer": 10,
+  "lo": 7,
+  "hi": 10.5,
+  "note": "Lecture value 10. Most tables give about 7.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Either S-H of hydrogen sulfide."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture value for {{H2S}} is 10. That is the number this exam expects."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Sulfur is below oxygen in the column. The larger atom spreads out the charge of {{HS-}}, so {{H2S}} is a stronger acid than water (15.7), although sulfur is less electronegative than oxygen. Writing 16 because it looks like water is the usual mistake."
+    }
+   ],
+   "answer": "about 10",
+   "rule": "{{H2S}} 10, {{H2O}} 15.7: the larger atom spreads out the charge."
+  }
+ },
+ {
+  "id": "pka-values-017",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCS]]",
+  "answer": 10.5,
+  "lo": 9.5,
+  "hi": 11,
+  "note": "By analogy with the lecture's value for hydrogen sulfide, 10. Tables give 10.6 for ethanethiol.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The S-H. This is a thiol, R-SH, the sulfur version of an alcohol."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "There is no thiol on the lecture ladder, so estimate by analogy with {{H2S}} (10): a thiol is about 10 to 11."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Do not copy the alcohol value of 16. The charge of the thiolate is on sulfur, a larger atom than oxygen, which spreads it out. A thiol is about five to six units more acidic than the matching alcohol."
+    }
+   ],
+   "answer": "about 10 to 11",
+   "rule": "S-H is about 10, O-H is about 16: size beats electronegativity within a column."
+  }
+ },
+ {
+  "id": "pka-values-018",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CC(C)(C)O]]",
+  "answer": 17,
+  "lo": 16.5,
+  "hi": 19,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H. The nine C-H hydrogens are alkane hydrogens."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "tert-Butanol is 17.0 in the lecture's table of alcohols: the least acidic of them in solution."
+    },
+    {
+     "t": "Check the reason",
+     "h": "tert-Butoxide has a large nonpolar group around the oxygen, so fewer solvent molecules can reach the charge. Less solvation means a less stable base and a weaker acid. An answer of 16 is still approximately right, but 17 shows you know the trend."
+    }
+   ],
+   "answer": "about 17",
+   "rule": "Bulkier alkoxide, less solvation, weaker acid: tert-butanol 17."
+  }
+ },
+ {
+  "id": "pka-values-019",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:N]]",
+  "answer": 38,
+  "lo": 35,
+  "hi": 40,
+  "note": "Lecture value 38. Tables give 36 to 38.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Any N-H of ammonia."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The lecture gives 38 for an N-H ({{RNH2}}, and ammonia itself)."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Nitrogen is less electronegative than oxygen, so the amide ion {{NH2-}} is much less stable than hydroxide: 38 against 15.7. The number 9 to 10 that goes with ammonia belongs to the ammonium ion {{NH4+}}, which is not what is drawn."
+    }
+   ],
+   "answer": "about 38",
+   "rule": "N-H of neutral ammonia or an amine: 38."
+  }
+ },
+ {
+  "id": "pka-values-020",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:Cc1ccc(O)cc1]]",
+  "answer": 10,
+  "lo": 9,
+  "hi": 11,
+  "note": "By analogy with phenol, 10. Tables give 10.3 for p-cresol.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H. It is more acidic than the {{CH3}} hydrogens and the ring hydrogens."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The O-H is directly on a benzene ring, so this is a phenol: about 10. The methyl group on the far side of the ring barely changes it."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The charge of the conjugate base is delocalized into the ring by resonance, six units better than an ordinary alkoxide. The methyl group is a distraction: do not answer 50 for the {{CH3}} or 16 for an alcohol."
+    }
+   ],
+   "answer": "about 10",
+   "rule": "O-H on a benzene ring is a phenol, 10, whatever else is on the ring."
+  }
+ },
+ {
+  "id": "pka-values-021",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CC[NH2+]CC]]",
+  "answer": 10.5,
+  "lo": 9,
+  "hi": 11.5,
+  "note": "Reference table value for an ammonium ion: 10.5. Tables give 11.0 for the diethylammonium ion.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "One of the two N-H hydrogens. Notice the positive charge: nitrogen has four bonds. This is an ammonium ion, not an amine."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "An ammonium ion is about 10 to 11."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Losing a proton from the charged ion gives the neutral amine, which is stable, so the ion is a moderately weak acid. This is the mirror image of the exam's trap: the neutral amine is 38, the charged ammonium ion is about 10 to 11. Read the charge before you write a number."
+    }
+   ],
+   "answer": "about 10 to 11",
+   "rule": "{{R2NH}} neutral: 38. {{R2NH2+}} charged: about 10 to 11."
+  }
+ },
+ {
+  "id": "pka-values-022",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:C#C]]",
+  "answer": 25,
+  "lo": 24,
+  "hi": 26,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "Either hydrogen. Both are on {{sp}} carbons."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "This is the lecture's own example: H-C≡C-H, 25."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The lone pair of the acetylide ion is in an {{sp}} orbital with 50% s character, held close to the nucleus. Compare ethane at 50 to 60, where the orbital is {{sp3}}."
+    }
+   ],
+   "answer": "about 25",
+   "rule": "{{sp}} C-H: 25. {{sp3}} C-H: 50 to 60."
+  }
+ },
+ {
+  "id": "pka-values-023",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:C1CCNCC1]]",
+  "answer": 38,
+  "lo": 35,
+  "hi": 40,
+  "note": "By analogy with the lecture's amine value, 38.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The N-H. The ring is saturated, so the other hydrogens are all {{sp3}} C-H. The nitrogen is neutral, with one H and a lone pair."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "A neutral amine N-H: 38, the same as the exam's diethylamine. Putting the nitrogen in a ring does not change it."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The trap is the same as on the exam. About 11 is the {{pKa}} of the protonated amine, which is not drawn. The question asks how acidic this compound is, not how basic."
+    }
+   ],
+   "answer": "about 38",
+   "rule": "Neutral amine, in a ring or not: N-H, 38."
+  }
+ },
+ {
+  "id": "pka-values-024",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:Cc1ccc(cc1)S(=O)(=O)O]]",
+  "answer": -3,
+  "lo": -7,
+  "hi": -1,
+  "note": "Not a lecture number. Tables give values from about -1 to -7, most often -3.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "The O-H on sulfur. This is p-toluenesulfonic acid, TsOH, the acid whose conjugate base is tosylate."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "A sulfonic acid is a strong acid with a negative {{pKa}}: about -3."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The charge of tosylate is shared by three oxygens (resonance), which makes it a very weak base. That is the reason tosylate is an excellent leaving group. If the number is forgotten, reason from that: a good leaving group is the conjugate base of a strong acid, so the answer must be below zero."
+    }
+   ],
+   "answer": "about -3 (any small negative number)",
+   "rule": "Good leaving group means strong conjugate acid: TsOH is below zero."
+  }
+ },
+ {
+  "id": "pka-values-025",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:OC(=O)c1ccc(O)cc1]]",
+  "answer": 4,
+  "lo": 3.5,
+  "hi": 5,
+  "note": "Tables give 4.5 for the carboxylic acid group of 4-hydroxybenzoic acid.",
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "There are two O-H groups: one in a {{CO2H}} group (about 4) and one directly on the ring, a phenol (about 10). The more acidic one sets the {{pKa}}."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The carboxylic acid wins: about 4."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Both conjugate bases have resonance. The carboxylate shares its charge between two oxygens, which is better than sharing it between one oxygen and ring carbons. Writing 10 means you quoted the less acidic of the two groups."
+    }
+   ],
+   "answer": "about 4",
+   "rule": "Two acidic groups: quote the lower {{pKa}}."
+  }
+ },
+ {
+  "id": "pka-values-026",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:NCCO]]",
+  "answer": 16,
+  "lo": 15,
+  "hi": 17,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "There are O-H, N-H and C-H hydrogens. Oxygen is the most electronegative of the three atoms, so the O-H is the most acidic."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "An alcohol O-H: about 16. The N-H would be 38 and the C-H 50 to 60."
+    },
+    {
+     "t": "Check the reason",
+     "h": "The amine group draws the eye, and it is the most basic site, but the question is about acidity. Do not write 38 for the N-H, and do not write 10 to 11, which would need a protonated nitrogen."
+    }
+   ],
+   "answer": "about 16",
+   "rule": "Most acidic hydrogen here: O-H (16) before N-H (38) before C-H (50 to 60)."
+  }
+ },
+ {
+  "id": "pka-values-027",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:NCC#C]]",
+  "answer": 25,
+  "lo": 24,
+  "hi": 26,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the acidic hydrogen",
+     "h": "There are three kinds: N-H (38), the H on the {{sp}} carbon (25) and the {{CH2}} hydrogens (50 to 60). The lowest number wins."
+    },
+    {
+     "t": "Match it to the ladder",
+     "h": "The terminal alkyne C-H: 25."
+    },
+    {
+     "t": "Check the reason",
+     "h": "Here hybridization beats electronegativity. Nitrogen is more electronegative than carbon, but an {{sp}} carbon holds a lone pair so tightly that an alkyne C-H (25) is thirteen units more acidic than an amine N-H (38). Trust the ladder numbers, not a single rule of thumb."
+    }
+   ],
+   "answer": "about 25",
+   "rule": "Compare ladder numbers: alkyne C-H 25 is below amine N-H 38."
+  }
+ },
+ {
+  "id": "pka-values-028",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Propyne has a {{pKa}} of about 25. Which hydrogen does that number describe?\n[[mol:CC#C|me]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "The single H on the triple-bond carbon",
+    "ok": true,
+    "why": "That carbon is {{sp}} hybridized. Its conjugate base holds the lone pair in an orbital with 50% s character: {{pKa}} 25."
+   },
+   {
+    "h": "One of the three {{CH3}} hydrogens",
+    "ok": false,
+    "why": "The methyl carbon is {{sp3}}. The mistake is choosing the carbon with the most hydrogens: the number of hydrogens has nothing to do with acidity."
+   },
+   {
+    "h": "All four hydrogens equally",
+    "ok": false,
+    "why": "A {{pKa}} belongs to one kind of hydrogen. The two kinds here differ by many powers of ten."
+   },
+   {
+    "h": "None: hydrocarbons have no acidic hydrogen",
+    "ok": false,
+    "why": "Weak is not the same as none. A strong enough base, such as {{NH2-}}, removes the alkyne hydrogen completely."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the kinds of hydrogen",
+     "h": "One H on the {{sp}} carbon at the end of the triple bond, three on the {{sp3}} methyl carbon."
+    },
+    {
+     "t": "Compare the conjugate bases",
+     "h": "A lone pair in an {{sp}} orbital (50% s) is closer to the nucleus and more stable than one in an {{sp3}} orbital (25% s)."
+    },
+    {
+     "t": "Match to the ladder",
+     "h": "{{sp}} C-H 25; {{sp3}} C-H 50 to 60. The number 25 is the alkyne hydrogen."
+    }
+   ],
+   "answer": "The H on the triple-bond carbon",
+   "rule": "The acidic hydrogen of a terminal alkyne is the one on the triple bond."
+  }
+ },
+ {
+  "id": "pka-values-029",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "The exam shows diethylamine and asks for its approximate {{pKa}}. Which answer earns the points?\n[[mol:CCNCC]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "About 38: the N-H of the neutral amine",
+    "ok": true,
+    "why": "The compound drawn is the neutral amine, and its most acidic hydrogen is the N-H. Lecture value 38."
+   },
+   {
+    "h": "About 11: amines are bases",
+    "ok": false,
+    "why": "11 is the {{pKa}} of the conjugate acid, {{(CH3CH2)2NH2+}}. That ion is not drawn. This is the mistake the question is built to catch."
+   },
+   {
+    "h": "About 50: the C-H bonds",
+    "ok": false,
+    "why": "The C-H bonds are there, but the N-H is more acidic because nitrogen is more electronegative than carbon. Quote the most acidic hydrogen."
+   },
+   {
+    "h": "About 16: like an alcohol",
+    "ok": false,
+    "why": "Nitrogen is less electronegative than oxygen, so an N-H is much less acidic than an O-H: 38 against 16."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the drawing",
+     "h": "Nitrogen has two ethyl groups and one H, and no charge. It is the neutral amine."
+    },
+    {
+     "t": "Find the most acidic hydrogen",
+     "h": "N-H (38) is more acidic than C-H (50 to 60)."
+    },
+    {
+     "t": "Set aside the conjugate acid",
+     "h": "About 11 answers a different question: how acidic is the ammonium ion, or how basic is the amine. The exam key is 38."
+    }
+   ],
+   "answer": "About 38",
+   "rule": "The {{pKa}} of a compound is for the species as drawn, losing its own most acidic H."
+  }
+ },
+ {
+  "id": "pka-values-030",
+  "type": "pka-values",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "Only one of these compounds has a {{pKa}} of about 25. Which one?",
+  "choices": [
+   {
+    "h": "[[mol:CCC#C]]",
+    "ok": true,
+    "why": "1-Butyne is a terminal alkyne: it has a hydrogen on an {{sp}} carbon, {{pKa}} 25."
+   },
+   {
+    "h": "[[mol:CC#CC]]",
+    "ok": false,
+    "why": "2-Butyne is an internal alkyne. Both triple-bond carbons carry a {{CH3}} group and no hydrogen, so there is no {{sp}} C-H to lose. The mistake is giving 25 to every triple bond."
+   },
+   {
+    "h": "[[mol:CCC=C]]",
+    "ok": false,
+    "why": "The hydrogens on the double bond are on {{sp2}} carbons (33% s character), less acidic than an {{sp}} C-H. Tables give about 44."
+   },
+   {
+    "h": "[[mol:CCCC]]",
+    "ok": false,
+    "why": "Butane has only {{sp3}} C-H bonds: 50 to 60."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Ask what 25 needs",
+     "h": "The value 25 is for a hydrogen bonded directly to an {{sp}} carbon."
+    },
+    {
+     "t": "Look for that hydrogen in each structure",
+     "h": "1-Butyne has one at the end of the triple bond. In 2-butyne both {{sp}} carbons are bonded to carbon on each side, so there is none."
+    },
+    {
+     "t": "Rule out the others",
+     "h": "An alkene C-H is {{sp2}} and an alkane C-H is {{sp3}}: both are much weaker acids than an alkyne C-H."
+    }
+   ],
+   "answer": "1-Butyne",
+   "rule": "Only a <b>terminal</b> alkyne has the 25 hydrogen. Check that the triple-bond carbon carries an H."
+  }
+ }
+]

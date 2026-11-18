@@ -1,0 +1,863 @@
+[
+ {
+  "id": "sn2-stereo-001",
+  "type": "sn2-stereo",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Draw the product of this {{SN2}} reaction and show its stereochemistry. Label the starting material and the product R or S.\n[[rxn:[2H][C@H](CCC)Br + [SH-].[Na+]>DMSO;>\"product\"]]",
+  "pts": 20,
+  "time": 5,
+  "model": "[[rxn:[2H][C@H](CCC)Br + [SH-].[Na+]>DMSO;>[2H][C@@H](CCC)S + [Na+].[Br-]]]\n<p>Starting material: <b>R</b>. Product: <b>S</b>. The sulfur attacks the carbon from the side opposite the bromine in one step, so the configuration is inverted.</p>",
+  "rubric": [
+   {
+    "pts": 6,
+    "h": "SH is on the carbon that carried Br, and Br is gone"
+   },
+   {
+    "pts": 8,
+    "h": "The product is drawn with the opposite configuration at that carbon (inversion), with D shown"
+   },
+   {
+    "pts": 4,
+    "h": "Starting material labelled R and product labelled S"
+   },
+   {
+    "pts": 2,
+    "h": "Says backside attack or inversion, or shows NaBr as the by-product"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the leaving group and its carbon",
+     "h": "Bromide is the leaving group. Its carbon carries Br, D, H and a propyl chain: four different groups, so it is a stereocentre. It is a primary carbon, which is open to backside attack.",
+     "ask": {
+      "q": "Why is this carbon a stereocentre when it has two hydrogens?",
+      "a": "One of them is deuterium. H and D count as different groups."
+     }
+    },
+    {
+     "t": "Find the nucleophile",
+     "h": "{{HS-}} attacks with sulfur. It is one of the best nucleophiles in the lecture table (126,000)."
+    },
+    {
+     "t": "Attack from the back",
+     "h": "Sulfur comes in on the side opposite bromine. In the transition state S, C and Br are on one line and the propyl chain, D and H are in one plane.",
+     "ask": {
+      "q": "From which side does the sulfur approach?",
+      "a": "From the side directly opposite the C-Br bond."
+     }
+    },
+    {
+     "t": "Draw the inverted product",
+     "h": "Keep the chain where it is and put SH on the carbon with the opposite kind of bond to the one Br had. D and H have swapped sides relative to the chain.\n[[mol:[2H][C@@H](CCC)S]]"
+    },
+    {
+     "t": "Assign R and S afresh",
+     "h": "Starting material: Br > propyl carbon > D > H gives R. Product: SH > propyl carbon > D > H gives S. Here the nucleophile takes the same rank the leaving group had, so the label changes with the geometry.",
+     "ask": {
+      "q": "Does D rank above or below H?",
+      "a": "Above. Deuterium has the higher mass."
+     }
+    },
+    {
+     "t": "Write the by-product",
+     "h": "Sodium bromide."
+    }
+   ],
+   "answer": "(S)-1-deuteriobutane-1-thiol, formed with inversion, plus NaBr.",
+   "rule": "SN2 puts the nucleophile on the face opposite the leaving group: inversion."
+  }
+ },
+ {
+  "id": "sn2-stereo-002",
+  "type": "sn2-stereo",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "cis-1-Bromo-3-methylcyclohexane is treated with NaCN in DMSO. What is the major product?\n[[ring:1u:Br,3u:CH3]]",
+  "choices": [
+   {
+    "h": "[[ring:1d:CN,3u:CH3]]",
+    "ok": true,
+    "why": "CN is on the face opposite the one Br left from, and the methyl group has not moved: trans."
+   },
+   {
+    "h": "[[ring:1u:CN,3u:CH3]]",
+    "ok": false,
+    "why": "This is retention: CN sits exactly where Br was. A nucleophile cannot enter through the leaving group."
+   },
+   {
+    "h": "An equal mixture of [[ring:1u:CN,3u:CH3]] and [[ring:1d:CN,3u:CH3]]",
+    "ok": false,
+    "why": "A mixture of both faces would need a planar carbocation ({{SN1}}). With a good nucleophile in DMSO the reaction is {{SN2}}, which gives one product."
+   },
+   {
+    "h": "[[mol:CC1CCC=CC1]]",
+    "ok": false,
+    "why": "This is elimination. Cyanide is a good nucleophile and a weak base, so it substitutes."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the starting material",
+     "h": "Br and {{CH3}} are both on wedges, so they are cis. The carbon with Br is secondary and bromide is a good leaving group.",
+     "ask": {
+      "q": "Which carbon is the electrophile?",
+      "a": "Carbon 1, the one bonded to Br."
+     }
+    },
+    {
+     "t": "Decide the reaction",
+     "h": "Cyanide is a good nucleophile and DMSO is a polar aprotic solvent: the conditions for {{SN2}}."
+    },
+    {
+     "t": "Invert carbon 1 only",
+     "h": "Cyanide attacks carbon 1 from the face opposite Br. Br was up, so CN ends up down.",
+     "ask": {
+      "q": "Does the methyl group move?",
+      "a": "No. Carbon 3 is not touched, so its wedge stays a wedge."
+     }
+    },
+    {
+     "t": "Name the relationship",
+     "h": "CN down and {{CH3}} up are on opposite faces: the product is trans.\n[[ring:1d:CN,3u:CH3]]",
+     "ask": {
+      "q": "Cis or trans?",
+      "a": "Trans. Cis becomes trans."
+     }
+    }
+   ],
+   "answer": "trans-3-Methylcyclohexanecarbonitrile (CN on a dash, methyl still on a wedge).",
+   "rule": "On a ring, SN2 turns the wedge at the attacked carbon into a dash: cis becomes trans."
+  }
+ },
+ {
+  "id": "sn2-stereo-003",
+  "type": "sn2-stereo",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Draw the product of this reaction with its stereochemistry and give its R or S label.\n[[rxn:CC[C@@H](C)OS(=O)(=O)c1ccc(C)cc1 + CC(=O)[O-].[Na+]>DMF;>\"product\"]]",
+  "pts": 20,
+  "time": 6,
+  "model": "[[rxn:CC[C@@H](C)OS(=O)(=O)c1ccc(C)cc1 + CC(=O)[O-].[Na+]>DMF;>CC[C@H](C)OC(C)=O + Cc1ccc(S(=O)(=O)[O-])cc1.[Na+]]]\n<p>The tosylate (R) gives the acetate with the opposite configuration (<b>S</b>). The acetate oxygen attacks the carbon from the side opposite the C-OTs bond.</p>",
+  "rubric": [
+   {
+    "pts": 6,
+    "h": "Product is an ester: the stereocentre is bonded to an acetate oxygen and the OTs group is gone"
+   },
+   {
+    "pts": 8,
+    "h": "The new C-O bond is on the opposite face to the old one (inversion)"
+   },
+   {
+    "pts": 4,
+    "h": "Product labelled S"
+   },
+   {
+    "pts": 2,
+    "h": "Tosylate (TsO-) shown as the leaving group"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the leaving group",
+     "h": "The leaving group is the whole tosylate, {{TsO-}}. The bond that breaks is the C-O bond between the stereocentre and the tosylate oxygen.",
+     "ask": {
+      "q": "Which bond breaks: C-O or O-S?",
+      "a": "C-O. The oxygen leaves with the sulfur as {{TsO-}}."
+     }
+    },
+    {
+     "t": "Find the nucleophile",
+     "h": "Acetate attacks with a negatively charged oxygen (lecture table: 630). The carbon is secondary, and acetate is a weak base, so the reaction is {{SN2}}."
+    },
+    {
+     "t": "Invert",
+     "h": "The tosylate was on a wedge in the drawing, so the new C-O bond to acetate goes on a dash. The ethyl and methyl groups stay put.",
+     "ask": {
+      "q": "Is the oxygen now on the stereocentre the same oxygen as before?",
+      "a": "No. It is an acetate oxygen. The old one left with the tosylate."
+     }
+    },
+    {
+     "t": "Assign the label",
+     "h": "Starting material: OTs > ethyl > methyl > H gives R. Product: O > ethyl > methyl > H with the opposite geometry gives S."
+    },
+    {
+     "t": "Write the by-product",
+     "h": "Sodium tosylate, {{NaOTs}}."
+    }
+   ],
+   "answer": "(S)-butan-2-yl acetate, formed with inversion, plus NaOTs.",
+   "rule": "A tosylate leaves as a whole group: the C-O bond breaks and the nucleophile enters from the back."
+  }
+ },
+ {
+  "id": "sn2-stereo-004",
+  "type": "sn2-stereo",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "(S)-2-Bromo-1-methoxypropane reacts with NaCN in DMSO. Which answer gives the correct product and the correct label?\n[[mol:COC[C@H](C)Br]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "[[mol:COC[C@@H](C)C#N]] labelled S",
+    "ok": true,
+    "why": "CN is on the opposite face (inversion), and because {{CH2OCH3}} now outranks CN the label stays S."
+   },
+   {
+    "h": "[[mol:COC[C@@H](C)C#N]] labelled R",
+    "ok": false,
+    "why": "The drawing is right, but the label was guessed from the rule that S becomes R. Ranking the groups again gives S."
+   },
+   {
+    "h": "[[mol:COC[C@H](C)C#N]] labelled R",
+    "ok": false,
+    "why": "This drawing has CN on the same face Br was on, which is retention. It was chosen to make the letter change."
+   },
+   {
+    "h": "A racemic mixture of both nitriles",
+    "ok": false,
+    "why": "Racemization needs a carbocation ({{SN1}}). A good nucleophile in a polar aprotic solvent reacts by {{SN2}}."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Do the chemistry first",
+     "h": "Secondary carbon, bromide leaving group, cyanide in DMSO: {{SN2}} with inversion. Put CN on the face opposite the one Br occupied.\n[[mol:COC[C@@H](C)C#N]]",
+     "ask": {
+      "q": "Which do you settle first, the drawing or the label?",
+      "a": "The drawing. The label is read from the finished drawing."
+     }
+    },
+    {
+     "t": "Rank the groups in the starting material",
+     "h": "Br > {{CH2OCH3}} > {{CH3}} > H. The leaving group is rank 1."
+    },
+    {
+     "t": "Rank the groups in the product",
+     "h": "The CN carbon carries (N, N, N). The {{CH2OCH3}} carbon carries (O, H, H). Compare the first point of difference: O beats N, so {{CH2OCH3}} > CN > {{CH3}} > H. The nucleophile is only rank 2.",
+     "ask": {
+      "q": "Which ranks higher, CN or {{CH2OCH3}}?",
+      "a": "{{CH2OCH3}}: oxygen beats nitrogen at the first point of difference."
+     }
+    },
+    {
+     "t": "Read the label",
+     "h": "The geometry inverted and ranks 1 and 2 traded places. The two changes cancel, so the label is still S."
+    },
+    {
+     "t": "Check",
+     "h": "Inversion happened. The letter did not change. Both statements are true together.",
+     "ask": {
+      "q": "Does an unchanged letter mean retention?",
+      "a": "No. R and S depend on priorities. Inversion is about which face the new group is on."
+     }
+    }
+   ],
+   "answer": "The inverted nitrile, and it is still called S.",
+   "rule": "Inversion is geometry. Assign R or S afresh, because the priorities can change."
+  }
+ },
+ {
+  "id": "sn2-stereo-005",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "What is the product of this reaction?\n[[rxn:[2H][C@H](C)Cl + [OH-].[Na+]>>\"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:[2H][C@@H](C)O]]",
+    "ok": true,
+    "why": "OH is on the face opposite the one Cl left from: inversion, the (S) alcohol, exactly the lecture example."
+   },
+   {
+    "h": "[[mol:[2H][C@H](C)O]]",
+    "ok": false,
+    "why": "Retention: OH drawn where Cl was. Backside attack puts it on the other face."
+   },
+   {
+    "h": "An equal mixture of [[mol:[2H][C@@H](C)O]] and [[mol:[2H][C@H](C)O]]",
+    "ok": false,
+    "why": "A racemic mixture comes from a carbocation. A primary carbocation does not form, and {{SN2}} gives one enantiomer."
+   },
+   {
+    "h": "[[mol:[2H]C=C]]",
+    "ok": false,
+    "why": "This is elimination. On an unhindered primary carbon, hydroxide substitutes."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "A primary carbon with a good leaving group and hydroxide, a strong nucleophile: {{SN2}}."
+    },
+    {
+     "t": "Invert",
+     "h": "OH goes on the face opposite Cl. D and H swap sides relative to the methyl group."
+    },
+    {
+     "t": "Label",
+     "h": "Cl > {{CH3}} > D > H gives R for the chloride. O > {{CH3}} > D > H with the inverted geometry gives S."
+    }
+   ],
+   "answer": "(S)-1-Deuterioethanol.",
+   "rule": "One enantiomer in, one enantiomer out, inverted."
+  }
+ },
+ {
+  "id": "sn2-stereo-006",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "trans-1-Bromo-4-methylcyclohexane is heated with NaCN in DMSO. What is the substitution product?\n[[ring:1u:Br,4d:CH3]]",
+  "choices": [
+   {
+    "h": "[[ring:1d:CN,4d:CH3]]",
+    "ok": true,
+    "why": "CN is on the face opposite the one Br occupied. Both groups are now down: cis."
+   },
+   {
+    "h": "[[ring:1u:CN,4d:CH3]]",
+    "ok": false,
+    "why": "Retention: this is still trans, with CN in the place of Br."
+   },
+   {
+    "h": "Both [[ring:1d:CN,4d:CH3]] and [[ring:1u:CN,4d:CH3]] in equal amounts",
+    "ok": false,
+    "why": "Both faces would be attacked only if a planar carbocation formed ({{SN1}})."
+   },
+   {
+    "h": "[[ring:1d:CN,4u:CH3]]",
+    "ok": false,
+    "why": "Here both groups were flipped, which leaves the molecule trans. The methyl carbon is not attacked and cannot change."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the drawing",
+     "h": "Br up, {{CH3}} down: trans."
+    },
+    {
+     "t": "Invert the attacked carbon",
+     "h": "CN enters carbon 1 from below, opposite Br, so CN is down."
+    },
+    {
+     "t": "Compare the two groups",
+     "h": "CN down and {{CH3}} down are on the same face: cis."
+    }
+   ],
+   "answer": "cis-4-Methylcyclohexanecarbonitrile.",
+   "rule": "Trans becomes cis, cis becomes trans."
+  }
+ },
+ {
+  "id": "sn2-stereo-007",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "written",
+  "diff": 1,
+  "src": "site",
+  "stem": "Draw the product, with stereochemistry, and label it R or S.\n[[rxn:CC[C@H](C)I + [N-]=[N+]=[N-].[Na+]>DMF;>\"product\"]]",
+  "pts": 10,
+  "time": 3,
+  "model": "[[rxn:CC[C@H](C)I + [N-]=[N+]=[N-].[Na+]>DMF;>CC[C@@H](C)N=[N+]=[N-] + [Na+].[I-]]]\n<p>(S)-2-Iodobutane gives <b>(R)</b>-2-azidobutane: inversion.</p>",
+  "rubric": [
+   {
+    "pts": 4,
+    "h": "{{N3}} is on carbon 2 and iodine is gone"
+   },
+   {
+    "pts": 4,
+    "h": "Opposite configuration to the starting material (inversion)"
+   },
+   {
+    "pts": 2,
+    "h": "Product labelled R"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Identify the pieces",
+     "h": "Iodide is the leaving group on a secondary stereocentre. Azide, {{N3-}}, is a good nucleophile (lecture table: 8,000) and DMF is polar aprotic: {{SN2}}."
+    },
+    {
+     "t": "Invert",
+     "h": "Iodine was on a wedge in the drawing, so the azide nitrogen goes on a dash at the same carbon."
+    },
+    {
+     "t": "Label",
+     "h": "Starting material: I > ethyl > methyl > H gives S. Product: N > ethyl > methyl > H with inverted geometry gives R."
+    }
+   ],
+   "answer": "(R)-2-Azidobutane and NaI.",
+   "rule": "Nucleophile in from the back, leaving group out the front."
+  }
+ },
+ {
+  "id": "sn2-stereo-008",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "What is the major product?\n[[rxn:C[C@@H]1CCC[C@H]1OS(=O)(=O)c1ccc(C)cc1 + [SH-].[Na+]>DMSO;>\"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:C[C@@H]1CCC[C@@H]1S]]",
+    "ok": true,
+    "why": "SH is on the opposite face to the old OTs group, so it is now cis to the methyl group."
+   },
+   {
+    "h": "[[mol:C[C@@H]1CCC[C@H]1S]]",
+    "ok": false,
+    "why": "Retention: SH is drawn where OTs was, still trans."
+   },
+   {
+    "h": "[[mol:C[C@@H]1CCC[C@H]1O]]",
+    "ok": false,
+    "why": "This breaks the O-S bond and leaves the oxygen on the ring. In a tosylate the C-O bond breaks and the whole OTs group leaves."
+   },
+   {
+    "h": "[[mol:CC1=CCCC1]]",
+    "ok": false,
+    "why": "Elimination. {{HS-}} is an excellent nucleophile and a weak base, so substitution wins."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the starting material",
+     "h": "The methyl group and the OTs group are on opposite faces of the five-membered ring: trans."
+    },
+    {
+     "t": "Find the bond that breaks",
+     "h": "The ring C-O bond. Tosylate leaves as {{TsO-}}, and sulfur attacks the ring carbon."
+    },
+    {
+     "t": "Invert that carbon only",
+     "h": "SH ends up on the face opposite the one OTs was on, which is the face the methyl group is on: cis."
+    }
+   ],
+   "answer": "cis-2-Methylcyclopentanethiol.",
+   "rule": "Trans tosylate, cis product: the attacked carbon inverts and its neighbour does not."
+  }
+ },
+ {
+  "id": "sn2-stereo-009",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "(S)-Butane-2-thiol is wanted from a 2-bromobutane and NaSH in DMSO. Which starting material gives it?\n[[mol:CC[C@H](C)S]]",
+  "choices": [
+   {
+    "h": "[[mol:CC[C@@H](C)Br]]",
+    "ok": true,
+    "why": "The (R) bromide has Br on the opposite face. Backside attack by {{HS-}} gives the (S) thiol."
+   },
+   {
+    "h": "[[mol:CC[C@H](C)Br]]",
+    "ok": false,
+    "why": "The (S) bromide would give the (R) thiol. This choice assumes the configuration is kept."
+   },
+   {
+    "h": "Either enantiomer, because the product is the same",
+    "ok": false,
+    "why": "Each enantiomer gives a different enantiomer of the product. {{SN2}} does not pass through a planar intermediate."
+   },
+   {
+    "h": "[[mol:CC[C@@H](C)O]]",
+    "ok": false,
+    "why": "An alcohol does not react: {{HO-}} is a strong base and a poor leaving group (lecture: N.R.)."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Think backwards",
+     "h": "{{SN2}} inverts, so the starting material must have the opposite geometry at carbon 2."
+    },
+    {
+     "t": "Draw it",
+     "h": "Put Br on the face opposite the one SH is on in the product."
+    },
+    {
+     "t": "Label it",
+     "h": "Br and SH are both rank 1 here, so the opposite geometry also has the opposite letter: R."
+    }
+   ],
+   "answer": "(R)-2-Bromobutane.",
+   "rule": "To choose a starting material, undo the inversion."
+  }
+ },
+ {
+  "id": "sn2-stereo-010",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "stem": "Draw the product with wedges and dashes and say whether it is cis or trans.\n[[rxn:C[C@H]1CCC[C@H](Br)C1 + [SH-].[Na+]>DMSO;>\"product\"]]",
+  "pts": 15,
+  "time": 4,
+  "model": "[[rxn:C[C@H]1CCC[C@H](Br)C1 + [SH-].[Na+]>DMSO;>C[C@H]1CCC[C@@H](S)C1 + [Na+].[Br-]]]\n<p>The starting material is trans. {{HS-}} attacks the carbon from the face opposite Br, so the product is <b>cis</b>-3-methylcyclohexanethiol.</p>",
+  "rubric": [
+   {
+    "pts": 4,
+    "h": "SH on the carbon that carried Br"
+   },
+   {
+    "pts": 6,
+    "h": "SH drawn on the opposite face to the one Br was on, methyl unchanged"
+   },
+   {
+    "pts": 5,
+    "h": "Product called cis"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the starting material",
+     "h": "Br and the methyl group are on opposite faces: trans-1-bromo-3-methylcyclohexane."
+    },
+    {
+     "t": "Decide the reaction",
+     "h": "Secondary bromide, {{HS-}} (126,000 in the lecture table), polar aprotic solvent: {{SN2}}."
+    },
+    {
+     "t": "Invert the carbon with Br",
+     "h": "SH goes on the opposite face to Br. The methyl carbon is untouched."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "SH is now on the same face as the methyl group: cis."
+    }
+   ],
+   "answer": "cis-3-Methylcyclohexanethiol and NaBr.",
+   "rule": "Trans becomes cis."
+  }
+ },
+ {
+  "id": "sn2-stereo-011",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "(2S,3S)-2-Bromo-3-methylpentane reacts with NaSH in DMSO by {{SN2}}. What is the product?\n[[mol:CC[C@H](C)[C@H](C)Br]]",
+  "choices": [
+   {
+    "h": "[[mol:CC[C@H](C)[C@@H](C)S]]",
+    "ok": true,
+    "why": "Carbon 2 is inverted and carbon 3 is exactly as it was: (2R,3S)."
+   },
+   {
+    "h": "[[mol:CC[C@H](C)[C@H](C)S]]",
+    "ok": false,
+    "why": "Retention at carbon 2: SH is drawn where Br was."
+   },
+   {
+    "h": "[[mol:CC[C@@H](C)[C@@H](C)S]]",
+    "ok": false,
+    "why": "Both stereocentres were flipped. Carbon 3 is not attacked, so it cannot invert."
+   },
+   {
+    "h": "[[mol:CC[C@@H](C)[C@H](C)S]]",
+    "ok": false,
+    "why": "The wrong stereocentre was flipped: carbon 3 changed and carbon 2 did not."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the electrophilic carbon",
+     "h": "Carbon 2, the one bonded to Br. Carbon 3 is a stereocentre too, but it carries no leaving group."
+    },
+    {
+     "t": "Invert carbon 2 only",
+     "h": "SH goes on the face opposite Br at carbon 2. Carbon 3 keeps its drawing."
+    },
+    {
+     "t": "Label",
+     "h": "Carbon 2: SH > C3 > {{CH3}} > H with inverted geometry gives R. Carbon 3 is unchanged and still S: (2R,3S)."
+    }
+   ],
+   "answer": "(2R,3S)-3-Methylpentane-2-thiol.",
+   "rule": "Only the carbon that loses the leaving group inverts."
+  }
+ },
+ {
+  "id": "sn2-stereo-012",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which statement is true of <b>every</b> {{SN2}} reaction at a stereocentre?",
+  "choices": [
+   {
+    "h": "The nucleophile ends up on the face opposite the one the leaving group left from.",
+    "ok": true,
+    "why": "This is backside attack, the third characteristic of {{SN2}} in lecture: inversion at the electrophile atom."
+   },
+   {
+    "h": "An R starting material always gives an S product.",
+    "ok": false,
+    "why": "Often, but not always. If the nucleophile has a different rank from the leaving group, the letter can stay the same even though the geometry inverted."
+   },
+   {
+    "h": "The product is a racemic mixture.",
+    "ok": false,
+    "why": "That is {{SN1}}, where a planar carbocation is attacked on both faces."
+   },
+   {
+    "h": "Every stereocentre in the molecule is inverted.",
+    "ok": false,
+    "why": "Only the carbon that carries the leaving group is attacked."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Recall the transition state",
+     "h": "Nucleophile, carbon and leaving group lie on one line. The nucleophile is on the side opposite the leaving group."
+    },
+    {
+     "t": "Separate geometry from labels",
+     "h": "The geometry always inverts. The letter R or S depends on priorities, so it usually changes but does not have to."
+    },
+    {
+     "t": "Rule out the carbocation ideas",
+     "h": "There is no intermediate, so there is no racemization."
+    }
+   ],
+   "answer": "The nucleophile ends up on the face opposite the one the leaving group left from.",
+   "rule": "Always inversion of geometry. Usually, not always, a change of letter."
+  }
+ },
+ {
+  "id": "sn2-stereo-013",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "(S)-3-Bromo-3-methylhexane is stirred with NaCN in DMSO. What does the {{SN2}} reaction give?\n[[mol:CCC[C@](C)(CC)Br]]",
+  "choices": [
+   {
+    "h": "No {{SN2}} product forms: the carbon is tertiary.",
+    "ok": true,
+    "why": "The relative {{SN2}} rate of a tertiary substrate is 0 in the lecture table. Steric hindrance blocks the nucleophile."
+   },
+   {
+    "h": "[[mol:CCC[C@@](C)(CC)C#N]]",
+    "ok": false,
+    "why": "This applies inversion without checking the substrate. Cyanide cannot reach the back of a tertiary carbon."
+   },
+   {
+    "h": "[[mol:CCC[C@](C)(CC)C#N]]",
+    "ok": false,
+    "why": "Retention, and at a tertiary carbon. {{SN2}} gives neither."
+   },
+   {
+    "h": "A racemic mixture of the two nitriles, by {{SN2}}",
+    "ok": false,
+    "why": "{{SN2}} never racemizes. A racemic product would mean a carbocation, which is {{SN1}}, not the reaction asked about."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the carbon before drawing anything",
+     "h": "The carbon with Br carries three carbon groups: it is tertiary."
+    },
+    {
+     "t": "Recall the substrate rule",
+     "h": "Methyl > primary > secondary >>> tertiary. The lecture rate for a tertiary substrate is 0: the three groups block the back of the carbon."
+    },
+    {
+     "t": "Conclude",
+     "h": "No backside attack is possible, so there is no inverted nitrile to draw."
+    }
+   ],
+   "answer": "No SN2 product: the carbon is tertiary.",
+   "rule": "Check the substrate first. Tertiary means no SN2."
+  }
+ },
+ {
+  "id": "sn2-stereo-014",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "(S)-3-Bromotetrahydrofuran reacts with NaCN in DMSO. Which answer is correct?\n[[mol:Br[C@H]1CCOC1]]",
+  "fixed": true,
+  "choices": [
+   {
+    "h": "[[mol:N#C[C@@H]1CCOC1]] which is S",
+    "ok": true,
+    "why": "CN is on the opposite face, and because the carbon next to oxygen outranks CN, the label remains S."
+   },
+   {
+    "h": "[[mol:N#C[C@@H]1CCOC1]] which is R",
+    "ok": false,
+    "why": "Right drawing, but the letter was flipped by habit. Ranking the product's groups gives S."
+   },
+   {
+    "h": "[[mol:N#C[C@H]1CCOC1]] which is R",
+    "ok": false,
+    "why": "This is retention: CN on the same face as Br was. The letter changed only because the priorities changed."
+   },
+   {
+    "h": "[[mol:N#C[C@H]1CCOC1]] which is S",
+    "ok": false,
+    "why": "Retention, and the label is wrong for this drawing as well."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the inverted product",
+     "h": "Secondary carbon, good nucleophile, polar aprotic solvent: {{SN2}}. CN goes on the face opposite Br.\n[[mol:N#C[C@@H]1CCOC1]]"
+    },
+    {
+     "t": "Rank the groups before",
+     "h": "Br > ring {{CH2}} bonded to O > the other ring {{CH2}} > H."
+    },
+    {
+     "t": "Rank the groups after",
+     "h": "The ring {{CH2}} bonded to O carries (O, H, H) and CN carries (N, N, N). O beats N, so the ring {{CH2O}} is rank 1 and CN is rank 2."
+    },
+    {
+     "t": "Read the label",
+     "h": "Inverted geometry and swapped ranks 1 and 2: the letter is still S."
+    }
+   ],
+   "answer": "The inverted nitrile, which is still labelled S.",
+   "rule": "Inversion always. The letter only after ranking again."
+  }
+ },
+ {
+  "id": "sn2-stereo-015",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site",
+  "stem": "A bottle of 2-bromobutane contains equal amounts of the R and S enantiomers. It reacts with NaSH in DMSO.<br>(a) Draw the product or products with stereochemistry.<br>(b) Is the product mixture optically active?<br>(c) Did inversion take place? Explain in one or two sentences.",
+  "pts": 20,
+  "time": 6,
+  "model": "<p>(a) [[rxn:CC[C@@H](C)Br + [SH-]>>CC[C@H](C)S + [Br-]]]\n[[rxn:CC[C@H](C)Br + [SH-]>>CC[C@@H](C)S + [Br-]]]</p><p>(b) No. The two thiols form in equal amounts (a racemic mixture), so the mixture is not optically active.</p><p>(c) Yes. Each molecule reacts by backside attack in one step, so R gives S and S gives R. The product is racemic because the starting material was racemic, not because a carbocation formed.</p>",
+  "rubric": [
+   {
+    "pts": 8,
+    "h": "Both enantiomers of butane-2-thiol drawn, each from the bromide of opposite configuration"
+   },
+   {
+    "pts": 4,
+    "h": "Says the product is racemic and not optically active"
+   },
+   {
+    "pts": 8,
+    "h": "Says each molecule is inverted by backside attack, and that the racemic result comes from the racemic starting material, not from a carbocation"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Treat each enantiomer separately",
+     "h": "{{SN2}} is one step for each molecule. The (R) bromide gives the (S) thiol and the (S) bromide gives the (R) thiol."
+    },
+    {
+     "t": "Add them up",
+     "h": "Equal amounts of the two bromides give equal amounts of the two thiols: a racemic product."
+    },
+    {
+     "t": "Optical activity",
+     "h": "A racemic mixture does not rotate plane-polarized light."
+    },
+    {
+     "t": "Separate the mechanism from the outcome",
+     "h": "Every molecule was inverted. The product is racemic only because the starting material was. This is not the racemization of {{SN1}}: no carbocation formed."
+    }
+   ],
+   "answer": "Both enantiomers of butane-2-thiol in equal amounts, not optically active, and every molecule reacted with inversion.",
+   "rule": "Racemic in, racemic out. Inversion still happens in every molecule."
+  }
+ },
+ {
+  "id": "sn2-stereo-016",
+  "type": "sn2-stereo",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "(S)-Butane-2-thiol is treated with NaOH and then with {{CH3I}}. What is the product?\n[[rxn:CC[C@H](C)S>1. NaOH;2. CH3I>\"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:CC[C@H](C)SC]]",
+    "ok": true,
+    "why": "The stereocentre belongs to the nucleophile. No bond to it breaks, so its geometry is unchanged."
+   },
+   {
+    "h": "[[mol:CC[C@@H](C)SC]]",
+    "ok": false,
+    "why": "Inversion was applied to the wrong carbon. The carbon that is attacked is the methyl carbon of {{CH3I}}."
+   },
+   {
+    "h": "An equal mixture of [[mol:CC[C@H](C)SC]] and [[mol:CC[C@@H](C)SC]]",
+    "ok": false,
+    "why": "Nothing here makes the stereocentre planar, so it cannot racemize."
+   },
+   {
+    "h": "No reaction",
+    "ok": false,
+    "why": "A thiolate is an excellent nucleophile and methyl iodide is the fastest {{SN2}} substrate."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Step 1 is an acid and a base",
+     "h": "Hydroxide removes the S-H proton and gives the thiolate, {{RS-}}. No bond to the stereocentre changes."
+    },
+    {
+     "t": "Find the electrophile in step 2",
+     "h": "The leaving group, iodide, is on the <b>methyl</b> carbon of {{CH3I}}. The thiolate is the nucleophile."
+    },
+    {
+     "t": "Ask which carbon inverts",
+     "h": "Inversion happens at the carbon that is attacked: the methyl carbon, which is not a stereocentre. The stereocentre is part of the nucleophile and none of its four bonds is broken."
+    },
+    {
+     "t": "Draw and label",
+     "h": "The same geometry with {{SCH3}} in place of SH. S is still rank 1, so the label is still S."
+    }
+   ],
+   "answer": "(S)-2-(Methylthio)butane: the configuration is kept.",
+   "rule": "Inversion happens at the electrophile's carbon, not in the nucleophile."
+  }
+ }
+]

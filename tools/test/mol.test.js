@@ -35,7 +35,7 @@ test("every step of every mechanism moves its electrons without a problem", () =
     m.steps.forEach((s, k) => {
       assert.ok(mols[s.species], id + " step " + (k + 1) + ": its drawing is in the data");
       const out = mol.apply(s.species, s.arrows);
-      assert.deepStrictEqual(out.problems, [], id + " step " + (k + 1));
+      assert.strictEqual(out.problems.join("; "), "", id + " step " + (k + 1));
       // what the arrows produce agrees with the next drawing: charge and lone pairs of every atom that is still there
       const after = mols[k + 1 < m.steps.length ? m.steps[k + 1].species : m.product];
       assert.ok(after, id + ": the drawing after step " + (k + 1) + " is in the data");
@@ -97,7 +97,7 @@ test("an extra arrow is named, and the clicked form of a whole step checks as ri
   const e2 = mechs["e2-tertbutyl-bromide-hydroxide"].steps[0];
   const clicked = [A({ atom: 1 }, { atom: 2 }), A({ bond: [3, 2] }, { atom: 4 }), A({ bond: [5, 4] }, { atom: 5 })];
   assert.strictEqual(mol.check(e2.species, clicked, e2.arrows).ok, true);
-  assert.deepStrictEqual(mol.apply(e2.species, clicked).problems, [], "apply reads the clicked form too");
+  assert.strictEqual(mol.apply(e2.species, clicked).problems.join("; "), "", "apply reads the clicked form too");
 });
 
 test("apply refuses electrons that are not there", () => {

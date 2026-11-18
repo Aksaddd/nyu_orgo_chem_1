@@ -1,0 +1,101 @@
+{
+ "id": "traits",
+ "title": "Which statements describe this mechanism? Circle all that apply",
+ "exam": "Q3A",
+ "points": 25,
+ "asks": "Statements about rate law, stereochemistry and solvent are listed. Circle every one that is (or is not) true of the mechanism.",
+ "know": [
+  {
+   "h": "<b>The number in the name is the molecularity</b>: how many species take part in the rate-determining step. {{SN2}} and {{E2}} are bimolecular, {{SN1}} and {{E1}} are unimolecular.",
+   "from": "Lecture 11/03, p. 3; Lecture 11/10, p. 1 and 4; Lecture 11/12, p. 1"
+  },
+  {
+   "h": "<b>Rate laws.</b> {{SN2}}: rate = k[nucleophile][substrate]. {{E2}}: rate = k[substrate][base]. {{SN1}} and {{E1}}: rate = k[substrate] only. Doubling the nucleophile or base doubles the rate of {{SN2}} and {{E2}} and does nothing to {{SN1}} and {{E1}}.",
+   "from": "Rate tables: Lecture 11/03, p. 3; 11/10, p. 1; 11/12, p. 1"
+  },
+  {
+   "h": "<b>Steps and intermediates.</b> {{SN2}} and {{E2}} are concerted: one step, one transition state, no intermediate, one hump on the energy diagram. {{SN1}} and {{E1}} go through a carbocation intermediate: at least two humps with a valley between, and the first hump (ionization) is the highest.",
+   "from": "Lecture 11/03, p. 3; 11/10, p. 2; 11/12, p. 1"
+  },
+  {
+   "h": "<b>{{SN1}} and {{E1}} share the same carbocation.</b> They compete: {{SN1}} is favored at lower temperature, {{E1}} at high temperature.",
+   "from": "Lecture 11/10, p. 4"
+  },
+  {
+   "h": "<b>Stereochemistry of substitution.</b> {{SN2}} gives inversion at the electrophilic carbon: one enantiomer gives one enantiomer. {{SN1}} gives racemization, because the planar carbocation is attacked from either face.",
+   "from": "Lecture 11/03, p. 2 and 4; Lecture 11/10, p. 3"
+  },
+  {
+   "h": "<b>Stereochemistry of {{E2}}.</b> The hydrogen removed and the leaving group must be anti-periplanar. The lecture calls this the most important factor for {{E2}}.",
+   "from": "Lecture 11/12, p. 2 to 3"
+  },
+  {
+   "h": "<b>Substrate order.</b> {{SN2}}: methyl > primary > secondary, and tertiary does not react (steric hindrance). {{SN1}} and {{E1}}: tertiary > secondary, and primary and methyl do not react (carbocation stability). {{E2}} works with tertiary, secondary and primary substrates, but not methyl, which has no neighbouring hydrogen.",
+   "from": "Lecture 11/05, p. 1; 11/10, p. 2; flowchart"
+  },
+  {
+   "h": "<b>Allyl and vinyl.</b> An allyl substrate does {{SN2}} (relative rate 1.3) and {{SN1}}. A vinyl substrate does neither.",
+   "from": "Lecture 11/10, p. 1 to 2"
+  },
+  {
+   "h": "<b>Nucleophile and base strength.</b> {{SN2}} needs a good nucleophile. {{E2}} needs a strong base. {{SN1}} and {{E1}} work with a poor nucleophile or weak base such as water, because that species arrives after the slow step.",
+   "from": "Lecture 11/10, p. 4 to 5; Lecture 11/12, p. 2"
+  },
+  {
+   "h": "<b>Solvent.</b> {{SN1}} and {{E1}} are favored by polar protic solvents (water, alcohols), and a more polar solvent makes {{SN1}} faster. {{SN2}} is favored by polar aprotic solvents (DMSO, DMF, acetone).",
+   "from": "Lecture 11/10, p. 3 and 5"
+  },
+  {
+   "h": "<b>Leaving group.</b> Every one of the four mechanisms needs a good leaving group (iodide, bromide, chloride, tosylate). Hydroxide and fluoride are poor leaving groups.",
+   "from": "Lecture 11/05, p. 2; Lecture 11/10, p. 5"
+  },
+  {
+   "h": "<b>Rearrangement</b> can happen only when there is a carbocation: in {{SN1}} and {{E1}}, never in {{SN2}} or {{E2}}.",
+   "from": "Flowchart; Lecture 11/10, p. 5"
+  },
+  {
+   "h": "<b>Which alkene.</b> {{E2}} usually gives mainly the more substituted (Saytzeff) alkene: 81% with iodide, 72% with bromide, 67% with chloride for 2-hexyl. With fluoride the less substituted (Hofmann) alkene is the major one, 70%.",
+   "from": "Lecture 11/12, p. 4"
+  },
+  {
+   "h": "<b>Skill: read the question's direction.</b> The exam asks either which statements are characteristics or which are NOT. Decide true or false for every statement first, then circle the set the question asks for.",
+   "from": "FA24 Exam 2, Q3A"
+  }
+ ],
+ "method": [
+  "Underline the mechanism named and the word IS or NOT in the question.",
+  "Write the mechanism's short list in the margin: rate law, one step or carbocation, stereochemistry, best substrate, nucleophile or base needed, best solvent.",
+  "Mark each statement true or false for that mechanism, one at a time, without thinking yet about what to circle.",
+  "For a false statement, name the mechanism it does belong to. This catches statements that are true of {{SN2}} but offered for {{SN1}}.",
+  "Circle the true ones if the question asks what the mechanism is, the false ones if it asks what it is NOT. Several answers, or only one, may be right."
+ ],
+ "pitfalls": [
+  {
+   "h": "Circling the true statements when the question asks for the ones that are NOT characteristics."
+  },
+  {
+   "h": "Giving {{SN1}} the properties of {{SN2}}: inversion, or a rate that depends on the nucleophile."
+  },
+  {
+   "h": "Thinking the solvent does not matter for {{SN1}}. A more polar, protic solvent speeds up the ionization."
+  },
+  {
+   "h": "Mixing up {{E1}} and {{E2}}: {{E2}} needs a strong base and has the base in its rate law, {{E1}} does neither."
+  },
+  {
+   "h": "Saying that tertiary substrates are unreactive in every bimolecular reaction. They cannot do {{SN2}}, but they do {{E2}} readily."
+  },
+  {
+   "h": "Stopping after the first correct statement. Circle all that apply."
+  }
+ ],
+ "links": {
+  "read": [
+   "choose",
+   "sn2-1",
+   "sn2-2",
+   "sn1-e1",
+   "e2"
+  ]
+ }
+}

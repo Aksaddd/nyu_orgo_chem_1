@@ -1,0 +1,723 @@
+[
+ {
+  "id": "nmr-signals-001",
+  "type": "nmr-signals",
+  "role": "worked",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "Lecture 10/22, p. 1",
+  "stem": "How many signals does ethyl acetate show in its {{1H}} NMR spectrum?\n[[mol:CC(=O)OCC|me]]",
+  "answer": 3,
+  "lo": 3,
+  "hi": 3,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find every hydrogen",
+     "h": "There are three groups with hydrogens: the {{CH3}} on the C=O, the {{OCH2}}, and the {{CH3}} at the end of the ethyl group. Eight hydrogens in all.",
+     "ask": {
+      "q": "How many hydrogens does ethyl acetate have?",
+      "a": "Eight: 3 + 2 + 3."
+     }
+    },
+    {
+     "t": "Group the hydrogens that are equivalent",
+     "h": "The three hydrogens of one {{CH3}} trade places as the group spins, so they are equivalent: one signal per {{CH3}}. The two hydrogens of the {{CH2}} are equivalent to each other."
+    },
+    {
+     "t": "Ask whether any two groups are in the same environment",
+     "h": "One {{CH3}} is attached to a C=O carbon, the other to a {{CH2}}. Different neighbours, different environments. There is no symmetry that swaps them.",
+     "ask": {
+      "q": "Are the two {{CH3}} groups equivalent?",
+      "a": "No. One is next to C=O, the other next to a {{CH2}}."
+     }
+    },
+    {
+     "t": "Count",
+     "h": "Three environments: three signals."
+    }
+   ],
+   "answer": "3",
+   "rule": "One signal for each different environment. Hydrogens swapped by symmetry or by rotation of a {{CH3}} count once."
+  }
+ },
+ {
+  "id": "nmr-signals-002",
+  "type": "nmr-signals",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "FA24 Exam 2, Q2B",
+  "stem": "A {{1H}} NMR spectrum contains a septet (a signal split into seven lines). Which hydrogen gives it?",
+  "choices": [
+   {
+    "h": "The CH of an isopropyl group: [[mol:CC(C)c1ccccc1|me]]",
+    "ok": true,
+    "why": "The CH has six equivalent neighbours (two {{CH3}} groups): 6 + 1 = 7."
+   },
+   {
+    "h": "The {{CH2}} of an ethyl group: [[mol:CCc1ccccc1|me]]",
+    "ok": false,
+    "why": "The {{CH2}} has three neighbours (the {{CH3}}): 3 + 1 = 4 lines, a quartet."
+   },
+   {
+    "h": "The {{CH3}} groups of a tert-butyl group: [[mol:CC(C)(C)c1ccccc1|me]]",
+    "ok": false,
+    "why": "The carbon next to them has no hydrogens: 0 + 1 = 1 line, a singlet."
+   },
+   {
+    "h": "Any carbon that carries seven hydrogens",
+    "ok": false,
+    "why": "The number of lines counts the neighbours, plus one. It does not count the hydrogens giving the signal, and no carbon holds seven hydrogens."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Use the n + 1 rule backwards",
+     "h": "A hydrogen with n equivalent neighbours on the next carbon appears as n + 1 lines. Seven lines means n = 6.",
+     "ask": {
+      "q": "How many neighbouring hydrogens give seven lines?",
+      "a": "Six: n + 1 = 7."
+     }
+    },
+    {
+     "t": "Ask what has six equivalent neighbours",
+     "h": "Six equivalent hydrogens on neighbouring carbons means two {{CH3}} groups attached to the same carbon."
+    },
+    {
+     "t": "Name the group",
+     "h": "A CH carrying two {{CH3}} groups is the CH of an <b>isopropyl</b> group, {{(CH3)2CH}}.",
+     "ask": {
+      "q": "Which group contains one H with six equivalent neighbours?",
+      "a": "Isopropyl: the CH between two {{CH3}} groups."
+     }
+    },
+    {
+     "t": "Check the other half",
+     "h": "The six {{CH3}} hydrogens have one neighbour (the CH), so they appear as a doublet. A septet and a doublet together are the mark of an isopropyl group. On the past exam, a small septet showed that a little isopropylbenzene had formed."
+    }
+   ],
+   "answer": "The CH of an isopropyl group, {{(CH3)2CH}}: six equivalent neighbours, 6 + 1 = 7 lines.",
+   "rule": "n + 1 rule: n equivalent neighbours give n + 1 lines. Septet = isopropyl CH."
+  }
+ },
+ {
+  "id": "nmr-signals-003",
+  "type": "nmr-signals",
+  "role": "worked",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "How many signals does methylcyclohexane show in its {{13C}} NMR spectrum?\n[[mol:CC1CCCCC1|me]]",
+  "answer": 5,
+  "lo": 5,
+  "hi": 5,
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the carbons",
+     "h": "Seven: the {{CH3}} and six ring carbons. Seven is the most signals there could be.",
+     "ask": {
+      "q": "What is the largest possible number of {{13C}} signals here?",
+      "a": "Seven, one per carbon."
+     }
+    },
+    {
+     "t": "Look for symmetry",
+     "h": "A mirror plane runs through the {{CH3}}, C1 and C4. It swaps C2 with C6 and C3 with C5.",
+     "ask": {
+      "q": "Which ring carbons are swapped by the mirror plane?",
+      "a": "C2 with C6, and C3 with C5."
+     }
+    },
+    {
+     "t": "List the environments",
+     "h": "{{CH3}}; C1; C2 and C6 together; C3 and C5 together; C4."
+    },
+    {
+     "t": "Count",
+     "h": "Five signals. The trap is to answer 7 (no symmetry used) or 4 (forgetting that C1 and C4 are different)."
+    }
+   ],
+   "answer": "5",
+   "rule": "Carbons swapped by a mirror plane or an axis give one signal."
+  }
+ },
+ {
+  "id": "nmr-signals-004",
+  "type": "nmr-signals",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "Lecture 10/22, p. 2",
+  "stem": "In fluoroethane, which hydrogens are <b>less shielded</b>, and what does that mean?\n[[mol:CCF|me]]",
+  "choices": [
+   {
+    "h": "The {{CH2}} hydrogens: fluorine pulls electron density away from them, so they feel more of the external field",
+    "ok": true,
+    "why": "Less electron density, less shielding, larger net field."
+   },
+   {
+    "h": "The {{CH3}} hydrogens: they are further from fluorine's electrons",
+    "ok": false,
+    "why": "Shielding comes from the electron density around the hydrogen itself. Fluorine removes that density from the nearer {{CH2}}, not from the {{CH3}}."
+   },
+   {
+    "h": "The {{CH2}} hydrogens: fluorine's lone pairs give them extra electron density",
+    "ok": false,
+    "why": "Fluorine withdraws electron density through the bonds. Extra density would mean more shielding, not less."
+   },
+   {
+    "h": "Neither: all five hydrogens are in the same environment",
+    "ok": false,
+    "why": "The {{CH2}} is attached to F and the {{CH3}} is not. Two environments, two signals."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Say what shielding is",
+     "h": "The electrons around a nucleus have their own magnetic field, and it counters the external field. The nucleus feels a net field: {{B0}} minus the electrons' field.",
+     "ask": {
+      "q": "Does the electrons' field add to the external field or oppose it?",
+      "a": "It opposes it. That is why it is called shielding."
+     }
+    },
+    {
+     "t": "Find where the electrons are pulled away",
+     "h": "Fluorine is very electronegative. It pulls electron density toward itself, most strongly from the carbon it is attached to and that carbon's hydrogens.",
+     "ask": {
+      "q": "Which hydrogens are closer to fluorine?",
+      "a": "The two on the {{CH2}}."
+     }
+    },
+    {
+     "t": "Draw the conclusion",
+     "h": "Less electron density around the {{CH2}} hydrogens means less shielding: they feel more of the external field than the {{CH3}} hydrogens do."
+    },
+    {
+     "t": "Connect to the spectrum",
+     "h": "Different net fields mean different absorption frequencies. The {{CH2}} and {{CH3}} hydrogens are in different environments and give two separate signals."
+    }
+   ],
+   "answer": "The {{CH2}} hydrogens next to F. Fluorine pulls electron density away, so they feel a larger net field.",
+   "rule": "Net field = B0 minus the electrons' field. Fewer electrons nearby, less shielding."
+  }
+ },
+ {
+  "id": "nmr-signals-005",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "How many signals does propane show in its {{1H}} NMR spectrum?\n[[mol:CCC|me]]",
+  "answer": 2,
+  "lo": 2,
+  "hi": 2,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the groups",
+     "h": "Two {{CH3}} groups and one {{CH2}}."
+    },
+    {
+     "t": "Use the symmetry",
+     "h": "The molecule is the same from either end, so the two {{CH3}} groups are equivalent: their six hydrogens give one signal."
+    },
+    {
+     "t": "Count",
+     "h": "{{CH3}} hydrogens, one signal. {{CH2}} hydrogens, one signal. Two in all. Answering 3 means counting the groups without checking symmetry, and 8 means counting hydrogens."
+    }
+   ],
+   "answer": "2",
+   "rule": "Count environments, not hydrogens and not groups."
+  }
+ },
+ {
+  "id": "nmr-signals-006",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "Lecture 10/22, p. 3",
+  "stem": "How many signals does fluoroethane show in its {{13C}} NMR spectrum?\n[[mol:CCF|me]]",
+  "answer": 2,
+  "lo": 2,
+  "hi": 2,
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the carbons",
+     "h": "Two."
+    },
+    {
+     "t": "Compare their environments",
+     "h": "C1 carries the fluorine. C2 is a {{CH3}}. They are different."
+    },
+    {
+     "t": "Count",
+     "h": "Two signals. A {{13C}} spectrum counts kinds of carbon. The hydrogens do not enter into it."
+    }
+   ],
+   "answer": "2",
+   "rule": "13C NMR: one signal for each different kind of carbon."
+  }
+ },
+ {
+  "id": "nmr-signals-007",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 1,
+  "src": "site",
+  "stem": "How many signals does acetone show in its {{1H}} NMR spectrum?\n[[mol:CC(C)=O|me]]",
+  "answer": 1,
+  "lo": 1,
+  "hi": 1,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the hydrogens",
+     "h": "Six, in two {{CH3}} groups. The C=O carbon has none."
+    },
+    {
+     "t": "Use the symmetry",
+     "h": "The two {{CH3}} groups are both attached to the same C=O and are swapped by a mirror plane: equivalent."
+    },
+    {
+     "t": "Count",
+     "h": "All six hydrogens are in one environment: one signal."
+    }
+   ],
+   "answer": "1",
+   "rule": "Groups swapped by symmetry share one signal."
+  }
+ },
+ {
+  "id": "nmr-signals-008",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "In the {{1H}} NMR spectrum of bromoethane, what does the signal of the {{CH3}} hydrogens look like?\n[[mol:CCBr|me]]",
+  "choices": [
+   {
+    "h": "A triplet (3 lines)",
+    "ok": true,
+    "why": "Two neighbouring hydrogens on the {{CH2}}: 2 + 1 = 3."
+   },
+   {
+    "h": "A quartet (4 lines)",
+    "ok": false,
+    "why": "That uses the {{CH3}}'s own three hydrogens: 3 + 1. The rule counts the neighbours. The quartet is the {{CH2}} signal."
+   },
+   {
+    "h": "A singlet (1 line)",
+    "ok": false,
+    "why": "A singlet needs zero neighbouring hydrogens. The next carbon has two."
+   },
+   {
+    "h": "A doublet (2 lines)",
+    "ok": false,
+    "why": "That takes n as the number of lines. The rule is n + 1."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the neighbours",
+     "h": "The carbon next to the {{CH3}} is the {{CH2}}, which has 2 hydrogens."
+    },
+    {
+     "t": "Apply n + 1",
+     "h": "n = 2, so 2 + 1 = 3 lines: a triplet."
+    },
+    {
+     "t": "Do not count the hydrogens themselves",
+     "h": "The three {{CH3}} hydrogens are equivalent to each other and do not split their own signal. (The {{CH2}} signal, with 3 neighbours, is a quartet.)"
+    }
+   ],
+   "answer": "A triplet",
+   "rule": "Lines = neighbours + 1, counting the hydrogens on the next carbon."
+  }
+ },
+ {
+  "id": "nmr-signals-009",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "Lecture 10/22, p. 2",
+  "stem": "What does it mean to say that electrons <b>shield</b> a nucleus in NMR?",
+  "choices": [
+   {
+    "h": "The electrons' magnetic field counters the external field, so the nucleus feels a smaller net field",
+    "ok": true,
+    "why": "This is the lecture's definition: {{B0}} minus the electrons' field."
+   },
+   {
+    "h": "The electrons add their field to the external field, so the nucleus feels a larger net field",
+    "ok": false,
+    "why": "The electrons' field opposes the external one. A larger net field is what a less shielded nucleus feels."
+   },
+   {
+    "h": "The electrons absorb the light before it reaches the nucleus",
+    "ok": false,
+    "why": "Shielding is about magnetic fields, not about blocking light."
+   },
+   {
+    "h": "The electrons stop the nucleus from aligning with the field at all",
+    "ok": false,
+    "why": "The nuclei still align with or against the field. Shielding only changes the size of the field they feel."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Start with the external field",
+     "h": "The sample sits in an external magnetic field, {{B0}}."
+    },
+    {
+     "t": "Add the electrons",
+     "h": "Electrons have their own magnetic field, and it counters the external field."
+    },
+    {
+     "t": "State the result",
+     "h": "The nucleus feels a net field of {{B0}} minus the electrons' field. Nuclei with different amounts of electron density around them feel different net fields and give different signals."
+    }
+   ],
+   "answer": "The electrons' own magnetic field counters the external field, so the nucleus feels a smaller net field.",
+   "rule": "Net magnetic field = B0 minus the electrons' field."
+  }
+ },
+ {
+  "id": "nmr-signals-010",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "Lecture 10/22, p. 3",
+  "stem": "How many signals does bromoethene show in its {{1H}} NMR spectrum?\n[[mol:C=CBr]]",
+  "answer": 3,
+  "lo": 3,
+  "hi": 3,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the hydrogens",
+     "h": "Three: one on the carbon that carries Br, two on the {{CH2}} end."
+    },
+    {
+     "t": "Remember that a double bond does not rotate",
+     "h": "The two hydrogens of the {{CH2}} end are locked in place. One is on the same side of the double bond as Br (cis to it), the other is on the opposite side (trans)."
+    },
+    {
+     "t": "Count",
+     "h": "Three different environments: three signals. The trap is to treat the two {{CH2}} hydrogens as equivalent, as they would be on a carbon that can rotate."
+    }
+   ],
+   "answer": "3",
+   "rule": "Across a C=C there is no rotation: the two H of a =CH2 are different unless the other end carries two identical groups."
+  }
+ },
+ {
+  "id": "nmr-signals-011",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "How many signals does cyclohexane show in its {{1H}} NMR spectrum at room temperature?\n[[mol:C1CCCCC1]]",
+  "answer": 1,
+  "lo": 1,
+  "hi": 1,
+  "solution": {
+   "steps": [
+    {
+     "t": "Start from the chair",
+     "h": "A chair has six axial and six equatorial hydrogens, which looks like two environments."
+    },
+    {
+     "t": "Remember the ring flip",
+     "h": "The ring flips rapidly at room temperature (K = 1), and every axial hydrogen becomes equatorial and the reverse. Each hydrogen spends half its time in each position."
+    },
+    {
+     "t": "Count",
+     "h": "On average all twelve hydrogens are the same: one signal. All six carbons are also equivalent."
+    }
+   ],
+   "answer": "1",
+   "rule": "Hydrogens that trade places quickly (ring flip, rotation of a {{CH3}}) give one averaged signal."
+  }
+ },
+ {
+  "id": "nmr-signals-012",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "Lecture 10/22, p. 1",
+  "stem": "How many signals does ethyl acetate show in its {{13C}} NMR spectrum?\n[[mol:CC(=O)OCC|me]]",
+  "answer": 4,
+  "lo": 4,
+  "hi": 4,
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the carbons",
+     "h": "Four: the {{CH3}} on the C=O, the C=O carbon, the {{OCH2}}, and the end {{CH3}}."
+    },
+    {
+     "t": "Look for symmetry",
+     "h": "There is none. Every carbon has different neighbours."
+    },
+    {
+     "t": "Count",
+     "h": "Four signals. The C=O carbon has no hydrogens but still gives a {{13C}} signal: answering 3 means it was left out."
+    }
+   ],
+   "answer": "4",
+   "rule": "13C NMR counts every kind of carbon, including carbons with no hydrogens."
+  }
+ },
+ {
+  "id": "nmr-signals-013",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site",
+  "stem": "A compound shows two {{1H}} NMR signals: a septet for 1 H and a doublet for 6 H. Which compound is it?",
+  "choices": [
+   {
+    "h": "[[mol:CC(C)Cl|me]]",
+    "ok": true,
+    "why": "The CH has six neighbours (septet) and the six {{CH3}} hydrogens have one neighbour (doublet)."
+   },
+   {
+    "h": "[[mol:CCCCl|me]]",
+    "ok": false,
+    "why": "1-Chloropropane has three environments, so three signals, and none of its hydrogens has six neighbours."
+   },
+   {
+    "h": "[[mol:CC(C)(C)Cl|me]]",
+    "ok": false,
+    "why": "All nine hydrogens are equivalent and have no neighbours: one singlet."
+   },
+   {
+    "h": "[[mol:CCCl|me]]",
+    "ok": false,
+    "why": "Chloroethane gives a triplet (3 H) and a quartet (2 H): the pattern of an ethyl group."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the septet",
+     "h": "Seven lines: a hydrogen with six equivalent neighbours."
+    },
+    {
+     "t": "Read the doublet",
+     "h": "Two lines: hydrogens with one neighbour. Six of them means two equivalent {{CH3}} groups next to one CH."
+    },
+    {
+     "t": "Put it together",
+     "h": "{{(CH3)2CH}}, an isopropyl group, and nothing else with hydrogens: 2-chloropropane."
+    }
+   ],
+   "answer": "2-Chloropropane",
+   "rule": "Septet (1 H) plus doublet (6 H) = isopropyl."
+  }
+ },
+ {
+  "id": "nmr-signals-014",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 2,
+  "src": "site",
+  "stem": "Into how many lines is the {{CH2}} signal of diethyl ether split?\n[[mol:CCOCC|me]]",
+  "answer": 4,
+  "lo": 4,
+  "hi": 4,
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the neighbours of a {{CH2}}",
+     "h": "On one side is its {{CH3}}, with 3 hydrogens. On the other side is the oxygen, which has no hydrogens."
+    },
+    {
+     "t": "Do not count across the oxygen",
+     "h": "The other {{CH2}} is not on a neighbouring carbon, and it is equivalent to this one anyway. Only the 3 hydrogens of the {{CH3}} count."
+    },
+    {
+     "t": "Apply n + 1",
+     "h": "3 + 1 = 4 lines, a quartet. Answering 6 comes from counting the two {{CH3}} groups together, and 3 from forgetting the + 1."
+    }
+   ],
+   "answer": "4 (a quartet)",
+   "rule": "Count only the hydrogens on the carbons directly attached to the carbon in question."
+  }
+ },
+ {
+  "id": "nmr-signals-015",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "What does the {{1H}} NMR spectrum of 1,2-dichloroethane look like?\n[[mol:ClCCCl]]",
+  "choices": [
+   {
+    "h": "One signal, a singlet",
+    "ok": true,
+    "why": "All four hydrogens are equivalent, and equivalent hydrogens do not split each other."
+   },
+   {
+    "h": "One signal, a triplet",
+    "ok": false,
+    "why": "The two hydrogens on the next carbon are equivalent to the ones being observed, so they cause no splitting."
+   },
+   {
+    "h": "Two signals, each a triplet",
+    "ok": false,
+    "why": "The two {{CH2}} groups are swapped by the molecule's symmetry. They are one environment, not two."
+   },
+   {
+    "h": "Four signals, one for each hydrogen",
+    "ok": false,
+    "why": "Signals count environments, not hydrogens."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the environments",
+     "h": "The molecule is the same from both ends, so the two {{CH2}} groups are equivalent. All four hydrogens are in one environment: one signal."
+    },
+    {
+     "t": "Ask about splitting",
+     "h": "The n + 1 rule counts neighbours that are different from the hydrogens giving the signal. Equivalent hydrogens do not split each other."
+    },
+    {
+     "t": "Conclude",
+     "h": "One signal with no splitting: a singlet. The trap is to see two hydrogens on the next carbon and call it a triplet."
+    }
+   ],
+   "answer": "One singlet",
+   "rule": "Equivalent hydrogens do not split each other."
+  }
+ },
+ {
+  "id": "nmr-signals-016",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "site",
+  "stem": "How many signals does 1,4-dimethylbenzene show in its {{13C}} NMR spectrum?\n[[mol:Cc1ccc(C)cc1|me]]",
+  "answer": 3,
+  "lo": 3,
+  "hi": 3,
+  "solution": {
+   "steps": [
+    {
+     "t": "Count the carbons",
+     "h": "Eight: two {{CH3}} and six ring carbons."
+    },
+    {
+     "t": "Use the symmetry",
+     "h": "The two ends of the molecule are the same, and so are the two sides. The two {{CH3}} carbons are equivalent. The two ring carbons that carry a {{CH3}} are equivalent. The four ring CH carbons are all equivalent."
+    },
+    {
+     "t": "Count",
+     "h": "Three kinds of carbon: three signals. Answering 4 usually means splitting the four ring CH carbons into two sets, and 2 means forgetting that ring carbons with and without a {{CH3}} differ."
+    }
+   ],
+   "answer": "3",
+   "rule": "High symmetry means few signals: find every mirror plane before counting."
+  }
+ },
+ {
+  "id": "nmr-signals-017",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "stem": "Which compound shows exactly two {{1H}} NMR signals, both singlets?",
+  "choices": [
+   {
+    "h": "[[mol:CC(=O)OC|me]]",
+    "ok": true,
+    "why": "Two different {{CH3}} groups, each next to an atom with no hydrogens."
+   },
+   {
+    "h": "[[mol:CC(C)=O|me]]",
+    "ok": false,
+    "why": "Acetone's two {{CH3}} groups are equivalent: one singlet, not two."
+   },
+   {
+    "h": "[[mol:CCOCC|me]]",
+    "ok": false,
+    "why": "Two signals, but the {{CH3}} is a triplet and the {{CH2}} is a quartet."
+   },
+   {
+    "h": "[[mol:CC(=O)OCC|me]]",
+    "ok": false,
+    "why": "Ethyl acetate has three signals: a singlet, a quartet and a triplet."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Translate the question",
+     "h": "Two signals means two environments. Both singlets means neither kind of hydrogen has a different hydrogen on the next carbon."
+    },
+    {
+     "t": "Test methyl acetate",
+     "h": "One {{CH3}} is on the C=O carbon and one is on the oxygen. They are different, and each is attached to an atom with no hydrogens: two singlets."
+    },
+    {
+     "t": "Rule out the others",
+     "h": "Acetone has one signal. Diethyl ether has two signals, but they are a triplet and a quartet. Ethyl acetate has three signals."
+    }
+   ],
+   "answer": "Methyl acetate",
+   "rule": "A singlet means no hydrogens on the neighbouring atoms (or only equivalent ones)."
+  }
+ },
+ {
+  "id": "nmr-signals-018",
+  "type": "nmr-signals",
+  "role": "practice",
+  "kind": "numeric",
+  "diff": 3,
+  "src": "Lecture 10/22, p. 3",
+  "stem": "How many signals does the allyl cation show in its {{13C}} NMR spectrum?\n[[mol:C=C[CH2+]]]",
+  "answer": 2,
+  "lo": 2,
+  "hi": 2,
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the other resonance structure",
+     "h": "The positive charge and the double bond trade ends: {{CH2=CH-CH2+}} and {{+CH2-CH=CH2}} are two pictures of one ion."
+    },
+    {
+     "t": "See what resonance does to the ends",
+     "h": "The real ion is the average of the two pictures, so the two end carbons are identical: each carries half of the positive charge."
+    },
+    {
+     "t": "Count",
+     "h": "Two kinds of carbon, the two ends and the middle: two signals. Answering 3 comes from reading one resonance structure as the real molecule."
+    }
+   ],
+   "answer": "2",
+   "rule": "Atoms made equivalent by resonance give one signal."
+  }
+ }
+]
