@@ -227,7 +227,7 @@
             const it = item.items[i], ok = picked[i] === it.bin;[...r.seg.children].forEach(b => { b.disabled = true; if (b.dataset.bin === it.bin) b.dataset.c = "true" });
             r.row.classList.add(ok ? "right" : "wrong");
             // the mark and the right bin on a line of their own, always shown; the reason alone has the class "explain"
-            r.row.appendChild(el("div", { class: "cls-mark", style: { flex: "1 0 100%" } }, mark(ok), ok ? null : el("span", {}, " It is ", el("b", {}, binLabel(it.bin)), ".")));
+            r.row.appendChild(el("div", { class: "cls-mark" }, mark(ok), ok ? null : el("span", {}, " It is ", el("b", {}, binLabel(it.bin)), ".")));
             if (it.why) r.row.appendChild(el("div", { class: "explain", html: it.why }));
           });
           return S.classify(picked, item.items.map(it => it.bin));
