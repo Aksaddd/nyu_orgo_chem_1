@@ -224,7 +224,9 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)) } catch (e) { } };
   const chState = c => st[c.id] || (st[c.id] = { at: 0, a: {} });
   const need = s => Math.min(NEED, s.qs.length);
-  const answeredIn = (c, s) => s.qs.filter(id => chState(c).a[id]).length;
+  const answeredIn = (c, s) => s.qs.filter(id => kept(c, id)).length;
+  // CHEM 225: a saved answer counts only while it still fits the question (choicesNow, below): one whose choices were renumbered since is offered again, and is not counted
+  const kept = (c, id) => { const A = chState(c).a[id]; if (!A) return false; const x = QV(id, A.lv || 5); return !x || !!choicesNow(A, x) };
   const totalQs = c => c.sections.reduce((n, s) => n + s.qs.length, 0);
   const words = c => c.sections.reduce((n, s) => n + plain(s.html).split(/\s+/).length, 0);
   function chProgress(c) {
@@ -325,7 +327,7 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
       <div class="opts">${opts.map((t, j) => `<button class="opt" data-t="${j}"><span class="bub">${(x.tags || "ABCDE")[j]}</span><span>${t}</span></button>`).join("")}</div></div>`;
   }
   function checkHTML(c, s, si) {
-    const S = chState(c), done = answeredIn(c, s), n = s.qs.length, nextId = s.qs.find(id => !S.a[id]);
+    const S = chState(c), done = answeredIn(c, s), n = s.qs.length, nextId = s.qs.find(id => !kept(c, id));
     const unlocked = done >= need(s), last = si === c.sections.length - 1;
     let more = "";
     if (si === S.at && !S.finished) {
