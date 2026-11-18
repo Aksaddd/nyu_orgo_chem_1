@@ -207,7 +207,7 @@
   "kind": "numeric",
   "diff": 2,
   "src": "site",
-  "stem": "Ethyne has {{pKa}} 25 and ammonia has {{pKa}} 38.\n[[eq:C#C + [NH2-]>>C#[C-] + N]]\nThe equilibrium constant for this reaction as written is 10<sup>x</sup>. What is x?",
+  "stem": "Ethyne has {{pKa}} 25 and ammonia has {{pKa}} 38.\n[[eq:C#C|me + [NH2-]>>C#[C-]|me + N]]\nThe equilibrium constant for this reaction as written is 10<sup>x</sup>. What is x?",
   "answer": 13,
   "lo": 12.9,
   "hi": 13.1,

@@ -724,7 +724,7 @@ window.READ = [
         0
        ],
        [
-        "[[eq:C#C + [NH2-]>>[C-]#C + N]]",
+        "[[eq:C#C|me + [NH2-]>>[C-]#C|me + N]]",
         1
        ],
        [

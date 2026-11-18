@@ -67,7 +67,7 @@
   "kind": "numeric",
   "diff": 2,
   "src": "site",
-  "stem": "Estimate the equilibrium constant. Write it as K = 10<sup>x</sup> and give x.\n[[eq:C#C + [NH2-]>>[C-]#C + N]]",
+  "stem": "Estimate the equilibrium constant. Write it as K = 10<sup>x</sup> and give x.\n[[eq:C#C|me + [NH2-]>>[C-]#C|me + N]]",
   "answer": 13,
   "lo": 12,
   "hi": 14,
@@ -400,7 +400,7 @@
     "why": "Ammonia as an acid is 38. Water is 15.7. The weaker acid, ammonia, is on the left: hydroxide cannot make amide."
    },
    {
-    "h": "[[eq:C#C + [NH2-]>>[C-]#C + N]]",
+    "h": "[[eq:C#C|me + [NH2-]>>[C-]#C|me + N]]",
     "bin": "Right",
     "why": "Acetylene (25) is a stronger acid than ammonia (38). The weaker acid is on the right."
    },
@@ -907,12 +907,12 @@
     "why": "H-F (4) is a much weaker acid than H-Cl (-8). Chloride is far too weak a base to take a proton from H-F."
    },
    {
-    "h": "[[eq:N + [C-]#C>>[NH2-] + C#C]]",
+    "h": "[[eq:N + [C-]#C|me>>[NH2-] + C#C|me]]",
     "bin": "Left",
     "why": "Ammonia (38) is a weaker acid than acetylene (25). Acetylide is not a strong enough base to make amide. It is the reverse reaction that goes."
    },
    {
-    "h": "[[eq:C#C + [CH3-]>>[C-]#C + C]]",
+    "h": "[[eq:C#C|me + [CH3-]>>[C-]#C|me + C]]",
     "bin": "Right",
     "why": "Acetylene (25) is a far stronger acid than methane (50 to 60). The weaker acid is on the right."
    }
