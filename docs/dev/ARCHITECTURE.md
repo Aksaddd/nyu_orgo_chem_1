@@ -69,9 +69,9 @@ inside Eureka.
 
 | File here | Copied from (Eureka) | Last change of the source when copied | How it differs |
 |---|---|---|---|
-| `read/index.html` | `econ101/read/index.html` | Eureka commit `c09a4e1` | the edits every class makes, and eleven departures marked `CHEM 225:` (below) |
-| `read/notes.js` | `econ101/read/notes.js` | `c6e2c82` | the key (`orgo-notes-v1`), and one marked group of three small changes |
-| `read/play.js` | `econ101/read/play.js` | `7f57a00` | nothing: the file is identical |
+| `read/index.html` | `econ101/read/index.html` | Eureka commit `c09a4e1` | the edits every class makes, and fourteen departures marked `CHEM 225:` (below) |
+| `read/notes.js` | `econ101/read/notes.js` | `c6e2c82` | the key (`orgo-notes-v1`), one marked group of three small changes, and `fit()` (below) |
+| `read/play.js` | `econ101/read/play.js` | `7f57a00` | one line: "Put it in order" shows the activity's own `tip` when it has one (every such activity here is a ranking), and ECON 101's line about steps otherwise. The same line is proposed for the other classes' copies, which would make the file identical again |
 
 The copies were taken at Eureka commit `17b01be`.
 
@@ -91,7 +91,8 @@ The marked departures in `read/index.html`, each with a comment that says why:
 5. `gemHTML`: the hint under a jewel names the Reading level button, and the jewels above Emerald, only when the
    class has that button (`read/levels.js`).
 6. After a wrong answer, the question's own reason for the choice that was picked (`why` in `read/bank.js`), then
-   the dictionary. A choice that is a drawing is named by its letter.
+   the dictionary. A choice that is a drawing is named by its letter, in "Why not B?" and in the verdict ("Not quite.
+   The answer is A."), where the green choice above shows it.
 7. `keep` and `tags` of a bank entry: the written order of the choices is kept where the explanation names them by
    their place, and they carry numbers where the question numbers them.
 8. A passage without questions has no "Check yourself" heading.
@@ -99,11 +100,20 @@ The marked departures in `read/index.html`, each with a comment that says why:
 10. `ReadChem.draw` after a passage's questions are redrawn.
 11. A flip card is not redrawn the moment it is turned. Every passage here has a one-card flip, and the redraw would
     turn the card face up again before its answer was read.
+12. `route`: on the first route of a page that Back or Forward loads again, the scroll is left to the browser, because a
+    passage can end with a link to the Mechanism Studio or Practice and the student comes back to it.
+13. `go` and the `read:level` handler: when the reading levels arrive while the page is still scrolling to the current
+    passage (a chapter just opened), the redraw lets that scroll go on; `scrollTo` would stop it partway.
+14. `choicesNow`: an answer keeps the choices as they were worded when it was given. A choice corrected since (a drawing
+    given its values) is matched to today's by what it draws, so the answered view shows today's choices with the right
+    one marked; an answer that cannot be matched, or whose record disagrees with today's right answer, is offered again.
 
 In `read/notes.js` the marked group makes the notes ignore what is not the passage's own words: the letters inside a
 drawing, the line that opens a folded block, the words of a link, and the white space between two blocks. They are not
 counted, not marked and not quoted (`ReadChem.text`, `ReadChem.skip`, `ReadChem.quote`). So a highlight keeps its place
 whatever a drawing is made of, and a `<mark>` never lands inside an `<svg>`, where it would not be drawn.
+`fit()`, also marked, keeps a highlight on its words when a passage's wording is corrected: a highlight whose words are
+no longer at its place is moved to the nearest place where they are, and saved there.
 
 ### Carrying over a change from the platform's reader
 
