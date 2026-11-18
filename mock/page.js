@@ -184,8 +184,8 @@
     live = keep; tick = setInterval(beat, 500);
     if (run && run.done) { used = run.used == null ? null : +run.used; return marking(run.marks || {}) }
     if (run && timed) {
-      left = Math.max(0, run.endAt ? (run.endAt - Date.now()) / 1000 : +run.left || 0);
-      if (left <= 0) { over = true; paint(); ORGO.ui.toast("Time is up. Finish and mark when you are ready.") } else if (run.endAt) go(run.endAt); else paint();
+      left = Math.min(total, Math.max(0, run.endAt ? (run.endAt - Date.now()) / 1000 : +run.left || 0));      // never more than the exam's time (a clock put back)
+      if (left <= 0) { over = true; paint(); ORGO.ui.toast("Time is up. Finish and mark when you are ready.") } else if (run.endAt) go(Math.min(run.endAt, Date.now() + total * 1000)); else paint();
     } else if (timed) go();
     keep(); focus(title);
 
