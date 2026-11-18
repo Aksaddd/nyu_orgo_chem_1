@@ -3,6 +3,7 @@
 // written in read/chapters.js and read/bank.js, in the answers the reader saves and in the reading-level files, and this
 // file draws them once the reader has put the text in the page.
 //   ReadChem.draw(root)    draws every formula and figure in the text under root. Safe to call again: what is drawn stays.
+//                          Under a passage shown at another reading level it also puts the links the passage has under it.
 //   ReadChem.text(range)   the words in a range, without the letters inside drawings and on controls   } for read/notes.js,
 //   ReadChem.quote(range)  the same words as the notebook shows them                                   } which files notes
 //   ReadChem.skip(node)    is this text node inside a drawing, on a control, or only space between blocks? } by place
@@ -76,7 +77,21 @@
     const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
     nodes.forEach(expand);
     if (root.querySelectorAll) root.querySelectorAll(".fig, .fig-inline").forEach(mark);      // a figure that filled itself later (a mechanism still loading)
+    under(root);
     return nodes.length;
+  }
+  // A passage at another reading level is a level text that shared/readlevels.js puts beside the passage, which it hides.
+  // A level text is words only (Eureka's tools/check-levels.js refuses links). So what hangs under the passage as written
+  // is copied under its level text: the links to the professor's pages, and to a mechanism or a chair to draw in the
+  // class's own tools. The copies go at the end, so the places of the words above them, by which notes are filed, stay.
+  const UNDER = ":scope > .rc-src, :scope > .rc-go";
+  function under(root) {
+    const copies = root.matches && root.matches(".rd-prose[data-alt]") ? [root] : root.querySelectorAll ? root.querySelectorAll(".rd-prose[data-alt]") : [];
+    copies.forEach(alt => {
+      const orig = alt.parentNode && alt.parentNode.querySelector(".rd-prose:not([data-alt])");
+      if (!orig || alt.querySelector(UNDER)) return;
+      orig.querySelectorAll(UNDER).forEach(p => { const c = p.cloneNode(true); c.querySelectorAll("mark").forEach(m => m.replaceWith(...m.childNodes)); c.normalize(); alt.appendChild(c) });      // without the highlights made on the passage as written
+    });
   }
 
   // ------------------------------------------------------------------ for the notes (read/notes.js)
@@ -111,6 +126,7 @@
     const seen = new Set(); let prose = false;
     for (const m of list) for (const n of m.addedNodes) { const el = n.nodeType === 1 ? n : n.parentNode; if (el && el.nodeType === 1 && el.isConnected && !el.closest(DRAWN)) seen.add(el) }
     seen.forEach(el => { if (draw(el) && (el.closest(".rd-prose") || el.querySelector(".rd-prose"))) prose = true });
+    under(view);      // a level text that arrived without the notes being asked to repaint
     if (prose && repaint) repaint();      // text was drawn in a passage after its notes were painted: paint them again, in the right places
   }).observe(view, { childList: true, subtree: true });
 

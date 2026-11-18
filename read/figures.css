@@ -14,6 +14,9 @@
 .chem { white-space: nowrap }
 /* a drawing is a picture: it is not selected with the text, and a press on it goes to what it sits in (an answer, a card) */
 .fig svg, .fig-inline svg { pointer-events: none; -webkit-user-select: none; user-select: none; max-width: 100%; height: auto }
+/* and the weight and the spacing of the words around it (a bold card, the tighter line of a question, the word spacing of
+   a passage) are not for the labels inside it: they are drawn as the class's own pages draw them */
+.fig, .fig-inline { font-weight: 400; font-style: normal; letter-spacing: normal; word-spacing: normal; text-transform: none }
 
 /* ---------- structures and reaction schemes (assets/mol.css). Ink is currentColor: a drawing has the colour of its text */
 .mol { display: block; margin: 0 auto; overflow: visible }
@@ -92,5 +95,10 @@
 .pl-flip span .scheme, .pl-flip span .scheme-species { display: inline-flex } .pl-flip span .scheme-arrow { display: inline-grid }
 .pl-flip > .b .fig, .pl-flip > .b .fig-inline { color: #fff }
 
-/* ---------- Eureka's "easier to read" typeface is for words: the labels inside a drawing keep the face they were set in */
-html.px-font :is(.rd-prose, .q, .opt, .explain, .pl) svg :is(text, tspan) { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0 !important; word-spacing: 0 !important }
+/* ---------- Eureka's reading preferences (wider spacing, the easier-to-read typeface) are for words. They are set on
+   everything inside a passage and a choice, so the labels inside a drawing are given back the spacing and the face they
+   are drawn with: Arial in structures and mechanisms, the reader's own face in chairs, rings, Newman projections and
+   energy diagrams (the two rules above that say so) */
+html:is(.px-font, .px-space1, .px-space2) :is(.fig, .fig-inline) svg :is(text, tspan) { letter-spacing: normal !important; word-spacing: normal !important }
+html.px-font :is(.fig, .fig-inline) svg :is(text, tspan) { font-family: Arial, Helvetica, sans-serif !important }
+html.px-font :is(.fig, .fig-inline) :is(.chair-svg, .ring-svg, .newman-svg, .energy-svg) :is(text, tspan) { font-family: var(--body) !important }

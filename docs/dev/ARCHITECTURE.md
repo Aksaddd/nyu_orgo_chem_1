@@ -214,6 +214,12 @@ the folded blocks and tables inside a passage, drawings in questions and choices
 whole question. `assets/orgo.css`, `quiz.css` and `study.css` are not loaded on that page: their `.q`, `.opt`, `.card`
 and `.btn` rules would collide with the reader's.
 
+The labels inside a drawing keep the weight, the spacing and the typeface they are drawn with on the class's own
+pages. The words around a drawing would hand theirs down (a bold card, the tighter line of a question, the word
+spacing of a passage), so the wrapper of every figure sets them back. Eureka's reading preferences (wider spacing,
+the easier-to-read typeface) are set on everything inside a passage and a choice, so the last rules of the file give
+the labels their own back.
+
 ### Reading levels
 
 The level and density dials are Eureka's (`shared/readlevels.js`). They appear when `read/levels.js` exists. Until the
@@ -224,6 +230,12 @@ from a Eureka checkout that holds this class as `chem225/`): `read/levels/<chapt
 `[[figures]]`, which are drawn like the rest. The build reads the level files when they exist: it checks their figures
 as it checks content, and puts the structures they need into `read/figures.js`. So run `node tools/build.js` after
 level texts are written or changed, and commit `read/figures.js` with them.
+
+A level text is words only: Eureka's checker refuses links and folded blocks. At another level the platform hides the
+passage as written and shows the level text beside it, so `read/chem.js` copies what hangs under the passage to the
+end of its level text: the line with the links to the professor's pages, and the link to a mechanism or a chair to
+draw. The closer looks and bigger pictures are not copied. A level text is written from the whole passage, those
+included. Every chapter also has its two last passages to write at each level, the homework and "In short".
 
 ## Outside Eureka
 
