@@ -1,0 +1,226 @@
+[
+  {
+    "id": "organometallic-synthesis-001", "type": "organometallic-synthesis", "role": "worked", "kind": "written", "diff": 2, "src": "site, modelled on Lecture 11/03, homework", "time": 8, "pts": 30,
+    "stem": "Starting from but-1-ene, make each product. Write the reagents over each arrow and draw each intermediate.\n[[mol:C=CCC]]\nProduct 1, then product 2:\n[[mol:CCC(C)[2H]]]\n[[mol:CCCC]]",
+    "model": "<p><b>Step 1.</b> Add HBr to the alkene. The Br goes on the more substituted carbon.</p>\n[[rxn:C=CCC>HBr>CCC(C)Br]]\n<p><b>Step 2.</b> Make the Grignard reagent (2 Li in pentane, to make the organolithium reagent, is just as good).</p>\n[[rxn:CCC(C)Br>Mg;ether>CCC(C)[Mg]Br]]\n<p><b>Step 3 for product 1:</b> {{D2O}}.</p>\n[[rxn:CCC(C)[Mg]Br>D2O>CCC(C)[2H]]]\n<p><b>Step 3 for product 2:</b> {{H2O}}.</p>\n[[rxn:CCC(C)[Mg]Br>H2O>CCCC]]",
+    "rubric": [
+      {"pts": 8, "h": "HBr, giving 2-bromobutane (Br on the second carbon, not the end carbon)"},
+      {"pts": 8, "h": "Mg in ether (or 2 Li in pentane), with the organometallic reagent drawn"},
+      {"pts": 6, "h": "{{D2O}} for product 1, with D on the second carbon"},
+      {"pts": 4, "h": "{{H2O}} for product 2"},
+      {"pts": 4, "h": "Steps written separately and in order: water or {{D2O}} only after the reagent has been made"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "Product 1 is butane with one D on the second carbon. Product 2 is plain butane. The double bond is gone in both.", "ask": {"q": "Which carbon of the old double bond carries the D?", "a": "The inner one, the more substituted carbon."}},
+        {"t": "Work backwards from the D", "h": "A C-D bond comes from a C-metal bond and {{D2O}}. The C-metal bond comes from a C-Br bond on the same carbon. So the intermediate halide is 2-bromobutane.", "ask": {"q": "What turns a C-Br bond into a C-Mg bond?", "a": "Magnesium metal in diethyl ether."}},
+        {"t": "Get the halide from the alkene", "h": "HBr adds across the double bond, with Br on the more substituted carbon. But-1-ene gives 2-bromobutane, as propene gives 2-bromopropane in the lecture's homework."},
+        {"t": "Choose the last reagent", "h": "{{D2O}} gives the D product. {{H2O}} gives butane. Everything before that is the same.", "ask": {"q": "Why can the water not be in the flask while the Grignard reagent is being made?", "a": "The reagent is a very strong base. It would be protonated as fast as it formed."}},
+        {"t": "Write it forwards", "h": "1) HBr. 2) Mg, ether. 3) {{D2O}} or {{H2O}}."}
+      ],
+      "answer": "1) HBr gives 2-bromobutane. 2) Mg, ether gives the Grignard reagent. 3) D2O gives 2-deuteriobutane; H2O gives butane.",
+      "rule": "Alkene to R-Br (HBr), to R-MgBr (Mg, ether), to R-D (D2O) or R-H (H2O)."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-002", "type": "organometallic-synthesis", "role": "worked", "kind": "written", "diff": 1, "src": "site, modelled on Lecture 10/29, page 5", "time": 5, "pts": 20,
+    "stem": "Carry out this change using lithium. Write the reagents over each arrow and draw the intermediate.\n[[rxn:BrC1CCCCC1>?>[2H]C1CCCCC1]]",
+    "model": "<p><b>Step 1.</b> Two equivalents of lithium metal, in pentane.</p>\n[[rxn:BrC1CCCCC1>2 Li;pentane>[Li]C1CCCCC1 + [Li+].[Br-]]]\n<p><b>Step 2.</b> {{D2O}}.</p>\n[[rxn:[Li]C1CCCCC1>D2O>[2H]C1CCCCC1]]",
+    "rubric": [
+      {"pts": 8, "h": "2 Li (two equivalents), in pentane"},
+      {"pts": 4, "h": "Cyclohexyllithium drawn, with LiBr as the other product"},
+      {"pts": 8, "h": "{{D2O}} as a separate second step, giving D where Br was"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "Br has been replaced by D on the same carbon. No alkene is involved, so there is no HBr step.", "ask": {"q": "How many steps are needed from an alkyl halide?", "a": "Two: make the organometallic reagent, then add {{D2O}}."}},
+        {"t": "Make the organolithium reagent", "h": "R-Br + 2 Li in pentane gives R-Li + LiBr.", "ask": {"q": "Why two lithium atoms?", "a": "One ends up bonded to carbon, and the other ends up as LiBr."}},
+        {"t": "Add the deuterium", "h": "R-Li is R:⁻. It takes a D from {{D2O}}: the carbon that carried Li now carries D."},
+        {"t": "Write it forwards and check", "h": "1) 2 Li, pentane. 2) {{D2O}}. The two reagents are on separate arrows, the solvent has no acidic hydrogen, and the D is on the carbon that carried the Br."}
+      ],
+      "answer": "1) 2 Li, pentane. 2) D2O.",
+      "rule": "R-Br to R-Li (2 Li, pentane) to R-D (D2O)."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-003", "type": "organometallic-synthesis", "role": "worked", "kind": "written", "diff": 3, "src": "site", "time": 8, "pts": 30,
+    "stem": "The target is butane with a D on the <b>end</b> carbon. Two starting materials are on the shelf. Choose one, write the steps, and explain why the other one is the wrong choice.\n[[mol:[2H]CCCC]]\nThe shelf:\n[[mol:C=CCC]]\n[[mol:CCCCBr]]",
+    "model": "<p>Choose <b>1-bromobutane</b>. Its bromine is already on the end carbon, where the D has to go.</p>\n[[rxn:CCCCBr>Mg;ether>CCCC[Mg]Br]]\n[[rxn:CCCC[Mg]Br>D2O>[2H]CCCC]]\n<p>But-1-ene is the wrong choice. HBr puts the Br on the more substituted carbon, so the same steps would put the D on the second carbon:</p>\n[[rxn:C=CCC>1) HBr, 2) Mg, ether;3) D2O>CCC(C)[2H]]]",
+    "rubric": [
+      {"pts": 8, "h": "Chooses 1-bromobutane"},
+      {"pts": 8, "h": "Mg in ether (or 2 Li in pentane), reagent drawn with the metal on the end carbon"},
+      {"pts": 6, "h": "{{D2O}} as a separate step"},
+      {"pts": 8, "h": "Explains that HBr adds Br to the more substituted carbon of but-1-ene, so that route gives 2-deuteriobutane"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Locate the D", "h": "It is on a {{CH3}} carbon at the end of the chain.", "ask": {"q": "Where must the halogen be in the halide you use?", "a": "On that same end carbon: the D replaces the halogen."}},
+        {"t": "Test the alkene route", "h": "But-1-ene + HBr gives 2-bromobutane, with Br on the inner carbon. Mg and then {{D2O}} would give 2-deuteriobutane: the wrong carbon.", "ask": {"q": "Which carbon of a double bond gets the Br from HBr?", "a": "The more substituted one."}},
+        {"t": "Use the halide that fits", "h": "1-Bromobutane has Br on the end carbon. Mg in ether gives butylmagnesium bromide."},
+        {"t": "Finish", "h": "{{D2O}} puts D on the carbon that carried the magnesium."}
+      ],
+      "answer": "1-Bromobutane: 1) Mg, ether; 2) D2O. The alkene would put the D on the second carbon.",
+      "rule": "The D goes where the halogen was, so choose the halide with the halogen on the right carbon."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-004", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 4, "pts": 15,
+    "stem": "Write the steps and reagents, and draw the intermediate.\n[[rxn:CCBr>?>CC[2H]]]",
+    "model": "[[rxn:CCBr>Mg;ether>CC[Mg]Br]]\n[[rxn:CC[Mg]Br>D2O>CC[2H]]]\n<p>(2 Li in pentane, then {{D2O}}, is also correct.)</p>",
+    "rubric": [
+      {"pts": 6, "h": "Mg in ether (or 2 Li in pentane)"},
+      {"pts": 3, "h": "The organometallic intermediate drawn"},
+      {"pts": 6, "h": "{{D2O}}, as a separate second step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "Br is replaced by D on the same carbon."},
+        {"t": "Make the reagent", "h": "Mg in ether turns C-Br into C-MgBr."},
+        {"t": "Add D", "h": "{{D2O}} gives the C-D bond."}
+      ],
+      "answer": "1) Mg, ether. 2) D2O.",
+      "rule": "R-X to R-MgX to R-D."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-005", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 4, "pts": 15,
+    "stem": "Turn the chloride into the hydrocarbon by way of an organolithium reagent. Write the reagents and draw the intermediate.\n[[rxn:ClC1CCCC1>?>C1CCCC1]]",
+    "model": "[[rxn:ClC1CCCC1>2 Li;pentane>[Li]C1CCCC1 + [Li+].[Cl-]]]\n[[rxn:[Li]C1CCCC1>H2O>C1CCCC1]]",
+    "rubric": [
+      {"pts": 6, "h": "2 Li in pentane"},
+      {"pts": 3, "h": "Cyclopentyllithium drawn (LiCl is the other product)"},
+      {"pts": 6, "h": "{{H2O}}, as a separate second step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "Cl is replaced by H. The lecture's recipe works for R-Br or R-Cl."},
+        {"t": "Make the reagent", "h": "Two lithium atoms in pentane: R-Li and LiCl."},
+        {"t": "Add H", "h": "Water protonates R:⁻ and gives cyclopentane. No D is wanted, so ordinary water is right."}
+      ],
+      "answer": "1) 2 Li, pentane. 2) H2O.",
+      "rule": "R-Cl to R-Li (2 Li, pentane) to R-H (H2O)."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-006", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 4, "pts": 15,
+    "stem": "Draw the intermediate after step 1 and the final product.\n[[rxn:Brc1ccccc1>1) Mg, ether;2) D2O>\"?\"]]",
+    "model": "<p>After step 1, phenylmagnesium bromide:</p>\n[[mol:Br[Mg]c1ccccc1]]\n<p>After step 2, benzene with one D on the carbon that carried the bromine:</p>\n[[mol:[2H]c1ccccc1]]",
+    "rubric": [
+      {"pts": 6, "h": "Phenylmagnesium bromide, with Mg between the ring carbon and Br"},
+      {"pts": 9, "h": "Benzene with exactly one D, on the carbon that carried Br"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Step 1", "h": "Mg in ether goes in between carbon and bromine: C-Mg-Br."},
+        {"t": "Step 2", "h": "The ring carbon bonded to Mg is R:⁻. It takes a D from {{D2O}}."},
+        {"t": "Place the D", "h": "Only the carbon that carried the metal gets a D. The other five ring carbons keep their hydrogens."}
+      ],
+      "answer": "Phenylmagnesium bromide, then deuteriobenzene",
+      "rule": "The D ends up exactly where the halogen was."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-007", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 6, "pts": 25,
+    "stem": "Write the steps and reagents, and draw each intermediate.\n[[rxn:C1=CCCC1>?>[2H]C1CCCC1]]",
+    "model": "[[rxn:C1=CCCC1>HBr>BrC1CCCC1]]\n[[rxn:BrC1CCCC1>Mg;ether>Br[Mg]C1CCCC1]]\n[[rxn:Br[Mg]C1CCCC1>D2O>[2H]C1CCCC1]]\n<p>(2 Li in pentane in place of Mg in ether is also correct.)</p>",
+    "rubric": [
+      {"pts": 8, "h": "HBr, giving bromocyclopentane"},
+      {"pts": 8, "h": "Mg in ether (or 2 Li in pentane), reagent drawn"},
+      {"pts": 6, "h": "{{D2O}}"},
+      {"pts": 3, "h": "Three separate steps in this order"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "The double bond is gone and one carbon carries a D. The other carbon of the old double bond gained an H."},
+        {"t": "Work backwards", "h": "C-D from C-MgBr and {{D2O}}. C-MgBr from C-Br. C-Br from the alkene and HBr."},
+        {"t": "Check the HBr step", "h": "The two carbons of the double bond in cyclopentene are the same, so there is only one possible bromide."},
+        {"t": "Write it forwards", "h": "1) HBr. 2) Mg, ether. 3) {{D2O}}."}
+      ],
+      "answer": "1) HBr. 2) Mg, ether. 3) D2O.",
+      "rule": "From an alkene, the first step is HBr."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-008", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 6, "pts": 25,
+    "stem": "Write the steps and reagents. Then explain why the D ends up on the central carbon and not on a {{CH3}} carbon.\n[[rxn:C=C(C)C>?>[2H]C(C)(C)C]]",
+    "model": "[[rxn:C=C(C)C>HBr>CC(C)(C)Br]]\n[[rxn:CC(C)(C)Br>Mg;ether>CC(C)(C)[Mg]Br]]\n[[rxn:CC(C)(C)[Mg]Br>D2O>[2H]C(C)(C)C]]\n<p>HBr puts the Br on the more substituted carbon of the double bond, here the central carbon. The magnesium replaces the Br on that carbon, and the D replaces the magnesium. The position is fixed in the first step.</p>",
+    "rubric": [
+      {"pts": 8, "h": "HBr, giving tert-butyl bromide (Br on the central carbon)"},
+      {"pts": 6, "h": "Mg in ether (or 2 Li in pentane), reagent drawn"},
+      {"pts": 6, "h": "{{D2O}}"},
+      {"pts": 5, "h": "Explanation: Br goes to the more substituted carbon, and D ends up where Br was"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Add HBr", "h": "The double bond joins a {{CH2}} and a carbon with two methyl groups. Br goes on the more substituted one: tert-butyl bromide."},
+        {"t": "Make the reagent", "h": "Mg in ether gives tert-butylmagnesium bromide. This step is not an {{SN2}} reaction, so a tertiary halide is fine."},
+        {"t": "Add D", "h": "{{D2O}} gives the C-D bond on the central carbon."},
+        {"t": "Explain", "h": "Each later step happens at the carbon that carried the Br. Nothing moves."}
+      ],
+      "answer": "1) HBr. 2) Mg, ether. 3) D2O. The D is on the central carbon because that is where HBr put the Br.",
+      "rule": "HBr puts Br on the more substituted carbon, and the D follows the Br."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-009", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 6, "pts": 25,
+    "stem": "A bromide, {{C5H11Br}}, was treated with Mg in ether and then with {{D2O}}, and gave the product below. Draw the bromide and the Grignard reagent. Then draw an alkene that gives this bromide with HBr.\n[[mol:CCC(C)(C)[2H]]]",
+    "model": "<p>The bromide has its Br where the D is now, and the Grignard reagent has MgBr there:</p>\n[[mol:CCC(C)(C)Br]]\n[[mol:CCC(C)(C)[Mg]Br]]\n<p>An alkene whose more substituted double-bond carbon is that carbon. Either of these is correct:</p>\n[[mol:CC=C(C)C]]\n[[mol:CCC(C)=C]]",
+    "rubric": [
+      {"pts": 10, "h": "2-Bromo-2-methylbutane: Br on the carbon that carries the D in the product"},
+      {"pts": 5, "h": "The Grignard reagent with MgBr on that carbon"},
+      {"pts": 10, "h": "2-Methylbut-2-ene or 2-methylbut-1-ene"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the D", "h": "It is on the carbon that carries two methyl groups and an ethyl group."},
+        {"t": "Step back once", "h": "C-D came from C-MgBr, so the Grignard reagent has MgBr on that carbon."},
+        {"t": "Step back again", "h": "C-MgBr came from C-Br: 2-bromo-2-methylbutane, which is {{C5H11Br}}."},
+        {"t": "Find an alkene", "h": "HBr puts Br on the more substituted carbon. Any alkene in which the carbon with two methyl groups is one end of the double bond and is the more substituted end will do: 2-methylbut-2-ene or 2-methylbut-1-ene."}
+      ],
+      "answer": "2-Bromo-2-methylbutane, by way of its Grignard reagent. It can be made from 2-methylbut-2-ene or 2-methylbut-1-ene and HBr.",
+      "rule": "Work backwards: D, then metal, then halogen, then alkene."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-010", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 8, "pts": 30,
+    "stem": "This time the D must end up on a {{CH3}} carbon, not on the central carbon. You may use DBr, which adds to an alkene exactly as HBr does. Write the steps and draw each intermediate.\n[[rxn:C=C(C)C>?>[2H]CC(C)C]]",
+    "model": "<p><b>Step 1.</b> DBr. The Br goes on the more substituted carbon as always, so the D goes on the {{CH2}} carbon.</p>\n[[rxn:C=C(C)C>DBr>[2H]CC(C)(C)Br]]\n<p><b>Step 2.</b> Make the Grignard reagent.</p>\n[[rxn:[2H]CC(C)(C)Br>Mg;ether>[2H]CC(C)(C)[Mg]Br]]\n<p><b>Step 3.</b> Ordinary water, so that the central carbon gets H.</p>\n[[rxn:[2H]CC(C)(C)[Mg]Br>H2O>[2H]CC(C)C]]",
+    "rubric": [
+      {"pts": 12, "h": "DBr in the first step: D on the {{CH2}} carbon, Br on the central carbon"},
+      {"pts": 8, "h": "Mg in ether (or 2 Li in pentane), reagent drawn"},
+      {"pts": 8, "h": "{{H2O}}, not {{D2O}}, in the last step"},
+      {"pts": 2, "h": "Says why: the last step always acts at the carbon that carried the Br, so the D has to come in during the addition"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "See why the usual route fails", "h": "HBr, Mg, {{D2O}} puts the D where the Br was: the central carbon. That is the wrong carbon."},
+        {"t": "Ask where the other new atom goes", "h": "When HBr adds, the H goes to the less substituted carbon, the {{CH2}}. That is the position wanted for D."},
+        {"t": "Swap the labels", "h": "Use DBr for the addition, so that D goes on the {{CH2}} carbon. Then remove the Br in the usual way but with {{H2O}}."},
+        {"t": "Check the product", "h": "One D on an end carbon, H on the central carbon."}
+      ],
+      "answer": "1) DBr. 2) Mg, ether. 3) H2O.",
+      "rule": "The addition step labels the less substituted carbon, and the last step labels the more substituted one."
+    }
+  },
+  {
+    "id": "organometallic-synthesis-011", "type": "organometallic-synthesis", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 8, "pts": 30,
+    "stem": "Make the labelled alkyne from propyne. On the shelf: bromoethane, Mg, ether and {{D2O}}. Write the steps and say what each one does.\n[[rxn:CC#C>?>CC#C[2H]]]",
+    "model": "<p><b>Step 1.</b> Make a Grignard reagent from the bromoethane.</p>\n[[rxn:CCBr>Mg;ether>CC[Mg]Br]]\n<p><b>Step 2.</b> Use it as a base on propyne. The hydrogen on the triple-bond carbon has {{pKa}} 25, and ethane has {{pKa}} 50 to 60, so the proton moves to the ethyl carbon. Ethane leaves, and the alkyne carbon now carries the MgBr.</p>\n[[rxn:CC[Mg]Br + CC#C>>CC + CC#C[Mg]Br]]\n<p><b>Step 3.</b> {{D2O}} puts a D on the carbon that carries the metal.</p>\n[[rxn:CC#C[Mg]Br>D2O>CC#C[2H]]]",
+    "rubric": [
+      {"pts": 8, "h": "Bromoethane + Mg in ether gives ethylmagnesium bromide"},
+      {"pts": 10, "h": "Ethylmagnesium bromide removes the hydrogen on the triple-bond carbon of propyne: ethane and the alkynyl magnesium compound"},
+      {"pts": 4, "h": "Reason: {{pKa}} 25 against 50 to 60"},
+      {"pts": 8, "h": "{{D2O}} as the last step, giving the C-D bond on the triple-bond carbon"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what changed", "h": "Only the hydrogen on the triple-bond carbon has become D. That hydrogen is the acidic one, {{pKa}} 25."},
+        {"t": "Plan", "h": "Remove that hydrogen with a strong base so that the carbon carries a metal, then add {{D2O}}."},
+        {"t": "Find the base on the shelf", "h": "Bromoethane and Mg in ether give ethylmagnesium bromide, R:⁻, whose conjugate acid has {{pKa}} 50 to 60. It is more than strong enough."},
+        {"t": "Finish", "h": "The alkyne carbanion takes D from {{D2O}}."}
+      ],
+      "answer": "1) CH3CH2Br + Mg, ether. 2) Add propyne (ethane is given off). 3) D2O.",
+      "rule": "A Grignard reagent can be used as a base: it puts the metal on any carbon whose hydrogen is acidic enough."
+    }
+  }
+]

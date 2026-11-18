@@ -26,7 +26,7 @@
     const wrap = el("div", { class: "v3d" }, canvas, el("div", { class: "btn-row v3d-bar" }, resetBtn, labelBtn), help);
     host.appendChild(wrap);
     const ctx = canvas.getContext("2d");
-    let src = null, yaw = opts.yaw != null ? opts.yaw : START.yaw, pitch = opts.pitch != null ? opts.pitch : START.pitch, zoom = 1, labels = !!opts.labels, spin = !!opts.spin && !ORGO.reduced;
+    let src = null, yaw = opts.yaw != null ? opts.yaw : START.yaw, pitch = opts.pitch != null ? opts.pitch : START.pitch, zoom0 = opts.zoom || 1, zoom = opts.zoom || 1, labels = !!opts.labels, spin = !!opts.spin && !ORGO.reduced;
     let W = 0, H = 0, dpr = 1, down = false, ext = 2, raf = 0, last = 0;
     labelBtn.setAttribute("aria-pressed", String(labels));
     const startYaw = yaw, startPitch = pitch;
@@ -69,7 +69,7 @@
       src = s; let m = 1; (s.atoms || []).forEach(a => { m = Math.max(m, Math.hypot(a.x, a.y, a.z) + 0.5) }); ext = s.ext || m;
       canvas.setAttribute("aria-label", (s.title || "Molecule") + ", a 3D model you can turn. " + s.atoms.length + " atoms."); draw();
     }
-    function reset() { yaw = startYaw; pitch = startPitch; zoom = 1; draw() }
+    function reset() { yaw = startYaw; pitch = startPitch; zoom = zoom0; draw() }
     function loop(ts) {
       raf = 0; if (!canvas.isConnected) return;
       if (spin && !down && !document.hidden) { yaw += (ts - last) * 0.0006; draw() } last = ts; raf = requestAnimationFrame(loop);
@@ -147,13 +147,13 @@
     const cap = el("p", { class: "v3d-caption", "aria-live": "polite" });
     box.append(slot, el("div", { class: "v3d-flip-ctl" }, el("label", { for: id }, "Chair to chair"), slider, play), cap,
       el("p", { class: "small muted" }, "Orange hydrogens start axial and blue ones start equatorial. The letters a and e name the position when the ring is a chair. Watch every orange hydrogen end up equatorial and every blue one axial."));
-    const v = viewer(slot, { height: 320, yaw: 0.35, pitch: 1.15 });
+    const v = viewer(slot, { height: 320, yaw: 0.35, pitch: 0.95, zoom: 1.3 });
     let t = 0, timer = 0;
     function show() {
       const { C, Hs } = ring(t), atoms = C.map(c => ({ e: "C", x: c[0], y: c[1], z: c[2] }));
       const chairEnd = t < 0.2 || t > 0.8, swapped = t >= 0.5;
       Hs.forEach((h, k) => { const ax = AX0[k]; atoms.push({ e: "H", x: h[0], y: h[1], z: h[2], col: ax ? ORANGE : BLUE, tag: chairEnd ? ((ax !== swapped) ? "a" : "e") : "" }) });
-      v.set({ title: "Cyclohexane ring flip, " + stage(t), atoms, bonds: BONDS, ext: 3.1 });
+      v.set({ title: "Cyclohexane ring flip, " + stage(t), atoms, bonds: BONDS, ext: 2.5 });
       const s = stage(t), second = t >= 0.5;
       cap.textContent = s === "chair" ? (second ? "Chair (the other one). The orange hydrogens are now equatorial and the blue ones axial." : "Chair. The orange hydrogens are axial and the blue ones equatorial.")
         : s === "half-chair" ? "Half-chair: the highest point on the way, about 10 to 11 kcal/mol above the chair."

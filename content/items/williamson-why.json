@@ -180,7 +180,7 @@
     ],
     "solution": {
       "steps": [
-        {"t": "Cut the ether both ways", "h": "Phenoxide with a bromoethane, or ethoxide with bromobenzene."},
+        {"t": "Cut the ether both ways", "h": "Phenoxide with bromoethane, or ethoxide with bromobenzene."},
         {"t": "Classify the halide carbons", "h": "Bromoethane: primary, {{sp3}}. Bromobenzene: {{sp2}}, which never substitutes."},
         {"t": "Read the ring carefully", "h": "A hexagon with alternating double bonds is benzene. A plain hexagon is cyclohexane, a different compound with a secondary carbon."}
       ],

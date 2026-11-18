@@ -12,7 +12,8 @@
         {"t": "Classify the electrophiles", "h": "Secondary on the left (like isopropyl, {{SN2}} rate 0.00083). Primary on the right (ethyl, 0.033)."},
         {"t": "Judge the nucleophiles as bases", "h": "Both are alkoxides, both strong bases. A strong base with a secondary halide gives mostly {{E2}}; with a primary halide, if the base is not bulky, it gives {{SN2}}.", "ask": {"q": "What is the by-product of the left-hand route?", "a": "Cyclopentene, with ethanol and bromide, from {{E2}}."}},
         {"t": "Read the solvents", "h": "Ethanol is polar protic: it hydrogen-bonds to the alkoxide and slows it as a nucleophile. DMSO is polar aprotic: the favourite solvent of {{SN2}}.", "ask": {"q": "Which lecture summary line covers the solvent?", "a": "{{SN2}}: low sterics, good nucleophile, good leaving group, polar aprotic solvent."}},
-        {"t": "Circle and explain", "h": "The right-hand route can only substitute. The left-hand route mostly eliminates."}
+        {"t": "Circle and explain", "h": "The right-hand route can only substitute. The left-hand route mostly eliminates."},
+        {"t": "Compare with the exam's pair", "h": "The exam asked the same question about cyclohexyl methyl ether. Its clean route and its competing elimination have these arrows:\n[[mech:sn2-cyclohexanolate-bromomethane]]\n[[mech:e2-bromocyclohexane-methoxide]]"}
       ],
       "answer": "The right-hand route: sodium cyclopentanolate with bromoethane in DMSO.",
       "rule": "Put the leaving group on the less hindered carbon and the hindered group on the oxygen."
@@ -71,7 +72,7 @@
       "steps": [
         {"t": "Classify the halides", "h": "Left: methyl. Right: secondary."},
         {"t": "Judge the reagents", "h": "Both nucleophiles are alkoxides, strong bases."},
-        {"t": "Apply the flowchart", "h": "Methyl: {{SN2}} only. Secondary with a strong base: {{E2}}."}
+        {"t": "Apply the flowchart", "h": "Methyl: {{SN2}} only. Secondary with a strong base: {{E2}}. The elimination has the same three arrows as 2-bromopropane with ethoxide:\n[[mech:e2-2-bromopropane-ethoxide]]"}
       ],
       "answer": "Sodium isopropoxide with iodomethane in DMSO",
       "rule": "Methyl halide plus alkoxide: SN2 only."

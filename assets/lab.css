@@ -35,10 +35,10 @@
 
 .rungs { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px }
 .rung { display: grid; gap: 6px }
-.rung-btn { display: grid; grid-template-columns: minmax(110px, 1.2fr) 70px auto minmax(60px, 1fr); gap: 10px; align-items: center; width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 12px; min-height: 44px; cursor: pointer }
+.rung-btn { display: grid; grid-template-columns: minmax(110px, 1.2fr) 96px 90px minmax(60px, 1fr); gap: 10px; align-items: center; width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 12px; min-height: 44px; cursor: pointer }
 .rung-btn[aria-expanded="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset }
 .rung-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px }
-.rung-pka { font-weight: 700; font-variant-numeric: tabular-nums }
+.rung-pka { white-space: nowrap; font-weight: 700; font-variant-numeric: tabular-nums }
 .rung-track { height: 8px; border-radius: 4px; background: var(--surface-2); position: relative; border: 1px solid var(--line) }
 .rung-track i { position: absolute; top: -1px; bottom: -1px; width: 10px; margin-left: -5px; background: var(--accent); border-radius: 5px }
 .rung-detail { margin: 0 0 4px 12px; padding: 10px 14px }
@@ -65,3 +65,4 @@
   .rung-btn { grid-template-columns: 1fr auto; }
   .rung-track { display: none }
 }
+.lab-card .v3d-help { display: none }
