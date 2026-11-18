@@ -60,7 +60,7 @@
     app.append(head, el("p", { class: "lead" }, "Sit a full exam under exam conditions, then mark it against the model answers. The score matters less than finding what to study next."));
     const cards = list.map(x => {
       const nq = x.exam ? x.exam.questions.length : 0, mins = (x.exam && x.exam.minutes) || 110, mine = !!run && run.id === x.id;
-      const say = mine ? el("p", { class: "callout info mock-saved" }) : null; if (say) says.push(() => { say.textContent = progress(run) });
+      const say = mine ? el("p", { class: "panel mock-saved" }) : null; if (say) says.push(() => { const [a, b] = progress(run); say.textContent = ""; say.append(el("b", {}, a), " " + b) });
       return el("section", { class: "card mock-card", data: { exam: x.id } }, el("h2", {}, x.title), x.sub ? el("p", { class: "muted" }, x.sub) : null,
         x.exam ? el("p", {}, `${nq} question${nq === 1 ? "" : "s"}, ${mins} minutes.`) : el("p", { class: "muted" }, "This exam is not written yet."),
         x.exam && nq < 9 ? el("p", { class: "small muted" }, `Not complete yet: ${nq} of 9 questions are here, so the total is lower than 700.`) : null, say,
@@ -84,14 +84,14 @@
     says.forEach(f => f()); if (run && run.endAt && !run.done) tick = setInterval(() => says.forEach(f => f()), 1000);      // its clock runs on
     if (back) focus(head);
   }
-  // what a card says of the sitting kept for its exam
+  // what a card says of the sitting kept for its exam: its state, as the exam room names it, then the rest
   function progress(s) {
-    if (s.done) return "You finished this exam. Your marks are not saved yet.";
-    if (s.timed === false) return "In progress, without the timer.";
+    if (s.done) return ["Finished.", "Your marks are not saved yet."];
+    if (s.timed === false) return ["In progress.", "Without the timer."];
     const left = s.endAt ? (s.endAt - Date.now()) / 1000 : +s.left || 0;
-    return left <= 0 ? "In progress. Time is up: finish and mark it when you are ready." : s.endAt ? `In progress: ${clock(left)} left. The clock runs while the page is closed, as in the exam.` : `In progress. Paused with ${clock(left)} left.`;
+    return left <= 0 ? ["Time is up.", "Finish and mark this exam when you are ready."] : s.endAt ? ["In progress.", `${clock(left)} left. The clock runs while the page is closed, as in the exam.`] : ["Paused.", `${clock(left)} left.`];
   }
-  // a new sitting. Only one is kept: the one there is goes only once the student says so.
+  // a new sitting. One sitting is kept at a time, and the one kept is discarded only once the student says so.
   function anew(x, timed, run) {
     if (!run) return start(x, null, timed);
     const same = run.id === x.id, y = exams().find(e => e.id === run.id);
@@ -133,7 +133,7 @@
       const answers = {}, marks = {};
       parts.forEach(rec => rec.entries.forEach(e => { const a = e.w ? e.w.get() : null; if (a != null) answers[e.id] = a; if (e.rb) marks[e.id] = e.rb.marks.slice() }));
       const s = { v: V, id: x.id, at, timed, crossed: [...crossed], answers };
-      if (done) Object.assign(s, { done: 1, used: used == null ? null : r1(used), marks }); else if (timed) running ? s.endAt = endAt : s.left = r1(left);
+      if (done) Object.assign(s, { done: 1, used: used == null ? null : r1(used), marks }); else if (timed && running) s.endAt = endAt; else if (timed) s.left = r1(left);
       const str = JSON.stringify(s); if (str === last) return;
       if (ORGO.store.set(RUN, s)) last = str; else if (!warned) { warned = true; ORGO.ui.toast("This browser cannot keep your exam as you go. A reload would lose it.", 6000) }
     }
