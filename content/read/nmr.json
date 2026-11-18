@@ -67,7 +67,7 @@
         {"t": "This is the inductive effect again", "h": "<p>The pull of fluorine on electrons through sigma bonds is called <b>induction</b>, and it appears all over this unit. In the 10/29 lecture, three fluorines make {{CF3CO2H}} a much stronger acid than an ordinary carboxylic acid, because they pull electron density away from the negative charge of the conjugate base. In NMR the same pull removes shielding from nearby hydrogens. In both cases the effect weakens with each bond of distance, which is why the {{CH2}} of fluoroethane feels it more than the {{CH3}}. One idea, two measurements.</p>"}
       ],
       "why": {"q": "Why do the CH2 hydrogens of fluoroethane give a different signal from the CH3 hydrogens?", "a": "Fluorine pulls electron density away from the neighbouring CH2, so those hydrogens are less shielded and feel a larger net field than the CH3 hydrogens. A different net field means a different energy gap and a different absorption frequency."},
-      "check": []
+      "check": ["nmr-signals-009"]
     },
     {
       "id": "counting-signals",
@@ -82,7 +82,7 @@
         {"t": "Counting is symmetry, and symmetry is needed for the septet", "h": "<p>Counting signals is practice in seeing symmetry, which this unit uses again in chairs and stereochemistry. It also prepares the exam question. In an isopropyl group, {{(CH3)2CH-}}, the two {{CH3}} groups are equivalent: swapping them changes nothing. So their six hydrogens are one environment and give one signal. The single CH hydrogen next to them therefore has six equivalent neighbours. Hold on to that count of six for the next section, because it is what turns the CH signal into a septet on the past exam, Question 2B.</p>"}
       ],
       "why": {"q": "The three hydrogens of a CH3 group give one signal, but the three hydrogens of bromoethene give three. Why?", "a": "A CH3 group rotates freely about its single bond, so its three hydrogens average to the same environment. A double bond cannot rotate, so in bromoethene one hydrogen sits on the carbon with bromine, one stays on the same side as bromine and one stays on the opposite side. Three fixed, different environments give three signals."},
-      "check": []
+      "check": ["nmr-signals-006", "nmr-signals-005"]
     },
     {
       "id": "splitting",
@@ -97,7 +97,7 @@
         {"t": "How the points are given in Question 2B", "h": "<p>Question 2B is worth 70 points, and 15 of them are for the NMR part: 8 for saying that a septet is the CH of an isopropyl group with six equivalent neighbours, and 7 for the inference that hydride acted as a nucleophile to give a little cumene. The other 55 points are for the E2 mechanism with NaH, the E1 mechanism with water and Product A. Notice the chemistry behind the clue: the same reagent can act as a base or as a nucleophile, which is the central theme of the substitution and elimination lectures. Reading a crude spectrum for minor products is also everyday practice in a research laboratory.</p>"}
       ],
       "why": {"q": "Why does a septet point to an isopropyl group and not, for example, to an ethyl group?", "a": "Seven lines means six equivalent neighbouring hydrogens, because n + 1 = 7 gives n = 6. Six equivalent hydrogens on the next carbons means two equivalent CH3 groups attached to the carbon that carries the observed H, which is an isopropyl CH. The CH2 of an ethyl group has only three neighbours and appears as a quartet."},
-      "check": []
+      "check": ["nmr-signals-008", "nmr-signals-013"]
     }
   ],
   "homework": [],

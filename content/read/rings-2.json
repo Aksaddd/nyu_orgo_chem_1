@@ -24,7 +24,7 @@
         {"t": "Strain as a driving force on the past exam", "h": "<p>These numbers explain two mechanisms on the past exam. In Question 9 a four-membered ring expands to a five-membered ring: from the totals above, that releases roughly 20 kcal/mol of strain, which is why a ring bond migrates so readily. In Question 4B a three-membered epoxide ring is opened by methoxide, although an alkoxide is normally a poor leaving group: the ring holds about as much strain as cyclopropane. When a small ring opens or grows in a mechanism, relief of ring strain is usually the reason to write.</p>"}
       ],
       "why": {"q": "Why is the heat of formation divided by the number of CH2 groups before the rings are compared?", "a": "A larger ring has more bonds, so its total heat of formation is more negative simply because it is a bigger molecule. Dividing by the number of CH2 groups gives the energy of one CH2 in each ring, and that can be compared with a strain-free CH2 (−4.9 kcal/mol)."},
-      "check": []
+      "check": ["ring-strain-011", "ring-strain-017"]
     },
     {
       "id": "axial-equatorial",
@@ -53,7 +53,7 @@
         {"t": "Every chair question needs both chairs", "h": "<p>Because the flip is fast, any property of a cyclohexane depends on both chairs. Question 8 of the past exam asks for both chairs of three molecules. Question 5B needs the flipped chair of a hexachlorocyclohexane to show that neither chair has a hydrogen anti to a chlorine. Question 3D needs the chair in which the leaving group is axial, even though it is the less stable one, because E2 happens from that chair. The habit to build: draw one chair, flip it, and move every group from axial to equatorial or back while keeping it up or down.</p>"}
       ],
       "why": {"q": "A ring flip turns every axial group equatorial. Why can it not turn a cis compound into a trans compound?", "a": "The flip only rotates about C-C bonds, and no bond is broken. Each group stays on the same face of the ring, up or down, that it started on. Cis and trans are defined by faces, so they survive the flip. Changing cis to trans would need a bond to break."},
-      "check": []
+      "check": ["nmr-signals-011"]
     },
     {
       "id": "methylcyclohexane",
@@ -67,7 +67,7 @@
         {"t": "The same preference shapes glucose", "h": "<p>The rule that groups prefer equatorial positions is why glucose is the most common sugar in nature. In the chair of β-D-glucose every substituent on the ring, the four OH groups and the {{CH2OH}} group, is equatorial. No other sugar of its family can do that. On the past exam the preference is tested directly: Question 4A asks whether each drawn chair is the most stable conformation, and Question 8 asks you to circle the more stable of two chairs. Both come down to asking which groups are axial and what that costs.</p>"}
       ],
       "why": {"q": "The flat drawing shows the methyl on a wedge. Why does that not tell you whether the methyl is axial or equatorial?", "a": "A wedge fixes only the face of the ring: the methyl is up. On a given carbon the up position is axial in one chair and equatorial in the other, and the two chairs interconvert. So the wedge is true of both chairs, and the molecule chooses the equatorial one because it is lower in energy."},
-      "check": []
+      "check": ["ring-strain-012"]
     },
     {
       "id": "gauche-interactions",
@@ -82,7 +82,7 @@
         {"t": "An old idea reused, and a price that E2 has to pay", "h": "<p>Nothing new was needed to explain the chair: the gauche and anti conformations of butane already contain the answer. That is typical of this course, where a small set of ideas keeps returning. The cost of an axial group also matters for reactions. An E2 elimination on a cyclohexane needs the leaving group to be axial, with an axial hydrogen on the next carbon. In Question 3D of the past exam the reacting chair has both Cl and {{CH3}} axial. That chair is the less stable one, but it is the only one that can react.</p>"}
       ],
       "why": {"q": "Why does an equatorial methyl group have no gauche interactions with the ring?", "a": "An equatorial bond points away from the ring. Seen down the C2-C1 bond, the equatorial methyl is 180° from C3, and seen down the C6-C1 bond it is 180° from C5. It is anti to both ring carbons, like the two methyl groups of anti butane, so there is no crowding to pay for."},
-      "check": []
+      "check": ["ring-strain-015"]
     },
     {
       "id": "a-values",
@@ -97,7 +97,7 @@
         {"t": "The table decides Questions 4A and 8", "h": "<p>Question 8, part i, of the past exam is cis-1-ethyl-2-methylcyclohexane. One chair has ethyl equatorial and methyl axial, the other the reverse. The table says ethyl is larger, 1.79 against 1.74, so the chair with ethyl equatorial is more stable, but only slightly. In Question 4A, chair 2 has an axial isopropyl and an equatorial OH, so it is not the most stable: flip it. In part ii of Question 8 one chair has both groups equatorial and the other has both axial, and the costs add: about 1.74 + 2.61 = 4.35 kcal/mol against the diaxial chair.</p>"}
       ],
       "why": {"q": "Why is the tert-butyl value (5.5) so much larger than the isopropyl value (2.61), when the group has only one more carbon?", "a": "An axial isopropyl group can rotate so that its one hydrogen points toward the ring. A tert-butyl group has no hydrogen on the attached carbon, so one of its three methyl groups always points into the ring and collides with the axial hydrogens. The crowding cannot be avoided by rotation, so the cost is much higher."},
-      "check": []
+      "check": ["ring-strain-016"]
     },
     {
       "id": "three-steps",
@@ -112,7 +112,7 @@
         {"t": "Question 8 is this procedure three times", "h": "<p>Question 8 of the past exam is worth 100 points and is exactly these three steps for three molecules: cis-1-ethyl-2-methylcyclohexane (ethyl equatorial is more stable, diastereomers), trans-1-isopropyl-4-methylcyclohexane (both equatorial is more stable, diastereomers) and cis-1,2-dimethylcyclohexane (equal energy, enantiomers). The answer for each part has three pieces, one per step, and each piece earns points. Writing the three steps as headings on the exam page makes it hard to forget one, and the relationship is the piece most often left out.</p>"}
       ],
       "why": {"q": "Why must two chairs with different energies be diastereomers?", "a": "Identical structures have identical energies, and so do enantiomers, since mirror images contain the same distances and interactions. If two chairs of the same molecule differ in energy they are neither identical nor mirror images. Stereoisomers that are not mirror images are diastereomers."},
-      "check": []
+      "check": ["chair-both-008"]
     },
     {
       "id": "cis-12-dimethyl",

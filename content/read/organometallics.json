@@ -24,7 +24,7 @@
         {"t": "The same carbon, with its reactivity reversed", "h": "<p>In the next lecture pages the carbon of {{H3C-Cl}} is the <b>electrophile</b>: hydroxide attacks it and chloride leaves, which is the {{SN2}} reaction. Replace the halogen with a metal and the same carbon becomes the electron-rich partner, a base and a nucleophile. This reversal is one of the most useful ideas in organic synthesis, because joining an electron-rich carbon to an electron-poor carbon makes a new carbon-carbon bond. The past exam uses it in Question 1D, where the carbon of a Grignard reagent attacks carbon dioxide.</p>"}
       ],
       "why": {"q": "Why is the carbon of methyllithium partially negative when the carbon of chloromethane is partially positive?", "a": "Bonding electrons are pulled toward the more electronegative atom. Carbon is more electronegative than lithium, so it takes the larger share of the C-Li pair. Chlorine is more electronegative than carbon, so in C-Cl the pair is pulled away from carbon."},
-      "check": []
+      "check": ["mech-organometallic-004"]
     },
     {
       "id": "making-organolithium",
@@ -54,7 +54,7 @@
         {"t": "The reagent of Question 1D", "h": "<p>The reagent is named after Victor Grignard, who received the Nobel Prize in Chemistry in 1912 for it, and it remains one of the standard ways to make carbon-carbon bonds, including in the manufacture of medicines. On the past exam it appears in the highest-valued single part, Question 1D (55 points): phenylmagnesium bromide, PhMgBr, reacts with carbon dioxide and then acid. The first thing to write for that question is the idea from this section: PhMgBr behaves as Ph:<sup>−</sup> with (MgBr)<sup>+</sup>.</p>"}
       ],
       "why": {"q": "Why is a Grignard reagent made in diethyl ether and not in ethanol, which also has an oxygen with lone pairs?", "a": "Ethanol has an O-H hydrogen with a pKa of about 16. The carbon of a Grignard reagent acts as a carbanion, the conjugate base of an acid with pKa 50 to 60, so it would take that proton immediately and become R-H. Ether offers the same stabilizing lone pairs with no acidic hydrogen."},
-      "check": []
+      "check": ["mech-organometallic-005"]
     },
     {
       "id": "strong-bases",
@@ -69,7 +69,7 @@
         {"t": "Strong base means anything acidic destroys the reagent", "h": "<p>The comparison with water applies to every acid whose {{pKa}} is below about 50, which is nearly everything in the lecture's table: carboxylic acids (4), water (15.7), alcohols (about 16), alkynes with a C-H on the triple bond (25) and amines (38). Each of them turns R-Li or R-MgX into plain R-H. The key to Question 1D of the past exam lists this as a standard mistake: adding the acid in step 1 destroys the Grignard reagent before it can attack carbon dioxide. Acid is always a separate, later step.</p>"}
       ],
       "why": {"q": "Why does methyllithium react completely with water, when hydroxide and water just exchange a proton back and forth?", "a": "Hydroxide and water give the same acid on both sides, so K = 1. Methyllithium acts as the methyl anion, whose conjugate acid, methane, has a pKa of 50 to 60, far higher than water's 15.8. The equilibrium lies overwhelmingly on the side of the weaker acid, methane."},
-      "check": []
+      "check": ["mech-organometallic-006", "mech-organometallic-010"]
     },
     {
       "id": "synthesis",
@@ -84,7 +84,7 @@
         {"t": "Deuterium labels in research and in medicine", "h": "<p>Replacing a chosen H with D is a standard way to follow one atom through a reaction or through metabolism, because D behaves chemically like H but can be told apart by mass spectrometry and by NMR. It also has a direct medical use. A C-D bond is slightly stronger than a C-H bond and is broken more slowly by the enzymes that metabolize drugs. Deutetrabenazine, approved in 2017 for the movement disorder of Huntington's disease, is a known drug with certain hydrogens replaced by deuterium so that it lasts longer in the body.</p>"}
       ],
       "why": {"q": "In the synthesis, why does the deuterium end up on the middle carbon and nowhere else?", "a": "Only the carbon bonded to magnesium (or lithium) is carbanion-like and able to take a D from D2O. That is the carbon that held the bromine, and HBr placed the bromine on the middle carbon of propene. Every other hydrogen in the molecule is an ordinary alkane C-H and is not touched."},
-      "check": []
+      "check": ["acid-base-eq-015", "mech-organometallic-011"]
     },
     {
       "id": "grignard-co2",
@@ -99,7 +99,7 @@
         {"t": "One reagent, one new carbon-carbon bond", "h": "<p>This reaction turns a halide into a carboxylic acid with one more carbon: bromobenzene, then PhMgBr, then benzoic acid. Building a larger carbon skeleton from smaller pieces is the central task of synthesis, and a carbon nucleophile such as a Grignard reagent is the most direct tool for it. Within this unit the reaction links three lectures: the polar C-Mg bond (10/29), the strong-base behaviour that forces the acid into a separate step (11/03), and the nucleophile and electrophile vocabulary that begins on the next page of the 11/03 notes with {{SN2}}.</p>"}
       ],
       "why": {"q": "In Question 1D, why would adding the acid together with the carbon dioxide ruin the reaction?", "a": "A Grignard reagent is a very strong base, and proton transfer to it from a strong acid is far faster and more favourable than anything else it can do. The reagent would be converted to benzene before it could attack carbon dioxide. Acid is added only after the new C-C bond exists, when the only base left is the carboxylate."},
-      "check": []
+      "check": ["mech-organometallic-007"]
     }
   ],
   "homework": [

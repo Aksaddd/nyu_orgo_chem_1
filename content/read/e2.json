@@ -25,7 +25,7 @@
         {"t": "The same contrast on the past exam", "h": "<p>Question 2B gives one tertiary iodide two treatments. With NaH, a strong base, the alkene forms by {{E2}} in one step. With water, a weak base, the same alkene forms by {{E1}} through a carbocation. Question 1B is the water case for tert-butyl chloride, and the answer choices that use hydroxide are wrong because none was added. The rule to carry: strong base present, {{E2}}; only a weak base, {{E1}}.</p>"}
       ],
       "why": {"q": "Why does adding NaOH stop the alcohol from forming?", "a": "Hydroxide is a strong base and removes a β hydrogen in a fast bimolecular step, so the alkyl halide is consumed by {{E2}} before it has time to ionize to the carbocation that {{SN1}} needs. Direct substitution by hydroxide is impossible at a tertiary carbon."},
-      "check": []
+      "check": ["traits-009", "route-choice-008"]
     },
     {
       "id": "mechanism",
@@ -40,7 +40,7 @@
         {"t": "Where you have to draw it", "h": "<p>Question 5A of the past exam asks why methoxide with tert-butyl iodide gives no ether, and a full answer includes this three-arrow mechanism leading to 2-methylpropene, methanol and iodide. Question 2B asks for it with hydride as the base: {{H-}} takes a {{CH3}} hydrogen, giving {{H2}}, the alkene and iodide. Question 3B's one-hump diagrams are what {{E2}} (and {{SN2}}) look like.</p>"}
       ],
       "why": {"q": "Why does the base remove a hydrogen from the β carbon and not from the α carbon?", "a": "The electrons from the broken C-H bond need somewhere to go. On a β carbon they can slide over to form a π bond to the α carbon as the leaving group departs. A hydrogen on the α carbon itself has no such outlet, since its electrons cannot form a double bond to the same carbon."},
-      "check": []
+      "check": ["mech-two-paths-004", "all-elim-products-013"]
     },
     {
       "id": "transition-state",
@@ -54,7 +54,7 @@
         {"t": "Substitution against elimination: Question 7A", "h": "<p>Question 7A of the past exam asks why 2-bromopropane gives different amounts of substitution and elimination with acetate and with ethoxide. The substrate is secondary, so {{SN2}} and {{E2}} are both possible and the reagent decides. Acetate is a weak base (conjugate acid {{pKa}} 4) but a fair nucleophile: mostly {{SN2}}. Ethoxide is a strong base (conjugate acid {{pKa}} 16): mostly {{E2}} to propene, with a little {{SN2}}. Stronger base, more elimination.</p>"}
       ],
       "why": {"q": "Why does E2 require a strong base when E1 works with water?", "a": "In {{E2}} the base must pull off a hydrogen from an ordinary C-H bond while the leaving group is still attached, so it has to be strong enough to drive that step. In {{E1}} the leaving group has already gone, and the hydrogen next to a carbocation is so acidic that even water can take it."},
-      "check": []
+      "check": ["ts-drawing-005", "sub-vs-elim-004"]
     },
     {
       "id": "example",
@@ -68,7 +68,7 @@
         {"t": "Listing every β hydrogen is an exam skill", "h": "<p>Question 7B of the past exam gives 2,3-dibromobutane and two equivalents of base, and asks for three products. You find them only by listing every β hydrogen at each stage. Question 3D gives a cyclohexane with β hydrogens on two different carbons and asks which alkene forms. In both, the first move is the one made here: mark the α carbon, mark each β carbon, and count the hydrogens on each.</p>"}
       ],
       "why": {"q": "Why can a single stereoisomer of the bromide give only one of the two geometric isomers of 3-methyl-2-pentene?", "a": "C3 has only one hydrogen, and it must be opposite the bromine when it is removed. That fixes one conformation, and in that conformation the other groups on C2 and C3 are already on definite sides. Those positions are locked in when the double bond forms."},
-      "check": []
+      "check": ["all-elim-products-004"]
     },
     {
       "id": "anti-periplanar",
@@ -83,7 +83,7 @@
         {"t": "On a ring, anti-periplanar means trans-diaxial", "h": "<p>A cyclohexane cannot rotate its bonds freely. The only way an H and a leaving group on neighbouring ring carbons can be 180° apart is for both to be <b>axial</b>, one up and one down. Question 3D of the past exam (trans-1-chloro-2-methylcyclohexane) and Question 5B (a hexachlorocyclohexane that eliminates 7000 times more slowly than its stereoisomers) are both answered by this single fact. The chapter 'What the exam builds from these ideas' works through both chairs.</p>"}
       ],
       "why": {"q": "Why is an anti-periplanar arrangement faster than a syn-periplanar one?", "a": "The electrons of the C-H bond must flow into the antibonding orbital of the C-LG bond, whose large lobe is on the side of carbon opposite the leaving group. Only when H is anti are the two orbitals lined up for the best overlap. The anti arrangement is also staggered, while syn is eclipsed and strained."},
-      "check": []
+      "check": ["traits-015"]
     },
     {
       "id": "method",
@@ -98,7 +98,7 @@
         {"t": "The method on the past exam", "h": "<p>Question 3D is this method on a ring: find the β hydrogens of trans-1-chloro-2-methylcyclohexane, draw the chair with Cl axial, see that only C6 has an axial hydrogen, and eliminate toward C6. The answer is 3-methylcyclohexene, not the more substituted 1-methylcyclohexene. Geometry overrules alkene stability. That is what 'the most important factor' means in practice: check anti-periplanar first, and apply the Saytzeff rule only among the hydrogens that pass.</p>"}
       ],
       "why": {"q": "Why must you draw the reactive conformation before you can name the product?", "a": "The geometry of the alkene (E or Z) is decided by where the remaining groups sit at the moment of elimination, and that is fixed by the conformation in which H and LG are anti. A flat line drawing does not show those positions, so guessing from it gives the wrong isomer about half the time."},
-      "check": []
+      "check": ["all-elim-products-011"]
     },
     {
       "id": "saytzeff-hofmann",
@@ -113,7 +113,7 @@
         {"t": "Rules in order of rank", "h": "<p>The flowchart handout lists 'E2 is anti-periplanar; Zaitsev and Hofmann rules' together under other issues. Use them in this order. First, geometry: only anti-periplanar hydrogens count (Question 3D, where the Saytzeff alkene cannot form). Second, among those, the Saytzeff product is the default for I, Br, Cl and OTs with a small base. Third, expect Hofmann with fluoride or a bulky base. In Question 7B the first elimination from 2,3-dibromobutane can go either way, toward C3 or toward C1, which is why three products appear.</p>"}
       ],
       "why": {"q": "Why does 2-fluorohexane give mostly 1-hexene when 2-iodohexane gives mostly 2-hexene?", "a": "Fluoride is a poor leaving group, so in the transition state the C-H bond is breaking before the C-F bond, and negative charge builds on the β carbon. That charge is better tolerated on the less substituted {{CH3}} carbon, so the terminal alkene forms. With iodide the transition state resembles the alkene, and the more substituted, more stable alkene wins."},
-      "check": []
+      "check": ["zaitsev-hofmann-004", "zaitsev-hofmann-012"]
     }
   ],
   "homework": [

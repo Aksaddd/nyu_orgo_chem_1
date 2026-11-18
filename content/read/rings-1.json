@@ -25,7 +25,7 @@
         {"t": "Strained rings open easily, and the past exam uses it", "h": "<p>A three-membered ring is a loaded spring. On the past exam, Question 4B, methoxide opens an <b>epoxide</b>, a three-membered ring that contains an oxygen and has the same 60° angles. An alkoxide is normally a poor leaving group, yet the ring C-O bond breaks in an {{SN2}} step because opening the ring releases the strain. When a mechanism question contains a three-membered or four-membered ring, ask first whether relief of ring strain is what drives the reaction.</p>"}
       ],
       "why": {"q": "Why is the C-C bond of cyclopropane (65 kcal/mol) weaker than the C-C bond of propane (88 kcal/mol)?", "a": "The ring forces the carbons 60° apart, but the sp3 orbitals cannot bend that far, so they overlap off the line between the nuclei. Less overlap means a weaker bond. Breaking the bond also releases the angle strain, which makes it cheaper still."},
-      "check": []
+      "check": ["ring-strain-007"]
     },
     {
       "id": "cyclopropane-torsional",
@@ -39,7 +39,7 @@
         {"t": "The Newman projection comes back three more times", "h": "<p>The Newman projection is the working tool of this whole unit. Here it shows eclipsed bonds in a small ring. In the 10/27 lecture it shows why an axial methyl group costs energy (a gauche interaction with the ring). In the 11/12 lecture it shows the anti-periplanar hydrogen that an E2 reaction needs, which is what the past exam tests in Questions 3D and 5B. If looking down a bond and drawing what is in front and what is behind feels slow, practise it now on cyclopropane, where the answer is simple.</p>"}
       ],
       "why": {"q": "Cyclobutane and cyclopentane escape some torsional strain by bending out of the plane. Why can cyclopropane not do the same?", "a": "Three points always lie in one plane, so a three-membered ring has no way to pucker. Its carbons are locked flat, and the C-H bonds stay fully eclipsed. Cyclopropane has to carry all of its angle strain and all of its torsional strain."},
-      "check": []
+      "check": ["ring-strain-005"]
     },
     {
       "id": "cyclobutane",
@@ -54,7 +54,7 @@
         {"t": "Four-membered rings in medicine and on the exam", "h": "<p>Penicillin works because of a strained four-membered ring. Its <b>β-lactam</b> is a cyclic amide in a four-membered ring. An ordinary amide is unreactive, but ring strain makes this one easy to open, and it reacts with a serine in the bacterial enzyme that cross-links the cell wall, which shuts the enzyme down. On the past exam, Question 9, a carbocation forms next to a four-membered ring, and a ring bond shifts so that the ring expands to five carbons. The driving force is the relief of the strain described in this section. The 11/10 homework uses the same idea.</p>"}
       ],
       "why": {"q": "Puckering takes the angle of cyclobutane from 90° to 88°, further from 109.5°. Why does the molecule pucker anyway?", "a": "Folding the ring moves the C-H bonds on neighbouring carbons away from the fully eclipsed arrangement. The torsional strain it relieves is larger than the small amount of angle strain it adds, so the puckered shape is lower in energy overall."},
-      "check": []
+      "check": ["ring-strain-008"]
     },
     {
       "id": "cyclopentane",
@@ -68,7 +68,7 @@
         {"t": "The five-membered ring in DNA and RNA", "h": "<p>The sugars of DNA and RNA, deoxyribose and ribose, are five-membered rings (four carbons and an oxygen), and they are puckered into envelope shapes for the reason given here. Which atom forms the flap is different in the two nucleic acids, and that difference is part of why the DNA double helix (B form) and double-stranded RNA (A form) have different shapes. Within this course, five-membered rings also appear as the comfortable product of ring expansion: on the past exam, Question 9, a strained four-membered ring becomes a five-membered ring.</p>"}
       ],
       "why": {"q": "Flat cyclopentane would have nearly perfect 108° angles. Why is cyclopentane not flat?", "a": "A flat ring would have 10 eclipsed C-H/C-H pairs, which is a lot of torsional strain. Bending into an envelope or half-chair staggers many of those bonds. The small angle strain this adds is much less than the torsional strain it removes."},
-      "check": []
+      "check": ["ring-strain-009"]
     },
     {
       "id": "cyclohexane-chair",
@@ -82,7 +82,7 @@
         {"t": "The most important shape in the unit", "h": "<p>Six-membered rings are everywhere because the chair costs nothing. Glucose exists mainly as a six-membered ring in a chair, with its groups in the roomy positions around the edge. Steroids such as cholesterol are built from three fused six-membered rings and one five-membered ring. On the past exam the chair carries more points than any other drawing: Question 4A (cis or trans, most stable chair), Question 8 (draw both chairs and relate them), and Questions 3D and 5B (which hydrogen can leave in an E2). All of them start from the chair on this page.</p>"}
       ],
       "why": {"q": "How does one change of shape, from flat hexagon to chair, remove both kinds of strain at once?", "a": "Moving alternate carbons up and down out of the plane closes the ring angles from 120° to about 111.5°, which is the relaxed angle for a tetrahedral carbon in a chain. The same motion twists every C-C bond by 60°, so that all the C-H bonds on neighbouring carbons become staggered."},
-      "check": []
+      "check": ["ring-strain-006"]
     },
     {
       "id": "reading-the-chair",

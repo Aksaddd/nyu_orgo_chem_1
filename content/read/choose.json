@@ -24,7 +24,7 @@
         {"t": "How much of the exam is this decision", "h": "<p>On the past exam, Questions 1B, 2A, 2B, 3A, 3C, 3D, 5A, 6A, 7A and 7B all begin with the same unstated question: which of the four mechanisms is operating? Sometimes that is the whole question (1B). More often it is the first step of an explanation or a mechanism. The handout itself ends with a caution worth keeping: 'This flow chart is meant as a guide; there will be exceptions to what is written.'</p>"}
       ],
       "why": {"q": "Why does the flowchart ask about the substrate before the reagent?", "a": "The substrate rules mechanisms out completely, while the reagent only chooses among those that remain. A methyl carbon can never form a carbocation and has no β hydrogen, and a tertiary carbon can never be attacked from the back. Once those limits are known, far fewer cases are left for the reagent and solvent to decide."},
-      "check": []
+      "check": ["traits-017"]
     },
     {
       "id": "reagent",
@@ -39,7 +39,7 @@
         {"t": "One substrate, two reagents: Question 7A", "h": "<p>Question 7A of the past exam gives 2-bromopropane with acetate and with ethoxide and asks why the amounts of substitution and elimination differ. The answer is this table. Acetate is a weak base (conjugate acid {{pKa}} 4) and a fair nucleophile, so it attacks carbon: mostly {{SN2}}. Ethoxide is a strong base (conjugate acid {{pKa}} 16), so it takes a β hydrogen: mostly {{E2}}. Full credit requires tying basicity to those {{pKa}} values.</p>"}
       ],
       "why": {"q": "Why is iodide a good nucleophile but a very weak base?", "a": "Basicity measures how strongly a species holds a proton at equilibrium, and iodide holds it very weakly, since HI is a very strong acid. Nucleophilicity measures how fast it attacks carbon, and iodide's large, polarizable electron cloud, loosely held by solvent, bonds to carbon quickly. The two properties measure different things."},
-      "check": []
+      "check": ["mech-id-010", "sub-vs-elim-011"]
     },
     {
       "id": "methyl",
@@ -53,7 +53,7 @@
         {"t": "Methyl transfer, in the flask and in the cell", "h": "<p>Because methyl substrates only do {{SN2}}, they are the dependable way to attach a {{CH3}} group to oxygen, nitrogen or sulfur. Question 3C of the past exam asks for the fastest {{SN2}} substrate with NaCN: methyl iodide. Cells use the same chemistry with S-adenosylmethionine, whose methyl group sits on a positively charged sulfur. Nucleophilic atoms on DNA, proteins and small molecules attack that methyl carbon in an enzyme-controlled {{SN2}} reaction.</p>"}
       ],
       "why": {"q": "Why can a methyl halide not undergo E2 even with a very strong base?", "a": "{{E2}} removes a hydrogen from a carbon next to the one carrying the leaving group, so that the C-H electrons can form a C=C. A methyl halide has only one carbon. There is no β carbon, no β hydrogen and no possible double bond."},
-      "check": []
+      "check": ["mech-id-017"]
     },
     {
       "id": "primary",
@@ -68,7 +68,7 @@
         {"t": "The primary branch on the exam", "h": "<p>Besides Question 2A, the primary branch carries Question 6B: 1,2-diiodoethane has two primary carbons with excellent leaving groups, and a dithiolate is an excellent nucleophile and a weak base, so every step is {{SN2}}. It also stands behind the Williamson ether synthesis of Questions 5A and 6A: to make an ether, put the alkoxide on the bulky piece and make the halide methyl or primary, so that the chart lands on {{SN2}}.</p>"}
       ],
       "why": {"q": "Why does methoxide substitute on a primary halide while tert-butoxide eliminates?", "a": "Both are strong bases, so both could remove a β hydrogen. Methoxide is small enough to reach the back of a primary carbon, and substitution there is faster than elimination. tert-Butoxide's three methyl groups keep it from the carbon, so the only thing it can reach is a hydrogen on the outside of the molecule."},
-      "check": []
+      "check": ["mech-id-008", "route-choice-010"]
     },
     {
       "id": "secondary-protic",
@@ -83,7 +83,7 @@
         {"t": "The secondary carbon is where exam questions live", "h": "<p>Methyl and tertiary substrates have short branches, so examiners who want you to reason choose secondary ones. Question 7A (2-bromopropane with two reagents), Question 2A (2-chloropentane and its tosylate), Question 3D (a secondary chloride on a cyclohexane with methoxide in methanol: strong base, {{E2}}) and Question 6A (bromocyclohexane with methoxide in methanol: {{E2}} competes and wins, which is why that route to the ether is the wrong one) are all on this branch.</p>"}
       ],
       "why": {"q": "Why does 2-butyl tosylate in water react through a carbocation, while 2-bromopropane with ethoxide in ethanol does not?", "a": "In water there is no strong base or good nucleophile, so nothing attacks the substrate and the only path is slow ionization. Ethoxide is a strong base at high concentration, and its bimolecular {{E2}} reaction is much faster than ionization of a secondary halide."},
-      "check": []
+      "check": ["mech-id-012", "mech-id-016"]
     },
     {
       "id": "secondary-aprotic",
@@ -98,7 +98,7 @@
         {"t": "A reliable simplification for secondary halides", "h": "<p>With hydroxide or an alkoxide, a secondary halide gives mainly elimination, in any solvent. That is why Question 6A rejects bromocyclohexane with methoxide as a way to make cyclohexyl methyl ether. Good {{SN2}} yields on secondary carbons come from nucleophiles that are weak bases: acetate, azide, cyanide, thiolates, halides. This is how chemists invert a stereocentre on purpose, in a single clean step.</p>"}
       ],
       "why": {"q": "Why does acetate give substitution with a secondary halide when ethoxide gives elimination?", "a": "Acetate is a weak base, about 12 {{pKa}} units weaker than ethoxide, so it cannot remove a β hydrogen at a useful rate and attacks carbon instead. Ethoxide is basic enough to take the hydrogen, and for a hindered secondary carbon that is faster than backside attack."},
-      "check": []
+      "check": ["route-choice-007"]
     },
     {
       "id": "tertiary",
@@ -112,7 +112,7 @@
         {"t": "The whole chart in four sentences", "h": "<p>Methyl: {{SN2}}. Primary: {{SN2}}, unless the base is strong and bulky, then {{E2}}. Secondary: strong base, {{E2}}; weak base, {{SN1}} / {{E1}} in a protic solvent and {{SN2}} in an aprotic one. Tertiary: strong base, {{E2}}; otherwise {{SN1}} / {{E1}}. If you can reproduce those four sentences and give one example of each, you can start almost every substitution or elimination question on the past exam.</p>"}
       ],
       "why": {"q": "Why is E2 possible at a tertiary carbon when SN2 is not?", "a": "{{SN2}} requires the reagent to reach the carbon itself, which is buried behind three alkyl groups. {{E2}} only requires it to reach a β hydrogen, and those sit on the outside of the molecule. A tertiary halide such as tert-butyl bromide has nine of them."},
-      "check": []
+      "check": ["mech-id-025"]
     },
     {
       "id": "other-issues",
@@ -127,7 +127,7 @@
         {"t": "Where each issue appears on the past exam", "h": "<p>Anti-periplanar: Questions 3D and 5B. Zaitsev against Hofmann: 3D and 7B. Inversion: 2A, and the list in 3A. Racemization and planarity: 3A. Better base against better nucleophile: 7A, 5A and 1C. Rearrangement: Question 9 and the 11/10 homework. Temperature: Question 1B, where the alcohol is the major product and the alkene the minor one. The next chapter takes the ideas that go one step past the lecture notes, one exam question at a time.</p>"}
       ],
       "why": {"q": "Why can the anti-periplanar requirement overrule the Zaitsev rule?", "a": "The Zaitsev rule compares the stability of alkenes that can actually form. If the hydrogen needed for the more substituted alkene cannot get anti to the leaving group, the transition state for that path lacks the orbital overlap it needs and is far too high in energy. The reaction then goes through the hydrogen that can line up."},
-      "check": []
+      "check": ["sub-vs-elim-012", "zaitsev-hofmann-015"]
     }
   ],
   "homework": [],

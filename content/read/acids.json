@@ -38,7 +38,7 @@
         {"t": "Basicity and nucleophilicity do not follow the same arrows", "h": "<p>On 11/05 the same sketch of the periodic table returns with a second pair of arrows: basicity increases to the left and up, but <b>nucleophilicity increases to the left and down</b>. {{HS-}} is a weaker base than {{HO-}} and yet a better nucleophile (relative rates 126,000 and 16,000). The past exam tests exactly this in Question 1C: circle the stronger nucleophile of {{HS-}} and {{HO-}}, and of {{I-}} and {{Cl-}}. Learn the basicity trend here as a statement about holding a proton, and keep it separate from the speed of attack on carbon.</p>"}
       ],
       "why": {"q": "Why is the methyl anion the strongest base of the four?", "a": "Carbon is the least electronegative of C, N and O, so it is the atom least able to stabilize a negative charge. The methyl anion is therefore the least stable of the anions and the most eager to share its electron pair with a proton. Its conjugate acid, methane, is correspondingly the weakest acid."},
-      "check": []
+      "check": ["acid-rank-009"]
     },
     {
       "id": "pka-values",
@@ -54,7 +54,7 @@
         {"t": "pKa decides how a drug travels in the body", "h": "<p>Most drugs are weak acids or weak bases, and their {{pKa}} decides whether they are charged at a given pH. An acid is mostly un-ionized when the pH is below its {{pKa}} and mostly ionized when the pH is above it. Aspirin is a carboxylic acid with a {{pKa}} of about 3.5. In the stomach, at a pH of about 2, much of it is the neutral acid, which passes through cell membranes easily. In blood, at pH 7.4, nearly all of it is the charged carboxylate. The same reasoning is used for every acidic or basic drug.</p>"}
       ],
       "why": {"q": "Why does a lower pKa mean a stronger acid?", "a": "A strong acid dissociates more, so its equilibrium constant Ka is larger. Because pKa is the negative logarithm of Ka, a larger Ka gives a smaller, or more negative, pKa. Each unit lower is ten times more dissociation."},
-      "check": []
+      "check": ["pka-values-007", "pka-values-029"]
     },
     {
       "id": "induction-and-factors",
@@ -69,7 +69,7 @@
         {"t": "Resonance, the factor behind two exam answers", "h": "<p>Resonance was not worked through in this lecture, but it is on the list and the past exam leans on it. A carboxylic acid (4) is 12 units stronger than an alcohol (16) because the carboxylate shares its charge equally between two oxygens. That is why acetate is a weak base, which is the key to Question 7A: with 2-bromopropane, acetate substitutes while the much stronger base ethoxide eliminates. Phenol's {{pKa}} of 10 in Question 1A has the same cause, a charge shared with the ring. Resonance also makes tosylate a good leaving group in Question 2A.</p>"}
       ],
       "why": {"q": "Why does stabilizing the conjugate base make the acid stronger?", "a": "Acidity is the position of the equilibrium between H-A and its ions. Lowering the energy of the conjugate base lowers the energy of the product side, so the equilibrium shifts toward dissociation and Ka increases. The acid has not changed: its base has become a better place for the electrons to be."},
-      "check": []
+      "check": ["acid-rank-015", "acid-rank-017"]
     },
     {
       "id": "hybridization",
@@ -83,7 +83,7 @@
         {"t": "The alkyne C-H on the past exam, and why 25 is a useful number", "h": "<p>In Question 1A of the past exam the {{pKa}} of propyne is 25, and the answer requires knowing that the acidic hydrogen is the one on the triple-bond carbon, not one of the three {{CH3}} hydrogens, which sit on an {{sp3}} carbon. The value 25 is low enough to be practical. A base whose conjugate acid has a higher {{pKa}}, such as the amide ion (38), removes that proton completely. The product, an acetylide ion, is a carbon nucleophile, and it appears at the top of the nucleophile table in the 11/05 lecture with a relative rate of 126,000.</p>"}
       ],
       "why": {"q": "The negative charge is on carbon in both acetylide and the ethyl anion. Why is acetylide so much more stable?", "a": "The lone pair of acetylide is in an sp orbital, which has 50% s character, while the lone pair of the ethyl anion is in an sp3 orbital with 25% s character. Electrons in an orbital with more s character are closer to the nucleus and lower in energy. A more stable conjugate base means a stronger acid."},
-      "check": []
+      "check": ["acid-rank-008", "pka-values-030"]
     },
     {
       "id": "size",
@@ -97,7 +97,7 @@
         {"t": "Weak bases are good leaving groups", "h": "<p>The stability of an anion matters beyond acid-base reactions. In a substitution, the leaving group departs with an electron pair, so a group leaves easily when it is a stable, weak base. The 11/05 lecture uses these same numbers: bromide (conjugate acid −9) is a good leaving group, hydroxide (conjugate acid 15.7) is a strong base and a poor one, and fluoride (HF about 4) is not a good one. In biology, the thiol of the amino acid cysteine is noticeably more acidic than the alcohol of serine, for the reason given here: sulfur is larger than oxygen.</p>"}
       ],
       "why": {"q": "Oxygen is more electronegative than sulfur. Why is H2S nevertheless a stronger acid than H2O?", "a": "Oxygen and sulfur are in the same column, where the change in atomic size outweighs the change in electronegativity. Sulfur is much larger, so the negative charge of HS− is spread over a bigger volume and is more stable than the concentrated charge of HO−. The more stable conjugate base belongs to the stronger acid."},
-      "check": []
+      "check": ["acid-rank-016", "acid-rank-013"]
     },
     {
       "id": "solvent-effects",
@@ -111,7 +111,7 @@
         {"t": "tert-Butoxide and solvation return in the substitution lectures", "h": "<p>This table explains two things about tert-butoxide that the past exam uses. It is a slightly stronger base than methoxide (17.0 against 15.5), and it is bulky, which makes it a <b>poor nucleophile</b> (11/05 lecture). Question 1C asks which of {{(CH3)3CO-}} and {{CH3O-}} is the stronger nucleophile, and the answer is methoxide, although it is the weaker base. Solvation itself comes back as the solvent effect on reaction rates: a solvent that surrounds a nucleophile slows it down, and in Question 6A the solvent DMSO leaves an alkoxide unsolvated and very reactive.</p>"}
       ],
       "why": {"q": "tert-Butanol is the least acidic alcohol in solution but the most acidic in the gas phase. How can both be true?", "a": "In solution the deciding factor is solvation: the bulky tert-butyl group keeps solvent molecules away from the charged oxygen, so tert-butoxide is the least stabilized anion. In the gas phase there is no solvent, and the larger alkyl group, which can spread the charge within the ion, gives the most stable anion. Acidity depends on the surroundings as well as on the molecule."},
-      "check": []
+      "check": ["acid-rank-011"]
     },
     {
       "id": "equilibria",
@@ -125,7 +125,7 @@
         {"t": "The same comparison decides substitution against elimination", "h": "<p>Comparing two {{pKa}} values is the most reused calculation in this unit. It tells you whether a base is strong enough to remove a given proton, which decides whether E2 can compete with {{SN2}}. In Question 7A of the past exam, the rubric gives 10 points for tying basicity to the {{pKa}} of the conjugate acids: acetate (acid 4) is a weak base and substitutes, ethoxide (acid 16) is a strong base and eliminates. In Question 1D the same reasoning explains why acid is added only after the Grignard reagent has reacted: a carbanion would take a proton from any acid at once.</p>"}
       ],
       "why": {"q": "Why can the methyl anion not be made by treating methane with hydroxide?", "a": "Methane has a pKa of 50 to 60 and water, the acid that would be formed, has a pKa of 15.7. The equilibrium lies on the side of the weaker acid, which is methane, by a factor of at least 10 to the power 34. Hydroxide is far too weak a base, so chemists make carbon-metal bonds another way, from an alkyl halide and a metal."},
-      "check": []
+      "check": ["acid-base-eq-008", "acid-base-eq-009"]
     }
   ],
   "homework": [],

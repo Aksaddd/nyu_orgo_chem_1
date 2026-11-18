@@ -25,7 +25,7 @@
         {"t": "Two exam questions from one line", "h": "<p>Question 3C of the past exam asks which substrate reacts fastest with NaCN by {{SN2}}: the answer is methyl iodide, the least hindered. Question 5A asks why methoxide with tert-butyl iodide gives no ether: the tertiary carbon cannot be attacked from the back, so the strong base removes a hydrogen instead and the product is an alkene. The same order, methyl &gt; primary &gt; secondary &gt;&gt;&gt; tertiary, answers both.</p>"}
       ],
       "why": {"q": "Why does a tertiary substrate not react by SN2 even with an excellent nucleophile?", "a": "The nucleophile must reach the back of the carbon bearing the leaving group, and on a tertiary carbon three alkyl groups fill that space. The transition state would force five groups around one carbon with three of them bulky, which costs too much energy. No nucleophile is good enough to pay it, so other reactions take over."},
-      "check": []
+      "check": ["rate-pairs-014", "sn2-stereo-013"]
     },
     {
       "id": "leaving-group",
@@ -40,7 +40,7 @@
         {"t": "The exam pair that changes only the leaving group", "h": "<p>Question 2A of the past exam compares (<i>S</i>)-2-chloropentane with the matching tosylate, both with sodium acetate in DMSO at 40 °C. Same carbon, same nucleophile, same solvent: only the leaving group differs, and the tosylate is faster. In the same question, 1-iodocyclohexene is slower than chlorocyclohexane even though iodide is the better leaving group, because the iodine sits on an {{sp2}} carbon. A good leaving group helps only if the carbon can be attacked.</p>"}
       ],
       "why": {"q": "Why does ethanol not react with {{HS-}} when bromoethane does?", "a": "The leaving group would be {{HO-}}, a strong base whose conjugate acid (water) has {{pKa}} 15.7. A strong base is high in energy as a free anion, so the transition state that begins to form it is too high. Bromide is a very weak base and leaves easily."},
-      "check": []
+      "check": ["route-choice-005", "rate-pairs-010"]
     },
     {
       "id": "nucleophile",
@@ -55,7 +55,7 @@
         {"t": "Circle the stronger nucleophile", "h": "<p>Question 1C of the past exam gives three pairs. {{I-}} or {{Cl-}}: iodide (80,000 against 1,000). {{HS-}} or {{HO-}}: hydrosulfide (126,000 against 16,000). {{(CH3)3CO-}} or {{CH3O-}}: methoxide, because the bulky one is the poorer nucleophile. In biology the best nucleophiles are often sulfur: the thiol of the amino acid cysteine, as its thiolate, is the attacking group in many enzymes, for the same reason {{HS-}} sits at the top of this table.</p>"}
       ],
       "why": {"q": "Why is acetate a much weaker nucleophile than hydroxide when both attack through a negatively charged oxygen?", "a": "In acetate the negative charge is shared between two oxygens by resonance, so each oxygen has less electron density to give and the anion is more stable as it is. Hydroxide has its full charge on one oxygen. The more stabilized the lone pair, the less readily it attacks."},
-      "check": []
+      "check": ["rate-pairs-006", "nuc-pairs-015"]
     },
     {
       "id": "base-vs-nucleophile",
@@ -70,7 +70,7 @@
         {"t": "Why chemists keep a bulky base on the shelf", "h": "<p>A strong base that is a poor nucleophile is useful: it removes hydrogens without attacking carbon, so it gives elimination instead of substitution. The decision flowchart has a branch for exactly this, 'bulky strong base', which sends a primary substrate to {{E2}}. On the past exam, Question 5A asks about tert-butoxide with iodomethane: there the electrophile is methyl, so open that even a bulky nucleophile gets in, and elimination is impossible because {{CH3I}} has no β hydrogen.</p>"}
       ],
       "why": {"q": "Why is tert-butoxide a strong base but a poor nucleophile?", "a": "Taking a proton only requires reaching a hydrogen on the outside of a molecule, and the bulk around oxygen does not prevent that. Attacking carbon requires getting to the crowded back side of the C-LG bond, and the three methyl groups of tert-butoxide collide with the substituents there."},
-      "check": []
+      "check": ["nuc-pairs-011", "nuc-pairs-017"]
     },
     {
       "id": "solvent-charge-made",
@@ -84,7 +84,7 @@
         {"t": "The same argument explains SN1", "h": "<p>In the next lecture a neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step of {{SN1}}. That is charge being created from a neutral molecule, so the notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists 'rate independent of solvent' as a statement that does not describe {{SN1}}. The reasoning you need is the reasoning on this page.</p>"}
       ],
       "why": {"q": "Why does adding more water to the solvent speed up the reaction of triethylamine with iodoethane?", "a": "The reactants are neutral but the transition state has partial charges on nitrogen and iodine. A more polar solvent stabilizes those developing charges and barely affects the neutral reactants. The transition state drops more than the starting point, so the activation energy is smaller."},
-      "check": []
+      "check": ["ts-drawing-009", "solvent-effects-010"]
     },
     {
       "id": "solvent-charge-lost",
@@ -98,7 +98,7 @@
         {"t": "Solvent on the summary list and on the exam", "h": "<p>The 11/10 summary lists four things that favor {{SN2}}: low sterics, a good nucleophile, a good leaving group, and a <b>polar aprotic solvent</b>. Question 6A of the past exam uses it: sodium cyclohexanolate with {{CH3Br}} in DMSO is the right way to make cyclohexyl methyl ether, in part because DMSO leaves the alkoxide unsolvated and very nucleophilic. The leaving group here, a neutral sulfide departing from a sulfonium ion, is the same one biology uses in S-adenosylmethionine when it transfers a methyl group.</p>"}
       ],
       "why": {"q": "Why does a more polar solvent slow the reaction of hydroxide with the trimethylsulfonium ion?", "a": "The starting materials are two full ions and the transition state has only partial charges on the way to neutral products. A more polar solvent stabilizes the fully charged starting materials more than the partly charged transition state. The gap between them, the activation energy, becomes larger."},
-      "check": []
+      "check": ["solvent-effects-012", "solvent-effects-008"]
     },
     {
       "id": "substrate-numbers",
@@ -113,7 +113,7 @@
         {"t": "Vinyl on the past exam", "h": "<p>Question 2A, pair 3: 1-iodocyclohexene with NaSH in DMF against chlorocyclohexane with NaSH in DMF. Iodide is the better leaving group, which tempts you to circle the first. But that iodine is on a double-bond carbon: vinyl, relative rate 0, and no {{SN1}} either. Chlorocyclohexane, an ordinary secondary halide, is the faster one. Always check the hybridization of the carbon that carries the leaving group before anything else.</p>"}
       ],
       "why": {"q": "Why is isobutyl, a primary substrate, about ten times slower than ethyl?", "a": "The carbon next to the reacting carbon carries two methyl groups, and they hang over the path the nucleophile must take to the back of the C-LG bond. Steric hindrance is about everything near the line of attack, not only the groups directly on the reacting carbon."},
-      "check": []
+      "check": ["fastest-substrate-007", "fastest-substrate-009"]
     }
   ],
   "homework": [

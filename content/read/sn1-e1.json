@@ -24,7 +24,7 @@
         {"t": "Question 3A, almost word for word", "h": "<p>Question 3A of the past exam asks which statements are <b>not</b> characteristics of {{SN1}}. 'Rate proportional to the concentration of substrate' is true of {{SN1}}, so it is not circled. 'Rate proportional to the concentration of nucleophile' is false, so it is circled, along with 'inversion' and 'rate independent of solvent'. Trial C of this table is the evidence for the first of those.</p>"}
       ],
       "why": {"q": "Why does doubling the concentration of water not change the rate?", "a": "Water is not involved in the slow step. The slow step is the C-Br bond breaking on its own to form a carbocation. Water reacts with the carbocation in a later, fast step, and a fast step after the bottleneck cannot change the overall rate."},
-      "check": []
+      "check": ["rate-pairs-028"]
     },
     {
       "id": "mechanism",
@@ -39,7 +39,7 @@
         {"t": "Pick the SN1 diagram", "h": "<p>Question 3B of the past exam: four diagrams, choose the exothermic {{SN1}}. It is the one with two humps and a valley between them (the carbocation), with the first hump the higher one because ionization is rate-determining, and with the products below the reactants. The simplified exam picture leaves out the small proton-transfer step at the end. A two-hump diagram that ends above where it starts is endothermic, and one-hump diagrams are concerted reactions.</p>"}
       ],
       "why": {"q": "Why is the first step the slowest of the three?", "a": "It breaks a covalent bond and creates two separated charges from a neutral molecule, with no new bond formed to pay for it. The second step is a nucleophile combining with a strongly electron-poor cation, and the third is a simple proton transfer between oxygens. Both of those have small barriers."},
-      "check": []
+      "check": ["sn1-products-005", "energy-diagrams-014"]
     },
     {
       "id": "which-substrates",
@@ -54,7 +54,7 @@
         {"t": "A cation that is tertiary and benzylic", "h": "<p>Question 2B of the past exam uses 2-iodo-2-phenylpropane in water. Its carbocation is tertiary and also benzylic, stabilized by alkyl groups and by resonance with the ring, so ionization is easy and the reaction goes by {{E1}} (with {{SN1}} competing). In biology, stabilized allylic carbocations are real intermediates: the enzymes that build terpenes and the steroid skeleton, including cholesterol, generate allylic and tertiary cations and let them react step by step.</p>"}
       ],
       "why": {"q": "Why is the order of substrate reactivity for SN1 the opposite of the order for SN2?", "a": "The two reactions have different bottlenecks. In {{SN2}} the nucleophile must reach the carbon, so alkyl groups slow it down by crowding. In {{SN1}} the slow step is forming a carbocation, and alkyl groups speed that up by stabilizing the positive charge."},
-      "check": []
+      "check": ["fastest-substrate-005", "fastest-substrate-015"]
     },
     {
       "id": "racemization",
@@ -69,7 +69,7 @@
         {"t": "Inversion or racemization: the fastest way to tell the mechanisms apart", "h": "<p>The flowchart handout lists it under 'other issues': {{SN2}} inverts a chiral centre, {{SN1}} racemizes because the carbocation is planar. Question 3A of the past exam lists 'inversion' among the things that are not characteristic of {{SN1}}. And Question 2A draws the acetate product of (<i>S</i>)-2-chloropentane inverted, which tells you that reaction (a fair nucleophile in DMSO, a polar aprotic solvent) is {{SN2}}.</p>"}
       ],
       "why": {"q": "Why does one enantiomer of 2-butyl tosylate give both enantiomers of 2-butanol in water?", "a": "The tosylate leaves first, and the carbocation that remains is flat, with an empty p orbital on both faces. Water has an equal chance of bonding to either face. The two faces lead to the two mirror-image alcohols."},
-      "check": []
+      "check": ["mech-id-029", "sn1-products-013"]
     },
     {
       "id": "solvent",
@@ -84,7 +84,7 @@
         {"t": "Where solvent decides the answer", "h": "<p>The decision flowchart asks, for a secondary substrate, 'polar protic solvent?' before anything else. Question 3A of the past exam counts 'rate independent of solvent' as false for {{SN1}}. Question 1B has tert-butyl chloride in water, a polar protic solvent with no strong base, so the mechanisms are {{SN1}} and {{E1}}. And Question 6A puts an alkoxide with {{CH3Br}} in DMSO, a polar aprotic solvent, to get a clean {{SN2}}.</p>"}
       ],
       "why": {"q": "Why does a polar protic solvent help SN1 but hinder SN2 with an anionic nucleophile?", "a": "In {{SN1}} the slow step creates ions from a neutral molecule, and a protic solvent stabilizes those developing charges, lowering the barrier. In {{SN2}} the anionic nucleophile is in the slow step, and hydrogen bonds from the solvent hold it in a cage that it must partly escape before it can attack."},
-      "check": []
+      "check": ["solvent-effects-005", "rate-pairs-024"]
     },
     {
       "id": "e1",
@@ -99,7 +99,7 @@
         {"t": "Question 1B is this page", "h": "<p>On the past exam, tert-butyl chloride in water gives tert-butyl alcohol (major) and 2-methylpropene (minor), and you are asked how the alkene forms. The answer is {{E1}} with water acting as the base. There is no hydroxide in the flask, so any choice that uses {{HO-}} is out, and {{E2}} needs a strong base, so that is out too. Question 2B asks for the full {{E1}} mechanism of 2-iodo-2-phenylpropane in water: ionization, then water removes a hydrogen from a {{CH3}}.</p>"}
       ],
       "why": {"q": "Why do SN1 and E1 always appear together?", "a": "They share the slow step and the intermediate. Once the carbocation exists, it can be attacked at carbon (substitution) or lose a neighbouring proton (elimination), and both are fast. Conditions such as temperature only shift the ratio between the two."},
-      "check": []
+      "check": ["sn1-products-009", "energy-diagrams-009"]
     },
     {
       "id": "two-summaries",
@@ -114,7 +114,7 @@
         {"t": "The homework is practice for Question 9", "h": "<p>Question 9 of the past exam is built on the same idea. An amine is converted into a leaving group ({{N2}}), it departs, and the cation that forms sits next to a four-membered ring. A ring bond shifts, the ring expands to five members, and the product is a cyclopentanone. Two different ring bonds can migrate, which gives the two products in the question. The chapter 'What the exam builds from these ideas' walks through it.</p>"}
       ],
       "why": {"q": "Why can an SN1 reaction give a product with a rearranged carbon skeleton when an SN2 reaction never does?", "a": "{{SN1}} passes through a carbocation that exists long enough for a neighbouring hydrogen or alkyl group to shift and make a more stable cation before the nucleophile arrives. {{SN2}} is concerted: the nucleophile bonds to the same carbon the leaving group departs from, in one step, with no intermediate that could rearrange."},
-      "check": []
+      "check": ["traits-008", "mech-id-027"]
     }
   ],
   "homework": [

@@ -53,7 +53,7 @@
         {"t": "Where the exam checks this", "h": "<p>Question 2A of the past exam shows (<i>S</i>)-2-chloropentane reacting with sodium acetate in DMSO, and the product is drawn with the acetate on the opposite face. Question 3A asks which statements do not describe {{SN1}}, and the first choice is inversion, because inversion belongs to {{SN2}}. Stereochemistry matters in medicine for the same reason it matters here: the two enantiomers of a drug are different shapes, and an enzyme or receptor usually fits only one of them.</p>"}
       ],
       "why": {"q": "Why does deuterium make this experiment possible?", "a": "A carbon needs four different groups to be a stereocentre, and {{CH3CH2Cl}} has two identical hydrogens. Replacing one H with D makes the four groups different without changing the chemistry in any way that matters, so the flip becomes visible as a change from one enantiomer to the other."},
-      "check": []
+      "check": ["sn2-stereo-005", "sn2-stereo-014"]
     },
     {
       "id": "rate-law",
@@ -68,7 +68,7 @@
         {"t": "The rate law is a tool for making reactions faster", "h": "<p>Because the nucleophile is in the rate law, a higher concentration of nucleophile, or a better nucleophile, speeds up an {{SN2}} reaction. Question 2A of the past exam uses exactly this: 1-bromobutane with sodium methoxide in methanol is faster than 1-bromobutane in methanol alone, because {{CH3O-}} is a far better nucleophile than neutral {{CH3OH}}. Question 3A turns it around: the rate of {{SN1}} does not depend on the nucleophile at all.</p>"}
       ],
       "why": {"q": "Why does a rate law with both concentrations in it tell you that nucleophile and electrophile meet in the slow step?", "a": "A step can only go faster when you add more of something if that something takes part in the step. Doubling either reactant doubles the number of collisions between them, and the rate follows. So the slow step must be a collision of one nucleophile with one electrophile."},
-      "check": []
+      "check": ["rate-pairs-027"]
     },
     {
       "id": "concerted",
@@ -82,7 +82,7 @@
         {"t": "Four diagrams on the past exam", "h": "<p>Question 3B shows four energy diagrams and asks which is an exothermic {{SN1}}. Two of the four have a single hump: those are concerted reactions, {{SN2}} or {{E2}}, one exothermic and one endothermic. The answer is the two-hump diagram that ends lower than it starts. If you can sketch the {{SN2}} diagram from memory and say why it has no valley, that question takes seconds.</p>"}
       ],
       "why": {"q": "Why can an SN2 reaction not have a carbocation intermediate?", "a": "If the leaving group left first, the slow step would involve only the electrophile, and the nucleophile would not appear in the rate law. The measured rate law has both. A flat carbocation would also be attacked from both faces and give both enantiomers, but the experiment gives only the inverted one."},
-      "check": []
+      "check": ["energy-diagrams-005", "energy-diagrams-011"]
     },
     {
       "id": "transition-state",
@@ -97,7 +97,7 @@
         {"t": "The crowded transition state explains the next lecture", "h": "<p>Five groups around one carbon is crowded. If {{R1}}, {{R2}} and {{R3}} are hydrogens there is room. If they are carbon groups, the nucleophile cannot reach the back of the carbon, and the transition state is too high in energy. That is why the order of reactivity is methyl, then primary, then secondary, with tertiary not reacting by {{SN2}} at all. Questions 3C and 5A of the past exam both rest on this picture.</p>"}
       ],
       "why": {"q": "Why must the nucleophile and the leaving group be 180° apart in the transition state?", "a": "The nucleophile donates into the σ* orbital of the C-LG bond, and the big lobe of that orbital is on the side of carbon opposite the leaving group. Attack there gives the best overlap and keeps the two electron-rich groups as far apart as possible."},
-      "check": []
+      "check": ["ts-drawing-004", "sn2-stereo-011"]
     },
     {
       "id": "three-facts",
@@ -111,7 +111,7 @@
         {"t": "Three facts, three kinds of exam question", "h": "<p>Each fact is a way to ask about {{SN2}}. Fact 1 gives rate questions: which reaction is faster (Question 2A), which substrate reacts fastest (Question 3C). Fact 2 gives diagram and mechanism questions (Questions 3B, 4B and 5A). Fact 3 gives stereochemistry questions: the product in Question 2A is drawn inverted. In the chapters that follow, compare each new reaction with these three lines: {{SN1}} is first order, stepwise and racemizes; {{E2}} is second order and concerted like {{SN2}}.</p>"}
       ],
       "why": {"q": "Why does the SH end up on a dash when the iodine was on a wedge?", "a": "The nucleophile must attack the carbon from the side opposite the leaving group. Iodine was on the face toward the viewer, so {{HS-}} approached from the far face and its bond points away from the viewer."},
-      "check": []
+      "check": ["traits-004", "sn2-stereo-006"]
     }
   ],
   "homework": [
