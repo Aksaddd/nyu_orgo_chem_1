@@ -37,6 +37,7 @@
 .chair-given svg { max-width: min(100%, 360px); }
 .chair-template svg { max-width: min(100%, 320px); }
 .chair-q { font-weight: 600; margin: 0; }
+.chair-mark { margin: 0; }      /* a part's Right or Not quite, outside its explanation (as .q-verdict and .cls-mark) */
 .chair-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .chair-row > span:first-child { min-width: min(14em, 100%); }      /* never wider than the row: larger text inside Eureka */
 .chair-opts-fig { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }

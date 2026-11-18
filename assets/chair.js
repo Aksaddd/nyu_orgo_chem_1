@@ -502,7 +502,9 @@
       const box = el("div", { class: "panel stack chair-task" }, el("p", { class: "eyebrow" }, `Part ${i + 1} of ${tasks.length}`)); body.appendChild(box);
       tasks[i].render(box, (ok, why, extra) => {
         if (ok) right++;
-        box.appendChild(el("div", { class: "explain", role: "status" }, el("span", { class: ok ? "mark-ok" : "mark-no" }, ok ? "Right" : "Not quite"), " ", el("span", {}, why || ""), extra || null));
+        // the mark in a line of its own: Eureka's "Explanations" preference holds back what has the class "explain", never the mark
+        box.appendChild(el("p", { class: "chair-mark", role: "status" }, el("span", { class: ok ? "mark-ok" : "mark-no" }, ok ? "Right" : "Not quite")));
+        box.appendChild(el("div", { class: "explain" }, el("span", {}, why || ""), extra || null));
         i++;
         if (i < tasks.length) { const b = el("button", { class: "btn primary", type: "button", on: { click: () => { b.remove(); next() } } }, "Next part"); box.appendChild(b); if (b.focus) b.focus() }
         else finish();

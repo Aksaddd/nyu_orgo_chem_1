@@ -71,7 +71,7 @@ html.px-cb :is(.rank-row, .cls-row).wrong { border-style: dashed; }
 .cls-row.right { border-color: var(--good); }
 .cls-row.wrong { border-color: var(--bad); }
 .cls-h { flex: 1 1 260px; min-width: 0; }
-.cls-row .explain { flex: 1 0 100%; }
+.cls-row .explain, .cls-row .cls-mark { flex: 1 0 100%; }      /* .cls-mark: a line's mark and its right bin, outside the explanation */
 .seg button[data-c="true"] { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
 
 /* ---- written work and rubrics */
