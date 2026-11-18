@@ -96,7 +96,10 @@
     all: () => store.get(ITEMS, {}),
     state: id => store.get(ITEMS, {})[id] || null,
     examDate() { const raw = store.raw("exam-date"); const d = raw ? new Date(/^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw + "T09:00:00" : raw) : null; return d && !isNaN(d) ? d : null },
-    setExamDate(iso) { store.setRaw("exam-date", iso || null); ORGO.emit("progress", {}); window.dispatchEvent(new CustomEvent("bio:exam", { detail: L.examDate() })) },
+    setExamDate(iso) {
+      // a bare date is saved as Eureka's Settings saves it (date and local time), or Settings reads it as midnight UTC: the evening before
+      if (/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) { const t = /T\d\d:\d\d/.exec(store.raw("exam-date") || ""); iso += t ? t[0] : "T09:00" }
+      store.setRaw("exam-date", iso || null); ORGO.emit("progress", {}); window.dispatchEvent(new CustomEvent("bio:exam", { detail: L.examDate() })) },
     daysLeft() { const d = L.examDate(); return d ? (d - now()) / DAY : null },
     // score 0..1 (1 right, 0 wrong, between for rubric-graded work); conf 0 guess, 1 unsure, 2 sure
     record(id, { score = 0, conf = null, secs = null, hinted = false } = {}) {
@@ -131,7 +134,7 @@
     },
     // ids for a session. mode "review": due only · "learn": new ones of the given types, easiest first · "mixed": due, then the weakest types, never two of a type in a row
     pick({ types = null, n = 10, mode = "mixed", kinds = null, roles = ["practice", "exam"] } = {}) {
-      const all = L.all(), side = new Set(data.blueprint.filter(t => t.group === "foundation").map(t => t.id)), want = id => { const x = data.index[id]; return x && roles.includes(x[2]) && (types ? types.includes(x[0]) : !side.has(x[0])) && (!kinds || kinds.includes(x[1])) };
+      const all = L.all(), side = new Set(data.blueprint.filter(t => t.group === "foundation").map(t => t.id)), want = id => { const x = data.index[id]; return x && roles.includes(x[2]) && (types ? types.includes(x[0]) : mode === "review" || !side.has(x[0])) && (!kinds || kinds.includes(x[1])) };
       const pool = Object.keys(data.index).filter(want), t = now();
       const due = pool.filter(id => all[id] && all[id].n && all[id].due <= t).sort((a, b) => all[a].due - all[b].due);
       if (mode === "review") return spread(due.slice(0, n));

@@ -126,6 +126,7 @@
     }
 
     function finish() {
+      if (result) { finished = true; render("step"); return }      // looking back at a step of a finished run records nothing again
       let score = null, helped = true;
       if (mode === "paper") { score = res.filter(r => r.tick).length / n; helped = false }
       else if (mode !== "watch") { score = res.reduce((a, r) => a + r.score, 0) / n; helped = res.some(r => r.helped) }

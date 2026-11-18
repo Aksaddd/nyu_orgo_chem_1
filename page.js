@@ -107,4 +107,5 @@
   }
   ORGO.ready(render);
   ORGO.on("progress", render);
+  window.addEventListener("bio:exam", render);      // Eureka's Settings changed or cleared the exam date
 })();

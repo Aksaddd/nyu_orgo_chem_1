@@ -230,9 +230,9 @@ if (single.foundations) write("foundations", { foundations: single.foundations, 
 // The class dictionary, in the shapes Eureka reads (its docs/adding-a-class.md): LEXICON for the double-tap lookup, TERMS for the
 // Word Bank, GLOSS.look for both. It is written to assets/, where Eureka looks, and assets/eureka.js loads it first.
 if (arr(single.glossary).length) {
-  const lex = {}; for (const g of arr(single.glossary)) lex[g.term] = [g.def, g.parts || [], g.lit || "", (g.also || []).join(",")];
+  const lex = {}; for (const g of arr(single.glossary)) lex[g.term] = [g.def, g.parts || [], g.lit || "", (g.also || []).map(a => a.replace(/,/g, " ")).join(",")];      // a comma inside a spelling (1,3-diaxial) would cut it in two: the lookup reads it as a space anyway
   const tail = String.raw`
-  const norm = s => String(s).toLowerCase().replace(/[“”"().,:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
+  const norm = s => String(s).toLowerCase().replace(/,/g, " ").replace(/[“”"().:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
   const G = {}, TERMS = {};
   for (const [term, v] of Object.entries(LEX)) { const names = [term].concat(v[3] ? v[3].split(",") : []); TERMS[names.join("|")] = v[0]; names.forEach(n => { const k = norm(n); if (k && !G[k]) G[k] = v[0] }) }
   const look = raw => { const k = norm(raw); return !k ? null : G[k] || (k.endsWith("s") && G[k.slice(0, -1)]) || G[k + "s"] || null };

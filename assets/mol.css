@@ -25,6 +25,8 @@
 .stage { margin: 0 }
 .stage-scroll { overflow-x: auto; padding: 2px 0 }
 .stage-svg { display: block; margin: 0 auto; color: var(--ink) }
+/* a stage that takes presses keeps its drawn size and scrolls sideways: shrunk to a phone's width its 28 px targets fall to 14 */
+.stage-input .stage-svg { max-width: none }
 .stage-status { margin: 6px 0 0; text-align: center; color: var(--muted); min-height: 1.5em }
 
 /* curved arrows: the accent hue, and always a shape cue as well (dots at the start, a head at the end) */

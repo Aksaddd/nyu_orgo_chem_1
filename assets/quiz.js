@@ -150,7 +150,7 @@
         mark() {
           locked = true; sel = -1; draw(); say.textContent = "";
           ord.forEach((ci, p) => { const ok = ci === p, r = rows[ci]; r.li.classList.add(ok ? "right" : "wrong"); r.li.appendChild(el("span", { class: "rank-mark" }, mark(ok, ok ? "Right place" : "Belongs in place " + (ci + 1)))) });
-          return S.rank(ord);
+          const s = S.rank(ord); return s >= 0.999 ? 1 : Math.min(0.75, s);      // right only when the whole order is right: an order with an error stays under the 0.8 line, with its partial credit
         }
       };
     },
@@ -247,13 +247,18 @@
     const k = item.kind;
     if (k === "mcq") {
       const w = W.mcq(item, { onPick: () => finish(w.mark()) }); body.appendChild(w.el);
-      key = e => {
-        if (!box.isConnected || finished) { document.removeEventListener("keydown", key); return }
-        if (e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || "") || document.querySelector(".veil")) return;
-        const d = +e.key; if (d >= 1 && d <= 6 && d <= w.n) { e.preventDefault(); w.pick(d - 1) }
-      };
-      document.addEventListener("keydown", key);
-      body.appendChild(el("p", { class: "small muted q-keys" }, `Keys 1 to ${Math.min(6, w.n)} also choose.`));
+      // number keys answer only where the caller says one question is on screen (a session): on a page with several
+      // questions one key press would answer them all
+      if (opts.keys) {
+        key = e => {
+          if (!box.isConnected || finished) { document.removeEventListener("keydown", key); return }
+          if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || "") || document.querySelector(".veil, .st-veil, .px-veil, .wb-veil")) return;
+          const d = +e.key, b = d >= 1 && d <= 6 && d <= w.n ? w.el.querySelectorAll(".opt")[d - 1] : null;
+          if (b) { e.preventDefault(); b.click() }      // through the button, so Eureka's "confirm before answering" sees it
+        };
+        document.addEventListener("keydown", key);
+        body.appendChild(el("p", { class: "small muted q-keys" }, `Keys 1 to ${Math.min(6, w.n)} also choose.`));
+      }
     } else if (W[k]) {
       const msg = el("p", { class: "small q-msg", role: "status" });
       const check = () => { if (finished) return; if (!w.ready()) { msg.textContent = w.need; return } row.remove(); msg.remove(); finish(w.mark()) };
@@ -286,7 +291,10 @@
           el("div", { class: "btn-row" }, done));
       };
     } else if (k === "mech" || k === "chair") {
-      const got = r => finish(typeof r === "number" ? r : r && typeof r.score === "number" ? r.score : r === false ? 0 : 1, r && r.conf != null ? r.conf : null);
+      const got = r => {
+        if (k === "mech" && r && typeof r === "object" && r.score == null) return;      // watched, not drawn: the question stays open
+        finish(typeof r === "number" ? r : r && typeof r.score === "number" ? r.score : r === false ? 0 : 1, r && r.conf != null ? r.conf : null);
+      };
       try {
         if (k === "mech" && ORGO.mech && ORGO.mech.mount) ORGO.mech.mount(body, item.mech, { mode: "solo", onDone: got });
         else if (k === "chair" && ORGO.chair && ORGO.chair.ask) { ORGO.chair.ask(body, item, got); if (body.querySelector("[class*=stem]")) stem.remove() }
@@ -379,7 +387,7 @@
         const slot = el("div", {}); if (second) stage.appendChild(el("p", {}, el("span", { class: "badge" }, "Second try"), " You missed this one earlier in the session."));
         stage.appendChild(slot);
         foot.appendChild(el("div", { class: "btn-row" }, btn("Skip this question", "ghost small", () => { if (!second) skipped.push(id); show(true) }, "skip")));
-        mount(slot, item, { onDone: r => {
+        mount(slot, item, { keys: true, onDone: r => {
           done++; let note = null;
           if (!second) first[id] = r.score;
           if (r.score < 0.8 && !again.has(id) && queue.length) { again.add(id); queue.splice(Math.min(3, queue.length), 0, id); note = "This one will come back later in the session." }

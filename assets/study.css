@@ -27,6 +27,8 @@
 .rsec > h2 { font-size: 1.3em; line-height: 1.25; margin: 0 0 .6em }
 .rsec:focus-visible > h2 { text-decoration: underline; text-decoration-color: var(--accent) }
 .rsec-body .fig { display: block; text-align: center; margin: 1em 0 }
+/* a table wider than the screen scrolls in its own box, so the page itself never pans sideways */
+.rsec-body table { display: block; max-width: 100%; overflow-x: auto }
 .rsec-end { height: 1px }
 .read-line { align-items: center; gap: 10px; margin-top: 1em; font-family: var(--font); font-size: 15px }
 .read-badge { font-weight: 650 }
