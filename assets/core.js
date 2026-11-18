@@ -118,7 +118,7 @@
       if (score >= 0.8) ORGO.eureka.right(id); else ORGO.eureka.wrong(id);
       return rec;
     },
-    flag(id, on) { store.update(ITEMS, all => { const r = all[id] || (all[id] = { n: 0, ok: 0, streak: 0, box: 0, hist: [] }); r.flag = !!on; return all }, {}); ORGO.emit("progress", {}) },
+    flag(id, on) { store.update(ITEMS, all => { const r = all[id] || (all[id] = { n: 0, ok: 0, streak: 0, box: 0, hist: [] }); r.flag = !!on; return all }, {}); summary(); ORGO.emit("progress", {}) },      // the summary Eureka reads carries the flags, so it is rebuilt at once
     due(t = now()) { const all = L.all(); return Object.keys(all).filter(id => all[id].n && all[id].due != null && all[id].due <= t && data.index[id]).sort((a, b) => all[a].due - all[b].due) },
     missed() { const all = L.all(); return Object.keys(all).filter(id => data.index[id] && all[id].n && all[id].hist.length && all[id].hist[all[id].hist.length - 1][1] < 0.8) },
     flagged() { const all = L.all(); return Object.keys(all).filter(id => data.index[id] && all[id].flag) },

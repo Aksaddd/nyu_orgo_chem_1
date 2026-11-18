@@ -5,7 +5,7 @@ window.COURSE = {
   // today's study plan on the front page (Eureka's shared/plan.js): where each part of the class keeps its progress.
   // The plan reads orgo-read-v1 ({chapterId: {at, a, finished, done}}), the drill record orgo-drill-v1 (written by assets/core.js),
   // and orgo-mock-history-v1 (a list of {at, right, total, pct, secs}, added by mock/page.js). There is no equations part.
-  plan: { read: { key: "orgo-read-v1", chapters: ["rings-1", "nmr", "rings-2", "acids", "organometallics", "sn2-1", "sn2-2", "sn1-e1", "e2", "choose", "beyond"], href: "read/index.html" }, drill: { key: "orgo-drill-v1", total: 453, href: "drill/index.html?mode=mixed" }, mock: { key: "orgo-mock-history-v1", href: "mock/index.html" }, review: { href: "review/index.html" } },
+  plan: { read: { key: "orgo-read-v1", chapters: ["rings-1", "nmr", "rings-2", "acids", "organometallics", "sn2-1", "sn2-2", "sn1-e1", "e2", "choose", "beyond"], href: "read/index.html" }, drill: { key: "orgo-drill-v1", total: 453, href: "drill/index.html?mode=mixed&n=15" }, mock: { key: "orgo-mock-history-v1", href: "mock/index.html" }, review: { href: "review/index.html" } },
   id: "orgo", prefix: "orgo-", name: "CHEM 225", title: "Organic Chemistry I",
   base: (document.currentScript && document.currentScript.src || "").replace(/course\.js.*$/, ""),   // this class's folder
   badges: "orgo",
