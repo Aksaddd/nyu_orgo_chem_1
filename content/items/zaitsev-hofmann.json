@@ -1,0 +1,298 @@
+[
+  {
+    "id": "zaitsev-hofmann-001", "type": "zaitsev-hofmann", "role": "worked", "kind": "mcq", "diff": 2, "src": "Lecture 11/12, p. 4",
+    "stem": "2-Fluorohexane is treated with {{NaOCH3}} in {{CH3OH}}. Which is the major product?\n[[mol:CCCCC(C)F]]",
+    "choices": [
+      {"h": "[[mol:C=CCCCC]]\n1-Hexene", "ok": true, "why": "Fluoride is the lecture's Hofmann leaving group. With F the less substituted alkene is major: 70% 1-hexene, 30% 2-hexene."},
+      {"h": "[[mol:CC=CCCC]]\n2-Hexene", "ok": false, "why": "This is the Saytzeff product, and it is major for I (81%), Br (72%) and Cl (67%). With F it drops to 30%. Fluoride was treated like the other halides."},
+      {"h": "[[mol:CCC=CCC]]\n3-Hexene", "ok": false, "why": "The double bond must include C2, the carbon that carried F. 3-Hexene has it between C3 and C4."},
+      {"h": "[[mol:CCCCC(C)OC]]\n2-Methoxyhexane", "ok": false, "why": "This is the SN2 product. The lecture: {{F-}} is not a good leaving group, and an alkyl fluoride gives no SN2. The table is about the elimination products."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Draw the two alkenes", "h": "F is on C2. H from C3 gives 2-hexene. H from C1 gives 1-hexene.", "ask": {"q": "Which is Saytzeff and which is Hofmann?", "a": "2-Hexene is Saytzeff (more substituted). 1-Hexene is Hofmann (less substituted)."}},
+        {"t": "Check the base", "h": "Methoxide is small. A small base by itself would give Saytzeff."},
+        {"t": "Check the leaving group", "h": "F is the exception. {{F-}} is a poor leaving group (HF has {{pKa}} 4, HI −10), so the C-F bond is slow to break.", "ask": {"q": "If C-F breaks late, which bond breaks early?", "a": "The C-H bond. The transition state has negative charge building on the carbon that loses H."}},
+        {"t": "Follow the charge", "h": "The lecture calls it an {{E1cb}}-like {{E2}}. Carbanion character is better on the less substituted carbon, the end {{CH3}}. So the hydrogen comes from C1.", "ask": {"q": "What is the lecture's number for F?", "a": "30% Saytzeff, 70% Hofmann."}},
+        {"t": "Answer", "h": "1-Hexene, 70%."}
+      ],
+      "answer": "1-Hexene (Hofmann), 70%.",
+      "rule": "I, Br, Cl: Saytzeff. F: Hofmann."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-002", "type": "zaitsev-hofmann", "role": "worked", "kind": "written", "diff": 2, "src": "site", "time": 7, "pts": 20,
+    "stem": "2-Bromo-2-methylbutane is treated with (a) {{NaOCH3}} in {{CH3OH}} and (b) {{KOC(CH3)3}} in {{(CH3)3COH}}. Draw the major alkene from each reaction and explain why they differ.\n[[mol:CCC(C)(C)Br]]",
+    "model": "<p>Both reactions are {{E2}}: a strong base and a tertiary bromide. Two alkenes are possible. H from the {{CH2}} gives 2-methyl-2-butene (trisubstituted, <b>Saytzeff</b>). H from a {{CH3}} gives 2-methyl-1-butene (disubstituted, <b>Hofmann</b>).</p><p><b>(a) Methoxide</b> is a small base. It can reach the inner {{CH2}}, and the transition state leading to the more substituted, more stable alkene is lower. Major: 2-methyl-2-butene.</p>\n[[mech:e2-2-bromo-2-methylbutane-methoxide]]\n<p><b>(b) tert-Butoxide</b> is a bulky base. The inner {{CH2}} hydrogens are crowded by the groups around them; the hydrogens of a {{CH3}} on the outside are easy to reach. Major: 2-methyl-1-butene.</p>\n[[mech:e2-2-bromo-2-methylbutane-tert-butoxide]]\n<p>Same halide, same leaving group, same mechanism: the size of the base decides which hydrogen is taken.</p>",
+    "rubric": [
+      {"pts": 5, "h": "(a) 2-Methyl-2-butene drawn as major"},
+      {"pts": 5, "h": "(b) 2-Methyl-1-butene drawn as major"},
+      {"pts": 5, "h": "Small base gives the more substituted (more stable) alkene: Saytzeff"},
+      {"pts": 5, "h": "Bulky base takes the less hindered hydrogen from a CH3: Hofmann"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the hydrogens", "h": "The C-Br carbon has a {{CH2}} neighbour and two {{CH3}} neighbours.", "ask": {"q": "How many different alkenes can form?", "a": "Two. The two {{CH3}} groups on the C-Br carbon are equivalent, and neither alkene has E and Z."}},
+        {"t": "Label the alkenes", "h": "C=C toward the {{CH2}}: three carbons on the double bond, Saytzeff. C=C toward a {{CH3}}: two carbons on the double bond, Hofmann."},
+        {"t": "Small base", "h": "Methoxide with a good leaving group follows the lecture's pattern for Br: mostly Saytzeff.", "ask": {"q": "Why is the Saytzeff transition state lower?", "a": "It already looks like the alkene, and the more substituted alkene is the more stable one."}},
+        {"t": "Bulky base", "h": "tert-Butoxide has three methyl groups around its oxygen. The lecture calls it a poor nucleophile for the same reason: it cannot get into crowded places. It takes an outside hydrogen.", "ask": {"q": "Is tert-butoxide a weaker base than methoxide?", "a": "No, it is at least as strong. Only its size is different."}},
+        {"t": "Write both answers", "h": "(a) 2-methyl-2-butene. (b) 2-methyl-1-butene."}
+      ],
+      "answer": "(a) 2-Methyl-2-butene (Saytzeff) with the small base. (b) 2-Methyl-1-butene (Hofmann) with the bulky base.",
+      "rule": "Small base: Saytzeff. Bulky base: Hofmann."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-003", "type": "zaitsev-hofmann", "role": "worked", "kind": "mcq", "diff": 3, "src": "Lecture 11/12, p. 2 (homework)",
+    "stem": "The lecture's homework: (2S,3S)-2-bromo-3-methylpentane is treated with {{NaOCH2CH3}}. Three alkenes were drawn. Which is the major {{E2}} product?\n[[mol:C[C@H](Br)[C@@H](C)CC]]",
+    "choices": [
+      {"h": "[[mol:C=CC(C)CC]]\nA: 3-methyl-1-pentene", "ok": false, "why": "This is the Hofmann product (one carbon on the C=C). It forms, but with a small base and Br as leaving group the more substituted alkene is major."},
+      {"h": "[[mol:C/C=C(\\C)CC]]\n(E)-3-Methyl-2-pentene: the two methyl groups on the same side", "ok": true, "why": "It is the Saytzeff product (three carbons on the C=C), and it is the geometric isomer that anti elimination gives: with the C3-H anti to Br, the two methyl groups sit on the same side."},
+      {"h": "[[mol:C/C=C(/C)CC]]\n(Z)-3-Methyl-2-pentene: the two methyl groups on opposite sides", "ok": false, "why": "Right regiochemistry, wrong geometry. C3 has only one hydrogen, and when it is anti to Br the methyl groups are on the same side. This isomer would come from a different stereoisomer of the bromide."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the hydrogens next to the leaving group", "h": "Br is on C2. C1 has three H. C3 has one H.", "ask": {"q": "Which gives the more substituted alkene?", "a": "The H on C3: 3-methyl-2-pentene has three carbons on its C=C."}},
+        {"t": "Regiochemistry", "h": "Ethoxide is small and Br is a good leaving group: Saytzeff. The major product is a 3-methyl-2-pentene, B or C."},
+        {"t": "Draw the anti-periplanar conformation", "h": "The lecture's step 3: turn the molecule so the C3-H and the C2-Br are anti. Because C2 and C3 are stereocentres and C3 has only one H, there is exactly one such conformation.", "ask": {"q": "In that conformation, where is the {{CH3}} on C2 relative to the {{CH3}} on C3?", "a": "On the same side (gauche to each other), with the ethyl group on the far side."}},
+        {"t": "Eliminate", "h": "Flatten the two carbons into the C=C. Groups on the same side stay on the same side: the two methyls are cis to each other."},
+        {"t": "Name it", "h": "On C2 the higher-priority group is {{CH3}}; on C3 it is ethyl. They are on opposite sides: E.", "ask": {"q": "Could a different stereoisomer of the bromide give Z?", "a": "Yes. Inverting one of the two stereocentres, for example (2R,3S), gives the Z alkene."}}
+      ],
+      "answer": "(E)-3-Methyl-2-pentene, the isomer with the two methyl groups on the same side.",
+      "rule": "Saytzeff picks the carbon. Anti-periplanar picks E or Z."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-004", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 1, "src": "Lecture 11/12, p. 4",
+    "stem": "2-Bromohexane is treated with {{NaOCH3}} in {{CH3OH}}. Which is the <b>Saytzeff</b> product?\n[[mol:CCCCC(C)Br]]",
+    "choices": [
+      {"h": "[[mol:CC=CCCC]]\n2-Hexene", "ok": true, "why": "Saytzeff means the more substituted alkene. 2-Hexene has two carbons attached to its C=C; 1-hexene has one."},
+      {"h": "[[mol:C=CCCCC]]\n1-Hexene", "ok": false, "why": "This is the Hofmann product, the less substituted alkene. The two names were swapped."},
+      {"h": "[[mol:CCC=CCC]]\n3-Hexene", "ok": false, "why": "This alkene cannot form: its double bond does not include C2, the carbon that carried Br."},
+      {"h": "[[mol:CCCCC(C)OC]]\n2-Methoxyhexane", "ok": false, "why": "This is a substitution product. Saytzeff and Hofmann are names for elimination products."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Draw the possible alkenes", "h": "Br on C2: H from C1 gives 1-hexene, H from C3 gives 2-hexene."},
+        {"t": "Count substituents", "h": "1-Hexene: one carbon on the C=C (monosubstituted). 2-Hexene: two (disubstituted)."},
+        {"t": "Apply the names", "h": "Saytzeff = more substituted = 2-hexene. Hofmann = less substituted = 1-hexene. With Br the lecture gives 72% and 28%."}
+      ],
+      "answer": "2-Hexene",
+      "rule": "Saytzeff: more substituted. Hofmann: less substituted."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-005", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 1, "src": "Lecture 11/12, p. 4", "fixed": true,
+    "stem": "In the lecture's table, 2-iodohexane with {{NaOCH3}} in {{CH3OH}} gives what percentage of the Saytzeff product, 2-hexene?\n[[mol:CCCCC(C)I]]",
+    "choices": [
+      {"h": "81%", "ok": true, "why": "Iodide, the best leaving group of the four, gives the most Saytzeff product: 81% 2-hexene and 19% 1-hexene."},
+      {"h": "72%", "ok": false, "why": "This is the value for bromide (72% and 28%)."},
+      {"h": "67%", "ok": false, "why": "This is the value for chloride (67% and 33%)."},
+      {"h": "30%", "ok": false, "why": "This is the value for fluoride, the one leaving group that gives mostly Hofmann product (30% and 70%)."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recall the table", "h": "I: 81 and 19. Br: 72 and 28. Cl: 67 and 33. F: 30 and 70. Saytzeff first, Hofmann second."},
+        {"t": "See the trend", "h": "The Saytzeff share falls as the leaving group gets worse: I, Br, Cl, then a large drop to F."},
+        {"t": "Read off iodide", "h": "81% 2-hexene."}
+      ],
+      "answer": "81%",
+      "rule": "Better leaving group, more Saytzeff: 81, 72, 67, 30."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-006", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 1, "src": "Lecture 11/12, p. 4",
+    "stem": "Each of these compounds is treated with {{NaOCH3}} in {{CH3OH}}. Which gives the largest share of 1-hexene?",
+    "choices": [
+      {"h": "[[mol:CCCCC(C)F]]\n2-Fluorohexane", "ok": true, "why": "Fluoride is the Hofmann leaving group: 70% 1-hexene. A poor leaving group makes the C-H bond break first, at the less substituted carbon."},
+      {"h": "[[mol:CCCCC(C)Cl]]\n2-Chlorohexane", "ok": false, "why": "33% 1-hexene. More than Br or I, but still mostly Saytzeff."},
+      {"h": "[[mol:CCCCC(C)Br]]\n2-Bromohexane", "ok": false, "why": "28% 1-hexene."},
+      {"h": "[[mol:CCCCC(C)I]]\n2-Iodohexane", "ok": false, "why": "19% 1-hexene, the smallest share. The best leaving group gives the most Saytzeff product, not the most Hofmann."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Identify 1-hexene", "h": "It is the less substituted alkene: the Hofmann product."},
+        {"t": "Recall the Hofmann column", "h": "I 19%, Br 28%, Cl 33%, F 70%."},
+        {"t": "Choose", "h": "Fluoride, by a wide margin."}
+      ],
+      "answer": "2-Fluorohexane (70% 1-hexene)",
+      "rule": "The worse the leaving group, the more Hofmann product. F is the Hofmann leaving group."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-007", "type": "zaitsev-hofmann", "role": "practice", "kind": "written", "diff": 2, "src": "Lecture 11/12, p. 4", "time": 5, "pts": 20,
+    "stem": "With {{NaOCH3}} in {{CH3OH}}, 2-bromohexane gives 72% 2-hexene, but 2-fluorohexane gives 70% 1-hexene. Explain why changing the leaving group from Br to F reverses the major product.\n[[mol:CCCCC(C)F]]",
+    "model": "<p>Both reactions are {{E2}}, and in both the base is the same small base. The difference is the leaving group.</p><p><b>Bromide is a good leaving group.</b> In the transition state the C-Br bond is already breaking as the C-H bond breaks, so the transition state looks like the alkene. The more substituted alkene, 2-hexene, is the more stable one, so its transition state is lower: Saytzeff product.</p><p><b>Fluoride is a poor leaving group</b> (HF has {{pKa}} 4; HBr has −9). The C-F bond breaks late, so the C-H bond breaks ahead of it: an <b>{{E1cb}}-like {{E2}}</b>. The transition state has negative charge (carbanion character) on the carbon that is losing its hydrogen. That charge is better on the less substituted carbon, the end {{CH3}} (C1), than on C3. The hydrogen is taken from C1: 1-hexene, the Hofmann product.</p>",
+    "rubric": [
+      {"pts": 5, "h": "Names the products: 2-hexene is Saytzeff (more substituted), 1-hexene is Hofmann (less substituted)"},
+      {"pts": 5, "h": "Br is a good leaving group: alkene-like transition state, so the more stable, more substituted alkene forms"},
+      {"pts": 5, "h": "F is a poor leaving group: C-H breaks ahead of C-F (E1cb-like E2)"},
+      {"pts": 5, "h": "Carbanion character in the transition state is better on the less substituted carbon, so H is lost from C1"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Fix what is the same", "h": "Same carbon skeleton, same base, same solvent, same mechanism name. Only the leaving group changes."},
+        {"t": "Compare the leaving groups", "h": "{{Br-}} is the conjugate base of a very strong acid ({{pKa}} −9): it leaves easily. {{F-}} is the conjugate base of a weak acid ({{pKa}} 4): it leaves poorly."},
+        {"t": "Say what that does to the timing", "h": "Good leaving group: both bonds break together, the transition state resembles the alkene. Poor leaving group: C-H breaks first, the transition state resembles a carbanion."},
+        {"t": "Say which carbon each prefers", "h": "Alkene-like: favours the more substituted C=C. Carbanion-like: favours negative charge on the less substituted carbon."}
+      ],
+      "answer": "Br leaves easily, so the transition state is alkene-like and the more substituted alkene wins. F leaves poorly, so C-H breaks first (E1cb-like), and the carbanion-like transition state is better at the less substituted carbon: 1-hexene.",
+      "rule": "Poor leaving group: E1cb-like E2, Hofmann product."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-008", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "2-Bromo-2,3-dimethylbutane is treated with the bulky base {{KOC(CH3)3}} in {{(CH3)3COH}}. Which is the major product?\n[[mol:CC(C)C(C)(C)Br]]",
+    "choices": [
+      {"h": "[[mol:C=C(C)C(C)C]]\n2,3-Dimethyl-1-butene", "ok": true, "why": "The bulky base takes an exposed hydrogen from one of the {{CH3}} groups on the C-Br carbon, not the crowded single hydrogen on C3. The less substituted (Hofmann) alkene is major."},
+      {"h": "[[mol:CC(C)=C(C)C]]\n2,3-Dimethyl-2-butene", "ok": false, "why": "This tetrasubstituted alkene is the Saytzeff product and would be major with a small base such as methoxide. The size of tert-butoxide was not taken into account."},
+      {"h": "[[mol:CC(C)C(C)(C)OC(C)(C)C]]\nThe tert-butyl ether", "ok": false, "why": "Substitution at a tertiary carbon by SN2 does not happen, and tert-butoxide is a poor nucleophile in any case."},
+      {"h": "[[mol:C=CC(C)(C)C]]\n3,3-Dimethyl-1-butene", "ok": false, "why": "This has a different carbon skeleton. E2 is one concerted step with no carbocation, so nothing can rearrange."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the hydrogens", "h": "The C-Br carbon (C2) has two {{CH3}} neighbours (six H) and C3, which has a single H surrounded by two methyl groups."},
+        {"t": "Draw both alkenes", "h": "H from C3: 2,3-dimethyl-2-butene, four carbons on the C=C (Saytzeff). H from a {{CH3}}: 2,3-dimethyl-1-butene, two carbons on the C=C (Hofmann)."},
+        {"t": "Look at the base", "h": "tert-Butoxide is bulky. The single H on C3 is hard to reach; the {{CH3}} hydrogens are on the outside of the molecule."},
+        {"t": "Choose", "h": "Hofmann: 2,3-dimethyl-1-butene."}
+      ],
+      "answer": "2,3-Dimethyl-1-butene",
+      "rule": "Bulky base: the hydrogen comes from the least crowded carbon."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-009", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "2-Bromo-2-methylbutane is treated with {{NaOCH3}} in {{CH3OH}}. Which is the major product?\n[[mol:CCC(C)(C)Br]]",
+    "choices": [
+      {"h": "[[mol:CC=C(C)C]]\n2-Methyl-2-butene", "ok": true, "why": "Small base, good leaving group: Saytzeff. Taking H from the {{CH2}} gives the trisubstituted alkene."},
+      {"h": "[[mol:C=C(C)CC]]\n2-Methyl-1-butene", "ok": false, "why": "This disubstituted alkene is the Hofmann product. It is the minor product with methoxide and becomes major only with a bulky base such as tert-butoxide."},
+      {"h": "[[mol:C=CC(C)C]]\n3-Methyl-1-butene", "ok": false, "why": "Its double bond does not include the carbon that carried Br, so it cannot form."},
+      {"h": "[[mol:CCC(C)(C)OC]]\nThe methyl ether", "ok": false, "why": "A tertiary carbon does not undergo SN2, and with a strong base present E2 is the reaction."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the reaction", "h": "Tertiary bromide and a strong base: {{E2}}."},
+        {"t": "Draw both alkenes", "h": "H from the {{CH2}}: 2-methyl-2-butene (three carbons on the C=C). H from a {{CH3}}: 2-methyl-1-butene (two)."},
+        {"t": "Check base and leaving group", "h": "Methoxide is small, Br is a good leaving group. Nothing pushes toward Hofmann, so the more substituted alkene is major."}
+      ],
+      "answer": "2-Methyl-2-butene",
+      "rule": "Small base and a good leaving group: Saytzeff."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-010", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 3, "src": "site, after Lecture 11/12, p. 2",
+    "stem": "The lecture's homework used the (2S,3S) isomer of 2-bromo-3-methylpentane. This is the (2R,3S) isomer. It is treated with {{NaOCH2CH3}}. Which is the major {{E2}} product?\n[[mol:C[C@@H](Br)[C@@H](C)CC]]",
+    "choices": [
+      {"h": "[[mol:C=CC(C)CC]]\n3-Methyl-1-pentene", "ok": false, "why": "The Hofmann product forms, but it is minor: the base is small and Br is a good leaving group, and the hydrogen on C3 can reach the anti position."},
+      {"h": "[[mol:C/C=C(\\C)CC]]\n(E)-3-Methyl-2-pentene: the two methyl groups on the same side", "ok": false, "why": "This is the answer for the (2S,3S) isomer. Changing the configuration of one carbon changes which groups are side by side when H and Br are anti."},
+      {"h": "[[mol:C/C=C(/C)CC]]\n(Z)-3-Methyl-2-pentene: the two methyl groups on opposite sides", "ok": true, "why": "Still Saytzeff regiochemistry. With C2 inverted, the conformation that has the C3-H anti to Br puts the {{CH3}} on C2 next to the ethyl group on C3, so the two methyls end up on opposite sides: Z."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Regiochemistry first", "h": "Small base, Br: Saytzeff. The major product is a 3-methyl-2-pentene, formed by loss of the one H on C3."},
+        {"t": "Use the known case", "h": "For (2S,3S) the lecture's answer is E: with H and Br anti, the methyl on C2 and the methyl on C3 are on the same side."},
+        {"t": "Invert one centre", "h": "Going from 2S to 2R swaps two groups on C2: the {{CH3}} and the H trade places while Br stays anti to the C3-H. The methyl on C2 is now beside the ethyl on C3."},
+        {"t": "Eliminate and name", "h": "Methyl on C2 and ethyl on C3 on the same side: the two higher-priority groups are together, which is Z."}
+      ],
+      "answer": "(Z)-3-Methyl-2-pentene",
+      "rule": "Diastereomers of the halide give different geometric isomers of the alkene."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-011", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "You want as much 2-methyl-1-butene as possible from 2-bromo-2-methylbutane. Which base should you use?\n[[rxn:CCC(C)(C)Br>base>C=C(C)CC]]",
+    "choices": [
+      {"h": "{{KOC(CH3)3}} in {{(CH3)3COH}}", "ok": true, "why": "2-Methyl-1-butene is the Hofmann product. The bulky tert-butoxide takes the exposed {{CH3}} hydrogens and gives the largest share of it."},
+      {"h": "{{NaOCH3}} in {{CH3OH}}", "ok": false, "why": "A small base gives mostly the Saytzeff alkene, 2-methyl-2-butene."},
+      {"h": "{{NaOCH2CH3}} in {{CH3CH2OH}}", "ok": false, "why": "Ethoxide is also a small base: mostly 2-methyl-2-butene."},
+      {"h": "{{H2O}}, heat (no added base)", "ok": false, "why": "This is E1 through the carbocation, with SN1 alcohol as well. E1 gives mainly the more substituted alkene, and nothing in it favours the Hofmann product."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the target", "h": "2-Methyl-1-butene has two carbons on its C=C. The other possible alkene, 2-methyl-2-butene, has three. The target is the Hofmann product."},
+        {"t": "Recall what gives Hofmann", "h": "A poor leaving group (F) or a bulky base. The leaving group is fixed as Br, so choose by the base."},
+        {"t": "Pick the bulky base", "h": "tert-Butoxide. Methoxide and ethoxide are small."}
+      ],
+      "answer": "{{KOC(CH3)3}}",
+      "rule": "To get the less substituted alkene from a bromide, use a bulky base."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-012", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 2, "src": "site, after Lecture 11/12, p. 4",
+    "stem": "The lecture's data are for 2-hexyl compounds. Apply the same idea one carbon shorter: 2-fluoropentane is treated with {{NaOCH3}} in {{CH3OH}}. Which is the major product?\n[[mol:CCCC(C)F]]",
+    "choices": [
+      {"h": "[[mol:C=CCCC]]\n1-Pentene", "ok": true, "why": "Fluoride is a Hofmann leaving group whatever the chain length. The C-H bond breaks first, at the less substituted carbon (C1)."},
+      {"h": "[[mol:C/C=C/CC]]\n(E)-2-Pentene", "ok": false, "why": "This would be the major product from 2-bromopentane or 2-iodopentane. With F the Saytzeff alkene is the minor product."},
+      {"h": "[[mol:C/C=C\\CC]]\n(Z)-2-Pentene", "ok": false, "why": "Also a Saytzeff product, and the smaller part of the 2-pentene even when 2-pentene is favoured."},
+      {"h": "[[mol:CCCC(C)OC]]\n2-Methoxypentane", "ok": false, "why": "Substitution needs a good leaving group. The lecture: an alkyl fluoride gives no SN2 because {{F-}} is not a good leaving group."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Match to the lecture case", "h": "Secondary carbon at position 2, methoxide in methanol, leaving group F: the same situation as 2-fluorohexane."},
+        {"t": "Draw the alkenes", "h": "H from C1: 1-pentene (Hofmann). H from C3: 2-pentene, E and Z (Saytzeff)."},
+        {"t": "Apply the leaving-group rule", "h": "F: Hofmann. 1-Pentene is major."}
+      ],
+      "answer": "1-Pentene",
+      "rule": "The leaving-group trend does not depend on the length of the chain."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-013", "type": "zaitsev-hofmann", "role": "practice", "kind": "written", "diff": 3, "src": "Lecture 11/12, p. 4", "time": 8, "pts": 20,
+    "stem": "Four 2-hexyl halides (X = F, Cl, Br, I) are each treated with {{NaOCH3}} in {{CH3OH}}.\n[[mol:CCCCC(C)Br]]\n<p>(a) Rank the four by the percentage of 1-hexene they give, with the lecture's numbers. (b) Explain the trend. (c) Predict how the result for X = Br changes if the base is {{KOC(CH3)3}}, and say why.</p>",
+    "model": "<p><b>(a)</b> 1-Hexene is the Hofmann product. Most to least: F (70%) > Cl (33%) > Br (28%) > I (19%).</p><p><b>(b)</b> The order follows leaving-group ability: {{I-}} is the best leaving group and {{F-}} the worst. With a good leaving group, C-LG and C-H break together and the transition state resembles the alkene, so the more substituted, more stable 2-hexene is favoured (Saytzeff). As the leaving group gets worse, the C-H bond breaks further ahead of the C-LG bond, and the transition state takes on carbanion character, which is better on the less substituted carbon (C1). With F this {{E1cb}}-like {{E2}} takes over and 1-hexene becomes the major product.</p><p><b>(c)</b> More 1-hexene than 28%. tert-Butoxide is bulky: it reaches the hydrogens of the end {{CH3}} more easily than those of the inner {{CH2}}, so the Hofmann product increases.</p>",
+    "rubric": [
+      {"pts": 6, "h": "(a) Order F > Cl > Br > I with 70, 33, 28, 19%"},
+      {"pts": 4, "h": "(b) Good leaving group: alkene-like transition state, more substituted alkene favoured"},
+      {"pts": 5, "h": "(b) Poorer leaving group: C-H breaks earlier, carbanion character at the less substituted carbon, E1cb-like for F"},
+      {"pts": 5, "h": "(c) More 1-hexene with tert-butoxide, because the bulky base takes the less hindered hydrogen"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Turn the table round", "h": "The lecture lists Saytzeff then Hofmann: I 81/19, Br 72/28, Cl 67/33, F 30/70. The question asks for the Hofmann column."},
+        {"t": "Find what changes down the list", "h": "Leaving-group ability. The acids HI, HBr, HCl, HF have {{pKa}} −10, −9, −8, 4: iodide is the weakest base and best leaving group, fluoride the worst."},
+        {"t": "Connect it to the transition state", "h": "Later C-LG breaking means earlier C-H breaking and more negative charge on carbon in the transition state. That favours the primary carbon."},
+        {"t": "Add the base effect", "h": "A bulky base is a separate reason for Hofmann product. It adds to whatever the leaving group does."}
+      ],
+      "answer": "(a) F 70% > Cl 33% > Br 28% > I 19%. (b) Worse leaving group, more carbanion-like transition state, more Hofmann. (c) tert-Butoxide raises the share of 1-hexene.",
+      "rule": "Two things push toward Hofmann: a poor leaving group and a bulky base."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-014", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 2, "src": "Lecture 11/12, p. 4",
+    "stem": "2-Bromohexane with {{NaOCH3}} in {{CH3OH}} gives 72% 2-hexene and 28% 1-hexene. Which single compound is formed in the largest amount?\n[[mol:CCCCC(C)Br]]",
+    "choices": [
+      {"h": "[[mol:C/C=C/CCC]]\n(E)-2-Hexene", "ok": true, "why": "2-Hexene is the Saytzeff product, and of its two geometric isomers E is the more stable and the larger share, because the two alkyl groups are on opposite sides."},
+      {"h": "[[mol:C/C=C\\CCC]]\n(Z)-2-Hexene", "ok": false, "why": "It is part of the 72%, but the smaller part: in Z the methyl and propyl groups are on the same side and crowd each other."},
+      {"h": "[[mol:C=CCCCC]]\n1-Hexene", "ok": false, "why": "The Hofmann product is the minor regioisomer with Br as leaving group and a small base."},
+      {"h": "[[mol:CCC=CCC]]\n3-Hexene", "ok": false, "why": "Not formed. The double bond must include C2, the carbon that carried Br."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Split the regioisomers", "h": "72% Saytzeff (2-hexene), 28% Hofmann (1-hexene)."},
+        {"t": "Remember that 2-hexene is two compounds", "h": "Each alkene carbon has an H and an alkyl group, so there is an E and a Z isomer. The 72% is both together."},
+        {"t": "Choose between E and Z", "h": "E has the alkyl groups apart and is more stable; the transition state leading to it is lower too. E is the larger share."}
+      ],
+      "answer": "(E)-2-Hexene",
+      "rule": "Saytzeff gives the regioisomer. Within it, E is favoured over Z."
+    }
+  },
+  {
+    "id": "zaitsev-hofmann-015", "type": "zaitsev-hofmann", "role": "practice", "kind": "mcq", "diff": 3, "src": "FA24 Exam 2, Q3D", "fixed": true,
+    "stem": "On the exam, trans-1-chloro-2-methylcyclohexane with {{NaOCH3}} in {{CH3OH}} gave 3-methylcyclohexene, the less substituted alkene, as the major product. What is the reason?\n[[rxn:C[C@H]1CCCC[C@@H]1Cl>NaOCH3;CH3OH>C[C@@H]1C=CCCC1]]",
+    "choices": [
+      {"h": "Chloride is a Hofmann leaving group", "ok": false, "why": "In the lecture's table chloride gives 67% Saytzeff product. Only fluoride is a Hofmann leaving group."},
+      {"h": "Methoxide is a bulky base", "ok": false, "why": "Methoxide is the smallest alkoxide. With open-chain bromides and chlorides it gives the Saytzeff alkene."},
+      {"h": "The hydrogen needed for the more substituted alkene cannot be anti-periplanar to Cl", "ok": true, "why": "In the chair with Cl axial, the trans methyl group is axial, so the hydrogen on its carbon is equatorial. Only the other neighbour has an axial hydrogen. Geometry rules the Saytzeff alkene out."},
+      {"h": "The reaction is E1, and the carbocation loses the most accessible hydrogen", "ok": false, "why": "Methoxide is a strong base, so the reaction is E2. An E1 reaction would in any case favour the more substituted alkene."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "List the three reasons for a less substituted alkene", "h": "A poor leaving group (F), a bulky base, or geometry: the Saytzeff hydrogen cannot stand anti to the leaving group."},
+        {"t": "Test the first two", "h": "Cl is not F: the lecture has it at 67% Saytzeff. Methoxide is not bulky."},
+        {"t": "Test geometry", "h": "Trans neighbours on a cyclohexane are both axial or both equatorial. With Cl axial the methyl is axial, the H on that carbon is equatorial, and it cannot leave. The lecture calls anti-periplanar the most important factor for E2."}
+      ],
+      "answer": "Geometry: the hydrogen that would give the Saytzeff alkene cannot be anti-periplanar to Cl.",
+      "rule": "Check anti-periplanar before leaving group and base."
+    }
+  }
+]

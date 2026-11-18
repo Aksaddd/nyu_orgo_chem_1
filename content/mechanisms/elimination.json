@@ -146,7 +146,7 @@
     "steps": [
       {
         "name": "One concerted step",
-        "species": "[SH-:1].[CH3:2][CH2:3][C@H:4]([CH3:5])[O:6][S:7](=[O:8])(=[O:9])[c:10]1[cH:11][cH:12][c:13]([CH3:14])[cH:15][cH:16]1",
+        "species": "[SH-:1].[CH3:2][CH2:3][C@@H:4]([O:6][S:7](=[O:8])(=[O:9])[c:10]1[cH:11][cH:12][c:13]([CH3:14])[cH:15][cH:16]1)[CH3:5]",
         "arrows": [
           {"from": {"lp": 1}, "to": {"bond": [1, 4]}},
           {"from": {"bond": [4, 6]}, "to": {"atom": 6}}
@@ -162,60 +162,6 @@
     ],
     "product": "[SH:1][C@@H:4]([CH2:3][CH3:2])[CH3:5].[O-:6][S:7](=[O:8])(=[O:9])[c:10]1[cH:11][cH:12][c:13]([CH3:14])[cH:15][cH:16]1",
     "takeaway": "SN2: one step, two arrows, back-side attack. One enantiomer gives one enantiomer, inverted."
-  },
-  {
-    "id": "sn1-2-butyl-tosylate-water",
-    "title": "SN1 with racemization: 2-butyl tosylate in water",
-    "class": "SN1",
-    "types": ["mech-two-paths"],
-    "from": "Lecture 11/10, p. 3",
-    "overall": "[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + O>>CC[C@H](C)O + CC[C@@H](C)O]]",
-    "steps": [
-      {
-        "name": "Ionization (rate-determining)",
-        "species": "[CH3:1][CH2:2][C@H:3]([CH3:4])[O:5][S:6](=[O:7])(=[O:8])[c:9]1[cH:10][cH:11][c:12]([CH3:13])[cH:14][cH:15]1",
-        "arrows": [
-          {"from": {"bond": [3, 5]}, "to": {"atom": 5}}
-        ],
-        "say": "The C-O bond to the tosylate breaks by itself. Tosylate leaves with both electrons and a secondary carbocation remains.",
-        "why": "Water is a poor nucleophile, so it does not push the leaving group out. Tosylate is a good leaving group and water is a polar protic solvent that stabilizes the ions, so the bond ionizes. rate = k[ROTs].",
-        "hints": [
-          "No good nucleophile is present. What happens first?",
-          "One arrow: the C-O bond to the tosylate oxygen."
-        ]
-      },
-      {
-        "name": "Water attacks the carbocation",
-        "species": "[OH2:16].[CH3:1][CH2:2][CH+:3][CH3:4]",
-        "adds": ["O"],
-        "arrows": [
-          {"from": {"lp": 16}, "to": {"bond": [16, 3]}}
-        ],
-        "say": "A lone pair on water attacks the positive carbon. The carbocation is flat, so water can come from the top face or the bottom face equally.",
-        "why": "The carbocation is {{sp2}} and planar, with an empty p orbital open on both faces. Attack on one face gives the R alcohol and attack on the other gives the S alcohol, in equal amounts: a racemic mixture.",
-        "hints": [
-          "The electron-poor atom is the positive carbon.",
-          "One arrow: O lone pair to the positive carbon."
-        ]
-      },
-      {
-        "name": "A second water removes the extra proton",
-        "species": "[OH2:17].[H:18][OH+:16][CH:3]([CH2:2][CH3:1])[CH3:4]",
-        "adds": ["O"],
-        "arrows": [
-          {"from": {"lp": 17}, "to": {"bond": [17, 18]}},
-          {"from": {"bond": [18, 16]}, "to": {"atom": 16}}
-        ],
-        "say": "The oxygen that just bonded has three bonds and a positive charge. Another water takes one of its hydrogens, and the O-H electrons stay on oxygen.",
-        "why": "A protonated alcohol is a strong acid, so the solvent removes the proton at once. This leaves the neutral alcohol and {{H3O+}}.",
-        "hints": [
-          "The product so far has a positive oxygen. How does it become neutral?",
-          "Two arrows: lone pair of the new water to H, the O-H bond to oxygen."
-        ]
-      }
-    ],
-    "product": "[H:18][OH2+:17].[OH:16][CH:3]([CH2:2][CH3:1])[CH3:4]",
-    "takeaway": "SN1 with water is three steps: ionize, attack, lose a proton. The flat carbocation gives both enantiomers."
   },
   {
     "id": "double-e2-3-4-dibromohexane-amide",

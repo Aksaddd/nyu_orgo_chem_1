@@ -1,0 +1,228 @@
+{
+ "id": "mock-1",
+ "title": "Mock Exam 1",
+ "minutes": 110,
+ "choose": 7,
+ "note": "The same kinds of question as the Fall 2024 paper, part for part.",
+ "questions": [
+  {
+   "n": 1,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 15,
+     "type": "pka-values",
+     "items": [
+      "pka-values-016",
+      "pka-values-017",
+      "pka-values-021",
+      "pka-values-023",
+      "pka-values-024"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 15,
+     "type": "mech-id",
+     "items": [
+      "mech-id-024"
+     ]
+    },
+    {
+     "label": "C",
+     "pts": 15,
+     "type": "nuc-pairs",
+     "items": [
+      "nuc-pairs-021",
+      "nuc-pairs-022",
+      "nuc-pairs-023"
+     ]
+    },
+    {
+     "label": "D",
+     "pts": 55,
+     "type": "mech-organometallic",
+     "items": [
+      "mech-organometallic-012"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 30,
+     "type": "rate-pairs",
+     "items": [
+      "rate-pairs-013",
+      "rate-pairs-017",
+      "rate-pairs-018"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 70,
+     "type": "mech-two-paths",
+     "items": [
+      "mech-two-paths-009"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 25,
+     "type": "traits",
+     "items": [
+      "traits-013"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 25,
+     "type": "energy-diagrams",
+     "items": [
+      "energy-diagrams-012"
+     ]
+    },
+    {
+     "label": "C",
+     "pts": 25,
+     "type": "fastest-substrate",
+     "items": [
+      "fastest-substrate-008"
+     ]
+    },
+    {
+     "label": "D",
+     "pts": 25,
+     "type": "e2-ring-product",
+     "items": [
+      "e2-ring-product-012"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 50,
+     "type": "chair-read",
+     "items": [
+      "chair-read-011",
+      "chair-read-013",
+      "chair-read-014",
+      "chair-read-016",
+      "chair-read-005"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 50,
+     "type": "mech-intramolecular",
+     "items": [
+      "mech-intramolecular-009"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 80,
+     "type": "williamson-why",
+     "items": [
+      "williamson-why-010"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 20,
+     "type": "e2-stereo-explain",
+     "items": [
+      "e2-stereo-explain-009"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 50,
+     "type": "route-choice",
+     "items": [
+      "route-choice-013"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 50,
+     "type": "products-from-formula",
+     "items": [
+      "products-from-formula-010"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "parts": [
+    {
+     "label": "A",
+     "pts": 50,
+     "type": "sub-vs-elim",
+     "items": [
+      "sub-vs-elim-008"
+     ]
+    },
+    {
+     "label": "B",
+     "pts": 50,
+     "type": "all-elim-products",
+     "items": [
+      "all-elim-products-010"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "parts": [
+    {
+     "label": "",
+     "pts": 100,
+     "type": "chair-both",
+     "items": [
+      "chair-both-009",
+      "chair-both-011",
+      "chair-both-012"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "parts": [
+    {
+     "label": "",
+     "pts": 100,
+     "type": "mech-rearrangement",
+     "items": [
+      "mech-rearrangement-012"
+     ]
+    }
+   ]
+  }
+ ]
+}

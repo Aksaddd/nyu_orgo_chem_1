@@ -75,7 +75,7 @@ Self-explanation is saying in your own words why each step is valid.
 ## What does not help
 
 - **Rereading and highlighting.** Both were rated low utility in a review of ten techniques, where practice testing and distributed practice were the only two rated high ([Dunlosky et al. 2013](https://doi.org/10.1177/1529100612453266), draft; also cited in Eureka's equations brief). Rereading feels productive because the page becomes familiar, and familiarity is not the ability to produce the answer.
-- **Points, badges and leaderboards.** In a semester-long comparison of two sections of one course (71 students), the section with a leaderboard and badges ended with lower motivation and lower final exam scores ([Hanus & Fox 2015](https://ersearch2.cvtisr.sk/vufind/SummonRecord/FETCH-LOGICAL-c408t-d82df39d2133f93d47d3d98f9c9aadee3039f9f89021367e6820fad79509cf9e3/Details?lng=en), checked). It is one small study and does not show that every game element harms learning. The average effect of gamification on learning is positive but unstable ([Sailer & Homner 2020](https://doi.org/10.1007/s10648-019-09498-w), draft). The guide has neither.
+- **Points, badges and leaderboards.** In a semester-long comparison of two sections of one course (71 students), the section with a leaderboard and badges ended with lower motivation and lower final exam scores ([Hanus & Fox 2015](https://ersearch2.cvtisr.sk/vufind/SummonRecord/FETCH-LOGICAL-c408t-d82df39d2133f93d47d3d98f9c9aadee3039f9f89021367e6820fad79509cf9e3/Details?lng=en), checked). It is one small study and does not show that every game element harms learning. The average effect of gamification on learning is positive but unstable ([Sailer & Homner 2020](https://doi.org/10.1007/s10648-019-09498-w), draft). This class adds neither.
 
 ## What the guide does about each
 
@@ -83,8 +83,8 @@ Self-explanation is saying in your own words why each step is valid.
 |---|---|---|
 | Retrieval practice | Every question needs a committed answer before any solution shows. A viewed solution does not count as practice. | Practice (`drill/`), the question-type trainers in Exam 2 Lab (`exam/`), the check on Foundations |
 | Successive relearning | A missed question comes back in the same session after at least three others, until it is answered right once. Then it returns on later days. | Practice sessions; the list of misses on Review (`review/`) |
-| Spacing sized to the exam | After a correct answer the gap grows through 1, 2, 4, 7 and 14 days, and is cut so that at least two more reviews fit before the exam date, when one is set. The growing shape is a convenience: the evidence says total spacing matters, not the shape. | The scheduler in `assets/core.js`; today's plan on the home page |
-| Mastery measured after a delay | A question type counts as "retained" only when it is answered right again a day or more later. The first number shown is delayed accuracy, not same-day accuracy. | The mastery levels on the home page and in Practice |
+| Spacing sized to the exam | After a correct answer the gap grows through 1, 2, 4, 7 and 14 days, and is cut so that at least two more reviews fit before the exam date, when one is set. The growing shape is a convenience: the evidence says total spacing matters, not the shape. | The scheduler in `assets/core.js`; the exam date is set on the home page |
+| Mastery measured after a delay | A question type counts as "retained" only when it is answered right again a day or more later. The first number shown is delayed accuracy, not same-day accuracy. | The mastery levels shown per question type |
 | Mixing | Once a type has been met, its questions arrive mixed with others, ordered so that no two neighbours share a type. | Practice, "mixed" mode (the default) |
 | Worked examples that fade | Each question type has worked examples revealed one step at a time. Mechanisms can be watched, then completed with some arrows missing, then drawn alone. | The type pages in Exam 2 Lab; Mechanism Studio (`mechanisms/`) |
 | Self-explanation | Two to four steps of each worked example ask a question to answer before reading on. Each section of a reading has a "why" question. | Worked examples; Readings (`read/`) |
@@ -94,7 +94,7 @@ Self-explanation is saying in your own words why each step is valid.
 | Spatial ideas | Chairs can be built and flipped, Newman projections turned, and 3D models rotated. The guide does not prompt for the physical model kit on each question. Use it anyway: it is allowed in the exam. | Molecule Lab (`lab/`); chair questions |
 | Knowing what you know | Confidence (guess, unsure, sure) is asked before feedback on written and mechanism work, so that confident errors stand out. Misses and flagged questions are collected. | Written and mechanism questions; Review |
 | Sleep | Nothing is enforced. The plan below builds it in. | This document |
-| No rereading as the main activity, no points, no leaderboards | Readings are short and end in questions. There are no points, streak penalties or rankings. | Readings; everywhere |
+| No rereading as the main activity, no points, no leaderboards | Readings are short and end in questions. This class adds no points, streak penalties or rankings of its own. | Readings; everywhere |
 
 ## How to use the guide
 
@@ -123,7 +123,7 @@ Every day starts with what is due in Practice, done cold, before anything is rer
 | 48 to 36 hours | The last full timed mock, marked straight away | Starting topics never studied |
 | 36 to 24 hours | Repair the two or three weakest types with worked examples, then cold questions. A short evening session. A full night of sleep. | Rereading notes as the main activity |
 | 24 to 12 hours | Two blocks of 40 to 50 minutes: one cold answer per question type, and the Review list down to one clean answer each | Another full mock, marathon sessions |
-| Last evening | Ten to fifteen minutes of quick facts ({{pKa}} values, A-values, solvent classes), then stop | Late-night cramming |
+| Last evening | Ten to fifteen minutes of quick facts (pKa values, A-values, solvent classes), then stop | Late-night cramming |
 | Exam morning | A ten-minute warm-up: a chair flip, an SN2 with its arrows, an acidity ranking | New problems |
 
 The reasoning: with a day or two left the useful gap between two attempts is hours to a day, every skill should get one last successful recall, nothing new should go in that cannot be recalled twice before the exam, and the marginal hour of sleep is probably worth more than the marginal hour of rereading.

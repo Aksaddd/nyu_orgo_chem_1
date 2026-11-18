@@ -49,7 +49,7 @@
     "id": "all-elim-products-003", "type": "all-elim-products", "role": "worked", "kind": "mcq", "diff": 3, "src": "site",
     "stem": "3-Bromo-3-methylhexane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. How many different alkenes can form? Count E and Z isomers separately.\n[[mol:CCCC(C)(Br)CC]]",
     "choices": [
-      {"h": "2", "ok": false, "why": "This counts only the two ring-free chain directions and forgets both the methyl branch and the E and Z isomers."},
+      {"h": "2", "ok": false, "why": "This counts only the two directions along the chain and forgets both the methyl branch and the E and Z isomers."},
       {"h": "3", "ok": false, "why": "This counts the three regioisomers (one per neighbouring carbon) but not their geometric isomers. Two of the three exist as E and Z."},
       {"h": "4", "ok": false, "why": "This finds E and Z for the two chain alkenes but misses the alkene made by taking a hydrogen from the {{CH3}} branch."},
       {"h": "5", "ok": true, "why": "Three neighbouring carbons give three regioisomers. 3-Methyl-2-hexene and 3-methyl-3-hexene each have E and Z; 2-ethyl-1-pentene has only one form. 2 + 2 + 1 = 5."}
