@@ -291,12 +291,13 @@ const reader = (() => {
       sections.push(play.length ? { h: esc(s.title), html, qs, play } : { h: esc(s.title), html, qs }); P.push([s.id, qs, keys]);
     });
     // after the lecture's own sections: its homework with the worked steps, and the summary. Neither has questions.
-    // (<strong> for the labels: in the reader <b> marks a key term, which is underlined and looked up as one)
+    // (<strong> for the labels: in the reader <b> marks a key term, which is underlined and looked up as one. rc-s holds one
+    // whole string of content, so that read/chem.js sees where it starts and ends, as ORGO.html does on the class's own pages)
     if ((c.homework || []).length) {
       const many = c.homework.length > 1;
-      sections.push({ h: "Homework from the lecture", qs: [], html: c.homework.map((h, k) => `<div class="rc-hw"><strong>The professor's prompt${many ? " " + (k + 1) : ""}.</strong> ${br(h.q)}</div>` + source(h.from ? [h.from] : [], file, c.id + " homework")
+      sections.push({ h: "Homework from the lecture", qs: [], html: c.homework.map((h, k) => `<div class="rc-hw"><strong>The professor's prompt${many ? " " + (k + 1) : ""}.</strong> <span class="rc-s">${br(h.q)}</span></div>` + source(h.from ? [h.from] : [], file, c.id + " homework")
         + `\n<details class="rc-more rc-steps"><summary>Try it on paper first. Then open the worked steps</summary><div class="rc-body">`
-        + ((h.steps || []).length ? `<ol>${h.steps.map(st => `<li>${st.t ? `<strong>${stop(esc(st.t))}</strong> ` : ""}${br(st.h)}</li>`).join("")}</ol>` : "") + (h.answer ? `<p><strong>Answer.</strong> ${br(h.answer)}</p>` : "") + `</div></details>`).join("\n") });
+        + ((h.steps || []).length ? `<ol>${h.steps.map(st => `<li>${st.t ? `<strong>${esc(st.t)}</strong>` : ""}<div class="rc-s">${br(st.h)}</div></li>`).join("")}</ol>` : "") + (h.answer ? `<p><strong>Answer.</strong> <span class="rc-s">${br(h.answer)}</span></p>` : "") + `</div></details>`).join("\n") });
       P.push(["@homework", [], []]);
     }
     if ((c.summary || []).length) { sections.push({ h: "In short", qs: [], html: `<ul>${c.summary.map(x => `<li>${br(x)}</li>`).join("")}</ul>` }); P.push(["@summary", [], []]) }

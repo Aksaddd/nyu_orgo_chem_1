@@ -54,7 +54,7 @@
   // rule of ORGO.html in assets/core.js, read from the page instead of from the source. A line starts at the start of the
   // text, of a paragraph, a list item or a table cell, after a line break, and after a new line in the source. It ends
   // in the same ways, or where the next figure starts. A figure that follows another one also counts, at the end of a paragraph.
-  const whole = p => /^(DIV|BUTTON)$/.test(p.nodeName) || (p.nodeName === "SPAN" && p.matches(".opt > span, .pl-flip > span, .pl-card"));      // the reader puts one whole text in these
+  const whole = p => /^(DIV|BUTTON)$/.test(p.nodeName) || (p.nodeName === "SPAN" && p.matches(".opt > span, .pl-flip > span, .pl-card, .rc-s"));      // one whole text is put in each of these (rc-s: by tools/build.js)
   const line = p => /^(P|LI|TD)$/.test(p.nodeName) || whole(p);
   function alone(node, pre, post) {
     const p = node.parentNode, before = node.previousSibling, after = node.nextSibling, blank = s => /^\s*$/.test(s);

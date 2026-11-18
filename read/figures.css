@@ -45,7 +45,7 @@
 .mech-overall { text-align: center }
 .mech-card-steps { margin: 0; padding-left: 1.3em; display: grid; gap: 12px }
 .mech-card-steps p, .mech-card p { margin: 4px 0 0; text-indent: 0 }
-.rd-prose .mech-card b { background: none }      /* the reader underlines <b> as a key term; here it is only a label ("Step 1", "Product") */
+.rd-prose .mech-card b, body.er-paper .rd-prose .mech-card b { background: none }      /* the reader underlines <b> as a key term; here it is only a label ("Step 1", "Product") */
 .stage { margin: 0 }
 .stage-scroll { overflow-x: auto; padding: 2px 0 }
 .stage-svg { display: block; margin: 0 auto; max-width: 100%; height: auto; pointer-events: none; -webkit-user-select: none; user-select: none }
@@ -60,6 +60,7 @@
 .rd-prose .rc-body { padding-bottom: 6px }
 .rd-prose .rc-body > :last-child { margin-bottom: 6px }
 .rd-prose .rc-body ol { padding-left: 22px }
+.rd-prose .rc-body li > strong { display: block }      /* a worked step: its title, then the step */
 .rd-prose .rc-src, .rd-prose .rc-go { font: 400 14px/1.45 var(--body); color: var(--muted); margin: 10px 0 0; text-indent: 0 }
 .rd-prose .rc-src a, .rd-prose .rc-go a { color: var(--accent) }
 .rd-prose .rc-hw { margin: 0 0 4px }
