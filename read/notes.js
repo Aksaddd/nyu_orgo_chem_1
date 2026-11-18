@@ -29,7 +29,26 @@
     });
   }
   function paint(root, key) {
+    fit(root, key);   // CHEM 225
     for (const x of list(key).slice().sort((a, b) => a.s - b.s)) wrap(root, x.s, x.e, `an an-${x.color}${x.note ? " has-note" : ""}`, x.id);
+  }
+  // CHEM 225: when the wording of a passage is corrected, the words after the change move, and a highlight filed by place
+  // would mark other words. A highlight whose own words (its text, white space aside) are no longer at its place is put on
+  // the nearest place where they are, and saved there. One whose words are nowhere in the passage stays where it was.
+  function fit(root, key) {
+    const L = db[key]; if (!L || !L.length) return;
+    const r = document.createRange(); r.selectNodeContents(root); const T = words(r), at = []; let flat = "";
+    for (let i = 0; i < T.length; i++) if (!/\s/.test(T[i])) { at.push(i); flat += T[i] }
+    const sq = s => String(s).replace(/\s+/g, ""); let moved = false;
+    for (const x of L) {
+      const want = sq(x.text), cut = String(x.text).length >= 400, here = sq(T.slice(x.s, x.e));   // a long highlight keeps only its first 400 letters
+      if (!want || (cut ? here.startsWith(want) : here === want)) continue;
+      let best = -1; for (let i = flat.indexOf(want); i >= 0; i = flat.indexOf(want, i + 1)) if (best < 0 || Math.abs(at[i] - x.s) < Math.abs(at[best] - x.s)) best = i;
+      if (best < 0) continue;
+      const s = at[best], e = cut ? Math.min(T.length, s + (x.e - x.s)) : at[best + want.length - 1] + 1;
+      if (s !== x.s || e !== x.e) { x.s = s; x.e = e; moved = true }
+    }
+    if (moved) save();
   }
   function apply(c) {
     ctx = ctx || {}; ctx.chapter = c;
