@@ -156,8 +156,7 @@ window.BANK = {
     "About 11: amines are bases": "11 is the {{pKa}} of the conjugate acid, {{(CH3CH2)2NH2+}}. That ion is not drawn. This is the mistake the question is built to catch.",
     "About 50: the C-H bonds": "The C-H bonds are there, but the N-H is more acidic because nitrogen is more electronegative than carbon. Quote the most acidic hydrogen.",
     "About 16: like an alcohol": "Nitrogen is less electronegative than oxygen, so an N-H is much less acidic than an O-H: 38 against 16."
-   },
-   "keep": 0
+   }
   },
   "acid-rank-015": {
    "d": "acid-rank",
@@ -362,8 +361,7 @@ window.BANK = {
     "[[mol:N#C[C@@H]1CCOC1]] which is R": "Right drawing, but the letter was flipped by habit. Ranking the product's groups gives S.",
     "[[mol:N#C[C@H]1CCOC1]] which is R": "This is retention: CN on the same face as Br was. The letter changed only because the priorities changed.",
     "[[mol:N#C[C@H]1CCOC1]] which is S": "Retention, and the label is wrong for this drawing as well."
-   },
-   "keep": 0
+   }
   },
   "rate-pairs-027": {
    "d": "rate-pairs",
@@ -739,8 +737,7 @@ window.BANK = {
     "{{SN1}}, then {{SN2}}": "This has the stereochemistry backwards: {{SN1}} racemizes and {{SN2}} inverts.",
     "{{SN2}} for both, because the substrate is the same": "A secondary substrate can follow either path. The nucleophile and the solvent choose, and a racemic product cannot come from {{SN2}}.",
     "{{SN1}} for both, because iodide is such a good leaving group": "A good leaving group helps both mechanisms. A single inverted enantiomer cannot come from a planar carbocation."
-   },
-   "keep": 0
+   }
   },
   "sn1-products-013": {
    "d": "sn1-products",
@@ -809,19 +806,19 @@ window.BANK = {
    "d": "energy-diagrams",
    "tag": "energy-diagrams",
    "q": "tert-Butyl bromide gives 2-methylpropene by {{E1}} when heated in water. Which diagram fits?\n[[rxn:CC(C)(C)Br>H2O;heat>CC(C)=C]]",
-   "ok": "Diagram 1\n[[energy:R=0,TS1=22,I=14,TS2=17,P=3|I=carbocation]]",
+   "ok": "Diagram 3\n[[energy:R=0,TS1=22,I=14,TS2=17,P=3|I=carbocation]]",
    "wrong": [
-    "Diagram 2\n[[energy:R=0,TS=22,P=3]]",
-    "Diagram 3\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]",
+    "Diagram 1\n[[energy:R=0,TS=22,P=3]]",
+    "Diagram 2\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]",
     "Diagram 4\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=8,TS3=12,P=3]]"
    ],
-   "ex": "Two humps with the carbocation between them, and ionization, the first hump, is the highest point. <b>Answer:</b> Diagram 1.",
+   "ex": "Two humps with the carbocation between them, and ionization, the first hump, is the highest point. <b>Answer:</b> Diagram 3.",
    "why": {
-    "Diagram 2\n[[energy:R=0,TS=22,P=3]]": "One hump is {{E2}}, the concerted elimination with a strong base. {{E1}} goes through a carbocation.",
-    "Diagram 3\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]": "Two steps, but the second peak is the highest. In {{E1}} the slow step is the ionization, which comes first.",
+    "Diagram 1\n[[energy:R=0,TS=22,P=3]]": "One hump is {{E2}}, the concerted elimination with a strong base. {{E1}} goes through a carbocation.",
+    "Diagram 2\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]": "Two steps, but the second peak is the highest. In {{E1}} the slow step is the ionization, which comes first.",
     "Diagram 4\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=8,TS3=12,P=3]]": "Three steps. {{E1}} has two: ionization, then loss of the proton directly from the carbocation."
    },
-   "keep": 0,
+   "keep": 2,
    "tags": "12345"
   },
   "mech-id-027": {
@@ -1024,8 +1021,7 @@ window.BANK = {
     "{{SN1}}, with cyanide as the nucleophile": "A primary carbocation is too unstable to form, and DMSO is not a protic solvent.",
     "{{E2}}, with cyanide as the base": "Elimination would give an alkene. The product has a new C-C bond, so cyanide attacked carbon.",
     "{{E1}}, with DMSO as the base": "No primary carbocation forms, and the product is not an alkene."
-   },
-   "keep": 0
+   }
   },
   "route-choice-010": {
    "d": "route-choice",
@@ -1188,8 +1184,7 @@ window.BANK = {
     "{{C5H10Br2S}}": "This adds sulfur without removing the bromines. Each C-S bond is made by pushing a bromide out.",
     "{{C5H12S}}": "Two hydrogens too many: this is an open-chain compound. The ring has only {{CH2}} groups.",
     "{{C10H20Br2S}}": "This is the other product, the open chain with two dibromide pieces on one sulfur."
-   },
-   "keep": 0
+   }
   },
   "products-from-formula-011": {
    "d": "products-from-formula",

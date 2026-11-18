@@ -104,7 +104,7 @@
     }
   },
   {
-    "id": "products-from-formula-006", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 1, "src": "site", "fixed": true,
+    "id": "products-from-formula-006", "type": "products-from-formula", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
     "stem": "1,5-Dibromopentane and sodium sulfide give this ring. What is its molecular formula?\n[[rxn:BrCCCCCBr + [Na+].[Na+].[S-2]>>C1CCSCC1]]",
     "choices": [
       {"h": "{{C5H10S}}", "ok": true, "why": "Five {{CH2}} groups and one sulfur. Both bromines have left as bromide."},

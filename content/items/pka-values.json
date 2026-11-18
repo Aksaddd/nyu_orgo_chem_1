@@ -974,7 +974,6 @@
   "diff": 2,
   "src": "site",
   "stem": "The exam shows diethylamine and asks for its approximate {{pKa}}. Which answer earns the points?\n[[mol:CCNCC]]",
-  "fixed": true,
   "choices": [
    {
     "h": "About 38: the N-H of the neutral amine",

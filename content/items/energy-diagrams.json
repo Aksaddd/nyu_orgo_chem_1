@@ -461,19 +461,19 @@
   "fixed": true,
   "choices": [
    {
-    "h": "Diagram 1\n[[energy:R=0,TS1=22,I=14,TS2=17,P=3|I=carbocation]]",
-    "ok": true,
-    "why": "Two humps with the carbocation between them, and ionization, the first hump, is the highest point."
-   },
-   {
-    "h": "Diagram 2\n[[energy:R=0,TS=22,P=3]]",
+    "h": "Diagram 1\n[[energy:R=0,TS=22,P=3]]",
     "ok": false,
     "why": "One hump is {{E2}}, the concerted elimination with a strong base. {{E1}} goes through a carbocation."
    },
    {
-    "h": "Diagram 3\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]",
+    "h": "Diagram 2\n[[energy:R=0,TS1=14,I=8,TS2=22,P=3]]",
     "ok": false,
     "why": "Two steps, but the second peak is the highest. In {{E1}} the slow step is the ionization, which comes first."
+   },
+   {
+    "h": "Diagram 3\n[[energy:R=0,TS1=22,I=14,TS2=17,P=3|I=carbocation]]",
+    "ok": true,
+    "why": "Two humps with the carbocation between them, and ionization, the first hump, is the highest point."
    },
    {
     "h": "Diagram 4\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=8,TS3=12,P=3]]",
@@ -493,10 +493,10 @@
     },
     {
      "t": "Choose",
-     "h": "Diagram 1."
+     "h": "Diagram 3."
     }
    ],
-   "answer": "Diagram 1.",
+   "answer": "Diagram 3.",
    "rule": "E1 has the same first step and the same intermediate as SN1."
   }
  },

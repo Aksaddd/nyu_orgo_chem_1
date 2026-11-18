@@ -458,7 +458,6 @@
   "diff": 1,
   "src": "site",
   "stem": "Name the mechanism and the role of cyanide.\n[[rxn:CCCCCBr>NaCN;DMSO>CCCCCC#N]]",
-  "fixed": true,
   "choices": [
    {
     "h": "{{SN2}}, with cyanide as the nucleophile",
@@ -1620,7 +1619,6 @@
   "diff": 3,
   "src": "site",
   "stem": "A single enantiomer of 2-iodobutane reacts in two ways. With {{NaN3}} in DMF it gives one enantiomer of the azide, with the opposite arrangement at the carbon. In water alone it gives racemic 2-butanol. Name the two mechanisms, in that order.",
-  "fixed": true,
   "choices": [
    {
     "h": "{{SN2}}, then {{SN1}}",
