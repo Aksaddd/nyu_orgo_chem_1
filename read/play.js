@@ -59,7 +59,7 @@
     order: {
       html: (b, k, d) => `${head(b, "Put it in order", "🔢")}
         <ol class="pl-seq">${d ? b.items.map(t => `<li class="ok">${t}</li>`).join("") : ""}</ol>
-        ${d ? "" : `<div class="pl-pool">${shuffle(b.items.map((t, i) => [t, i])).map(([t, i]) => `<button type="button" class="pl-chip" data-i="${i}">${t}</button>`).join("")}</div><p class="pl-tip">Tap the steps in the order they happen.</p>`}${doneBar(d)}`,
+        ${d ? "" : `<div class="pl-pool">${shuffle(b.items.map((t, i) => [t, i])).map(([t, i]) => `<button type="button" class="pl-chip" data-i="${i}">${t}</button>`).join("")}</div><p class="pl-tip">${esc(b.tip || "Tap the steps in the order they happen.")}</p>`}${doneBar(d)}`,
       wire(el, b, k, done) {
         let next = 0, miss = 0; const seq = el.querySelector(".pl-seq");
         el.querySelectorAll(".pl-pool .pl-chip").forEach(c => c.onclick = () => {

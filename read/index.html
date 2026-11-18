@@ -295,14 +295,25 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
   const CURLV = {};
   // an activity as it is played at the level being read (a finished one keeps the level it was finished at)
   const PB = (c, i, j) => { const b = c.sections[i].play[j], A = window.ReadPlay && window.ReadPlay.atLevel; if (!A) return b; const w = (chState(c).w || {})[i + "-" + j], lv = w ? (w.lv || 5) : LV(); return A(b, lv, window.ReadLevels && window.ReadLevels.play ? window.ReadLevels.play(i + "-" + j, lv) : null) };
+  // CHEM 225: a saved answer keeps its choices as they were worded when it was given. A choice corrected since (a drawing
+  // given its values) is matched to today's by what it draws, so the answered view shows today's choices with the right one
+  // marked. An answer that cannot be matched, or whose record no longer agrees with today's right answer, is offered again.
+  const core = t => String(t).replace(/\[\[([a-z0-9]+):(.*?)\]\](?!\])/g, (m, k, a) => "[[" + k + ":" + a.split("|")[0] + "]]");
+  function choicesNow(A, x) {
+    const cur = [x.ok].concat(x.wrong || []); if (!Array.isArray(A.o) || A.o.every(t => cur.includes(t))) return A;
+    const to = A.o.map(t => cur.includes(t) ? [t] : cur.filter(u => core(u) === core(t))), at = A.o.indexOf(A.p);
+    if (at < 0 || to.some(m => m.length !== 1) || new Set(to.map(m => m[0])).size !== to.length) return null;
+    const o = to.map(m => m[0]); return (o[at] === x.ok) === !!A.ok ? Object.assign({}, A, { o, p: o[at] }) : null;
+  }
   function qHTML(c, id, active) {
-    const A = chState(c).a[id], past = A && !REDO.has(id), lv = past ? (A.lv || 5) : LV(), x = QV(id, lv);
+    let A = chState(c).a[id], past = A && !REDO.has(id), lv = past ? (A.lv || 5) : LV(), x = QV(id, lv);
+    if (past) { const now = choicesNow(A, x); if (now) A = now; else { REDO.add(id); past = false; lv = LV(); x = QV(id, lv) } }   // CHEM 225: (above)
     const img = x.img ? `<figure class="fig"><button type="button" class="zoom" data-src="../drill/${esc(x.img[0])}" data-alt="${esc(x.img[1])}" aria-label="Enlarge image: ${esc(x.img[1])}"><img src="../drill/${esc(x.img[0])}" alt="${esc(x.img[1])}"></button><figcaption>Tap to zoom</figcaption></figure>` : "";
     if (A && !REDO.has(id)) {
-      const own = !A.ok && x.why && Object.prototype.hasOwnProperty.call(x.why, A.p) && x.why[A.p], why = own || (window.GLOSS && !A.ok ? window.GLOSS.look(A.p) : null);   // CHEM 225: the question's own reason why the choice that was picked is wrong, where it has one; the dictionary otherwise
+      const own = !A.ok && x.why && Object.prototype.hasOwnProperty.call(x.why, A.p) && x.why[A.p], why = own || (window.GLOSS && !A.ok ? window.GLOSS.look(A.p) : null);   // CHEM 225: the question's own reason why the choice that was picked is wrong, where it has one; the dictionary otherwise. A right answer that is a drawing is named by its letter in the verdict too (the green choice above shows it), unless the saved choices no longer hold it
       return `<div class="rd-q card past" data-id="${id}"><p class="q">${x.q}</p>${img}
         <div class="opts">${A.o.map((t, j) => `<button class="opt${t === x.ok ? " right" : ""}${t === A.p ? " picked" : ""}${t === A.p && !A.ok ? " wrong" : ""}" disabled><span class="bub">${(x.tags || "ABCDE")[j]}</span><span>${t}</span></button>`).join("")}</div>
-        <div class="explain ${A.ok ? "good" : "bad"}"><strong>${A.ok ? (A.n > 1 ? `Correct on try ${A.n}!` : "Correct!") : "Not quite. The answer is: " + x.ok}</strong>${x.ex ? `<span class="exwhy"><b>Why:</b> ${x.ex}</span>` : ""}${why ? `<span class="whynot"><b>Why not ${/\[\[/.test(A.p) ? esc((x.tags || "ABCDE")[A.o.indexOf(A.p)]) : "“" + esc(plain(A.p)) + "”"}?</b> ${own || esc(why)}</span>` : ""}</div>
+        <div class="explain ${A.ok ? "good" : "bad"}"><strong>${A.ok ? (A.n > 1 ? `Correct on try ${A.n}!` : "Correct!") : /\[\[/.test(x.ok) && A.o.includes(x.ok) ? "Not quite. The answer is " + esc((x.tags || "ABCDE")[A.o.indexOf(x.ok)]) + "." : "Not quite. The answer is: " + x.ok}</strong>${x.ex ? `<span class="exwhy"><b>Why:</b> ${x.ex}</span>` : ""}${why ? `<span class="whynot"><b>Why not ${/\[\[/.test(A.p) ? esc((x.tags || "ABCDE")[A.o.indexOf(A.p)]) : "“" + esc(plain(A.p)) + "”"}?</b> ${own || esc(why)}</span>` : ""}</div>
         <div class="rd-retry"><button type="button" class="chip" data-retry="${id}">↻ Try again</button></div></div>`;
     }
     if (!active && !REDO.has(id)) return "";
@@ -427,17 +438,20 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
       setTimeout(() => { refreshCheck(c, si); const nb = view.querySelector(`.rd-q[data-id="${id}"]`); if (nb) scrollBy(0, nb.getBoundingClientRect().top - y) }, 450);
     });
   }
-  const go = id => requestAnimationFrame(() => { const e = $(id); if (e) e.scrollIntoView({ behavior: "smooth", block: "start" }) });
+  let going = null;   // CHEM 225: the passage go() is scrolling to, until the scroll ends (see read:level below)
+  const go = id => requestAnimationFrame(() => { const e = $(id); if (e) { going = { id, t: Date.now() }; e.scrollIntoView({ behavior: "smooth", block: "start" }) } });
+  addEventListener("scrollend", () => { going = null });
   $("lbClose").onclick = () => $("lightbox").hidden = true; $("lightbox").onclick = e => { if (e.target.id === "lightbox") $("lightbox").hidden = true };
 
   // the reading level changed (or its questions arrived): redraw the open questions in the new wording
   addEventListener("read:level", () => { const c = R.find(x => x.id === location.hash.slice(1)); if (!c) return;
     const open = c.sections.some((s, i) => (s.play || []).some((b, j) => !(chState(c).w || {})[i + "-" + j] && document.querySelector(`.pl[data-k="${i}-${j}"]`)));
-    if (open) { const y = scrollY; chapter(c); scrollTo(0, y); return }   // activities not yet finished are redrawn at the new level too
+    if (open) { const y = scrollY, to = going && Date.now() - going.t < 2000 ? going.id : null; chapter(c); if (to) go(to); else scrollTo(0, y); return }   // activities not yet finished are redrawn at the new level too. CHEM 225: when the levels arrive while go() is still scrolling to the current passage (a chapter just opened), the scroll goes on to it: scrollTo would stop it partway
     c.sections.forEach((s, i) => { const sec = $("sec" + i); if (sec && sec.querySelector(".rd-check")) refreshCheck(c, i) }) });
   function route() {
     const c = R.find(x => x.id === location.hash.slice(1));
-    if (c) { chapter(c); const S = chState(c); if (S.at && !S.finished) go("sec" + S.at); else scrollTo(0, 0) } else { library(); scrollTo(0, 0) }
+    const nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0], back = !route.done && nav && nav.type === "back_forward"; route.done = 1;   // CHEM 225: when Back or Forward loads the page again, the browser keeps the place. A passage can end with a link to the Mechanism Studio or Practice, and the student comes back to it
+    if (c) { chapter(c); const S = chState(c); if (back) return; if (S.at && !S.finished) go("sec" + S.at); else scrollTo(0, 0) } else { library(); if (!back) scrollTo(0, 0) }
   }
   addEventListener("hashchange", route); route();
 })();
