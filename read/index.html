@@ -308,6 +308,7 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
     if (!active && !REDO.has(id)) return "";
     if (REDO.has(id) && !CUR[id + "#r"]) { CUR[id + "#r"] = 1; delete CUR[id] }   // fresh shuffle for the retry
     if (CURLV[id] !== lv) { delete CUR[id]; CURLV[id] = lv }                        // and for a change of level
+    if (CUR[id] && !(CUR[id].length === 1 + x.wrong.length && [x.ok, ...x.wrong].every(t => CUR[id].includes(t)))) delete CUR[id];   // and when the level's wording arrives after the choices were drawn: they must be this question's
     const opts = CUR[id] || (CUR[id] = x.keep != null ? x.wrong.slice(0, x.keep).concat([x.ok], x.wrong.slice(x.keep)) : lastOpts(shuffle([x.ok, ...x.wrong])));   // CHEM 225: keep (read/bank.js) is the place of the right choice in the written order, which is kept when the explanation names the choices by their place; tags numbers them when the question does
     return `<div class="rd-q card" data-id="${id}" data-lv="${lv}"><p class="q">${x.q}</p>${img}
       <div class="opts">${opts.map((t, j) => `<button class="opt" data-t="${j}"><span class="bub">${(x.tags || "ABCDE")[j]}</span><span>${t}</span></button>`).join("")}</div></div>`;
