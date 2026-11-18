@@ -71,13 +71,15 @@ const KIND = new Map(BP.filter(t => t.has !== false).map(t => [t.id, t]));
 const strings = [];   // [where, text] of every string a student reads
 const seen = new Map(), rows = [], lines = [];
 if (E) strings.push(["the page's note (exam2.sub)", E.sub]);
+if (E && typeof E.sub === "string" && (E.sub.match(/[.?](\s|$)/g) || []).length > 1) fail("the page's note (exam2.sub) is one sentence: the page's header already says what the page holds");
+const words = s => s.split(/\s+/).filter(Boolean).length;   // a phone shows about eight words a line: a note or an exam line of 50 words is six lines
 groups.forEach((g, gi) => {
   const at = `section ${gi + 1}`;
   if (!Array.isArray(g) || g.length !== 3 || typeof g[0] !== "string" || !g[0].trim() || !Array.isArray(g[1]) || !g[1].length) return fail(`${at}: a section is [name, rows, { "sub", "exam" }] with at least one row`);
   const [name, rs, meta] = g; strings.push([`${name}: its name`, name]);
   if (!meta || typeof meta !== "object" || typeof meta.sub !== "string" || !meta.sub.trim() || !Array.isArray(meta.exam) || Object.keys(meta).some(k => k !== "sub" && k !== "exam")) return fail(`${name}: the third element is { "sub": why these roots matter, "exam": [[kind id, how], ...] } and nothing else`);
   strings.push([`${name}: its note`, meta.sub]);
-  if ((meta.sub.match(/[.?](\s|$)/g) || []).length > 2) fail(`${name}: the note has more than two sentences`);
+  if ((meta.sub.match(/[.?](\s|$)/g) || []).length > 2 || words(meta.sub) > 50) fail(`${name}: the note has more than two sentences or 50 words`);
   rs.forEach((r, ri) => {
     const w = `${name}, row ${ri + 1}`;
     if (!Array.isArray(r) || (r.length !== 4 && r.length !== 5) || r.slice(0, 3).some(x => typeof x !== "string" || !x.trim()) || !Array.isArray(r[3]) || !r[3].length) return fail(`${w}: a row is [root, meaning, origin, [[term, meaning], ...]] with at least one term, and may end with { "auto": false }`);
@@ -100,7 +102,7 @@ groups.forEach((g, gi) => {
     const [id, how] = x; strings.push([`${name}, the ${id} line`, how]);
     if (!KIND.has(id)) fail(`${name}: "${id}" is not a question kind of the blueprint (data/index.js)`);
     if (ids.has(id)) fail(`${name}: "${id}" has two lines in this section`); ids.add(id);
-    if ((how.match(/[.?](\s|$)/g) || []).length > 2 || how.length > 340) fail(`${name}, the ${id} line: one point, at most two sentences and 340 characters`);
+    if ((how.match(/[.?](\s|$)/g) || []).length > 2 || how.length > 340 || words(how) > 50) fail(`${name}, the ${id} line: one point, at most two sentences, 50 words and 340 characters`);
     lines.push({ g: name, id, how });
   });
 });
@@ -202,6 +204,18 @@ for (const { t, roots } of EXAMPLES.values()) {
   if (c.via === "dictionary" && (ownParts.has(c.term) || other)) note(`"${t}" opens the dictionary's "${c.term}", without ${lost.join(", ")}: ${ownParts.has(c.term) ? "that entry has word parts of its own" : `"${t}" is another spelling of it`}`);
   else fail(`the card for "${t}" (${c.via === "dictionary" ? `the dictionary's "${c.term}"` : c.via}) does not show ${lost.join(", ")}`);
 }
+// A card reads its parts as the word built left to right. The dictionary's entries get theirs in the word's order (fill()),
+// but Eureka's lookup gives an example term's roots in the order of the rows in roots.js, so a term whose roots sit in
+// different sections ("hydroxide": -ide in the first, hydro- and ox- in Acids and bases) shows them out of order until
+// shared/lookup.js sorts them the same way. Listed, so the day it does, this note is empty.
+{ const unsorted = [];
+  for (const { t } of EXAMPLES.values()) {
+    const c = withRoots(t); if (!c || c.via !== "example term" || c.parts.length < 2) continue;
+    const w = WR.norm(c.term), pos = p => WR.place(p.root, w);
+    const have = c.parts.map(p => p.root).join(" + "), want = c.parts.map((p, i) => [p, i]).sort((a, b) => (pos(a[0]) - pos(b[0])) || a[1] - b[1]).map(x => x[0].root).join(" + ");
+    if (have !== want) unsorted.push(`${c.term} (${have})`);
+  }
+  if (unsorted.length) note(`${unsorted.length} cards of example terms list their roots out of the word's order, until Eureka's shared/lookup.js sorts them: ${unsorted.join(", ")}`) }
 // the course's words, and the ordinary words: which cards the roots give, and none to an ordinary word
 const byRoots = { example: [], guessed: [], changed: [] }, misfire = [];
 const ordinary = new Set([...ORDINARY, ...PLAIN]);

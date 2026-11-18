@@ -18,25 +18,37 @@ const same = (a, b) => a === b || forms(a).includes(b) || forms(b).includes(a);
 
 // Where a root shows in a word: its letters, then without a last vowel (chromo- in chromatid), then without its last
 // letter (syn- in symmetry). -1 when it does not show. "R / S", "E / Z" and "p" are too short to show anywhere.
+const keys = root => root.split(/[/ ]/).map(s => s.replace(/[^a-zA-Z]/g, "").toLowerCase()).filter(s => s.length > 1).sort((a, b) => b.length - a.length);
 function at(root, word) {
-  const keys = root.split(/[/ ]/).map(s => s.replace(/[^a-zA-Z]/g, "").toLowerCase()).filter(s => s.length > 1).sort((a, b) => b.length - a.length);
-  for (const k of keys) for (const t of [k, k.replace(/[aeiouy]$/, ""), k.slice(0, -1)]) { const i = t.length > 1 ? word.indexOf(t) : -1; if (i >= 0) return i }
+  for (const k of keys(root)) for (const t of [k, k.replace(/[aeiouy]$/, ""), k.slice(0, -1)]) { const i = t.length > 1 ? word.indexOf(t) : -1; if (i >= 0) return i }
   return -1;
+}
+// Where a root sits in a word, to put a card's parts in the word's order: at(), then its letters shorter and shorter down to
+// three (-angium in angiosperm), and a one-letter prefix at the start of a word (a- in achiral). Infinity when it does not
+// show: it goes last. Only for the order: whether a root belongs to a word is at()'s question.
+function place(root, word) {
+  const i = at(root, word); if (i >= 0) return i;
+  for (const k of keys(root)) for (let n = k.length - 2; n >= 3; n--) { const j = word.indexOf(k.slice(0, n)); if (j >= 0) return j }
+  const one = root.replace(/[^a-zA-Z]/g, "").toLowerCase();
+  if (one.length === 1 && /-$/.test(root.trim())) { const j = (" " + word).search(new RegExp("[ -]" + one)); if (j >= 0) return j }
+  return Infinity;
 }
 
 // The word parts of a dictionary entry that has none of its own: the roots whose example terms are the entry's term
-// (or its plural), and the roots whose example terms are one of its other spellings when the root shows in the term
-// itself ("eclipsed conformation" gives eclips- to "eclipsed"; "quartet" gives nothing to "splitting", "oxirane" gives
-// ox- but not -irane to "epoxide"). In the order they sit in the word, as [root exactly as roots.js writes it, meaning].
+// (or its plural); and, when the root shows in the term itself, the roots whose example terms are one of its other
+// spellings ("eclipsed conformation" gives eclips- to "eclipsed"; "doublet" would give nothing to "splitting") or a
+// phrase built on the term ("primary carbon" gives prim- to "primary", "carbocation intermediate" gives inter- to
+// "intermediate", but "conjugate base" gives nothing to "base"). In the order they sit in the word, as [root exactly as
+// roots.js writes it, meaning].
 function fill(entry, R) {
-  const term = norm(entry.term), also = (entry.also || []).map(norm), out = [];
+  const term = norm(entry.term), also = (entry.also || []).map(norm), out = [], T = term.split(" ");
+  const builtOn = e => { const W = e.split(" "); return W.length > T.length && W.some((_, i) => T.every((w, j) => W[i + j] === w)) };
   for (const [root, mean, , terms] of rows(R)) {
     if (out.some(p => p[0] === root)) continue;
     const ex = (terms || []).map(t => norm(t[0]));
-    if (ex.some(e => same(e, term)) || (ex.some(e => also.some(a => same(e, a))) && at(root, term) >= 0)) out.push([root, mean]);
+    if (ex.some(e => same(e, term)) || ((ex.some(e => also.some(a => same(e, a))) || ex.some(builtOn)) && at(root, term) >= 0)) out.push([root, mean]);
   }
-  const pos = p => { const i = at(p[0], term); return i < 0 ? Infinity : i };
-  return out.map((p, i) => [p, i]).sort((a, b) => pos(a[0]) - pos(b[0]) || a[1] - b[1]).map(x => x[0]);
+  return out.map((p, i) => [p, i]).sort((a, b) => (place(a[0][0], term) - place(b[0][0], term)) || a[1] - b[1]).map(x => x[0]);
 }
 
 // The roots an exam line names (the rule at the top of roots/roots.js): a hyphenated root as written, a bare-word root
@@ -48,4 +60,4 @@ function named(line, roots) {
     : new RegExp("\\(\\s*" + escR(r) + "\\b|\\b" + escR(r) + "\\s*\\(|\\+\\s*" + escR(r) + "\\b|\\b" + escR(r) + "\\s*\\+", "i").test(line));
 }
 
-module.exports = { FILE, load, rows, norm, forms, at, fill, named };
+module.exports = { FILE, load, rows, norm, forms, at, place, fill, named };
