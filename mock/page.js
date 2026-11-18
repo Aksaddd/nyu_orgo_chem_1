@@ -267,7 +267,7 @@
         barBox.textContent = ""; barBox.dataset.saved = "1";
         barBox.append(result,
           el("p", { class: "mock-score" }, el("b", {}, `${r1(s.got)} of ${r1(s.max)}`), ` points, ${pct} percent.`),
-          s.max < 700 ? el("p", { class: "small muted" }, "A full exam is out of 700. This one has fewer points because not every part was available or counted.") : null,
+          s.max < 700 ? el("p", { class: "small muted" }, "A full exam is out of 700. This one has fewer points because not every part was available or counted.") : "",      // not null: append() would write "null"
           el("h2", {}, "By question"),
           el("ul", { class: "mock-byq" }, Object.keys(byQ).map(n => el("li", {}, `Question ${n}: `, el("b", {}, `${r1(byQ[n].got)} of ${r1(byQ[n].pts)}`)))),
           el("h2", {}, "Study these next"),

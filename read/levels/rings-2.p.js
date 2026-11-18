@@ -13,7 +13,7 @@
     2: { title: "Put the rings in order by how stable one {{CH2}} is in each ring.", how: "Most stable first.", items: ["[[mol:C1CCCCC1]]", "[[mol:C1CCCCCC1]]", "[[mol:C1CCCC1]]", "[[mol:C1CCC1]]", "[[mol:C1CC1]]"] },
     3: { title: "Rank these rings by stability per {{CH2}} group (heat of formation per {{CH2}}).", how: "Most stable first.", items: ["[[mol:C1CCCCC1]]", "[[mol:C1CCCCCC1]]", "[[mol:C1CCCC1]]", "[[mol:C1CCC1]]", "[[mol:C1CC1]]"] },
     4: { title: "Rank these rings by stability per {{CH2}} group (heat of formation per {{CH2}}).", how: "Most stable first.", items: ["[[mol:C1CCCCC1]]", "[[mol:C1CCCCCC1]]", "[[mol:C1CCCC1]]", "[[mol:C1CCC1]]", "[[mol:C1CC1]]"] },
-    6: { title: "Order these rings by ΔH°<sub>f</sub> per {{CH2}}, from the lowest value to the highest.", how: "Lowest first.", items: ["[[mol:C1CCCCC1]]", "[[mol:C1CCCCCC1]]", "[[mol:C1CCCC1]]", "[[mol:C1CCC1]]", "[[mol:C1CC1]]"] },
+    6: { title: "Order these rings by heat of formation per {{CH2}}, from the lowest value to the highest.", how: "Lowest first.", items: ["[[mol:C1CCCCC1]]", "[[mol:C1CCCCCC1]]", "[[mol:C1CCCC1]]", "[[mol:C1CCC1]]", "[[mol:C1CC1]]"] },
   },
   "1-0": {
     1: { title: "Before you move on", cards: [["On one carbon, the straight-up place points up. Why does the place to the side lean down?", "Each carbon in the ring is joined to four things. Two are ring carbons. The other two stick out and point away from each other. So one goes to the top side and the other goes to the bottom side."]] },

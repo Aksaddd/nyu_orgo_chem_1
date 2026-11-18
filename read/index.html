@@ -282,7 +282,7 @@ figure.pl-fig figcaption{grid-column:1/-1;font:400 14px/1.45 var(--body);color:v
         const p = chProgress(c), S = chState(c), mins = Math.max(2, Math.round(words(c) / 200));
         const go = S.finished ? "Read again" : p.answered || S.at ? "Continue" : c === next ? "Start" : "Read";
         return `<a class="rd-ch${S.finished ? " done" : ""}" href="#${c.id}"><span class="rd-emo" aria-hidden="true">${earned(c) && badgeOf(c) ? badgeSVG(c) : EMO[c.id] || "📖"}</span>
-          <span><h3>${esc(c.title)}${doneCount(S) ? ` <small class="rd-times">${doneCount(S) > 1 ? "Finished " + doneCount(S) + "×" : "Finished"} · ${tierOf(c).name}${gemName(c) ? " · " + gemName(c) : ""}</small>` : ""}</h3><p>${c.ch} · ${c.sections.length} passages · ${acts(c)} activities · ${totalQs(c)} questions · ~${mins} min${p.answered ? ` · ${p.right} of ${p.answered} right` : ""}</p><span class="rd-bar"><i style="width:${p.pct}%"></i></span></span>
+          <span><h3>${esc(c.title)}${doneCount(S) ? ` <small class="rd-times">${doneCount(S) > 1 ? "Finished " + doneCount(S) + "×" : "Finished"} · ${tierOf(c).name}${gemName(c) ? " · " + gemName(c) : ""}</small>` : ""}</h3><p>${c.ch} · ${c.sections.length} passages · ${acts(c)} ${acts(c) === 1 ? "activity" : "activities"} · ${totalQs(c)} question${totalQs(c) === 1 ? "" : "s"} · ~${mins} min${p.answered ? ` · ${p.right} of ${p.answered} right` : ""}</p><span class="rd-bar"><i style="width:${p.pct}%"></i></span></span>
           <span class="rd-go">${go} ›</span></a>`;
       }).join("")}</div>`;
     const ob = $("openBadges"); if (ob) ob.onclick = () => window.BioBuddy && window.BioBuddy.openBadges();

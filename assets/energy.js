@@ -58,7 +58,11 @@
     const F = facts(pts), s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     s.setAttribute("class", "energy-svg"); s.setAttribute("viewBox", `0 0 ${W} ${H}`); s.setAttribute("width", W); s.setAttribute("height", H); s.setAttribute("role", "img");
     s.setAttribute("data-nolookup", "");      // Eureka's dictionary leaves the drawing alone: its labels are not words
-    s.setAttribute("aria-label", "Energy diagram: " + pts.map(p => `${labels[p.name] || p.name} at ${minus(p.e)}`).join(", ") + ` kcal/mol. ${F.steps === 1 ? "One step" : F.steps + " steps"}, ${F.dh < 0 ? "downhill overall (exothermic)" : F.dh > 0 ? "uphill overall (endothermic)" : "level overall"}.`);
+    // the point's name in words, and what its label adds (a label that only repeats the value, or says reactants or products, adds nothing)
+    const spoken = (name, label) => { const base = name.replace(/[‡']+$/, ""), core = base.replace(/\d+$/, ""), n = base.slice(core.length), word = ({ R: "reactants", P: "products", TS: "transition state", I: "intermediate" })[core];
+      const extra = label ? String(label).replace(/[−-]?\d+(\.\d+)?/g, "").replace(/\b(reactants|products)\b/gi, "").replace(/\s+/g, " ").trim() : "";
+      return (word ? word + (n ? " " + n : "") : name) + (extra ? " (" + extra + ")" : "") };
+    s.setAttribute("aria-label", "Energy diagram: " + pts.map(p => `${spoken(p.name, labels[p.name])} at ${minus(p.e)}`).join(", ") + ` kcal/mol. ${F.steps === 1 ? "One step" : F.steps + " steps"}, ${F.dh < 0 ? "downhill overall (exothermic)" : F.dh > 0 ? "uphill overall (endothermic)" : "level overall"}.`);
     s.innerHTML = h; return s;
   };
   ORGO.tokens = ORGO.tokens || {};

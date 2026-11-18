@@ -13,6 +13,7 @@
 .q-body:empty, .q-after:empty, .q-msg:empty, .rank-say:empty { display: none; }
 .q-msg { color: var(--warn); margin: 0; }
 .q-keys { margin: 0; }
+@media (hover: none) and (pointer: coarse) { .q-keys { display: none; } }      /* a phone or tablet without a mouse: no keys to speak of */
 .q-verdict { margin: 0; font-size: 1.05rem; font-weight: 600; }
 .q-verdict:focus { outline: none; }
 .q-answer { margin: 0; }

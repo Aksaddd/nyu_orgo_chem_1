@@ -24,6 +24,11 @@
 /* ---------- the stage: one step of a mechanism */
 .stage { margin: 0 }
 .stage-scroll { overflow-x: auto; padding: 2px 0 }
+/* a stage wider than its box: the side where the drawing goes on fades out (mol.js sets more-l and more-r as it scrolls) */
+.stage-scroll.more-r { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent) }
+.stage-scroll.more-l { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 32px), transparent) }
+.stage-scroll.more-l.more-r { -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent) }
+.stage-wide { margin: 4px 0 0; text-align: center }
 .stage-svg { display: block; margin: 0 auto; color: var(--ink) }
 /* a stage that takes presses keeps its drawn size and scrolls sideways: shrunk to a phone's width its 28 px targets fall to 14 */
 .stage-input .stage-svg { max-width: none }

@@ -350,7 +350,12 @@
     const arrowG = el("g", { class: "mol-arrows" }), pickG = el("g", { class: "mol-picks" });
     const svgEl = el("svg", { class: "stage-svg", "font-family": FONT, role: input ? "group" : "img", "data-nolookup": "" }, ink(d), arrowG, pickG);
     const status = input ? el("p", { class: "stage-status small", role: "status", "aria-live": "polite" }, START) : null;
-    host.appendChild(el("div", { class: "stage stage-" + mode }, el("div", { class: "stage-scroll" }, svgEl), status));
+    const scroller = el("div", { class: "stage-scroll" }, svgEl), wide = el("p", { class: "stage-wide small muted", hidden: "" }, "The drawing goes on to the side: swipe or scroll it.");
+    host.appendChild(el("div", { class: "stage stage-" + mode }, scroller, wide, status));
+    // a stage wider than its box fades where the drawing goes on, and says so until it has been scrolled
+    const edges = () => { const w = scroller.scrollWidth - scroller.clientWidth, x = scroller.scrollLeft; scroller.classList.toggle("more-r", w > 2 && x < w - 2); scroller.classList.toggle("more-l", w > 2 && x > 2); if (x > 2 || w <= 2) wide.hidden = true; else if (!wide.dataset.seen) wide.hidden = false };
+    scroller.addEventListener("scroll", () => { if (scroller.scrollLeft > 2) wide.dataset.seen = "1"; edges() }, { passive: true });
+    if (window.ResizeObserver) new ResizeObserver(edges).observe(scroller); else requestAnimationFrame(edges);
     const say = text => { if (status) status.textContent = text };
     const changed = () => { if (o.onChange) o.onChange(api.arrows()) };
     const frame = (x0, y0, x1, y1) => { svgEl.setAttribute("viewBox", `${r1(x0)} ${r1(y0)} ${r1(x1 - x0)} ${r1(y1 - y0)}`); svgEl.setAttribute("width", Math.round((x1 - x0) * S)); svgEl.setAttribute("height", Math.round((y1 - y0) * S)) };
