@@ -299,7 +299,8 @@ ORGO.on(name, fn) / ORGO.emit(name, detail)     page-level events ("answer", "pr
 ORGO.ui.toast(text)
 ORGO.ui.sheet({title, body, actions})           a modal sheet; returns {close}. Tab and Shift+Tab stay inside it, Escape
                                                 closes it (the top one, when sheets lie over each other) and gives the focus back
-ORGO.ui.covered()                               true while a sheet covers the page: ours (.veil) or one of Eureka's (…-veil)
+ORGO.ui.covered()                               true while a sheet covers the page: ours (.veil), one of Eureka's (…-veil),
+                                                or any other open dialog with aria-modal="true" (the companion's evolution)
 ORGO.ui.tabs(el, [{id, label, render}])         accessible tabs
 ORGO.ui.ring(fraction, label)                   a progress ring Element
 ORGO.ui.bar()                                   builds the top bar when not in Eureka
