@@ -1,14 +1,17 @@
 #!/usr/bin/env node
-// Builds data/ from content/. See docs/dev/CONTENT-SPEC.md.
+// Builds data/ from content/, and the readings as Eureka's reader shows them (read/chapters.js, read/bank.js,
+// read/figures.js). See docs/dev/CONTENT-SPEC.md.
 //
-//   node tools/build.js                    check everything, draw the structures, prove the mechanisms, write data/
+//   node tools/build.js                    check everything, draw the structures, prove the mechanisms, write data/ and read/
 //   node tools/build.js --check            the same checks, nothing written
 //   node tools/build.js --check FILE...    report only the problems in these content files
+//   node tools/build.js --accept-moves     write even though a passage, question or activity of a reading changes position
+//                                          (students lose their place in that reading: see "the readings for Eureka's reader" below)
 //
 // The chemistry (drawing, formulas, moving electrons) is done by tools/chem.py, which needs RDKit: pip install rdkit
-const fs = require("fs"), path = require("path"), cp = require("child_process");
+const fs = require("fs"), path = require("path"), cp = require("child_process"), vm = require("vm");
 const ROOT = path.join(__dirname, ".."), C = path.join(ROOT, "content"), D = path.join(ROOT, "data");
-const argv = process.argv.slice(2), checkOnly = argv.includes("--check"), quiet = argv.includes("--quiet");
+const argv = process.argv.slice(2), checkOnly = argv.includes("--check"), quiet = argv.includes("--quiet"), acceptMoves = argv.includes("--accept-moves");
 const only = argv.filter(a => !a.startsWith("--")).map(f => path.resolve(f));
 const problems = [], warnings = [];
 const rel = f => path.relative(ROOT, f);
@@ -195,6 +198,166 @@ let chem = { mols: {}, mech: {}, conf: {}, errors: [] };
   for (const id in chem.mech) for (const p of chem.mech[id]) bad(mechSrc.get(id), id, p);
 }
 
+// ------------------------------------------------------------------ the readings for Eureka's reader
+// Inside Eureka the readings are shown by the platform's reader (read/index.html, a copy of ECON 101's page). It reads
+//   read/chapters.js   window.READ: every reading as passages, with the questions and the activities under each passage
+//   read/bank.js       window.BANK: the circle-one questions those passages name
+//   read/figures.js    the drawings' data (structures, the mechanisms shown in a reading): nothing is fetched while reading
+// All three are made here from content/read and content/items, never by hand. {{formulas}} and [[figures]] stay as they
+// are in the strings: read/chem.js draws them in the page.
+// The reader files a student's place, the notes and the reading-level texts by position (passage 3, its activity 2), so
+// read/positions.json remembers where everything sits, and the build stops when a position would move. New passages,
+// questions and activities may only be added after the ones that are there. docs/dev/ARCHITECTURE.md has the whole map.
+const READER = path.join(ROOT, "read"), POSITIONS = path.join(READER, "positions.json");
+const KEPT = "The reader keeps a student's place, the notes and the reading-level texts by position. Add after what is there, or run the build with --accept-moves if the move is meant";
+// the structures and mechanisms a string of content needs for its [[figures]] (the same reading of tokens as scan(), without the checks)
+function figRefs(str, refs) {
+  for (const m of String(str).matchAll(TOKEN)) { const kind = m[1], arg = m[2];
+    if (kind === "mol") refs.mols.add(molKey(arg));
+    else if (["rxn", "eq", "eqr", "eql", "nr"].includes(kind)) { const p = arg.split(">"); if (p.length === 3) for (const side of [p[0], p[2]]) for (const s of species(side)) if (!/^".*"$/.test(s)) refs.mols.add(molKey(s)) }
+    else if (kind === "mech") refs.mechs.add(arg.split("|")[0].trim()) }
+}
+const reader = (() => {
+  const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const br = s => String(s == null ? "" : s).replace(/\n\s*\n/g, "<br>");      // a blank line is a line break, as ORGO.html reads it
+  const stop = s => /[.!?:]["”’)]*\s*$/.test(String(s).replace(/<[^>]+>/g, "")) ? s : s + ".";
+  const num = x => String(Math.round(x * 100) / 100).replace("-", "−"), unit = u => !u ? "" : /^[%°]/.test(u) ? u : " " + u;
+  // the choices carry numbers, not letters, when the question's own words number them: the rule of tagsOf in assets/quiz.js
+  const numbered = it => /\b(diagram|choice|option|structure|product|compound|reaction|statement|chair|alkene)s? [1-6]\b/i.test(JSON.stringify([it.stem, it.solution, (it.choices || []).map(c => c.why)]));
+  // a question's stem as the title of an activity. The reader prints a title as plain text, so the tags go (formulas stay)
+  const title = (it, drop) => {
+    if (/\[\[|<(table|ul|ol|p|br)\b/i.test(it.stem)) bad(itemSrc.get(it.id), it.id, "is used under a reading as an activity, and its stem has a figure, a list or a table. The title of an activity can only show words: use another question there");
+    const t = String(it.stem).replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim(); return drop ? t.replace(drop, "").trim() : t;
+  };
+  // a circle-all-that-apply question becomes two boxes to sort its statements into, named for what its stem asks:
+  // [the wording, the box for the statements to circle, the box for the others]
+  const BOXES = [
+    [/\bis <b>NOT<\/b> a characteristic of (.+?) reactions\?/, m => ["Not a characteristic of " + m[1], "A characteristic of " + m[1]]],
+    [/<b>is<\/b> a characteristic of (.+?) reactions\?/, m => ["A characteristic of " + m[1], "Not a characteristic of " + m[1]]],
+    [/\bfit\?/, () => ["Fits", "Does not fit"]],
+    [/\bare correct\?/, () => ["Correct", "Not correct"]],
+    [/\b(is|are) true\?/, () => ["True", "Not true"]],
+  ];
+  // the pictures of the professor's pages that a passage was written from: opened in the reader's own viewer (read/chem.js)
+  const page = (spec, file, where) => {
+    const m = /^([A-Za-z0-9]+):(\d+)$/.exec(spec || ""); if (!m) return "";
+    const png = `archive/pages/${m[1]}-${m[1] === "EX" ? m[2].padStart(2, "0") : m[2]}.png`, d = /^L(\d\d)(\d\d)$/.exec(m[1]);
+    if (!fs.existsSync(path.join(ROOT, png))) { warn(file, where, `the picture of the original page "${spec}" is not in archive/pages/`); return "" }
+    return `<a class="rc-page" href="../${png}">${d ? d[1] + "/" + d[2] + " " : ""}page ${m[2]}</a>`;
+  };
+  const source = (pages, file, where) => { const a = [...new Set(pages || [])].map(p => page(p, file, where)).filter(Boolean); return a.length ? `\n<p class="rc-src">Original notes: ${a.join(", ")}.</p>` : "" };
+  const more = (cls, label, m) => `\n<details class="rc-more ${cls}"><summary>${label}${m.t ? ": " + esc(m.t) : ""}</summary><div class="rc-body">${br(m.h)}</div></details>`;
+  const lecture = c => { const d = String(c.lecture || "").split(",").map(s => /\d{4}-(\d{2})-(\d{2})/.exec(s)).filter(Boolean).map(m => m[1] + "/" + m[2]); return d.length > 1 ? "Lectures " + d.slice(0, -1).join(", ") + " and " + d[d.length - 1] : d.length ? "Lecture " + d[0] : "Review" };
+  const intro = c => (c.from ? "Source: " + stop(esc(c.from)) : "") + ((c.goals || []).length ? (c.from ? "<br>" : "") + "After this reading you can:" + c.goals.map(g => "<br>• " + br(g)).join("") : "");
+
+  const READ = [], Q = {}, pos = {}, went = { mcq: 0, numeric: 0, rank: 0, classify: 0, multi: 0, mech: 0, chair: 0, why: 0 };
+  for (const c of Object.values(chapters).sort((a, b) => a.n - b.n)) {
+    const file = path.join(C, "read", c.id + ".json"), sections = [], P = pos[c.id] = [];
+    if (/[<>&{}\[\]]/.test(c.title)) bad(file, c.id, "the title of a reading must be plain words: the reader also shows it in the browser tab and in dialogs");
+    (c.sections || []).forEach(s => {
+      const where = `${c.id} section ${s.id}`, qs = [], play = [], keys = [], links = [], checks = (s.check || []).map(id => items[id]).filter(Boolean);
+      if (/[<>&{}\[\]]/.test(s.title)) bad(file, where, "the title of a section must be plain words");
+      // activities, in this order: the why question, then rankings, sortings, circle-all-that-apply, numbers
+      if (s.why && s.why.q) { play.push({ t: "flip", title: "Before you move on", cards: [[br(s.why.q), br(s.why.a)]] }); keys.push("why"); went.why++ }
+      for (const it of checks) if (it.kind === "rank") { play.push({ t: "order", title: title(it), how: stop(it.order.charAt(0).toUpperCase() + it.order.slice(1)), items: it.items.map(x => br(x.h)) }); keys.push("rank:" + it.id); went.rank++ }
+      for (const it of checks) if (it.kind === "classify") { play.push({ t: "sort", title: title(it), bins: it.bins.map(br), items: it.items.map(x => [br(x.h), it.bins.indexOf(x.bin)]) }); keys.push("classify:" + it.id); went.classify++ }
+      for (const it of checks) if (it.kind === "multi") {
+        const rule = BOXES.find(r => r[0].test(it.stem));
+        if (!rule) { bad(itemSrc.get(it.id), it.id, `is used under a reading, where a circle-all-that-apply question is shown as two boxes, and tools/build.js (BOXES) has no names for the boxes of a stem worded like this one`); continue }
+        play.push({ t: "sort", title: title(it, /\s*Circle all that apply\.?$/i), bins: rule[1](rule[0].exec(it.stem)), items: it.choices.map(ch => [br(ch.h), ch.ok ? 0 : 1]) }); keys.push("multi:" + it.id); went.multi++;
+      }
+      for (const it of checks) if (it.kind === "numeric") {
+        const back = `<b>${it.lo === it.hi ? "" : "About "}${num(it.answer)}${unit(it.unit)}</b>. ` + [it.solution && it.solution.rule, it.note].filter(Boolean).map(x => stop(br(x))).join(" ");
+        play.push({ t: "flip", title: "Work it out, then flip the card", cards: [[br(it.stem), back.trim()]] }); keys.push("numeric:" + it.id); went.numeric++;
+      }
+      // circle-one questions: asked under the passage, from read/bank.js
+      for (const it of checks) if (it.kind === "mcq") {
+        const ok = it.choices.find(ch => ch.ok), wrong = it.choices.filter(ch => !ch.ok);
+        if (it.choices.length > 5) bad(itemSrc.get(it.id), it.id, "is used under a reading, where a question can show at most 5 choices");
+        const e = Q[it.id] = { d: it.type, tag: it.type, q: br(it.stem), ok: br(ok.h), wrong: wrong.map(ch => br(ch.h)),
+          ex: [ok.why, it.solution && it.solution.answer ? "<b>Answer:</b> " + it.solution.answer : "", it.note].filter(Boolean).map(x => stop(br(x))).join(" "),
+          why: Object.fromEntries(wrong.map(ch => [br(ch.h), br(ch.why)])) };
+        if (it.fixed) e.keep = it.choices.indexOf(ok);      // the written order is kept: the explanation names the choices by their place
+        if (numbered(it)) e.tags = "12345";
+        qs.push(it.id); went.mcq++;
+      }
+      // a mechanism to draw and a chair to draw cannot be shown by the reader: the passage ends with the way to the class's own tool
+      for (const it of checks) {
+        if (it.kind === "mech") { const m = mechs[it.mech]; links.push(`\n<p class="rc-go">This part has a mechanism to draw: <a href="../mechanisms/index.html#${it.mech}/solo">open “${esc(m ? m.title : it.mech).replace(/\b(SN1|SN2)\b/g, "{{$1}}")}” in the Mechanism Studio</a>.</p>`); went.mech++ }
+        else if (it.kind === "chair") { const t = blueprint.find(x => x.id === it.type) || {}; links.push(`\n<p class="rc-go">This part has a chair question to draw: <a href="../drill/index.html?type=${it.type}">open “${esc(t.short || t.title || it.type)}” in Practice</a>.</p>`); went.chair++ }
+        else if (!["mcq", "rank", "classify", "multi", "numeric"].includes(it.kind)) bad(file, where, `check item "${it.id}" is a ${it.kind} question, which cannot be shown under a reading`);
+      }
+      const html = br(s.html) + (s.micro || []).map(m => more("rc-micro", "Closer look", m)).join("") + (s.macro || []).map(m => more("rc-macro", "Bigger picture", m)).join("") + source(s.pages, file, where) + links.join("");
+      sections.push(play.length ? { h: esc(s.title), html, qs, play } : { h: esc(s.title), html, qs }); P.push([s.id, qs, keys]);
+    });
+    // after the lecture's own sections: its homework with the worked steps, and the summary. Neither has questions.
+    if ((c.homework || []).length) {
+      const many = c.homework.length > 1;
+      sections.push({ h: "Homework from the lecture", qs: [], html: c.homework.map((h, k) => `<div class="rc-hw"><b>The professor's prompt${many ? " " + (k + 1) : ""}.</b> ${br(h.q)}</div>` + source(h.from ? [h.from] : [], file, c.id + " homework")
+        + `\n<details class="rc-more rc-steps"><summary>Try it on paper first. Then open the worked steps</summary><div class="rc-body">`
+        + ((h.steps || []).length ? `<ol>${h.steps.map(st => `<li>${st.t ? `<b>${stop(esc(st.t))}</b> ` : ""}${br(st.h)}</li>`).join("")}</ol>` : "") + (h.answer ? `<p><b>Answer.</b> ${br(h.answer)}</p>` : "") + `</div></details>`).join("\n") });
+      P.push(["@homework", [], []]);
+    }
+    if ((c.summary || []).length) { sections.push({ h: "In short", qs: [], html: `<ul>${c.summary.map(x => `<li>${br(x)}</li>`).join("")}</ul>` }); P.push(["@summary", [], []]) }
+    READ.push({ id: c.id, topic: c.title, title: c.title, ch: lecture(c), intro: intro(c), sections });
+  }
+  // every drawing those strings ask for, and what the mechanisms among them need
+  const refs = { mols: new Set(), mechs: new Set() }, figures = { mols: {}, mechs: {} };
+  deep([READ, Q], s => figRefs(s, refs));
+  for (const id of refs.mechs) { const m = mechs[id]; if (!m) continue; figures.mechs[id] = m; (m.steps || []).forEach(s => s.species && refs.mols.add(s.species)); if (m.product) refs.mols.add(m.product); deep({ ...m, steps: (m.steps || []).map(s => ({ ...s, species: "" })), product: "" }, s => figRefs(s, refs)) }
+  for (const k of [...refs.mols].sort()) { if (chem.mols[k]) figures.mols[k] = chem.mols[k]; else problems.push({ file: "", text: `read/figures.js: the structure "${k}" has no drawing` }) }
+  // nothing that is there may move
+  let old = null; try { old = JSON.parse(fs.readFileSync(POSITIONS, "utf8")).chapters } catch (e) { }
+  const moves = [], prefix = (a, b) => a.every((x, i) => b[i] === x);
+  for (const id in old || {}) {
+    if (!pos[id]) { moves.push(`the reading "${id}" is gone`); continue }
+    old[id].forEach(([sid, qs, keys], i) => {
+      const now = pos[id][i], at = `${id}, passage ${i + 1} (${sid})`;
+      if (!now || now[0] !== sid) return moves.push(`${at}: ${now ? `"${now[0]}" is in its place` : "it is gone"}`);
+      if (!prefix(qs, now[1])) moves.push(`${at}: its questions were ${qs.join(", ") || "none"} and are now ${now[1].join(", ") || "none"}`);
+      if (!prefix(keys, now[2])) moves.push(`${at}: its activities were ${keys.join(", ") || "none"} and are now ${now[2].join(", ") || "none"}`);
+    });
+  }
+  if (moves.length && !acceptMoves) problems.push({ file: "", text: `read/chapters.js: ${moves.length} position${moves.length > 1 ? "s" : ""} would move.\n      ${moves.join("\n      ")}\n    ${KEPT}.` });
+  const head = what => `// Generated by tools/build.js from content/read and content/items. Do not edit by hand.\n// CHEM 225 · ${what}\n`;
+  return { READ, Q, figures, pos, went, moves, files: {
+    "chapters.js": head("the readings as Eureka's reader shows them: passages, the questions under them (ids of read/bank.js) and the activities.") + "window.READ = " + JSON.stringify(READ, null, 1) + ";\n",
+    "bank.js": head("the circle-one questions under the readings. ok is the right choice, wrong the others, why says why each wrong one is wrong;\n// keep (when present) is the place of the right choice in the written order, which is then kept; tags numbers the choices.") + "window.BANK = " + JSON.stringify({ title: "CHEM 225 Read & Learn", storageKey: "orgo-drill-v1", q: Q }, null, 1) + ";\n",
+    "figures.js": head("the data of every drawing in read/chapters.js and read/bank.js (structures, and the mechanisms shown inside a reading).") + "ORGO.reg({\"mols\":{\n" + Object.keys(figures.mols).map(k => JSON.stringify(k) + ":" + JSON.stringify(figures.mols[k])).join(",\n") + "\n},\"mechs\":{\n" + Object.keys(figures.mechs).map(k => JSON.stringify(k) + ":" + JSON.stringify(figures.mechs[k])).join(",\n") + "\n}});\n",
+    "positions.json": "{\n \"note\": \"Written by tools/build.js. Where each passage, question and activity of a reading sits in read/chapters.js: [section, [questions], [activities]]. " + KEPT.replace(/"/g, "'") + ".\",\n \"chapters\": {\n" + Object.keys(pos).map(id => "  " + JSON.stringify(id) + ": [\n" + pos[id].map(p => "   " + JSON.stringify(p)).join(",\n") + "\n  ]").join(",\n") + "\n }\n}\n",
+  } };
+})();
+// The three files as they are on disk, read the way the page reads them: every question a passage names is in the bank,
+// every drawing has its data, no question has more choices than the reader can letter, and positions.json agrees.
+function readerFiles() {
+  const out = [], src = n => fs.readFileSync(path.join(READER, n), "utf8"), say = t => out.push(t);
+  let R, B, F, P;
+  try { const w = {}; vm.runInNewContext(src("chapters.js") + src("bank.js"), { window: w }); R = w.READ; B = w.BANK; vm.runInNewContext(src("figures.js"), { ORGO: { reg: x => { F = x } } }); P = JSON.parse(src("positions.json")).chapters } catch (e) { return ["read/: the reader's files cannot be read: " + e.message] }
+  if (!Array.isArray(R) || !B || !B.q || !F || !F.mols || !P) return ["read/: chapters.js, bank.js, figures.js or positions.json does not hold what the reader expects"];
+  const need = { mols: new Set(), mechs: new Set() }; deep([R, B.q], s => figRefs(s, need));
+  for (const id of need.mechs) { const m = (F.mechs || {})[id]; if (!m) { say(`read/figures.js: the mechanism "${id}" is missing`); continue } (m.steps || []).forEach(s => s.species && need.mols.add(s.species)); if (m.product) need.mols.add(m.product); deep({ ...m, steps: (m.steps || []).map(s => ({ ...s, species: "" })), product: "" }, s => figRefs(s, need)) }
+  for (const k of need.mols) if (!F.mols[k]) say(`read/figures.js: the structure "${k}" is missing`);
+  const ids = new Set();
+  R.forEach(c => { if (ids.has(c.id)) say(`read/chapters.js: two chapters share the id "${c.id}"`); ids.add(c.id);
+    if (JSON.stringify((c.sections || []).map(s => [s.qs || [], (s.play || []).length])) !== JSON.stringify((P[c.id] || []).map(p => [p[1], p[2].length]))) say(`read/positions.json does not describe "${c.id}" as read/chapters.js has it`);
+    (c.sections || []).forEach((s, i) => { if (typeof s.h !== "string" || typeof s.html !== "string" || !Array.isArray(s.qs)) say(`read/chapters.js: ${c.id}, passage ${i + 1} needs h, html and qs`);
+      (s.qs || []).forEach(id => { if (!B.q[id]) say(`read/chapters.js: ${c.id}, passage ${i + 1} asks question "${id}", which is not in read/bank.js`) });
+      (s.play || []).forEach((b, j) => { if (!["flip", "order", "sort", "match"].includes(b.t)) say(`read/chapters.js: ${c.id}, passage ${i + 1}, activity ${j + 1} is of a kind the reader cannot play ("${b.t}")`) }) }) });
+  for (const id in B.q) { const q = B.q[id], all = [q.ok].concat(q.wrong || []);
+    if (typeof q.q !== "string" || typeof q.ok !== "string" || !Array.isArray(q.wrong) || !q.wrong.length) { say(`read/bank.js: "${id}" needs q, ok and wrong`); continue }
+    if (all.length > 5) say(`read/bank.js: "${id}" has ${all.length} choices and the reader letters five`);
+    if (new Set(all).size !== all.length) say(`read/bank.js: two choices of "${id}" read the same`);
+    if (q.keep != null && !(q.keep >= 0 && q.keep <= q.wrong.length)) say(`read/bank.js: "${id}" keeps its written order, and the place of its right choice is not in it`) }
+  return out;
+}
+if (!only.length) {
+  if (checkOnly && fs.existsSync(path.join(READER, "chapters.js"))) {
+    for (const t of readerFiles()) problems.push({ file: "", text: t });
+    const stale = Object.keys(reader.files).filter(n => { try { return fs.readFileSync(path.join(READER, n), "utf8") !== reader.files[n] } catch (e) { return true } });
+    if (stale.length) warn(READER, "", `the content has changed since ${stale.map(n => "read/" + n).join(", ")} ${stale.length > 1 ? "were" : "was"} written: run node tools/build.js`);
+  }
+}
+
 // ------------------------------------------------------------------ report
 const mine = p => !only.length || only.includes(p.file) || (!p.file && !only.length);
 const shownP = problems.filter(mine), shownW = warnings.filter(mine);
@@ -247,3 +410,9 @@ if (arr(single.glossary).length) {
 write("conf", { conf: Object.fromEntries(arr(single.conf).filter(c => chem.conf[c.smiles]).map(c => [c.name, { ...chem.conf[c.smiles], title: c.title || c.name }])) });
 const size = dir => fs.readdirSync(dir, { withFileTypes: true }).reduce((a, e) => a + (e.isDirectory() ? size(path.join(dir, e.name)) : fs.statSync(path.join(dir, e.name)).size), 0);
 if (!quiet) console.log(`wrote data/ (${(size(D) / 1024).toFixed(0)} KB)`);
+// the readings for Eureka's reader, then the same files read back from disk and checked as the page will read them
+for (const n in reader.files) fs.writeFileSync(path.join(READER, n), reader.files[n]);
+{ const wrong = readerFiles(); if (wrong.length) { console.error(`\nThe reader's files were written, and ${wrong.length} thing${wrong.length > 1 ? "s are" : " is"} wrong in them:\n  ` + wrong.join("\n  ")); process.exit(1) } }
+if (reader.moves.length) console.log(`Note: ${reader.moves.length} position${reader.moves.length > 1 ? "s" : ""} in the readings moved, as --accept-moves allows:\n  ${reader.moves.join("\n  ")}`);
+if (!quiet) { const w = reader.went, n = reader.READ.reduce((a, c) => a + c.sections.length, 0), kb = Object.values(reader.files).reduce((a, t) => a + Buffer.byteLength(t), 0) / 1024;
+  console.log(`wrote read/chapters.js, bank.js, figures.js, positions.json (${kb.toFixed(0)} KB): ${reader.READ.length} readings, ${n} passages, ${Object.keys(reader.figures.mols).length} structures, ${Object.keys(reader.figures.mechs).length} mechanisms\n  the questions under the passages: ${w.mcq} circle-one asked in the reader; as activities: ${w.why} why cards and ${w.numeric} numbers (flip), ${w.rank} rankings (order), ${w.classify} sortings and ${w.multi} circle-all-that-apply (sort); as links to the class's own tools: ${w.mech} mechanisms, ${w.chair} chairs`) }

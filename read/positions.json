@@ -1,0 +1,122 @@
+{
+ "note": "Written by tools/build.js. Where each passage, question and activity of a reading sits in read/chapters.js: [section, [questions], [activities]]. The reader keeps a student's place, the notes and the reading-level texts by position. Add after what is there, or run the build with --accept-moves if the move is meant.",
+ "chapters": {
+  "rings-1": [
+   ["cyclopropane-angle",["ring-strain-007"],["why"]],
+   ["cyclopropane-torsional",[],["why","numeric:ring-strain-005"]],
+   ["cyclobutane",["ring-strain-008"],["why"]],
+   ["cyclopentane",["ring-strain-009"],["why"]],
+   ["cyclohexane-chair",["ring-strain-006"],["why"]],
+   ["reading-the-chair",[],["why"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "nmr": [
+   ["spectroscopy",[],["why"]],
+   ["nuclear-magnets",[],["why"]],
+   ["field-strength",[],["why"]],
+   ["shielding",["nmr-signals-009"],["why"]],
+   ["counting-signals",[],["why","numeric:nmr-signals-006","numeric:nmr-signals-005"]],
+   ["splitting",["nmr-signals-008","nmr-signals-013"],["why"]],
+   ["@summary",[],[]]
+  ],
+  "rings-2": [
+   ["heats-of-formation",["ring-strain-017"],["why","rank:ring-strain-011"]],
+   ["axial-equatorial",[],["why"]],
+   ["ring-flip",[],["why","numeric:nmr-signals-011"]],
+   ["methylcyclohexane",[],["why","numeric:ring-strain-012"]],
+   ["gauche-interactions",[],["why","numeric:ring-strain-015"]],
+   ["a-values",[],["why","rank:ring-strain-016"]],
+   ["three-steps",[],["why"]],
+   ["cis-12-dimethyl",[],["why"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "acids": [
+   ["functional-groups",[],["why"]],
+   ["base-trends",[],["why","rank:acid-rank-009"]],
+   ["pka-values",["pka-values-029"],["why","numeric:pka-values-007"]],
+   ["induction-and-factors",["acid-rank-015"],["why","rank:acid-rank-017"]],
+   ["hybridization",["pka-values-030"],["why","rank:acid-rank-008"]],
+   ["size",["acid-rank-016"],["why","rank:acid-rank-013"]],
+   ["solvent-effects",["acid-rank-011"],["why"]],
+   ["equilibria",[],["why","classify:acid-base-eq-008","numeric:acid-base-eq-009"]],
+   ["@summary",[],[]]
+  ],
+  "organometallics": [
+   ["polarity",["mech-organometallic-004"],["why"]],
+   ["making-organolithium",[],["why"]],
+   ["making-grignard",["mech-organometallic-005"],["why"]],
+   ["strong-bases",["mech-organometallic-010"],["why"]],
+   ["synthesis",["acid-base-eq-015","mech-organometallic-011"],["why"]],
+   ["grignard-co2",["mech-organometallic-007"],["why"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "sn2-1": [
+   ["warm-up",[],["why"]],
+   ["substitution",[],["why"]],
+   ["one-enantiomer",["sn2-stereo-005","sn2-stereo-014"],["why"]],
+   ["rate-law",["rate-pairs-027"],["why"]],
+   ["concerted",["energy-diagrams-005","energy-diagrams-011"],["why"]],
+   ["transition-state",["ts-drawing-004","sn2-stereo-011"],["why"]],
+   ["three-facts",["sn2-stereo-006"],["why","multi:traits-004"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "sn2-2": [
+   ["substrate",["rate-pairs-014","sn2-stereo-013"],["why"]],
+   ["leaving-group",["route-choice-005","rate-pairs-010"],["why"]],
+   ["nucleophile",["rate-pairs-006","nuc-pairs-015"],["why"]],
+   ["base-vs-nucleophile",["nuc-pairs-011","nuc-pairs-017"],["why"]],
+   ["solvent-charge-made",["ts-drawing-009","solvent-effects-010"],["why"]],
+   ["solvent-charge-lost",["solvent-effects-012","solvent-effects-008"],["why"]],
+   ["substrate-numbers",["fastest-substrate-007"],["why","rank:fastest-substrate-009"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "sn1-e1": [
+   ["first-order",["rate-pairs-028"],["why"]],
+   ["mechanism",["sn1-products-005","energy-diagrams-014"],["why"]],
+   ["which-substrates",["fastest-substrate-015"],["why","rank:fastest-substrate-005"]],
+   ["racemization",["mech-id-029","sn1-products-013"],["why"]],
+   ["solvent",["solvent-effects-005","rate-pairs-024"],["why"]],
+   ["e1",["sn1-products-009","energy-diagrams-009"],["why"]],
+   ["two-summaries",["mech-id-027"],["why","multi:traits-008"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "e2": [
+   ["experiment",["route-choice-008"],["why","multi:traits-009"]],
+   ["mechanism",["all-elim-products-013"],["why"]],
+   ["transition-state",["ts-drawing-005","sub-vs-elim-004"],["why"]],
+   ["example",["all-elim-products-004"],["why"]],
+   ["anti-periplanar",[],["why","multi:traits-015"]],
+   ["method",["all-elim-products-011"],["why"]],
+   ["saytzeff-hofmann",["zaitsev-hofmann-004","zaitsev-hofmann-012"],["why"]],
+   ["@homework",[],[]],
+   ["@summary",[],[]]
+  ],
+  "choose": [
+   ["four-profiles",[],["why","multi:traits-017"]],
+   ["reagent",["sub-vs-elim-011"],["why","classify:mech-id-010"]],
+   ["methyl",["mech-id-017"],["why"]],
+   ["primary",["mech-id-008","route-choice-010"],["why"]],
+   ["secondary-protic",["mech-id-012","mech-id-016"],["why"]],
+   ["secondary-aprotic",["route-choice-007"],["why"]],
+   ["tertiary",["mech-id-025"],["why"]],
+   ["other-issues",["sub-vs-elim-012","zaitsev-hofmann-015"],["why"]],
+   ["@summary",[],[]]
+  ],
+  "beyond": [
+   ["williamson",["williamson-why-005","route-choice-011"],["why"]],
+   ["intramolecular",[],["why"]],
+   ["double-sn2",["products-from-formula-006","products-from-formula-011"],["why"]],
+   ["e2-chair",["route-choice-012"],["why"]],
+   ["double-elimination",["all-elim-products-009"],["why"]],
+   ["ring-expansion",[],["why"]],
+   ["multiplet",["nmr-signals-017"],["why"]],
+   ["@summary",[],[]]
+  ]
+ }
+}
