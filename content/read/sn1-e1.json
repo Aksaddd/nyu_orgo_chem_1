@@ -1,0 +1,145 @@
+{
+  "id": "sn1-e1",
+  "n": 8,
+  "title": "SN1 and E1: reactions through a carbocation",
+  "lecture": "2026-11-10",
+  "from": "Lecture notes 11/10, pages 1 to 5",
+  "goals": [
+    "Read the rate data for tert-butyl bromide in water and write the first-order rate law",
+    "Draw the three steps of the {{SN1}} mechanism and its energy diagram, and mark the rate-determining step",
+    "Rank substrates for {{SN1}} by the stability of the carbocation they form",
+    "Explain why {{SN1}} gives a racemic mixture and why polar protic solvents speed it up",
+    "Show how {{E1}} branches from the same carbocation, and say what favors it"
+  ],
+  "sections": [
+    {
+      "id": "first-order",
+      "title": "A tertiary halide that cannot do SN2 reacts anyway: the first-order rate law",
+      "pages": ["L1110:1"],
+      "html": "<p>The lecture starts from Figure 7.3, the relative {{SN2}} rates: allyl 1.3, methyl 1, ethyl 0.033, isobutyl (3 × 10<sup>−3</sup>), isopropyl 8.3 × 10<sup>−4</sup>, tert-butyl 0, vinyl 0. (The table and its two homework questions are worked in the previous chapter.) The number to notice is the zero for tert-butyl.</p><p>Yet tert-butyl bromide, warmed in water, does give a substitution product:</p>\n[[rxn:CC(C)(C)Br + O>;heat>CC(C)(C)O + Br]]\n<p>If it is not {{SN2}}, what is it? The rate data answer the question:</p><table><tr><th>trial</th><th>[t-BuBr]</th><th>[{{H2O}}]</th><th>relative rate</th></tr><tr><td>A</td><td>1</td><td>1</td><td>1</td></tr><tr><td>B</td><td>2</td><td>1</td><td>2</td></tr><tr><td>C</td><td>1</td><td>2</td><td>1</td></tr><tr><td>D</td><td>2</td><td>2</td><td>2</td></tr></table><p>Doubling the alkyl halide doubles the rate (A to B). Doubling the nucleophile, water, does <b>nothing</b> (A to C). So:</p><p><b>rate = <i>k</i>[t-BuBr]: unimolecular.</b></p><p>Only one species is in the rate-determining step, and it is the alkyl halide alone. This is a substitution, nucleophilic, unimolecular: <b>{{SN1}}</b>. The nucleophile must come in after the slow step is already over.</p>",
+      "micro": [
+        {"t": "Set this table beside the SN2 table", "h": "<p>For {{HS-}} with {{CH3I}} the rates in trials A to D were 1, 2, 2, 4. Here they are 1, 2, 1, 2. The only difference is trial C, where the nucleophile alone is doubled: the {{SN2}} rate doubles and the {{SN1}} rate stays the same. On an exam, go straight to the pair of trials in which only the nucleophile changes. If the rate changes, the nucleophile is in the slow step ({{SN2}} or {{E2}}). If it does not, the slow step is ionization ({{SN1}} or {{E1}}).</p>"}
+      ],
+      "macro": [
+        {"t": "Question 3A, almost word for word", "h": "<p>Question 3A of the past exam asks which statements are <b>not</b> characteristics of {{SN1}}. 'Rate proportional to the concentration of substrate' is true of {{SN1}}, so it is not circled. 'Rate proportional to the concentration of nucleophile' is false, so it is circled, along with 'inversion' and 'rate independent of solvent'. Trial C of this table is the evidence for the first of those.</p>"}
+      ],
+      "why": {"q": "Why does doubling the concentration of water not change the rate?", "a": "Water is not involved in the slow step. The slow step is the C-Br bond breaking on its own to form a carbocation. Water reacts with the carbocation in a later, fast step, and a fast step after the bottleneck cannot change the overall rate."},
+      "check": []
+    },
+    {
+      "id": "mechanism",
+      "title": "The mechanism: ionize, attack, lose a proton",
+      "pages": ["L1110:2"],
+      "html": "<p>The mechanism has three steps.</p><ol><li><b>The C-Br bond breaks.</b> Both electrons go to bromine. The products are the tert-butyl cation, a <b>carbocation</b> and an electrophile ({{E+}}), and {{Br-}}.</li><li><b>Water, the nucleophile, attacks the cation.</b> A lone pair on oxygen makes the new C-O bond. The product is a protonated alcohol, with a positive charge on oxygen.</li><li><b>Another water removes {{H+}}.</b> The products are {{(CH3)3C-OH}} and {{H3O+}}.</li></ol>\n[[mech:sn1-tertbutyl-bromide-water]]\n<p>The energy diagram follows the steps. The first transition state, ts1, is the <b>highest point</b>: step 1 is the <b>rds</b>, the rate-determining step. After it comes a valley, where the carbocation sits with {{Br-}} and {{H2O}}. Then ts2, a smaller hump, then the protonated alcohol, then the alcohol. (Heights are schematic.)</p>\n[[energy:R=0,TS1=22,I1=14,TS2=17,I2=-2,TS3=1,P=-6|TS1=ts1: rds,I1=carbocation,I2=protonated alcohol]]\n<p>Because step 1 is the slow step and contains only the alkyl halide, the rate law contains only the alkyl halide. Everything about {{SN1}} comes back to the carbocation: how easily it forms, what shape it has, and what it does next.</p>",
+      "micro": [
+        {"t": "Why the third step is needed", "h": "<p>Water is a neutral nucleophile. When its oxygen bonds to the cation, oxygen has three bonds and a positive charge: {{(CH3)3C-OH2+}}. That is not yet the product. A second water molecule acts as a base and takes one of the two O-H hydrogens, leaving the neutral alcohol and {{H3O+}}. With a negatively charged nucleophile such as {{HO-}} in an {{SN2}} reaction there is no such step, because the product is neutral as soon as the bond forms. Forgetting the proton transfer is a common way to lose points on an {{SN1}} mechanism.</p>"},
+        {"t": "Hammond's postulate and ts1", "h": "<p>Step 1 is strongly uphill, so its transition state comes late and looks like its product, the carbocation. Anything that stabilizes the carbocation therefore also stabilizes ts1 and speeds up the reaction. This is the link between carbocation stability (a property of an intermediate) and rate (a property of a transition state), and it is why you can rank {{SN1}} rates by ranking carbocations.</p>"}
+      ],
+      "macro": [
+        {"t": "Pick the SN1 diagram", "h": "<p>Question 3B of the past exam: four diagrams, choose the exothermic {{SN1}}. It is the one with two humps and a valley between them (the carbocation), with the first hump the higher one because ionization is rate-determining, and with the products below the reactants. The simplified exam picture leaves out the small proton-transfer step at the end. A two-hump diagram that ends above where it starts is endothermic, and one-hump diagrams are concerted reactions.</p>"}
+      ],
+      "why": {"q": "Why is the first step the slowest of the three?", "a": "It breaks a covalent bond and creates two separated charges from a neutral molecule, with no new bond formed to pay for it. The second step is a nucleophile combining with a strongly electron-poor cation, and the third is a simple proton transfer between oxygens. Both of those have small barriers."},
+      "check": []
+    },
+    {
+      "id": "which-substrates",
+      "title": "Which substrates react by SN1: the stability of the carbocation",
+      "pages": ["L1110:2"],
+      "html": "<p>The order for {{SN1}} is the reverse of the order for {{SN2}}:</p><p><b>tertiary LG &gt; secondary LG &gt; (primary LG, methyl LG: no {{SN1}})</b></p>\n[[mol:C[C+](C)C|me]]\n[[mol:C[CH+]C|me]]\n<p>The slow step makes a carbocation, so the more stable the carbocation, the faster the reaction. A tertiary cation has three alkyl groups attached to the positive carbon, and each one pushes electron density toward it. A secondary cation has two. A primary cation has one and a methyl cation has none: these are so unstable that they do not form, and primary and methyl substrates do not react by {{SN1}}.</p><p>Two special cases from the notes:</p><ul><li><b>Allyl-LG: {{SN1}}, yes.</b> The allyl cation is stabilized by resonance. The positive charge is shared between the two end carbons.</li><li><b>Vinyl-LG: no {{SN1}}.</b> A positive charge on a double-bond carbon is very unstable.</li></ul>\n[[mol:C=C[CH2+]]]\n<p>So vinyl is the one kind of substrate that does neither reaction (rate 0 for {{SN2}} as well), while allyl does both. The benzylic position, a carbon attached to a benzene ring, behaves like allyl: the ring shares the charge by resonance.</p>",
+      "micro": [
+        {"t": "How an alkyl group stabilizes a cation", "h": "<p>The cationic carbon is {{sp2}}, flat, with an <b>empty p orbital</b>. A C-H or C-C σ bond on the neighbouring carbon can lean over and share a little of its electron density with that empty orbital. This is called <b>hyperconjugation</b>. The more alkyl groups on the cationic carbon, the more neighbouring σ bonds there are to do this: nine C-H bonds for tert-butyl, six for isopropyl, three for ethyl, none for methyl. Alkyl groups are also slightly electron-donating through the σ bonds (the inductive effect).</p>"},
+        {"t": "Resonance beats counting", "h": "<p>An allyl cation is formally primary, but it has two resonance structures, {{CH2=CH-CH2+}} and {{+CH2-CH=CH2}}, so each end carbon carries half the charge. That is why allyl-LG ionizes although an ordinary primary substrate does not. Before deciding that a substrate is 'only primary' or 'only secondary', look for a C=C or a benzene ring next to the carbon that carries the leaving group.</p>"}
+      ],
+      "macro": [
+        {"t": "A cation that is tertiary and benzylic", "h": "<p>Question 2B of the past exam uses 2-iodo-2-phenylpropane in water. Its carbocation is tertiary and also benzylic, stabilized by alkyl groups and by resonance with the ring, so ionization is easy and the reaction goes by {{E1}} (with {{SN1}} competing). In biology, stabilized allylic carbocations are real intermediates: the enzymes that build terpenes and the steroid skeleton, including cholesterol, generate allylic and tertiary cations and let them react step by step.</p>"}
+      ],
+      "why": {"q": "Why is the order of substrate reactivity for SN1 the opposite of the order for SN2?", "a": "The two reactions have different bottlenecks. In {{SN2}} the nucleophile must reach the carbon, so alkyl groups slow it down by crowding. In {{SN1}} the slow step is forming a carbocation, and alkyl groups speed that up by stabilizing the positive charge."},
+      "check": []
+    },
+    {
+      "id": "racemization",
+      "title": "Stereochemistry: a planar carbocation gives a racemic mixture",
+      "pages": ["L1110:3"],
+      "html": "<p>The notes take one enantiomer of 2-butyl tosylate and dissolve it in water. The product, 2-butanol, is a <b>racemic mixture</b>: both enantiomers are drawn, in equal amounts.</p>\n[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + O>>CC[C@H](C)O + CC[C@@H](C)O]]\n<p>An {{SN2}} reaction would give only the inverted alcohol. So this is <b>not {{SN2}}: it is {{SN1}}</b>.</p><p>The explanation is the shape of the intermediate. The <b>carbocation intermediate is planar</b>: the positive carbon is {{sp2}}, with its three groups in one plane and an empty p orbital sticking out above and below. The leaving group has gone, and the cation keeps no memory of which side it left from. The nucleophile <b>can approach from either face</b> with equal chance. Attack on one face gives the (<i>R</i>) alcohol, attack on the other gives the (<i>S</i>) alcohol.</p><p>The leaving group here is {{-OTs}}, <b>p-toluenesulfonate</b>, which the professor draws out in full. The tosylate group is a <b>good LG</b>.</p>\n[[mol:Cc1ccc(S(=O)(=O)[O-])cc1]]",
+      "micro": [
+        {"t": "Racemic means no optical rotation", "h": "<p>A racemic mixture is a 50:50 mixture of two enantiomers. Each rotates plane-polarized light by the same amount in opposite directions, so the mixture shows no rotation. If you start with an optically active tosylate and the product solution is optically inactive, the stereocentre passed through a flat, achiral intermediate. In careful experiments the product often has a slight excess of the inverted enantiomer, because the leaving group lingers near the face it left from. For this course and this exam, the answer for {{SN1}} is racemization.</p>"},
+        {"t": "Drawing the two products", "h": "<p>Draw the carbocation flat, with the three groups at 120°. Add the nucleophile once from the top face (a wedge) and once from the bottom face (a dash). You must draw both and say they form in equal amounts. If the molecule has a second stereocentre that is not touched, the two products are diastereomers, not enantiomers, and need not be 50:50.</p>"}
+      ],
+      "macro": [
+        {"t": "Inversion or racemization: the fastest way to tell the mechanisms apart", "h": "<p>The flowchart handout lists it under 'other issues': {{SN2}} inverts a chiral centre, {{SN1}} racemizes because the carbocation is planar. Question 3A of the past exam lists 'inversion' among the things that are not characteristic of {{SN1}}. And Question 2A draws the acetate product of (<i>S</i>)-2-chloropentane inverted, which tells you that reaction (a fair nucleophile in DMSO, a polar aprotic solvent) is {{SN2}}.</p>"}
+      ],
+      "why": {"q": "Why does one enantiomer of 2-butyl tosylate give both enantiomers of 2-butanol in water?", "a": "The tosylate leaves first, and the carbocation that remains is flat, with an empty p orbital on both faces. Water has an equal chance of bonding to either face. The two faces lead to the two mirror-image alcohols."},
+      "check": []
+    },
+    {
+      "id": "solvent",
+      "title": "Solvent: polar protic solvents favor SN1",
+      "pages": ["L1110:3"],
+      "html": "<p>The rule from the notes: <b>increase the polarity of the solvent, increase the rate of {{SN1}}</b>. Two reasons are given.</p><ol><li>A polar solvent <b>stabilizes the transition state of the rds more than the starting compounds</b>. The starting alkyl halide is neutral. In ts1 the C-LG bond is stretching, with δ<sup>+</sup> growing on carbon and δ<sup>−</sup> growing on the leaving group. This is the 'charge is created' case from the solvent discussion of {{SN2}}: a polar solvent lowers the transition state more than the start, so {{Ea}} drops.</li><li>A polar solvent <b>solvates the Nu:</b>. A nucleophile wrapped in solvent is less reactive, which holds back the competing {{SN2}} reaction. For {{SN1}} that costs nothing, because the nucleophile is not in the slow step.</li></ol><p>The notes then sort solvents into three types:</p><table><tr><th>type</th><th>what it means</th><th>examples</th></tr><tr><td><b>polar protic</b></td><td><b>H-bond donors</b> (they have O-H or N-H). These <b>favor {{SN1}}</b>.</td><td>{{H2O}}, ROH (methanol, ethanol)</td></tr><tr><td><b>polar aprotic</b></td><td>polar, but no O-H or N-H. These favor {{SN2}}.</td><td>DMSO, DMF, acetone</td></tr><tr><td><b>nonpolar</b></td><td>cannot stabilize ions</td><td>hexane, benzene</td></tr></table>",
+      "micro": [
+        {"t": "What a protic solvent does to each ion", "h": "<p>When the C-LG bond ionizes, two ions appear. A protic solvent handles both. Its O-H hydrogens (δ<sup>+</sup>) form hydrogen bonds to the departing anion and pull it away. Its oxygen lone pairs (δ<sup>−</sup>) crowd around the carbocation. Both ions are stabilized, and so is the transition state leading to them. In {{SN1}} reactions in water or alcohol, the solvent is usually the nucleophile as well. Such a reaction is called a <b>solvolysis</b>.</p>"},
+        {"t": "A mistake to avoid: 'polar' is not enough", "h": "<p>DMSO and DMF are very polar, yet they belong on the {{SN2}} list. What matters for the label is the hydrogen-bond donor. To classify a solvent, look for an H attached to O or N. Present: protic (water, alcohols, carboxylic acids). Absent but with a strongly polar bond such as S=O or C=O: polar aprotic. The exam gives the solvent in every condition, and it is often the deciding clue for a secondary substrate.</p>"}
+      ],
+      "macro": [
+        {"t": "Where solvent decides the answer", "h": "<p>The decision flowchart asks, for a secondary substrate, 'polar protic solvent?' before anything else. Question 3A of the past exam counts 'rate independent of solvent' as false for {{SN1}}. Question 1B has tert-butyl chloride in water, a polar protic solvent with no strong base, so the mechanisms are {{SN1}} and {{E1}}. And Question 6A puts an alkoxide with {{CH3Br}} in DMSO, a polar aprotic solvent, to get a clean {{SN2}}.</p>"}
+      ],
+      "why": {"q": "Why does a polar protic solvent help SN1 but hinder SN2 with an anionic nucleophile?", "a": "In {{SN1}} the slow step creates ions from a neutral molecule, and a protic solvent stabilizes those developing charges, lowering the barrier. In {{SN2}} the anionic nucleophile is in the slow step, and hydrogen bonds from the solvent hold it in a cage that it must partly escape before it can attack."},
+      "check": []
+    },
+    {
+      "id": "e1",
+      "title": "SN1 summarized, and E1: the same carbocation loses a proton",
+      "pages": ["L1110:4"],
+      "html": "<p>The notes collect {{SN1}} into four lines: <b>1. stable carbocation. 2. poor nucleophile. 3. favored by polar protic solvents. 4. racemization.</b></p><p>Then a complication. tert-Butyl bromide in water gives two products:</p>\n[[rxn:CC(C)(C)Br + O>>CC(C)(C)O + CC(C)=C]]\n<p>The alcohol is the {{SN1}} product, <b>favored at lower temperature</b>. The alkene, 2-methylpropene, is <b>favored at high temperature</b>. Both come from the <b>same intermediate</b>, the tert-butyl cation. The cation has two choices. Water can bond to the positive carbon (substitution). Or water can act as a base and take a hydrogen from the carbon <b>next to</b> the cationic carbon. The C-H electrons then form the C=C π bond, and the charge is gone.</p>\n[[mech:e1-tertbutyl-bromide-water]]\n<p>This second path is the <b>{{E1}} reaction: Elimination, unimolecular.</b> Its slow step is the same ionization as in {{SN1}}, so its rate law is the same: rate = <i>k</i>[t-BuBr].</p><p>The professor's running list of <b>reactions so far: 1. addition. 2. {{SN2}}. 3. {{SN1}}. 4. {{E1}}.</b></p>",
+      "micro": [
+        {"t": "Why heat favors elimination", "h": "<p>Count the particles. Substitution turns two species (alkyl halide and water) into two (alcohol and HBr). Elimination turns two into three (alkene, {{H3O+}} and {{Br-}}). More particles means more disorder, a more positive entropy change ΔS. In {{dG}} = {{dH}} − TΔS, the entropy term is multiplied by temperature, so as T rises the reaction with the larger ΔS gains more. The flowchart states it as a rule: high temperature favors elimination.</p>"},
+        {"t": "Why the hydrogen next door is acidic", "h": "<p>An ordinary alkane C-H has a {{pKa}} of 50 to 60, and water could never remove it. Next to a carbocation the situation is different. The C-H σ bond is already sharing electrons with the empty p orbital (hyperconjugation), and removing the proton lets that pair become a full π bond and wipe out the positive charge. So even a weak base such as water is enough. The arrow goes from a lone pair on water to the H, and from the C-H bond to the C-C bond.</p>"}
+      ],
+      "macro": [
+        {"t": "Question 1B is this page", "h": "<p>On the past exam, tert-butyl chloride in water gives tert-butyl alcohol (major) and 2-methylpropene (minor), and you are asked how the alkene forms. The answer is {{E1}} with water acting as the base. There is no hydroxide in the flask, so any choice that uses {{HO-}} is out, and {{E2}} needs a strong base, so that is out too. Question 2B asks for the full {{E1}} mechanism of 2-iodo-2-phenylpropane in water: ionization, then water removes a hydrogen from a {{CH3}}.</p>"}
+      ],
+      "why": {"q": "Why do SN1 and E1 always appear together?", "a": "They share the slow step and the intermediate. Once the carbocation exists, it can be attacked at carbon (substitution) or lose a neighbouring proton (elimination), and both are fast. Conditions such as temperature only shift the ratio between the two."},
+      "check": []
+    },
+    {
+      "id": "two-summaries",
+      "title": "Two lists to memorize, and a warning: carbocations rearrange",
+      "pages": ["L1110:5"],
+      "html": "<p>The lecture ends with two summary lists. Put them side by side:</p><table><tr><th></th><th>{{SN2}}</th><th>{{SN1}} / {{E1}}</th></tr><tr><td>1. substrate</td><td><b>low sterics</b></td><td><b>stable carbocation</b></td></tr><tr><td>2. nucleophile</td><td><b>good Nu:</b></td><td><b>poor Nu:</b></td></tr><tr><td>3. leaving group</td><td><b>good LG</b></td><td><b>good LG</b></td></tr><tr><td>4. solvent</td><td><b>polar aprotic solvent</b></td><td><b>polar protic solvent</b></td></tr></table><p>Line 3 is the same for both: nothing happens without a good leaving group. The other three lines are opposites, which is what lets you tell the mechanisms apart.</p><p>The homework introduces one more behaviour of carbocations: (1-bromoethyl)cyclobutane in ethanol.</p>\n[[rxn:CC(Br)C1CCC1 + CCO>>\"?\"]]\n<p>Ionization gives a secondary cation right next to a four-membered ring. Such a cation can also <b>rearrange</b>: a ring bond shifts to the positive carbon and the strained four-membered ring <b>expands</b> to a cyclopentyl cation.</p>\n[[rxn:C[CH+]C1CCC1>>CC1CCC[CH+]1]]\n<p>A carbocation is an intermediate with a lifetime, and it will rearrange whenever a neighbouring hydrogen or carbon group can shift to give a more stable cation. An {{SN2}} reaction has no intermediate and never rearranges. The full answer is worked in the homework below.</p>",
+      "micro": [
+        {"t": "What 'poor nucleophile' means on the SN1 list", "h": "<p>{{SN1}} does not need a poor nucleophile in order to work. A carbocation reacts with almost anything. The point is competition: a good, concentrated nucleophile would attack by {{SN2}} before the substrate has time to ionize, and if it is also a strong base it would cause {{E2}}. So the conditions in which you actually see {{SN1}} and {{E1}} are those with only weak, neutral nucleophiles around, such as water or an alcohol, usually as the solvent.</p>"},
+        {"t": "The arrow for a shift", "h": "<p>In a 1,2-shift, a group on the carbon next to the cation moves over with its bonding pair. The curved arrow starts on the σ bond that holds the migrating group and ends at the cationic carbon. The positive charge moves to the carbon the group left. In the ring expansion above, the migrating group is a ring carbon, so the ring gains one member: four becomes five, and about 26 kcal/mol of ring strain in cyclobutane falls to about 6 in cyclopentane.</p>"}
+      ],
+      "macro": [
+        {"t": "The homework is practice for Question 9", "h": "<p>Question 9 of the past exam is built on the same idea. An amine is converted into a leaving group ({{N2}}), it departs, and the cation that forms sits next to a four-membered ring. A ring bond shifts, the ring expands to five members, and the product is a cyclopentanone. Two different ring bonds can migrate, which gives the two products in the question. The chapter 'What the exam builds from these ideas' walks through it.</p>"}
+      ],
+      "why": {"q": "Why can an SN1 reaction give a product with a rearranged carbon skeleton when an SN2 reaction never does?", "a": "{{SN1}} passes through a carbocation that exists long enough for a neighbouring hydrogen or alkyl group to shift and make a more stable cation before the nucleophile arrives. {{SN2}} is concerted: the nucleophile bonds to the same carbon the leaving group departs from, in one step, with no intermediate that could rearrange."},
+      "check": []
+    }
+  ],
+  "homework": [
+    {
+      "q": "HW: (1-bromoethyl)cyclobutane + ethanol gives ? Predict the {{SN1}} product. Predict the {{E1}} product.",
+      "from": "L1110:5",
+      "steps": [
+        {"t": "Classify the conditions", "h": "The carbon bearing Br has two carbons attached (the {{CH3}} and a ring carbon): secondary. Ethanol is a polar protic solvent, a poor nucleophile and a weak base. There is no strong base or good nucleophile. That is the {{SN1}} / {{E1}} box. [[mol:CC(Br)C1CCC1]]"},
+        {"t": "Ionize", "h": "The C-Br bond breaks (rate-determining) to give a secondary carbocation next to the ring, and {{Br-}}. [[mol:C[CH+]C1CCC1]]"},
+        {"t": "SN1 without rearrangement", "h": "Ethanol attacks the cationic carbon with an oxygen lone pair. A second ethanol removes the O-H proton. The product is the ethyl ether, (1-ethoxyethyl)cyclobutane, formed as a racemic mixture because the cation is planar. [[mol:CCOC(C)C1CCC1]]"},
+        {"t": "E1 without rearrangement", "h": "Ethanol takes a hydrogen from a carbon next to the cation. Taking the ring C-H gives the more substituted alkene, ethylidenecyclobutane (three carbon groups on the double bond). Taking a {{CH3}} hydrogen gives vinylcyclobutane, the less substituted, minor alkene. [[mol:CC=C1CCC1]] [[mol:C=CC1CCC1]]"},
+        {"t": "The rearrangement", "h": "The cation is next to a strained four-membered ring. A ring C-C bond shifts to the cationic carbon (arrow from that ring bond to {{C+}}). The ring expands to five members, which relieves ring strain, and the product is the 2-methylcyclopentyl cation. [[rxn:C[CH+]C1CCC1>>CC1CCC[CH+]1]]"},
+        {"t": "Products after ring expansion", "h": "Ethanol attacks the new cation: 1-ethoxy-2-methylcyclopentane ({{SN1}}). Loss of a neighbouring hydrogen gives 1-methylcyclopentene, the more substituted alkene ({{E1}}). The ring-expanded cation can also take a hydride shift to become the tertiary 1-methylcyclopentyl cation, which leads to 1-ethoxy-1-methylcyclopentane and the same 1-methylcyclopentene. [[mol:CCOC1CCCC1C]] [[mol:CC1=CCCC1]]"}
+      ],
+      "answer": "Direct {{SN1}} product: (1-ethoxyethyl)cyclobutane, racemic. Direct {{E1}} product: ethylidenecyclobutane (major alkene), with some vinylcyclobutane. Because the secondary cation sits next to a four-membered ring, it can also rearrange by ring expansion to a cyclopentyl cation, giving 1-ethoxy-2-methylcyclopentane ({{SN1}}) and 1-methylcyclopentene ({{E1}})."
+    }
+  ],
+  "summary": [
+    "tert-Butyl bromide in water follows rate = k[t-BuBr]: doubling the nucleophile changes nothing, so the reaction is unimolecular, {{SN1}}.",
+    "The mechanism has three steps: the leaving group leaves (slow), the nucleophile attacks the carbocation, and a proton is removed.",
+    "The energy diagram has a valley for the carbocation, and the first transition state is the highest point.",
+    "{{SN1}} rates follow carbocation stability: tertiary > secondary, with no {{SN1}} for primary, methyl or vinyl, and allyl reacting because of resonance.",
+    "The carbocation is planar, so the nucleophile attacks either face and the product is racemic.",
+    "Polar protic solvents (hydrogen-bond donors such as water and alcohols) speed up {{SN1}}.",
+    "{{E1}} shares the carbocation: a weak base removes a neighbouring hydrogen to give the alkene, and high temperature favors it.",
+    "Carbocations can rearrange, including ring expansion of a cation next to a four-membered ring."
+  ]
+}

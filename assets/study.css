@@ -1,1 +1,102 @@
-/* CHEM 225 · study */
+/* CHEM 225 · study: the Readings page and the Exam 2 Lab. Tokens and UI-kit classes only. */
+
+/* ---------- chapter list ---------- */
+.ch-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px }
+.ch-card { display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--ink) }
+.ch-n { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); font-weight: 700; font-size: 1.1rem }
+.ch-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px }
+.ch-title { font-weight: 650; font-size: 1.08rem }
+.ch-go { flex: none }
+
+/* ---------- reader ---------- */
+.reader-wrap { display: block }
+.reader { min-width: 0 }
+.reader .prose { margin: 0 auto }
+.reader[data-size="s"] .prose { font-size: 17px }
+.reader[data-size="m"] .prose { font-size: 19px }
+.reader[data-size="l"] .prose { font-size: 22px }
+.reader .prose .page-title { margin-bottom: .2em }
+.reader-tools { align-items: center; gap: 10px; margin: 12px 0; font-family: var(--font) }
+.reader-tools .seg button { padding: 6px 14px; line-height: 1 }
+.seg .size-s { font-size: 13px } .seg .size-m { font-size: 17px } .seg .size-l { font-size: 21px }
+.orig-row { margin: 12px 0; font-family: var(--font); font-size: 16px }
+.reader .prose .btn { font-family: var(--font) }
+.goals { margin: 20px 0; font-family: var(--font); font-size: .92em }
+.goals h2 { font-size: 1em; margin: 0 0 6px } .goals ul { margin: 0; padding-left: 1.2em }
+.rsec { margin-top: 2.2em; scroll-margin-top: 72px; outline: none }
+.rsec > h2 { font-size: 1.3em; line-height: 1.25; margin: 0 0 .6em }
+.rsec:focus-visible > h2 { text-decoration: underline; text-decoration-color: var(--accent) }
+.rsec-body .fig { display: block; text-align: center; margin: 1em 0 }
+.rsec-end { height: 1px }
+.read-line { align-items: center; gap: 10px; margin-top: 1em; font-family: var(--font); font-size: 15px }
+.read-badge { font-weight: 650 }
+.summary { padding-left: 1.2em } .summary li { margin-bottom: .5em }
+.reader-next { margin-top: 2.4em; font-family: var(--font); font-size: 16px }
+
+/* expanders: closer look (zoom in) and bigger picture (zoom out), told apart by their words and a mark */
+details.more.micro, details.more.macro { border-left: 4px solid var(--line) }
+details.more.micro { border-left-color: var(--accent) }
+details.more.micro > summary::before { content: "＋"; margin-right: 8px; font-weight: 700 }
+details.more.macro > summary::before { content: "↗"; margin-right: 8px; font-weight: 700 }
+details.more > summary { font-family: var(--font); font-size: 16px }
+.more-body { padding-bottom: 8px }
+.more-body > p:last-child { margin-bottom: 0 }
+
+/* the why card */
+.why { margin: 1.4em 0; font-family: var(--font); font-size: 16px; border-left: 4px solid var(--accent) }
+.why .eyebrow { margin: 0 0 4px }
+.why-q { font-weight: 650; font-size: 1.08em; margin: 0 0 12px }
+.why-a { margin-top: 4px; padding: 12px 14px; background: var(--surface-2); border-radius: var(--radius); outline: none }
+.why-a .btn-row { margin-top: 12px }
+.why .btn[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); font-weight: 700 }
+.why .btn[aria-pressed="true"]::before { content: "● "; }
+.why-status { margin: 10px 0 0; color: var(--muted) } .why-status:empty { display: none }
+
+/* checks and homework */
+.checks { margin: 1.4em 0; font-family: var(--font); font-size: 16px }
+.checks h3 { margin: 0; font-size: 1.05em }
+.hw { font-family: var(--font); font-size: 16px; margin-bottom: 14px }
+.hw-q { font-weight: 600; margin-bottom: 8px }
+.hw-sol { margin-top: 14px; outline: none }
+
+/* sticky mini table of contents, wide screens only */
+.toc { display: none; font-size: 14px }
+.toc ol { list-style: none; margin: 6px 0 14px; padding: 0; display: flex; flex-direction: column; gap: 2px }
+.toc ol a { display: grid; grid-template-columns: 16px 1fr; gap: 4px; padding: 6px 8px; border-radius: 8px; color: var(--ink); text-decoration: none; line-height: 1.3 }
+.toc ol a:hover { background: var(--surface-2) }
+.toc .toc-tick { color: var(--good); font-weight: 700 }
+.toc .eyebrow { margin: 16px 0 0 }
+.toc .bar { margin-bottom: 6px }
+@media (min-width: 1000px) {
+  .reader-wrap { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; align-items: start; max-width: 1040px }
+  .toc { display: block; position: sticky; top: 72px; max-height: calc(100vh - 96px); overflow: auto }
+  .reader .prose { margin: 0 }
+}
+
+/* ---------- the original page viewer ---------- */
+.sheet-body .orig-view { display: flex; flex-direction: column; gap: 16px; align-items: center }
+.orig-view figure { margin: 0; width: 100% }
+.orig-view figcaption { text-align: center; margin-top: 4px }
+.orig-page { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: var(--radius) }
+
+/* ---------- Exam 2 Lab ---------- */
+.lab-part { margin-top: 28px }
+.lab-part h2 { margin: 0 } .lab-part h3 { margin: 12px 0 0; font-size: 1rem; color: var(--muted) }
+.exam-rules { margin: 0; padding-left: 1.2em }
+.type-card, .q-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--ink) }
+.type-top { align-items: center; justify-content: space-between; gap: 8px }
+.type-title { font-weight: 650; line-height: 1.3 }
+.type-card .row.small { align-items: center; gap: 8px }
+.back { display: inline-block; margin-bottom: 10px }
+.mastery-line { align-items: center; gap: 10px; margin: 8px 0 18px }
+.q-part { margin-top: 18px }
+.q-part-head { align-items: center; justify-content: space-between } .q-part-head h2 { margin: 0; font-size: 1.2rem }
+.q-item + .q-item { border-top: 1px solid var(--line); padding-top: 16px }
+.type-tabs { margin-top: 8px }
+.know { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px }
+.know li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; line-height: 1.5 }
+.know li .small { margin-top: 4px }
+.tabpanel > h2 { font-size: 1.1rem; margin: 0 0 8px }
+.tabpanel .callout ul { margin: 6px 0 0; padding-left: 1.2em }
+.endless-wrap { margin-top: 24px } .endless-wrap h2 { margin: 0; font-size: 1.05rem }
+@media print { .toc, .reader-tools, .orig-row, .read-line { display: none } }

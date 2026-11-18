@@ -1,0 +1,139 @@
+{
+  "id": "sn2-1",
+  "n": 6,
+  "title": "Substitution: the SN2 reaction",
+  "lecture": "2026-11-03",
+  "from": "Lecture notes 11/03, pages 2 to 4, and the top of 11/05, page 1",
+  "goals": [
+    "Name the nucleophile, the electrophile and the leaving group in any substitution",
+    "Draw the two curved arrows of an {{SN2}} reaction and its transition state",
+    "Read a table of rate data and write the rate law it proves",
+    "Predict the stereochemistry of the product: inversion at the carbon that was attacked",
+    "State the three facts of {{SN2}}: second order, concerted, inversion"
+  ],
+  "sections": [
+    {
+      "id": "warm-up",
+      "title": "Warm-up: an acid-base reaction is the pattern for everything that follows",
+      "pages": ["L1103:2"],
+      "html": "<p>Chapter 7 opens with a reaction from Chapter 6. Hydroxide meets hydrogen chloride:</p>\n[[eqr:[OH-] + Cl>>O + [Cl-]]]\n<p>Hydroxide has lone pairs and a negative charge. It gives an electron pair, so it is the <b>Lewis base</b>. In H-Cl the hydrogen is δ<sup>+</sup>, because chlorine pulls the bonding electrons toward itself. That hydrogen accepts the pair, so HCl is the <b>Lewis acid</b>.</p><p>Two curved arrows tell the whole story. The first starts at a lone pair on oxygen and ends at the hydrogen: a new O-H bond. The second starts at the H-Cl bond and ends on chlorine: the bond breaks and chlorine keeps both electrons, leaving as {{Cl-}}.</p><p>Hold on to this picture. An electron-rich atom attacks an electron-poor atom, and the bond to a group that can carry a negative charge breaks at the same time. In the next step the professor replaces the δ<sup>+</sup> hydrogen with a δ<sup>+</sup> carbon. The arrows do not change at all. Only the name changes: when the atom being attacked is carbon, the reaction is called a <b>substitution</b>.</p>",
+      "micro": [
+        {"t": "Reading a curved arrow", "h": "<p>A curved arrow moves one pair of electrons. Its tail sits on the electrons that move (a lone pair or a bond) and its head points to where they end up (a new bond or an atom). An arrow never starts on a positive charge or on a bare atom with no electrons to give. In this reaction, check the charges after the arrows act: oxygen used a lone pair to make a bond, so it goes from −1 to 0. Chlorine gained full ownership of a pair it used to share, so it goes from 0 to −1. Total charge before and after is −1.</p>"}
+      ],
+      "macro": [
+        {"t": "The same arrows on the past exam", "h": "<p>Proton transfers appear inside longer mechanisms all through this unit. In Question 1D of the past exam, the last step is a carboxylate oxygen taking H from {{H3O+}}: exactly these two arrows. In Question 9 the last step is water removing an O-H proton. If these arrows are automatic, the harder steps get your full attention.</p>"}
+      ],
+      "why": {"q": "Why is the hydrogen of H-Cl the atom that hydroxide attacks, and not the chlorine?", "a": "Chlorine is more electronegative than hydrogen, so the bonding electrons sit closer to chlorine and the hydrogen is δ+. An electron-rich species goes to the electron-poor end of the bond. Chlorine is also the atom that can carry the negative charge afterwards."},
+      "check": []
+    },
+    {
+      "id": "substitution",
+      "title": "Substitution at carbon: nucleophile, electrophile, leaving group",
+      "pages": ["L1103:2"],
+      "html": "<p>Now swap H-Cl for chloromethane, {{H3C-Cl}}. Chlorine pulls electrons away from carbon just as it did from hydrogen, so the carbon is δ<sup>+</sup>.</p>\n[[rxn:[OH-] + CCl>>CO + [Cl-]]]\n<p>The arrows are the same two. A lone pair on oxygen attacks the carbon and makes a C-O bond. The C-Cl bond breaks and both of its electrons leave with chlorine. Hydroxide has taken the place of chloride on carbon: a <b>substitution</b>.</p><p>Three new words, and you will use them in every answer from here on:</p><ul><li>{{HO-}} is still a Lewis base, but when a Lewis base attacks carbon it is called a <b>nucleophile</b> (Nu:<sup>−</sup>).</li><li>{{CH3Cl}} is the Lewis acid. A species that accepts an electron pair at carbon is called an <b>electrophile</b> ({{E+}}).</li><li>Cl is the <b>leaving group</b> (LG): the group that departs with the pair of electrons from its old bond.</li></ul><p>The notes add one more observation. The three hydrogens on carbon flip over to the other side as the reaction happens, like an umbrella in the wind. This is called <b>inversion</b>, and it turns out to be one of the defining facts of this reaction.</p>",
+      "micro": [
+        {"t": "Why the carbon cannot simply add hydroxide", "h": "<p>Carbon in {{CH3Cl}} already has four bonds and eight valence electrons. It has no empty orbital to accept a fifth pair, so it cannot keep both the new bond and the old one. Something must leave. That is the difference between this carbon and, say, the carbon of {{CO2}}, where the incoming pair can push a π pair onto oxygen. On a saturated ({{sp3}}) carbon the only electrons that can move out of the way are those of a σ bond to the leaving group.</p>"},
+        {"t": "A common mistake: the arrow from the wrong end", "h": "<p>Students often draw the arrow from the carbon to the oxygen, or from the negative sign rather than from a lone pair. Electrons flow from the nucleophile to the electrophile, never the other way. Start the first arrow on a lone pair of the nucleophile and finish it on the carbon. Start the second on the C-LG bond and finish it on the leaving group atom.</p>"}
+      ],
+      "macro": [
+        {"t": "Substitution in the cell: methyl transfer", "h": "<p>Your body runs this reaction constantly. The cofactor S-adenosylmethionine (SAM) carries a {{CH3}} group attached to a positively charged sulfur. A nucleophile such as a nitrogen on DNA or on the neurotransmitter precursor norepinephrine attacks that methyl carbon, and the neutral sulfur compound leaves. It is an {{SN2}} reaction on a methyl group, with an enzyme holding the partners in line. The lecture's own sulfonium example on 11/05 page 4 has the same leaving group.</p>"}
+      ],
+      "why": {"q": "The professor asked for homework: why does the reverse reaction, chloride displacing hydroxide from methanol, not occur?", "a": "Chloride is a very weak base (its conjugate acid HCl is a strong acid), so it is stable on its own and is a good leaving group. Hydroxide is a strong base (its conjugate acid, water, has {{pKa}} 15.7), so it is a poor leaving group. The equilibrium sits on the side of the weaker base, so the reaction runs forward and not back."},
+      "check": []
+    },
+    {
+      "id": "one-enantiomer",
+      "title": "A stereocentre proves it: one enantiomer gives one enantiomer",
+      "pages": ["L1103:2"],
+      "html": "<p>With {{CH3Cl}} you cannot see the flip, because the three hydrogens look the same before and after. So the notes use a carbon that carries four different groups: Cl, {{CH3}}, H and D (deuterium, the heavy isotope of hydrogen). That carbon is a stereocentre.</p>\n[[rxn:C[C@@H]([2H])Cl + [OH-]>>C[C@H]([2H])O + [Cl-]]]\n<p>Start with the pure (<i>R</i>) chloride. The product is the pure (<i>S</i>) alcohol. Not a mixture, and not the (<i>R</i>) alcohol. The notes put it this way: <b>one enantiomer gives one enantiomer: inversion</b>.</p><p>That result tells you where the nucleophile came from. If hydroxide had attached on the same side that chloride left from, the three other groups would stay where they were and the product would have the same arrangement in space as the starting material. Instead the OH ends up on the opposite side from where Cl was, and the other three groups have swung through to make room. The nucleophile must attack the carbon from the <b>back</b>, directly opposite the leaving group.</p>",
+      "micro": [
+        {"t": "Inversion of the shape is not always a change of letter", "h": "<p>Inversion describes the geometry: the new group sits on the opposite face. The letters <i>R</i> and <i>S</i> come from priority rules. Here Cl is the top priority group before and OH is the top priority group after, and the other three keep their order (C, then D, then H), so the letter does flip from <i>R</i> to <i>S</i>. If the nucleophile had a different priority rank from the leaving group, the letter could stay the same even though the carbon inverted. On an exam, draw the product by moving the new bond to the opposite side (wedge becomes dash), then assign the letter fresh.</p>"}
+      ],
+      "macro": [
+        {"t": "Where the exam checks this", "h": "<p>Question 2A of the past exam shows (<i>S</i>)-2-chloropentane reacting with sodium acetate in DMSO, and the product is drawn with the acetate on the opposite face. Question 3A asks which statements do not describe {{SN1}}, and the first choice is inversion, because inversion belongs to {{SN2}}. Stereochemistry matters in medicine for the same reason it matters here: the two enantiomers of a drug are different shapes, and an enzyme or receptor usually fits only one of them.</p>"}
+      ],
+      "why": {"q": "Why does deuterium make this experiment possible?", "a": "A carbon needs four different groups to be a stereocentre, and {{CH3CH2Cl}} has two identical hydrogens. Replacing one H with D makes the four groups different without changing the chemistry in any way that matters, so the flip becomes visible as a change from one enantiomer to the other."},
+      "check": []
+    },
+    {
+      "id": "rate-law",
+      "title": "The rate data: double either reactant and the rate doubles",
+      "pages": ["L1103:3"],
+      "html": "<p>A second example, with a different nucleophile and leaving group:</p>\n[[rxn:[SH-] + CI>>CS + [I-]]]\n<p>The professor gives the rate measured at different starting concentrations (all numbers are relative):</p><table><tr><th>trial</th><th>[{{HS-}}]</th><th>[{{H3C-I}}]</th><th>rate</th></tr><tr><td>A</td><td>1</td><td>1</td><td>1</td></tr><tr><td>B</td><td>2</td><td>1</td><td>2</td></tr><tr><td>C</td><td>1</td><td>2</td><td>2</td></tr><tr><td>D</td><td>2</td><td>2</td><td>4</td></tr></table><p>Compare A with B: only {{HS-}} doubled, and the rate doubled. So the rate is proportional to [{{HS-}}]. Compare A with C: only {{CH3I}} doubled, and the rate doubled. So the rate is also proportional to [{{CH3I}}]. Trial D confirms it: both doubled, rate times four.</p><p><b>rate = <i>k</i>[{{HS-}}][{{H3C-I}}]</b></p><p>Two concentrations appear in the rate law, each to the first power: the reaction is <b>second order</b> overall, or <b>bimolecular</b>. That is where the name comes from. <b>{{SN2}}: Substitution, Nucleophilic, bimolecular (2).</b></p><p>The rate law describes the slowest step, the <b>rate-determining step</b>. Since both species are in the rate law, the rate-determining step involves both the nucleophile and the electrophile, and so does the transition state.</p>",
+      "micro": [
+        {"t": "How to read any rate table", "h": "<p>Find two trials in which only one concentration changes. Divide the rates. If doubling the concentration doubles the rate, the order in that species is 1. If the rate does not change, the order is 0, and that species is not in the rate-determining step. If the rate goes up four times, the order is 2. Then repeat for the other species. Compare this table with the one for tert-butyl bromide and water on 11/10: there, doubling water changes nothing, and that single difference is what separates {{SN1}} from {{SN2}}.</p>"},
+        {"t": "What the 2 does not mean", "h": "<p>The 2 in {{SN2}} is not the number of steps. It counts the species that take part in the rate-determining step. An {{SN2}} reaction has one step with two species in it. An {{SN1}} reaction has more than one step, with one species in the slow step.</p>"}
+      ],
+      "macro": [
+        {"t": "The rate law is a tool for making reactions faster", "h": "<p>Because the nucleophile is in the rate law, a higher concentration of nucleophile, or a better nucleophile, speeds up an {{SN2}} reaction. Question 2A of the past exam uses exactly this: 1-bromobutane with sodium methoxide in methanol is faster than 1-bromobutane in methanol alone, because {{CH3O-}} is a far better nucleophile than neutral {{CH3OH}}. Question 3A turns it around: the rate of {{SN1}} does not depend on the nucleophile at all.</p>"}
+      ],
+      "why": {"q": "Why does a rate law with both concentrations in it tell you that nucleophile and electrophile meet in the slow step?", "a": "A step can only go faster when you add more of something if that something takes part in the step. Doubling either reactant doubles the number of collisions between them, and the rate follows. So the slow step must be a collision of one nucleophile with one electrophile."},
+      "check": []
+    },
+    {
+      "id": "concerted",
+      "title": "Fact 1 of the mechanism: concerted, one step, no intermediate",
+      "pages": ["L1103:3"],
+      "html": "<p>The simplest mechanism that fits the rate law is one step in which everything happens together. The notes number this as the first feature of {{SN2}}: <b>1. Concerted reaction: all at once, no intermediate.</b></p><p>The nucleophile begins to bond to carbon while the leaving group begins to leave. There is never a moment when the leaving group has gone and carbon is waiting (that would be a carbocation), and never a moment when carbon holds five full bonds.</p>\n[[mech:sn2-iodomethane-hydrosulfide]]\n<p>The energy diagram has <b>one hump</b> from start to product:</p>\n[[energy:R=0,TS=20,P=-10|TS=transition state]]\n<p>The heights in this sketch are only schematic. What matters is the shape. The top of the hump is the <b>transition state</b>: the highest energy arrangement along the path, where the new bond is half made and the old one is half broken. It is not a compound you can isolate. An <b>intermediate</b> would be a valley between two humps, and an {{SN2}} diagram has no valley. The height of the hump above the starting materials is the activation energy, {{Ea}}, and it sets the rate.</p>",
+      "micro": [
+        {"t": "Transition state or intermediate", "h": "<p>A transition state is an energy maximum. It lasts about as long as one bond vibration and is drawn in square brackets with a double dagger and partial (dotted) bonds. An intermediate is an energy minimum: a real species with full bonds, such as a carbocation, that lives long enough to be attacked from either side or to rearrange. One hump means one transition state and no intermediate. Two humps mean two transition states with one intermediate between them. Question 3B of the past exam asks you to pick diagrams on exactly this basis.</p>"}
+      ],
+      "macro": [
+        {"t": "Four diagrams on the past exam", "h": "<p>Question 3B shows four energy diagrams and asks which is an exothermic {{SN1}}. Two of the four have a single hump: those are concerted reactions, {{SN2}} or {{E2}}, one exothermic and one endothermic. The answer is the two-hump diagram that ends lower than it starts. If you can sketch the {{SN2}} diagram from memory and say why it has no valley, that question takes seconds.</p>"}
+      ],
+      "why": {"q": "Why can an SN2 reaction not have a carbocation intermediate?", "a": "If the leaving group left first, the slow step would involve only the electrophile, and the nucleophile would not appear in the rate law. The measured rate law has both. A flat carbocation would also be attacked from both faces and give both enantiomers, but the experiment gives only the inverted one."},
+      "check": []
+    },
+    {
+      "id": "transition-state",
+      "title": "Fact 2: inversion at the electrophilic atom, and the shape of the transition state",
+      "pages": ["L1103:4"],
+      "html": "<p>The second numbered feature: <b>2. Inversion at the electrophilic atom.</b> The notes draw the transition state like this, in words:</p><p><b>[Nu···C···LG]<sup>‡</sup></b></p><p>The nucleophile is on one side of carbon and the leaving group is directly opposite, 180° away. Both are held by partial bonds, shown as dots. The other three groups on carbon, {{R1}}, {{R2}} and {{R3}}, lie in one plane through the carbon: {{R1}} straight up, {{R2}} on a dash and {{R3}} on a wedge. For an instant carbon is <b>five-coordinate</b>: three ordinary bonds and two half bonds.</p><p>Follow the three groups through the reaction. In the starting material they lean away from the leaving group, toward the side the nucleophile will come from. In the transition state they are flat. In the product they lean away from the nucleophile, toward the side the leaving group left. They have turned inside out, like an umbrella in a strong wind. That is inversion.</p><p>With a nucleophile that carries a negative charge, the charge is shared in the transition state: part on the nucleophile and part on the leaving group.</p>\n[[rxn:C[C@@H]([2H])Cl + [OH-]>>C[C@H]([2H])O + [Cl-]]]",
+      "micro": [
+        {"t": "The orbital reason for backside attack", "h": "<p>The nucleophile's lone pair has to go into an empty orbital on the electrophile. The lowest empty orbital of a C-LG bond is its antibonding orbital, σ*. The large lobe of σ* points out from the back of the carbon, away from the leaving group. So the best overlap is from the back. Putting electrons into σ* also weakens the C-LG bond, which is why that bond breaks as the new one forms. Attack from the front would put the nucleophile in a node and next to the electron-rich leaving group.</p>"},
+        {"t": "Geometry at carbon through the reaction", "h": "<p>Start: {{sp3}}, tetrahedral, angles near 109.5°. Transition state: the three groups that stay are in a plane with 120° between them, and Nu and LG sit above and below that plane on a straight line. This shape is called trigonal bipyramidal, and the carbon is close to {{sp2}} with its p orbital shared between Nu and LG. End: {{sp3}} and tetrahedral again, pointing the other way.</p>"}
+      ],
+      "macro": [
+        {"t": "The crowded transition state explains the next lecture", "h": "<p>Five groups around one carbon is crowded. If {{R1}}, {{R2}} and {{R3}} are hydrogens there is room. If they are carbon groups, the nucleophile cannot reach the back of the carbon, and the transition state is too high in energy. That is why the order of reactivity is methyl, then primary, then secondary, with tertiary not reacting by {{SN2}} at all. Questions 3C and 5A of the past exam both rest on this picture.</p>"}
+      ],
+      "why": {"q": "Why must the nucleophile and the leaving group be 180° apart in the transition state?", "a": "The nucleophile donates into the σ* orbital of the C-LG bond, and the big lobe of that orbital is on the side of carbon opposite the leaving group. Attack there gives the best overlap and keeps the two electron-rich groups as far apart as possible."},
+      "check": []
+    },
+    {
+      "id": "three-facts",
+      "title": "The three facts of SN2, and Walden inversion on a ring",
+      "pages": ["L1105:1"],
+      "html": "<p>The next lecture begins by collecting everything into three lines. Learn them as a set:</p><ol><li><b>Second order</b>: rate = <i>k</i>[Nu:<sup>−</sup>][{{E+}}].</li><li><b>Concerted</b>: no intermediates.</li><li><b>Inversion</b> at the electrophile atom.</li></ol><p>Then an example of fact 3 where the flip is easy to see. 3-Iodocyclohexanone, with the iodine on a wedge, reacts with NaSH ({{Na+}} and {{-SH}}):</p>\n[[rxn:O=C1C[C@H](I)CCC1 + [Na+].[SH-]>>O=C1C[C@@H](S)CCC1 + [Na+].[I-]]]\n<p>In the product the SH is on a <b>dash</b>. The iodine pointed toward you, so the nucleophile came from behind the ring, and the new C-S bond points away from you. The notes label this <b>Walden inversion</b>, the historical name for the inversion that goes with {{SN2}}.</p><p>Sodium is a spectator. It starts as the partner of {{HS-}} and ends as the partner of {{I-}}. Only the carbon that carried the leaving group changes. Every other atom in the ring, including the C=O, is exactly where it was.</p>",
+      "micro": [
+        {"t": "A quick way to draw the product", "h": "<p>Step 1: find the carbon bonded to the leaving group. Step 2: erase the leaving group and put the nucleophile on the same carbon. Step 3: if the leaving group was on a wedge, draw the new bond as a dash, and the reverse. Step 4: leave every other stereocentre alone, because {{SN2}} touches one carbon only. If the carbon is not a stereocentre (a {{CH2}} or {{CH3}}) inversion still happens, but there is nothing to show.</p>"}
+      ],
+      "macro": [
+        {"t": "Three facts, three kinds of exam question", "h": "<p>Each fact is a way to ask about {{SN2}}. Fact 1 gives rate questions: which reaction is faster (Question 2A), which substrate reacts fastest (Question 3C). Fact 2 gives diagram and mechanism questions (Questions 3B, 4B and 5A). Fact 3 gives stereochemistry questions: the product in Question 2A is drawn inverted. In the chapters that follow, compare each new reaction with these three lines: {{SN1}} is first order, stepwise and racemizes; {{E2}} is second order and concerted like {{SN2}}.</p>"}
+      ],
+      "why": {"q": "Why does the SH end up on a dash when the iodine was on a wedge?", "a": "The nucleophile must attack the carbon from the side opposite the leaving group. Iodine was on the face toward the viewer, so {{HS-}} approached from the far face and its bond points away from the viewer."},
+      "check": []
+    }
+  ],
+  "homework": [
+    {
+      "q": "HW: why does the reverse reaction not occur? (for {{HO-}} + {{H3C-Cl}} giving {{HO-CH3}} + {{Cl-}})",
+      "from": "L1103:2",
+      "steps": [
+        {"t": "Write the reverse reaction", "h": "The reverse would be {{Cl-}} attacking the carbon of {{CH3OH}} and pushing out {{HO-}}. Chloride would be the nucleophile and hydroxide the leaving group."},
+        {"t": "Judge the leaving group", "h": "A good leaving group is a weak base: it is stable holding the electron pair. Find the {{pKa}} of each conjugate acid. HCl is about −7, so {{Cl-}} is a very weak base. Water is 15.7, so {{HO-}} is a strong base."},
+        {"t": "Compare the two sides", "h": "Forward, a strong base ({{HO-}}) is used up and a weak base ({{Cl-}}) is released: downhill. In reverse, a weak base would have to push out a strong base: uphill, by a large amount."},
+        {"t": "Connect to the lecture", "h": "The 11/05 notes show the same thing with {{CH3CH2OH}} and {{-SH}}: no reaction, because {{HO-}} is a strong base and a poor leaving group."}
+      ],
+      "answer": "Hydroxide is a strong base and a poor leaving group, while chloride is a weak base and a good leaving group. The products (methanol and chloride) are much more stable than the reactants, so the equilibrium lies far to the right and chloride cannot displace hydroxide from methanol."
+    }
+  ],
+  "summary": [
+    "A substitution replaces a leaving group on carbon with a nucleophile, using the same two arrows as a proton transfer.",
+    "The nucleophile is the Lewis base that attacks carbon, the electrophile is the δ+ carbon compound, and the leaving group departs with the bonding pair.",
+    "For {{HS-}} with {{CH3I}}, doubling either reactant doubles the rate: rate = k[Nu][E], second order, which is the 2 in {{SN2}}.",
+    "{{SN2}} is concerted: one step, one transition state, one hump on the energy diagram, no intermediate.",
+    "The nucleophile attacks from the back, 180° from the leaving group, through a five-coordinate transition state with the other three groups in one plane.",
+    "The carbon inverts: one enantiomer gives one enantiomer, and a wedge becomes a dash (Walden inversion).",
+    "The reverse of {{HO-}} with {{CH3Cl}} does not happen because hydroxide is a strong base and a poor leaving group."
+  ]
+}

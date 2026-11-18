@@ -1,1 +1,12 @@
-/* CHEM 225 · pages */
+/* CHEM 225 · pages. Home, archive, syllabus, foundations and review use the tokens and classes of orgo.css only.
+   Other pages append their own sections below, each under its own banner. */
+
+/* home and the quiet pages */
+.home .how { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 10px; max-width: 66ch }
+.home .card.tap h3 { margin-bottom: .25em }
+.archive-file { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px }
+.archive-file h3 { margin: 0 0 .1em }
+.archive-file .btn-row { margin: 0 }
+.card.tap.row { flex-wrap: wrap; align-items: center; display: flex }
+section.stack > h2 { margin-top: 1rem }
+@media (max-width: 600px) { .archive-file .btn { flex: 1 1 auto } }

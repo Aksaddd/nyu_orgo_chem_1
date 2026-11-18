@@ -1,0 +1,719 @@
+[
+  {
+    "id": "exam-q1a-phenol", "type": "pka-values", "role": "exam", "kind": "numeric", "diff": 1, "src": "FA24 Exam 2, Q1A",
+    "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:Oc1ccccc1]]",
+    "answer": 10, "lo": 9, "hi": 11, "note": "Tables give 9.95 to 10.0.",
+    "solution": {
+      "steps": [
+        {"t": "Find the acidic hydrogen", "h": "The O-H. The hydrogens on the ring carbons are far less acidic."},
+        {"t": "Start from a value you know", "h": "An ordinary alcohol, R-OH, is about 16."},
+        {"t": "Ask what stabilizes the conjugate base", "h": "In phenoxide the negative charge is not stuck on oxygen: resonance spreads it into the ring. Resonance is one of the lecture's six factors that stabilize a base, and a more stable base means a stronger acid. Phenol is about six units more acidic than an alcohol."}
+      ],
+      "answer": "about 10", "rule": "Alcohol 16, phenol 10, carboxylic acid 4."
+    }
+  },
+  {
+    "id": "exam-q1a-pentane", "type": "pka-values", "role": "exam", "kind": "numeric", "diff": 1, "src": "FA24 Exam 2, Q1A",
+    "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCCCC]]",
+    "answer": 50, "lo": 45, "hi": 60, "note": "Lecture: R-H (alkane) 50 to 60. Any value in that range is right.",
+    "solution": {
+      "steps": [
+        {"t": "Find the acidic hydrogen", "h": "There are only C-H bonds on {{sp3}} carbons. Any of them is the answer: this is an alkane."},
+        {"t": "Ask what stabilizes the conjugate base", "h": "Nothing does. The carbanion has its charge on carbon (not electronegative), in an {{sp3}} orbital (little s character), with no resonance and no induction. A very unstable base means a very weak acid."},
+        {"t": "Write the lecture value", "h": "Alkane C-H: 50 to 60. It is the weakest acid on the lecture's list, which is why {{CH3-}} is the strongest base."}
+      ],
+      "answer": "about 50 (the lecture range is 50 to 60)", "rule": "Alkane C-H: 50 to 60, the bottom of the acidity scale."
+    }
+  },
+  {
+    "id": "exam-q1a-ethanol", "type": "pka-values", "role": "exam", "kind": "numeric", "diff": 1, "src": "FA24 Exam 2, Q1A",
+    "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCO]]",
+    "answer": 16, "lo": 15, "hi": 17, "note": "Lecture: R-OH about 16. Table 6.8 gives ethanol 15.9 in solution.",
+    "solution": {
+      "steps": [
+        {"t": "Find the acidic hydrogen", "h": "The O-H. The C-H hydrogens are alkane-like (50 to 60)."},
+        {"t": "Name the functional group", "h": "An alcohol. The conjugate base is an alkoxide with the charge on one electronegative oxygen and no resonance."},
+        {"t": "Write the lecture value", "h": "R-OH is about 16, just next to water at 15.7."}
+      ],
+      "answer": "about 16", "rule": "Water 15.7, alcohols about 16."
+    }
+  },
+  {
+    "id": "exam-q1a-propyne", "type": "pka-values", "role": "exam", "kind": "numeric", "diff": 2, "src": "FA24 Exam 2, Q1A",
+    "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CC#C]]",
+    "answer": 25, "lo": 24, "hi": 26, "note": "Lecture: H-C≡C-H 25.",
+    "solution": {
+      "steps": [
+        {"t": "Find the acidic hydrogen", "h": "Propyne has two kinds of hydrogen: three on the {{CH3}} and one on the end carbon of the triple bond. The acidic one is the hydrogen on the triple-bond carbon."},
+        {"t": "Ask what stabilizes the conjugate base", "h": "That carbon is {{sp}} hybridized: 50% s character. Electrons in an orbital with more s character are held closer to the nucleus, so the carbanion is more stable. This is the lecture's hybridization factor."},
+        {"t": "Write the lecture value", "h": "Alkyne C-H: 25, against 50 to 60 for an {{sp3}} C-H."}
+      ],
+      "answer": "about 25 (the hydrogen on the triple-bond carbon)", "rule": "Terminal alkyne C-H: 25. More s character, more stable anion, stronger acid."
+    }
+  },
+  {
+    "id": "exam-q1a-diethylamine", "type": "pka-values", "role": "exam", "kind": "numeric", "diff": 2, "src": "FA24 Exam 2, Q1A",
+    "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:CCNCC]]",
+    "answer": 38, "lo": 36, "hi": 40, "note": "Lecture: amine N-H 38. Literature about 36. Values from 36 to 40 count as approximately right.",
+    "solution": {
+      "steps": [
+        {"t": "Read what is drawn", "h": "The neutral amine is drawn, so the question is how easily it <b>loses</b> a proton. The acidic hydrogen is the N-H."},
+        {"t": "Avoid the trap", "h": "The number 11 that many people remember for amines belongs to the <b>ammonium ion</b>, the conjugate acid of the amine. That species is not what is drawn."},
+        {"t": "Place it on the scale", "h": "Nitrogen is less electronegative than oxygen, so an amide anion is less stable than an alkoxide, and an N-H is a much weaker acid than an O-H (16). Lecture value for an amine N-H: 38."}
+      ],
+      "answer": "about 38 (the N-H)", "rule": "Amine N-H 38. The ammonium ion is about 11: check which species is drawn."
+    }
+  },
+  {
+    "id": "exam-q1b-alkene-path", "type": "mech-id", "role": "exam", "kind": "mcq", "diff": 2, "src": "FA24 Exam 2, Q1B", "fixed": true,
+    "stem": "When tert-butyl chloride is dissolved in water, tert-butyl alcohol is the major product and 2-methylpropene is a minor product. How does the alkene form?\n[[rxn:CC(C)(C)Cl>H2O>CC(C)(C)O + CC(C)=C]]",
+    "choices": [
+      {"h": "By an {{E2}} mechanism with {{HO-}} acting as the base", "ok": false, "why": "There is no hydroxide in the flask. Pure water contains almost none, and the reaction makes acid, not base. This choice invents a reagent."},
+      {"h": "By an {{E2}} mechanism with {{H2O}} acting as the base", "ok": false, "why": "E2 needs a strong base to pull the hydrogen off while the leaving group is still attached. Water is a weak base, so it cannot do that."},
+      {"h": "By an {{E1}} mechanism with {{HO-}} acting as the base", "ok": false, "why": "E1 is the right mechanism, but the base is wrong: there is no hydroxide here. The only base present is water."},
+      {"h": "By an {{E1}} mechanism with {{H2O}} acting as the base", "ok": true, "why": "A tertiary halide in a polar protic solvent ionizes to the carbocation. Water then either attacks it (SN1, the alcohol) or removes a neighbouring hydrogen (E1, the alkene)."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate and the conditions", "h": "Tertiary halide. Water only: a polar protic solvent, a poor nucleophile, a weak base. This is the lecture's SN1 and E1 situation."},
+        {"t": "Use the major product as a clue", "h": "The alcohol comes from SN1, so the tert-butyl carbocation is being made. SN1 and E1 share that intermediate: the alkene is what forms when water takes a hydrogen from the carbon next to the positive carbon."},
+        {"t": "Check what is really in the flask", "h": "Only tert-butyl chloride and water. No hydroxide was added, so any choice with {{HO-}} is out."},
+        {"t": "Rule out E2", "h": "E2 needs a strong base. Water is not one."}
+      ],
+      "answer": "D: an E1 mechanism with water acting as the base", "rule": "Tertiary halide, no strong base, protic solvent: carbocation. SN1 and E1 share it, and the solvent is the base."
+    }
+  },
+  {
+    "id": "exam-q1c-i", "type": "nuc-pairs", "role": "exam", "kind": "mcq", "diff": 1, "src": "FA24 Exam 2, Q1C(i)", "layout": "pair",
+    "stem": "Circle the stronger nucleophile.",
+    "choices": [
+      {"h": "[[mol:[I-]]]", "ok": true, "why": "Iodide is lower in the column: nucleophilicity increases going down. Lecture table: 80,000."},
+      {"h": "[[mol:[Cl-]]]", "ok": false, "why": "This ranks by basicity. Chloride is the stronger base, but nucleophilicity is a rate of attack on carbon, and in the lecture table chloride is 1,000 against 80,000 for iodide."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the attacking atoms", "h": "I and Cl: same charge, same column of the periodic table."},
+        {"t": "Use the column trend", "h": "The lecture's sketch: basicity increases to the left and up, nucleophilicity increases to the left and <b>down</b>. In a column the two trends run in opposite directions."},
+        {"t": "Check against the table", "h": "Table 7.5: {{I-}} 80,000, {{Cl-}} 1,000."}
+      ],
+      "answer": "{{I-}}", "rule": "Down a column: weaker base, better nucleophile."
+    }
+  },
+  {
+    "id": "exam-q1c-ii", "type": "nuc-pairs", "role": "exam", "kind": "mcq", "diff": 1, "src": "FA24 Exam 2, Q1C(ii)", "layout": "pair",
+    "stem": "Circle the stronger nucleophile.",
+    "choices": [
+      {"h": "[[mol:[SH-]]]", "ok": true, "why": "Sulfur is below oxygen in the same column: the better nucleophile. Lecture table: 126,000."},
+      {"h": "[[mol:[OH-]]]", "ok": false, "why": "This ranks by basicity. Hydroxide is the stronger base ({{H2O}} {{pKa}} 15.7 against {{H2S}} 10), but it is the slower nucleophile: 16,000 in the lecture table."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the attacking atoms", "h": "S and O: same charge, same column."},
+        {"t": "Use the column trend", "h": "Nucleophilicity increases down a column. Basicity runs the other way: {{HO-}} is the stronger base, {{HS-}} the stronger nucleophile."},
+        {"t": "Check against the table", "h": "Table 7.5: {{HS-}} 126,000, {{HO-}} 16,000."}
+      ],
+      "answer": "{{HS-}}", "rule": "Same column: the lower atom is the better nucleophile."
+    }
+  },
+  {
+    "id": "exam-q1c-iii", "type": "nuc-pairs", "role": "exam", "kind": "mcq", "diff": 2, "src": "FA24 Exam 2, Q1C(iii)", "layout": "pair",
+    "stem": "Circle the stronger nucleophile.",
+    "choices": [
+      {"h": "[[mol:CC(C)(C)[O-]]]", "ok": false, "why": "tert-Butoxide is the stronger base (tert-butanol {{pKa}} 17.0 against methanol 15.5), but three methyl groups crowd the oxygen. The lecture calls it a poor nucleophile."},
+      {"h": "[[mol:C[O-]]]", "ok": true, "why": "Same attacking atom, same charge, much less bulk: methoxide reaches carbon far more easily."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the attacking atoms", "h": "Oxygen in both, with the same negative charge. The periodic trends cannot decide this one."},
+        {"t": "Compare the size around the atom", "h": "The lecture's rule: a bulkier nucleophile is less nucleophilic. To attack carbon the oxygen must get close to the back of the electrophile, and the three methyl groups of tert-butoxide get in the way."},
+        {"t": "Do not let basicity mislead you", "h": "tert-Butoxide is the stronger base, because taking a small, exposed proton is not hindered. Stronger base, weaker nucleophile."}
+      ],
+      "answer": "{{CH3O-}}", "rule": "Same atom and charge: the less hindered one is the better nucleophile."
+    }
+  },
+  {
+    "id": "exam-q1d-written", "type": "mech-organometallic", "role": "exam", "kind": "written", "diff": 2, "src": "FA24 Exam 2, Q1D", "time": 9, "pts": 55,
+    "stem": "Draw the complete mechanism, with curved arrows, for this reaction.\n[[rxn:Br[Mg]c1ccccc1>1) CO2;2) H3O+>OC(=O)c1ccccc1]]",
+    "model": "<p><b>Step 1.</b> The Grignard reagent behaves as a carbanion: think of it as a phenyl anion with {{+MgBr}}. The electrons of the C-Mg bond attack the carbon of O=C=O, and the electrons of one C=O pi bond move onto that oxygen. The intermediate is the carboxylate, benzoate, with {{+MgBr}} as its counterion.</p><p><b>Step 2.</b> In the acid workup a lone pair on the negative oxygen takes a proton from {{H3O+}}, and the H-O electrons stay on water's oxygen. Product: benzoic acid.</p>\n[[mech:grignard-co2-benzoic-acid]]\n<p>Four arrows in all, two in each step.</p>",
+    "rubric": [
+      {"pts": 20, "h": "The ring carbon of the Grignard reagent is the nucleophile and the carbon of {{CO2}} is the electrophile: the first arrow starts at the C-Mg bond (or at a lone pair on the carbanion carbon) and ends at the carbon of {{CO2}}"},
+      {"pts": 10, "h": "A second arrow moves one C=O pi bond onto oxygen"},
+      {"pts": 10, "h": "The carboxylate intermediate is drawn with its negative charge on oxygen and {{+MgBr}}"},
+      {"pts": 10, "h": "Protonation in the workup: an arrow from the O lone pair to H of {{H3O+}}, and an arrow from the H-O bond to oxygen"},
+      {"pts": 5, "h": "Benzoic acid is drawn as the product"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the electrons", "h": "Carbon is more electronegative than magnesium, so the C-Mg bond is polarized toward carbon. The lecture's way to think of R-MgX: R with a lone pair and a negative charge, and {{+MgX}}."},
+        {"t": "Find the electron-poor atom", "h": "In O=C=O two oxygens pull electron density away from carbon. The carbon is the electrophile. Attacking an oxygen is the common mistake."},
+        {"t": "Draw step 1", "h": "Arrow from the C-Mg bond to the carbon of {{CO2}}. That carbon would then have five bonds, so a second arrow moves one pi bond onto oxygen. You now have benzoate with {{+MgBr}}."},
+        {"t": "Draw step 2, the workup", "h": "The numbers 1) and 2) mean the acid is added afterwards. Arrow from a lone pair on {{O-}} to an H of {{H3O+}}, arrow from that H-O bond onto the oxygen of water. If acid were there from the start it would destroy the Grignard reagent: a carbanion takes a proton and becomes benzene."},
+        {"t": "Check the product", "h": "A carboxylic acid with one more carbon than the Grignard reagent had: benzoic acid."}
+      ],
+      "answer": "Two steps, four arrows: C-Mg bond to the carbon of {{CO2}} with a pi bond going onto O, then protonation of the carboxylate by {{H3O+}}.",
+      "rule": "A Grignard reagent is a carbanion. It attacks the electron-poor carbon, and acid comes only in a separate second step."
+    }
+  },
+  {
+    "id": "exam-q1d-arrows", "type": "mech-organometallic", "role": "exam", "kind": "mech", "diff": 2, "src": "FA24 Exam 2, Q1D", "mech": "grignard-co2-benzoic-acid",
+    "stem": "Draw the curved arrows for each step: phenylmagnesium bromide with {{CO2}}, then acid workup.",
+    "solution": {
+      "steps": [
+        {"t": "Step 1: two arrows", "h": "From the C-Mg bond to the carbon of {{CO2}}, and from one C=O pi bond onto its oxygen. The arrow starts where the electrons are (the bond to magnesium), not at the magnesium atom."},
+        {"t": "Step 2: two arrows", "h": "From a lone pair on the negative oxygen to an H of {{H3O+}}, and from that H-O bond onto the oxygen of water."}
+      ],
+      "answer": "Four arrows in two steps", "rule": "Arrows start at electrons (a lone pair or a bond) and end where the electrons go."
+    }
+  },
+  {
+    "id": "exam-q2a-1", "type": "rate-pairs", "role": "exam", "kind": "mcq", "diff": 1, "src": "FA24 Exam 2, Q2A(1)", "layout": "pair",
+    "stem": "Circle the reaction that is faster.",
+    "choices": [
+      {"h": "[[rxn:CCCCBr + C[O-].[Na+]>CH3OH;25 °C>CCCCOC]]", "ok": true, "why": "A primary halide reacts by SN2, rate = k[RBr][Nu]. Methoxide, an anion, is a far better nucleophile than neutral methanol."},
+      {"h": "[[rxn:CCCCBr>CH3OH;25 °C>CCCCOC]]", "ok": false, "why": "Here the only nucleophile is neutral methanol, relative rate 1 in the lecture table. A primary halide cannot ionize, so there is no SN1 route to help: the reaction is very slow."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what differs", "h": "Same halide, same solvent, same temperature. The only difference is the nucleophile: {{CH3O-}} on one side, {{CH3OH}} alone on the other."},
+        {"t": "Decide the mechanism", "h": "1-Bromobutane is primary: SN2. A primary carbocation will not form, so SN1 is not available."},
+        {"t": "Compare the nucleophiles", "h": "In SN2 the nucleophile is in the rate law. An anion is a better nucleophile than its own conjugate acid: compare {{HO-}} 16,000 with {{H2O}} 1 in the lecture table. Methoxide against methanol is the same comparison."}
+      ],
+      "answer": "The reaction with {{CH3ONa}} is faster.", "rule": "SN2: rate = k[substrate][nucleophile]. An anion beats its neutral conjugate acid."
+    }
+  },
+  {
+    "id": "exam-q2a-2", "type": "rate-pairs", "role": "exam", "kind": "mcq", "diff": 2, "src": "FA24 Exam 2, Q2A(2)", "layout": "pair",
+    "stem": "Circle the reaction that is faster.",
+    "choices": [
+      {"h": "[[rxn:CCC[C@H](C)Cl + CC(=O)[O-].[Na+]>DMSO;40 °C>CCC[C@@H](C)OC(C)=O]]", "ok": false, "why": "Chloride is a good leaving group, but tosylate is better: its charge is spread over three oxygens by resonance. Everything else is the same, so this one is slower."},
+      {"h": "[[rxn:CCC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + CC(=O)[O-].[Na+]>DMSO;40 °C>CCC[C@@H](C)OC(C)=O]]", "ok": true, "why": "Same nucleophile, same carbon, same solvent. Tosylate is the better leaving group, a very weak base stabilized by resonance, so this SN2 is faster."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what differs", "h": "Same nucleophile (acetate), same secondary carbon, same solvent (DMSO), same temperature. Only the leaving group changes: Cl or OTs."},
+        {"t": "Decide the mechanism", "h": "Secondary carbon, a fair nucleophile that is a weak base, polar aprotic solvent: SN2. The product is drawn inverted, which says the same thing."},
+        {"t": "Compare the leaving groups", "h": "The leaving group is in the transition state of SN2, so a better one makes the reaction faster. The best leaving groups are the weakest bases. Tosylate is the conjugate base of a strong sulfonic acid and its negative charge is delocalized by resonance: the lecture singles it out as a good leaving group."}
+      ],
+      "answer": "The tosylate reacts faster.", "rule": "Better leaving group (weaker, more stabilized base): faster substitution."
+    }
+  },
+  {
+    "id": "exam-q2a-3", "type": "rate-pairs", "role": "exam", "kind": "mcq", "diff": 3, "src": "FA24 Exam 2, Q2A(3)", "layout": "pair",
+    "stem": "Circle the reaction that is faster.",
+    "choices": [
+      {"h": "[[rxn:IC1=CCCCC1 + [Na+].[SH-]>DMF>SC1=CCCCC1]]", "ok": false, "why": "Iodide is the better leaving group, but it sits on an {{sp2}} carbon of a double bond: a vinyl halide. The lecture's SN2 rate for vinyl is 0, and vinyl does not do SN1 either. A good leaving group cannot help if the carbon cannot be attacked."},
+      {"h": "[[rxn:ClC1CCCCC1 + [Na+].[SH-]>DMF>SC1CCCCC1]]", "ok": true, "why": "A secondary {{sp3}} carbon, an excellent nucleophile ({{HS-}}, 126,000) and a polar aprotic solvent: an ordinary SN2. It is not fast for a substitution, but the other reaction does not go at all."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find what differs", "h": "Same nucleophile and solvent. The substrates differ in two ways: the leaving group (I or Cl) and the carbon it sits on."},
+        {"t": "Look at the carbon before the leaving group", "h": "In 1-iodocyclohexene the iodine is on a carbon of the C=C: an {{sp2}}, vinyl carbon. In chlorocyclohexane the chlorine is on an {{sp3}} secondary carbon."},
+        {"t": "Apply the lecture's table", "h": "Vinyl-LG: SN2 rate 0, and no SN1. The nucleophile cannot reach the back of a carbon in a double bond (the ring and the pi bond are in the way), and a vinyl cation is too unstable to form."},
+        {"t": "Decide", "h": "Something beats nothing: chlorocyclohexane reacts, the vinyl iodide does not. The better leaving group was the bait."}
+      ],
+      "answer": "Chlorocyclohexane reacts faster.", "rule": "No SN2 and no SN1 at a vinyl carbon, whatever the leaving group."
+    }
+  },
+  {
+    "id": "exam-q2b-written", "type": "mech-two-paths", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q2B", "time": 12, "pts": 70,
+    "stem": "2-Iodo-2-phenylpropane gives the same major product, Product A, under two different conditions.\n[[rxn:CC(C)(I)c1ccccc1>NaH>\"Product A\"]]\n[[rxn:CC(C)(I)c1ccccc1>H2O>\"Product A\"]]\n<p>(a) Draw Product A and a mechanism for each reaction.</p><p>(b) The crude {{1H}} NMR spectrum of the NaH reaction shows a small septet. What does that tell you?</p>",
+    "model": "<p><b>Product A</b> is the alkene 2-phenylpropene: [[mol:C=C(C)c1ccccc1]]</p><p><b>With NaH: {{E2}}, one step.</b> Hydride is a strong base and the halide is tertiary, so {{SN2}} is impossible. Hydride takes a hydrogen from a {{CH3}}, the C-H electrons form the C=C, and iodide leaves. Three arrows. The other products are {{H2}} and NaI.</p>\n[[mech:e2-cumyl-iodide-hydride]]\n<p><b>With {{H2O}}: {{E1}}, two steps.</b> Water is a weak base, so the C-I bond ionizes first (the slow step) to a carbocation that is tertiary and benzylic. Water then takes a hydrogen from a {{CH3}} and the C-H electrons form the C=C. The other products are {{H3O+}} and {{I-}}.</p>\n[[mech:e1-cumyl-iodide-water]]\n<p><b>The septet.</b> Seven lines mean a hydrogen with six equivalent neighbours (n + 1 = 7): the CH of an isopropyl group, {{(CH3)2CH}}. So the crude product contains a little isopropylbenzene: [[mol:CC(C)c1ccccc1]]</p><p>A small part of the hydride acted as a <b>nucleophile</b> and replaced iodide with H, instead of acting as a base. In water there is no hydride, so this by-product cannot form there.</p>",
+    "rubric": [
+      {"pts": 25, "h": "NaH reaction drawn as E2 in one step with three correct arrows: hydride to H, C-H bond to the new C=C, C-I bond to I"},
+      {"pts": 25, "h": "Water reaction drawn as E1 in two steps: ionization to the carbocation (drawn, with its charge), then water removing a neighbouring H with the C-H electrons forming the C=C"},
+      {"pts": 5, "h": "Product A drawn as 2-phenylpropene"},
+      {"pts": 8, "h": "Septet read correctly: a hydrogen with six equivalent neighbours, the CH of an isopropyl group"},
+      {"pts": 7, "h": "Inference: some hydride acted as a nucleophile and gave isopropylbenzene as a minor product"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate", "h": "The carbon that carries iodine has two methyl groups and a phenyl: tertiary, and benzylic. No SN2, ever. Iodide is an excellent leaving group."},
+        {"t": "Find the product both conditions share", "h": "Neither set of conditions can substitute cleanly at a tertiary carbon by SN2, and the two reagents have nothing in common except that each can remove a proton. Loss of HI gives the alkene [[mol:C=C(C)c1ccccc1]]. The beta hydrogens are all on the two methyl groups, so there is only one alkene."},
+        {"t": "NaH: strong base, so E2", "h": "{{H-}} is a very strong base (it gives {{H2}}). Strong base plus tertiary halide: one concerted step, three arrows."},
+        {"t": "Water: weak base, so E1", "h": "Nothing pushes the iodide out, so the molecule ionizes first. The cation is tertiary and shares its charge with the ring by resonance, and water stabilizes the ions. Then water removes a hydrogen from a {{CH3}}. Draw the carbocation: it is worth points. Water attacking the cation instead would give the SN1 alcohol; the question says the alkene is major, and it is conjugated with the ring."},
+        {"t": "Read the septet", "h": "The n + 1 rule: 7 lines means 6 equivalent neighbouring hydrogens, two {{CH3}} groups on one CH. Product A has no such hydrogen (its {{CH3}} has no hydrogen next door). An isopropyl group must have appeared."},
+        {"t": "Explain where it came from", "h": "The only source of a new H on that carbon is hydride. A little hydride attacked carbon (substitution) and gave isopropylbenzene. Small signal: minor product."}
+      ],
+      "answer": "Product A is 2-phenylpropene. NaH: E2 (one step, three arrows). Water: E1 (ionization to a tertiary benzylic cation, then loss of a proton to water). The septet is the CH of an isopropyl group: a little isopropylbenzene formed because some hydride acted as a nucleophile.",
+      "rule": "Same alkene, two mechanisms: a strong base gives E2 in one step, a weak base waits for the carbocation (E1)."
+    }
+  },
+  {
+    "id": "exam-q2b-e2", "type": "mech-two-paths", "role": "exam", "kind": "mech", "diff": 2, "src": "FA24 Exam 2, Q2B", "mech": "e2-cumyl-iodide-hydride",
+    "stem": "Draw the curved arrows for the reaction of 2-iodo-2-phenylpropane with sodium hydride.",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Tertiary halide and a strong base ({{H-}}): E2, one step."},
+        {"t": "Draw the three arrows", "h": "Hydride lone pair to a hydrogen of a {{CH3}}. That C-H bond to the bond between the {{CH3}} carbon and the carbon bearing iodine. The C-I bond to iodine."}
+      ],
+      "answer": "One step, three arrows. Products: 2-phenylpropene, {{H2}} and iodide.", "rule": "E2: base to H, C-H to the pi bond, C-LG to the leaving group, all at once."
+    }
+  },
+  {
+    "id": "exam-q2b-e1", "type": "mech-two-paths", "role": "exam", "kind": "mech", "diff": 2, "src": "FA24 Exam 2, Q2B", "mech": "e1-cumyl-iodide-water",
+    "stem": "Draw the curved arrows for the reaction of 2-iodo-2-phenylpropane in water that gives the alkene.",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Tertiary, benzylic halide and only a weak base (water): the leaving group leaves first. E1, two steps."},
+        {"t": "Step 1: one arrow", "h": "The C-I bond to iodine. Draw the carbocation that results."},
+        {"t": "Step 2: two arrows", "h": "A lone pair of water to a hydrogen on a {{CH3}} next to the positive carbon, and that C-H bond to the bond between the two carbons."}
+      ],
+      "answer": "Two steps, three arrows, with a tertiary benzylic carbocation between them.", "rule": "E1: ionize first, then a weak base removes a neighbouring hydrogen."
+    }
+  },
+  {
+    "id": "exam-q3a-traits", "type": "traits", "role": "exam", "kind": "multi", "diff": 2, "src": "FA24 Exam 2, Q3A", "fixed": true,
+    "stem": "Which of the following are <b>NOT</b> characteristics of {{SN1}} reactions? Circle all that apply.",
+    "choices": [
+      {"h": "The electrophilic carbon undergoes inversion of stereochemistry", "ok": true, "why": "Not SN1. The carbocation is planar and the nucleophile can approach either face, so SN1 gives a racemic mixture. Inversion belongs to SN2."},
+      {"h": "The rate is proportional to the concentration of substrate (electrophile)", "ok": false, "why": "This one is true of SN1, so it must not be circled: rate = k[substrate]. Circling it means the NOT in the question was missed."},
+      {"h": "The rate is proportional to the concentration of nucleophile", "ok": true, "why": "Not SN1. The nucleophile arrives after the rate-determining step, so its concentration is not in the rate law. In the lecture's data, doubling [{{H2O}}] left the rate unchanged."},
+      {"h": "The rate is independent of the solvent", "ok": true, "why": "Not SN1. Increasing the polarity of the solvent increases the rate: a polar protic solvent stabilizes the transition state of the ionization."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Write down what SN1 is", "h": "The lecture's summary: stable carbocation, poor nucleophile, favored by polar protic solvents, racemization. Rate = k[substrate]: unimolecular."},
+        {"t": "Test each statement", "h": "A, inversion: false for SN1 (that is SN2). B, rate depends on substrate: true. C, rate depends on nucleophile: false. D, rate independent of solvent: false."},
+        {"t": "Mind the NOT", "h": "The question asks for the statements that do not describe SN1. Circle the three false ones and leave B alone."}
+      ],
+      "answer": "A, C and D", "rule": "SN1: rate = k[substrate] only, racemization, faster in more polar protic solvents."
+    }
+  },
+  {
+    "id": "exam-q3b-diagram", "type": "energy-diagrams", "role": "exam", "kind": "mcq", "diff": 2, "src": "FA24 Exam 2, Q3B", "fixed": true,
+    "stem": "Which reaction coordinate diagram represents an exothermic {{SN1}} reaction?",
+    "choices": [
+      {"h": "Diagram 1\n[[energy:R=0,TS1=22,I=12,TS2=16,P=-8]]", "ok": true, "why": "Two humps with a valley between them (the carbocation), the first hump the higher one (ionization is rate-determining), and the products below the reactants (exothermic)."},
+      {"h": "Diagram 2\n[[energy:R=0,TS1=24,I=14,TS2=20,P=8]]", "ok": false, "why": "The shape is right for two steps, but the products end higher than the reactants: this is an endothermic reaction. The word exothermic was overlooked."},
+      {"h": "Diagram 3\n[[energy:R=0,TS=20,P=-8]]", "ok": false, "why": "Exothermic, but only one hump and no intermediate: a concerted reaction such as SN2 or E2. SN1 must show the carbocation as a valley."},
+      {"h": "Diagram 4\n[[energy:R=0,TS=22,P=8]]", "ok": false, "why": "One hump means one concerted step, not SN1, and the products end higher than the reactants, so it is endothermic as well."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Count the steps", "h": "SN1 has an intermediate, the carbocation. An intermediate is a valley between two humps. One hump means a concerted reaction (SN2, E2). That removes diagrams 3 and 4."},
+        {"t": "Find the slow step", "h": "The first step, ionization, is the rate-determining step: the first hump is the highest point of the diagram."},
+        {"t": "Read exothermic", "h": "Exothermic means the products are lower in energy than the reactants. Diagram 1 ends below its start. Diagram 2 ends above it."}
+      ],
+      "answer": "Diagram 1", "rule": "Humps = steps, valleys = intermediates, end below start = exothermic."
+    }
+  },
+  {
+    "id": "exam-q3c-fastest", "type": "fastest-substrate", "role": "exam", "kind": "mcq", "diff": 1, "src": "FA24 Exam 2, Q3C", "fixed": true,
+    "stem": "Which compound reacts fastest with NaCN in an {{SN2}} reaction?",
+    "choices": [
+      {"h": "[[mol:CI|me]]", "ok": true, "why": "A methyl carbon is the least hindered electrophile: nothing blocks the back side. Relative rate 1 in the lecture table, the fastest of the simple alkyl groups."},
+      {"h": "[[mol:CCI|me]]", "ok": false, "why": "Primary is good for SN2 but not the best: one alkyl group already slows the approach. Ethyl is 0.033 against 1 for methyl."},
+      {"h": "[[mol:CC(C)I|me]]", "ok": false, "why": "Secondary: two alkyl groups crowd the back side. Isopropyl is 0.00083 in the lecture table."},
+      {"h": "[[mol:CC(C)(C)I|me]]", "ok": false, "why": "This is the SN1 order, not the SN2 order. A tertiary carbon is completely blocked: SN2 rate 0."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the mechanism and what it needs", "h": "SN2: the nucleophile must reach the back of the carbon that carries the leaving group. The lecture's first requirement for SN2 is low sterics."},
+        {"t": "Classify each carbon", "h": "Methyl, primary, secondary, tertiary. Same leaving group and same nucleophile each time, so only the crowding differs."},
+        {"t": "Apply the order", "h": "Methyl > primary > secondary >>> tertiary (no SN2). Lecture numbers: 1, 0.033, 0.00083, 0."}
+      ],
+      "answer": "A, methyl iodide", "rule": "SN2 rate: methyl > primary > secondary >>> tertiary."
+    }
+  },
+  {
+    "id": "exam-q3d-product", "type": "e2-ring-product", "role": "exam", "kind": "mcq", "diff": 3, "src": "FA24 Exam 2, Q3D", "fixed": true,
+    "stem": "trans-1-Chloro-2-methylcyclohexane is treated with {{NaOCH3}} in {{CH3OH}}. On the exam the Cl is on a wedge and the {{CH3}} on a dash: the two groups are on opposite faces of the ring. Which is the major elimination product?\n[[mol:C[C@H]1[C@H](Cl)CCCC1]]",
+    "choices": [
+      {"h": "[[mol:CC1=CCCCC1]]\n1-Methylcyclohexene", "ok": false, "why": "This is the Zaitsev alkene, and it needs the hydrogen on the methyl-bearing carbon. In the chair with Cl axial that hydrogen is equatorial, not anti to Cl, so it cannot be removed. Geometry was not checked."},
+      {"h": "[[mol:C[C@H]1C=CCCC1]]\n3-Methylcyclohexene, {{CH3}} on the same face as in the starting material", "ok": true, "why": "The only hydrogen that is axial and anti to the axial Cl is on C6, the side away from the methyl. The double bond forms there, and the methyl carbon is not touched."},
+      {"h": "[[mol:C[C@@H]1C=CCCC1]]\n3-Methylcyclohexene, {{CH3}} on the opposite face (the methyl carbon inverted)", "ok": false, "why": "The double bond is in the right place, but the methyl carbon has been inverted. No bond to that carbon is made or broken in the reaction, so its configuration cannot change."},
+      {"h": "[[mol:C[C@H]1[C@@H](OC)CCCC1]]\nThe methyl ether", "ok": false, "why": "This is a substitution product, and the question asks for the elimination product. With a strong base on a secondary halide, E2 is also the main reaction."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the reaction", "h": "Secondary halide, strong base (methoxide): E2. The lecture calls the anti-periplanar hydrogen the most important factor for E2."},
+        {"t": "Translate anti-periplanar to a ring", "h": "On a cyclohexane, H and the leaving group are anti-periplanar only when both are axial on neighbouring carbons, one up and one down: trans-diaxial. So first draw the chair that has Cl axial."},
+        {"t": "See where the methyl goes", "h": "Cl and {{CH3}} are trans on neighbouring carbons. When Cl is axial, the trans {{CH3}} is axial too (trans-1,2 is both axial or both equatorial). That chair is the less stable one, but it is the one that reacts."},
+        {"t": "Look for axial hydrogens next to Cl", "h": "On C2 the axial position is taken by {{CH3}}, so the hydrogen on C2 is equatorial: it cannot leave. On C6 there is an axial hydrogen anti to Cl."},
+        {"t": "Eliminate", "h": "The double bond forms between C1 and C6, away from the methyl: 3-methylcyclohexene, the less substituted alkene. Zaitsev's alkene, 1-methylcyclohexene, would need the C2 hydrogen."},
+        {"t": "Check the stereocentre", "h": "C2, the carbon with the methyl, kept all four of its bonds. Its {{CH3}} stays where it was."}
+      ],
+      "answer": "Product 2: 3-methylcyclohexene with the methyl carbon unchanged.", "rule": "E2 on a ring needs H and LG trans-diaxial. Geometry beats Zaitsev."
+    }
+  },
+  {
+    "id": "exam-q3d-chair", "type": "e2-ring-product", "role": "exam", "kind": "chair", "diff": 3, "src": "FA24 Exam 2, Q3D", "subs": "1u:Cl,2d:CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "The same question, worked on the chair. This compound is treated with {{NaOCH3}} in {{CH3OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene forms?\n[[ring:1u:Cl,2d:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Put the leaving group axial", "h": "E2 needs Cl axial. Cl is up on C1 and {{CH3}} is down on C2: trans. In the chair with Cl axial, the {{CH3}} is axial as well."},
+        {"t": "Check the hydrogen on C2", "h": "Its axial position holds the methyl, so its hydrogen is equatorial. An equatorial hydrogen is gauche to the axial Cl, not anti: it cannot be removed."},
+        {"t": "Check the hydrogens on C6", "h": "C6 has two hydrogens. One is axial and points down, opposite the axial Cl: anti-periplanar. That one can leave."},
+        {"t": "Draw the alkene", "h": "C1=C6: 3-methylcyclohexene, with the methyl stereocentre untouched."}
+      ],
+      "answer": "Only the axial hydrogen on C6 can leave: 3-methylcyclohexene, not the Zaitsev alkene.", "rule": "Draw the chair with the leaving group axial, then look for axial hydrogens on the neighbouring carbons."
+    }
+  },
+  {
+    "id": "exam-q4a-1", "type": "chair-read", "role": "exam", "kind": "chair", "diff": 2, "src": "FA24 Exam 2, Q4A(1)", "subs": "1u:NH2,2d:OCH3", "given": "chairB", "ask": ["cis-trans", "stable"],
+    "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:NH2,2d:OCH3|B]]",
+    "solution": {
+      "steps": [
+        {"t": "Axial or equatorial", "h": "Axial bonds are vertical. Equatorial bonds point outward, roughly parallel to the ring bonds one bond away. Here {{NH2}} and {{OCH3}} are both equatorial."},
+        {"t": "Up or down", "h": "Each ring carbon has one bond that points more up and one that points more down. At a carbon whose axial bond points up, the equatorial bond is the down one, and the reverse. Axial bonds alternate up, down, up around the ring, so on two neighbouring carbons the equatorial bonds are one up and one down."},
+        {"t": "cis or trans", "h": "One group up, one down: opposite faces, so <b>trans</b>. This is the classic trap: two equatorial groups on neighbouring carbons both seem to point sideways, but they are trans."},
+        {"t": "Most stable", "h": "Both groups are equatorial, so there is no axial group to pay for. The ring flip would make both axial. This chair is the most stable one."}
+      ],
+      "answer": "trans; yes, this is the most stable chair (both groups equatorial).", "rule": "1,2: equatorial and equatorial (or axial and axial) is trans."
+    }
+  },
+  {
+    "id": "exam-q4a-2", "type": "chair-read", "role": "exam", "kind": "chair", "diff": 2, "src": "FA24 Exam 2, Q4A(2)", "subs": "1d:OH,2d:CH(CH3)2", "given": "chairA", "ask": ["cis-trans", "stable"],
+    "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:OH,2d:CH(CH3)2|A]]",
+    "solution": {
+      "steps": [
+        {"t": "Axial or equatorial", "h": "OH is equatorial. The isopropyl group is on a vertical bond: axial."},
+        {"t": "Up or down", "h": "The axial isopropyl points down. At the neighbouring carbon the axial bond points up, so its equatorial bond, the one that holds OH, is the down one. Both groups are down."},
+        {"t": "cis or trans", "h": "Same face: <b>cis</b>. A cis-1,2 pair always has one axial and one equatorial group."},
+        {"t": "Most stable", "h": "No. The larger group should be equatorial, and here the larger group, isopropyl, is axial. In the lecture's table an axial isopropyl costs 2.61 kcal/mol, the largest value after tert-butyl. An OH is much smaller."},
+        {"t": "Draw the better chair", "h": "Flip the ring: every axial group becomes equatorial and every equatorial group axial. Up and down do not change, so it is still cis.\n[[chair:1d:OH,2d:CH(CH3)2|B]]"}
+      ],
+      "answer": "cis; no. The more stable chair is the flipped one, with isopropyl equatorial and OH axial.", "rule": "cis-1,2: one axial, one equatorial. Put the larger group equatorial."
+    }
+  },
+  {
+    "id": "exam-q4a-3", "type": "chair-read", "role": "exam", "kind": "chair", "diff": 3, "src": "FA24 Exam 2, Q4A(3)", "subs": "1u:I,4u:CH2CH3", "given": "chairA", "ask": ["cis-trans", "stable"],
+    "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:I,4u:CH2CH3|A]]",
+    "solution": {
+      "steps": [
+        {"t": "Axial or equatorial", "h": "Iodine is axial (vertical bond). The ethyl group is equatorial."},
+        {"t": "Up or down", "h": "The axial iodine points up. Carbons 1 and 4 are across the ring from each other, and their axial bonds point in opposite directions: at C4 the axial bond points down, so the equatorial bond that holds the ethyl group is the up one. Both groups are up."},
+        {"t": "cis or trans", "h": "Same face: <b>cis</b>. A cis-1,4 pair, like a cis-1,2 pair, always has one axial and one equatorial group."},
+        {"t": "Most stable", "h": "One group has to be axial, so the question is which. Ethyl costs 1.79 kcal/mol when axial (lecture table). Iodine is a single atom on a long C-I bond and costs much less (tables give about 0.5). The larger group, ethyl, is already equatorial: this is the most stable chair."}
+      ],
+      "answer": "cis; yes, this is the most stable chair (the larger group, ethyl, is equatorial).", "rule": "A halogen is a small axial group. A carbon group wants the equatorial position more."
+    }
+  },
+  {
+    "id": "exam-q4a-4", "type": "chair-read", "role": "exam", "kind": "chair", "diff": 2, "src": "FA24 Exam 2, Q4A(4)", "subs": "1d:NH2,2u:Br", "given": "chairA", "ask": ["cis-trans", "stable"],
+    "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1d:NH2,2u:Br|A]]",
+    "solution": {
+      "steps": [
+        {"t": "Axial or equatorial", "h": "{{NH2}} and Br are both equatorial."},
+        {"t": "Up or down", "h": "On neighbouring carbons the axial bonds point in opposite directions, so the equatorial bonds do too. One equatorial group is up and the other is down."},
+        {"t": "cis or trans", "h": "Opposite faces: <b>trans</b>."},
+        {"t": "Most stable", "h": "Both groups are equatorial. The flipped chair would have both axial. This is the most stable chair."}
+      ],
+      "answer": "trans; yes, this is the most stable chair (both groups equatorial).", "rule": "Two equatorial groups on neighbouring carbons are trans, and that chair is the stable one."
+    }
+  },
+  {
+    "id": "exam-q4a-5", "type": "chair-read", "role": "exam", "kind": "chair", "diff": 3, "src": "FA24 Exam 2, Q4A(5)", "subs": "1u:COOH,2u:Br", "given": "chairA", "ask": ["cis-trans", "stable"],
+    "stem": "Are the two groups cis or trans? Is this the most stable conformation? If it is not, draw the one that is.\n[[chair:1u:COOH,2u:Br|A]]",
+    "solution": {
+      "steps": [
+        {"t": "Axial or equatorial", "h": "COOH is axial (vertical bond). Br is equatorial."},
+        {"t": "Up or down", "h": "The axial COOH points up. At the neighbouring carbon the axial bond points down, so the equatorial bond that holds Br is the up one. Both groups are up."},
+        {"t": "cis or trans", "h": "Same face: <b>cis</b>. One axial, one equatorial, as always for cis-1,2."},
+        {"t": "Most stable", "h": "No. COOH is the larger group: a carbon with two oxygens on it, against a single bromine atom on a long C-Br bond (tables give about 1.4 kcal/mol for an axial COOH and about 0.5 for an axial Br). The larger group should be equatorial."},
+        {"t": "Draw the better chair", "h": "Flip the ring: COOH becomes equatorial and Br axial. Both are still up, still cis.\n[[chair:1u:COOH,2u:Br|B]]"}
+      ],
+      "answer": "cis; no. The more stable chair is the flipped one, with COOH equatorial and Br axial.", "rule": "When one group must be axial, let it be the smaller one. Halogens are small."
+    }
+  },
+  {
+    "id": "exam-q4b-written", "type": "mech-intramolecular", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q4B", "time": 9, "pts": 50,
+    "stem": "Draw a mechanism, with curved arrows, that explains the formation of this product.\n[[rxn:CC(Cl)C1CO1>NaOCH3;CH3OH>CC1OC1COC]]",
+    "model": "<p><b>Analyze the product first.</b> The {{OCH3}} is on the end {{CH2}}, which was the {{CH2}} of the old epoxide. The new epoxide joins the old epoxide CH and the carbon that used to carry Cl. Chlorine is gone. So methoxide did not displace chloride directly.</p><p><b>Step 1, {{SN2}} on the epoxide.</b> Methoxide attacks the less hindered ring carbon, the {{CH2}}, and the C-O ring bond breaks onto oxygen. The intermediate is an alkoxide: [[mol:CC(Cl)C([O-])COC]]</p><p><b>Step 2, intramolecular {{SN2}}.</b> The alkoxide oxygen attacks the neighbouring carbon that carries Cl from the back. Chloride leaves and a new three-membered ring closes.</p>\n[[mech:epoxide-migration-methoxide]]",
+    "rubric": [
+      {"pts": 15, "h": "Product analysis: methoxide attacks the {{CH2}} of the epoxide first, not the carbon that carries Cl"},
+      {"pts": 10, "h": "Step 1 arrows: methoxide lone pair to the ring {{CH2}}, and the C-O ring bond onto oxygen"},
+      {"pts": 5, "h": "The alkoxide intermediate is drawn with its negative charge"},
+      {"pts": 15, "h": "Step 2 arrows: alkoxide lone pair to the carbon bearing Cl, and the C-Cl bond onto Cl"},
+      {"pts": 5, "h": "The product and {{Cl-}} are drawn"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Map the atoms from start to product", "h": "Number the four carbons of the starting material: {{CH3}} (C1), CHCl (C2), epoxide CH (C3), epoxide {{CH2}} (C4). In the product C4 carries {{OCH3}}, and the epoxide oxygen bridges C3 and C2 instead of C3 and C4."},
+        {"t": "Rule out the obvious path", "h": "Direct SN2 of methoxide at the C-Cl carbon would give [[mol:CC(OC)C1CO1]], an isomer with the old epoxide still in place. That is not the product, so do not draw it."},
+        {"t": "Step 1: open the epoxide", "h": "Methoxide attacks C4, the least hindered carbon, from the back. The ring C-O bond breaks and the electrons go to oxygen. An alkoxide is normally a poor leaving group, but opening a strained three-membered ring pays for it."},
+        {"t": "Step 2: close the new ring", "h": "The alkoxide on C3 is next door to C2, which carries a good leaving group. Its lone pair attacks C2 from the back and chloride leaves: an SN2 inside one molecule."},
+        {"t": "Check", "h": "Count atoms and charge: one methoxide in, one chloride out, product neutral. The oxygen of the new epoxide is the oxygen of the old one."}
+      ],
+      "answer": "Two SN2 steps: methoxide opens the epoxide at its {{CH2}} to give an alkoxide, then that alkoxide displaces chloride on the neighbouring carbon and closes a new epoxide.",
+      "rule": "When the product looks rearranged, map the atoms first. An alkoxide next to a leaving group closes an epoxide."
+    }
+  },
+  {
+    "id": "exam-q4b-arrows", "type": "mech-intramolecular", "role": "exam", "kind": "mech", "diff": 3, "src": "FA24 Exam 2, Q4B", "mech": "epoxide-migration-methoxide",
+    "stem": "Draw the curved arrows for both steps: methoxide with 2-(1-chloroethyl)oxirane.",
+    "solution": {
+      "steps": [
+        {"t": "Step 1: two arrows", "h": "Methoxide lone pair to the {{CH2}} of the epoxide. The bond from that {{CH2}} to the ring oxygen onto oxygen."},
+        {"t": "Step 2: two arrows", "h": "Lone pair of the new {{O-}} to the neighbouring carbon that carries Cl. The C-Cl bond onto chlorine."}
+      ],
+      "answer": "Four arrows in two SN2 steps, the second one intramolecular.", "rule": "Each SN2 is two arrows: nucleophile in, leaving group out."
+    }
+  },
+  {
+    "id": "exam-q5a-written", "type": "williamson-why", "role": "exam", "kind": "written", "diff": 2, "src": "FA24 Exam 2, Q5A", "time": 12, "pts": 80,
+    "stem": "tert-Butyl methyl ether forms in the first reaction but not in the second. Explain why, and draw the mechanism of what happens in each flask.\n[[rxn:CC(C)(C)[O-] + CI>>CC(C)(C)OC]]\n[[nr:C[O-] + CC(C)(C)I>>CC(C)(C)OC]]",
+    "model": "<p><b>The first reaction is {{SN2}}.</b> The electrophile is {{CH3I}}: a methyl carbon, the least hindered there is, with no beta hydrogen. tert-Butoxide attacks it from the back and iodide leaves. Elimination is impossible, so the ether is the only product.</p>\n[[mech:sn2-tertbutoxide-iodomethane]]\n<p><b>The second reaction cannot be {{SN2}}.</b> The electrophile is now a <b>tertiary</b> iodide. Three methyl groups block the back side of the carbon, so methoxide cannot attack it.</p><p><b>Methoxide is also a strong base</b>, so it removes a beta hydrogen instead: <b>{{E2}}</b>. Three arrows: O lone pair to H, C-H bond to the new C=C, C-I bond to I.</p>\n[[mech:e2-tertbutyl-iodide-methoxide]]\n<p>The products of the second flask are 2-methylpropene, methanol and iodide. No ether.</p><p>The lesson for making an ether this way: let the halide be methyl or primary, and put the bulky group in the alkoxide.</p>",
+    "rubric": [
+      {"pts": 20, "h": "SN2 mechanism for the reaction that works: O lone pair to the methyl carbon, C-I bond to I, ether drawn"},
+      {"pts": 15, "h": "Says the tertiary iodide cannot undergo SN2 because of steric hindrance at the electrophilic carbon"},
+      {"pts": 10, "h": "Says methoxide is a strong base"},
+      {"pts": 25, "h": "E2 mechanism with three correct arrows: O lone pair to a beta H, C-H bond to the C=C, C-I bond to I"},
+      {"pts": 10, "h": "Names or draws what actually forms: 2-methylpropene, methanol and iodide"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Look at the electrophile, not the nucleophile", "h": "Both flasks contain an alkoxide and an alkyl iodide, and both would give the same ether if substitution happened. What differs is which partner carries the leaving group: a methyl carbon in the first, a tertiary carbon in the second."},
+        {"t": "First flask", "h": "Methyl iodide is the best SN2 substrate (relative rate 1; tert-butyl is 0). It has no beta hydrogen, so even a bulky strong base like tert-butoxide can only substitute. The lecture drew this very reaction on 11/05."},
+        {"t": "Second flask: why not SN2", "h": "SN2 needs the nucleophile at the back of the carbon. On a tertiary carbon three methyl groups are in the way. The size of the nucleophile is not the problem here: methoxide is small."},
+        {"t": "Second flask: what happens instead", "h": "Methoxide is a strong base, and tert-butyl iodide has nine beta hydrogens on the outside of the molecule. Strong base plus tertiary halide is E2 on the flowchart."},
+        {"t": "Write the real products", "h": "2-Methylpropene, {{CH3OH}} and {{I-}}. Say plainly that no ether forms."}
+      ],
+      "answer": "First: SN2 at an unhindered methyl carbon gives the ether. Second: SN2 is blocked at the tertiary carbon, and methoxide, a strong base, does E2 instead to give 2-methylpropene, methanol and iodide.",
+      "rule": "Ether by SN2: the halide must be methyl or primary. The bulky group goes in the alkoxide."
+    }
+  },
+  {
+    "id": "exam-q5a-sn2", "type": "williamson-why", "role": "exam", "kind": "mech", "diff": 1, "src": "FA24 Exam 2, Q5A", "mech": "sn2-tertbutoxide-iodomethane",
+    "stem": "Draw the curved arrows for the reaction that works: tert-butoxide with iodomethane.",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Methyl halide: SN2 is the only possibility. No carbocation, no beta hydrogen."},
+        {"t": "Draw the two arrows", "h": "A lone pair on the alkoxide oxygen to the methyl carbon. The C-I bond to iodine."}
+      ],
+      "answer": "One step, two arrows: tert-butyl methyl ether and iodide.", "rule": "SN2: nucleophile in from the back, leaving group out."
+    }
+  },
+  {
+    "id": "exam-q5a-e2", "type": "williamson-why", "role": "exam", "kind": "mech", "diff": 2, "src": "FA24 Exam 2, Q5A", "mech": "e2-tertbutyl-iodide-methoxide",
+    "stem": "Draw the curved arrows for what really happens when methoxide meets tert-butyl iodide.",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Tertiary halide, strong base: E2. Substitution at this carbon is blocked."},
+        {"t": "Draw the three arrows", "h": "Methoxide lone pair to a hydrogen on one of the methyl groups. That C-H bond to the bond between the methyl carbon and the central carbon. The C-I bond to iodine."}
+      ],
+      "answer": "One step, three arrows: 2-methylpropene, methanol and iodide.", "rule": "E2: base to H, C-H to the pi bond, C-LG to the leaving group."
+    }
+  },
+  {
+    "id": "exam-q5b-written", "type": "e2-stereo-explain", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q5B", "time": 5, "pts": 20,
+    "stem": "This stereoisomer of 1,2,3,4,5,6-hexachlorocyclohexane undergoes {{E2}} elimination about 7000 times more slowly than any of its stereoisomers. Explain why.\n[[chair:1u:Cl,2d:Cl,3u:Cl,4d:Cl,5u:Cl,6d:Cl|B]]",
+    "model": "<p>{{E2}} needs the hydrogen and the leaving group <b>anti-periplanar</b>. On a cyclohexane ring that means <b>trans-diaxial</b>: an axial Cl with an axial H on the carbon next to it.</p><p>In the chair drawn, every Cl is equatorial and every H is axial. No Cl is axial, so no Cl has an anti hydrogen.</p>\n[[chair:1u:Cl,2d:Cl,3u:Cl,4d:Cl,5u:Cl,6d:Cl|B]]\n<p>Flipping the ring makes all six Cl axial. That chair is very strained and hardly populated, and it does not help anyway: now every H is equatorial, so there is still no H anti to a Cl.</p>\n[[chair:1u:Cl,2d:Cl,3u:Cl,4d:Cl,5u:Cl,6d:Cl|A]]\n<p>In this isomer every Cl is trans to both of its neighbours, so the H on each neighbouring carbon is always cis to it. Every other stereoisomer has at least one pair of neighbouring Cl that are cis, and so has a chair with an axial Cl next to an axial H. Those isomers eliminate quickly.</p>",
+    "rubric": [
+      {"pts": 8, "h": "States the requirement: H and Cl anti-periplanar, which on a cyclohexane means trans-diaxial on neighbouring carbons"},
+      {"pts": 4, "h": "In the chair drawn every Cl is equatorial, so none has an anti hydrogen"},
+      {"pts": 5, "h": "After the ring flip every Cl is axial but every H is equatorial (and that chair is very strained), so there is still no anti H"},
+      {"pts": 3, "h": "The other stereoisomers have an axial Cl next to an axial H in one of their chairs, so they react fast"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recall what E2 needs", "h": "The lecture: the major E2 product comes from the anti-periplanar hydrogen, the most important factor for E2. In a chair, anti-periplanar means both the H and the leaving group are axial, on neighbouring carbons, one up and one down."},
+        {"t": "Read the chair that is drawn", "h": "All six Cl are equatorial. The axial positions hold the six hydrogens. An equatorial Cl is anti to ring C-C bonds, not to any hydrogen."},
+        {"t": "Try the ring flip", "h": "Now all six Cl are axial. Six axial chlorines cost a great deal of energy, so almost no molecules are in this chair. Worse, the hydrogens are now all equatorial. An axial Cl needs an axial H next door, and there is none."},
+        {"t": "Say why this isomer is the only one", "h": "Up and down alternate around the ring: each Cl is trans to both neighbours. If even one neighbouring pair were cis, the chair that makes one of them axial would leave the other equatorial, with an axial H in the right place."}
+      ],
+      "answer": "E2 needs an axial Cl with an axial H on the next carbon. In this all-trans isomer neither chair has that: all Cl equatorial in one, all H equatorial in the other. Every other isomer has at least one such pair.",
+      "rule": "No trans-diaxial H and leaving group, no easy E2."
+    }
+  },
+  {
+    "id": "exam-q6a-choice", "type": "route-choice", "role": "exam", "kind": "mcq", "diff": 2, "src": "FA24 Exam 2, Q6A", "layout": "pair", "fixed": true,
+    "stem": "Two sets of reactants could give cyclohexyl methyl ether. Circle the set that gives the more efficient synthesis.\n[[mol:COC1CCCCC1]]",
+    "choices": [
+      {"h": "[[rxn:BrC1CCCCC1 + C[O-].[Na+]>CH3OH>COC1CCCCC1]]", "ok": false, "why": "The halide here is secondary and methoxide is a strong base. E2 competes with SN2 and wins: much of the bromocyclohexane becomes cyclohexene. Only the bonds were counted, not the side reaction."},
+      {"h": "[[rxn:[O-]C1CCCCC1.[Na+] + CBr>DMSO>COC1CCCCC1]]", "ok": true, "why": "Bromomethane can only undergo SN2: it is unhindered and has no beta hydrogen. DMSO, a polar aprotic solvent, leaves the alkoxide free to attack. One clean product."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "See that both routes make the same bond", "h": "Each makes one C-O bond of the ether by substitution. The choice is which carbon carries the leaving group: the ring carbon (secondary) or the methyl carbon."},
+        {"t": "Ask what else each halide can do", "h": "Bromocyclohexane has beta hydrogens and a hindered secondary carbon. With a strong base such as methoxide the flowchart says E2. Bromomethane has no beta hydrogen: elimination is impossible."},
+        {"t": "Check the solvent", "h": "DMSO is polar aprotic, the lecture's fourth requirement for SN2. Methanol is protic and solvates the nucleophile."}
+      ],
+      "answer": "The right-hand set: sodium cyclohexanolate and bromomethane in DMSO.", "rule": "Plan an ether so that the leaving group sits on the methyl or primary carbon."
+    }
+  },
+  {
+    "id": "exam-q6a-written", "type": "route-choice", "role": "exam", "kind": "written", "diff": 2, "src": "FA24 Exam 2, Q6A", "time": 6, "pts": 50,
+    "stem": "Cyclohexyl methyl ether can be made from bromocyclohexane and {{CH3ONa}} in {{CH3OH}}, or from sodium cyclohexanolate and {{CH3Br}} in DMSO. Circle the more efficient route and explain your choice.\n[[rxn:BrC1CCCCC1 + C[O-].[Na+]>CH3OH>COC1CCCCC1]]\n[[rxn:[O-]C1CCCCC1.[Na+] + CBr>DMSO>COC1CCCCC1]]",
+    "model": "<p>Circle the second route: <b>sodium cyclohexanolate and {{CH3Br}} in DMSO</b>.</p><p>{{CH3Br}} can react only by {{SN2}}. Its carbon is unhindered and it has no beta hydrogen, so elimination is impossible. DMSO is a polar aprotic solvent: it does not hydrogen-bond to the alkoxide, which stays a strong nucleophile. The ether is the only product.</p><p>In the first route the halide is <b>secondary</b> and methoxide is a <b>strong base</b>. {{E2}} competes with {{SN2}} and takes most of the material: the main product is cyclohexene, with some ether. A mixture, and a poor yield of the ether.</p>\n[[rxn:BrC1CCCCC1 + C[O-].[Na+]>CH3OH>C1=CCCCC1 + CO + [Na+].[Br-]]]",
+    "rubric": [
+      {"pts": 10, "h": "The cyclohexanolate and {{CH3Br}} route is circled"},
+      {"pts": 15, "h": "{{CH3Br}} can only undergo SN2: unhindered, and no beta hydrogen, so no elimination"},
+      {"pts": 15, "h": "Bromocyclohexane is a secondary halide and methoxide is a strong base: E2 to cyclohexene competes, so a mixture results"},
+      {"pts": 10, "h": "DMSO is polar aprotic, which favors SN2 (the nucleophile is not held back by hydrogen bonds)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify each halide", "h": "Bromocyclohexane: secondary, with beta hydrogens. Bromomethane: methyl, no beta hydrogen."},
+        {"t": "Classify each alkoxide", "h": "Both are strong bases (alcohols have {{pKa}} about 16). A strong base is only a problem when the halide can eliminate."},
+        {"t": "Predict each flask", "h": "Secondary halide and strong base: mostly E2, cyclohexene. Methyl halide and any nucleophile: SN2 only."},
+        {"t": "Add the solvent", "h": "Polar aprotic DMSO is the SN2 solvent in the lecture summary. It makes the good route even better."}
+      ],
+      "answer": "Sodium cyclohexanolate with {{CH3Br}} in DMSO: clean SN2. The other route loses most of its halide to E2.",
+      "rule": "Efficient means one product. Choose the pair in which elimination is impossible."
+    }
+  },
+  {
+    "id": "exam-q6b-written", "type": "products-from-formula", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q6B", "time": 8, "pts": 50,
+    "stem": "1,2-Diiodoethane reacts with the dianion of ethane-1,2-dithiol. Two products form, with the molecular formulas {{C4H8S2}} and {{C6H12S2I2}}. Draw both.\n[[rxn:ICCI + [S-]CC[S-]>>\"C4H8S2\" + \"C6H12S2I2\"]]",
+    "model": "<p><b>{{C4H8S2}}</b> is 1,4-dithiane: [[mol:C1CSCCS1]]</p><p>One dithiolate and one diiodide. The first sulfur displaces one iodide by {{SN2}}. The second sulfur then displaces the other iodide inside the same molecule and closes a six-membered ring.</p>\n[[mech:dithiane-double-sn2]]\n<p><b>{{C6H12S2I2}}</b> is the open chain: [[mol:ICCSCCSCCI]]</p><p>One dithiolate and <b>two</b> diiodides. Each sulfur attacks a different molecule of 1,2-diiodoethane, so each end of the product still carries one iodine.</p>",
+    "rubric": [
+      {"pts": 25, "h": "{{C4H8S2}} drawn as 1,4-dithiane, the six-membered ring with two sulfurs across from each other"},
+      {"pts": 25, "h": "{{C6H12S2I2}} drawn as {{ICH2CH2SCH2CH2SCH2CH2I}}"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the reaction", "h": "A thiolate is an excellent nucleophile and a weak base. A primary iodide is an excellent SN2 substrate. Every step here is SN2: S attacks C, iodide leaves."},
+        {"t": "Use the formulas as bookkeeping", "h": "The dithiolate is {{C2H4S2}} and the diiodide is {{C2H4I2}}. {{C4H8S2}}: one of each, with both iodines lost. {{C6H12S2I2}}: one dithiolate and two diiodides (C2 + C4 = C6), with two of the four iodines lost."},
+        {"t": "Build the first product", "h": "Both sulfurs of one dithiolate must bond to the two carbons of one diiodide. That makes a ring: S, two carbons, S, two carbons. Six atoms: 1,4-dithiane."},
+        {"t": "Build the second product", "h": "Two sulfurs, two diiodides, two iodines left: each sulfur has used one end of its own diiodoethane. The chain is I, two carbons, S, two carbons, S, two carbons, I."},
+        {"t": "Check the formulas", "h": "Ring: 4 C, 8 H, 2 S. Chain: 6 C, 12 H, 2 S, 2 I. Both match."}
+      ],
+      "answer": "{{C4H8S2}} is 1,4-dithiane (two SN2 steps, the second closing a six-membered ring). {{C6H12S2I2}} is {{ICH2CH2SCH2CH2SCH2CH2I}} (each sulfur attacks a separate diiodoethane).",
+      "rule": "A molecular formula tells you how many of each reactant went in and which atoms left."
+    }
+  },
+  {
+    "id": "exam-q6b-arrows", "type": "products-from-formula", "role": "exam", "kind": "mech", "diff": 2, "src": "FA24 Exam 2, Q6B", "mech": "dithiane-double-sn2",
+    "stem": "Draw the curved arrows for the two steps that make 1,4-dithiane from the dithiolate and 1,2-diiodoethane.",
+    "solution": {
+      "steps": [
+        {"t": "Step 1: two arrows", "h": "A lone pair on one sulfur to a carbon of the diiodide. That C-I bond to iodine."},
+        {"t": "Step 2: two arrows", "h": "A lone pair on the other sulfur to the carbon that still carries iodine, in the same molecule. That C-I bond to iodine. The ring closes."}
+      ],
+      "answer": "Two SN2 steps, four arrows, two iodides lost.", "rule": "The second SN2 can happen inside the molecule when it closes a five- or six-membered ring."
+    }
+  },
+  {
+    "id": "exam-q7a-written", "type": "sub-vs-elim", "role": "exam", "kind": "written", "diff": 2, "src": "FA24 Exam 2, Q7A", "time": 8, "pts": 50,
+    "stem": "Explain why 2-bromopropane gives different amounts of substitution and elimination products when the nucleophile or base is changed from acetate ({{CH3COO-}}) to ethoxide ({{CH3CH2O-}}). No mechanisms are required, but you must identify the reactions by name.\n[[mol:CC(C)Br]]",
+    "model": "<p>2-Bromopropane is a <b>secondary</b> halide. {{SN2}} and {{E2}} are both possible, and the reagent decides between them.</p><p><b>Acetate</b> is a weak base: its conjugate acid, acetic acid, has {{pKa}} 4. It is still a fair nucleophile, so it attacks carbon. The product is almost all substitution, by <b>{{SN2}}</b>: isopropyl acetate.</p>\n[[rxn:CC(C)Br + CC(=O)[O-]>>CC(C)OC(C)=O + [Br-]]]\n<p><b>Ethoxide</b> is a strong base: its conjugate acid, ethanol, has {{pKa}} 16. It removes a beta hydrogen faster than it can reach the hindered secondary carbon. The product is mostly propene, by <b>{{E2}}</b>, with a little ether from {{SN2}}.</p>\n[[rxn:CC(C)Br + CC[O-]>>CC=C + CCO + [Br-]]]\n<p>The stronger the base, the more elimination.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Says the substrate is secondary, so both substitution and elimination are possible"},
+      {"pts": 15, "h": "Acetate: weak base, acts as a nucleophile, substitution named as SN2"},
+      {"pts": 15, "h": "Ethoxide: strong base, elimination named as E2 (some SN2 is also acceptable)"},
+      {"pts": 10, "h": "Ties base strength to the {{pKa}} of the conjugate acids (4 against 16)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate", "h": "Secondary: the crossroads on the flowchart, where the reagent and solvent decide."},
+        {"t": "Compare the two reagents as bases", "h": "Look at the conjugate acids. Acetic acid {{pKa}} 4, ethanol {{pKa}} 16: ethoxide is a stronger base by twelve powers of ten. Acetate's charge is shared by two oxygens (resonance), which is why it is so much weaker."},
+        {"t": "Connect base strength to the pathway", "h": "The flowchart: a better base favors E2 over SN2, a better nucleophile favors SN2 over E2. A weak base that is a fair nucleophile (acetate is 630 in the lecture table) substitutes. A strong base takes the beta hydrogen."},
+        {"t": "Name the reactions", "h": "Acetate: SN2. Ethoxide: mainly E2, some SN2. Not SN1 or E1: both reagents are anions that react with the halide before a secondary carbon would ionize."}
+      ],
+      "answer": "Secondary halide: SN2 and E2 compete. Acetate, a weak base ({{pKa}} of its acid 4), gives SN2 substitution. Ethoxide, a strong base ({{pKa}} of its acid 16), gives mostly E2 elimination.",
+      "rule": "On a secondary carbon, the stronger the base, the more elimination."
+    }
+  },
+  {
+    "id": "exam-q7b-written", "type": "all-elim-products", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q7B", "time": 8, "pts": 50,
+    "stem": "2,3-Dibromobutane is treated with two equivalents of a strong base. Three products form. Draw all three.\n[[mol:CC(Br)C(Br)C]]",
+    "model": "<p>Two equivalents of base mean two {{E2}} eliminations: the molecule loses HBr twice. Every product is {{C4H6}}.</p><p><b>First elimination.</b> A hydrogen can come from either side of a C-Br carbon:</p>\n[[rxn:CC(Br)C(Br)C>base>CC=C(C)Br + C=CC(C)Br]]\n<p>These are 2-bromo-2-butene (H taken from the other CHBr carbon) and 3-bromo-1-butene (H taken from the end {{CH3}}).</p><p><b>Second elimination.</b> Again a hydrogen comes from a carbon next to the C-Br carbon:</p><ul><li>2-bromo-2-butene, H from the alkene CH: <b>2-butyne</b></li><li>2-bromo-2-butene, H from the {{CH3}} on the C-Br carbon: <b>1,2-butadiene</b></li><li>3-bromo-1-butene, H from the end {{CH3}}: <b>1,3-butadiene</b></li><li>3-bromo-1-butene, H from the alkene CH: 1,2-butadiene again</li></ul><p>The three products:</p>\n[[mol:CC#CC]]\n[[mol:C=CC=C]]\n[[mol:C=C=CC]]",
+    "rubric": [
+      {"pts": 10, "h": "Says that two equivalents of base cause two E2 eliminations (loss of two HBr)"},
+      {"pts": 10, "h": "2-Butyne is drawn"},
+      {"pts": 10, "h": "1,3-Butadiene is drawn"},
+      {"pts": 10, "h": "1,2-Butadiene is drawn"},
+      {"pts": 10, "h": "Shows where each comes from: the bromoalkene intermediates, or which hydrogen is removed in each step"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the equivalents", "h": "Two bromines, two equivalents of strong base: each equivalent removes one H and one Br by E2. The products have the formula {{C4H6}}: two pi bonds."},
+        {"t": "Do the first E2 systematically", "h": "Take the Br on C2. The neighbouring carbons are C1 ({{CH3}}) and C3 (CHBr). H from C3 gives [[mol:CC=C(C)Br]], H from C1 gives [[mol:C=CC(C)Br]]. The Br on C3 gives the same two by symmetry."},
+        {"t": "Do the second E2 on each intermediate", "h": "Find the carbon that still has Br, then the hydrogens on its neighbours. From 2-bromo-2-butene: the alkene hydrogen gives a triple bond (2-butyne), a methyl hydrogen gives two double bonds sharing a carbon (1,2-butadiene). From 3-bromo-1-butene: the {{CH3}} gives 1,3-butadiene, the alkene CH gives 1,2-butadiene again."},
+        {"t": "Collect the different structures", "h": "Four routes, three different molecules: an alkyne, a conjugated diene, and an allene."}
+      ],
+      "answer": "2-Butyne, 1,3-butadiene and 1,2-butadiene, all {{C4H6}}, each from two E2 eliminations.",
+      "rule": "For every elimination product: go to each C-LG carbon, then try each neighbouring carbon that has a hydrogen."
+    }
+  },
+  {
+    "id": "exam-q8-i", "type": "chair-both", "role": "exam", "kind": "chair", "diff": 2, "src": "FA24 Exam 2, Q8(i)", "subs": "1u:CH3,2u:CH2CH3", "given": "ring", "ask": ["stable", "relationship"],
+    "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2u:CH2CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "Both groups are on wedges: both up. This is cis-1-ethyl-2-methylcyclohexane."},
+        {"t": "Draw the chairs", "h": "The lecture's procedure, step 1. Two up groups on neighbouring carbons are one axial and one equatorial. Chair one: {{CH3}} axial, ethyl equatorial. The flip: {{CH3}} equatorial, ethyl axial. No wedges or dashes on a chair."},
+        {"t": "Compare energies", "h": "Step 2. Each chair has one axial group. An axial methyl costs 1.74 kcal/mol, an axial ethyl 1.79 (Table 5.3). The chair with the larger group, ethyl, equatorial is more stable, but only by about 0.05 kcal/mol."},
+        {"t": "Name the relationship", "h": "Step 3. The chairs are not identical and they are not mirror images of each other: one has an axial methyl and the other an axial ethyl. Stereoisomers that are not mirror images are diastereomers."}
+      ],
+      "answer": "The chair with ethyl equatorial and methyl axial is slightly more stable. The two chairs are diastereomers.", "rule": "cis-1,2 with different groups: larger group equatorial, chairs are diastereomers."
+    }
+  },
+  {
+    "id": "exam-q8-ii", "type": "chair-both", "role": "exam", "kind": "chair", "diff": 2, "src": "FA24 Exam 2, Q8(ii)", "subs": "1d:CH3,4u:CH(CH3)2", "given": "ring", "ask": ["stable", "relationship"],
+    "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1d:CH3,4u:CH(CH3)2]]",
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "{{CH3}} on a dash (down), isopropyl on a wedge (up), on carbons 1 and 4: trans-1-isopropyl-4-methylcyclohexane."},
+        {"t": "Draw the chairs", "h": "Carbons 1 and 4 have axial bonds pointing in opposite directions. One group down on C1 and one up on C4 are therefore both axial in one chair and both equatorial in the other."},
+        {"t": "Compare energies", "h": "The chair with both groups axial pays for both: 1.74 + 2.61 = 4.35 kcal/mol (Table 5.3). The chair with both equatorial pays nothing. It is far more stable."},
+        {"t": "Name the relationship", "h": "Different shapes, different energies, not mirror images: diastereomers."}
+      ],
+      "answer": "The chair with both groups equatorial is more stable. The two chairs are diastereomers.", "rule": "trans-1,4: both equatorial or both axial. Both equatorial wins."
+    }
+  },
+  {
+    "id": "exam-q8-iii", "type": "chair-both", "role": "exam", "kind": "chair", "diff": 3, "src": "FA24 Exam 2, Q8(iii)", "subs": "1u:CH3,2u:CH3", "given": "ring", "ask": ["stable", "relationship"],
+    "stem": "Draw both chair conformations. Circle the more stable one, or say that they are equal. What is the relationship between the two chairs?\n[[ring:1u:CH3,2u:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "Both methyls on wedges: cis-1,2-dimethylcyclohexane. The lecture worked this exact molecule on 10/27."},
+        {"t": "Draw the chairs", "h": "Chair one: the C1 methyl axial, the C2 methyl equatorial. The flip: C1 equatorial, C2 axial."},
+        {"t": "Compare energies", "h": "Each chair has exactly one axial methyl (1.74 kcal/mol) and one equatorial methyl. Same energy: K = 1. Neither is circled."},
+        {"t": "Name the relationship", "h": "The chairs are not superimposable, but one is the mirror image of the other: the lecture calls them conformational enantiomers. They interconvert by the ring flip, which is why the molecule as a whole is achiral."}
+      ],
+      "answer": "The two chairs are equal in energy. They are enantiomers (non-superimposable mirror images).", "rule": "cis-1,2 with identical groups: equal energy, mirror-image chairs."
+    }
+  },
+  {
+    "id": "exam-q9-written", "type": "mech-rearrangement", "role": "exam", "kind": "written", "diff": 3, "src": "FA24 Exam 2, Q9", "time": 15, "pts": 100,
+    "stem": "Nitrous acid (HONO) converts an {{NH2}} group into a diazonium group, {{N2+}}, which is an excellent leaving group. The amine below gives two ketones. Starting from the diazonium ion, draw a mechanism for the formation of each product.\n[[rxn:CC(N)C1(O)CC2C=CCC12>HONO>CC1CC2C=CCC2C1=O + CC1C(=O)CC2C=CCC12]]",
+    "model": "<p>Both products come from one carbocation.</p><p><b>Step 1.</b> {{N2}} leaves the diazonium ion: one arrow from the C-N bond to nitrogen. This gives a secondary carbocation next to the carbon that carries OH, which is part of a strained four-membered ring.</p>\n[[mol:C[CH+]C1(O)CC2C=CCC12]]\n<p><b>Step 2.</b> A 1,2-alkyl shift expands the ring. One of the two ring bonds of the C-OH carbon moves to the positive carbon: the arrow goes from that C-C bond to the cation. The four-membered ring becomes five-membered, and the positive charge lands on the carbon bearing OH.</p><p><b>Step 3.</b> A lone pair on oxygen shares the charge: C<sup>+</sup>-OH becomes C=O<sup>+</sup>-H.</p><p><b>Step 4.</b> Water removes the O-H proton: the ketone.</p><p><b>If the ring {{CH2}} migrates</b>, the product is the first ketone:</p>\n[[mech:ring-expansion-diazonium-ch2]]\n<p><b>If the ring-fusion CH migrates</b>, the product is the second ketone:</p>\n[[mech:ring-expansion-diazonium-fusion]]",
+    "rubric": [
+      {"pts": 20, "h": "The diazonium group leaves as {{N2}} (arrow from the C-N bond to N) and the secondary carbocation is drawn"},
+      {"pts": 25, "h": "First product: ring-expanding 1,2-shift of the ring {{CH2}}, with the arrow from the C-C ring bond to the positive carbon"},
+      {"pts": 25, "h": "Second product: ring-expanding 1,2-shift of the ring-fusion CH, with the arrow from that C-C ring bond to the positive carbon"},
+      {"pts": 10, "h": "The cation on the C-OH carbon is shown stabilized by oxygen: an O lone pair forms C=O with the positive charge on oxygen"},
+      {"pts": 20, "h": "Deprotonation of the O-H (by water or another base) gives each ketone"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Use what the question gives you", "h": "The {{NH2}} has become {{N2+}}. Nitrogen gas is a superb leaving group, so the first step is ionization, as in SN1 and E1: [[mol:CC([N+]#N)C1(O)CC2C=CCC12]] loses {{N2}}."},
+        {"t": "Analyze the products", "h": "Both products are ketones with two five-membered rings. The starting material has a four-membered ring, an OH, and no C=O. So a ring grew by one carbon, and the carbon that carried OH became the C=O. The carbon that grew into the ring is the one that lost nitrogen."},
+        {"t": "Recognize the pattern", "h": "A carbocation next to a strained ring: the lecture's 11/10 homework, (1-bromoethyl)cyclobutane, where the cation next to a four-membered ring expands it to a cyclopentyl cation. The flowchart says it too: carbocations can rearrange."},
+        {"t": "Draw the shift", "h": "The arrow starts at a ring C-C bond of the carbon next to the cation and ends at the positive carbon. That carbon is now in the ring, and the charge has moved to the carbon that lost the bond: the one with OH."},
+        {"t": "See why there are two products", "h": "The C-OH carbon has two ring bonds, one to the {{CH2}} and one to the ring-fusion CH. Either can move. Migration of the {{CH2}} puts the C=O next to the ring fusion (the first product). Migration of the ring-fusion CH puts the C=O next to the {{CH2}} (the second product)."},
+        {"t": "Finish to the ketone", "h": "A cation on a carbon that carries OH is stabilized by the oxygen lone pair: draw the C=O with the plus on oxygen. Then water takes the proton. The neutral ketone is the product."}
+      ],
+      "answer": "Loss of {{N2}} gives a secondary cation next to the cyclobutane. A 1,2-alkyl shift of either ring bond of the C-OH carbon expands the ring to five members and puts the charge on the C-OH carbon. The oxygen lone pair forms C=O<sup>+</sup>-H and water removes the proton. {{CH2}} migration gives one ketone, ring-fusion CH migration the other.",
+      "rule": "A cation next to a strained ring expands it. Two ring bonds that can migrate mean two products."
+    }
+  },
+  {
+    "id": "exam-q9-ch2", "type": "mech-rearrangement", "role": "exam", "kind": "mech", "diff": 3, "src": "FA24 Exam 2, Q9", "mech": "ring-expansion-diazonium-ch2",
+    "stem": "Draw the curved arrows, step by step, from the diazonium ion to this ketone.\n[[mol:CC1CC2C=CCC2C1=O]]",
+    "solution": {
+      "steps": [
+        {"t": "Step 1: one arrow", "h": "The C-N bond to nitrogen. {{N2}} leaves and the carbon is positive."},
+        {"t": "Step 2: one arrow", "h": "The bond between the C-OH carbon and the ring {{CH2}} to the positive carbon. The ring is now five-membered and the C-OH carbon is positive."},
+        {"t": "Step 3: one arrow", "h": "An oxygen lone pair to the C-O bond: C=O with the plus on oxygen."},
+        {"t": "Step 4: two arrows", "h": "Water lone pair to the O-H hydrogen, and the O-H bond onto oxygen."}
+      ],
+      "answer": "Four steps, five arrows. The ring {{CH2}} is the group that migrates.", "rule": "In a 1,2-alkyl shift the arrow starts at a C-C bond and ends at the positive carbon."
+    }
+  },
+  {
+    "id": "exam-q9-fusion", "type": "mech-rearrangement", "role": "exam", "kind": "mech", "diff": 3, "src": "FA24 Exam 2, Q9", "mech": "ring-expansion-diazonium-fusion",
+    "stem": "Draw the curved arrows, step by step, from the diazonium ion to this ketone.\n[[mol:CC1C(=O)CC2C=CCC12]]",
+    "solution": {
+      "steps": [
+        {"t": "Step 1: one arrow", "h": "The C-N bond to nitrogen, exactly as for the other product."},
+        {"t": "Step 2: one arrow", "h": "The bond between the C-OH carbon and the ring-fusion CH to the positive carbon. The ring is now five-membered and the C-OH carbon is positive."},
+        {"t": "Step 3: one arrow", "h": "An oxygen lone pair to the C-O bond: C=O with the plus on oxygen."},
+        {"t": "Step 4: two arrows", "h": "Water lone pair to the O-H hydrogen, and the O-H bond onto oxygen."}
+      ],
+      "answer": "Four steps, five arrows. The ring-fusion CH is the group that migrates.", "rule": "Same cation, the other ring bond: draw every shift that relieves the strain."
+    }
+  }
+]

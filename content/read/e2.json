@@ -1,0 +1,143 @@
+{
+  "id": "e2",
+  "n": 9,
+  "title": "E2: the anti-periplanar elimination",
+  "lecture": "2026-11-12",
+  "from": "Lecture notes 11/12, pages 1 to 4",
+  "goals": [
+    "Read the rate data for tert-butyl bromide with hydroxide and write the {{E2}} rate law",
+    "Draw the three curved arrows of an {{E2}} reaction and its transition state",
+    "Explain why the hydrogen and the leaving group must be anti-periplanar",
+    "Follow the four-step method to predict the major {{E2}} product, including its geometry",
+    "Decide between the Saytzeff and Hofmann alkenes from the leaving group"
+  ],
+  "sections": [
+    {
+      "id": "experiment",
+      "title": "Add a strong base and the product changes: the E2 rate law",
+      "pages": ["L1112:1"],
+      "html": "<p>Last lecture, tert-butyl bromide in water alone gave the alcohol by {{SN1}}. Now add NaOH to the water. The alcohol is <b>not formed</b>. The product is 2-methylpropene.</p>\n[[rxn:CC(C)(C)Br + [Na+].[OH-]>H2O>CC(C)=C + O + [Na+].[Br-]]]\n<p>Hydroxide did not replace bromide, even though it is a better nucleophile than water. A hydrogen and the bromine have both been removed and a double bond has appeared: an <b>elimination</b>. The rate data show that it is not the {{E1}} of last lecture either:</p><table><tr><th>trial</th><th>[t-BuBr]</th><th>[{{-OH}}]</th><th>rate</th></tr><tr><td>A</td><td>1</td><td>1</td><td>1</td></tr><tr><td>B</td><td>2</td><td>1</td><td>2</td></tr><tr><td>C</td><td>1</td><td>2</td><td>2</td></tr><tr><td>D</td><td>2</td><td>2</td><td>4</td></tr></table><p>Doubling the alkyl halide doubles the rate, and doubling hydroxide also doubles the rate.</p><p><b>rate = <i>k</i>[t-BuBr][{{-OH}}]: bimolecular elimination, {{E2}}.</b></p><p>In an {{E1}} reaction the base would not appear in the rate law, because it acts after the slow ionization. Here hydroxide is in the rate-determining step. It does not wait for a carbocation to form: it attacks the alkyl halide directly.</p>",
+      "micro": [
+        {"t": "Four tables, two patterns", "h": "<p>You have now seen rate tables for all the mechanisms. Rates of 1, 2, 2, 4 mean second order: both species are in the slow step ({{SN2}} or {{E2}}). Rates of 1, 2, 1, 2 mean first order: only the substrate is in the slow step ({{SN1}} or {{E1}}). The table alone cannot tell substitution from elimination. For that you look at the product: is the leaving group replaced, or is there a new C=C?</p>"},
+        {"t": "Why hydroxide does not substitute here", "h": "<p>The carbon is tertiary. The {{SN2}} relative rate for tert-butyl is 0, because three methyl groups block the back of the C-Br bond. But the nine hydrogens on those methyl groups are on the outside of the molecule, easy to reach. A strong base takes one of them. Hydroxide acts as a base toward hydrogen because it cannot act as a nucleophile toward this carbon.</p>"}
+      ],
+      "macro": [
+        {"t": "The same contrast on the past exam", "h": "<p>Question 2B gives one tertiary iodide two treatments. With NaH, a strong base, the alkene forms by {{E2}} in one step. With water, a weak base, the same alkene forms by {{E1}} through a carbocation. Question 1B is the water case for tert-butyl chloride, and the answer choices that use hydroxide are wrong because none was added. The rule to carry: strong base present, {{E2}}; only a weak base, {{E1}}.</p>"}
+      ],
+      "why": {"q": "Why does adding NaOH stop the alcohol from forming?", "a": "Hydroxide is a strong base and removes a β hydrogen in a fast bimolecular step, so the alkyl halide is consumed by {{E2}} before it has time to ionize to the carbocation that {{SN1}} needs. Direct substitution by hydroxide is impossible at a tertiary carbon."},
+      "check": []
+    },
+    {
+      "id": "mechanism",
+      "title": "The mechanism: three arrows, one step, one hump",
+      "pages": ["L1112:1"],
+      "html": "<p>The energy diagram has <b>one hump</b>. The transition state contains both the electrophile (the alkyl halide) and the nucleophile (hydroxide, acting as a base), so the reaction is <b>concerted</b>, like {{SN2}}.</p>\n[[energy:R=0,TS=21,P=-8|TS=one transition state]]\n<p>(The heights are schematic.) The mechanism is three arrows, all at once:</p><ol><li>A lone pair on {{HO-}} takes the H on the carbon <b>next to</b> the carbon that holds Br.</li><li>The electrons of that C-H bond form the π bond between the two carbons.</li><li>The C-Br bond breaks and {{Br-}} leaves with the pair.</li></ol>\n[[mech:e2-tertbutyl-bromide-hydroxide]]\n<p>Two names make this easier to talk about. The carbon bearing the leaving group is the <b>α carbon</b>. A carbon attached to it is a <b>β carbon</b>, and a hydrogen on a β carbon is a <b>β hydrogen</b>. An elimination always removes a β hydrogen and the leaving group, and the double bond forms between the α and β carbons. A substrate with no β hydrogen, such as a methyl halide, cannot eliminate at all.</p>",
+      "micro": [
+        {"t": "Follow the electrons round the chain", "h": "<p>The three arrows form a relay. Oxygen's pair makes the O-H bond. The C-H pair, no longer needed to hold hydrogen, moves between the two carbons and becomes the π bond. That would give the α carbon five bonds, so the C-Br pair leaves with bromine. Check the charges: oxygen goes from −1 to 0, bromine from 0 to −1, and the carbons stay neutral. No carbocation and no carbanion appear, because all three pairs move at the same time.</p>"},
+        {"t": "The E1 arrows are the same, in two steps", "h": "<p>{{E1}} uses the same three electron movements but splits them. First arrow 3 alone: the leaving group leaves and a carbocation forms. Then arrows 1 and 2 together: a weak base takes the β hydrogen and the C-H pair becomes the π bond. If your mechanism for a strong base shows a carbocation, or your mechanism for water shows everything at once, the mechanism and the conditions do not match.</p>"}
+      ],
+      "macro": [
+        {"t": "Where you have to draw it", "h": "<p>Question 5A of the past exam asks why methoxide with tert-butyl iodide gives no ether, and a full answer includes this three-arrow mechanism leading to 2-methylpropene, methanol and iodide. Question 2B asks for it with hydride as the base: {{H-}} takes a {{CH3}} hydrogen, giving {{H2}}, the alkene and iodide. Question 3B's one-hump diagrams are what {{E2}} (and {{SN2}}) look like.</p>"}
+      ],
+      "why": {"q": "Why does the base remove a hydrogen from the β carbon and not from the α carbon?", "a": "The electrons from the broken C-H bond need somewhere to go. On a β carbon they can slide over to form a π bond to the α carbon as the leaving group departs. A hydrogen on the α carbon itself has no such outlet, since its electrons cannot form a double bond to the same carbon."},
+      "check": []
+    },
+    {
+      "id": "transition-state",
+      "title": "The transition state and the three facts of E2",
+      "pages": ["L1112:2"],
+      "html": "<p>The notes draw the transition state as a chain of five atoms held by partial bonds:</p><p><b>[HO···H···C···C···Br]<sup>‡</sup></b></p><p>The O-H bond is partly formed. The C-H bond is partly broken. The C-C bond is partly double. The C-Br bond is partly broken. The negative charge is shared between oxygen, where it started, and bromine, where it will end.</p><p>Then the summary, three lines to set beside the three facts of {{SN2}}:</p><ol><li><b>Bimolecular</b>: rate = <i>k</i>[substrate][base].</li><li><b>Concerted</b>: one step, no intermediate.</li><li><b>Strong base</b>. ({{HO-}} is a strong base.)</li></ol><p>The third line is the one you use to recognize {{E2}} in a problem. Strong bases you will meet: hydroxide, alkoxides such as {{CH3O-}}, {{CH3CH2O-}} and {{(CH3)3CO-}}, hydride ({{H-}}, from NaH) and amide ({{H2N-}}). Their conjugate acids have {{pKa}} values of about 16 and above. Water, alcohols and acetate are weak bases and do not cause {{E2}}.</p><table><tr><th></th><th>{{SN2}}</th><th>{{E2}}</th></tr><tr><td>kinetics</td><td>second order</td><td>second order</td></tr><tr><td>steps</td><td>concerted</td><td>concerted</td></tr><tr><td>reagent attacks</td><td>the α carbon, from the back</td><td>a β hydrogen</td></tr><tr><td>reagent must be</td><td>a good nucleophile</td><td>a strong base</td></tr></table>",
+      "micro": [
+        {"t": "How strong is strong", "h": "<p>Judge a base by the {{pKa}} of its conjugate acid. Ethoxide: ethanol, 16. Hydroxide: water, 15.7. Hydride: {{H2}}, about 35. These are strong bases. Acetate: acetic acid, about 4 to 5. Chloride: HCl, about −7. These are weak. Between acetate and ethoxide there are roughly 11 to 12 {{pKa}} units, a factor of about 10<sup>11</sup> in basicity. That gap is why the two reagents give such different products with the same alkyl halide.</p>"}
+      ],
+      "macro": [
+        {"t": "Substitution against elimination: Question 7A", "h": "<p>Question 7A of the past exam asks why 2-bromopropane gives different amounts of substitution and elimination with acetate and with ethoxide. The substrate is secondary, so {{SN2}} and {{E2}} are both possible and the reagent decides. Acetate is a weak base (conjugate acid {{pKa}} 4) but a fair nucleophile: mostly {{SN2}}. Ethoxide is a strong base (conjugate acid {{pKa}} 16): mostly {{E2}} to propene, with a little {{SN2}}. Stronger base, more elimination.</p>"}
+      ],
+      "why": {"q": "Why does E2 require a strong base when E1 works with water?", "a": "In {{E2}} the base must pull off a hydrogen from an ordinary C-H bond while the leaving group is still attached, so it has to be strong enough to drive that step. In {{E1}} the leaving group has already gone, and the hydrogen next to a carbocation is so acidic that even water can take it."},
+      "check": []
+    },
+    {
+      "id": "example",
+      "title": "An example with three possible alkenes",
+      "pages": ["L1112:2"],
+      "html": "<p>The notes then pose a real problem. (2<i>S</i>,3<i>S</i>)-2-Bromo-3-methylpentane, drawn with wedges and dashes, is treated with {{NaOCH2CH3}} under {{E2}} conditions.</p>\n[[mol:C[C@H](Br)[C@@H](C)CC]]\n<p>The α carbon is C2. It has two β carbons: C1 (a {{CH3}} with three hydrogens) and C3 (a CH with one hydrogen). Three alkenes can be drawn:</p><ul><li><b>A</b>: 3-methyl-1-pentene, from loss of a hydrogen on C1.</li><li><b>B and C</b>: the two geometric isomers of 3-methyl-2-pentene, from loss of the hydrogen on C3.</li></ul>\n[[mol:C=CC(C)CC]]\n[[mol:C/C=C(\\C)CC]]\n[[mol:C/C=C(/C)CC]]\n<p>The homework: <b>which is the major {{E2}} product?</b></p><p>Two questions are hidden in that one. First, which β hydrogen is lost: one from C1 (giving A, a double bond with one carbon group on it) or the one from C3 (giving B or C, with three carbon groups)? Second, if C3 loses its hydrogen, which geometric isomer forms? The starting material is a single stereoisomer, and it turns out that it can give only <b>one</b> of B and C. To see why, the professor draws the transition state and then a Newman projection and a sawhorse of it. The answer depends on the geometry of the hydrogen and the leaving group, which is the next section.</p>",
+      "micro": [
+        {"t": "Counting substituents on a double bond", "h": "<p>To compare alkenes, count the carbon groups attached to the two carbons of the C=C. Alkene A, {{CH2=CH-R}}, has one: monosubstituted. 3-Methyl-2-pentene has three (a methyl on C2, and a methyl and an ethyl on C3): trisubstituted. More substituted alkenes are more stable, for the same reason more substituted carbocations are: neighbouring σ bonds donate into the π system. With an ordinary leaving group and an unhindered base such as ethoxide, the more substituted alkene is normally the major product.</p>"}
+      ],
+      "macro": [
+        {"t": "Listing every β hydrogen is an exam skill", "h": "<p>Question 7B of the past exam gives 2,3-dibromobutane and two equivalents of base, and asks for three products. You find them only by listing every β hydrogen at each stage. Question 3D gives a cyclohexane with β hydrogens on two different carbons and asks which alkene forms. In both, the first move is the one made here: mark the α carbon, mark each β carbon, and count the hydrogens on each.</p>"}
+      ],
+      "why": {"q": "Why can a single stereoisomer of the bromide give only one of the two geometric isomers of 3-methyl-2-pentene?", "a": "C3 has only one hydrogen, and it must be opposite the bromine when it is removed. That fixes one conformation, and in that conformation the other groups on C2 and C3 are already on definite sides. Those positions are locked in when the double bond forms."},
+      "check": []
+    },
+    {
+      "id": "anti-periplanar",
+      "title": "Anti-periplanar: the H and the leaving group on opposite sides",
+      "pages": ["L1112:2", "L1112:3"],
+      "html": "<p>Look down the C2-C3 bond of the example, with the hydrogen on C3 turned so that it is directly opposite the bromine:</p>\n[[newman:Br,H,CH3|CH2CH3,H,CH3|60]]\n<p>The H being removed and the Br are on opposite sides, with a dihedral angle of 180°. All four atoms, H-C-C-Br, lie in one plane. This is the <b>anti-periplanar relationship</b>. The notes: anti-periplanar gives <b>optimal orbital overlap, a more stable T.S., and a faster reaction</b>.</p><p>The reason is where the electrons have to go. The pair from the C-H bond pushes in from <b>behind</b> the C-Br bond, on the side opposite the bromine. The professor's phrase: <b>electrons back-attack, like {{SN2}}</b>. In an {{E2}} reaction the nucleophile that does the backside attack is the neighbouring C-H bond.</p><p>The other planar arrangement is <b>syn-periplanar</b>: H and Br on the same side, dihedral angle 0°.</p>\n[[newman:LG,R,R|H,R,R|0]]\n<p>Here the <b>orbital overlap is not optimal, so the T.S. is less stable</b>. The C-H electrons would have to enter on the same side that the leaving group departs from, and the whole molecule is eclipsed.</p><p>In the Newman projection above, look at the two {{CH3}} groups: one on the front carbon, one on the back, on the same side. When the double bond forms they stay there, so the product is the isomer with the two methyl groups on the same side.</p>",
+      "micro": [
+        {"t": "The orbital picture", "h": "<p>The filled orbital is the C-H σ bond on the β carbon. The empty orbital is the C-Br σ* on the α carbon, and its large lobe points away from bromine, out of the back of the α carbon. When H and Br are anti, the C-H bond is parallel to that lobe and overlaps it well. As the base pulls the proton away, the C-H electrons flow smoothly into σ*, which becomes the new π bond as the C-Br bond breaks. The two carbons end up {{sp2}} with parallel p orbitals. At a dihedral angle of 60° or 90° the orbitals are not parallel and cannot overlap.</p>"},
+        {"t": "Staggered against eclipsed", "h": "<p>Anti-periplanar is a staggered conformation, the low-energy kind that a molecule occupies most of the time. Syn-periplanar is eclipsed, which costs torsional strain before the reaction even starts. So the anti arrangement wins twice: better overlap in the transition state, and a lower-energy geometry to reach it from. That is why you can treat anti-periplanar as a requirement when predicting products in this course.</p>"}
+      ],
+      "macro": [
+        {"t": "On a ring, anti-periplanar means trans-diaxial", "h": "<p>A cyclohexane cannot rotate its bonds freely. The only way an H and a leaving group on neighbouring ring carbons can be 180° apart is for both to be <b>axial</b>, one up and one down. Question 3D of the past exam (trans-1-chloro-2-methylcyclohexane) and Question 5B (a hexachlorocyclohexane that eliminates 7000 times more slowly than its stereoisomers) are both answered by this single fact. The chapter 'What the exam builds from these ideas' works through both chairs.</p>"}
+      ],
+      "why": {"q": "Why is an anti-periplanar arrangement faster than a syn-periplanar one?", "a": "The electrons of the C-H bond must flow into the antibonding orbital of the C-LG bond, whose large lobe is on the side of carbon opposite the leaving group. Only when H is anti are the two orbitals lined up for the best overlap. The anti arrangement is also staggered, while syn is eclipsed and strained."},
+      "check": []
+    },
+    {
+      "id": "method",
+      "title": "The four-step method for predicting an E2 product",
+      "pages": ["L1112:3"],
+      "html": "<p>The professor turns the geometry into a procedure, under the heading <b>Predict the {{E2}} product</b>:</p><ol><li><b>Find the H's adjacent to the LG</b> (the β hydrogens).</li><li><b>Determine the anti-periplanar H's.</b></li><li><b>Draw the conformation of the starting compound where H and LG are anti-periplanar.</b></li><li><b>Perform the elimination.</b> The major {{E2}} product comes from the anti-periplanar H.</li></ol><p>And the comment written beside it: this is <b>the most important factor for {{E2}}</b>.</p><p>Apply it to the example. Step 1: β hydrogens are the three on C1 and the one on C3. Step 2: the {{CH3}} on C1 spins freely, so one of its hydrogens can always be anti to Br. The single hydrogen on C3 can be anti too, by rotating about the C2-C3 bond. Step 3: draw that rotamer, as in the Newman projection of the last section, with Br up on the front carbon and H down on the back carbon. Step 4: remove H and Br and flatten what is left. The front carbon keeps H and {{CH3}}. The back carbon keeps {{CH3}} and {{CH2CH3}}. The two methyl groups were on the same side, so the alkene is (<i>E</i>)-3-methyl-2-pentene.</p>\n[[rxn:C[C@H](Br)[C@@H](C)CC + CC[O-].[Na+]>>C/C=C(\\C)CC + CCO + [Na+].[Br-]]]",
+      "micro": [
+        {"t": "From Newman projection to alkene without errors", "h": "<p>In the anti conformation, each carbon has two groups left after H and LG are removed. Groups that sit on the same side of the Newman projection (both left, or both right) end up on the same side of the double bond, <i>cis</i> to each other. Do not rotate anything after you have set H anti to LG. Then name the result with the priority rules: here, on C2 the methyl outranks H, and on C3 the ethyl outranks methyl. The high-priority groups (methyl on C2, ethyl on C3) are on opposite sides, so the name is <i>E</i>, even though the two methyls are on the same side.</p>"},
+        {"t": "The same molecule, a different stereoisomer", "h": "<p>Change one stereocentre of the starting material, to (2<i>S</i>,3<i>R</i>), and repeat the method. With H anti to Br, the ethyl and methyl on C3 have swapped places, so the alkene comes out as the other geometric isomer, (<i>Z</i>). A reaction in which each stereoisomer of the reactant gives a different stereoisomer of the product is called stereospecific. {{E2}} is stereospecific because of the anti-periplanar requirement. {{E1}} is not, because its carbocation can rotate freely before the proton is lost.</p>"}
+      ],
+      "macro": [
+        {"t": "The method on the past exam", "h": "<p>Question 3D is this method on a ring: find the β hydrogens of trans-1-chloro-2-methylcyclohexane, draw the chair with Cl axial, see that only C6 has an axial hydrogen, and eliminate toward C6. The answer is 3-methylcyclohexene, not the more substituted 1-methylcyclohexene. Geometry overrules alkene stability. That is what 'the most important factor' means in practice: check anti-periplanar first, and apply the Saytzeff rule only among the hydrogens that pass.</p>"}
+      ],
+      "why": {"q": "Why must you draw the reactive conformation before you can name the product?", "a": "The geometry of the alkene (E or Z) is decided by where the remaining groups sit at the moment of elimination, and that is fixed by the conformation in which H and LG are anti. A flat line drawing does not show those positions, so guessing from it gives the wrong isomer about half the time."},
+      "check": []
+    },
+    {
+      "id": "saytzeff-hofmann",
+      "title": "Which β hydrogen: Saytzeff, Hofmann, and the leaving group",
+      "pages": ["L1112:4"],
+      "html": "<p>When two different β carbons each have an anti-periplanar hydrogen, which one loses it? The notes give data for 2-hexyl-LG with {{NaOCH3}} in {{HOCH3}}.</p>\n[[rxn:\"2-hexyl-LG\" + C[O-].[Na+]>HOCH3>CC=CCCC + C=CCCCC]]\n<p>Product 1, 2-hexene, is the <b>more substituted</b> alkene: the <b>Saytzeff</b> product (also spelled Zaitsev). Product 2, 1-hexene, is the <b>less substituted</b> alkene: the <b>Hofmann</b> product.</p><table><tr><th>LG</th><th>1 (Saytzeff)</th><th>2 (Hofmann)</th></tr><tr><td>I</td><td>81%</td><td>19%</td></tr><tr><td>Br</td><td>72%</td><td>28%</td></tr><tr><td>Cl</td><td>67%</td><td>33%</td></tr><tr><td>F</td><td>30%</td><td>70%</td></tr></table><p>With iodide, bromide and chloride, the Saytzeff product is the major one. The better the leaving group, the larger its share: 81%, 72%, 67%. With fluoride the preference flips, to 70% Hofmann. The notes call F a <b>Hofmann LG</b> and describe its reaction as an <b>{{E1cb}}-like {{E2}}</b>.</p><p>With a poor leaving group, the C-H bond breaks ahead of the C-LG bond. The transition state then has negative charge building on the β carbon: carbanion character. A carbanion is more stable on a <b>less</b> substituted carbon, so the base takes a hydrogen from the {{CH3}} end, and the less substituted alkene results.</p>",
+      "micro": [
+        {"t": "A sliding scale of transition states", "h": "<p>'Concerted' does not mean every bond is exactly half changed. With a good leaving group (I), the C-LG bond is well on its way to breaking in the transition state, the two carbons already look like an alkene, and the more stable alkene forms faster: Saytzeff. With a poor leaving group (F), the C-LG bond has hardly started to break while the C-H bond is well broken, so the transition state looks like a carbanion, and carbanion stability decides: Hofmann. The table shows the scale moving step by step from I to F.</p>"},
+        {"t": "Why carbanions prefer less substituted carbons", "h": "<p>Alkyl groups donate electron density. That helps a carbocation, which is short of electrons, and it hurts a carbanion, which already has a full negative charge. So the stability order of carbanions is the reverse of carbocations: methyl and primary are better than secondary and tertiary. The hydrogens on a {{CH3}} group are also the least crowded, which is why a bulky base such as tert-butoxide also gives more of the Hofmann product.</p>"}
+      ],
+      "macro": [
+        {"t": "Rules in order of rank", "h": "<p>The flowchart handout lists 'E2 is anti-periplanar; Zaitsev and Hofmann rules' together under other issues. Use them in this order. First, geometry: only anti-periplanar hydrogens count (Question 3D, where the Saytzeff alkene cannot form). Second, among those, the Saytzeff product is the default for I, Br, Cl and OTs with a small base. Third, expect Hofmann with fluoride or a bulky base. In Question 7B the first elimination from 2,3-dibromobutane can go either way, toward C3 or toward C1, which is why three products appear.</p>"}
+      ],
+      "why": {"q": "Why does 2-fluorohexane give mostly 1-hexene when 2-iodohexane gives mostly 2-hexene?", "a": "Fluoride is a poor leaving group, so in the transition state the C-H bond is breaking before the C-F bond, and negative charge builds on the β carbon. That charge is better tolerated on the less substituted {{CH3}} carbon, so the terminal alkene forms. With iodide the transition state resembles the alkene, and the more substituted, more stable alkene wins."},
+      "check": []
+    }
+  ],
+  "homework": [
+    {
+      "q": "(2S,3S)-2-bromo-3-methylpentane + {{NaOCH2CH3}}, {{E2}}, gives three alkenes: A, 3-methyl-1-pentene; B and C, the two geometric isomers of 3-methyl-2-pentene. HW: which is the major E2 product?",
+      "from": "L1112:2",
+      "steps": [
+        {"t": "Find the β hydrogens", "h": "The leaving group is on C2. The β carbons are C1 ({{CH3}}, three H) and C3 (one H). Loss of a C1 hydrogen gives A. Loss of the C3 hydrogen gives 3-methyl-2-pentene. [[mol:C[C@H](Br)[C@@H](C)CC]]"},
+        {"t": "Choose the β carbon", "h": "Bromide is a good leaving group and ethoxide is a small strong base, so the Saytzeff rule applies: the more substituted alkene is major. 3-Methyl-2-pentene is trisubstituted, A is monosubstituted. The hydrogen comes from C3, provided it can be anti to Br."},
+        {"t": "Put the C3-H anti to Br", "h": "Rotate about the C2-C3 bond until H on C3 is 180° from Br. For the (2S,3S) isomer the Newman projection, looking from C2 to C3, has Br up, H and {{CH3}} on the front carbon, and on the back carbon H down, with {{CH2CH3}} and {{CH3}} on either side. The back {{CH3}} is on the same side as the front {{CH3}}. [[newman:Br,H,CH3|CH2CH3,H,CH3|60]]"},
+        {"t": "Eliminate", "h": "Remove H and Br. The remaining groups stay on their sides: the two methyl groups are on the same side of the new double bond, and H is across from the same side as ethyl. [[mol:C/C=C(\\C)CC]]"},
+        {"t": "Name it", "h": "On C2, {{CH3}} outranks H. On C3, {{CH2CH3}} outranks {{CH3}}. The two higher-priority groups are on opposite sides: <i>E</i>. Because C3 has only one hydrogen, only this one conformation can react toward C3, so the other geometric isomer does not form by anti elimination."}
+      ],
+      "answer": "(E)-3-methyl-2-pentene, the isomer in which the two methyl groups are on the same side of the double bond. It is the more substituted alkene, and it is the only geometric isomer that anti-periplanar elimination of the C3 hydrogen can give from the (2S,3S) bromide."
+    }
+  ],
+  "summary": [
+    "tert-Butyl bromide with NaOH gives 2-methylpropene, not the alcohol, with rate = k[t-BuBr][HO-]: bimolecular elimination, {{E2}}.",
+    "{{E2}} is concerted: the base takes a β hydrogen, the C-H electrons form the π bond and the leaving group leaves, in one step with one hump.",
+    "The three facts of {{E2}} are bimolecular, concerted, and strong base.",
+    "The H and the leaving group must be anti-periplanar, 180° apart, because the C-H electrons attack the back of the C-LG bond as in {{SN2}}.",
+    "To predict the product: find the β hydrogens, find those that can be anti-periplanar, draw that conformation, then eliminate.",
+    "The anti-periplanar requirement fixes the geometry of the alkene, so (2S,3S)-2-bromo-3-methylpentane gives (E)-3-methyl-2-pentene.",
+    "With I, Br or Cl the more substituted (Saytzeff) alkene is major: 81%, 72%, 67% for the 2-hexyl compounds.",
+    "Fluoride is a Hofmann leaving group: 70% of the less substituted alkene, through an E1cb-like transition state with carbanion character."
+  ]
+}

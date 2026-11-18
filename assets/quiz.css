@@ -1,1 +1,161 @@
-/* CHEM 225 · quiz */
+/* CHEM 225 · questions, practice sessions, mock exams. Tokens and UI-kit classes only (see docs/dev/ARCHITECTURE.md). */
+
+/* ---- one question */
+.q { display: flex; flex-direction: column; gap: 14px; }
+.q-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.q-head .q-src { flex: 1 1 auto; }
+.q-head .q-flag { margin-left: auto; }
+.q-flag[aria-pressed="true"] { color: var(--warn); border-color: var(--warn); }
+.q-stem { font-size: 1.08rem; line-height: 1.5; }
+.q-body, .q-after { display: flex; flex-direction: column; gap: 12px; }
+.q-body:empty, .q-after:empty, .q-msg:empty, .rank-say:empty { display: none; }
+.q-msg { color: var(--warn); margin: 0; }
+.q-keys { margin: 0; }
+.q-verdict { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.q-verdict:focus { outline: none; }
+.q-answer { margin: 0; }
+.q-solution { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.q-solution h3, .q-model h3, .q-model h4, .q-rubric h3 { margin: 0 0 4px; font-size: 1rem; }
+.step-b { min-width: 0; }
+.step-asked { margin: 0 0 4px; }
+
+/* ---- choices */
+.q .opts.pair, .mock-ans .opts.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; }
+@media (max-width: 420px) { .q .opts.pair, .mock-ans .opts.pair { grid-template-columns: 1fr; } }
+.opt { flex-wrap: wrap; }
+.q .opt.right::after, .q .opt.wrong::after, .mock-ans .opt.right::after, .mock-ans .opt.wrong::after { content: none; }   /* our own mark carries the tick and the word */
+.opt[disabled] { opacity: 1; color: var(--ink); cursor: default; }
+.opt .opt-k { flex: none; min-width: 1.2em; font-family: var(--mono); font-size: .85em; color: var(--muted); }
+.opt .opt-h { flex: 1 1 0; min-width: 0; }
+.opts.pair .opt { flex-direction: column; flex-wrap: nowrap; align-items: center; text-align: center; gap: 6px; }
+.opts.pair .opt .opt-h { flex: 1 1 auto; }
+.opts.pair .opt .opt-k { align-self: flex-start; }
+.opts.multi .opt { cursor: pointer; }
+.opts.multi .opt input { flex: none; width: 1.15em; height: 1.15em; min-height: 0; margin: 0; accent-color: var(--accent); }
+.opt .opt-mark { flex: none; }
+.opt .explain { flex: 1 0 100%; align-self: stretch; margin-top: 2px; font-weight: 400; text-align: left; }
+
+/* ---- number */
+.num { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.num label { font-weight: 600; }
+.num-row { display: inline-flex; align-items: center; gap: 8px; }
+.num-in { font: inherit; font-size: 1.15rem; width: 8em; padding: 10px 12px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
+.num-in:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num-in[readonly] { background: var(--surface-2); }
+
+/* ---- ranking */
+.rank-box { display: flex; flex-direction: column; gap: 8px; }
+.rank-box p { margin: 0; }
+.rank { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rank-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 8px 10px; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
+.rank-row.held { border-color: var(--accent); border-style: dashed; }
+.rank-row.right { border-color: var(--good); background: var(--good-bg); }
+.rank-row.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.rank-n { flex: none; width: 1.9em; height: 1.9em; display: grid; place-items: center; border-radius: 50%; background: var(--surface-2); font-weight: 600; font-size: .9rem; }
+.rank-item { flex: 1 1 160px; min-width: 0; font: inherit; color: var(--ink); text-align: left; background: none; border: 0; padding: 6px; border-radius: 8px; cursor: pointer; }
+.rank-item[disabled] { cursor: default; color: var(--ink); }
+.rank-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rank-item[aria-pressed="true"]::after { content: " (picked up)"; color: var(--accent); font-size: .85em; }
+.rank-ctl { display: inline-flex; gap: 6px; }
+.rank-mark { flex: 1 0 100%; font-weight: 600; }
+
+/* ---- sorting into bins */
+.cls { display: flex; flex-direction: column; gap: 10px; }
+.cls-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 10px 12px; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
+.cls-row.right { border-color: var(--good); }
+.cls-row.wrong { border-color: var(--bad); }
+.cls-h { flex: 1 1 260px; min-width: 0; }
+.cls-row .explain { flex: 1 0 100%; }
+.seg button[data-c="true"] { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+
+/* ---- written work and rubrics */
+.q-compare { align-items: start; gap: 16px; }
+.q-model { min-width: 0; }
+.rubric-box { display: flex; flex-direction: column; gap: 8px; }
+.rubric { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rubric-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.rubric-line .rubric-h { flex: 1 1 220px; min-width: 0; }
+.rubric-total { margin: 0; font-weight: 600; }
+.q-conf { margin: 0; }
+
+/* ---- worked examples */
+.q-ask { display: flex; flex-direction: column; gap: 8px; }
+.q-ask p { margin: 0; }
+.q-key { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.q-key.pair { display: grid; grid-template-columns: 1fr 1fr; }
+.q-key li { padding: 10px 12px; border: 1.5px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.q-key li.right { border-color: var(--good); }
+ol.rank-key { list-style: decimal; padding-left: 1.6em; }
+ol.rank-key li { border: 0; padding: 2px 0; background: none; }
+
+/* ---- a session */
+.sess { display: flex; flex-direction: column; gap: 16px; }
+.sess-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.sess-title { margin: 0; font-size: 1.15rem; }
+.sess-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.sess-head .bar { flex: 1 0 100%; }
+.sess-stage:focus { outline: none; }
+.sess-stage > p { margin: 0 0 10px; }
+.sess-foot .btn-row { align-items: center; }
+.sess-summary { display: flex; flex-direction: column; gap: 10px; }
+.sess-summary:focus { outline: none; }
+.sess-summary h2, .sess-summary h3, .sess-summary p { margin: 0; }
+.sess-missed { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+
+/* ---- the Practice page */
+.drill-card { display: flex; flex-direction: column; gap: 10px; }
+.drill-card h2, .drill-card p { margin: 0; }
+.drill-count b { font-size: 1.8rem; margin-right: 4px; }
+.type-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.type-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 10px 2px; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.type-row:hover .type-name, .type-row:focus-visible .type-name { color: var(--accent); text-decoration: underline; }
+.type-name { flex: 1 1 160px; font-weight: 600; }
+
+/* ---- mock exams */
+.mock-card, .mock-rules, .mock-past { display: flex; flex-direction: column; gap: 8px; }
+.mock-card h2, .mock-card p, .mock-rules h2, .mock-past h2 { margin: 0; }
+.mock-rules, .mock-past { margin-top: 20px; }
+.mock-rules ul, .mock-hist, .mock-byq, .mock-weak { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+.mock-bar { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.mock-room .mock-bar { position: sticky; top: 8px; z-index: 5; }
+.mock-bar-main { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.mock-title { margin: 0; font-size: 1.2rem; }
+.mock-bar h2 { margin: 6px 0 0; font-size: 1rem; }
+.mock-bar p { margin: 0; }
+.mock-time { font-family: var(--mono); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.mock-score b { font-size: 1.6rem; }
+.mock-sum { font-weight: 600; }
+.mock-q { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.mock-q-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mock-q-head h2 { margin: 0; font-size: 1.2rem; }
+.mock-q-head .mock-cross { margin-left: auto; }
+.mock-q.crossed .mock-q-body { opacity: .5; }
+.mock-q.crossed .mock-q-head h2 { text-decoration: line-through; }
+.mock-gone { margin: 0; }
+.mock-gone[hidden] { display: none; }
+.mock-q-body { display: flex; flex-direction: column; gap: 16px; }
+.mock-part { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.mock-part h3 { margin: 0; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.mock-item { display: flex; flex-direction: column; gap: 10px; }
+.mock-item p { margin: 0; }
+.mock-mark { display: flex; flex-direction: column; gap: 10px; padding: 12px; background: var(--surface-2); border-radius: var(--radius); }
+.mock-end { margin: 8px 0 32px; }
+.print-only { display: none; }
+
+/* ---- printing a mock exam: stems and choices, no controls */
+@media print {
+  .obar, .toasts, .veil, .btn, .btn-row, .icon-btn, .rank-ctl, .rank-say, .mock-note, .mock-how, .mock-clock, .mock-bar, .mock-gone, .q-flag, .q-keys, noscript { display: none !important; }
+  .print-only { display: block; margin-bottom: 12pt; }
+  .print-only h1 { font-size: 16pt; margin: 0 0 4pt; }
+  body, .card, .panel, .mock-q, .opt, .rank-row, .cls-row { background: none !important; color: #000 !important; box-shadow: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  .mock-q { border: 0; padding: 0; margin: 0 0 18pt; break-before: auto; }
+  .mock-q.crossed .mock-q-body { opacity: 1; }
+  .mock-q.crossed .mock-q-head h2 { text-decoration: none; }
+  .mock-q-head { border-bottom: 1.5pt solid #000; padding-bottom: 3pt; }
+  .mock-part, .mock-item, .opt, .rank-row, .cls-row { break-inside: avoid; }
+  .mock-item::after { content: ""; display: block; height: 60pt; }
+  .mock-item[data-kind="written"]::after, .mock-item[data-kind="mech"]::after, .mock-item[data-kind="chair"]::after { height: 220pt; }
+  .opt, .rank-row, .cls-row { border: 0.75pt solid #000 !important; }
+  .num-in { border: 0; border-bottom: 0.75pt solid #000; border-radius: 0; }
+}

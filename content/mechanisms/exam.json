@@ -1,0 +1,237 @@
+[
+  {
+    "id": "e2-cumyl-iodide-hydride",
+    "title": "E2: 2-iodo-2-phenylpropane and sodium hydride",
+    "class": "E2",
+    "types": ["mech-two-paths"],
+    "from": "FA24 Exam 2, Q2B",
+    "overall": "[[rxn:CC(C)(I)c1ccccc1>NaH>C=C(C)c1ccccc1 + [HH] + [Na+].[I-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[H-:1].[H:2][CH2:3][C:4]([CH3:5])([I:6])[c:7]1[cH:8][cH:9][cH:10][cH:11][cH:12]1",
+        "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 2]}}, {"from": {"bond": [2, 3]}, "to": {"bond": [3, 4]}}, {"from": {"bond": [4, 6]}, "to": {"atom": 6}}],
+        "say": "Hydride takes a hydrogen from one of the methyl groups. The C-H electrons swing in to make the C=C, and iodide leaves, all at once. The hydride and the hydrogen it took leave together as {{H2}} gas.",
+        "why": "Sodium hydride is {{Na+}} and {{H-}}: a very strong base. The carbon that carries iodine is tertiary, so its back side is blocked and {{SN2}} cannot happen. A strong base does not wait for the iodide to ionize: it removes a beta hydrogen in the same step in which iodide leaves. rate = k[RI][{{H-}}].",
+        "hints": ["Hydride has a lone pair and a negative charge. Is it more likely to act as a base or to reach a tertiary carbon?", "A base takes a hydrogen from the carbon next to the C-I carbon. Here that is a methyl group.", "Three arrows: hydride lone pair to H, C-H bond to C-C, C-I bond to I."]
+      }
+    ],
+    "product": "[H:1][H:2].[CH2:3]=[C:4]([CH3:5])[c:7]1[cH:8][cH:9][cH:10][cH:11][cH:12]1.[I-:6]",
+    "takeaway": "Tertiary halide plus a strong base: E2, one step, three arrows. The base ends up bonded to the hydrogen it removed (here as {{H2}})."
+  },
+  {
+    "id": "e1-cumyl-iodide-water",
+    "title": "E1: 2-iodo-2-phenylpropane in water",
+    "class": "E1",
+    "types": ["mech-two-paths"],
+    "from": "FA24 Exam 2, Q2B",
+    "overall": "[[rxn:CC(C)(I)c1ccccc1 + O>>C=C(C)c1ccccc1 + [OH3+] + [I-]]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][C:2]([CH3:3])([I:4])[c:5]1[cH:6][cH:7][cH:8][cH:9][cH:10]1",
+        "arrows": [{"from": {"bond": [2, 4]}, "to": {"atom": 4}}],
+        "say": "The C-I bond breaks by itself. Both electrons leave with iodine, and a carbocation is left on the carbon that carried it.",
+        "why": "Water is a weak base and a poor nucleophile, so nothing pushes the iodide out: the molecule has to ionize first. It can, because the carbocation is tertiary and also benzylic (the positive charge is shared with the ring by resonance), iodide is an excellent leaving group, and water is a polar protic solvent that stabilizes both ions. This slow step involves only the halide: rate = k[RI].",
+        "hints": ["There is no strong base here, so the first step does not involve water at all.", "Break the C-I bond. Which atom keeps the electrons?"]
+      },
+      {
+        "name": "Water removes a beta hydrogen",
+        "species": "[OH2:11].[H:12][CH2:1][C+:2]([CH3:3])[c:5]1[cH:6][cH:7][cH:8][cH:9][cH:10]1.[I-:4]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 12]}}, {"from": {"bond": [12, 1]}, "to": {"bond": [1, 2]}}],
+        "say": "Water acts as the base. A lone pair on oxygen takes a hydrogen from a methyl group next to the positive carbon, and the C-H electrons become the C=C.",
+        "why": "A hydrogen on the carbon next to a carbocation is acidic, so even a weak base like water can remove it. The alkene that forms is conjugated with the benzene ring, which is why it is the major product here. Water attacking the positive carbon instead would give the {{SN1}} alcohol, the competing product.",
+        "hints": ["Water is the only base in the flask.", "Take a hydrogen from a methyl group next to the positive carbon: the positive carbon itself has no hydrogen.", "Two arrows: O lone pair to H, C-H bond to the C-C bond."]
+      }
+    ],
+    "product": "[H:12][OH2+:11].[CH2:1]=[C:2]([CH3:3])[c:5]1[cH:6][cH:7][cH:8][cH:9][cH:10]1.[I-:4]",
+    "takeaway": "E1 is two steps: the leaving group leaves first (slow), then a weak base removes a neighbouring hydrogen. Same alkene as the E2 route, different mechanism."
+  },
+  {
+    "id": "epoxide-migration-methoxide",
+    "title": "Epoxide opening, then an intramolecular SN2 that closes a new epoxide",
+    "class": "SN2",
+    "types": ["mech-intramolecular"],
+    "from": "FA24 Exam 2, Q4B",
+    "overall": "[[rxn:CC(Cl)C1CO1 + C[O-]>CH3OH>CC1OC1COC + [Cl-]]]",
+    "steps": [
+      {
+        "name": "Methoxide opens the epoxide at its CH2",
+        "species": "[CH3:1][O-:2].[CH2:3]1[O:4][CH:5]1[CH:6]([Cl:7])[CH3:8]",
+        "arrows": [{"from": {"lp": 2}, "to": {"bond": [2, 3]}}, {"from": {"bond": [3, 4]}, "to": {"atom": 4}}],
+        "say": "A lone pair on methoxide attacks the {{CH2}} carbon of the epoxide from the side opposite the ring oxygen. The C-O ring bond breaks and its electrons go onto oxygen, which becomes an alkoxide.",
+        "why": "The product has {{OCH3}} on the end {{CH2}}, so that is where methoxide must attack. It makes sense: the epoxide {{CH2}} is the least hindered electrophilic carbon in the molecule, and the strained three-membered ring (60° angles, like cyclopropane) lets an alkoxide act as a leaving group, which it normally cannot.",
+        "hints": ["Look at the product first: which carbon ends up bonded to {{OCH3}}?", "This is an SN2 step. The leaving group is the ring oxygen, which stays attached to the other ring carbon.", "Two arrows: methoxide lone pair to the ring {{CH2}}, then that C-O ring bond onto oxygen."]
+      },
+      {
+        "name": "The alkoxide displaces chloride next door",
+        "species": "[CH3:1][O:2][CH2:3][CH:5]([O-:4])[CH:6]([Cl:7])[CH3:8]",
+        "arrows": [{"from": {"lp": 4}, "to": {"bond": [4, 6]}}, {"from": {"bond": [6, 7]}, "to": {"atom": 7}}],
+        "say": "The new alkoxide oxygen attacks the neighbouring carbon, the one that carries chlorine, from the back. Chloride leaves and a new three-membered ring closes.",
+        "why": "The nucleophile ({{O-}}) and the electrophile (the C-Cl carbon) are in the same molecule and right next to each other, so they meet far more often than two separate molecules would. This is an intramolecular {{SN2}}: same two arrows, same backside attack, chloride is the leaving group.",
+        "hints": ["The product has a new epoxide and no chlorine. Which oxygen can reach the C-Cl carbon?", "Two arrows: {{O-}} lone pair to the carbon bearing Cl, then the C-Cl bond to Cl."]
+      }
+    ],
+    "product": "[CH3:1][O:2][CH2:3][CH:5]1[O:4][CH:6]1[CH3:8].[Cl-:7]",
+    "takeaway": "Analyze the product before drawing arrows. A nucleophile made inside the molecule (here an alkoxide) will attack a leaving group on the next carbon and close a ring."
+  },
+  {
+    "id": "sn2-tertbutoxide-iodomethane",
+    "title": "SN2: tert-butoxide and iodomethane (the ether synthesis that works)",
+    "class": "SN2",
+    "types": ["williamson-why"],
+    "from": "FA24 Exam 2, Q5A; Lecture 11/05, page 1",
+    "overall": "[[rxn:CC(C)(C)[O-] + CI>>CC(C)(C)OC + [I-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:1][C:2]([CH3:3])([CH3:4])[O-:5].[CH3:6][I:7]",
+        "arrows": [{"from": {"lp": 5}, "to": {"bond": [5, 6]}}, {"from": {"bond": [6, 7]}, "to": {"atom": 7}}],
+        "say": "A lone pair on the tert-butoxide oxygen attacks the methyl carbon from the side opposite iodine. As the O-C bond forms, the C-I bond breaks and iodide leaves.",
+        "why": "What matters for {{SN2}} is how crowded the electrophilic carbon is, and a methyl carbon is the least crowded there is (relative rate 1 in the lecture table, tert-butyl 0). tert-Butoxide is bulky and a strong base, but {{CH3I}} has no beta hydrogen, so elimination is impossible. Substitution is the only reaction open.",
+        "hints": ["Which carbon carries the leaving group, and how hindered is it?", "Can a base find a beta hydrogen on {{CH3I}}?", "Two arrows: O lone pair to the methyl carbon, C-I bond to I."]
+      }
+    ],
+    "product": "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][CH3:6].[I-:7]",
+    "takeaway": "To make an ether by SN2, put the bulky group in the alkoxide and keep the halide methyl or primary."
+  },
+  {
+    "id": "e2-tertbutyl-iodide-methoxide",
+    "title": "E2: methoxide and tert-butyl iodide (the ether synthesis that fails)",
+    "class": "E2",
+    "types": ["williamson-why"],
+    "from": "FA24 Exam 2, Q5A",
+    "overall": "[[rxn:C[O-] + CC(C)(C)I>>CC(C)=C + CO + [I-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[CH3:1][O-:2].[H:3][CH2:4][C:5]([CH3:6])([CH3:7])[I:8]",
+        "arrows": [{"from": {"lp": 2}, "to": {"bond": [2, 3]}}, {"from": {"bond": [3, 4]}, "to": {"bond": [4, 5]}}, {"from": {"bond": [5, 8]}, "to": {"atom": 8}}],
+        "say": "Methoxide cannot reach the tertiary carbon, so it takes a hydrogen from one of the methyl groups instead. The C-H electrons form the C=C and iodide leaves, all in one step.",
+        "why": "The electrophilic carbon is tertiary: three methyl groups block the back side, and the lecture's {{SN2}} rate for tert-butyl is 0. Methoxide is also a strong base (its conjugate acid, methanol, has {{pKa}} 15.5), and the nine beta hydrogens on the outside of the molecule are easy to reach. Strong base plus tertiary halide is {{E2}}.",
+        "hints": ["Can a nucleophile get to the back of a tertiary carbon?", "Methoxide is a strong base. Which hydrogens are on carbons next to the C-I carbon?", "Three arrows: O lone pair to H, C-H bond to C-C, C-I bond to I."]
+      }
+    ],
+    "product": "[CH3:1][O:2][H:3].[CH2:4]=[C:5]([CH3:6])[CH3:7].[I-:8]",
+    "takeaway": "A tertiary halide never does SN2. With a strong base it gives the alkene by E2, not the ether."
+  },
+  {
+    "id": "dithiane-double-sn2",
+    "title": "Two SN2 reactions close a six-membered ring: 1,4-dithiane",
+    "class": "SN2",
+    "types": ["products-from-formula", "mech-intramolecular"],
+    "from": "FA24 Exam 2, Q6B",
+    "overall": "[[rxn:[S-]CC[S-] + ICCI>>C1CSCCS1 + [I-] + [I-]]]",
+    "steps": [
+      {
+        "name": "First SN2: one sulfur attacks one end of the diiodide",
+        "species": "[S-:1][CH2:2][CH2:3][S-:4].[CH2:5]([I:7])[CH2:6][I:8]",
+        "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 5]}}, {"from": {"bond": [5, 7]}, "to": {"atom": 7}}],
+        "say": "A lone pair on one thiolate sulfur attacks a {{CH2}} of 1,2-diiodoethane from the back, and that iodide leaves.",
+        "why": "A thiolate is an excellent nucleophile (sulfur is large and polarizable: {{HS-}} is at the top of the lecture table, 126,000) and a weak base. The carbon is primary and iodide is the best halide leaving group: ideal {{SN2}}.",
+        "hints": ["Which atoms carry a negative charge and lone pairs?", "Two arrows: S lone pair to carbon, C-I bond to I."]
+      },
+      {
+        "name": "Second SN2, inside the molecule: the ring closes",
+        "species": "[S-:4][CH2:3][CH2:2][S:1][CH2:5][CH2:6][I:8].[I-:7]",
+        "arrows": [{"from": {"lp": 4}, "to": {"bond": [4, 6]}}, {"from": {"bond": [6, 8]}, "to": {"atom": 8}}],
+        "say": "The second sulfur attacks the carbon that still carries iodine, in the same molecule. The second iodide leaves and a six-membered ring closes.",
+        "why": "The intermediate holds a nucleophile at one end and a leaving group at the other, and the ring that forms has six atoms, the strain-free size. The same intermediate can instead meet a second diiodoethane, which leads to the open-chain product {{C6H12S2I2}}.",
+        "hints": ["Count the atoms from {{S-}} to the C-I carbon: what ring size forms?", "Two arrows again: S lone pair to carbon, C-I bond to I."]
+      }
+    ],
+    "product": "[S:1]1[CH2:2][CH2:3][S:4][CH2:6][CH2:5]1.[I-:7].[I-:8]",
+    "takeaway": "A molecule with two nucleophilic ends and one with two leaving groups can react twice. If the second reaction is inside the molecule, a ring forms."
+  },
+  {
+    "id": "ring-expansion-diazonium-ch2",
+    "title": "Ring expansion after loss of N2: the ring CH2 migrates",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "FA24 Exam 2, Q9",
+    "overall": "[[rxn:CC([N+]#N)C1(O)CC2C=CCC12 + O>>CC1CC2C=CCC2C1=O + N#N + [OH3+]]]",
+    "steps": [
+      {
+        "name": "Nitrogen leaves",
+        "species": "[CH3:1][CH:2]([N+:3]#[N:4])[C:5]1([OH:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The C-N bond breaks and both electrons go to nitrogen. {{N2}} leaves as a gas and a carbocation is left on the carbon that carried it.",
+        "why": "{{N2}} is one of the best leaving groups there is: a very stable, neutral molecule. The cation it leaves is only secondary, so it will take any chance to become more stable.",
+        "hints": ["HONO has already turned {{NH2}} into {{N2+}}. What does a good leaving group do?", "One arrow: the C-N bond to nitrogen."]
+      },
+      {
+        "name": "1,2-shift of the ring CH2: four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][C:5]1([OH:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "arrows": [{"from": {"bond": [5, 8]}, "to": {"bond": [8, 2]}}],
+        "say": "The bond from the C-OH carbon to the ring {{CH2}} moves over to the positive carbon. The {{CH2}} is now bonded to the old cation carbon, which has become part of the ring: the ring has grown from four carbons to five.",
+        "why": "Two things improve at once. The strained four-membered ring (90° angles) becomes a nearly strain-free five-membered ring, and the positive charge lands on the carbon that carries OH, where an oxygen lone pair can share it. A secondary cation with no help becomes a cation stabilized by resonance.",
+        "hints": ["The cation sits next to a carbon of a strained ring. Which bonds of that neighbouring carbon are ring bonds?", "A 1,2-alkyl shift: the arrow starts at a C-C bond of the neighbouring carbon and ends at the positive carbon.", "Here the bond that moves is the one to the ring {{CH2}}."]
+      },
+      {
+        "name": "An oxygen lone pair shares the charge",
+        "species": "[CH3:1][CH:2]1[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]2[C+:5]1[OH:6]",
+        "arrows": [{"from": {"lp": 6}, "to": {"bond": [6, 5]}}],
+        "say": "A lone pair on the OH oxygen folds down to make a C=O double bond. The positive charge is now on oxygen, and every atom has a full octet.",
+        "why": "This is a resonance form of the same cation, and the better one, because carbon and oxygen both have eight electrons. It is a protonated ketone.",
+        "hints": ["Which neighbouring atom has a lone pair it can share with the positive carbon?", "One arrow: O lone pair to the C-O bond."]
+      },
+      {
+        "name": "Water removes the proton",
+        "species": "[OH2:14].[CH3:1][CH:2]1[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]2[C:5]1=[O+:6][H:7]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 14}, "to": {"bond": [14, 7]}}, {"from": {"bond": [7, 6]}, "to": {"atom": 6}}],
+        "say": "Water takes the hydrogen from the positive oxygen. The O-H electrons stay on oxygen, which becomes the neutral C=O of the ketone.",
+        "why": "A protonated ketone is a very strong acid, so the solvent removes the proton at once. Do not stop at the cation: the product drawn in the question is the neutral ketone.",
+        "hints": ["The oxygen is positive and still has a hydrogen.", "Two arrows: water lone pair to H, O-H bond to O."]
+      }
+    ],
+    "product": "[H:7][OH2+:14].[CH3:1][CH:2]1[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]2[C:5]1=[O:6]",
+    "takeaway": "A carbocation next to a strained ring expands the ring by a 1,2-alkyl shift. If the carbon that ends up positive carries OH, the product is a ketone."
+  },
+  {
+    "id": "ring-expansion-diazonium-fusion",
+    "title": "Ring expansion after loss of N2: the ring-fusion CH migrates",
+    "class": "Rearrangement",
+    "types": ["mech-rearrangement"],
+    "from": "FA24 Exam 2, Q9",
+    "overall": "[[rxn:CC([N+]#N)C1(O)CC2C=CCC12 + O>>CC1C(=O)CC2C=CCC12 + N#N + [OH3+]]]",
+    "steps": [
+      {
+        "name": "Nitrogen leaves",
+        "species": "[CH3:1][CH:2]([N+:3]#[N:4])[C:5]1([OH:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "arrows": [{"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "The same first step as for the other product: the C-N bond breaks, {{N2}} leaves, and a secondary carbocation remains.",
+        "why": "Both products come from this one carbocation. What differs is which ring bond moves next.",
+        "hints": ["It starts exactly like the mechanism for the other ketone.", "One arrow: the C-N bond to nitrogen."]
+      },
+      {
+        "name": "1,2-shift of the ring-fusion CH: four-membered ring becomes five-membered",
+        "species": "[CH3:1][CH+:2][C:5]1([OH:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "arrows": [{"from": {"bond": [5, 13]}, "to": {"bond": [13, 2]}}],
+        "say": "This time the other ring bond of the C-OH carbon moves: the bond to the ring-fusion CH. That CH is now bonded to the old cation carbon, and again the four-membered ring has become five-membered.",
+        "why": "The C-OH carbon has two ring bonds, one to the {{CH2}} and one to the ring-fusion CH. Either can migrate, each relieves the ring strain, and each puts the positive charge on the carbon that carries OH. Two possible shifts, two products.",
+        "hints": ["The C-OH carbon has two different ring bonds. One was used for the other product.", "The arrow starts at the bond between the C-OH carbon and the ring-fusion CH and ends at the positive carbon."]
+      },
+      {
+        "name": "An oxygen lone pair shares the charge",
+        "species": "[CH3:1][CH:2]1[C+:5]([OH:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "arrows": [{"from": {"lp": 6}, "to": {"bond": [6, 5]}}],
+        "say": "A lone pair on the OH oxygen makes the C=O double bond, and the positive charge moves to oxygen.",
+        "why": "The resonance form with the charge on oxygen gives every atom an octet. It is a protonated ketone.",
+        "hints": ["Which neighbouring atom has a lone pair to share with the positive carbon?", "One arrow: O lone pair to the C-O bond."]
+      },
+      {
+        "name": "Water removes the proton",
+        "species": "[OH2:14].[CH3:1][CH:2]1[C:5](=[O+:6][H:7])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 14}, "to": {"bond": [14, 7]}}, {"from": {"bond": [7, 6]}, "to": {"atom": 6}}],
+        "say": "Water takes the hydrogen from the positive oxygen and the O-H electrons stay on oxygen: the neutral ketone.",
+        "why": "A protonated ketone is a very strong acid, so water removes the proton at once.",
+        "hints": ["The oxygen is positive and still has a hydrogen.", "Two arrows: water lone pair to H, O-H bond to O."]
+      }
+    ],
+    "product": "[H:7][OH2+:14].[CH3:1][CH:2]1[C:5](=[O:6])[CH2:8][CH:9]2[CH:10]=[CH:11][CH2:12][CH:13]12",
+    "takeaway": "When two different ring bonds can migrate to the same cation, draw both shifts: each gives its own ring-expanded product."
+  }
+]
