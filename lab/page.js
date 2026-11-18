@@ -19,7 +19,7 @@
   // rows: [{label, text, v}], v null means "no bar". px(v) maps a value to 0..plotW from the axis start.
   function barChart(o) {
     const L = 196, PW = o.plotW || 360, RH = 30, top = o.legend ? 40 : 14, H = top + o.rows.length * RH + 34, ax = o.zero == null ? L : L + o.zero * PW;
-    let s = `<svg viewBox="0 0 650 ${H}" role="img" aria-label="${esc(o.aria)}">`;
+    let s = `<svg viewBox="0 0 650 ${H}" role="img" data-nolookup aria-label="${esc(o.aria)}">`;
     if (o.legend) s += o.legend;
     (o.ticks || []).forEach(t => { const x = L + t.f * PW; s += `<line class="grid" x1="${x}" y1="${top - 6}" x2="${x}" y2="${top + o.rows.length * RH}"/><text class="muted" x="${x}" y="${top + o.rows.length * RH + 16}" text-anchor="middle">${esc(t.label)}</text>` });
     if (o.ref) { const x = L + o.ref.f * PW; s += `<line class="ref" x1="${x}" y1="${top - 8}" x2="${x}" y2="${top + o.rows.length * RH}"/><text x="${x}" y="${top + o.rows.length * RH + 30}" text-anchor="middle">${esc(o.ref.label)}</text>` }
@@ -224,7 +224,7 @@
       barChart({ aria: "Relative SN2 rate by substrate on a log scale: " + sub.map(r => r.name + " " + (r.rate ? sfmt(r.rate) : "no reaction")).join(", ") + ".", plotW: 340, rows: sub.map(r => ({ label: r.name.replace(/ \(.*$/, ""), text: r.rate ? sfmt(r.rate) : "no reaction", v: r.rate ? sf(r.rate) : null })), ticks: [-3, -2, -1, 0].map(k => ({ f: (k - smin) / (smax - smin), label: String(Math.pow(10, k)) })) }),
       more(sub.map(r => [r.name, r.rate ? sfmt(r.rate) : "no reaction", r.note || ""]), ["Substrate", "Relative rate", "Note"])));
     const e2 = R.e2regio.rows, X0 = 196, PW = 360, RH = 30, top = 44, H = top + e2.length * RH + 14;
-    let s = `<svg viewBox="0 0 650 ${H}" role="img" aria-label="${esc("E2 products of 2-hexyl halides, percent Saytzeff and Hofmann: " + e2.map(r => "leaving group " + r.lg + " " + r.saytzeff + " and " + r.hofmann).join("; "))}">` +
+    let s = `<svg viewBox="0 0 650 ${H}" role="img" data-nolookup aria-label="${esc("E2 products of 2-hexyl halides, percent Saytzeff and Hofmann: " + e2.map(r => "leaving group " + r.lg + " " + r.saytzeff + " and " + r.hofmann).join("; "))}">` +
       `<defs><pattern id="labHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hatch" x1="0" y1="0" x2="0" y2="7" opacity=".3"/></pattern></defs>` +
       `<rect class="bar" x="${X0}" y="8" width="16" height="16" rx="3"/><text x="${X0 + 22}" y="21">Saytzeff (more substituted alkene)</text>` +
       `<rect class="bar2" x="${X0 + 250}" y="8" width="16" height="16" rx="3"/><text x="${X0 + 272}" y="21">Hofmann (less substituted)</text>`;

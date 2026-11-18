@@ -39,7 +39,8 @@ html.px-cb :is(.rank-row, .cls-row).wrong { border-style: dashed; }
 .opts.pair .opt .opt-k { align-self: flex-start; }
 .opts.multi .opt { cursor: pointer; }
 .opts.multi .opt input { flex: none; width: 1.15em; height: 1.15em; min-height: 0; margin: 0; accent-color: var(--accent); }
-.opt .opt-mark { flex: none; max-width: 100%; }      /* a long mark ("Not quite, this one does not apply") wraps inside the choice */
+.opt .opt-mark { flex: none; max-width: 100%; }
+.opts:not(.pair) .opt .opt-h { flex: 1 1 12em; min-width: min(12em, 100%); }      /* the words of a choice keep a readable width: when the mark beside them would squeeze them, the mark moves to the next line */      /* a long mark ("Not quite, this one does not apply") wraps inside the choice */
 .opt .explain { flex: 1 0 100%; align-self: stretch; margin-top: 2px; font-weight: 400; text-align: left; }
 
 /* ---- number */
@@ -150,7 +151,7 @@ ol.rank-key li { border: 0; padding: 2px 0; background: none; }
 .print-only { display: none; }
 /* on a phone the bar that stays on screen through a sitting takes less of it (it took 23 percent of a 390x844 phone): tighter
    spacing and a smaller clock, with every control still in it at full touch size */
-@media (max-width: 600px) {
+@media (max-width: 600px), (max-height: 500px) {      /* a phone, upright or sideways */
   .mock-room .mock-bar { padding: 10px 12px; gap: 6px; }
   .mock-room .mock-bar .btn-row { margin-top: 0; gap: 6px; }
   .mock-room .mock-title { font-size: 1.05rem; }
@@ -162,7 +163,8 @@ ol.rank-key li { border: 0; padding: 2px 0; background: none; }
    text) and the reading font (--read). A question and a mock exam's item are each sized once, in px as maison.css sizes the
    choices; what is sized in rem inside them is scaled from its own size. So nothing is scaled twice, and one question never
    shows two text sizes. Buttons keep their size, as in the other classes. Outside Eureka (no html.cb) nothing changes. */
-html.cb :is(.q, .mock-item) { font-size: calc(17px * var(--rs, 1)); font-family: var(--read, var(--font)); }
+html.cb :is(.q, .mock-item) { font-size: calc(17px * var(--rs, 1)); }
+html.cb:not([data-read-font="system"]) :is(.q, .mock-item) { font-family: var(--read, var(--font)); }      /* a reading font chosen in Settings; with the default the questions keep the page's own font */
 html.cb .q-stem { font-size: calc(1.08rem * var(--rs, 1)); }
 html.cb .q-verdict { font-size: calc(1.05rem * var(--rs, 1)); }
 html.cb :is(.q, .mock-item) h2 { font-size: calc(1.45rem * var(--rs, 1)); }

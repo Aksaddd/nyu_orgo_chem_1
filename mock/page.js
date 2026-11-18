@@ -76,7 +76,7 @@
       el("li", {}, "Pen only. No notes and no paper of your own."),
       el("li", {}, "The model kit is allowed."),
       el("li", {}, "Write every answer on paper. You get no feedback until you finish, as in the real exam.")),
-      el("p", { class: "small muted" }, "Without the timer you take the time you need. Sit at least one exam with the timer before the real one: it shows how you use the 110 minutes.")));
+      el("p", { class: "small" }, "Without the timer you take the time you need. Sit at least one exam with the timer before the real one: it shows how you use the 110 minutes.")));
     app.appendChild(el("section", { class: "mock-past" }, el("h2", {}, "Your attempts"),
       past.length ? el("ul", { class: "mock-hist" }, past.slice().reverse().map(a => {
         const x = list.find(e => e.id === a.id), pct = a.max ? Math.round(a.score / a.max * 100) : 0;

@@ -50,6 +50,9 @@ sub, sup { line-height: 0 }
 .eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 .3em }
 .muted { color: var(--muted) } .small { font-size: .875rem }
 .prose { font: 19px/1.6 var(--font-serif); max-width: 66ch }
+html.cb .prose { font-size: calc(19px * var(--rs, 1)); }      /* inside Eureka: its text size, its reading font when one is chosen, and its line spacing */
+html.cb:not([data-read-font="system"]) .prose { font-family: var(--read, var(--font-serif)); }
+html.px-space1 .prose { line-height: 1.85; } html.px-space2 .prose { line-height: 2.1; }
 .prose p { margin: 0 0 1em } .prose h2, .prose h3 { font-family: var(--font) }
 .stack { display: flex; flex-direction: column; gap: 16px }
 .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
@@ -143,7 +146,7 @@ details.more[open] summary { margin-bottom: 6px }
 
 /* touch, zoom, motion, print */
 @media (pointer: coarse) { .btn, .opt, .tab, .chip, .seg button, .obar-links a, input, select { min-height: 44px } .btn.small { min-height: 44px } }
-@media (max-width: 600px) { body { font-size: 16px } .wrap { padding-top: 16px } .prose { font-size: 18px } .card { padding: 16px } }
+@media (max-width: 600px) { body { font-size: 16px } .wrap { padding-top: 16px } .prose { font-size: 18px } html.cb .prose { font-size: calc(18px * var(--rs, 1)) } .card { padding: 16px } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important } }
 @media print {
   .obar, .btn, .icon-btn, .toasts, .veil, .tabs, .btn-row { display: none !important }

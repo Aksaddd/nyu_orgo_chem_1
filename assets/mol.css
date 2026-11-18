@@ -13,11 +13,11 @@
 .scheme-species .mol { margin: 0 }
 .scheme-label { font-weight: 600 }
 .scheme-plus { font-size: 1.15em; line-height: 1 }
-.scheme-arrow { display: inline-grid; grid-template-rows: 1fr auto 1fr; justify-items: center; row-gap: 1px; font-family: var(--font); font-size: 0.8rem; line-height: 1.25; white-space: nowrap }
+.scheme-arrow { display: inline-grid; grid-template-rows: 1fr auto 1fr; justify-items: center; row-gap: 1px; font-family: var(--font); font-size: 0.8em; line-height: 1.25; white-space: nowrap }
 .scheme-arrow .scheme-text:first-child { align-self: end }
 .scheme-arrow .scheme-text:last-child { align-self: start }
 .scheme-arrow .scheme-text { min-height: 1.25em }
-.scheme-inline .scheme-arrow { font-size: 0.72rem }
+.scheme-inline .scheme-arrow { font-size: 0.9em }      /* inside .scheme-arrow already: 0.8em x 0.9em, as 0.72rem was */
 .scheme-inline .scheme-text { min-height: 0 }
 .scheme-line { display: block }
 
@@ -77,7 +77,10 @@
 .mech-step-title:focus { outline: none }
 .mech-step-title:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px }
 .mech-stage { overflow: hidden }
-.mech-say { font-size: 1.05rem }
+.mech-say { font-size: 1.05em }
+html.cb .mech { font-size: calc(17px * var(--rs, 1)); }      /* inside Eureka the trainer's words follow its text settings, as a question's do (quiz.css) */
+html.cb:not([data-read-font="system"]) .mech { font-family: var(--read, var(--font)); }
+html.cb .mech .small:not(.btn) { font-size: calc(.875rem * var(--rs, 1)); }
 .mech-feedback:empty, .mech-hints:empty { display: none }
 .mech-feedback p { margin: 0 0 6px }
 .mech-notes { margin: 0; padding-left: 1.2em; display: grid; gap: 6px }
