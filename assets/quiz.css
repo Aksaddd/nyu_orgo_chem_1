@@ -7,6 +7,8 @@
 .q-head .q-flag { margin-left: auto; }
 .q-flag[aria-pressed="true"] { color: var(--warn); border-color: var(--warn); }
 .q-stem { font-size: 1.08rem; line-height: 1.5; }
+/* a table in a question scrolls in its own box, so the page never pans sideways (as the readings' tables do) */
+:is(.q-stem, .q-solution, .q-model, .explain) table { display: block; max-width: 100%; overflow-x: auto; }
 .q-body, .q-after { display: flex; flex-direction: column; gap: 12px; }
 .q-body:empty, .q-after:empty, .q-msg:empty, .rank-say:empty { display: none; }
 .q-msg { color: var(--warn); margin: 0; }
@@ -24,6 +26,10 @@
 @media (max-width: 420px) { .q .opts.pair, .mock-ans .opts.pair { grid-template-columns: 1fr; } }
 .opt { flex-wrap: wrap; }
 .q .opt.right::after, .q .opt.wrong::after, .mock-ans .opt.right::after, .mock-ans .opt.wrong::after { content: none; }   /* our own mark carries the tick and the word */
+/* so does Eureka's "Colour-blind safe marking" label (shared/prefs.js), which outranks the rule above: a choice never says
+   "Missed, this one applies" and "Not this" at once. A wrong row is dashed, as Eureka dashes a wrong choice. */
+html.px-cb :is(.q, .mock-ans) .opt:is(.right, .wrong)::after { content: none; }
+html.px-cb :is(.rank-row, .cls-row).wrong { border-style: dashed; }
 .opt[disabled] { opacity: 1; color: var(--ink); cursor: default; }
 .opt .opt-k { flex: none; min-width: 1.2em; font-family: var(--mono); font-size: .85em; color: var(--muted); }
 .opt .opt-h { flex: 1 1 0; min-width: 0; }
@@ -32,14 +38,14 @@
 .opts.pair .opt .opt-k { align-self: flex-start; }
 .opts.multi .opt { cursor: pointer; }
 .opts.multi .opt input { flex: none; width: 1.15em; height: 1.15em; min-height: 0; margin: 0; accent-color: var(--accent); }
-.opt .opt-mark { flex: none; }
+.opt .opt-mark { flex: none; max-width: 100%; }      /* a long mark ("Not quite, this one does not apply") wraps inside the choice */
 .opt .explain { flex: 1 0 100%; align-self: stretch; margin-top: 2px; font-weight: 400; text-align: left; }
 
 /* ---- number */
 .num { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 .num label { font-weight: 600; }
-.num-row { display: inline-flex; align-items: center; gap: 8px; }
-.num-in { font: inherit; font-size: 1.15rem; width: 8em; padding: 10px 12px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
+.num-row { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; max-width: 100%; }
+.num-in { font: inherit; font-size: 1.15rem; width: 8em; max-width: 100%; padding: 10px 12px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
 .num-in:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .num-in[readonly] { background: var(--surface-2); }
 
@@ -65,7 +71,7 @@
 .cls-row.right { border-color: var(--good); }
 .cls-row.wrong { border-color: var(--bad); }
 .cls-h { flex: 1 1 260px; min-width: 0; }
-.cls-row .explain { flex: 1 0 100%; }
+.cls-row .explain, .cls-row .cls-mark { flex: 1 0 100%; }      /* .cls-mark: a line's mark and its right bin, outside the explanation */
 .seg button[data-c="true"] { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
 
 /* ---- written work and rubrics */
@@ -141,11 +147,55 @@ ol.rank-key li { border: 0; padding: 2px 0; background: none; }
 .mock-mark { display: flex; flex-direction: column; gap: 10px; padding: 12px; background: var(--surface-2); border-radius: var(--radius); }
 .mock-end { margin: 8px 0 32px; }
 .print-only { display: none; }
+/* on a phone the bar that stays on screen through a sitting takes less of it (it took 23 percent of a 390x844 phone): tighter
+   spacing and a smaller clock, with every control still in it at full touch size */
+@media (max-width: 600px) {
+  .mock-room .mock-bar { padding: 10px 12px; gap: 6px; }
+  .mock-room .mock-bar .btn-row { margin-top: 0; gap: 6px; }
+  .mock-room .mock-title { font-size: 1.05rem; }
+  .mock-room .mock-time { font-size: 1.2rem; }
+}
+
+/* ---- inside Eureka: a question's words follow Eureka's text settings, as its answer choices do (shared/maison.css sizes
+   .opt and .explain): the size chosen in Settings (--rs, which on a phone also carries what "Text and layout size" gives the
+   text) and the reading font (--read). A question and a mock exam's item are each sized once, in px as maison.css sizes the
+   choices; what is sized in rem inside them is scaled from its own size. So nothing is scaled twice, and one question never
+   shows two text sizes. Buttons keep their size, as in the other classes. Outside Eureka (no html.cb) nothing changes. */
+html.cb :is(.q, .mock-item) { font-size: calc(17px * var(--rs, 1)); font-family: var(--read, var(--font)); }
+html.cb .q-stem { font-size: calc(1.08rem * var(--rs, 1)); }
+html.cb .q-verdict { font-size: calc(1.05rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) h2 { font-size: calc(1.45rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) h3 { font-size: calc(1.1rem * var(--rs, 1)); }
+html.cb :is(.q-solution, .q-model, .q-rubric) :is(h3, h4) { font-size: calc(1rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) .small:not(.btn) { font-size: calc(.875rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) .eyebrow { font-size: calc(.8rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) .badge { font-size: calc(.78rem * var(--rs, 1)); }
+html.cb :is(.q, .mock-item) .chip { font-size: calc(.875rem * var(--rs, 1)); }
+html.cb .rank-n { font-size: calc(.9rem * var(--rs, 1)); }
+html.cb .q .chair-fig figcaption { font-size: calc(.9rem * var(--rs, 1)); }
+html.cb .q .mech-say { font-size: calc(1.05rem * var(--rs, 1)); }
+/* larger text, same width: a row of choices wraps (each row stays a pill), and when the room is under 14 of the question's
+   letters wide (a phone at about 150% and up) a long name or formula may break rather than push the page sideways.
+   A table keeps its words whole and scrolls in its box. */
+html.cb :is(.q, .mock-item) .seg { flex-wrap: wrap; max-width: 100%; border-radius: max(22px, calc(.69em + 8px)); }
+html.cb :is(.q, .mock-item) { container: orgo-q / inline-size; }
+@container orgo-q (max-width: 14em) {
+  * { overflow-wrap: anywhere; }
+  .chem { white-space: normal; }
+  table, table * { overflow-wrap: normal; } table .chem { white-space: nowrap; }
+}
+/* "Space between lines and words" (shared/prefs.js) reaches a question through .q: the stem sets its own line height, and a
+   mock exam's item is not a .q, so both are given the spacing the choices get */
+html.px-space1 :is(.q-stem, .mock-item) { line-height: 1.8; word-spacing: .08em; }
+html.px-space2 :is(.q-stem, .mock-item) { line-height: 2.1; word-spacing: .16em; letter-spacing: .03em; }
+/* and "Easier letters" (the same file's letters and spacing) reaches a mock exam's item too */
+html.px-font .mock-item { font-family: "Atkinson Hyperlegible", "OpenDyslexic", Verdana, "Trebuchet MS", "Comic Sans MS", sans-serif; letter-spacing: .035em; word-spacing: .12em; }
 
 /* ---- printing a mock exam: stems and choices, no controls */
 @media print {
   .obar, .toasts, .veil, .btn, .btn-row, .icon-btn, .rank-ctl, .rank-say, .mock-note, .mock-how, .mock-clock, .mock-bar, .mock-gone, .q-flag, .q-keys, noscript { display: none !important; }
   .print-only { display: block; margin-bottom: 12pt; }
+  html.cb :is(.q, .mock-item) { font-size: inherit; }      /* the page's 11pt, as before */
   .print-only h1 { font-size: 16pt; margin: 0 0 4pt; }
   body, .card, .panel, .mock-q, .opt, .rank-row, .cls-row { background: none !important; color: #000 !important; box-shadow: none !important; }
   .wrap { max-width: none; padding: 0; }

@@ -47,6 +47,7 @@
     const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"), p = 6, w = box[2] - box[0] + 2 * p, ht = box[3] - box[1] + 2 * p;
     s.setAttribute("class", "newman-svg"); s.setAttribute("viewBox", `${f1(box[0] - p)} ${f1(box[1] - p)} ${f1(w)} ${f1(ht)}`); s.setAttribute("width", Math.round(w)); s.setAttribute("height", Math.round(ht));
     s.setAttribute("role", "img"); s.setAttribute("aria-label", `Newman projection, ${kind}. Front carbon, clockwise from the top: ${F.join(", ")}. Back carbon, turned ${Math.round(a)} degrees: ${B.join(", ")}.`);
+    s.setAttribute("data-nolookup", "");      // Eureka's dictionary leaves the drawing alone: its labels are not words
     s.innerHTML = h; return s;
   };
   ORGO.tokens = ORGO.tokens || {};
@@ -78,7 +79,7 @@
       const px = X(angle), py = Y(N.energy(angle));
       h += `<line x1="${f1(px)}" y1="150" x2="${f1(px)}" y2="${f1(py)}" stroke="var(--accent, #0071e3)" stroke-dasharray="3 3"/><circle cx="${f1(px)}" cy="${f1(py)}" r="5.5" fill="var(--accent, #0071e3)" stroke="var(--surface, #fff)" stroke-width="1.5"/>`;
       const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("class", "energy-svg newman-curve"); s.setAttribute("viewBox", "0 0 340 190"); s.setAttribute("width", "340"); s.setAttribute("height", "190");
-      s.setAttribute("role", "img"); s.setAttribute("aria-label", `Energy of butane against dihedral angle. Now at ${angle} degrees, about ${Math.round(Math.max(0, N.energy(angle)) * 10) / 10} kcal/mol.`); s.innerHTML = h; return s;
+      s.setAttribute("role", "img"); s.setAttribute("aria-label", `Energy of butane against dihedral angle. Now at ${angle} degrees, about ${Math.round(Math.max(0, N.energy(angle)) * 10) / 10} kcal/mol.`); s.setAttribute("data-nolookup", ""); s.innerHTML = h; return s;
     }
     function draw() {
       fig.textContent = ""; fig.appendChild(N.svg("CH3,H,H|CH3,H,H|" + angle)); plot.textContent = ""; plot.appendChild(curve());

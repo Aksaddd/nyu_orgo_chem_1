@@ -2,8 +2,11 @@
 
 /* ---- the drawings: ink follows the page, axial and equatorial bonds take --ax and --eq (plus the letters a and e) */
 .chair-svg, .ring-svg, .newman-svg, .energy-svg { max-width: 100%; height: auto; color: var(--ink, #1d1d1f); font-family: var(--font, system-ui, -apple-system, "Segoe UI", sans-serif); overflow: visible; vertical-align: middle; }
-.chair-svg.inline, .ring-svg.inline, .newman-svg.inline { height: 4.2em; width: auto; }
-.energy-svg.inline { height: 6em; width: auto; }
+.chair-svg.inline, .newman-svg.inline { height: 4.2em; width: auto; }
+/* a flat ring in a sentence carries the substituents the answer turns on: 7em keeps its labels at 9 px and more. An energy
+   diagram has five labels and no readable size smaller than its own, so in a sentence it is drawn as it is on its own line. */
+.ring-svg.inline { height: 7em; width: auto; }
+.energy-svg.inline { height: auto; width: min(100%, 340px); }
 .chair-svg text, .ring-svg text, .newman-svg text, .energy-svg text { user-select: none; }
 
 /* ---- the chair lab */
@@ -34,8 +37,9 @@
 .chair-given svg { max-width: min(100%, 360px); }
 .chair-template svg { max-width: min(100%, 320px); }
 .chair-q { font-weight: 600; margin: 0; }
+.chair-mark { margin: 0; }      /* a part's Right or Not quite, outside its explanation (as .q-verdict and .cls-mark) */
 .chair-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.chair-row > span:first-child { min-width: 14em; }
+.chair-row > span:first-child { min-width: min(14em, 100%); }      /* never wider than the row: larger text inside Eureka */
 .chair-opts-fig { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .chair-opts-fig .opt { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 .chair-tag { font-style: italic; }
@@ -65,3 +69,9 @@
   .chair-pair { grid-template-columns: minmax(0, 1fr); }
   .chair-row > span:first-child { min-width: 0; }
 }
+/* Eureka's "Text and layout size" zooms the page: the screen stays wide while the room inside shrinks, and the media queries
+   above see only the screen. So each lab also follows the width it has, at the same widths as above on a plain page (the
+   page's padding is 40 px): at 200% on a tablet the chairs no longer get a column too narrow to draw in. */
+.chair-lab, .newman-lab, .energy-lab { container: orgo-lab / inline-size; }
+@container orgo-lab (max-width: 720px) { .chair-lab-main, .newman-main, .energy-main { grid-template-columns: minmax(0, 1fr); } }
+@container orgo-lab (max-width: 480px) { .chair-pair { grid-template-columns: minmax(0, 1fr); } }

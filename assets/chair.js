@@ -206,6 +206,7 @@
     const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"), p = 6, w = box[2] - box[0] + 2 * p, h = box[3] - box[1] + 2 * p;
     s.setAttribute("class", cls); s.setAttribute("viewBox", `${f1(box[0] - p)} ${f1(box[1] - p)} ${f1(w)} ${f1(h)}`);
     s.setAttribute("width", Math.round(w)); s.setAttribute("height", Math.round(h)); s.setAttribute("role", role || "img"); s.setAttribute("aria-label", aria);
+    s.setAttribute("data-nolookup", "");      // Eureka's dictionary leaves the drawing alone: its labels are not words
     s.innerHTML = inner; return s;
   }
   C.mk = mk;
@@ -234,13 +235,17 @@
         const sub = here.find(s => s.face === f), key = c + f, lit = o.hl.has(key);
         const mode = sub ? "g" : (o.H || lit) ? "h" : here.length ? "stub" : null; if (!mode) continue;
         const ax = (f === "u") === upC, d = ax ? [0, f === "u" ? -1 : 1] : e;
-        const len = mode === "g" ? (ax ? LAX : LEQ) : mode === "h" ? 22 : 15, fs = mode === "g" ? 12 : 10;
+        // an axial H whose bond points into the ring (d[1] * p[1] < 0: the middle carbons, 2 and 5 in A, 3 and 6 in B) is drawn
+        // full length, so its H sits past the far ring bond, not on it
+        const len = mode === "g" ? (ax ? LAX : LEQ) : mode === "h" ? (ax && d[1] * p[1] < 0 ? LAX : 22) : 15, fs = mode === "g" ? 12 : 10;
         const x2 = p[0] + d[0] * len, y2 = p[1] + d[1] * len, side = Math.abs(d[0]) > 0.8;
-        // the letter a or e sits beside the bond, on the side away from this carbon's other bond
+        // the letter a or e sits beside the bond, on the side away from this carbon's other bond: a at the middle of the bond,
+        // e three quarters along it, where it is clear of the ring bond that leaves the same carbon on that side
         let n = [d[1], -d[0]]; if (ax) n = [1, 0]; else if ((n[1] > 0) !== upC) n = [-n[0], -n[1]];
+        const k = ax ? 0.5 : 0.75;
         items.push({ key, c, f, g: sub ? sub.g : "H", mode, ax, lit, fs, x1: p[0], y1: p[1], x2, y2, anchor: side ? (d[0] < 0 ? "end" : "start") : "middle",
           lx: side ? x2 + d[0] * 4 : x2, ly: side ? y2 + fs * 0.33 + d[1] * 4 : d[1] < 0 ? y2 - fs * 0.4 : y2 + fs * 1.05,
-          ex: (p[0] + x2) / 2 + n[0] * 7, ey: (p[1] + y2) / 2 + n[1] * 7 + 3 });
+          ex: p[0] + (x2 - p[0]) * k + n[0] * 7, ey: p[1] + (y2 - p[1]) * k + n[1] * 7 + 3 });
       }
     }
     return { P, items, nums };
@@ -497,7 +502,9 @@
       const box = el("div", { class: "panel stack chair-task" }, el("p", { class: "eyebrow" }, `Part ${i + 1} of ${tasks.length}`)); body.appendChild(box);
       tasks[i].render(box, (ok, why, extra) => {
         if (ok) right++;
-        box.appendChild(el("div", { class: "explain", role: "status" }, el("span", { class: ok ? "mark-ok" : "mark-no" }, ok ? "Right" : "Not quite"), " ", el("span", {}, why || ""), extra || null));
+        // the mark in a line of its own: Eureka's "Explanations" preference holds back what has the class "explain", never the mark
+        box.appendChild(el("p", { class: "chair-mark", role: "status" }, el("span", { class: ok ? "mark-ok" : "mark-no" }, ok ? "Right" : "Not quite")));
+        box.appendChild(el("div", { class: "explain" }, el("span", {}, why || ""), extra || null));
         i++;
         if (i < tasks.length) { const b = el("button", { class: "btn primary", type: "button", on: { click: () => { b.remove(); next() } } }, "Next part"); box.appendChild(b); if (b.focus) b.focus() }
         else finish();

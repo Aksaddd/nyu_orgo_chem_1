@@ -8,6 +8,7 @@
 .v3d-flip-ctl { display: flex; gap: 12px; align-items: center; flex-wrap: wrap }
 .v3d-flip-ctl label { font-weight: 600 }
 .v3d-slider { flex: 1 1 200px; min-width: 160px; accent-color: var(--accent); min-height: 32px }
+@media (pointer: coarse) { .v3d-slider { min-height: 44px } }
 .v3d-caption { font-weight: 600; margin: 0 }
 
 .lab-intro { margin: 0 0 14px; max-width: 70ch }
@@ -64,6 +65,13 @@
 .card.lab-model { display: flex; flex-direction: column; align-items: flex-start; gap: 4px }      /* the name, then the note under it (.card.tap is a block) */
 
 @media (max-width: 560px) {
+  .rung-btn { grid-template-columns: 1fr auto; }
+  .rung-track { display: none }
+}
+/* Eureka's "Text and layout size" zooms the page, and a media query sees only the screen: a tool also follows the width it
+   has, at the same width as above on a plain page (whose padding is 40 px) */
+.lab-tool { container: orgo-tool / inline-size }
+@container orgo-tool (max-width: 520px) {
   .rung-btn { grid-template-columns: 1fr auto; }
   .rung-track { display: none }
 }
