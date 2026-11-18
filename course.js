@@ -12,7 +12,7 @@ window.COURSE = {
   sourceHint: "for example just chairs, or just SN2 and E2",
   terms: ["anti-periplanar", "pKa"],
   deckBonus: () => null,
-  orgoPortals: [["Readings", "read/"], ["Practice", "drill/"], ["Exam 2 Lab", "exam/"], ["Mechanisms", "mechanisms/"], ["Mock Exam", "mock/"], ["Syllabus", "syllabus/"], ["Review", "review/"], ["Molecule Lab", "lab/"], ["Foundations", "foundations/"], ["Archive", "archive/"]],
+  orgoPortals: [["Readings", "read/"], ["Practice", "drill/"], ["Exam 2 Lab", "exam/"], ["Mechanisms", "mechanisms/"], ["Mock Exam", "mock/"], ["Syllabus", "syllabus/"], ["Review", "review/"], ["Molecule Lab", "lab/"], ["Foundations", "foundations/"], ["Word Roots", "roots/"], ["Archive", "archive/"]],
   // the companion's fact for each of its six forms
   facts: [
     "A cat curled in a chair is the most relaxed cat. Cyclohexane agrees: the chair has no angle strain and no torsional strain.",
