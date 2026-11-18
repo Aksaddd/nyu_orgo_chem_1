@@ -1,0 +1,25 @@
+{
+  "nucleophiles": {"title": "Nucleophilicity: relative rate of SN2 reaction", "from": "Lecture 11/05, Table 7.5 (p. 295)", "rows": [
+    {"f": "HC≡C-", "smiles": "[C-]#C", "rate": 126000}, {"f": "HS-", "smiles": "[SH-]", "rate": 126000}, {"f": "I-", "smiles": "[I-]", "rate": 80000},
+    {"f": "HO-", "smiles": "[OH-]", "rate": 16000}, {"f": "N3-", "smiles": "[N-]=[N+]=[N-]", "rate": 8000}, {"f": "NH3", "smiles": "N", "rate": 8000},
+    {"f": "Cl-", "smiles": "[Cl-]", "rate": 1000}, {"f": "CH3CO2-", "smiles": "CC(=O)[O-]", "rate": 630}, {"f": "CH3OH", "smiles": "CO", "rate": 1}, {"f": "H2O", "smiles": "O", "rate": 1}]},
+  "substrates": {"title": "SN2: relative rate by substrate", "from": "Lecture 11/10, Figure 7.3 (p. 291)", "rows": [
+    {"name": "allyl", "smiles": "C=CC*", "rate": 1.3, "note": "The neighbouring pi bond stabilizes the transition state."},
+    {"name": "methyl", "smiles": "C*", "rate": 1}, {"name": "ethyl (primary)", "smiles": "CC*", "rate": 0.033},
+    {"name": "isobutyl (primary, branched next door)", "smiles": "CC(C)C*", "rate": 0.003, "note": "In parentheses in the notes."},
+    {"name": "isopropyl (secondary)", "smiles": "CC(C)*", "rate": 0.00083}, {"name": "tert-butyl (tertiary)", "smiles": "CC(C)(C)*", "rate": 0, "note": "No SN2."},
+    {"name": "vinyl", "smiles": "C=C*", "rate": 0, "note": "No SN2 at an sp2 carbon."}]},
+  "e2regio": {"title": "E2 of 2-hexyl-LG with NaOCH3 in CH3OH", "from": "Lecture 11/12, page 4", "rows": [
+    {"lg": "I", "saytzeff": 81, "hofmann": 19}, {"lg": "Br", "saytzeff": 72, "hofmann": 28}, {"lg": "Cl", "saytzeff": 67, "hofmann": 33}, {"lg": "F", "saytzeff": 30, "hofmann": 70}]},
+  "strain": {"title": "Cycloalkanes", "from": "Lecture 10/20 and 10/27, Table 5.1 (p. 198)", "rows": [
+    {"name": "cyclopropane", "n": 3, "smiles": "C1CC1", "hf": 12.7, "perCH2": 4.2, "flatAngle": 60, "eclipsed": 6, "note": "Bent bonds: C-C 65 kcal/mol against 88 in propane."},
+    {"name": "cyclobutane", "n": 4, "smiles": "C1CCC1", "hf": 6.8, "perCH2": 1.7, "flatAngle": 90, "eclipsed": 8, "note": "Puckers (88°) to relieve some torsional strain."},
+    {"name": "cyclopentane", "n": 5, "smiles": "C1CCCC1", "hf": -18.7, "perCH2": -3.7, "flatAngle": 108, "eclipsed": 10, "note": "Envelope and half-chair: torsional strain relieved at the expense of angle strain."},
+    {"name": "cyclohexane", "n": 6, "smiles": "C1CCCCC1", "hf": -29.5, "perCH2": -4.9, "flatAngle": 120, "eclipsed": 12, "note": "The chair has no angle strain (111.5°) and no torsional strain: the most stable ring."},
+    {"name": "cycloheptane", "n": 7, "smiles": "C1CCCCCC1", "hf": -28.3, "perCH2": -4.0, "flatAngle": 128.6, "eclipsed": 14, "note": ""}],
+    "strainFree": -4.9},
+  "solvents": {"title": "Solvents", "rows": [
+    {"name": "water", "f": "H2O", "kind": "polar protic"}, {"name": "methanol", "f": "CH3OH", "kind": "polar protic"}, {"name": "ethanol", "f": "CH3CH2OH", "kind": "polar protic"}, {"name": "acetic acid", "f": "CH3CO2H", "kind": "polar protic"},
+    {"name": "DMSO", "f": "(CH3)2SO", "kind": "polar aprotic"}, {"name": "DMF", "f": "HCON(CH3)2", "kind": "polar aprotic"}, {"name": "acetone", "f": "(CH3)2CO", "kind": "polar aprotic"}, {"name": "acetonitrile", "f": "CH3CN", "kind": "polar aprotic"},
+    {"name": "diethyl ether", "f": "(CH3CH2)2O", "kind": "weakly polar aprotic"}, {"name": "THF", "f": "C4H8O", "kind": "weakly polar aprotic"}, {"name": "pentane", "f": "C5H12", "kind": "nonpolar"}, {"name": "hexane", "f": "C6H14", "kind": "nonpolar"}]}
+}

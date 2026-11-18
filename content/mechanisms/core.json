@@ -1,0 +1,158 @@
+[
+  {
+    "id": "sn2-iodomethane-hydrosulfide",
+    "title": "SN2: hydrosulfide and iodomethane",
+    "class": "SN2",
+    "types": ["mech-id", "sn2-stereo"],
+    "from": "Lecture 11/03, page 3",
+    "overall": "[[rxn:[SH-] + CI>>CS + [I-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[SH-:1].[CH3:2][I:3]",
+        "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 2]}}, {"from": {"bond": [2, 3]}, "to": {"atom": 3}}],
+        "say": "A lone pair on sulfur attacks carbon from the side opposite iodine. As the S-C bond forms, the C-I bond breaks and its electrons leave with iodine.",
+        "why": "{{HS-}} is electron rich and one of the best nucleophiles in the lecture table (126,000). The carbon of {{CH3I}} is electron poor ({{d+}}) and unhindered, and iodide is a weak base, so a good leaving group. Both species are in the transition state: rate = k[{{HS-}}][{{CH3I}}].",
+        "hints": ["Which atom has a lone pair and a negative charge?", "The nucleophile's pair goes to the carbon that carries the leaving group.", "Two arrows: S lone pair to C, then the C-I bond to I."]
+      }
+    ],
+    "product": "[SH:1][CH3:2].[I-:3]",
+    "takeaway": "SN2 is one step with two arrows: nucleophile in from the back, leaving group out the front. No intermediate."
+  },
+  {
+    "id": "e2-tertbutyl-bromide-hydroxide",
+    "title": "E2: tert-butyl bromide and hydroxide",
+    "class": "E2",
+    "types": ["mech-id", "mech-two-paths"],
+    "from": "Lecture 11/12, page 1",
+    "overall": "[[rxn:CC(C)(C)Br + [OH-]>H2O>CC(C)=C + O + [Br-]]]",
+    "steps": [
+      {
+        "name": "One concerted step",
+        "species": "[OH-:1].[H:2][CH2:3][C:4]([CH3:6])([CH3:7])[Br:5]",
+        "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 2]}}, {"from": {"bond": [2, 3]}, "to": {"bond": [3, 4]}}, {"from": {"bond": [4, 5]}, "to": {"atom": 5}}],
+        "say": "Hydroxide takes a hydrogen from the carbon next to the C-Br carbon. The C-H electrons swing in to make the pi bond, and bromide leaves, all at once.",
+        "why": "The carbon is tertiary, so the backside is blocked and SN2 cannot happen. Hydroxide is a strong base, so it does not wait for the bromide to ionize: it removes a beta hydrogen that is anti to the bromine. rate = k[RBr][{{HO-}}].",
+        "hints": ["A strong base takes a proton. Which protons sit on a carbon next to the C-Br carbon?", "The electrons of that C-H bond cannot just disappear: they become the new C=C.", "Three arrows: O lone pair to H, C-H bond to C-C, C-Br bond to Br."]
+      }
+    ],
+    "product": "[H:2][OH:1].[CH2:3]=[C:4]([CH3:6])[CH3:7].[Br-:5]",
+    "takeaway": "E2 is one step with three arrows: base to H, C-H to the new pi bond, C-LG to the leaving group. H and LG are anti-periplanar."
+  },
+  {
+    "id": "sn1-tertbutyl-bromide-water",
+    "title": "SN1: tert-butyl bromide in water",
+    "class": "SN1",
+    "types": ["mech-id", "sn1-products"],
+    "from": "Lecture 11/10, page 2",
+    "overall": "[[rxn:CC(C)(C)Br + O>heat>CC(C)(C)O + Br]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][C:2]([CH3:3])([CH3:4])[Br:5]",
+        "arrows": [{"from": {"bond": [2, 5]}, "to": {"atom": 5}}],
+        "say": "The C-Br bond breaks by itself. Both electrons leave with bromine, and a tertiary carbocation is left behind.",
+        "why": "Three methyl groups stabilize the positive carbon, and water, a polar protic solvent, stabilizes both ions. This slow step involves only the alkyl halide: rate = k[RBr].",
+        "hints": ["No nucleophile takes part in the first step.", "Break the C-Br bond: which atom keeps the electrons?"]
+      },
+      {
+        "name": "Water attacks the carbocation",
+        "species": "[OH2:6].[CH3:1][C+:2]([CH3:3])[CH3:4].[Br-:5]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 6}, "to": {"bond": [6, 2]}}],
+        "say": "A lone pair on water's oxygen attacks the flat, positive carbon. Oxygen now has three bonds and a positive charge.",
+        "why": "The carbocation is a strong electrophile, so even a poor nucleophile like water reacts quickly. It can attack either face of the planar carbon, which is why SN1 at a stereocentre gives a racemic mixture.",
+        "hints": ["The carbocation is electron poor. What nearby has a lone pair?"]
+      },
+      {
+        "name": "A second water removes the proton",
+        "species": "[OH2:9].[CH3:1][C:2]([CH3:3])([CH3:4])[O+:6]([H:7])[H:8].[Br-:5]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 9}, "to": {"bond": [9, 7]}}, {"from": {"bond": [7, 6]}, "to": {"atom": 6}}],
+        "say": "Another water molecule takes one hydrogen from the positively charged oxygen. The O-H electrons stay on oxygen, which becomes neutral.",
+        "why": "A protonated alcohol is a strong acid ({{pKa}} about −2), so the solvent removes the proton. Do not forget this step: the product is the alcohol, not its conjugate acid.",
+        "hints": ["The oxygen is positive and still has two hydrogens: one must go.", "Two arrows: water's lone pair to H, then the O-H bond to O."]
+      }
+    ],
+    "product": "[CH3:1][C:2]([CH3:3])([CH3:4])[O:6][H:8].[H:7][OH2+:9].[Br-:5]",
+    "takeaway": "SN1 with a neutral nucleophile is three steps: leaving group leaves, nucleophile attacks, proton comes off. The first step is the slow one."
+  },
+  {
+    "id": "e1-tertbutyl-bromide-water",
+    "title": "E1: tert-butyl bromide in hot water",
+    "class": "E1",
+    "types": ["mech-id", "sn1-products", "mech-two-paths"],
+    "from": "Lecture 11/10, page 4",
+    "overall": "[[rxn:CC(C)(C)Br + O>heat>CC(C)=C + [OH3+] + [Br-]]]",
+    "steps": [
+      {
+        "name": "Ionization (rate-determining)",
+        "species": "[CH3:1][C:2]([CH3:3])([CH3:4])[Br:5]",
+        "arrows": [{"from": {"bond": [2, 5]}, "to": {"atom": 5}}],
+        "say": "The same first step as SN1: the C-Br bond breaks and leaves the tertiary carbocation.",
+        "why": "SN1 and E1 share this carbocation. What happens to it next decides the product.",
+        "hints": ["It starts exactly like SN1."]
+      },
+      {
+        "name": "Water removes a beta hydrogen",
+        "species": "[OH2:7].[H:6][CH2:1][C+:2]([CH3:3])[CH3:4].[Br-:5]",
+        "adds": ["O"],
+        "arrows": [{"from": {"lp": 7}, "to": {"bond": [7, 6]}}, {"from": {"bond": [6, 1]}, "to": {"bond": [1, 2]}}],
+        "say": "Water acts as a base: it takes a hydrogen from a carbon next to the positive carbon, and the C-H electrons form the C=C.",
+        "why": "A hydrogen next to a carbocation is acidic, so a weak base is enough. Elimination makes two particles from one, so it is favoured by entropy and wins at higher temperature.",
+        "hints": ["Water is the only base in the flask.", "Take an H from a CH3, not from the positive carbon itself (it has none)."]
+      }
+    ],
+    "product": "[H:6][OH2+:7].[CH2:1]=[C:2]([CH3:3])[CH3:4].[Br-:5]",
+    "takeaway": "E1 is two steps: leaving group leaves, then a weak base removes a neighbouring hydrogen. Same carbocation as SN1."
+  },
+  {
+    "id": "grignard-co2-benzoic-acid",
+    "title": "A Grignard reagent and carbon dioxide",
+    "class": "Organometallic",
+    "types": ["mech-organometallic"],
+    "from": "FA24 Exam 2, Q1D",
+    "overall": "[[rxn:Br[Mg]c1ccccc1>1) CO2;2) H3O+>OC(=O)c1ccccc1]]",
+    "steps": [
+      {
+        "name": "The carbanion-like carbon attacks carbon dioxide",
+        "species": "[c:1]1([Mg:7][Br:8])[cH:2][cH:3][cH:4][cH:5][cH:6]1.[O:9]=[C:10]=[O:11]",
+        "arrows": [{"from": {"bond": [1, 7]}, "to": {"bond": [1, 10]}}, {"from": {"bond": [10, 11]}, "to": {"atom": 11}}],
+        "say": "The electrons of the C-Mg bond attack the carbon of carbon dioxide. To keep that carbon at four bonds, one C=O pi bond's electrons move up onto oxygen.",
+        "why": "Carbon bonded to magnesium is strongly {{d-}}: the reagent behaves as a carbanion, R:⁻. The carbon of {{CO2}} is electron poor because two oxygens pull on it. Electron rich attacks electron poor.",
+        "hints": ["Where are the electrons in a Grignard reagent? Think of it as R:⁻ and ⁺MgBr.", "Which atom of O=C=O is electron poor?", "Two arrows: C-Mg bond to the CO2 carbon, and one C=O pi bond onto O."]
+      },
+      {
+        "name": "Acid workup protonates the carboxylate",
+        "species": "[H:12][OH2+:13].[c:1]1([C:10](=[O:9])[O-:11])[cH:2][cH:3][cH:4][cH:5][cH:6]1.[Mg+:7][Br:8]",
+        "adds": ["[OH3+]"],
+        "arrows": [{"from": {"lp": 11}, "to": {"bond": [11, 12]}}, {"from": {"bond": [12, 13]}, "to": {"atom": 13}}],
+        "say": "In the second, separate step, acid is added. A lone pair on the negative oxygen takes a proton from {{H3O+}}.",
+        "why": "The acid must come after the first step. If it were present at the start it would destroy the Grignard reagent, which is a very strong base. A carboxylate ({{pKa}} of the acid about 4) is easily protonated by {{H3O+}} ({{pKa}} −1.5).",
+        "hints": ["The product is the neutral acid, so the O⁻ needs a proton.", "Two arrows: O lone pair to H, then the H-O bond onto water's oxygen."]
+      }
+    ],
+    "product": "[c:1]1([C:10](=[O:9])[O:11][H:12])[cH:2][cH:3][cH:4][cH:5][cH:6]1.[OH2:13].[Mg+:7][Br:8]",
+    "takeaway": "A Grignard reagent is R:⁻. It attacks the electron-poor carbon of whatever it meets, and acid is added only afterwards."
+  },
+  {
+    "id": "methyllithium-water",
+    "title": "Methyllithium and water: an acid-base reaction",
+    "class": "Organometallic",
+    "types": ["mech-organometallic", "acid-base-eq"],
+    "from": "Lecture 11/03, page 1",
+    "overall": "[[rxn:[Li]C + O>>C + [Li+].[OH-]]]",
+    "steps": [
+      {
+        "name": "Proton transfer",
+        "species": "[CH3:1][Li:2].[H:3][OH:4]",
+        "arrows": [{"from": {"bond": [1, 2]}, "to": {"bond": [1, 3]}}, {"from": {"bond": [3, 4]}, "to": {"atom": 4}}],
+        "say": "The electrons of the C-Li bond take a hydrogen from water. The H-O electrons stay on oxygen as hydroxide.",
+        "why": "Water ({{pKa}} 15.7) is a far stronger acid than methane ({{pKa}} 50 to 60), so the equilibrium lies completely on the side of methane. This is why organolithium and Grignard reagents must be kept away from water and alcohols.",
+        "hints": ["Treat C-Li as a carbanion: which hydrogen nearby is acidic?", "Two arrows: C-Li bond to H, H-O bond to O."]
+      }
+    ],
+    "product": "[CH3:1][H:3].[Li+:2].[OH-:4]",
+    "takeaway": "Organometallic reagents are very strong bases: any O-H or N-H protonates them. With {{D2O}} the carbon picks up D instead."
+  }
+]

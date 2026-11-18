@@ -16,7 +16,7 @@ const PAGES = [
   ["archive", "CHEM 225 · Archive", "The original course files."],
   ["syllabus", "CHEM 225 · Syllabus", "What the unit covers and how the exam is set."],
 ];
-const CSS = ["orgo", "mol", "chair", "quiz", "pages"], JS = ["mol", "chair", "energy", "newman", "view3d", "quiz", "mech"];
+const CSS = ["orgo", "mol", "chair", "quiz", "pages", "study", "lab"], JS = ["mol", "chair", "energy", "newman", "view3d", "quiz", "mech"];
 for (const [dir, title, desc] of PAGES) {
   const up = dir ? "../" : "", eu = dir ? "../../" : "../";
   const html = `<!doctype html>

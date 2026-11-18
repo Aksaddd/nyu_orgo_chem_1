@@ -1,0 +1,26 @@
+{
+  "title": "pKa ladder",
+  "note": "Lecture values are what this exam expects. Where the usual tables differ, the literature value is given.",
+  "rows": [
+    {"name": "hydroiodic acid", "f": "H-I", "smiles": "I", "pka": -10, "lo": -11, "hi": -9, "src": "lecture", "base": "I-", "why": "Huge atom: the charge of iodide is spread over a large volume (size)."},
+    {"name": "hydrobromic acid", "f": "H-Br", "smiles": "Br", "pka": -9, "lo": -10, "hi": -8, "src": "lecture", "base": "Br-", "why": "Large atom: size."},
+    {"name": "hydrochloric acid", "f": "H-Cl", "smiles": "Cl", "pka": -8, "lo": -9, "hi": -6, "src": "lecture", "base": "Cl-", "why": "Size and electronegativity.", "lit": "-7 in many tables"},
+    {"name": "p-toluenesulfonic acid", "f": "TsOH", "smiles": "Cc1ccc(cc1)S(=O)(=O)O", "pka": -3, "lo": -7, "hi": -1, "src": "literature", "base": "TsO-", "why": "The charge of tosylate is shared by three oxygens (resonance): an excellent leaving group."},
+    {"name": "hydronium", "f": "H3O+", "smiles": "[OH3+]", "pka": -1.5, "lo": -2, "hi": 0, "src": "lecture", "base": "H2O", "why": "A positively charged acid: losing the proton gives neutral water.", "lit": "-1.7"},
+    {"name": "trifluoroacetic acid", "f": "CF3CO2H", "smiles": "OC(=O)C(F)(F)F", "pka": -1.5, "lo": -2, "hi": 1, "src": "lecture", "base": "CF3CO2-", "why": "Resonance, plus three fluorines pulling electron density through the bonds (induction).", "lit": "0 to 0.5"},
+    {"name": "hydrofluoric acid", "f": "H-F", "smiles": "F", "pka": 4, "lo": 3, "hi": 4, "src": "lecture", "base": "F-", "why": "Fluoride is small: the charge is concentrated, so it is the strongest base of the halides and a poor leaving group.", "lit": "3.2"},
+    {"name": "carboxylic acid (acetic acid)", "f": "RCO2H", "smiles": "CC(=O)O", "pka": 4, "lo": 4, "hi": 5, "src": "lecture", "base": "RCO2-", "why": "The charge of the carboxylate is shared by two oxygens (resonance).", "lit": "4.76 for acetic acid"},
+    {"name": "hydrogen sulfide", "f": "H2S", "smiles": "S", "pka": 10, "lo": 7, "hi": 10, "src": "lecture", "base": "HS-", "why": "Sulfur is larger than oxygen and spreads out the charge (size): more acidic than water.", "lit": "7.0"},
+    {"name": "phenol", "f": "C6H5OH", "smiles": "Oc1ccccc1", "pka": 10, "lo": 9, "hi": 11, "src": "exam", "base": "C6H5O-", "why": "The charge of phenoxide is delocalized into the ring (resonance)."},
+    {"name": "ammonium ion", "f": "RNH3+", "smiles": "C[NH3+]", "pka": 10.5, "lo": 9, "hi": 11, "src": "literature", "base": "RNH2", "why": "A positively charged acid: losing the proton gives the neutral amine."},
+    {"name": "thiol", "f": "RSH", "smiles": "CCS", "pka": 10.5, "lo": 10, "hi": 11, "src": "literature", "base": "RS-", "why": "Like hydrogen sulfide: the large sulfur stabilizes the charge."},
+    {"name": "methanol", "f": "CH3OH", "smiles": "CO", "pka": 15.5, "lo": 15, "hi": 16, "src": "lecture", "base": "CH3O-", "why": "The small methoxide ion is well solvated: the most acidic simple alcohol in solution."},
+    {"name": "water", "f": "H2O", "smiles": "O", "pka": 15.7, "lo": 15, "hi": 16, "src": "lecture", "base": "HO-", "why": "Oxygen is electronegative, but the charge of hydroxide sits on one small atom."},
+    {"name": "ethanol", "f": "CH3CH2OH", "smiles": "CCO", "pka": 15.9, "lo": 15, "hi": 17, "src": "lecture", "base": "CH3CH2O-", "why": "An ordinary alcohol: about 16."},
+    {"name": "isopropanol", "f": "(CH3)2CHOH", "smiles": "CC(C)O", "pka": 16.5, "lo": 16, "hi": 17.5, "src": "lecture", "base": "(CH3)2CHO-", "why": "A bulkier alkoxide is less well solvated, so the alcohol is a little less acidic."},
+    {"name": "tert-butanol", "f": "(CH3)3COH", "smiles": "CC(C)(C)O", "pka": 17, "lo": 16.5, "hi": 19, "src": "lecture", "base": "(CH3)3CO-", "why": "The bulkiest alkoxide is the least solvated: the least acidic in solution (in the gas phase the order reverses)."},
+    {"name": "terminal alkyne (acetylene, propyne)", "f": "RC≡C-H", "smiles": "CC#C", "pka": 25, "lo": 24, "hi": 26, "src": "lecture", "base": "RC≡C-", "why": "The lone pair of the anion is in an sp orbital, 50% s character, held close to the nucleus (hybridization)."},
+    {"name": "amine or ammonia N-H", "f": "RNH2", "smiles": "CN", "pka": 38, "lo": 35, "hi": 40, "src": "lecture", "base": "RNH-", "why": "Nitrogen is less electronegative than oxygen, so its anion is less stable.", "lit": "36 to 38"},
+    {"name": "alkane C-H", "f": "R-H", "smiles": "CC", "pka": 55, "lo": 48, "hi": 62, "src": "lecture", "base": "R-", "why": "An sp3 carbanion has nothing to stabilize it: the strongest bases. Lecture: 50 to 60."}
+  ]
+}

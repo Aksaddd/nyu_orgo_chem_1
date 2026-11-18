@@ -1,0 +1,16 @@
+{
+  "id": "rings-1", "n": 1, "title": "Rings and ring strain", "lecture": "2026-10-20", "from": "Lecture notes 10/20, pages 1 to 3",
+  "goals": ["Say where ring strain comes from"],
+  "sections": [
+    {"id": "cyclopropane", "title": "Cyclopropane: angle strain and bent bonds", "pages": ["L1020:1"],
+     "html": "<p>A tetrahedral carbon wants bond angles of 109.5°. In cyclopropane the ring forces 60°. That squeeze is <b>angle strain</b>.</p>\n[[mol:C1CC1]]\n<p>The orbitals cannot point along the edges of the triangle, so they overlap off to the side and make <b>bent bonds</b>: less overlap, a weaker bond. C-C in propane 88 kcal/mol, in cyclopropane 65.</p>",
+     "micro": [{"t": "Why less overlap means a weaker bond", "h": "<p>A sigma bond is strongest when the two orbitals point straight at each other.</p>"}],
+     "macro": [{"t": "Why this matters later", "h": "<p>Strained rings open easily. The epoxide in the past exam's Question 4B is opened by methoxide for exactly this reason.</p>"}],
+     "why": {"q": "Why is the C-C bond of cyclopropane weaker than that of propane?", "a": "Its orbitals overlap off-axis (bent bonds), so there is less overlap."},
+     "check": []},
+    {"id": "torsional", "title": "Torsional strain: eclipsed bonds", "pages": ["L1020:1"],
+     "html": "<p>Look down any C-C bond of cyclopropane and every C-H bond is <b>eclipsed</b>: six eclipsing interactions. That is <b>torsional strain</b>. Ring strain = angle strain + torsional strain.</p>\n[[newman:H,H,C|H,H,C|0]]",
+     "check": []}
+  ],
+  "summary": ["Ring strain is angle strain plus torsional strain."]
+}

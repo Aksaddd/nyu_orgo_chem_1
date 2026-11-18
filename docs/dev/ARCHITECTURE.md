@@ -219,3 +219,52 @@ and a word go with it). Everything works with the keyboard, at 200% text size, a
 Structures are drawn in the page's ink colour. Colour is used for meaning only, always with a second cue:
 electron-movement arrows (accent), axial and equatorial bonds (two hues plus the letters a and e), the nucleophile and
 the leaving group (labels).
+
+## The UI kit: class names every page uses
+
+`assets/orgo.css` defines these and nothing page-specific. Module and page styles live in their own files
+(`mol.css`, `chair.css`, `quiz.css`, `pages.css`), which every page loads, and use only these tokens.
+
+Tokens (CSS variables on `:root`, re-set for `html[data-theme="dark"]` and `html[data-night]`):
+`--bg` page, `--surface` cards, `--surface-2` insets, `--ink` text, `--muted` secondary text, `--line` hairlines,
+`--accent` anything pressable, `--accent-ink` text on accent, `--good`, `--bad`, `--warn` (each with a `-bg` tint),
+`--radius` (12px), `--radius-lg` (18px), `--shadow`, `--font`, `--font-serif`, `--mono`,
+`--arrow` curved electron arrows, `--ax` axial, `--eq` equatorial, `--hl` highlight.
+
+| Class | What |
+|---|---|
+| `.wrap`, `.wrap.narrow` | page column (max 1000px / 720px), with side padding and safe-area insets |
+| `.page-title`, `.lead`, `.eyebrow`, `.muted`, `.small` | type |
+| `.prose` | long-form reading text: serif, 19px, about 66 characters a line, 1.6 line height |
+| `.stack`, `.row`, `.grid`, `.split` | vertical gap, horizontal wrap with gap, auto-fit card grid, two columns from 900px |
+| `.card`, `.card.tap`, `.panel` | raised surface, pressable card (whole card is a link or button), quiet inset |
+| `.callout` with `.info`, `.good`, `.bad`, `.warn` | boxed note with a left rule and an icon word, never colour alone |
+| `.btn`, `.btn.primary`, `.btn.ghost`, `.btn.small`, `.icon-btn`, `.btn-row` | pill buttons |
+| `.chip`, `.chip.on`, `.badge`, `.seg` (a row of buttons with `aria-pressed`) | small controls |
+| `.tabs`, `.tab`, `.tabpanel` | tabs (built by `ORGO.ui.tabs`) |
+| `.veil`, `.sheet`, `.sheet.wide`, `.sheet-head`, `.sheet-body`, `.sheet-foot` | modal sheet (`ORGO.ui.sheet`) |
+| `.toasts`, `.toast`, `.toast.out` | toasts |
+| `.bar > i` | progress bar (set `style.width`) |
+| `.ring`, `.ring-bg`, `.ring-fg` | progress ring |
+| `.dots`, `.dots i.on` | four mastery dots |
+| `.obar`, `.obar-home`, `.obar-links a`, `a.on` | our own top bar (not shown inside Eureka) |
+| `.fig`, `.fig-inline`, `.fig-missing` | figure wrappers made by `ORGO.html` (block and centred; inline and middle-aligned) |
+| `.chem` | a typeset formula |
+| `.opts`, `.opt`, `.opt.picked`, `.opt.right`, `.opt.wrong`, `.explain` | answer choices and the explanation. Eureka's companions and preferences look for exactly these names, and for `data-c="true"` on the right choice once it is revealed |
+| `.mark-ok`, `.mark-no` | "Right" and "Not quite" marks with a tick or a cross |
+| `.steps`, `.step`, `.step-n` | numbered solution steps |
+| `details.more` with `summary` | the "closer look" and "bigger picture" expanders |
+| `.empty` | an empty state: one sentence and one button |
+
+## Who owns which file
+
+| Files | Owner |
+|---|---|
+| `assets/orgo.css`, `assets/pages.css`, `page.js` of home, `archive/`, `syllabus/`, `foundations/`, `review/`, `README.md` | pages A |
+| `assets/mol.js`, `assets/mol.css`, `assets/mech.js`, `mechanisms/page.js` | structures and mechanisms |
+| `assets/chair.js`, `assets/chair.css`, `assets/newman.js`, `assets/energy.js` | conformations and diagrams |
+| `assets/quiz.js`, `assets/quiz.css`, `drill/page.js`, `mock/page.js` | questions |
+| `assets/view3d.js`, `lab/page.js` (and its styles, appended to `pages.css` under a `/* lab */` banner) | lab |
+| `read/page.js`, `exam/page.js` (styles under `/* read */` and `/* exam */` banners in `pages.css`) | pages B |
+
+Tests live in `tools/test/`. `node tools/test/run.js` runs every `*.test.js` there.

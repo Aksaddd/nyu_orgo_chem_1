@@ -156,7 +156,7 @@ for (const file of list("read")) {
 // mock exams
 for (const file of list("mock")) {
   const m = readJSON(file); if (!m) continue; const where = m.id || ""; need(m, ["id", "title", "minutes", "choose", "questions"], file, where); if (!m.id) continue;
-  (m.questions || []).forEach(q => { let sum = 0; (q.parts || []).forEach(p => { sum += p.pts || 0; if (!items[p.item]) bad(file, `${where} question ${q.n}${p.label || ""}`, `item "${p.item}" does not exist`) }); if (sum !== 100) bad(file, `${where} question ${q.n}`, `the parts add up to ${sum} points, not 100`) });
+  (m.questions || []).forEach(q => { let sum = 0; (q.parts || []).forEach(p => { sum += p.pts || 0; const ids = p.items || (p.item ? [p.item] : []); if (!ids.length) bad(file, `${where} question ${q.n}${p.label || ""}`, `needs "items": [item ids]`); ids.forEach(id => { if (!items[id]) bad(file, `${where} question ${q.n}${p.label || ""}`, `item "${id}" does not exist`) }) }); if (sum !== 100) bad(file, `${where} question ${q.n}`, `the parts add up to ${sum} points, not 100`) });
   mocks[m.id] = m; deep(m, (s, p) => scan(s, file, `${where} ${p}`, refsFor("mock")));
 }
 // single files
@@ -164,7 +164,7 @@ const single = {};
 for (const name of ["exam", "foundations", "glossary", "conf", "skills", "study"]) { const f = path.join(C, name + ".json"), v = readJSON(f); if (v !== undefined) { single[name] = v; deep(v, (s, p) => scan(s, f, p, refsFor(name === "exam" || name === "foundations" ? name : "index"))) } }
 const tables = {}; for (const file of list("tables")) { const v = readJSON(file); if (v !== undefined) { tables[path.basename(file, ".json")] = v; deep(v, (s, p) => scan(s, file, p, refsFor("index"))) } }
 for (const f of [blueprintFile, errorsFile]) { const v = f === blueprintFile ? blueprint : errors; deep(v, (s, p) => scan(s, f, p, refsFor("index"))) }
-if (single.exam) (single.exam.questions || []).forEach(q => (q.parts || []).forEach(p => { if (p.item && !items[p.item]) bad(path.join(C, "exam.json"), `question ${q.n}${p.label || ""}`, `item "${p.item}" does not exist`) }));
+if (single.exam) (single.exam.questions || []).forEach(q => { let sum = 0; (q.parts || []).forEach(p => { sum += p.pts || 0; const ids = p.items || (p.item ? [p.item] : []); if (!ids.length) bad(path.join(C, "exam.json"), `question ${q.n}${p.label || ""}`, `needs "items": [item ids]`); ids.forEach(id => { if (!items[id]) bad(path.join(C, "exam.json"), `question ${q.n}${p.label || ""}`, `item "${id}" does not exist`) }) }); if ((q.parts || []).length && sum !== 100 && !q.partial) bad(path.join(C, "exam.json"), `question ${q.n}`, `the parts add up to ${sum} points, not 100`) });
 if (single.foundations) (single.foundations.diagnostic || []).forEach(id => { if (typeof id === "string" && !items[id]) bad(path.join(C, "foundations.json"), "diagnostic", `item "${id}" does not exist`) });
 // references between things
 const allRefs = newRefs(); for (const r of fileRefs.values()) for (const k in r) r[k].forEach(x => allRefs[k].add(x));

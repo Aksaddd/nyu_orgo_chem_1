@@ -1,0 +1,28 @@
+{
+  "id": "nuc-pairs",
+  "title": "Circle the stronger nucleophile",
+  "exam": "Q1C",
+  "points": 15,
+  "asks": "Two species are shown. Circle the one that attacks carbon faster in an {{SN2}} reaction.",
+  "know": [
+    {"h": "<b>Nucleophilicity is a rate</b>: how fast a species displaces a leaving group in an {{SN2}} reaction. Basicity is an equilibrium ({{pKa}} of the conjugate acid). They often agree, but not always.", "from": "Lecture 11/05, p. 2"},
+    {"h": "<b>The lecture table</b> (relative {{SN2}} rates): {{HC≡C-}} 126,000; {{HS-}} 126,000; {{I-}} 80,000; {{HO-}} 16,000; {{N3-}} 8,000; {{NH3}} 8,000; {{Cl-}} 1,000; {{CH3CO2-}} 630; {{CH3OH}} 1; {{H2O}} 1.", "from": "Table 7.5"},
+    {"h": "<b>Across a row</b>, nucleophilicity follows basicity: it increases to the left ({{H2N-}} > {{HO-}} > {{F-}}).", "from": "Lecture 11/05, p. 3"},
+    {"h": "<b>Down a column</b>, nucleophilicity increases while basicity decreases ({{I-}} > {{Br-}} > {{Cl-}}; {{HS-}} > {{HO-}}): larger atoms are more polarizable and less tightly solvated.", "from": "Lecture 11/05, p. 3"},
+    {"h": "<b>Charge</b>: an anion is a better nucleophile than its neutral conjugate acid ({{HO-}} 16,000 against {{H2O}} 1).", "from": "Table 7.5"},
+    {"h": "<b>Bulk</b>: with the same attacking atom, the bulkier species is the poorer nucleophile. tert-Butoxide is a strong base but a poor nucleophile.", "from": "Lecture 11/05, p. 2 to 3"},
+    {"h": "<b>Resonance</b>: a charge spread over several atoms is less available. Acetate (630) is far weaker than hydroxide (16,000).", "from": "Table 7.5"}
+  ],
+  "method": [
+    "Find the atom that attacks in each species.",
+    "Same atom? The one with the negative charge wins; if both are charged, the less bulky and less delocalized one wins.",
+    "Different atoms in the same row? The one further left (the stronger base) wins.",
+    "Different atoms in the same column? The lower one wins, although it is the weaker base.",
+    "Check your answer against the lecture table if both species are on it."
+  ],
+  "pitfalls": [
+    {"h": "Choosing the stronger base when the atoms are in the same column (choosing {{Cl-}} over {{I-}}, or {{HO-}} over {{HS-}})."},
+    {"h": "Choosing tert-butoxide because it is the stronger base: bulk makes it the weaker nucleophile."}
+  ],
+  "links": {"read": ["sn2-2"], "lab": ["nucleophiles"]}
+}

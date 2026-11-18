@@ -1,0 +1,8 @@
+{
+  "title": "Fall 2024 · Exam 2", "date": "2024-11-22", "minutes": 110, "choose": 7,
+  "rules": ["Nine questions of 100 points. Choose seven; if you cross none out, questions 1 to 7 are graded.", "Pen only. No notes or paper of your own.", "The chemistry model set is allowed."],
+  "questions": [
+    {"n": 1, "partial": true, "title": "pKa values, a mechanism question, nucleophiles, a Grignard mechanism", "pages": [2, 3], "parts": [{"label": "A", "pts": 15, "type": "pka-values", "item": "pka-values-s01"}, {"label": "C", "pts": 15, "type": "nuc-pairs", "item": "nuc-pairs-s01"}]},
+    {"n": 3, "partial": true, "title": "SN1 facts, energy diagrams, fastest SN2, E2 on a ring", "pages": [6, 7], "parts": [{"label": "A", "pts": 25, "type": "traits", "item": "traits-s01"}, {"label": "D", "pts": 25, "type": "e2-ring-product", "item": "e2-ring-product-s01"}]}
+  ]
+}

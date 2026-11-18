@@ -224,7 +224,11 @@ sentence or two with where it comes from. `method` is the procedure, in the orde
 connection to the rest of chemistry, to the exam, and to medicine or biology. `why` is one question the reader answers
 in their head before moving on. `check` lists practice items shown under the section.
 
-## Mock exams: `content/mock/<id>.json`
+## Mock exams and the original exam: `content/mock/<id>.json`, `content/exam.json`
 
 `{"id": "mock-1", "title": "Mock Exam 1", "minutes": 110, "choose": 7, "questions": [{"n": 1, "parts": [{"label": "A", "pts": 15, "item": "pka-values-021"}]}]}`.
 Nine questions of 100 points, in the shape of the original: the parts of each question add up to 100.
+
+A part may list one item (`"item": "id"`) or several (`"items": ["id1", "id2"]`, shown one after another: for example
+the five compounds of a pKa question). `content/exam.json` has the same shape for the original exam, plus `"pages"`
+(the PDF pages of each question) and `"title"`.

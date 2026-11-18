@@ -1,0 +1,11 @@
+[
+  {"name": "cyclopropane", "smiles": "C1CC1", "title": "Cyclopropane", "note": "Flat: 60° angles, every C-H eclipsed."},
+  {"name": "cyclobutane", "smiles": "C1CCC1", "title": "Cyclobutane", "note": "Slightly puckered."},
+  {"name": "cyclopentane", "smiles": "C1CCCC1", "title": "Cyclopentane", "note": "An envelope: one carbon out of the plane."},
+  {"name": "cyclohexane-chair", "smiles": "C1CCCCC1", "title": "Cyclohexane, chair", "note": "No angle strain, no torsional strain."},
+  {"name": "methylcyclohexane", "smiles": "CC1CCCCC1", "title": "Methylcyclohexane", "note": ""},
+  {"name": "tert-butylcyclohexane", "smiles": "CC(C)(C)C1CCCCC1", "title": "tert-Butylcyclohexane", "note": "The tert-butyl group locks the ring: it is always equatorial."},
+  {"name": "butane", "smiles": "CCCC", "title": "Butane", "note": ""},
+  {"name": "tert-butyl-bromide", "smiles": "CC(C)(C)Br", "title": "tert-Butyl bromide", "note": "The back of the carbon is blocked by three methyl groups."},
+  {"name": "iodomethane", "smiles": "CI", "title": "Iodomethane", "note": "An open back side: the best SN2 substrate."}
+]

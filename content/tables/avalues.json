@@ -1,0 +1,27 @@
+{
+  "title": "Cost of an axial group (A-values)",
+  "note": "ΔG for axial to equatorial, kcal/mol, and the equilibrium constant at 25 °C. The alkyl values are the lecture's Table 5.3; the others are typical literature values, for comparing sizes only.",
+  "rows": [
+    {"g": "CH3", "name": "methyl", "a": 1.74, "k": 19.5, "src": "lecture"},
+    {"g": "CH2CH3", "name": "ethyl", "a": 1.79, "k": 21.2, "src": "lecture"},
+    {"g": "CH2CH2CH3", "name": "propyl", "a": 2.21, "k": 43.4, "src": "lecture"},
+    {"g": "CH(CH3)2", "name": "isopropyl (1-methylethyl)", "a": 2.61, "k": 86.0, "src": "lecture", "lit": "about 2.2"},
+    {"g": "C(CH3)3", "name": "tert-butyl (1,1-dimethylethyl)", "a": 5.5, "k": 11916, "src": "lecture", "lit": "about 4.9"},
+    {"g": "D", "name": "deuterium", "a": 0.0, "src": "literature"},
+    {"g": "CN", "name": "cyano", "a": 0.2, "src": "literature"},
+    {"g": "F", "name": "fluoro", "a": 0.3, "src": "literature"},
+    {"g": "I", "name": "iodo", "a": 0.47, "src": "literature"},
+    {"g": "Br", "name": "bromo", "a": 0.5, "src": "literature"},
+    {"g": "Cl", "name": "chloro", "a": 0.53, "src": "literature"},
+    {"g": "OCH3", "name": "methoxy", "a": 0.6, "src": "literature"},
+    {"g": "OH", "name": "hydroxy", "a": 0.9, "src": "literature"},
+    {"g": "OTs", "name": "tosylate", "a": 0.5, "src": "literature"},
+    {"g": "SH", "name": "thiol", "a": 1.2, "src": "literature"},
+    {"g": "COOH", "name": "carboxylic acid", "a": 1.4, "src": "literature"},
+    {"g": "NH2", "name": "amino", "a": 1.4, "src": "literature"},
+    {"g": "OCH2CH3", "name": "ethoxy", "a": 0.9, "src": "literature"},
+    {"g": "N(CH3)2", "name": "dimethylamino", "a": 2.1, "src": "literature"},
+    {"g": "Ph", "name": "phenyl", "a": 2.8, "src": "literature"}
+  ],
+  "gauche": 0.9
+}
