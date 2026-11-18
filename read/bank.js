@@ -105,8 +105,7 @@ window.BANK = {
     "A quartet (4 lines)": "That uses the {{CH3}}'s own three hydrogens: 3 + 1. The rule counts the neighbours. The quartet is the {{CH2}} signal.",
     "A singlet (1 line)": "A singlet needs zero neighbouring hydrogens. The next carbon has two.",
     "A doublet (2 lines)": "That takes n as the number of lines. The rule is n + 1."
-   },
-   "keep": 0
+   }
   },
   "nmr-signals-013": {
    "d": "nmr-signals",
@@ -232,17 +231,17 @@ window.BANK = {
    "d": "mech-organometallic",
    "tag": "mech-organometallic",
    "q": "What is the organic product?\n[[rxn:CC[Li] + O>>\"?\"]]",
-   "ok": "[[mol:CC]]",
+   "ok": "[[mol:CC|me]]",
    "wrong": [
-    "[[mol:CCO]]",
-    "[[mol:C=C]]",
-    "[[mol:CCCC]]"
+    "[[mol:CCO|me]]",
+    "[[mol:C=C|me]]",
+    "[[mol:CCCC|me]]"
    ],
    "ex": "Ethyllithium is {{CH3CH2:-}}, a very strong base. It takes a proton from water ({{pKa}} 15.7) and becomes ethane. The other product is LiOH. <b>Answer:</b> Ethane (and LiOH).",
    "why": {
-    "[[mol:CCO]]": "This treats the carbon as electron poor, as it is in an alkyl halide. In C-Li the carbon is the electron-rich end.",
-    "[[mol:C=C]]": "Nothing here removes a hydrogen from the next carbon. The reagent is the base, and it gains a hydrogen.",
-    "[[mol:CCCC]]": "Two ethyl groups do not join. The carbanion finds the acidic hydrogen of water first."
+    "[[mol:CCO|me]]": "This treats the carbon as electron poor, as it is in an alkyl halide. In C-Li the carbon is the electron-rich end.",
+    "[[mol:C=C|me]]": "Nothing here removes a hydrogen from the next carbon. The reagent is the base, and it gains a hydrogen.",
+    "[[mol:CCCC|me]]": "Two ethyl groups do not join. The carbanion finds the acidic hydrogen of water first."
    }
   },
   "mech-organometallic-005": {
@@ -592,20 +591,19 @@ window.BANK = {
   "solvent-effects-010": {
    "d": "solvent-effects",
    "tag": "solvent-effects",
-   "q": "In a less polar solvent, the reaction of triethylamine with iodoethane has this energy curve:\n[[energy:R=0,TS=24,P=-4]]\nWhich curve fits the same reaction in a <b>more polar</b> solvent, on the same energy scale?",
-   "ok": "[[energy:R=-1,TS=18,P=-12]]",
+   "q": "In a less polar solvent, the reaction of triethylamine with iodoethane has this energy curve:\n[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=24,P=products −4]]\nWhich curve fits the same reaction in a <b>more polar</b> solvent, on the same energy scale?",
+   "ok": "[[energy:R=-1,TS=18,P=-12|R=reactants −1,TS=18,P=products −12]]",
    "wrong": [
-    "[[energy:R=-8,TS=22,P=-6]]",
-    "[[energy:R=0,TS=24,P=-12]]",
-    "[[energy:R=0,TS=30,P=-4]]"
+    "[[energy:R=-8,TS=22,P=-6|R=reactants −8,TS=22,P=products −6]]",
+    "[[energy:R=0,TS=24,P=-12|R=reactants 0,TS=24,P=products −12]]",
+    "[[energy:R=0,TS=30,P=-4|R=reactants 0,TS=30,P=products −4]]"
    ],
    "ex": "The neutral start barely moves, the partly charged transition state drops, and the ionic product drops most. The barrier falls from 24 to 19. <b>Answer:</b> The curve that starts at about the same level, with a lower top and a lower product.",
    "why": {
-    "[[energy:R=-8,TS=22,P=-6]]": "Here the starting materials drop the most. That is the pattern for charged starting materials, not neutral ones.",
-    "[[energy:R=0,TS=24,P=-12]]": "Only the product is lowered. The transition state already carries partial charges, so it must drop as well.",
-    "[[energy:R=0,TS=30,P=-4]]": "A polar solvent does not raise the energy of a transition state that has charge on it."
-   },
-   "keep": 0
+    "[[energy:R=-8,TS=22,P=-6|R=reactants −8,TS=22,P=products −6]]": "Here the starting materials drop the most. That is the pattern for charged starting materials, not neutral ones.",
+    "[[energy:R=0,TS=24,P=-12|R=reactants 0,TS=24,P=products −12]]": "Only the product is lowered. The transition state already carries partial charges, so it must drop as well.",
+    "[[energy:R=0,TS=30,P=-4|R=reactants 0,TS=30,P=products −4]]": "A polar solvent does not raise the energy of a transition state that has charge on it."
+   }
   },
   "solvent-effects-012": {
    "d": "solvent-effects",
@@ -889,8 +887,7 @@ window.BANK = {
     "Only C···Br": "That is the transition state of an ionization ({{E1}} or {{SN1}}). In {{E2}} the base and the hydrogen are involved too.",
     "O···H and H···C only": "This is only the proton transfer. The π bond is forming and the bromide is leaving in the same step.",
     "O···C and C···Br": "That is an {{SN2}} transition state, with the oxygen attacking carbon. In {{E2}} the base takes a hydrogen."
-   },
-   "keep": 0
+   }
   },
   "sub-vs-elim-004": {
    "d": "sub-vs-elim",

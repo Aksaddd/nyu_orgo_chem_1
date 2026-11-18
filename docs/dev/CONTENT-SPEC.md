@@ -40,7 +40,8 @@ Outside braces use ordinary HTML: `<b>` for key terms, `<i>`, `<sub>`, `<sup>`, 
 
 ## Pictures in text: `[[ ]]`
 
-A token on its own line is a figure; inside a sentence it is drawn small, in line.
+A token on its own line is a figure; inside a sentence it is drawn small, in line. One exception, made by the build: in
+a worked step of a homework, a drawing that comes after the step's last sentence is put on a line of its own.
 
 | Token | Draws | Example |
 |---|---|---|
@@ -58,6 +59,10 @@ A token on its own line is a figure; inside a sentence it is drawn small, in lin
 | `[[view3d:NAME]]` | a 3D model the student can turn | `[[view3d:cyclohexane-chair]]` |
 | `[[fig:NAME]]` | a drawing from `assets/figs/NAME.svg` | `[[fig:sn2-transition-state]]` |
 | `[[lec:L1105:2]]` | a link to page 2 of the 11/05 lecture notes | |
+
+An energy diagram is drawn to fill its own box: two curves drawn apart cannot be compared by height. Where the levels are
+the point (the choices of a question, two curves side by side), write each curve's values as labels after a bar, which
+replace the words under the points: `[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=24,P=products −4]]`.
 
 In a reaction, species are separated by ` + ` (space, plus, space). A species is a SMILES (several ions of one salt are
 joined with a dot, as in `C[O-].[Na+]`) or a label in double quotes (`\"Product A\"`). `ABOVE;BELOW` is the text on the
@@ -260,15 +265,20 @@ Rules that follow from this. The build checks each one and says what to change:
   (`read/positions.json` remembers them); `node tools/build.js --accept-moves` is for the rare move that is meant.
 - **Titles are plain words.** The title of a reading and of a section has no markup, no `{{ }}` and no `[[ ]]`: the
   reader also shows it in the browser tab and in dialogs.
-- **A question under a reading** is of kind `mcq`, `rank`, `classify`, `multi`, `numeric`, `mech` or `chair` (not
-  `written`). An `mcq` there has at most five choices. The stem of a `rank`, `classify` or `multi` item used there is
-  words only (formulas are fine): it becomes the title of an activity, which cannot show a figure, a list or a table.
+- **A question under a reading** is a practice item (role `practice`) of kind `mcq`, `rank`, `classify`, `multi`,
+  `numeric`, `mech` or `chair` (not `written`: the reader cannot mark it). It is asked in one place only: not in a mock
+  exam, the past exam (`content/exam.json`) or the foundations check (`content/foundations.json`), and not under another
+  reading. A passage asks at most 2. An `mcq` there has at most five choices. The stem of a `rank`, `classify` or `multi`
+  item used there is words only (formulas are fine): it becomes the title of an activity, which cannot show a figure, a
+  list or a table.
 - **A `multi` item used under a reading** needs names for its two boxes. They come from the wording of the stem:
   "…<b>is</b> a characteristic of X reactions?", "…is <b>NOT</b> a characteristic of X reactions?", "…fit?",
   "…are correct?" and "…is true?" are known. For another wording, add a line to `BOXES` in `tools/build.js`.
 - **An explanation that names a choice by its place** ("A and C", "diagram 2") keeps the written order of the choices
   in both readers. The build sets `fixed` for the usual wordings; set `"fixed": true` yourself for any other, such as
-  "the left one".
+  "the left one". It does not read the article of an answer ("A triplet") or the ends of a bond ("C=C, C-Br") as
+  letters; where it still misreads an explanation, `"fixed": false` lets the choices be shuffled. Keep the order only
+  for a reason: a kept order with the right answer first shows it as A every time.
 - **`pages`** names pictures that exist in `archive/pages/` (`L1020:1` is `archive/pages/L1020-1.png`).
 
 ## Mock exams and the original exam: `content/mock/<id>.json`, `content/exam.json`
@@ -293,6 +303,18 @@ Only `term` and `def` are required. `also` lists plurals, abbreviations and othe
 entry; `parts` breaks the word into pieces with their meanings, and `lit` gives the literal meaning, for the terms where
 that helps memory. Plain text only: no tokens, since the text is shown by Eureka's lookup card and Word Bank, which do
 not draw structures. Definitions use the lecture's values where a number appears.
+
+A double-tap opens the entry whose spelling the tapped word reads as: Eureka's lookup (`shared/lookup.js`) lowercases it,
+spells out the Greek letters (α β γ δ π σ as alpha, beta, gamma, delta, pi, sigma), keeps letters, digits, `+` and `-`,
+and also tries the singular (`norm()` and `forms()` there). So the build checks every term and spelling the same way,
+and stops when one:
+
+- has a Greek letter: write `pi bond`, `beta hydrogen` (a page's "π bond" still finds it);
+- has no letter at all, such as `2°`: a tap on the "1" of "1S" would land on it;
+- begins with "a", "an" or "the";
+- is read as an ordinary word that must never open a card (bond, bonds, hydrogen, hydrogens, value, values, carbon,
+  group, base, acid), unless it is that entry's own word;
+- is read as the same word as a spelling of another entry: only one of them could ever open.
 
 The build writes the list to `assets/glossary.js` as `LEXICON`, `TERMS` and `GLOSS`, the three shapes Eureka reads
 (its `docs/adding-a-class.md`). `assets/eureka.js` loads that file before Eureka's lookup, so nothing is asked for twice.

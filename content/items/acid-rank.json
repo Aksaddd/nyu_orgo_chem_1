@@ -402,13 +402,13 @@
   "order": "strongest acid first",
   "items": [
    {
-    "h": "[[mol:C#C]]"
+    "h": "acetylene, {{HC≡CH}}"
    },
    {
-    "h": "[[mol:C=C]]"
+    "h": "ethylene, {{H2C=CH2}}"
    },
    {
-    "h": "[[mol:CC]]"
+    "h": "ethane, {{CH3CH3}}"
    }
   ],
   "note": "Lecture values: acetylene 25, ethane 60. Tables put ethylene at about 44, in between.",
@@ -652,7 +652,7 @@
     "h": "[[mol:CCO]]"
    },
    {
-    "h": "[[mol:C#C]]"
+    "h": "acetylene, {{HC≡CH}}"
    }
   ],
   "note": "Uses the lecture's value of 10 for hydrogen sulfide. With the usual table value of 7 the order is the same.",

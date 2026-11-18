@@ -58,11 +58,11 @@
     6: { title: "Before you move on", cards: [["Both conjugate bases carry the charge on carbon. What makes acetylide so much more stable than the ethyl anion?", "The hybridization of the carbon that holds the lone pair. In acetylide it is sp, 50% s character. In the ethyl anion it is sp3, 25% s character. More s character binds the pair closer to the nucleus and lowers its energy, so the base is more stable and the acid stronger."]] },
   },
   "4-1": {
-    1: { title: "Put these three in order as acids.", how: "Strongest acid first.", items: ["[[mol:C#C]]", "[[mol:C=C]]", "[[mol:CC]]"] },
-    2: { title: "Put these three in order as acids.", how: "Strongest acid first.", items: ["[[mol:C#C]]", "[[mol:C=C]]", "[[mol:CC]]"] },
-    3: { title: "Rank these hydrocarbons as acids.", how: "Strongest acid first.", items: ["[[mol:C#C]]", "[[mol:C=C]]", "[[mol:CC]]"] },
-    4: { title: "Rank these hydrocarbons as acids.", how: "Strongest acid first.", items: ["[[mol:C#C]]", "[[mol:C=C]]", "[[mol:CC]]"] },
-    6: { title: "Rank these hydrocarbons by acidity.", how: "Strongest acid first.", items: ["[[mol:C#C]]", "[[mol:C=C]]", "[[mol:CC]]"] },
+    1: { title: "Put these three in order as acids.", how: "Strongest acid first.", items: ["acetylene, {{HC≡CH}}", "ethylene, {{H2C=CH2}}", "ethane, {{CH3CH3}}"] },
+    2: { title: "Put these three in order as acids.", how: "Strongest acid first.", items: ["acetylene, {{HC≡CH}}", "ethylene, {{H2C=CH2}}", "ethane, {{CH3CH3}}"] },
+    3: { title: "Rank these hydrocarbons as acids.", how: "Strongest acid first.", items: ["acetylene, {{HC≡CH}}", "ethylene, {{H2C=CH2}}", "ethane, {{CH3CH3}}"] },
+    4: { title: "Rank these hydrocarbons as acids.", how: "Strongest acid first.", items: ["acetylene, {{HC≡CH}}", "ethylene, {{H2C=CH2}}", "ethane, {{CH3CH3}}"] },
+    6: { title: "Rank these hydrocarbons by acidity.", how: "Strongest acid first.", items: ["acetylene, {{HC≡CH}}", "ethylene, {{H2C=CH2}}", "ethane, {{CH3CH3}}"] },
   },
   "5-0": {
     1: { title: "Before you move on", cards: [["Oxygen pulls harder on electrons than sulfur does. So why is H2S still a stronger acid than H2O?", "Sulfur is a much bigger atom. A minus charge on a big atom can spread out, like a crowd in a big hall. A spread out charge is more steady. So the piece left behind by H2S is more steady than the piece left behind by H2O."]] },
@@ -72,11 +72,11 @@
     6: { title: "Before you move on", cards: [["Why is H2S a stronger acid than H2O although oxygen is the more electronegative element?", "Within a column, size outweighs electronegativity. The larger sulfur atom spreads the charge of HS− over a greater volume, lowering its charge density, so HS− is more stable than HO−. The more stable conjugate base means the stronger acid."]] },
   },
   "5-1": {
-    1: { title: "Put these five acids in order. Each one is from a different place on the list of numbers.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "[[mol:C#C]]"] },
-    2: { title: "Put these five acids in order. Each one is from a different place on the list of numbers.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "[[mol:C#C]]"] },
-    3: { title: "Rank these five acids. They come from five different parts of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "[[mol:C#C]]"] },
-    4: { title: "Rank these five acids. They come from five different parts of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "[[mol:C#C]]"] },
-    6: { title: "Rank these five acids by pKa. Each is from a different part of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "[[mol:C#C]]"] },
+    1: { title: "Put these five acids in order. Each one is from a different place on the list of numbers.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "acetylene, {{HC≡CH}}"] },
+    2: { title: "Put these five acids in order. Each one is from a different place on the list of numbers.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "acetylene, {{HC≡CH}}"] },
+    3: { title: "Rank these five acids. They come from five different parts of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "acetylene, {{HC≡CH}}"] },
+    4: { title: "Rank these five acids. They come from five different parts of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "acetylene, {{HC≡CH}}"] },
+    6: { title: "Rank these five acids by pKa. Each is from a different part of the ladder.", how: "Strongest acid first.", items: ["[[mol:OC(=O)C(F)(F)F]]", "[[mol:CC(=O)O]]", "[[mol:S]]", "[[mol:CCO]]", "acetylene, {{HC≡CH}}"] },
   },
   "6-0": {
     1: { title: "Before you move on", cards: [["tert-Butanol is the weakest acid of the alcohols in a liquid, but the strongest with no liquid around. How can both be true?", "In a liquid, the big bulky group of the tert-butanol ion keeps liquid molecules away, so the ion is the least steady. With no liquid around, that does not matter, and the big group helps spread the charge instead. How strong an acid is depends on its surroundings."]] },

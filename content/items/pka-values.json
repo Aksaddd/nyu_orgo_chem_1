@@ -740,7 +740,7 @@
   "kind": "numeric",
   "diff": 1,
   "src": "site",
-  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:C#C]]",
+  "stem": "Give the approximate {{pKa}} of this compound.\n[[mol:C#C|me]]",
   "answer": 25,
   "lo": 24,
   "hi": 26,

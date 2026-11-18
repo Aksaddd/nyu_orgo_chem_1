@@ -60,10 +60,10 @@
     "id": "mech-organometallic-004", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
     "stem": "What is the organic product?\n[[rxn:CC[Li] + O>>\"?\"]]",
     "choices": [
-      {"h": "[[mol:CC]]", "ok": true, "why": "Ethyllithium is {{CH3CH2:-}}, a very strong base. It takes a proton from water ({{pKa}} 15.7) and becomes ethane. The other product is LiOH."},
-      {"h": "[[mol:CCO]]", "ok": false, "why": "This treats the carbon as electron poor, as it is in an alkyl halide. In C-Li the carbon is the electron-rich end."},
-      {"h": "[[mol:C=C]]", "ok": false, "why": "Nothing here removes a hydrogen from the next carbon. The reagent is the base, and it gains a hydrogen."},
-      {"h": "[[mol:CCCC]]", "ok": false, "why": "Two ethyl groups do not join. The carbanion finds the acidic hydrogen of water first."}
+      {"h": "[[mol:CC|me]]", "ok": true, "why": "Ethyllithium is {{CH3CH2:-}}, a very strong base. It takes a proton from water ({{pKa}} 15.7) and becomes ethane. The other product is LiOH."},
+      {"h": "[[mol:CCO|me]]", "ok": false, "why": "This treats the carbon as electron poor, as it is in an alkyl halide. In C-Li the carbon is the electron-rich end."},
+      {"h": "[[mol:C=C|me]]", "ok": false, "why": "Nothing here removes a hydrogen from the next carbon. The reagent is the base, and it gains a hydrogen."},
+      {"h": "[[mol:CCCC|me]]", "ok": false, "why": "Two ethyl groups do not join. The carbanion finds the acidic hydrogen of water first."}
     ],
     "solution": {
       "steps": [

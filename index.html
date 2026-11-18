@@ -8,6 +8,12 @@
 <script src="../shared/platform.js"></script>
 <script>if(!window.Platform)location.replace("alone/index.html"+location.search+location.hash)</script>
 <script src="course.js"></script>
+<script>(() => { if (!window.Platform) return; try {   // CHEM 225: a chapter saved by the first reader ({sectionId: time, done, finished, _day}) is put into the reader's shape here too, as read/chem.js does on the reader page, so the Study Plan (shared/plan.js, which paints at DOMContentLoaded or later) starts the day from the numbers the reader keeps. A chapter already in the reader's shape is left alone. (read/chem.js itself cannot run here: without read/chapters.js it would set every place to 0)
+  const K = "orgo-read-v1", st = JSON.parse(localStorage.getItem(K) || "null"); if (!st || typeof st !== "object" || Array.isArray(st)) return; let ch = false;
+  for (const id in st) { const o = st[id]; if (!o || typeof o !== "object" || Array.isArray(o) || (o.a && typeof o.a === "object" && !Array.isArray(o.a))) continue;
+    const n = { at: Object.keys(o).filter(k => !/^(done|finished|_day|at|a|w|wOld|gem|gemLast|gemUp)$/.test(k) && typeof o[k] === "number" && o[k] > 0).length, a: {} };
+    if (o.done > 0) n.done = Math.floor(o.done); if (o.finished) n.finished = true; st[id] = n; ch = true }
+  if (ch) localStorage.setItem(K, JSON.stringify(st)) } catch (e) { } })()</script>
 <script src="../shared/settings.js"></script>
 <script src="../shared/xp.js"></script>
 <script src="../shared/wardrobe.js"></script>

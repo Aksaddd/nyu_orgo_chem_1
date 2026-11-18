@@ -55,33 +55,43 @@
 .mol-arrow .shaft { stroke: var(--arrow, currentColor) }
 .mol-arrow .head, .mol-arrow .lp-dot { fill: var(--arrow, currentColor) }
 
-/* ---------- inside a passage: the folded blocks (closer look, bigger picture, worked steps), sources, links, tables */
-.rd-prose .rc-more { background: var(--sunk); border-radius: 12px; padding: 2px 14px; margin: 12px 0; border-left: 3px solid var(--line) }
+/* ---------- inside a passage: the folded blocks (closer look, bigger picture, worked steps), sources, links, tables.
+   Their colours come from the passage's own ink (the Aa page colour sets it), not from the appearance: under a page colour
+   that differs from the appearance (Light with a Night page, Dark with Sepia) the appearance's would not show */
+.rd-prose .rc-more { background: color-mix(in srgb, currentColor 5%, transparent); border-radius: 12px; padding: 2px 14px; margin: 12px 0; border-left: 3px solid var(--line) }
 .rd-prose .rc-micro { border-left-color: var(--accent) }
-.rd-prose .rc-more > summary { cursor: pointer; font: 600 15px/1.35 var(--body); color: var(--accent); padding: 11px 0; min-height: 44px; box-sizing: border-box }
+.rd-prose .rc-more > summary { cursor: pointer; font: 600 15px/1.35 var(--body); color: color-mix(in srgb, var(--accent) 90%, var(--er-text, var(--ink))); padding: 11px 0; min-height: 44px; box-sizing: border-box }
 .rd-prose .rc-more[open] > summary { margin-bottom: 4px }
 .rd-prose .rc-body { padding-bottom: 6px }
 .rd-prose .rc-body > :last-child { margin-bottom: 6px }
 .rd-prose .rc-body ol { padding-left: 22px }
 .rd-prose .rc-body li > strong { display: block }      /* a worked step: its title, then the step */
-.rd-prose .rc-src, .rd-prose .rc-go { font: 400 14px/1.45 var(--body); color: var(--muted); margin: 10px 0 0; text-indent: 0 }
-.rd-prose .rc-src a, .rd-prose .rc-go a { color: var(--accent) }
+.rd-prose .rc-src, .rd-prose .rc-go { font: 400 14px/1.45 var(--body); color: color-mix(in srgb, var(--er-text, var(--ink)) 75%, transparent); margin: 10px 0 0; text-indent: 0 }
+.rd-prose .rc-src a, .rd-prose .rc-go a { color: color-mix(in srgb, var(--accent) 90%, var(--er-text, var(--ink))) }
+/* the fold titles and the links are the appearance's blue with a little of the passage's ink, which keeps them at 4.5:1 or
+   more on every page colour; under a Sepia or Night page the blue alone can be faint (Stars' light blue on sepia, Light's
+   dark blue on night), so there they take nearly half their colour from the ink */
+body:is(.er-sepia, .er-dark) .rd-prose :is(.rc-more > summary, .rc-src a, .rc-go a) { color: color-mix(in srgb, var(--accent) 55%, var(--er-text, var(--ink))) }
 .rd-prose .rc-hw { margin: 0 0 4px }
 .rd-prose .rc-steps + .rc-hw { margin-top: 22px }
 .rd-prose table, .rd-q > table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: calc(15px * var(--rs)); margin: 4px 0 12px }
 .rd-prose th, .rd-prose td, .rd-q > table th, .rd-q > table td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: middle }
 .rd-prose th, .rd-q > table th { font-weight: 650 }
+.rd-sec .rd-q > table { color: var(--er-text) }      /* a table under a question is the question's own text, in the passage's ink */
+body.er-flip .rd-sec .rd-q > table { color: inherit }      /* where Eureka's reader stands the questions on the appearance's own surface (a page on the other side of light and dark from the appearance), the table keeps the appearance's ink, as the question does */
 .rd-q > p:empty { display: none }      /* a question whose text ends in a table leaves an empty paragraph behind */
 
 /* ---------- drawings inside questions, choices and explanations */
 .q .fig { margin: 10px auto 2px; font-weight: 400 }
 .opt > span:last-child { min-width: 0; flex: 1 }
 .opt .fig { margin: 4px auto }
+.opt .fig-inline .ring-svg.inline { height: 9em }      /* rings inside the words of a choice ("Both [ring] and [ring]") as large as a choice that is one ring */
 .explain strong .fig, .explain strong .fig-inline { color: var(--ink); font-weight: 400 }      /* the right answer, drawn in ink, not in the colour of the verdict */
 
 /* ---------- drawings inside activities, and cards with more than a few words on them */
 .pl .fig { margin: 6px auto }
 .pl-chip .fig, .pl-card .fig, .pl-seq .fig { margin: 0 auto }
+.pl:has(.pl-chip .scheme, .pl-card .scheme) .pl-bins { grid-template-columns: 1fr }      /* a sort of equations: one full-width box per row, so a sorted equation stays on one or two lines */
 /* The reader's flip card is a fixed box with both faces laid over each other. Here a card holds a whole question, often
    with a drawing, so the card is as tall as its longer face, a single card takes the whole row, and the spans inside a
    face (formulas, figures) are not laid out as faces themselves. */
