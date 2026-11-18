@@ -524,26 +524,25 @@
   "kind": "mcq",
   "diff": 2,
   "src": "site",
-  "stem": "In a less polar solvent, the reaction of triethylamine with iodoethane has this energy curve:\n[[energy:R=0,TS=24,P=-4]]\nWhich curve fits the same reaction in a <b>more polar</b> solvent, on the same energy scale?",
-  "fixed": true,
+  "stem": "In a less polar solvent, the reaction of triethylamine with iodoethane has this energy curve:\n[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=24,P=products −4]]\nWhich curve fits the same reaction in a <b>more polar</b> solvent, on the same energy scale?",
   "choices": [
    {
-    "h": "[[energy:R=-1,TS=18,P=-12]]",
+    "h": "[[energy:R=-1,TS=18,P=-12|R=reactants −1,TS=18,P=products −12]]",
     "ok": true,
     "why": "The neutral start barely moves, the partly charged transition state drops, and the ionic product drops most. The barrier falls from 24 to 19."
    },
    {
-    "h": "[[energy:R=-8,TS=22,P=-6]]",
+    "h": "[[energy:R=-8,TS=22,P=-6|R=reactants −8,TS=22,P=products −6]]",
     "ok": false,
     "why": "Here the starting materials drop the most. That is the pattern for charged starting materials, not neutral ones."
    },
    {
-    "h": "[[energy:R=0,TS=24,P=-12]]",
+    "h": "[[energy:R=0,TS=24,P=-12|R=reactants 0,TS=24,P=products −12]]",
     "ok": false,
     "why": "Only the product is lowered. The transition state already carries partial charges, so it must drop as well."
    },
    {
-    "h": "[[energy:R=0,TS=30,P=-4]]",
+    "h": "[[energy:R=0,TS=30,P=-4|R=reactants 0,TS=30,P=products −4]]",
     "ok": false,
     "why": "A polar solvent does not raise the energy of a transition state that has charge on it."
    }

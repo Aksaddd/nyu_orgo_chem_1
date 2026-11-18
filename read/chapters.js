@@ -309,6 +309,7 @@ window.READ = [
       "t": "order",
       "title": "Rank these rings by stability per {{CH2}} group (heat of formation per {{CH2}}).",
       "how": "Most stable first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:C1CCCCC1]]",
        "[[mol:C1CCCCCC1]]",
@@ -436,6 +437,7 @@ window.READ = [
       "t": "order",
       "title": "Rank these groups by how much energy it costs to put them axial on a cyclohexane ring.",
       "how": "Most costly first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "tert-butyl, {{C(CH3)3}}",
        "isopropyl, {{CH(CH3)2}}",
@@ -535,6 +537,7 @@ window.READ = [
       "t": "order",
       "title": "Rank the halide ions as bases.",
       "how": "Strongest base first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:[F-]]]",
        "[[mol:[Cl-]]]",
@@ -594,6 +597,7 @@ window.READ = [
       "t": "order",
       "title": "Rank these three carboxylic acids.",
       "how": "Strongest acid first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:CCC(Cl)C(=O)O]]",
        "[[mol:ClCCCC(=O)O]]",
@@ -604,7 +608,7 @@ window.READ = [
    },
    {
     "h": "Hybridization: why acetylene (25) is far more acidic than ethane (60)",
-    "html": "<p>Both of these acids lose a proton from carbon, yet they differ by 35 {{pKa}} units:</p>\n<table><tr><th>Acid</th><th>{{pKa}}</th><th>Conjugate base</th><th>Hybridization of the carbon that holds the lone pair</th></tr><tr><td>H-C≡C-H (acetylene)</td><td>25</td><td>acetylide, {{HC≡C-}}</td><td><b>{{sp}}</b></td></tr><tr><td>{{H3C-CH3}} (ethane)</td><td>60</td><td>ethyl anion, {{CH3CH2-}}</td><td><b>{{sp3}}</b></td></tr></table>\n[[mol:C#C]]\n<p>The same element carries the charge in both conjugate bases, so electronegativity and size cannot be the explanation. The difference is the <b>orbital the lone pair sits in</b>.</p>\n<p>The lecture's note on the acetylide carbon: <b>{{sp}}, more s character, more stable</b> anion.</p>\n<ul><li>An {{sp}} orbital is half s and half p: <b>50% s character</b>.</li><li>An {{sp3}} orbital is one part s and three parts p: <b>25% s character</b>.</li></ul>\n<p>An s orbital is closer to the nucleus than a p orbital of the same shell. The more s character a hybrid orbital has, the closer its electrons are held to the positive nucleus, and the more stable a lone pair in that orbital is. The acetylide lone pair, in an {{sp}} orbital, is held tightly. The ethyl anion's lone pair, in an {{sp3}} orbital, is held loosely, which makes it one of the strongest bases there is.</p>\n<p>The order to remember: {{sp}} C-H (25) is more acidic than {{sp2}} C-H, which is more acidic than {{sp3}} C-H (50 to 60).</p>\n<details class=\"rc-more rc-micro\"><summary>Closer look: A carbon that behaves as if it were more electronegative</summary><div class=\"rc-body\"><p>One way to hold this idea is to say that an {{sp}} carbon acts like a more electronegative atom than an {{sp3}} carbon. It is the same element with the same nuclear charge, but its bonding and lone-pair orbitals are pulled in closer, so it keeps electrons more tightly. The {{pKa}} values show how large the effect is. On the lecture's scale an alkyne C-H at 25 lies between an alcohol O-H (16) and an amine N-H (38). So a carbon acid can be stronger than a nitrogen acid, which the electronegativity trend alone would never predict.</p></div></details>\n<details class=\"rc-more rc-macro\"><summary>Bigger picture: The alkyne C-H on the past exam, and why 25 is a useful number</summary><div class=\"rc-body\"><p>In Question 1A of the past exam the {{pKa}} of propyne is 25, and the answer requires knowing that the acidic hydrogen is the one on the triple-bond carbon, not one of the three {{CH3}} hydrogens, which sit on an {{sp3}} carbon. The value 25 is low enough to be practical. A base whose conjugate acid has a higher {{pKa}}, such as the amide ion (38), removes that proton completely. The product, an acetylide ion, is a carbon nucleophile, and it appears at the top of the nucleophile table in the 11/05 lecture with a relative rate of 126,000.</p></div></details>\n<p class=\"rc-src\">Original notes: <a class=\"rc-page\" href=\"../archive/pages/L1029-2.png\">10/29 page 2</a>.</p>",
+    "html": "<p>Both of these acids lose a proton from carbon, yet they differ by 35 {{pKa}} units:</p>\n<table><tr><th>Acid</th><th>{{pKa}}</th><th>Conjugate base</th><th>Hybridization of the carbon that holds the lone pair</th></tr><tr><td>H-C≡C-H (acetylene)</td><td>25</td><td>acetylide, {{HC≡C-}}</td><td><b>{{sp}}</b></td></tr><tr><td>{{H3C-CH3}} (ethane)</td><td>60</td><td>ethyl anion, {{CH3CH2-}}</td><td><b>{{sp3}}</b></td></tr></table>\n[[mol:C#C|me]]\n<p>The same element carries the charge in both conjugate bases, so electronegativity and size cannot be the explanation. The difference is the <b>orbital the lone pair sits in</b>.</p>\n<p>The lecture's note on the acetylide carbon: <b>{{sp}}, more s character, more stable</b> anion.</p>\n<ul><li>An {{sp}} orbital is half s and half p: <b>50% s character</b>.</li><li>An {{sp3}} orbital is one part s and three parts p: <b>25% s character</b>.</li></ul>\n<p>An s orbital is closer to the nucleus than a p orbital of the same shell. The more s character a hybrid orbital has, the closer its electrons are held to the positive nucleus, and the more stable a lone pair in that orbital is. The acetylide lone pair, in an {{sp}} orbital, is held tightly. The ethyl anion's lone pair, in an {{sp3}} orbital, is held loosely, which makes it one of the strongest bases there is.</p>\n<p>The order to remember: {{sp}} C-H (25) is more acidic than {{sp2}} C-H, which is more acidic than {{sp3}} C-H (50 to 60).</p>\n<details class=\"rc-more rc-micro\"><summary>Closer look: A carbon that behaves as if it were more electronegative</summary><div class=\"rc-body\"><p>One way to hold this idea is to say that an {{sp}} carbon acts like a more electronegative atom than an {{sp3}} carbon. It is the same element with the same nuclear charge, but its bonding and lone-pair orbitals are pulled in closer, so it keeps electrons more tightly. The {{pKa}} values show how large the effect is. On the lecture's scale an alkyne C-H at 25 lies between an alcohol O-H (16) and an amine N-H (38). So a carbon acid can be stronger than a nitrogen acid, which the electronegativity trend alone would never predict.</p></div></details>\n<details class=\"rc-more rc-macro\"><summary>Bigger picture: The alkyne C-H on the past exam, and why 25 is a useful number</summary><div class=\"rc-body\"><p>In Question 1A of the past exam the {{pKa}} of propyne is 25, and the answer requires knowing that the acidic hydrogen is the one on the triple-bond carbon, not one of the three {{CH3}} hydrogens, which sit on an {{sp3}} carbon. The value 25 is low enough to be practical. A base whose conjugate acid has a higher {{pKa}}, such as the amide ion (38), removes that proton completely. The product, an acetylide ion, is a carbon nucleophile, and it appears at the top of the nucleophile table in the 11/05 lecture with a relative rate of 126,000.</p></div></details>\n<p class=\"rc-src\">Original notes: <a class=\"rc-page\" href=\"../archive/pages/L1029-2.png\">10/29 page 2</a>.</p>",
     "qs": [
      "pka-values-030"
     ],
@@ -623,10 +627,11 @@ window.READ = [
       "t": "order",
       "title": "Rank these hydrocarbons as acids.",
       "how": "Strongest acid first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
-       "[[mol:C#C]]",
-       "[[mol:C=C]]",
-       "[[mol:CC]]"
+       "acetylene, {{HC≡CH}}",
+       "ethylene, {{H2C=CH2}}",
+       "ethane, {{CH3CH3}}"
       ]
      }
     ]
@@ -652,12 +657,13 @@ window.READ = [
       "t": "order",
       "title": "Rank these five acids. They come from five different parts of the ladder.",
       "how": "Strongest acid first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:OC(=O)C(F)(F)F]]",
        "[[mol:CC(=O)O]]",
        "[[mol:S]]",
        "[[mol:CCO]]",
-       "[[mol:C#C]]"
+       "acetylene, {{HC≡CH}}"
       ]
      }
     ]
@@ -1144,7 +1150,7 @@ window.READ = [
    },
    {
     "h": "Factor 4, the solvent: when charge is created, a more polar solvent is faster",
-    "html": "<p>The fourth factor is the solvent. The first example has two <b>neutral</b> reactants that make two ions. Triethylamine attacks iodoethane and gives the tetraethylammonium cation and iodide:</p>\n[[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]\n<p>Run it in two mixtures of water and ethanol:</p><table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table><p>Look at the transition state. Nitrogen is partly bonded to carbon and has begun to carry positive charge (δ<sup>+</sup> on N). Iodine is partly gone and has begun to carry negative charge (δ<sup>−</sup> on I). The starting materials have no charge at all. A polar solvent surrounds and stabilizes charge, so it lowers the energy of this transition state much more than it lowers the neutral starting materials.</p><p>The notes: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The two energy curves, drawn schematically (less polar solvent first, more polar second):</p>\n[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]\n[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]\n<details class=\"rc-more rc-micro\"><summary>Closer look: The bookkeeping that predicts the direction</summary><div class=\"rc-body\"><p>Write down the charge on each side of the rate-determining step. Start: two neutral molecules, no charge. Transition state: partial positive on N, partial negative on I, so charge is being <b>created</b>. A more polar solvent always helps the more charged state more. Here the more charged state is the transition state, so the barrier shrinks and the reaction speeds up. You do not need to memorize cases, only to ask which is more charged: the starting materials or the transition state.</p></div></details>\n<details class=\"rc-more rc-macro\"><summary>Bigger picture: The same argument explains SN1</summary><div class=\"rc-body\"><p>In the next lecture a neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step of {{SN1}}. That is charge being created from a neutral molecule, so the notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists 'rate independent of solvent' as a statement that does not describe {{SN1}}. The reasoning you need is the reasoning on this page.</p></div></details>\n<p class=\"rc-src\">Original notes: <a class=\"rc-page\" href=\"../archive/pages/L1105-3.png\">11/05 page 3</a>.</p>",
+    "html": "<p>The fourth factor is the solvent. The first example has two <b>neutral</b> reactants that make two ions. Triethylamine attacks iodoethane and gives the tetraethylammonium cation and iodide:</p>\n[[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]\n<p>Run it in two mixtures of water and ethanol:</p><table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table><p>Look at the transition state. Nitrogen is partly bonded to carbon and has begun to carry positive charge (δ<sup>+</sup> on N). Iodine is partly gone and has begun to carry negative charge (δ<sup>−</sup> on I). The starting materials have no charge at all. A polar solvent surrounds and stabilizes charge, so it lowers the energy of this transition state much more than it lowers the neutral starting materials.</p><p>The notes: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The two energy curves, drawn schematically (less polar solvent first, more polar second):</p>\n[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]\n[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]\n<details class=\"rc-more rc-micro\"><summary>Closer look: The bookkeeping that predicts the direction</summary><div class=\"rc-body\"><p>Write down the charge on each side of the rate-determining step. Start: two neutral molecules, no charge. Transition state: partial positive on N, partial negative on I, so charge is being <b>created</b>. A more polar solvent always helps the more charged state more. Here the more charged state is the transition state, so the barrier shrinks and the reaction speeds up. You do not need to memorize cases, only to ask which is more charged: the starting materials or the transition state.</p></div></details>\n<details class=\"rc-more rc-macro\"><summary>Bigger picture: The same argument explains SN1</summary><div class=\"rc-body\"><p>In the next lecture a neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step of {{SN1}}. That is charge being created from a neutral molecule, so the notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists 'rate independent of solvent' as a statement that does not describe {{SN1}}. The reasoning you need is the reasoning on this page.</p></div></details>\n<p class=\"rc-src\">Original notes: <a class=\"rc-page\" href=\"../archive/pages/L1105-3.png\">11/05 page 3</a>.</p>",
     "qs": [
      "ts-drawing-009",
      "solvent-effects-010"
@@ -1203,6 +1209,7 @@ window.READ = [
       "t": "order",
       "title": "Rank these bromides by their rate of {{SN2}} reaction with NaSH.",
       "how": "Fastest first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:CBr|me]]",
        "[[mol:CCBr|me]]",
@@ -1291,6 +1298,7 @@ window.READ = [
       "t": "order",
       "title": "Rank these chlorides by their rate of {{SN1}} reaction in water.",
       "how": "Fastest first.",
+      "tip": "Tap them in that order, first to last.",
       "items": [
        "[[mol:CCC(C)(C)Cl]]",
        "[[mol:CCC(C)Cl]]",

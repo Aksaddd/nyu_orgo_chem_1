@@ -255,8 +255,8 @@
 <p>Halfway through the reaction, a little charge has already shown up. Nitrogen is a little bit plus. Iodine is a little bit minus. The starting molecules have no charge for the liquid to hold.</p>
 <p>So a <b>more polar solvent</b> helps the halfway stage much more than it helps the starting molecules. The climb to the halfway stage gets smaller. The reaction goes <b>faster</b>.</p>
 <p>Here are the two climbs, the less polar solvent first and the more polar solvent second.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]`,
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]`,
     "1.3": `<p>Some liquids hold on to charge very tightly. Water is one of them. Chemists call a liquid like this a <b>more polar solvent</b>. A solvent is the liquid that everything else is dissolved in.</p>
 <p>Think of a crowd that loves to hug. If someone with a plus or minus charge walks in, the crowd hugs them and holds on. If someone with no charge walks in, the crowd mostly ignores them.</p>
 <p>Now look at one reaction. Two molecules meet, triethylamine and iodoethane. Neither one has any charge. We say they are <b>neutral</b>. When they react, they make two ions. One is a plus ion. The other is iodide, a minus ion.</p>
@@ -266,8 +266,8 @@
 <p>The two starting molecules have no charge at all, so the crowd has nothing to hug. That means the solvent helps the halfway stage a lot, and it helps the starting molecules much less.</p>
 <p>Picture a hill. The reaction must climb from the start to the top. The solvent lowers the top of the hill much more than it lowers the start. So the climb is shorter. Chemists write it like this: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. To stabilize something is to make its energy lower. {{Ea}} is the height of the climb. A shorter climb means a faster reaction.</p>
 <p>The two pictures show the climb. The first is for the less polar solvent. The second is for the more polar solvent. The top of the second hill is lower.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>Here is a simple way to remember it. Ask one question: which has more charge, the start or the halfway stage? In this reaction the halfway stage has more charge, so a more polar solvent makes the reaction faster.</p>
 <p>The same idea comes back later, in a reaction called {{SN1}}, where a molecule with no charge breaks into two ions.</p>`,
     "2.1": `<p>When <b>neutral</b> molecules react and charge starts to appear, a <b>more polar solvent</b> makes the reaction go faster, because the solvent steadies that charge.</p>`,
@@ -277,8 +277,8 @@
 <p>In a water and ethanol mix of 25 : 75 the reaction is slower. In a 50 : 50 mix, the more polar one, it is <b>faster</b>.</p>
 <p>The reason is the halfway stage, the transition state. There, nitrogen has a small plus charge and iodine has a small minus charge. The starting molecules have none. A polar solvent helps the halfway stage much more than the starting molecules. So <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The climb is shorter, so the reaction is faster.</p>
 <p>The two energy pictures show this, the less polar solvent first and the more polar solvent second.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]`,
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]`,
     "2.3": `<p>A reaction takes place in a liquid called the solvent. The fourth thing that controls an {{SN2}} reaction is how polar the solvent is. A polar solvent holds on to charge. A <b>more polar solvent</b> holds on to it more strongly. Water is more polar than ethanol, so a mix with more water is the more polar solvent.</p>
 <p>Start with an example where the reactants are <b>neutral</b>, which means they have no charge. Triethylamine attacks iodoethane. The products are two ions: the tetraethylammonium cation, which is positive, and iodide, which is negative.</p>
 [[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]
@@ -287,8 +287,8 @@
 <p>Now look at the transition state, the halfway stage at the top of the energy hill. Nitrogen is partly bonded to carbon, and it has begun to carry a positive charge. Iodine is partly gone, and it has begun to carry a negative charge. The starting materials have no charge at all.</p>
 <p>A polar solvent surrounds charge and steadies it. So it lowers the energy of the transition state much more than it lowers the energy of the neutral starting materials. The notes put it this way: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. Here {{Ea}} is the activation energy, the height of the climb from the start to the top. A lower {{Ea}} means a faster reaction.</p>
 <p>The two energy curves are drawn below, the less polar solvent first and the more polar solvent second. Look at the top of each curve. The top of the second one is lower.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>You do not have to memorize cases. Just keep a charge account for the slow step. Ask which is more charged, the starting materials or the transition state. Here the starting materials have no charge and the transition state has some, so charge is being created. A more polar solvent helps the more charged state more. That is the transition state, so the barrier shrinks.</p>
 <p>The same thinking explains {{SN1}}, which is the topic of the next lecture. In the slow step of {{SN1}} a neutral alkyl halide splits into a carbocation and a halide ion. That is charge being created from a neutral molecule. So a more polar solvent makes {{SN1}} faster. A past exam question lists rate independent of solvent as something that does not describe {{SN1}}.</p>`,
     "3.1": `<p>When two <b>neutral</b> molecules react and start to form charges, a <b>more polar solvent</b> makes the reaction <b>faster</b>, because it steadies the charged transition state more than the uncharged reactants.</p>`,
@@ -297,8 +297,8 @@
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>To see why, look at the transition state, the unstable point at the top of the energy hill. Nitrogen is partly bonded to carbon and has begun to carry a positive charge (δ<sup>+</sup> on N). Iodine is partly gone and has begun to carry a negative charge (δ<sup>−</sup> on I). The starting materials have no charge at all. A polar solvent surrounds and steadies charge, so it lowers the energy of this transition state much more than it lowers the neutral starting materials.</p>
 <p>The notes say: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. Here {{Ea}} is the activation energy, the climb from the reactants to the transition state. Below are the energy curves, the less polar solvent first and the more polar one second.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]`,
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]`,
     "3.3": `<p>The solvent is the liquid in which a reaction happens, and it is the fourth factor that controls the rate of an {{SN2}} reaction. Solvents differ in how <em>polar</em> they are. A polar solvent has molecules with partly positive and partly negative ends, so it is good at surrounding and steadying charge. A <b>more polar solvent</b> does this more strongly.</p>
 <p>The first example has two <b>neutral</b> reactants, meaning molecules with no charge, that make two ions. Triethylamine attacks iodoethane and gives the tetraethylammonium cation and iodide.</p>
 [[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]
@@ -307,8 +307,8 @@
 <p>Look at the transition state, the highest point on the energy curve. Nitrogen is partly bonded to carbon and has begun to carry positive charge (δ<sup>+</sup> on N). Iodine is partly gone and has begun to carry negative charge (δ<sup>−</sup> on I). The starting materials have no charge at all.</p>
 <p>A polar solvent surrounds and steadies charge. So it lowers the energy of the transition state a great deal, and it lowers the neutral starting materials only a little. The notes say <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The activation energy {{Ea}} is the gap between the starting materials and the transition state. If the top drops more than the bottom, the gap gets smaller and the reaction speeds up.</p>
 <p>The two energy curves are drawn schematically, the less polar solvent first and the more polar second.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>A handy method is to keep a charge account for the slow step. Write the charge at the start, then the charge in the transition state. At the start there are two neutral molecules with no charge. In the transition state there is a partial positive charge on N and a partial negative charge on I. So charge is being created. A more polar solvent always helps the more charged state more. Here the transition state is more charged, so the barrier shrinks and the reaction goes faster. You only need to ask which is more charged, the starting materials or the transition state.</p>
 <p>The next lecture uses the same argument for {{SN1}}. In its slow step a neutral alkyl halide splits into a carbocation and a halide ion, which is charge created from a neutral molecule. So a more polar solvent increases the rate of {{SN1}}. A past exam question lists rate independent of solvent as a statement that does not describe {{SN1}}.</p>`,
     "4.1": `<p>When the reactants are <b>neutral</b> and the transition state carries partial charges, a <b>more polar solvent</b> stabilizes the transition state more, lowers the barrier and makes the reaction <b>faster</b>.</p>`,
@@ -318,16 +318,16 @@
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>In the transition state nitrogen is partly bonded to carbon and carries a partial positive charge (δ<sup>+</sup> on N), while iodine is partly gone and carries a partial negative charge (δ<sup>−</sup> on I). The starting materials have no charge. A polar solvent surrounds and stabilizes charge, so it lowers the energy of the transition state far more than that of the neutral starting materials.</p>
 <p>In the words of the notes, <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The schematic energy curves follow, the less polar solvent first and the more polar second.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]`,
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]`,
     "4.3": `<p>The fourth factor in an {{SN2}} reaction is the solvent, and it can push the rate either way. The first case is the one where charge is created. Two <b>neutral</b> reactants, triethylamine and iodoethane, react to give the tetraethylammonium cation and iodide.</p>
 [[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]
 <p>The reaction was run in two mixtures of water and ethanol.</p>
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>The explanation is in the transition state. Nitrogen is partly bonded to carbon and has begun to carry positive charge (δ<sup>+</sup> on N). Iodine is partly gone and has begun to carry negative charge (δ<sup>−</sup> on I). The reactants carry no charge at all. A polar solvent surrounds and stabilizes charge, so it lowers the energy of this transition state much more than it lowers the energy of the neutral starting materials.</p>
 <p>The notes sum it up: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The activation energy is the difference in energy between the starting materials and the transition state, so lowering the top by more than the bottom shrinks it. The two curves below are schematic, the less polar solvent first and the more polar second. The second has a lower top and a lower end point too, because the product ions are also charged. Adding more water to the solvent therefore speeds this reaction up: the reactants are neutral, the transition state has developing partial charges, and the solvent stabilizes those charges while barely affecting the reactants.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>The bookkeeping that predicts the direction is simple. Write down the charge on each side of the rate-determining step. At the start there are two neutral molecules, with no charge. In the transition state there is partial positive charge on N and partial negative charge on I, so charge is being created. A more polar solvent always helps the more charged state more. Here that is the transition state, so the barrier shrinks and the reaction speeds up. You do not need to memorize cases, only to ask which is more charged: the starting materials or the transition state.</p>
 <p>The same argument explains {{SN1}}. In the next lecture a neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step. That is charge being created from a neutral molecule, so the notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists rate independent of solvent as a statement that does not describe {{SN1}}.</p>`,
     "5.1": `<p>Where charge is created in going from two <b>neutral</b> reactants to the transition state, a <b>more polar solvent</b> stabilizes the T.S. more than the starting materials, lowering {{Ea}}, so the reaction is <b>faster</b>.</p>`,
@@ -336,8 +336,8 @@
 <p>Run it in two mixtures of water and ethanol:</p>
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>In the transition state, nitrogen is partly bonded to carbon and has begun to carry positive charge (δ<sup>+</sup> on N), and iodine is partly gone and has begun to carry negative charge (δ<sup>−</sup> on I). The starting materials have no charge at all. A polar solvent surrounds and stabilizes charge, so it lowers the energy of this transition state much more than it lowers the neutral starting materials. The notes: <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The two energy curves, drawn schematically (less polar solvent first, more polar second):</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>The bookkeeping that predicts the direction: write down the charge on each side of the rate-determining step. Start: two neutral molecules, no charge. Transition state: partial positive on N, partial negative on I, so charge is being created. A more polar solvent always helps the more charged state more. Here the more charged state is the transition state, so the barrier shrinks and the reaction speeds up. You do not need to memorize cases, only to ask which is more charged: the starting materials or the transition state.</p>
 <p>Put the result in your own words like this. The reactants are neutral, but the transition state has partial charges on nitrogen and iodine. A more polar solvent stabilizes those developing charges and barely affects the neutral reactants. The transition state drops more than the starting point, so the activation energy is smaller and adding more water to the solvent speeds the reaction up. On the curves, the more polar solvent gives the lower top, and its products sit lower as well, because the product ions are charged too. Compare the two curves: the reactants sit at about the same level in both, while the top is clearly lower in the second, so the climb is shorter.</p>
 <p>The same argument explains {{SN1}}. A neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step, which is charge being created from a neutral molecule. The notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists rate independent of solvent as a statement that does not describe {{SN1}}.</p>`,
@@ -346,8 +346,8 @@
 [[rxn:CCN(CC)CC + CCI>>CC[N+](CC)(CC)CC + [I-]]]
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>The transition state is dipolar: partial positive charge on nitrogen (δ<sup>+</sup>), partial negative charge on iodine (δ<sup>−</sup>). The reactants are uncharged. A polar solvent stabilizes charge separation, so it lowers the transition state much more than the reactants. Hence <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>. The curves are schematic, the less polar solvent first.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>The product ions are stabilized even more, so the reaction is also more exergonic in the more polar solvent, as the second curve shows.</p>`,
     "6.3": `<p>The solvent affects a rate through differential solvation. Transition state theory writes the rate constant in terms of ΔG<sup>‡</sup>, the free energy difference between the transition state and the reactants. A solvent shifts both of those free energies, and what matters for the rate is the difference between the two shifts. So the question to ask of any step is which of the two is solvated more strongly.</p>
 <p>The first example is the classic Menshutkin reaction, in which two <b>neutral</b> reactants give two ions. Triethylamine attacks iodoethane and gives the tetraethylammonium cation and iodide.</p>
@@ -356,8 +356,8 @@
 <table><tr><th>reaction</th><th>solvent ({{H2O}} : ethanol)</th><th>result</th></tr><tr><td>A</td><td>25 : 75</td><td>slower</td></tr><tr><td>B</td><td>50 : 50, the <b>more polar solvent</b></td><td><b>faster</b></td></tr></table>
 <p>The reactants have no net charge and no large dipole. The transition state is dipolar: nitrogen is partly bonded to carbon and carries partial positive charge (δ<sup>+</sup> on N), and iodine is partly detached and carries partial negative charge (δ<sup>−</sup> on I). Charge is therefore being created in the rate-determining step. A polar solvent stabilizes charge separation, so it lowers the transition state much more than the neutral reactants. In the words of the notes, <b>the T.S. is stabilized more than the starting materials, which lowers {{Ea}}</b>.</p>
 <p>The energy curves are schematic, with the less polar solvent first. In the more polar solvent the top of the curve is lower, and the end point is lower too, because the product ions are charged and are stabilized most of all.</p>
-[[energy:R=0,TS=24,P=-4|TS=less polar solvent]]
-[[energy:R=0,TS=19,P=-9|TS=more polar solvent]]
+[[energy:R=0,TS=24,P=-4|R=reactants 0,TS=less polar solvent: 24,P=products −4]]
+[[energy:R=0,TS=19,P=-9|R=reactants 0,TS=more polar solvent: 19,P=products −9]]
 <p>The reasoning is general. This is the qualitative rule of Hughes and Ingold: when the transition state is more charged than the reactants, a more polar solvent increases the rate, and when charge is dispersed or destroyed in the transition state, it decreases the rate. You need no table of cases. Write the charge on each side of the rate-determining step and ask which state is more charged. The next passage runs the argument the other way round. Two caveats are worth keeping in mind. Polarity here means the solvent's ability to stabilize charge and dipoles, and it is only a rough guide, because specific interactions such as hydrogen bonding also matter. And the transition state carries only partial charges, so its stabilization is smaller than that of a full ion.</p>
 <p>The same argument explains {{SN1}}. A neutral alkyl halide ionizes to a carbocation and a halide ion in the slow step, which creates charge from a neutral molecule. The notes say: increase the polarity of the solvent, increase the rate of {{SN1}}. Question 3A of the past exam lists rate independent of solvent as a statement that does not describe {{SN1}}.</p>`,
   },

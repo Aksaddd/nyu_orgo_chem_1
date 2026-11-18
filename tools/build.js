@@ -125,8 +125,10 @@ function checkItem(it, file) {
   if (!sol.answer) bad(file, where, `the solution needs an "answer" (the final answer as it should be written)`);
   if (it.kind === "mcq" || it.kind === "multi") {
     const ch = it.choices;
-    // an explanation that names its choices by letter or number ("A, C and D", "choice 2") only makes sense in the written order
-    if (!it.fixed && Array.isArray(ch) && /\b(choice|option|answer|structure|diagram|reaction|statement|compound|product)s? [A-F1-6]\b|\([A-F]\)|"answer":"[A-F]( |,|\.|"|:)|\b[A-F], [A-F]\b|\b[A-F] and [A-F]\b|(^|[.;:] )[A-F] (is|are|was)\b/.test(JSON.stringify(it.solution || {}) + " " + ch.map(c => c.why).join(" "))) it.fixed = true; if (!Array.isArray(ch) || ch.length < 2 || ch.length > 6) bad(file, where, "needs 2 to 6 choices");
+    // an explanation that names its choices by letter or number ("A, C and D", "choice 2") only makes sense in the written order.
+    // Not read as letters: the article in an answer ("A triplet") and the ends of bonds ("C=C, C-Br"). "fixed": false in an
+    // item says its order may change whatever its explanation says.
+    if (it.fixed == null && Array.isArray(ch) && /\b(choice|option|answer|structure|diagram|reaction|statement|compound|product)s? [A-F1-6]\b|\([A-F]\)|"answer":"[A-F](,|\.|"|:)|(?<![-=·])\b[A-F], [A-F]\b(?![-=·])|\b[A-F] and [A-F]\b|(^|[.;:] )[A-F] (is|are|was)\b/.test(JSON.stringify(it.solution || {}) + " " + ch.map(c => c.why).join(" "))) it.fixed = true; if (!Array.isArray(ch) || ch.length < 2 || ch.length > 6) bad(file, where, "needs 2 to 6 choices");
     else { const n = ch.filter(c => c.ok === true).length; if (it.kind === "mcq" && n !== 1) bad(file, where, `a circle-one question needs exactly one right choice (found ${n})`); if (it.kind === "multi" && n < 1) bad(file, where, "a circle-all-that-apply question needs at least one right choice");
       ch.forEach((c, i) => { if (!c.h) bad(file, where, `choice ${i + 1} has no text`); if (typeof c.ok !== "boolean") bad(file, where, `choice ${i + 1} needs "ok": true or false`); if (!c.why) bad(file, where, `choice ${i + 1} needs "why" (why it is right or wrong)`); if (c.err && errIds.size && !errIds.has(c.err)) warn(file, where, `choice ${i + 1}: error id "${c.err}" is not in content/errors.json`) });
       const seen = new Set(); ch.forEach(c => { if (seen.has(c.h)) bad(file, where, `two choices read the same: ${c.h}`); seen.add(c.h) }) }
@@ -269,7 +271,8 @@ const reader = problems.length ? null : (() => {      // not on top of content t
       if (/[<>&{}\[\]]/.test(s.title)) bad(file, where, "the title of a section must be plain words");
       // activities, in this order: the why question, then rankings, sortings, circle-all-that-apply, numbers
       if (s.why && s.why.q) { play.push({ t: "flip", title: "Before you move on", cards: [[br(s.why.q), br(s.why.a)]] }); keys.push("why"); went.why++ }
-      for (const it of checks) if (it.kind === "rank") { play.push({ t: "order", title: title(it), how: stop(it.order.charAt(0).toUpperCase() + it.order.slice(1)), items: it.items.map(x => br(x.h)) }); keys.push("rank:" + it.id); went.rank++ }
+      // a ranking is played as Eureka's "Put it in order", whose own line under the chips is about steps: tip says what to tap
+      for (const it of checks) if (it.kind === "rank") { play.push({ t: "order", title: title(it), how: stop(it.order.charAt(0).toUpperCase() + it.order.slice(1)), tip: "Tap them in that order, first to last.", items: it.items.map(x => br(x.h)) }); keys.push("rank:" + it.id); went.rank++ }
       for (const it of checks) if (it.kind === "classify") { play.push({ t: "sort", title: title(it), bins: it.bins.map(br), items: it.items.map(x => [br(x.h), it.bins.indexOf(x.bin)]) }); keys.push("classify:" + it.id); went.classify++ }
       for (const it of checks) if (it.kind === "multi") {
         const rule = BOXES.find(r => r[0].test(it.stem));
