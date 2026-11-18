@@ -7,7 +7,8 @@
   const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const SUB = "₀₁₂₃₄₅₆₇₈₉";
   const plain = f => String(f).replace(/([A-Za-z)\]])(\d+)/g, (m, a, d) => a + [...d].map(x => SUB[x]).join("")).replace(/[-−]$/, "−").replace(/\+$/, "⁺");
-  const chem = f => { const s = el("span", { class: "chem" }); s.innerHTML = ORGO.formula(f); return s };
+  // a formula drawn as the class draws it everywhere (ORGO.fmt): one word for Eureka's dictionary (data-lk), not "NH" and "4"
+  const chemHTML = f => ORGO.fmt("{{" + f + "}}"), chem = f => ORGO.html("{{" + f + "}}");
   const KIT = "Build this one with your model kit: it is allowed on the exam.";
   const missing = what => el("p", { class: "callout warn" }, el("b", {}, "Not available. "), what + " could not be loaded on this page. Reload it, and tell your tutor if it keeps happening.");
   const intro = (text, kit) => el("div", {}, el("p", { class: "lab-intro" }, text), kit ? el("p", { class: "lab-kit" }, KIT) : null);
@@ -123,7 +124,7 @@
     sa.value = String(rows.findIndex(r => r.name === "water")); sb.value = String(rows.findIndex(r => r.name === "ammonium ion"));
     const pw = n => { const v = Math.abs(n) % 1 ? n.toFixed(1) : String(Math.round(n)); return "10<sup>" + minus(v) + "</sup>" };
     function run() {
-      const a = rows[+sa.value], b = rows[+sb.value], diff = b.pka - a.pka, h = x => `<span class="chem">${ORGO.formula(x)}</span>`;
+      const a = rows[+sa.value], b = rows[+sb.value], diff = b.pka - a.pka, h = chemHTML;
       let verdict;
       if (Math.abs(diff) < 0.5) verdict = `The two acids are about equally strong, so neither side is clearly favoured. K is about 1.`;
       else if (diff > 0) verdict = `The acid on the right (${h(b.f)}, pKa ${minus(b.pka)}) is weaker than the acid on the left (pKa ${minus(a.pka)}), so the equilibrium lies to the right: the products are favoured. K is about ${pw(diff)}${diff >= 3 ? ", very strongly favoured" : ""}.`;
