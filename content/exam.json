@@ -1,8 +1,79 @@
 {
-  "title": "Fall 2024 · Exam 2", "date": "2024-11-22", "minutes": 110, "choose": 7,
-  "rules": ["Nine questions of 100 points. Choose seven; if you cross none out, questions 1 to 7 are graded.", "Pen only. No notes or paper of your own.", "The chemistry model set is allowed."],
+  "title": "Fall 2024 · Exam 2",
+  "date": "2024-11-22",
+  "minutes": 110,
+  "choose": 7,
+  "rules": [
+    "Nine questions of 100 points. Choose seven; if you cross none out, questions 1 to 7 are graded.",
+    "110 minutes: about 15 minutes for each question you answer.",
+    "Pen only. No notes or paper of your own.",
+    "The chemistry model set is allowed."
+  ],
   "questions": [
-    {"n": 1, "partial": true, "title": "pKa values, a mechanism question, nucleophiles, a Grignard mechanism", "pages": [2, 3], "parts": [{"label": "A", "pts": 15, "type": "pka-values", "item": "pka-values-s01"}, {"label": "C", "pts": 15, "type": "nuc-pairs", "item": "nuc-pairs-s01"}]},
-    {"n": 3, "partial": true, "title": "SN1 facts, energy diagrams, fastest SN2, E2 on a ring", "pages": [6, 7], "parts": [{"label": "A", "pts": 25, "type": "traits", "item": "traits-s01"}, {"label": "D", "pts": 25, "type": "e2-ring-product", "item": "e2-ring-product-s01"}]}
+    {
+      "n": 1, "title": "pKa values, how an alkene forms, stronger nucleophiles, a Grignard mechanism", "pages": [2, 3],
+      "parts": [
+        {"label": "A", "pts": 15, "type": "pka-values", "items": ["exam-q1a-phenol", "exam-q1a-pentane", "exam-q1a-ethanol", "exam-q1a-propyne", "exam-q1a-diethylamine"], "note": "Five compounds, 3 points each. Find the acidic hydrogen of the species that is drawn before you write a number."},
+        {"label": "B", "pts": 15, "type": "mech-id", "items": ["exam-q1b-alkene-path"], "note": "Circle one. The answer is choice D of the exam; the wording of choices A to C is rebuilt from the answer key's reasoning."},
+        {"label": "C", "pts": 15, "type": "nuc-pairs", "items": ["exam-q1c-i", "exam-q1c-ii", "exam-q1c-iii"], "note": "Three pairs, 5 points each."},
+        {"label": "D", "pts": 55, "type": "mech-organometallic", "items": ["exam-q1d-written", "exam-q1d-arrows"], "note": "Write the mechanism on paper first and mark it with the rubric, then draw the arrows on screen."}
+      ]
+    },
+    {
+      "n": 2, "title": "Faster reaction of each pair; one product by E2 and by E1, and an NMR clue", "pages": [4, 5],
+      "parts": [
+        {"label": "A", "pts": 30, "type": "rate-pairs", "items": ["exam-q2a-1", "exam-q2a-2", "exam-q2a-3"], "note": "Three pairs, 10 points each. Find the one thing that differs between the two reactions."},
+        {"label": "B", "pts": 70, "type": "mech-two-paths", "items": ["exam-q2b-written", "exam-q2b-e2", "exam-q2b-e1"], "note": "55 points for Product A and the two mechanisms, 15 for the septet."}
+      ]
+    },
+    {
+      "n": 3, "title": "SN1 facts, energy diagrams, fastest SN2, E2 on a ring", "pages": [6, 7],
+      "parts": [
+        {"label": "A", "pts": 25, "type": "traits", "items": ["exam-q3a-traits"], "note": "Circle all that apply. Mind the word NOT."},
+        {"label": "B", "pts": 25, "type": "energy-diagrams", "items": ["exam-q3b-diagram"], "note": "The four diagrams are redrawn from the key's description: two steps or one, ending below or above the start."},
+        {"label": "C", "pts": 25, "type": "fastest-substrate", "items": ["exam-q3c-fastest"], "note": "The answer is choice A, methyl iodide. Choices B to D are shown here as the primary, secondary and tertiary iodides of the trend."},
+        {"label": "D", "pts": 25, "type": "e2-ring-product", "items": ["exam-q3d-product", "exam-q3d-chair"], "note": "Answer the circle-one question, then work the same molecule on the chair."}
+      ]
+    },
+    {
+      "n": 4, "title": "Reading five chairs; an epoxide that moves", "pages": [8, 9],
+      "parts": [
+        {"label": "A", "pts": 50, "type": "chair-read", "items": ["exam-q4a-1", "exam-q4a-2", "exam-q4a-3", "exam-q4a-4", "exam-q4a-5"], "note": "Five chairs, 10 points each: cis or trans, most stable or not, and the better chair if not."},
+        {"label": "B", "pts": 50, "type": "mech-intramolecular", "items": ["exam-q4b-written", "exam-q4b-arrows"], "note": "Analyze the product before you draw an arrow."}
+      ]
+    },
+    {
+      "n": 5, "title": "Why one ether synthesis works and the other fails; a very slow E2", "pages": [10, 11],
+      "parts": [
+        {"label": "A", "pts": 80, "type": "williamson-why", "items": ["exam-q5a-written", "exam-q5a-sn2", "exam-q5a-e2"], "note": "Explain in words and draw both mechanisms: the SN2 that works and the E2 that happens instead."},
+        {"label": "B", "pts": 20, "type": "e2-stereo-explain", "items": ["exam-q5b-written"], "note": "A short explanation from the chair. Draw both chairs."}
+      ]
+    },
+    {
+      "n": 6, "title": "Choosing the efficient route to an ether; products from their formulas", "pages": [12, 13],
+      "parts": [
+        {"label": "A", "pts": 50, "type": "route-choice", "items": ["exam-q6a-choice", "exam-q6a-written"], "note": "Circle a route, then explain the choice in writing. The explanation carries most of the points."},
+        {"label": "B", "pts": 50, "type": "products-from-formula", "items": ["exam-q6b-written", "exam-q6b-arrows"], "note": "Two structures, 25 points each. Use the formulas to count how many of each reactant went in."}
+      ]
+    },
+    {
+      "n": 7, "title": "Substitution against elimination; every product of a double elimination", "pages": [14, 15],
+      "parts": [
+        {"label": "A", "pts": 50, "type": "sub-vs-elim", "items": ["exam-q7a-written"], "note": "No mechanisms needed, but name the reactions."},
+        {"label": "B", "pts": 50, "type": "all-elim-products", "items": ["exam-q7b-written"], "note": "Three structures. Work through each C-Br carbon and each neighbouring hydrogen."}
+      ]
+    },
+    {
+      "n": 8, "title": "Both chairs of three cyclohexanes: more stable, and how the chairs are related", "pages": [16],
+      "parts": [
+        {"label": "", "pts": 100, "type": "chair-both", "items": ["exam-q8-i", "exam-q8-ii", "exam-q8-iii"], "note": "Three molecules. For each: draw both chairs, circle the more stable or say equal, and name the relationship."}
+      ]
+    },
+    {
+      "n": 9, "title": "A diazonium ion, a carbocation, and two ring expansions", "pages": [17],
+      "parts": [
+        {"label": "", "pts": 100, "type": "mech-rearrangement", "items": ["exam-q9-written", "exam-q9-ch2", "exam-q9-fusion"], "note": "One mechanism for each product. Both start from the same carbocation."}
+      ]
+    }
   ]
 }
