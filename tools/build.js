@@ -160,6 +160,11 @@ for (const file of list("read")) {
     (s.check || []).forEach(id => { if (!items[id]) bad(file, `${where} section ${s.id}`, `check item "${id}" does not exist`) }) });
   chapters[ch.id] = ch; deep(ch, (s, p) => scan(s, file, `${where} ${p}`, refsFor("read/" + ch.id)));
 }
+// A worked step of a homework that ends with a drawing after its last sentence ("…gives 3-methyl-2-pentene. [[mol:…]]")
+// shows that drawing on a line of its own, at full size: the space before it becomes a new line. (A figure after a space
+// is inside a sentence and drawn small: CONTENT-SPEC.md.) Done here, so the class's own pages and Eureka's reader agree.
+const ENDFIG = /([.:!?]["”’)]*)[ \t]+((?:\[\[[a-z0-9]+:.*?\]\](?!\])[ \t]*)+)$/;
+for (const c of Object.values(chapters)) for (const h of c.homework || []) for (const st of h.steps || []) if (st && typeof st.h === "string") st.h = st.h.replace(ENDFIG, "$1\n$2");
 // mock exams
 for (const file of list("mock")) {
   const m = readJSON(file); if (!m) continue; const where = m.id || ""; need(m, ["id", "title", "minutes", "choose", "questions"], file, where); if (!m.id) continue;
