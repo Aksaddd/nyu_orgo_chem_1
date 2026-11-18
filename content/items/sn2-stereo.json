@@ -713,7 +713,6 @@
   "diff": 3,
   "src": "site",
   "stem": "(S)-3-Bromotetrahydrofuran reacts with NaCN in DMSO. Which answer is correct?\n[[mol:Br[C@H]1CCOC1]]",
-  "fixed": true,
   "choices": [
    {
     "h": "[[mol:N#C[C@@H]1CCOC1]] which is S",
