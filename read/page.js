@@ -1,8 +1,13 @@
-// CHEM 225 · Readings. The list of chapters, and the reader for one chapter.
-// read/index.html            the chapter list
-// read/index.html#rings-1    one chapter (add /sectionId to land on a section)
+// CHEM 225 · Readings, as the class shows them on its own: the list of chapters, and the reader for one chapter.
+// Inside Eureka the readings are shown by Eureka's reader instead (read/index.html, with read/chapters.js); this page is
+// then reached only outside Eureka, through alone/read/index.html.
+// alone/read/index.html            the chapter list
+// alone/read/index.html#rings-1    one chapter (add /sectionId to land on a section)
 // Sections read are kept in orgo-read-v1 as {chapterId: {sectionId: time stamp, done, finished}}; the answers to the "why" cards
 // in orgo-read-why-v1 as {chapterId: {sectionId: "got" | "not"}}; the text size in orgo-prefs-v1 as textSize.
+// Eureka's reader keeps orgo-read-v1 too, in its own shape: {chapterId: {at, a, w, done, finished}}, where at is the number of
+// passages read. Such a save is read here as "the first `at` sections are read" (all of them when finished), and whatever
+// else is found under the key that is not a save at all counts as nothing read: this page never stops on it.
 (() => {
   const O = window.ORGO; if (!O) return;
   const el = O.el, store = O.store;
@@ -13,8 +18,10 @@
 
   const niceDate = iso => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || ""); return m ? MONTHS[+m[2] - 1] + " " + (+m[3]) : (iso || "") };
   const chapters = () => (O.data.chapterList || []).slice().sort((a, b) => (a.n || 0) - (b.n || 0));
-  const readOf = id => store.get(READ, {})[id] || {};
-  const doneCount = ch => { const r = readOf(ch.id); return (ch.sections || []).filter(s => r[s.id]).length };
+  const obj = x => (x && typeof x === "object" && !Array.isArray(x) ? x : {});
+  const readOf = id => obj(obj(store.get(READ, {}))[id]);
+  const readIn = (r, s, i) => !!r[s.id] || (!!r.a && typeof r.a === "object" && (!!r.finished || i < (r.at | 0)));      // the second half: a save of Eureka's reader
+  const doneCount = ch => { const r = readOf(ch.id); return (ch.sections || []).filter((s, i) => readIn(r, s, i)).length };
   const frag = h => { try { return O.html(h) } catch (e) { const d = document.createElement("div"); d.innerHTML = String(h || ""); return d } };
   const clean = () => { if (watcher) { watcher.disconnect(); watcher = null } timers.forEach(clearTimeout); timers = [] };
 
@@ -61,12 +68,12 @@
     const marks = {};                                 // sectionId -> function that redraws its "read" line
     const tocLinks = {};
 
-    const isRead = sid => !!readOf(ch.id)[sid];
-    const whyOf = sid => (store.get(WHY, {})[ch.id] || {})[sid];
+    const isRead = sid => { const i = sections.findIndex(s => s.id === sid); return i >= 0 && readIn(readOf(ch.id), sections[i], i) };
+    const whyOf = sid => obj(obj(store.get(WHY, {}))[ch.id])[sid];
     function markRead(sid, on) {
       let finished = 0;
       store.update(READ, all => {
-        const c = all[ch.id] || (all[ch.id] = {}); if (on) c[sid] = c[sid] || Date.now(); else delete c[sid];
+        all = obj(all); const c = all[ch.id] = obj(all[ch.id]); if (on) c[sid] = c[sid] || Date.now(); else delete c[sid];
         // a chapter with every section read is also marked the way Eureka's reading badges look for it (done, finished):
         // it counts once for each day it is completed, so coming back to a chapter on a later day polishes its badge
         if (on && (ch.sections || []).every(s => c[s.id])) { const day = new Date().toDateString(); if (c._day !== day) { c.done = (c.done | 0) + 1; c._day = day; finished = c.done } c.finished = true }
@@ -136,7 +143,7 @@
     function whyCard(s) {
       const card = el("div", { class: "card why" }), ans = el("div", { class: "why-a", hidden: true }), status = el("p", { class: "small why-status", role: "status" });
       const say = v => { status.textContent = v === "got" ? "✓ You marked this: got it." : v === "not" ? "↻ You marked this: not yet. Read the passage once more, then try again." : "" };
-      const answer = v => { store.update(WHY, all => { (all[ch.id] || (all[ch.id] = {}))[s.id] = v; return all }, {}); say(v); press(v); maybeRead(s) };
+      const answer = v => { store.update(WHY, all => { all = obj(all); (all[ch.id] = obj(all[ch.id]))[s.id] = v; return all }, {}); say(v); press(v); maybeRead(s) };
       const got = el("button", { class: "btn small", type: "button", "aria-pressed": "false", on: { click: () => answer("got") } }, "Got it");
       const not = el("button", { class: "btn small", type: "button", "aria-pressed": "false", on: { click: () => answer("not") } }, "Not yet");
       const press = v => { got.setAttribute("aria-pressed", String(v === "got")); not.setAttribute("aria-pressed", String(v === "not")) };

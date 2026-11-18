@@ -2,6 +2,10 @@
 // End-to-end check in a real browser, from file:// (no server): opens every page, draws every reading, mounts every
 // question, worked example and mechanism, and fails if anything throws, logs an error, or leaves a figure undrawn.
 //   node tools/test/smoke.js            (needs Playwright; not part of tools/test/run.js)
+// From file:// the class is on its own, outside Eureka. Its front page and its reader are then alone/index.html and
+// alone/read/index.html: index.html and read/index.html are Eureka's pages and only send the browser there (step 0).
+// Eureka's reader itself (read/index.html with read/chapters.js) needs Eureka around it and is not opened here: the build
+// checks its data (node tools/build.js --check), and it is tried in a browser inside a Eureka site.
 const { chromium } = require("playwright"), path = require("path");
 const ROOT = path.join(__dirname, "..", ".."), url = p => "file://" + path.join(ROOT, p);
 const quiet = u => /shared\/(platform\.js|maison\.css)|_vercel/.test(u);
@@ -9,21 +13,29 @@ const quiet = u => /shared\/(platform\.js|maison\.css)|_vercel/.test(u);
   const browser = await chromium.launch(), ctx = await browser.newContext({ viewport: { width: 1200, height: 900 } });
   const page = await ctx.newPage(), problems = []; let where = "";
   const note = (w, t) => problems.push(`${w}: ${String(t).replace(/\s+/g, " ").slice(0, 260)}`);
-  page.on("console", m => { if (m.type() === "error" && !quiet(m.text() + " " + ((m.location() || {}).url || ""))) note(where, "console: " + m.text()) });
-  page.on("pageerror", e => note(where, "error: " + e.message));
-  page.on("requestfailed", r => { if (!quiet(r.url())) note(where, "missing file: " + r.url().replace(/.*nyu_orgo_chem_1\//, "")) });
+  let leaving = false;      // true while a page of Eureka's is on its way to the class's own page: what it logs before it leaves is not a fault
+  page.on("console", m => { if (!leaving && m.type() === "error" && !quiet(m.text() + " " + ((m.location() || {}).url || ""))) note(where, "console: " + m.text()) });
+  page.on("pageerror", e => { if (!leaving) note(where, "error: " + e.message) });
+  page.on("requestfailed", r => { if (!leaving && !quiet(r.url())) note(where, "missing file: " + r.url().replace(/.*nyu_orgo_chem_1\//, "")) });
   const open = async (p, wait = 350) => { where = p; await page.goto(url(p)); await page.waitForTimeout(wait) };
   const missing = async () => page.evaluate(() => [...document.querySelectorAll(".fig-missing")].map(e => e.textContent.slice(0, 60)));
   const counts = {};
 
+  // 0. outside Eureka, Eureka's two pages lead to the class's own: the reader always, the front page once it is Eureka's
+  for (const [p, to, must] of [["read/index.html#rings-1", "alone/read/index.html#rings-1", true], ["index.html", "alone/index.html", false]]) {
+    leaving = true; where = p; await page.goto(url(p)); await page.waitForTimeout(900); leaving = false;
+    const at = page.url(), n = await page.evaluate(() => (document.getElementById("app") || document.body).textContent.trim().length);
+    if (must ? !at.endsWith(to) : !(at.endsWith(to) || at.endsWith(p))) note(p, "does not lead to " + to + " (it is at " + at.replace(/.*\//, "") + ")");
+    if (n < 40) note(p, "leads to an empty page");
+  }
   // 1. every page opens and draws something
-  for (const p of ["index.html", "read/index.html", "exam/index.html", "drill/index.html", "mechanisms/index.html", "mock/index.html", "lab/index.html", "foundations/index.html", "review/index.html", "archive/index.html", "syllabus/index.html"]) {
+  for (const p of ["alone/index.html", "alone/read/index.html", "exam/index.html", "drill/index.html", "mechanisms/index.html", "mock/index.html", "lab/index.html", "foundations/index.html", "review/index.html", "archive/index.html", "syllabus/index.html"]) {
     await open(p); const n = await page.evaluate(() => document.getElementById("app").textContent.trim().length); if (n < 40) note(p, "the page is empty");
   }
   // 2. every reading, with its expanders open
-  await open("read/index.html"); const chapters = await page.evaluate(() => (ORGO.data.chapterList || []).map(c => c.id)); counts.readings = chapters.length;
+  await open("alone/read/index.html"); const chapters = await page.evaluate(() => (ORGO.data.chapterList || []).map(c => c.id)); counts.readings = chapters.length;
   for (const id of chapters) {
-    await open("read/index.html#" + id, 700); await page.evaluate(() => document.querySelectorAll("details").forEach(d => d.open = true)); await page.waitForTimeout(150);
+    await open("alone/read/index.html#" + id, 700); await page.evaluate(() => document.querySelectorAll("details").forEach(d => d.open = true)); await page.waitForTimeout(150);
     for (const m of await missing()) note("reading " + id, "figure not drawn: " + m);
     const secs = await page.evaluate(() => document.querySelectorAll("h2, h3").length); if (secs < 3) note("reading " + id, "no sections drawn");
   }

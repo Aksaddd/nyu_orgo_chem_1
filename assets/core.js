@@ -102,7 +102,8 @@
       store.setRaw("exam-date", iso || null); ORGO.emit("progress", {}); window.dispatchEvent(new CustomEvent("bio:exam", { detail: L.examDate() })) },
     daysLeft() { const d = L.examDate(); return d ? (d - now()) / DAY : null },
     // score 0..1 (1 right, 0 wrong, between for rubric-graded work); conf 0 guess, 1 unsure, 2 sure
-    record(id, { score = 0, conf = null, secs = null, hinted = false } = {}) {
+    // quiet: the record, the schedule and the summary change as usual, but no event goes to Eureka (the caller sends its own)
+    record(id, { score = 0, conf = null, secs = null, hinted = false, quiet = false } = {}) {
       const t = now(), left = L.daysLeft();
       const rec = store.update(ITEMS, all => {
         const r = all[id] || { n: 0, ok: 0, streak: 0, box: 0, first: t, hist: [] };
@@ -115,7 +116,7 @@
         all[id] = r; return all;
       }, {})[id];
       summary(); ORGO.emit("answer", { id, score, conf, rec }); ORGO.emit("progress", {});
-      if (score >= 0.8) ORGO.eureka.right(id); else ORGO.eureka.wrong(id);
+      if (!quiet) { if (score >= 0.8) ORGO.eureka.right(id); else ORGO.eureka.wrong(id) }
       return rec;
     },
     flag(id, on) { store.update(ITEMS, all => { const r = all[id] || (all[id] = { n: 0, ok: 0, streak: 0, box: 0, hist: [] }); r.flag = !!on; return all }, {}); ORGO.emit("progress", {}) },
@@ -225,7 +226,7 @@
     root.dataset.theme = dark ? "dark" : "light";
   }
   ui.bar = () => {
-    if (ORGO.inEureka || document.getElementById("orgoBar")) return;
+    if (ORGO.inEureka || window.ORGO_EMBED || document.getElementById("orgoBar")) return;
     const here = location.pathname.replace(/index\.html$/, ""), at = p => here.endsWith("/" + p) ;
     const bar = el("nav", { id: "orgoBar", class: "obar", "aria-label": "CHEM 225" },
       el("a", { class: "obar-home", href: ORGO.base + "index.html" }, el("b", {}, C.name || "CHEM 225"), el("span", {}, C.title || "Organic Chemistry I")),
@@ -234,7 +235,9 @@
     document.body.insertBefore(bar, document.body.firstChild);
   };
   if (!ORGO.inEureka) { appearance(); if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", appearance) }
-  else if (!document.querySelector('script[src*="assets/eureka.js"]')) { const s = document.createElement("script"); s.src = ORGO.base + "assets/eureka.js"; document.head.appendChild(s) }
+  // A page that sets window.ORGO_EMBED = true before this file loads Eureka's scripts itself, as Eureka's own class pages do
+  // (read/index.html, the platform's reader): no bridge is loaded for it, or those scripts would load twice, and no bar is drawn.
+  else if (!window.ORGO_EMBED && !document.querySelector('script[src*="assets/eureka.js"]')) { const s = document.createElement("script"); s.src = ORGO.base + "assets/eureka.js"; document.head.appendChild(s) }
   const ready = fn => document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", fn) : fn();
   ORGO.ready = ready;
   ready(() => { root.classList.add("orgo"); ui.bar() });
