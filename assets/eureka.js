@@ -7,6 +7,7 @@
   (async () => {
     await add("script", { src: B + "shared/settings.js" });
     await add("script", { src: B + "shared/xp.js" }); await add("script", { src: B + "shared/wardrobe.js" }); await add("script", { src: B + "shared/buddy.js" });
+    await add("script", { src: ((window.COURSE && window.COURSE.base) || "") + "assets/glossary.js" });   // the class dictionary: LEXICON, TERMS and GLOSS
     add("script", { src: B + "shared/lookup.js" });
     add("link", { rel: "stylesheet", href: B + "shared/maison.css" });
   })();
@@ -14,4 +15,6 @@
   const tell = (name, id) => { const x = ORGO.data.index[id] || [], st = ORGO.learn.state(id) || {}; window.dispatchEvent(new CustomEvent(name, { detail: { kind: "drill", id, q: { d: x[0] || "orgo", q: "", ok: "", wrong: [], tag: x[0] || "" }, prev: [Math.max(0, (st.n || 1) - 1), Math.max(0, (st.ok || 0) - (name === "bio:correct" ? 1 : 0))] } })) };
   ORGO.eureka.right = id => tell("bio:correct", id);
   ORGO.eureka.wrong = id => tell("bio:wrong", id);
+  // a reading chapter was finished (for the nth time): Eureka's companions hand out its badge, or polish it, on this event
+  ORGO.eureka.chapter = (id, times) => { const W = window.BioWardrobe, up = !!(W && times > 1 && W.tier(times).lv > W.tier(times - 1).lv); if (times === 1 || up) setTimeout(() => window.dispatchEvent(new CustomEvent("bio:badge", { detail: { chapter: id, up } })), 700) };
 })();

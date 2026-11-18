@@ -172,8 +172,10 @@
   // Eureka's library, dashboard and study plan read a class's progress from a drill record of this shape
   // ({v: 2, stats: {id: [attempts, right]}, hist: {id: 1 | 0}, missed, mark, days}): keep one, truthfully, beside our own.
   function summary() {
+    if (!Object.keys(data.index).length) return;      // the question list is not on this page: leave the saved summary as it is
     const all = L.all(), stats = {}, hist = {}, missed = [], mark = {}, days = {};
-    for (const id in all) { const r = all[id]; if (r.flag) mark[id] = { m: "review", t: r.last || now() }; if (!r.n) continue;
+    for (const id in all) { const r = all[id], x = data.index[id]; if (!x || x[2] === "worked") continue;      // only what class.js "progress" counts: not mechanisms, not worked examples
+      if (r.flag) mark[id] = { m: "review", t: r.last || now() }; if (!r.n) continue;
       stats[id] = [r.n, r.ok]; const last = r.hist[r.hist.length - 1]; hist[id] = last && last[1] >= 0.8 ? 1 : 0; if (!hist[id]) missed.push(id);
       r.hist.forEach(h => { const d = new Date(h[0]), k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); days[k] = (days[k] || 0) + 1 }) }
     store.set("drill-v1", { v: 2, updatedAt: now(), stats, hist, missed, mark, days });
@@ -182,7 +184,7 @@
   // ---------------------------------------------------------------- Eureka bridge
   ORGO.eureka = {
     // companions and XP, when Eureka's scripts are on the page. Filled in by assets/eureka.js (loaded only inside Eureka).
-    right() { }, wrong() { }, done() { }
+    right() { }, wrong() { }, done() { }, chapter() { }
   };
 
   // ---------------------------------------------------------------- UI pieces

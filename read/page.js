@@ -1,7 +1,7 @@
 // CHEM 225 · Readings. The list of chapters, and the reader for one chapter.
 // read/index.html            the chapter list
 // read/index.html#rings-1    one chapter (add /sectionId to land on a section)
-// Sections read are kept in orgo-read-v1 as {chapterId: {sectionId: time stamp}}; the answers to the "why" cards
+// Sections read are kept in orgo-read-v1 as {chapterId: {sectionId: time stamp, done, finished}}; the answers to the "why" cards
 // in orgo-read-why-v1 as {chapterId: {sectionId: "got" | "not"}}; the text size in orgo-prefs-v1 as textSize.
 (() => {
   const O = window.ORGO; if (!O) return;
@@ -64,7 +64,14 @@
     const isRead = sid => !!readOf(ch.id)[sid];
     const whyOf = sid => (store.get(WHY, {})[ch.id] || {})[sid];
     function markRead(sid, on) {
-      store.update(READ, all => { const c = all[ch.id] || (all[ch.id] = {}); if (on) c[sid] = c[sid] || Date.now(); else delete c[sid]; return all }, {});
+      let finished = 0;
+      store.update(READ, all => {
+        const c = all[ch.id] || (all[ch.id] = {}); if (on) c[sid] = c[sid] || Date.now(); else delete c[sid];
+        // a chapter with every section read is also marked the way Eureka's reading badges look for it (done, finished):
+        // it counts once for each day it is completed, so coming back to a chapter on a later day polishes its badge
+        if (on && (ch.sections || []).every(s => c[s.id])) { const day = new Date().toDateString(); if (c._day !== day) { c.done = (c.done | 0) + 1; c._day = day; finished = c.done } c.finished = true }
+        return all }, {});
+      if (finished) O.eureka.chapter(ch.id, finished);
       if (marks[sid]) marks[sid]();
       progress(); O.emit("progress", {});
       if (on && sections.every(s => isRead(s.id)) && O.eureka && O.eureka.done) O.eureka.done("read:" + ch.id);

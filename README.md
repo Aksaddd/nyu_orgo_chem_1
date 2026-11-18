@@ -49,7 +49,8 @@ beyond Eureka's shared engine and how to bring each piece to the other classes.
 
 ## How the content is built
 
-Everything a student reads is JSON under `content/` (see `docs/dev/CONTENT-SPEC.md`). Nobody edits `data/` by hand.
+Everything a student reads is JSON under `content/` (see `docs/dev/CONTENT-SPEC.md`). Nobody edits `data/` by hand. `content/glossary.json` is the class dictionary;
+the build writes it to `assets/glossary.js` in the shapes Eureka's double-tap lookup and Word Bank read.
 
 ```bash
 node tools/build.js
@@ -70,22 +71,27 @@ mechanism by moving its electrons and comparing the result with the next step, a
 The design is in `docs/dev/ARCHITECTURE.md`; `docs/dev/LECTURES.md` is a page-by-page digest of the handwritten notes and
 `docs/dev/EXAM-KEY.md` the worked key of the past exam.
 
-## Bringing it into Eureka
+## In Eureka
 
-From Eureka's root:
+The guide is in Eureka as the folder `chem225/`, brought in with `git subtree`. It opens from Eureka's library with the
+class code `CHEM225` (change it before sharing: see `class.js`). Inside Eureka, the class bar, appearance settings,
+account sync, companions and XP replace this folder's own top bar; double-tapping a term opens the class dictionary
+(`content/glossary.json`), which also feeds the Word Bank; and each finished reading chapter earns a badge.
+
+To bring a change made here into Eureka, run from Eureka's root (`BRANCH` is the branch that holds the guide):
 
 ```bash
-git subtree add --prefix=chem225 https://github.com/Aksaddd/nyu_orgo_chem_1 main
+git subtree pull --prefix=chem225 https://github.com/Aksaddd/nyu_orgo_chem_1 BRANCH --squash
 ```
 
 ```bash
 node tools/build-classes.js
 ```
 
-The class then appears in the library and opens with the class code `CHEM225` (change it before sharing: see
-`class.js`). Inside Eureka the class bar, appearance settings, companions and XP replace this folder's own top bar.
-Two things to know: Eureka's account sync lists storage prefixes by hand, so add `orgo-` in `shared/account.js`; and
-Eureka's Study Plan card is not used here, because the dashboard has its own.
+Eureka keeps four things on its side for this class, all described in its `docs/adding-a-class.md`: the storage prefix
+`orgo-` in `shared/account.js` (sync) and `shared/prefs.js` (download and reset), the class-bar drawings for the kinds
+`exam`, `mechanisms`, `lab` and `foundations` in `shared/icons.js`, and the eleven reading badges in
+`shared/wardrobe.js`. Eureka's Study Plan card is not used, because the dashboard here has its own plan.
 
 ## A note on the material
 

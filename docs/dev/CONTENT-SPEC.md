@@ -232,3 +232,20 @@ Nine questions of 100 points, in the shape of the original: the parts of each qu
 A part may list one item (`"item": "id"`) or several (`"items": ["id1", "id2"]`, shown one after another: for example
 the five compounds of a pKa question). `content/exam.json` has the same shape for the original exam, plus `"pages"`
 (the PDF pages of each question) and `"title"`.
+
+## Glossary (`content/glossary.json`)
+
+A list of entries, one per term:
+
+```json
+{ "term": "nucleophile", "also": ["nucleophiles", "nucleophilic"], "def": "An electron-rich species that ...",
+  "parts": [["nucleo-", "nucleus (the positive centre)"], ["-phile", "loving"]], "lit": "nucleus-loving" }
+```
+
+Only `term` and `def` are required. `also` lists plurals, abbreviations and other spellings that should find the same
+entry; `parts` breaks the word into pieces with their meanings, and `lit` gives the literal meaning, for the terms where
+that helps memory. Plain text only: no tokens, since the text is shown by Eureka's lookup card and Word Bank, which do
+not draw structures. Definitions use the lecture's values where a number appears.
+
+The build writes the list to `assets/glossary.js` as `LEXICON`, `TERMS` and `GLOSS`, the three shapes Eureka reads
+(its `docs/adding-a-class.md`). `assets/eureka.js` loads that file before Eureka's lookup, so nothing is asked for twice.
