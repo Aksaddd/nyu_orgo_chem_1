@@ -27,7 +27,8 @@ for (const [dir, title, desc] of PAGES) {
 <meta name="description" content="${desc}">
 <meta name="theme-color" content="#f5f5f7">
 ${CSS.map(c => `<link rel="stylesheet" href="${up}assets/${c}.css">`).join("\n")}
-<script src="${eu}shared/platform.js"></script><!-- Eureka, when this folder sits inside it. On its own the file is simply absent. -->
+<link rel="stylesheet" href="${eu}shared/maison.css"><!-- Eureka's look, when this folder sits inside it: linked here, not added later, so its class bar is never drawn unstyled. On its own the file is simply absent. -->
+<script src="${eu}shared/platform.js"></script><!-- Eureka itself. On its own the file is simply absent. -->
 <script src="${up}course.js"></script>
 <script src="${up}assets/core.js"></script>
 <script src="${up}data/index.js"></script>

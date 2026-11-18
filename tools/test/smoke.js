@@ -4,7 +4,7 @@
 //   node tools/test/smoke.js            (needs Playwright; not part of tools/test/run.js)
 const { chromium } = require("playwright"), path = require("path");
 const ROOT = path.join(__dirname, "..", ".."), url = p => "file://" + path.join(ROOT, p);
-const quiet = u => /shared\/platform\.js|_vercel/.test(u);
+const quiet = u => /shared\/(platform\.js|maison\.css)|_vercel/.test(u);
 (async () => {
   const browser = await chromium.launch(), ctx = await browser.newContext({ viewport: { width: 1200, height: 900 } });
   const page = await ctx.newPage(), problems = []; let where = "";

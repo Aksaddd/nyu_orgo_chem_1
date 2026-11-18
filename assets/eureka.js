@@ -3,13 +3,15 @@
 (() => {
   const B = window.Platform && window.Platform.BASE; if (!B || !window.ORGO) return;
   const add = (tag, attrs) => new Promise(done => { const e = document.createElement(tag); Object.assign(e, attrs); e.onload = e.onerror = done; document.head.appendChild(e) });
-  // the same order Eureka's own class pages use: settings (appearance, account, preferences), then XP and companions, then the shared look last
+  // Eureka's stylesheet (shared/maison.css) is linked in the head of every page (tools/shells.js). It used to be added here, after these
+  // scripts had loaded one by one, and until then Eureka's class bar, which is on the page from the start, was drawn without any styles:
+  // seconds on a phone. The scripts keep the order Eureka's own class pages use: settings, then XP and companions, then the dictionary.
   (async () => {
     await add("script", { src: B + "shared/settings.js" });
     await add("script", { src: B + "shared/xp.js" }); await add("script", { src: B + "shared/wardrobe.js" }); await add("script", { src: B + "shared/buddy.js" });
     await add("script", { src: ((window.COURSE && window.COURSE.base) || "") + "assets/glossary.js" });   // the class dictionary: LEXICON, TERMS and GLOSS
     add("script", { src: B + "shared/lookup.js" });
-    add("link", { rel: "stylesheet", href: B + "shared/maison.css" });
+    if (!document.querySelector('link[rel="stylesheet"][href*="shared/maison.css"]')) add("link", { rel: "stylesheet", href: B + "shared/maison.css" });   // only for a page built before the link was in the head
   })();
   // Eureka's companions and XP listen for these two events (see Eureka's shared/drill.js)
   const tell = (name, id) => { const x = ORGO.data.index[id] || [], st = ORGO.learn.state(id) || {}; window.dispatchEvent(new CustomEvent(name, { detail: { kind: "drill", id, q: { d: x[0] || "orgo", q: "", ok: "", wrong: [], tag: x[0] || "" }, prev: [Math.max(0, (st.n || 1) - 1), Math.max(0, (st.ok || 0) - (name === "bio:correct" ? 1 : 0))] } })) };
