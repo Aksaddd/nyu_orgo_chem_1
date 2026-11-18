@@ -147,6 +147,14 @@ ol.rank-key li { border: 0; padding: 2px 0; background: none; }
 .mock-mark { display: flex; flex-direction: column; gap: 10px; padding: 12px; background: var(--surface-2); border-radius: var(--radius); }
 .mock-end { margin: 8px 0 32px; }
 .print-only { display: none; }
+/* on a phone the bar that stays on screen through a sitting takes less of it (it took 23 percent of a 390x844 phone): tighter
+   spacing and a smaller clock, with every control still in it at full touch size */
+@media (max-width: 600px) {
+  .mock-room .mock-bar { padding: 10px 12px; gap: 6px; }
+  .mock-room .mock-bar .btn-row { margin-top: 0; gap: 6px; }
+  .mock-room .mock-title { font-size: 1.05rem; }
+  .mock-room .mock-time { font-size: 1.2rem; }
+}
 
 /* ---- inside Eureka: a question's words follow Eureka's text settings, as its answer choices do (shared/maison.css sizes
    .opt and .explain): the size chosen in Settings (--rs, which on a phone also carries what "Text and layout size" gives the
