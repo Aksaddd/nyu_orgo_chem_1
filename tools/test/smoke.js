@@ -21,11 +21,11 @@ const quiet = u => /shared\/(platform\.js|maison\.css)|_vercel/.test(u);
   const missing = async () => page.evaluate(() => [...document.querySelectorAll(".fig-missing")].map(e => e.textContent.slice(0, 60)));
   const counts = {};
 
-  // 0. outside Eureka, Eureka's two pages lead to the class's own: the reader always, the front page once it is Eureka's
-  for (const [p, to, must] of [["read/index.html#rings-1", "alone/read/index.html#rings-1", true], ["index.html", "alone/index.html", false]]) {
+  // 0. outside Eureka, Eureka's two pages lead to the class's own, with the chapter asked for
+  for (const [p, to] of [["read/index.html#rings-1", "alone/read/index.html#rings-1"], ["index.html", "alone/index.html"]]) {
     leaving = true; where = p; await page.goto(url(p)); await page.waitForTimeout(900); leaving = false;
     const at = page.url(), n = await page.evaluate(() => (document.getElementById("app") || document.body).textContent.trim().length);
-    if (must ? !at.endsWith(to) : !(at.endsWith(to) || at.endsWith(p))) note(p, "does not lead to " + to + " (it is at " + at.replace(/.*\//, "") + ")");
+    if (!at.endsWith(to)) note(p, "does not lead to " + to + " (it is at " + at.replace(/.*\//, "") + ")");
     if (n < 40) note(p, "leads to an empty page");
   }
   // 1. every page opens and draws something

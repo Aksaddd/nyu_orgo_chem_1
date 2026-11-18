@@ -178,6 +178,15 @@ if (single.exam) (single.exam.questions || []).forEach(q => { let sum = 0; (q.pa
     if (g.parts && !(Array.isArray(g.parts) && g.parts.every(p => Array.isArray(p) && p.length === 2))) bad(gf, g.term, "parts must be a list of [word part, meaning]");
   }) }
 if (single.foundations) (single.foundations.diagnostic || []).forEach(id => { if (typeof id === "string" && !items[id]) bad(path.join(C, "foundations.json"), "diagnostic", `item "${id}" does not exist`) });
+// The readings at other levels (read/levels/*.js: written for Eureka's level dial and checked there by Eureka's own
+// tools) may carry {{formulas}} and [[figures]] like any text. Their figures are checked and drawn with the rest.
+const levelText = [];
+{ const dir = path.join(ROOT, "read", "levels");
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith(".js")).sort() : []) {
+    const file = path.join(dir, f), w = { READ_LEVELS: { text: {}, qs: {}, play: {} } };
+    try { vm.runInNewContext(fs.readFileSync(file, "utf8"), { window: w }) } catch (e) { bad(file, "", "does not run: " + e.message); continue }
+    deep(w.READ_LEVELS, (str, where) => { levelText.push(str); scan(str, file, where, refsFor("read/levels")) });
+  } }
 // references between things
 const allRefs = newRefs(); for (const r of fileRefs.values()) for (const k in r) r[k].forEach(x => allRefs[k].add(x));
 const confNames = new Set(arr(single.conf).map(c => c.name));
@@ -217,7 +226,8 @@ function figRefs(str, refs) {
     else if (["rxn", "eq", "eqr", "eql", "nr"].includes(kind)) { const p = arg.split(">"); if (p.length === 3) for (const side of [p[0], p[2]]) for (const s of species(side)) if (!/^".*"$/.test(s)) refs.mols.add(molKey(s)) }
     else if (kind === "mech") refs.mechs.add(arg.split("|")[0].trim()) }
 }
-const reader = (() => {
+const DRAWN = ["mol", "rxn", "eq", "eqr", "eql", "nr", "ring", "chair", "newman", "energy", "mech"];      // the kinds of figure the reader's page can draw (read/index.html loads their code)
+const reader = problems.length ? null : (() => {      // not on top of content that is already known to be wrong
   const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const br = s => String(s == null ? "" : s).replace(/\n\s*\n/g, "<br>");      // a blank line is a line break, as ORGO.html reads it
   const stop = s => /[.!?:]["”’)]*\s*$/.test(String(s).replace(/<[^>]+>/g, "")) ? s : s + ".";
@@ -305,7 +315,9 @@ const reader = (() => {
   }
   // every drawing those strings ask for, and what the mechanisms among them need
   const refs = { mols: new Set(), mechs: new Set() }, figures = { mols: {}, mechs: {} };
-  deep([READ, Q], s => figRefs(s, refs));
+  deep([READ, Q, levelText], s => figRefs(s, refs));
+  { const not = new Set(); deep([READ, Q, levelText], s => { for (const m of String(s).matchAll(TOKEN)) if (!DRAWN.includes(m[1])) not.add(m[1]) });
+    not.forEach(k => problems.push({ file: "", text: `read/chapters.js: a reading, a question under a reading or a level text has [[${k}:…]], a kind of figure Eureka's reader page cannot draw (it draws ${DRAWN.join(", ")})` })) }
   for (const id of refs.mechs) { const m = mechs[id]; if (!m) continue; figures.mechs[id] = m; (m.steps || []).forEach(s => s.species && refs.mols.add(s.species)); if (m.product) refs.mols.add(m.product); deep({ ...m, steps: (m.steps || []).map(s => ({ ...s, species: "" })), product: "" }, s => figRefs(s, refs)) }
   for (const k of [...refs.mols].sort()) { if (chem.mols[k]) figures.mols[k] = chem.mols[k]; else problems.push({ file: "", text: `read/figures.js: the structure "${k}" has no drawing` }) }
   // nothing that is there may move
@@ -336,7 +348,7 @@ function readerFiles() {
   let R, B, F, P;
   try { const w = {}; vm.runInNewContext(src("chapters.js") + src("bank.js"), { window: w }); R = w.READ; B = w.BANK; vm.runInNewContext(src("figures.js"), { ORGO: { reg: x => { F = x } } }); P = JSON.parse(src("positions.json")).chapters } catch (e) { return ["read/: the reader's files cannot be read: " + e.message] }
   if (!Array.isArray(R) || !B || !B.q || !F || !F.mols || !P) return ["read/: chapters.js, bank.js, figures.js or positions.json does not hold what the reader expects"];
-  const need = { mols: new Set(), mechs: new Set() }; deep([R, B.q], s => figRefs(s, need));
+  const need = { mols: new Set(), mechs: new Set() }; deep([R, B.q, levelText], s => { figRefs(s, need); for (const m of String(s).matchAll(TOKEN)) if (!DRAWN.includes(m[1])) say(`read/: a text for the reader has [[${m[1]}:…]], a kind of figure the reader's page cannot draw`) });
   for (const id of need.mechs) { const m = (F.mechs || {})[id]; if (!m) { say(`read/figures.js: the mechanism "${id}" is missing`); continue } (m.steps || []).forEach(s => s.species && need.mols.add(s.species)); if (m.product) need.mols.add(m.product); deep({ ...m, steps: (m.steps || []).map(s => ({ ...s, species: "" })), product: "" }, s => figRefs(s, need)) }
   for (const k of need.mols) if (!F.mols[k]) say(`read/figures.js: the structure "${k}" is missing`);
   const ids = new Set();
@@ -352,7 +364,7 @@ function readerFiles() {
     if (q.keep != null && !(q.keep >= 0 && q.keep <= q.wrong.length)) say(`read/bank.js: "${id}" keeps its written order, and the place of its right choice is not in it`) }
   return out;
 }
-if (!only.length) {
+if (reader && !only.length) {
   if (checkOnly && fs.existsSync(path.join(READER, "chapters.js"))) {
     for (const t of readerFiles()) problems.push({ file: "", text: t });
     const stale = Object.keys(reader.files).filter(n => { try { return fs.readFileSync(path.join(READER, n), "utf8") !== reader.files[n] } catch (e) { return true } });

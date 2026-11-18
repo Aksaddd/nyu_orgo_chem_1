@@ -1,11 +1,12 @@
 # Writing content for CHEM 225
 
-Everything a student reads or answers is written as JSON under `content/`. Nobody edits the files under `data/`:
-`node tools/build.js` checks the JSON, draws every structure with RDKit, proves every mechanism by moving its electrons,
-and writes `data/`. If the build prints a problem, the content is wrong, not the build.
+Everything a student reads or answers is written as JSON under `content/`. Nobody edits the files under `data/`, or
+the four generated files in `read/` (`chapters.js`, `bank.js`, `figures.js`, `positions.json`: the readings as Eureka's
+reader shows them): `node tools/build.js` checks the JSON, draws every structure with RDKit, proves every mechanism by
+moving its electrons, and writes them. If the build prints a problem, the content is wrong, not the build.
 
 ```bash
-node tools/build.js            # check everything and write data/
+node tools/build.js            # check everything and write data/ and the reader's files in read/
 node tools/build.js --check    # check only
 node tools/build.js --check content/items/nuc-pairs.json    # check some files only
 python3 tools/chem.py smiles 'C[C@H](Cl)CC'                  # formula, stereocentres, canonical form of a structure
@@ -223,6 +224,52 @@ sentence or two with where it comes from. `method` is the procedure, in the orde
 `html` is the main passage. `micro` (zoom in) holds the finer detail that explains *how*; `macro` (zoom out) holds the
 connection to the rest of chemistry, to the exam, and to medicine or biology. `why` is one question the reader answers
 in their head before moving on. `check` lists practice items shown under the section.
+
+### Where a reading is shown
+
+A reading is shown in two places, from the same file.
+
+Inside Eureka it is shown by Eureka's own reader (the page ECON 101 uses). The build turns every reading into the
+shape that reader takes and writes `read/chapters.js`, `read/bank.js` and `read/figures.js` (never edited by hand;
+`docs/dev/ARCHITECTURE.md`, "The readings inside Eureka", has the map). What becomes of each part:
+
+| In the file | In Eureka's reader |
+|---|---|
+| a section: `title`, `html` | one passage: its heading and its text, at the exam level |
+| `micro`, `macro` | folded blocks under the passage: "Closer look: title" and "Bigger picture: title" |
+| `pages` | a line under the passage, "Original notes: 10/20 page 1", that opens the picture of the page |
+| `why` | a card to flip, "Before you move on": the question on the front, the answer on the back |
+| `check`, kind `mcq` | a question under the passage. After a wrong answer the reader shows the `why` of the choice that was picked |
+| `check`, kind `rank` | "Put it in order": the `items`, with `order` as the instruction |
+| `check`, kind `classify` | "Sort it": the `items` into the `bins` |
+| `check`, kind `multi` | "Sort it": every statement into one of two boxes named for what the stem asks |
+| `check`, kind `numeric` | a card to flip: the stem, then the answer with its unit, the solution's `rule` and the `note` |
+| `check`, kind `mech` or `chair` | a sentence at the end of the passage, with a link to the mechanism in the Mechanism Studio or to the question type in Practice |
+| `homework` | one more passage, "Homework from the lecture": each prompt, with its steps and answer in a folded block |
+| `summary` | the last passage, "In short" |
+| `from`, `goals` | the lines under the chapter's title |
+| `lecture` | the label "Lecture 10/20" (a reading without a date is labelled "Review") |
+
+Outside Eureka the class's own reader (`read/page.js`) shows the same file as it always did.
+
+Rules that follow from this. The build checks each one and says what to change:
+
+- **Add at the end.** Eureka's reader keeps a student's place, the notes and the reading-level texts by position
+  (passage 3, its activity 2). A new section goes after the sections of its reading, and a new id after the ids of its
+  `check` list. Do not reorder or remove what is there. The build stops when a position would move
+  (`read/positions.json` remembers them); `node tools/build.js --accept-moves` is for the rare move that is meant.
+- **Titles are plain words.** The title of a reading and of a section has no markup, no `{{ }}` and no `[[ ]]`: the
+  reader also shows it in the browser tab and in dialogs.
+- **A question under a reading** is of kind `mcq`, `rank`, `classify`, `multi`, `numeric`, `mech` or `chair` (not
+  `written`). An `mcq` there has at most five choices. The stem of a `rank`, `classify` or `multi` item used there is
+  words only (formulas are fine): it becomes the title of an activity, which cannot show a figure, a list or a table.
+- **A `multi` item used under a reading** needs names for its two boxes. They come from the wording of the stem:
+  "…<b>is</b> a characteristic of X reactions?", "…is <b>NOT</b> a characteristic of X reactions?", "…fit?",
+  "…are correct?" and "…is true?" are known. For another wording, add a line to `BOXES` in `tools/build.js`.
+- **An explanation that names a choice by its place** ("A and C", "diagram 2") keeps the written order of the choices
+  in both readers. The build sets `fixed` for the usual wordings; set `"fixed": true` yourself for any other, such as
+  "the left one".
+- **`pages`** names pictures that exist in `archive/pages/` (`L1020:1` is `archive/pages/L1020-1.png`).
 
 ## Mock exams and the original exam: `content/mock/<id>.json`, `content/exam.json`
 

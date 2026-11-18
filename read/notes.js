@@ -17,11 +17,11 @@
   // (read/chem.js loads after this file, so window.ReadChem is looked up when it is needed, not now)
   const RC = () => window.ReadChem, words = r => RC() ? RC().text(r) : r.toString(), quote = r => RC() ? RC().quote(r) : r.toString(), skip = n => !!(RC() && RC().skip(n));
   // character offset of (node, off) inside a passage
-  const offsetIn = (root, node, off) => { const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return words(r).length };
+  const offsetIn = (root, node, off) => { const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return words(r).length };   // CHEM 225: words(r), was r.toString()
   // wrap [s, e) of the passage's text in <mark> elements (one per text node it crosses)
   function wrap(root, s, e, cls, id) {
     const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n, pos = 0; const cut = [];
-    while ((n = w.nextNode())) { if (skip(n)) continue; const a = pos, b = pos + n.length; pos = b; if (b <= s || a >= e) continue; cut.push([n, Math.max(s, a) - a, Math.min(e, b) - a]) }
+    while ((n = w.nextNode())) { if (skip(n)) continue; const a = pos, b = pos + n.length; pos = b; if (b <= s || a >= e) continue; cut.push([n, Math.max(s, a) - a, Math.min(e, b) - a]) }   // CHEM 225: skip(n)
     cut.forEach(([n, a, b], i) => {
       if (b <= a) return;
       let t = n; if (a > 0) t = t.splitText(a); if (b - a < t.length) t.splitText(b - a);
@@ -50,7 +50,7 @@
     const sel = getSelection(); if (!sel.rangeCount || sel.isCollapsed) return null;
     const r = sel.getRangeAt(0), p1 = (r.startContainer.nodeType === 1 ? r.startContainer : r.startContainer.parentElement).closest(".rd-prose"), p2 = (r.endContainer.nodeType === 1 ? r.endContainer : r.endContainer.parentElement).closest(".rd-prose");
     if (!p1 || p1 !== p2) return null;
-    const s = offsetIn(p1, r.startContainer, r.startOffset), e = offsetIn(p1, r.endContainer, r.endOffset), text = quote(r).trim();
+    const s = offsetIn(p1, r.startContainer, r.startOffset), e = offsetIn(p1, r.endContainer, r.endOffset), text = quote(r).trim();   // CHEM 225: quote(r), was r.toString()
     if (e - s < 2 || !text) return null;
     const lv = p1.dataset.alt ? p1.dataset.lv || "" : "";   // "" = the exam version, the passage as written
     return { prose: p1, key: ctx.chapter.id + ":" + p1.closest(".rd-sec").id.slice(3) + (lv ? "@" + lv : ""), lv, s, e, text, rect: r.getBoundingClientRect() };
