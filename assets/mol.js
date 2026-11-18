@@ -77,11 +77,12 @@
   // ------------------------------------------------------------------ reaction schemes
   const ARROW_WORDS = { rxn: "gives", eq: "is in equilibrium with", eqr: "is in equilibrium with, and the right side is favoured,", eql: "is in equilibrium with, and the left side is favoured,", nr: "does not react to give" };
   const CHEMWORD = /^[-−+]?(?:[(\[]*[A-Z][a-z]?\d*[)\]]*\d*)+(?:\^\d*[-−+]|[-−+])?$/;
-  // text on an arrow: chemical words are typeset, "1)", "25 °C" and "heat" stay as they are
+  // text on an arrow: chemical words are typeset, "1)", "25 °C" and "heat" stay as they are. A formula is one word for
+  // Eureka's dictionary (data-lk), as ORGO.fmt marks the formulas in the text: D<sub>2</sub>O is looked up whole, not as "D"
   function cond(text) {
     return String(text).trim().split(/\s+/).filter(Boolean).map(w => {
       const m = /^(.*?)([,.;:]?)$/.exec(w);
-      return (CHEMWORD.test(m[1]) && ORGO.formula ? '<span class="chem">' + ORGO.formula(m[1]) + "</span>" : esc(m[1])) + m[2];
+      return (CHEMWORD.test(m[1]) && ORGO.formula ? '<span class="chem" data-lk>' + ORGO.formula(m[1]) + "</span>" : esc(m[1])) + m[2];
     }).join(" ");
   }
   function arrowSvg(kind, w) {
