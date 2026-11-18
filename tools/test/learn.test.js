@@ -85,6 +85,14 @@ test("right again within 12 hours of a right answer keeps the box: massed practi
   t.set(t.now() + 11 * H); assert.strictEqual(t.L.record("m1", { score: 1 }).box, 2, "11 hours after that it does not");
 });
 
+test("the plan follows the exam date, and a date that has passed is no date", () => {
+  const t = load();
+  t.L.setExamDate("2026-11-25T09:00"); assert.strictEqual(t.L.plan().phase, "build", "a week ahead");
+  t.L.setExamDate("2026-11-20T09:00"); assert.strictEqual(t.L.plan().phase, "rehearse", "two days ahead");
+  t.L.setExamDate("2026-11-18T18:00"); assert.strictEqual(t.L.plan().phase, "exam", "later today");
+  t.L.setExamDate("2026-11-16T09:00"); assert.strictEqual(t.L.plan().phase, "build", "two days ago: the plan starts building again");
+});
+
 test("'after a day or more' means a later calendar day and at least six hours", () => {
   const flag = (a, b) => { const t = load(); t.set(a); t.L.record("q1", { score: 1 }); t.set(b); return t.L.record("q1", { score: 1 }).hist[1][4] };
   assert.strictEqual(flag("2026-11-18T08:00:00-05:00", "2026-11-18T20:30:00-05:00"), 0, "12.5 hours, the same day");

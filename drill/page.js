@@ -24,7 +24,7 @@
     else { ids = L.pick({ mode: mode === "learn" ? "learn" : "mixed", n }); title = mode === "learn" ? "New questions" : "Mixed practice" }
     app.appendChild(el("p", {}, el("a", { class: "btn ghost small", href: ORGO.base + "drill/index.html" }, "All practice")));
     if (!ids.length) {
-      if (mode === "review") empty(app, "Nothing is due right now. A question comes back here a day or more after you answer it.", "Start mixed practice", here({ mode: "mixed", n: 12 }));
+      if (mode === "review") empty(app, "Nothing is due right now. A question you answer right comes back here after a day or more; one you miss is due again at once.", "Start mixed practice", here({ mode: "mixed", n: 12 }));
       else if (q.type) empty(app, "There are no practice questions of this type yet.", "Choose another way to practise", ORGO.base + "drill/index.html");
       else empty(app, "There are no practice questions yet.", "Go to the home page", ORGO.base + "index.html");
       return;
@@ -44,7 +44,7 @@
       el("p", { class: "drill-count" }, el("b", {}, String(due)), due === 1 ? " question is due" : " questions are due"),
       el("p", { class: "muted" }, "Recalling an answer just as it starts to fade is what makes it stay until the exam."),
       due ? el("div", { class: "btn-row" }, el("a", { class: "btn primary", href: here({ mode: "review" }) }, "Start the review"))
-        : el("p", { class: "small muted" }, "Nothing is due yet. Questions arrive here a day or more after you first answer them."));
+        : el("p", { class: "small muted" }, "Nothing is due yet. A question you answer right comes back here after a day or more; one you miss, at once."));
 
     const mixed = el("section", { class: "card drill-card" }, el("h2", {}, "Mixed practice"),
       el("p", { class: "muted" }, "Questions of different types in one run, weakest first, so that you practise choosing the method as well as using it."),

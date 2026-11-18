@@ -182,7 +182,7 @@
     stats() { const all = L.all(), own = id => all[id].n - (all[id].qn || 0), ids = Object.keys(all).filter(id => own(id) > 0); let dN = 0, dOk = 0, n = 0; ids.forEach(id => { n += own(id); all[id].hist.forEach(h => { if (h[4] && !h[5]) { dN++; if (h[1] >= 0.8) dOk++ } }) }); return { answered: n, items: ids.length, delayed: dN ? dOk / dN : null, delayedN: dN, due: L.due().length } },
     // today's session, in the order that learning research supports: recall, learn, practise mixed, apply on paper, test
     plan() {
-      const left = L.daysLeft(), phase = left == null ? "build" : left < 1 ? "exam" : left <= 2 ? "rehearse" : left <= 6 ? "strengthen" : "build";
+      const left = L.daysLeft(), days = L.calendarDays(), phase = left == null || (days != null && days < 0) ? "build" : left < 1 ? "exam" : left <= 2 ? "rehearse" : left <= 6 ? "strengthen" : "build";
       const due = L.due().length, read = store.get("read-v1", {}), chapters = data.chapterList || [];
       const nextCh = chapters.find(c => c.sections.some(s => !(read[c.id] || {})[s.id]));
       const types = data.blueprint.filter(t => t.count && ((t.count.practice || 0) + (t.count.exam || 0)));
@@ -190,7 +190,7 @@
       const mocks = store.get("mock-v1", []), today = new Date().toDateString(), did = k => (store.get("today-v1", {})[today] || {})[k] || 0;
       const size = { build: 12, strengthen: 16, rehearse: 12, exam: 6 }[phase];
       const steps = [
-        { step: "recall", title: "Recall", detail: due ? `${due} question${due > 1 ? "s" : ""} you answered before are due again` : "Nothing is due yet. It will be after your first session", href: "drill/index.html?mode=review", count: due, done: !due && did("review") > 0 },
+        { step: "recall", title: "Recall", detail: due ? `${due} question${due > 1 ? "s" : ""} you answered before ${due > 1 ? "are" : "is"} due again` : "Nothing is due yet. It will be after your first session", href: "drill/index.html?mode=review", count: due, done: !due && did("review") > 0 },
         phase !== "exam" && { step: "learn", title: "Learn", detail: nextCh ? `Reading ${nextCh.n}: ${nextCh.title}` : weakest && weakest[0] < 2 ? `New question type: ${weakest[1].short || weakest[1].title}` : "Every reading is done", href: nextCh ? `read/index.html#${nextCh.id}` : weakest ? `exam/index.html#${weakest[1].id}` : "read/index.html", done: !nextCh && !(weakest && weakest[0] < 2) },
         { step: "practice", title: "Practise, mixed", detail: `${size} questions across types, weakest first`, href: `drill/index.html?mode=mixed&n=${size}`, count: size, done: did("mixed") >= size },
         phase !== "exam" && { step: "apply", title: "On paper", detail: "One mechanism and one chair problem, drawn by hand, then checked against the rubric", href: "exam/index.html?paper=1", done: did("paper") >= 2 },

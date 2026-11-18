@@ -120,7 +120,7 @@
 
       const m = mastery(id);
       app.append(el("p", { class: "row mastery-line" }, dots(m.level), el("b", {}, m.label),
-        m.delayed != null ? el("span", { class: "muted" }, "Delayed accuracy " + Math.round(m.delayed * 100) + "% (" + plural(m.delayedN || 0, "answer", "answers") + " given a day or more after the first try)") : el("span", { class: "muted" }, "Come back tomorrow: answers given a day later are what count.")));
+        m.delayed != null ? el("span", { class: "muted" }, "Delayed accuracy " + Math.round(m.delayed * 100) + "% (" + plural(m.delayedN || 0, "answer", "answers") + " given on a later day than the answer before)") : el("span", { class: "muted" }, "Come back tomorrow: answers given a day later are what count.")));
 
       const tabs = [];
       if (t && (t.know || []).length) tabs.push({ id: "know", label: "What you need to know", render: p => {
