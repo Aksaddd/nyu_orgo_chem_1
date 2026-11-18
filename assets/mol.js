@@ -60,7 +60,8 @@
     const d = getD(key);
     if (!d) return el("span", { class: "fig-missing" }, typeof key === "string" ? key.split("|")[0] : "structure");
     const s = UNIT * (o.scale || 1) * (o.inline ? INLINE : 1), m = 2.5;
-    return el("svg", { class: "mol" + (o.inline ? " mol-inline" : ""), viewBox: `${-m} ${-m} ${r1(d.w + 2 * m)} ${r1(d.h + 2 * m)}`, width: Math.round((d.w + 2 * m) * s), height: Math.round((d.h + 2 * m) * s), role: "img", "aria-label": o.label || label(d), "font-family": FONT }, ink(d));
+    // data-nolookup: Eureka's dictionary leaves a drawing alone (a double-tap on an atom label is not a question about a word)
+    return el("svg", { class: "mol" + (o.inline ? " mol-inline" : ""), viewBox: `${-m} ${-m} ${r1(d.w + 2 * m)} ${r1(d.h + 2 * m)}`, width: Math.round((d.w + 2 * m) * s), height: Math.round((d.h + 2 * m) * s), role: "img", "aria-label": o.label || label(d), "font-family": FONT, "data-nolookup": "" }, ink(d));
   }
 
   // "SMILES" or "SMILES|abbr", "SMILES|me", "SMILES|abbr,me", with an optional display scale "s=0.8"
@@ -92,7 +93,7 @@
       const long = w - 2, short = Math.round(w * 0.5), top = kind === "eql" ? short : long, bot = kind === "eqr" ? short : long, a = (w - top) / 2, b = (w - bot) / 2;
       kids.push(el("path", Object.assign({ d: `M${a} ${y - 2.5}H${a + top}l-7 -4` }, line)), el("path", Object.assign({ d: `M${b + bot} ${y + 2.5}H${b}l7 4` }, line)));
     }
-    return el("svg", { class: "scheme-line", viewBox: `0 0 ${w} ${h}`, width: w, height: h, role: "img", "aria-label": ARROW_WORDS[kind] || ARROW_WORDS.rxn }, kids);
+    return el("svg", { class: "scheme-line", viewBox: `0 0 ${w} ${h}`, width: w, height: h, role: "img", "aria-label": ARROW_WORDS[kind] || ARROW_WORDS.rxn, "data-nolookup": "" }, kids);
   }
   // [[rxn:LEFT>ABOVE;BELOW>RIGHT]] and its relatives eq, eqr, eql, nr
   function scheme(arg, kind, inline) {
@@ -346,7 +347,7 @@
     const G = geom(d);
     let list = (o.arrows || []).map(tidy).filter(Boolean), given = input ? list.length : 0, src = null, last = null;
     const arrowG = el("g", { class: "mol-arrows" }), pickG = el("g", { class: "mol-picks" });
-    const svgEl = el("svg", { class: "stage-svg", "font-family": FONT, role: input ? "group" : "img" }, ink(d), arrowG, pickG);
+    const svgEl = el("svg", { class: "stage-svg", "font-family": FONT, role: input ? "group" : "img", "data-nolookup": "" }, ink(d), arrowG, pickG);
     const status = input ? el("p", { class: "stage-status small", role: "status", "aria-live": "polite" }, START) : null;
     host.appendChild(el("div", { class: "stage stage-" + mode }, el("div", { class: "stage-scroll" }, svgEl), status));
     const say = text => { if (status) status.textContent = text };

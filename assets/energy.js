@@ -57,6 +57,7 @@
     }
     const F = facts(pts), s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     s.setAttribute("class", "energy-svg"); s.setAttribute("viewBox", `0 0 ${W} ${H}`); s.setAttribute("width", W); s.setAttribute("height", H); s.setAttribute("role", "img");
+    s.setAttribute("data-nolookup", "");      // Eureka's dictionary leaves the drawing alone: its labels are not words
     s.setAttribute("aria-label", "Energy diagram: " + pts.map(p => `${labels[p.name] || p.name} at ${minus(p.e)}`).join(", ") + ` kcal/mol. ${F.steps === 1 ? "One step" : F.steps + " steps"}, ${F.dh < 0 ? "downhill overall (exothermic)" : F.dh > 0 ? "uphill overall (endothermic)" : "level overall"}.`);
     s.innerHTML = h; return s;
   };

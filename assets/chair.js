@@ -206,6 +206,7 @@
     const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"), p = 6, w = box[2] - box[0] + 2 * p, h = box[3] - box[1] + 2 * p;
     s.setAttribute("class", cls); s.setAttribute("viewBox", `${f1(box[0] - p)} ${f1(box[1] - p)} ${f1(w)} ${f1(h)}`);
     s.setAttribute("width", Math.round(w)); s.setAttribute("height", Math.round(h)); s.setAttribute("role", role || "img"); s.setAttribute("aria-label", aria);
+    s.setAttribute("data-nolookup", "");      // Eureka's dictionary leaves the drawing alone: its labels are not words
     s.innerHTML = inner; return s;
   }
   C.mk = mk;
