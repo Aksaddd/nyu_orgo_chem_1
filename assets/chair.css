@@ -2,8 +2,11 @@
 
 /* ---- the drawings: ink follows the page, axial and equatorial bonds take --ax and --eq (plus the letters a and e) */
 .chair-svg, .ring-svg, .newman-svg, .energy-svg { max-width: 100%; height: auto; color: var(--ink, #1d1d1f); font-family: var(--font, system-ui, -apple-system, "Segoe UI", sans-serif); overflow: visible; vertical-align: middle; }
-.chair-svg.inline, .ring-svg.inline, .newman-svg.inline { height: 4.2em; width: auto; }
-.energy-svg.inline { height: 6em; width: auto; }
+.chair-svg.inline, .newman-svg.inline { height: 4.2em; width: auto; }
+/* a flat ring in a sentence carries the substituents the answer turns on: 7em keeps its labels at 9 px and more. An energy
+   diagram has five labels and no readable size smaller than its own, so in a sentence it is drawn as it is on its own line. */
+.ring-svg.inline { height: 7em; width: auto; }
+.energy-svg.inline { height: auto; width: min(100%, 340px); }
 .chair-svg text, .ring-svg text, .newman-svg text, .energy-svg text { user-select: none; }
 
 /* ---- the chair lab */
