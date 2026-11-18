@@ -178,13 +178,45 @@ const tables = {}; for (const file of list("tables")) { const v = readJSON(file)
 for (const f of [blueprintFile, errorsFile]) { const v = f === blueprintFile ? blueprint : errors; deep(v, (s, p) => scan(s, f, p, refsFor("index"))) }
 if (single.exam) (single.exam.questions || []).forEach(q => { let sum = 0; (q.parts || []).forEach(p => { sum += p.pts || 0; const ids = p.items || (p.item ? [p.item] : []); if (!ids.length) bad(path.join(C, "exam.json"), `question ${q.n}${p.label || ""}`, `needs "items": [item ids]`); ids.forEach(id => { if (!items[id]) bad(path.join(C, "exam.json"), `question ${q.n}${p.label || ""}`, `item "${id}" does not exist`) }) }); if ((q.parts || []).length && sum !== 100 && !q.partial) bad(path.join(C, "exam.json"), `question ${q.n}`, `the parts add up to ${sum} points, not 100`) });
 { const seen = new Set(), gf = path.join(C, "glossary.json");
+  // Eureka's lookup (shared/lookup.js) opens a card for the word a spelling normalises to: its norm(), with the Greek
+  // letters spelled out, and forms(), its singulars. These rules are about that word, so they use the same two.
+  const GREEK = { "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "π": "pi", "σ": "sigma" };
+  const lkNorm = s => String(s).toLowerCase().replace(/[αβγδπσ]/g, c => GREEK[c]).replace(/[’']/g, "").replace(/[^a-z0-9+\- ]/g, " ").replace(/\s+/g, " ").trim();
+  const lkForms = w => { const f = [w]; if (/ia$/.test(w)) f.push(w.replace(/ia$/, "ium")); if (/ae$/.test(w)) f.push(w.slice(0, -1)); if (/i$/.test(w)) f.push(w.replace(/i$/, "us")); if (/ata$/.test(w)) f.push(w.slice(0, -2)); if (/ies$/.test(w)) f.push(w.replace(/ies$/, "y")); if (/(s|x|ch|sh)es$/.test(w)) f.push(w.slice(0, -2)); if (/s$/.test(w) && !/ss$/.test(w)) f.push(w.slice(0, -1)); if (/ed$/.test(w)) f.push(w.slice(0, -1), w.slice(0, -2)); return f };
+  const ORDINARY = ["bond", "bonds", "hydrogen", "hydrogens", "value", "values", "carbon", "group", "base", "acid"];      // words that must never open a card, except the entry that is that word
+  const claimed = new Map();
   arr(single.glossary).forEach((g, i) => {
     if (!g || typeof g.term !== "string" || !g.term.trim() || typeof g.def !== "string" || !g.def.trim()) return bad(gf, "#" + (i + 1), "each entry needs a term and a def");
     const k = g.term.toLowerCase(); if (seen.has(k)) bad(gf, g.term, "listed twice"); seen.add(k);
     if (g.also && !(Array.isArray(g.also) && g.also.every(a => typeof a === "string"))) bad(gf, g.term, "also must be a list of other spellings");
     if (g.parts && !(Array.isArray(g.parts) && g.parts.every(p => Array.isArray(p) && p.length === 2))) bad(gf, g.term, "parts must be a list of [word part, meaning]");
+    const own = lkNorm(g.term);
+    for (const s of [g.term].concat(Array.isArray(g.also) ? g.also.filter(a => typeof a === "string") : [])) {
+      const w = lkNorm(s);
+      if (/[Ͱ-Ͽἀ-῿]/.test(s)) bad(gf, g.term, `"${s}" has a Greek letter: spell it out ("pi bond", "beta hydrogen"), as the lookup reads it`);
+      else if (!/[a-z]/i.test(s)) bad(gf, g.term, `"${s}" has no letter, and the lookup reads only words with letters: a tap on "1S" would land on it`);
+      if (/^(a|an|the)\s/i.test(s.trim())) bad(gf, g.term, `"${s}" begins with "a", "an" or "the": write it without`);
+      if (ORDINARY.includes(w) && !(lkForms(w).includes(own) || lkForms(own).includes(w))) bad(gf, g.term, `"${s}" is read as "${w}", an ordinary word that must never open this card`);
+      if (w && claimed.has(w) && claimed.get(w) !== g.term) bad(gf, g.term, `"${s}" is read as "${w}", which "${claimed.get(w)}" already claims`); else if (w) claimed.set(w, g.term);
+    }
   }) }
 if (single.foundations) (single.foundations.diagnostic || []).forEach(id => { if (typeof id === "string" && !items[id]) bad(path.join(C, "foundations.json"), "diagnostic", `item "${id}" does not exist`) });
+// The questions of the readings (check): practice questions of a kind the reader marks (not written), each asked in one
+// place only (not in a mock exam, the past exam or the foundations check, not in two readings), at most 2 in a passage.
+{ const elsewhere = new Map(), mark = (id, w) => { if (typeof id === "string" && !elsewhere.has(id)) elsewhere.set(id, w) }, ids = p => p.items || (p.item ? [p.item] : []);
+  for (const m of Object.values(mocks)) (m.questions || []).forEach(q => (q.parts || []).forEach(p => ids(p).forEach(id => mark(id, `mock exam "${m.id}"`))));
+  if (single.exam) (single.exam.questions || []).forEach(q => (q.parts || []).forEach(p => ids(p).forEach(id => mark(id, "the past exam (content/exam.json)"))));
+  if (single.foundations) (single.foundations.diagnostic || []).forEach(id => mark(id, "the foundations check (content/foundations.json)"));
+  const asked = new Map();
+  for (const c of Object.values(chapters)) (c.sections || []).forEach(s => {
+    const file = path.join(C, "read", c.id + ".json"), where = `${c.id} section ${s.id}`, list = s.check || [];
+    if (list.length > 2) bad(file, where, `asks ${list.length} questions (${list.join(", ")}): a passage asks at most 2`);
+    for (const id of list) { const it = items[id]; if (!it) continue;
+      if (it.role !== "practice") bad(file, where, `"${id}" is ${it.role === "exam" ? "an exam" : "a worked"} item: a reading asks practice questions only`);
+      if (it.kind === "written") bad(file, where, `"${id}" is a written question, which the reader cannot mark`);
+      if (elsewhere.has(id)) bad(file, where, `"${id}" is also used by ${elsewhere.get(id)}`);
+      if (asked.has(id)) bad(file, where, `"${id}" is also asked in ${asked.get(id)}`); else asked.set(id, where) }
+  }) }
 // The readings at other levels (read/levels/*.js: written for Eureka's level dial and checked there by Eureka's own
 // tools) may carry {{formulas}} and [[figures]] like any text. Their figures are checked and drawn with the rest.
 const levelText = [];
@@ -417,7 +449,8 @@ if (single.foundations) write("foundations", { foundations: single.foundations, 
 if (arr(single.glossary).length) {
   const lex = {}; for (const g of arr(single.glossary)) lex[g.term] = [g.def, g.parts || [], g.lit || "", (g.also || []).map(a => a.replace(/,/g, " ")).join(",")];      // a comma inside a spelling (1,3-diaxial) would cut it in two: the lookup reads it as a space anyway
   const tail = String.raw`
-  const norm = s => String(s).toLowerCase().replace(/,/g, " ").replace(/[“”"().:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
+  const GREEK = { "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "π": "pi", "σ": "sigma" };      // spelled out, as Eureka's lookup does: "π bond" is "pi bond"
+  const norm = s => String(s).toLowerCase().replace(/[αβγδπσ]/g, c => GREEK[c]).replace(/,/g, " ").replace(/[“”"().:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
   const G = {}, TERMS = {};
   for (const [term, v] of Object.entries(LEX)) { const names = [term].concat(v[3] ? v[3].split(",") : []); TERMS[names.join("|")] = v[0]; names.forEach(n => { const k = norm(n); if (k && !G[k]) G[k] = v[0] }) }
   const look = raw => { const k = norm(raw); return !k ? null : G[k] || (k.endsWith("s") && G[k.slice(0, -1)]) || G[k + "s"] || null };

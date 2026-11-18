@@ -305,7 +305,8 @@
     "","strong bases"],
     "weak base":["A base whose conjugate acid is a fairly strong acid (low pKa). The flowchart has two kinds: weak bases that are good nucleophiles, such as I⁻ and HS⁻, which give SN2; and weak bases that are poor nucleophiles, such as water and alcohols, which leave SN1 and E1.",[],
     "","weak bases"]};
-  const norm = s => String(s).toLowerCase().replace(/,/g, " ").replace(/[“”"().:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
+  const GREEK = { "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "π": "pi", "σ": "sigma" };      // spelled out, as Eureka's lookup does: "π bond" is "pi bond"
+  const norm = s => String(s).toLowerCase().replace(/[αβγδπσ]/g, c => GREEK[c]).replace(/,/g, " ").replace(/[“”"().:;!?]/g, "").replace(/[–—]/g, "-").replace(/^(a|an|the) /, "").replace(/\s+/g, " ").trim();
   const G = {}, TERMS = {};
   for (const [term, v] of Object.entries(LEX)) { const names = [term].concat(v[3] ? v[3].split(",") : []); TERMS[names.join("|")] = v[0]; names.forEach(n => { const k = norm(n); if (k && !G[k]) G[k] = v[0] }) }
   const look = raw => { const k = norm(raw); return !k ? null : G[k] || (k.endsWith("s") && G[k.slice(0, -1)]) || G[k + "s"] || null };
