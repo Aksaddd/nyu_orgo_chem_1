@@ -215,7 +215,9 @@
     for (const id in all) { const r = all[id], x = data.index[id]; if (!x || x[2] === "worked") continue;      // only what class.js "progress" counts: not mechanisms, not worked examples
       if (r.flag) mark[id] = { m: "review", t: r.last || now() }; if (!r.n) continue;
       stats[id] = [r.n, r.ok]; const last = r.hist[r.hist.length - 1]; hist[id] = last && last[1] >= 0.8 ? 1 : 0; if (last && !hist[id]) missed.push(id);
-      r.hist.forEach(h => { const d = new Date(h[0]), k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); days[k] = (days[k] || 0) + 1 }) }
+      if (x[0] !== "foundations") r.hist.forEach(h => { const d = new Date(h[0]), k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); days[k] = (days[k] || 0) + 1 }) }
+    // days: answers per day, which Eureka's Study Plan reads as practice done today. The Foundations check is a diagnostic,
+    // not practice, so its answers are left out (26 of them would tick "Answer 15 mixed questions" at once).
     store.set("drill-v1", { v: 2, updatedAt: now(), stats, hist, missed, mark, days });
   }
 
@@ -241,6 +243,7 @@
       if (e.key !== "Tab") return;
       // Tab and Shift+Tab go round inside the sheet, as aria-modal says. Focus that has gone behind the sheet (to the page,
       // or to nothing) is brought back; a popup opened from the sheet, such as a dictionary card, comes after it and keeps it.
+      const sb = sheet.querySelector(":scope > .sheet-body"); if (sb && sb.tabIndex < 0 && sb.scrollHeight > sb.clientHeight + 1) sb.tabIndex = 0;      // a body that scrolls (the exam paper's pictures) is a stop of its own, so the keyboard can scroll it
       const stops = [...sheet.querySelectorAll("a[href], button, input, select, textarea, summary, [tabindex]")].filter(x => x.tabIndex >= 0 && !x.disabled && x.getClientRects().length);
       const first = stops[0] || sheet, last = stops[stops.length - 1] || sheet, at = document.activeElement;
       const leaving = sheet.contains(at) ? at === (e.shiftKey ? first : last) || (e.shiftKey && at === sheet) : !at || at === document.body || !!(veil.compareDocumentPosition(at) & Node.DOCUMENT_POSITION_PRECEDING);

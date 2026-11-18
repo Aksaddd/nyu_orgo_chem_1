@@ -122,7 +122,7 @@
     const pause = timed ? btn("Pause", "small", () => (running ? halt() : go()), "pause") : null;
     const paint = () => { if (!timed) return; time.textContent = clock(left); state.textContent = over ? "Time is up" : running ? "Running" : "Paused"; pause.textContent = running ? "Pause" : "Resume"; pause.disabled = over; cover() };
     // while a timed sitting is paused its questions are hidden, so the clock keeps showing the time the student used
-    function cover() { if (!rest) return; const off = timed && !running && !over && !done; rest.hidden = !off; hide.forEach(n => n.hidden = off) }
+    function cover() { if (!rest) return; const off = timed && !running && !over && !done; rest.hidden = !off; hide.forEach(n => n.hidden = off); printBtn.disabled = off; printBtn.title = off ? "Resume the clock to print the exam" : "" }
     function go(end) { if (over || !timed) return; running = true; endAt = end || Date.now() + left * 1000; paint(); keep() }
     function halt() { if (!running) return; left = Math.max(0, (endAt - Date.now()) / 1000); running = false; paint(); keep() }
     function beat() {
@@ -140,10 +140,10 @@
       if (ORGO.store.set(RUN, s)) last = str; else if (!warned) { warned = true; ORGO.ui.toast("This browser cannot keep your exam as you go. A reload would lose it.", 6000) }
     }
 
-    const title = el("h1", { class: "mock-title", tabindex: "-1" }, x.title);
+    const title = el("h1", { class: "mock-title", tabindex: "-1" }, x.title), printBtn = btn("Print this exam", "small", () => window.print(), "print");
     const barBox = el("section", { class: "card mock-bar" },
       el("div", { class: "mock-bar-main" }, title, timed ? el("span", { class: "mock-clock" }, time, " ", state) : null),
-      el("div", { class: "btn-row" }, pause, btn("Print this exam", "small", () => window.print(), "print"), btn("Finish and mark", "primary small", askFinish, "finish"), btn("Leave", "ghost small", () => ORGO.ui.sheet({ title: "Leave this exam?", body: "Nothing from this attempt will be saved.", actions: [{ label: "Stay" }, { label: "Leave", primary: true, run: () => { forget(); landing(true) } }] }), "leave")));
+      el("div", { class: "btn-row" }, pause, printBtn, btn("Finish and mark", "primary small", askFinish, "finish"), btn("Leave", "ghost small", () => ORGO.ui.sheet({ title: "Leave this exam?", body: "Nothing from this attempt will be saved.", actions: [{ label: "Stay" }, { label: "Leave", primary: true, run: () => { forget(); landing(true) } }] }), "leave")));
     const printHead = el("div", { class: "print-only" }, el("h1", {}, x.title + (x.sub ? ": " + x.sub : "")),
       el("p", {}, `${exam.minutes || 110} minutes. ` + (drop ? `Choose ${choose} of ${qs.length} questions and cross out the other ${drop}. ` : "") + "Pen only. The model kit is allowed."), el("p", {}, "Name: ______________________________"));
     const note = el("p", { class: "muted mock-note" }, timed ? null : `No timer in this sitting. The real exam gives ${exam.minutes || 110} minutes. `,
@@ -181,7 +181,7 @@
     });
     app.append(...blocks);
     const end = el("div", { class: "btn-row mock-end" }, btn("Finish and mark", "primary", askFinish, "finish")); app.appendChild(end);
-    rest = el("section", { class: "card mock-paused", role: "status" }, el("h2", {}, "Paused"), el("p", { class: "muted" }, "The questions are hidden while the clock is stopped, so the time on the clock stays the time you used. Resume when you are ready to go on."), el("div", { class: "btn-row" }, btn("Resume", "primary", () => go(), "resume")));
+    rest = el("section", { class: "card mock-paused", role: "status" }, el("h2", {}, "Paused"), el("p", { class: "muted" }, "The questions are hidden while the clock is stopped, so the time on the clock stays the time you used. Resume when you are ready to go on; the exam prints once the clock runs again."), el("div", { class: "btn-row" }, btn("Resume", "primary", () => go(), "resume")));
     rest.hidden = true; app.insertBefore(rest, blocks[0] || end); hide = blocks.concat([end]);
     // a sitting opened again: its crossed-out questions, then its clock, which ran on while the page was closed unless paused
     if (run) (run.crossed || []).forEach(n => { if (crossers[n] && !crossed.has(n) && crossed.size < drop) crossers[n](true) });

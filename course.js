@@ -11,6 +11,8 @@ window.COURSE = {
   badges: "orgo",
   sourceHint: "for example just chairs, or just SN2 and E2",
   terms: ["anti-periplanar", "pKa"],
+  // the keyboard shortcuts Eureka lists under Accessibility (shared/prefs.js): this class has no "previous question" key
+  keys: [["1 – 5", "Choose an answer in a practice session (the question says which keys)"], ["Enter or →", "Next question, once you have answered"], ["Tab", "Move to the next control"], ["Esc", "Close a panel or dialog"], ["?", "Show this list"]],
   // XP (Eureka's shared/xp.js): every answer arrives with its question's level as "orgo1" to "orgo3" (assets/eureka.js), and the
   // level sets the tier: 1 Easy (10 XP), 2 Medium (20), 3 Hard (35), before the streak multiplier. The bank then averages
   // about 21 XP an answer, near Bi 239's 19 (ANTH 104 and ECON 101, mostly recall, about 11).
