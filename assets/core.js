@@ -227,14 +227,15 @@
   // ---------------------------------------------------------------- UI pieces
   const ui = ORGO.ui = {};
   ui.toast = (text, ms = 2600) => { let host = document.getElementById("orgoToasts"); if (!host) { host = el("div", { id: "orgoToasts", class: "toasts", "aria-live": "polite" }); document.body.appendChild(host) } const t = el("div", { class: "toast" }, text); host.appendChild(t); setTimeout(() => { t.classList.add("out"); setTimeout(() => t.remove(), 300) }, ms) };
-  // every sheet that can cover the page: ours, and Eureka's (each named "…-veil", and in the page only while open)
-  const VEILS = '.veil, [class$="-veil"], [class*="-veil "]';
+  // every sheet that can cover the page: ours, Eureka's (named "…-veil"), and any other modal dialog, such as the companion's
+  // evolution. Each is in the page only while it is open.
+  const VEILS = '.veil, [class$="-veil"], [class*="-veil "], [aria-modal="true"]';
   ui.covered = () => !!document.querySelector(VEILS);
   ui.sheet = ({ title, body, actions = [], wide = false, onClose }) => {
     const prev = document.activeElement, veil = el("div", { class: "veil", role: "presentation" });
     const close = () => { veil.remove(); document.removeEventListener("keydown", key); if (prev && prev.focus) prev.focus(); onClose && onClose() };
     const key = e => {
-      const open = document.querySelectorAll(VEILS); if (open[open.length - 1] !== veil) return;      // another sheet lies over this one: the key is for it
+      const open = document.querySelectorAll(VEILS), top = open[open.length - 1]; if (top !== veil && !veil.contains(top)) return;      // another sheet lies over this one: the key is for it
       if (e.key === "Escape") return close();
       if (e.key !== "Tab") return;
       // Tab and Shift+Tab go round inside the sheet, as aria-modal says. Focus that has gone behind the sheet (to the page,
