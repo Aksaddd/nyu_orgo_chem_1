@@ -33,7 +33,8 @@
     return lead + esc(s).replace(/([A-Za-z)\]])(\d+)/g, "$1<sub>$2</sub>") + tail;
   }
   ORGO.formula = formula;
-  ORGO.fmt = str => String(str == null ? "" : str).replace(/\{\{(.*?)\}\}/g, (_, f) => `<span class="chem">${formula(f)}</span>`);
+  // data-lk: the whole formula is one word for Eureka's dictionary, however many tags draw it (S<sub>N</sub>2, pKa)
+  ORGO.fmt = str => String(str == null ? "" : str).replace(/\{\{(.*?)\}\}/g, (_, f) => `<span class="chem" data-lk>${formula(f)}</span>`);
 
   // ---------------------------------------------------------------- figures: [[mol:CCO]]
   const TOKEN = /\[\[([a-z0-9]+):(.*?)\]\](?!\])/g;
@@ -86,47 +87,75 @@
   const store = ORGO.store, bus = new EventTarget();
   ORGO.on = (name, fn) => { const h = e => fn(e.detail); bus.addEventListener(name, h); return () => bus.removeEventListener(name, h) };
   ORGO.emit = (name, detail) => bus.dispatchEvent(new CustomEvent(name, { detail }));
-  const prefs = () => { try { return JSON.parse(localStorage.getItem("eureka-prefs") || "{}") || {} } catch (e) { return {} } };
+  // Eureka's preferences (shared/prefs.js keeps them in "eureka-prefs"), read fresh each time. Outside Eureka there are none.
+  const prefs = ORGO.prefs = () => { if (!ORGO.inEureka) return {}; try { const p = JSON.parse(localStorage.getItem("eureka-prefs") || "{}"); return p && typeof p === "object" && !Array.isArray(p) ? p : {} } catch (e) { return {} } };
   Object.defineProperty(ORGO, "reduced", { get: () => !!prefs().calm || root.classList.contains("px-calm") || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) });
 
   // ---------------------------------------------------------------- learning: schedule and mastery
-  const DAY = 864e5, GAPS = [0, 1, 2, 4, 7, 14], ITEMS = "items-v1";
+  const DAY = 864e5, GAPS = [0, 1, 2, 4, 7, 14], ITEMS = "items-v1", BARE = /^\d{4}-\d{2}-\d{2}$/;
   const now = () => Date.now();
+  // the saved records as the code below expects them, whatever is in storage (an older version, a merge between devices,
+  // a hand edit): a record without its history list, or with a count that is not a number, must not stop a page drawing
+  const count = x => (typeof x === "number" && isFinite(x) && x > 0 ? x : 0);
+  function sane(all) {
+    if (!all || typeof all !== "object" || Array.isArray(all)) return {};
+    for (const id in all) { const r = all[id];
+      if (!r || typeof r !== "object" || Array.isArray(r)) { delete all[id]; continue }
+      r.n = count(r.n); r.ok = count(r.ok); r.streak = count(r.streak); r.box = Math.min(5, Math.round(count(r.box))); if (r.qn != null) r.qn = Math.min(count(r.qn), r.n);
+      ["due", "last", "first"].forEach(k => { if (r[k] != null && !(typeof r[k] === "number" && isFinite(r[k]))) delete r[k] });
+      r.hist = Array.isArray(r.hist) ? r.hist.filter(h => Array.isArray(h) && typeof h[0] === "number" && typeof h[1] === "number") : [] }
+    return all;
+  }
   const L = ORGO.learn = {
-    all: () => store.get(ITEMS, {}),
-    state: id => store.get(ITEMS, {})[id] || null,
-    examDate() { const raw = store.raw("exam-date"); const d = raw ? new Date(/^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw + "T09:00:00" : raw) : null; return d && !isNaN(d) ? d : null },
+    HELPED: 0.75,      // the most an attempt finished with help can count for: under the 0.8 that counts as right
+    all: () => sane(store.get(ITEMS, {})),
+    state: id => L.all()[id] || null,
+    examDate() { const raw = store.raw("exam-date"); const d = raw ? new Date(BARE.test(raw) ? raw + "T09:00:00" : raw) : null; return d && !isNaN(d) ? d : null },
     setExamDate(iso) {
       // a bare date is saved as Eureka's Settings saves it (date and local time), or Settings reads it as midnight UTC: the evening before
-      if (/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) { const t = /T\d\d:\d\d/.exec(store.raw("exam-date") || ""); iso += t ? t[0] : "T09:00" }
+      if (BARE.test(iso || "")) { const t = /T\d\d:\d\d/.exec(store.raw("exam-date") || ""); iso += t ? t[0] : "T09:00" }
       store.setRaw("exam-date", iso || null); ORGO.emit("progress", {}); window.dispatchEvent(new CustomEvent("bio:exam", { detail: L.examDate() })) },
     daysLeft() { const d = L.examDate(); return d ? (d - now()) / DAY : null },
+    // whole calendar days from today to the day of the exam, as Eureka's Settings counts "in N days": 0 on the day itself
+    // (daysLeft() says whether its hour has passed), 1 the day before, negative after it, null without a date
+    calendarDays() { const d = L.examDate(); return d ? Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date(now()).setHours(0, 0, 0, 0)) / DAY) : null },
     // score 0..1 (1 right, 0 wrong, between for rubric-graded work); conf 0 guess, 1 unsure, 2 sure
-    // quiet: the record, the schedule and the summary change as usual, but no event goes to Eureka (the caller sends its own)
-    record(id, { score = 0, conf = null, secs = null, hinted = false, quiet = false } = {}) {
+    // hinted: finished with help (the last hint, or "Show me"): kept as a miss, at most HELPED, and Eureka hears nothing of it
+    // quiet: the record, the schedule and the summary change as usual, but no event goes to Eureka (the caller sends its own, or none)
+    // inner: part of an answer that its caller records (a mechanism drawn inside a question): quiet, and not counted again
+    //        in stats() as an answer or in delayed accuracy
+    record(id, { score = 0, conf = null, secs = null, hinted = false, quiet = false, inner = false } = {}) {
       const t = now(), left = L.daysLeft();
+      score = Math.max(0, Math.min(1, +score || 0)); if (hinted) score = Math.min(score, L.HELPED);
       const rec = store.update(ITEMS, all => {
-        const r = all[id] || { n: 0, ok: 0, streak: 0, box: 0, first: t, hist: [] };
-        const spaced = r.last && t - r.last > DAY / 2;
-        r.n++; r.last = t;
-        if (score >= 0.8 && !hinted) { r.ok++; r.streak++; r.box = Math.min(5, r.box + 1) } else if (score >= 0.4) { r.streak = 0; r.box = Math.max(1, Math.min(r.box, 2)) } else { r.streak = 0; r.box = 0 }
-        let gap = GAPS[r.box]; if (left != null && left > 0) gap = Math.min(gap, Math.max(0.3, left / 3));    // leave room for two more reviews before the exam
+        all = sane(all);
+        const r = all[id] || { n: 0, ok: 0, streak: 0, box: 0, first: t, hist: [] }, was = r.hist[r.hist.length - 1];
+        // "after a day or more": on a later calendar day than the last answer to this question, and at least six hours after it
+        const spaced = !!r.last && t - r.last >= DAY / 4 && new Date(r.last).toDateString() !== new Date(t).toDateString();
+        // right within 12 hours of a miss of the same question: its solution was just read, so the gap does not grow
+        const relearn = !!was && was[1] < 0.8 && t - was[0] < DAY / 2;
+        r.n++; r.last = t; if (inner) r.qn = (r.qn || 0) + 1;
+        if (score >= 0.8) { r.ok++; r.streak++; r.box = relearn ? Math.max(1, r.box) : Math.min(5, r.box + 1) } else if (score >= 0.4) { r.streak = 0; r.box = Math.max(1, Math.min(r.box, 2)) } else { r.streak = 0; r.box = 0 }
+        let gap = score >= 0.8 ? GAPS[r.box] : 0;      // a miss is due again at once
+        if (left != null && left > 0) gap = Math.min(gap, Math.max(0.3, left / 3));    // leave room for two more reviews before the exam
         r.due = t + gap * DAY; if (conf != null) r.conf = conf;
-        r.hist.push([t, Math.round(score * 100) / 100, conf, secs == null ? null : Math.round(secs), spaced ? 1 : 0]); if (r.hist.length > 12) r.hist.shift();
+        // [time, score, confidence, seconds, 1 when "after a day or more", 1 when part of an answer recorded by its caller]
+        const h = [t, Math.round(score * 100) / 100, conf, secs == null ? null : Math.round(secs), spaced ? 1 : 0]; if (inner) h.push(1);
+        r.hist.push(h); if (r.hist.length > 12) r.hist.shift();
         all[id] = r; return all;
       }, {})[id];
       summary(); ORGO.emit("answer", { id, score, conf, rec }); ORGO.emit("progress", {});
-      if (!quiet) { if (score >= 0.8) ORGO.eureka.right(id); else ORGO.eureka.wrong(id) }
+      if (!quiet && !inner && !hinted) { if (score >= 0.8) ORGO.eureka.right(id); else ORGO.eureka.wrong(id) }
       return rec;
     },
-    flag(id, on) { store.update(ITEMS, all => { const r = all[id] || (all[id] = { n: 0, ok: 0, streak: 0, box: 0, hist: [] }); r.flag = !!on; return all }, {}); summary(); ORGO.emit("progress", {}) },      // the summary Eureka reads carries the flags, so it is rebuilt at once
+    flag(id, on) { store.update(ITEMS, all => { all = sane(all); const r = all[id] || (all[id] = { n: 0, ok: 0, streak: 0, box: 0, hist: [] }); r.flag = !!on; return all }, {}); summary(); ORGO.emit("progress", {}) },      // the summary Eureka reads carries the flags, so it is rebuilt at once
     due(t = now()) { const all = L.all(); return Object.keys(all).filter(id => all[id].n && all[id].due != null && all[id].due <= t && data.index[id]).sort((a, b) => all[a].due - all[b].due) },
-    missed() { const all = L.all(); return Object.keys(all).filter(id => data.index[id] && all[id].n && all[id].hist.length && all[id].hist[all[id].hist.length - 1][1] < 0.8) },
+    missed() { const all = L.all(); return Object.keys(all).filter(id => { const h = all[id].hist; return data.index[id] && all[id].n && h.length && h[h.length - 1][1] < 0.8 }) },
     flagged() { const all = L.all(); return Object.keys(all).filter(id => data.index[id] && all[id].flag) },
-    // level: 0 new, 1 seen, 2 practising, 3 solid (three right in a row on different questions), 4 retained (right again a day or more later)
+    // level: 0 new, 1 seen, 2 practising, 3 solid (three right in a row on different questions), 4 retained (right again on a later day)
     mastery(typeId) {
       const all = L.all(), ids = ORGO.itemsOf(typeId).filter(id => data.index[id][2] !== "worked"), seen = ids.filter(id => all[id] && all[id].n);
-      const last = seen.map(id => { const h = all[id].hist; return [h[h.length - 1][0], h[h.length - 1][1], id] }).sort((a, b) => b[0] - a[0]);
+      const last = seen.filter(id => all[id].hist.length).map(id => { const h = all[id].hist; return [h[h.length - 1][0], h[h.length - 1][1], id] }).sort((a, b) => b[0] - a[0]);
       const recent = last.length ? last.slice(0, 8).reduce((a, x) => a + (x[1] >= 0.8 ? 1 : 0), 0) / Math.min(8, last.length) : null;
       let dN = 0, dOk = 0; const dIds = new Set(); seen.forEach(id => all[id].hist.forEach(h => { if (h[4]) { dN++; if (h[1] >= 0.8) { dOk++; dIds.add(id) } } }));
       const run = last.slice(0, 3).length === 3 && last.slice(0, 3).every(x => x[1] >= 0.8);
@@ -148,7 +177,8 @@
       if (out.length < n) for (const id of pool.filter(id => !out.includes(id)).sort((a, b) => ((all[a] || {}).box || 0) - ((all[b] || {}).box || 0))) { if (out.length >= n) break; out.push(id) }
       return spread(out);
     },
-    stats() { const all = L.all(), ids = Object.keys(all).filter(id => all[id].n); let dN = 0, dOk = 0, n = 0; ids.forEach(id => { n += all[id].n; all[id].hist.forEach(h => { if (h[4]) { dN++; if (h[1] >= 0.8) dOk++ } }) }); return { answered: n, items: ids.length, delayed: dN ? dOk / dN : null, delayedN: dN, due: L.due().length } },
+    // answered: one for each marked answer. A mechanism drawn inside a question is counted once, through the question.
+    stats() { const all = L.all(), own = id => all[id].n - (all[id].qn || 0), ids = Object.keys(all).filter(id => own(id) > 0); let dN = 0, dOk = 0, n = 0; ids.forEach(id => { n += own(id); all[id].hist.forEach(h => { if (h[4] && !h[5]) { dN++; if (h[1] >= 0.8) dOk++ } }) }); return { answered: n, items: ids.length, delayed: dN ? dOk / dN : null, delayedN: dN, due: L.due().length } },
     // today's session, in the order that learning research supports: recall, learn, practise mixed, apply on paper, test
     plan() {
       const left = L.daysLeft(), phase = left == null ? "build" : left < 1 ? "exam" : left <= 2 ? "rehearse" : left <= 6 ? "strengthen" : "build";
@@ -169,6 +199,9 @@
     },
     did(kind, n = 1) { const today = new Date().toDateString(); store.update("today-v1", t => { const d = t[today] || {}; d[kind] = (d[kind] || 0) + n; return { [today]: d } }, {}) }
   };
+  // a date an older version saved bare is put once in the form Settings writes, which Settings reads as local time
+  // (it reads a bare date as midnight UTC: the evening before). No event: for this class it is the same moment as before.
+  { const raw = store.raw("exam-date"); if (raw && BARE.test(raw)) store.setRaw("exam-date", raw + "T09:00") }
   const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0 };
   const day = () => new Date().toDateString();
   // no two neighbours of the same type, where that is possible
@@ -180,7 +213,7 @@
     const all = L.all(), stats = {}, hist = {}, missed = [], mark = {}, days = {};
     for (const id in all) { const r = all[id], x = data.index[id]; if (!x || x[2] === "worked") continue;      // only what class.js "progress" counts: not mechanisms, not worked examples
       if (r.flag) mark[id] = { m: "review", t: r.last || now() }; if (!r.n) continue;
-      stats[id] = [r.n, r.ok]; const last = r.hist[r.hist.length - 1]; hist[id] = last && last[1] >= 0.8 ? 1 : 0; if (!hist[id]) missed.push(id);
+      stats[id] = [r.n, r.ok]; const last = r.hist[r.hist.length - 1]; hist[id] = last && last[1] >= 0.8 ? 1 : 0; if (last && !hist[id]) missed.push(id);
       r.hist.forEach(h => { const d = new Date(h[0]), k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); days[k] = (days[k] || 0) + 1 }) }
     store.set("drill-v1", { v: 2, updatedAt: now(), stats, hist, missed, mark, days });
   }
@@ -194,10 +227,23 @@
   // ---------------------------------------------------------------- UI pieces
   const ui = ORGO.ui = {};
   ui.toast = (text, ms = 2600) => { let host = document.getElementById("orgoToasts"); if (!host) { host = el("div", { id: "orgoToasts", class: "toasts", "aria-live": "polite" }); document.body.appendChild(host) } const t = el("div", { class: "toast" }, text); host.appendChild(t); setTimeout(() => { t.classList.add("out"); setTimeout(() => t.remove(), 300) }, ms) };
+  // every sheet that can cover the page: ours, and Eureka's (each named "…-veil", and in the page only while open)
+  const VEILS = '.veil, [class$="-veil"], [class*="-veil "]';
+  ui.covered = () => !!document.querySelector(VEILS);
   ui.sheet = ({ title, body, actions = [], wide = false, onClose }) => {
     const prev = document.activeElement, veil = el("div", { class: "veil", role: "presentation" });
     const close = () => { veil.remove(); document.removeEventListener("keydown", key); if (prev && prev.focus) prev.focus(); onClose && onClose() };
-    const key = e => { if (e.key === "Escape") close() };
+    const key = e => {
+      const open = document.querySelectorAll(VEILS); if (open[open.length - 1] !== veil) return;      // another sheet lies over this one: the key is for it
+      if (e.key === "Escape") return close();
+      if (e.key !== "Tab") return;
+      // Tab and Shift+Tab go round inside the sheet, as aria-modal says. Focus that has gone behind the sheet (to the page,
+      // or to nothing) is brought back; a popup opened from the sheet, such as a dictionary card, comes after it and keeps it.
+      const stops = [...sheet.querySelectorAll("a[href], button, input, select, textarea, summary, [tabindex]")].filter(x => x.tabIndex >= 0 && !x.disabled && x.getClientRects().length);
+      const first = stops[0] || sheet, last = stops[stops.length - 1] || sheet, at = document.activeElement;
+      const leaving = sheet.contains(at) ? at === (e.shiftKey ? first : last) || (e.shiftKey && at === sheet) : !at || at === document.body || !!(veil.compareDocumentPosition(at) & Node.DOCUMENT_POSITION_PRECEDING);
+      if (leaving) { e.preventDefault(); (e.shiftKey ? last : first).focus() }
+    };
     const sheet = el("div", { class: "sheet" + (wide ? " wide" : ""), role: "dialog", "aria-modal": "true", "aria-label": title || "Dialog", tabindex: "-1" },
       el("div", { class: "sheet-head" }, el("h2", {}, title || ""), el("button", { class: "icon-btn", "aria-label": "Close", on: { click: close } }, "✕")),
       el("div", { class: "sheet-body" }, typeof body === "string" ? ORGO.html(body) : body),
@@ -237,7 +283,17 @@
   if (!ORGO.inEureka) { appearance(); if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", appearance) }
   // A page that sets window.ORGO_EMBED = true before this file loads Eureka's scripts itself, as Eureka's own class pages do
   // (read/index.html, the platform's reader): no bridge is loaded for it, or those scripts would load twice, and no bar is drawn.
-  else if (!window.ORGO_EMBED && !document.querySelector('script[src*="assets/eureka.js"]')) { const s = document.createElement("script"); s.src = ORGO.base + "assets/eureka.js"; document.head.appendChild(s) }
+  else if (!window.ORGO_EMBED) {
+    // The appearance is Eureka's. Its settings.js comes through eureka.js, after the page can first paint, so a Dark page was
+    // painted light first. Set it now, from Eureka's key and by its rule (applyTheme in shared/settings.js); settings.js
+    // then sets the same values again.
+    let t = null; try { t = localStorage.getItem("a104-theme") } catch (e) { }
+    const dark = t === "dark" || t === "night" || (t === "auto" && !!window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+    root.dataset.theme = dark ? "dark" : "light"; if (t === "night") root.dataset.night = "1"; else delete root.dataset.night;
+    root.style.colorScheme = dark ? "dark" : "light";
+    const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = t === "night" ? "#05070d" : dark ? "#000000" : "#f5f5f7";
+    if (!document.querySelector('script[src*="assets/eureka.js"]')) { const s = document.createElement("script"); s.src = ORGO.base + "assets/eureka.js"; document.head.appendChild(s) }
+  }
   const ready = fn => document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", fn) : fn();
   ORGO.ready = ready;
   ready(() => { root.classList.add("orgo"); ui.bar() });

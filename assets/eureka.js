@@ -13,8 +13,10 @@
     add("script", { src: B + "shared/lookup.js" });
     if (!document.querySelector('link[rel="stylesheet"][href*="shared/maison.css"]')) add("link", { rel: "stylesheet", href: B + "shared/maison.css" });   // only for a page built before the link was in the head
   })();
-  // Eureka's companions and XP listen for these two events (see Eureka's shared/drill.js)
-  const tell = (name, id) => { const x = ORGO.data.index[id] || [], st = ORGO.learn.state(id) || {}; window.dispatchEvent(new CustomEvent(name, { detail: { kind: "drill", id, q: { d: x[0] || "orgo", q: "", ok: "", wrong: [], tag: x[0] || "" }, prev: [Math.max(0, (st.n || 1) - 1), Math.max(0, (st.ok || 0) - (name === "bio:correct" ? 1 : 0))] } })) };
+  // Eureka's companions and XP listen for these two events (see Eureka's shared/drill.js). q.d names the question's level,
+  // "orgo1" to "orgo3" (from the index; 1 when it has none, as a mechanism of the studio): shared/xp.js reads only q.d,
+  // and COURSE.deckBonus (course.js) turns it into the points that set the XP tier
+  const tell = (name, id) => { const x = ORGO.data.index[id] || [], st = ORGO.learn.state(id) || {}, lv = [1, 2, 3].includes(+x[3]) ? +x[3] : 1; window.dispatchEvent(new CustomEvent(name, { detail: { kind: "drill", id, q: { d: "orgo" + lv, q: "", ok: "", wrong: [], tag: x[0] || "" }, prev: [Math.max(0, (st.n || 1) - 1), Math.max(0, (st.ok || 0) - (name === "bio:correct" ? 1 : 0))] } })) };
   ORGO.eureka.right = id => tell("bio:correct", id);
   ORGO.eureka.wrong = id => tell("bio:wrong", id);
   // a reading chapter was finished (for the nth time): Eureka's companions hand out its badge, or polish it, on this event

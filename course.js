@@ -11,7 +11,10 @@ window.COURSE = {
   badges: "orgo",
   sourceHint: "for example just chairs, or just SN2 and E2",
   terms: ["anti-periplanar", "pKa"],
-  deckBonus: () => null,
+  // XP (Eureka's shared/xp.js): every answer arrives with its question's level as "orgo1" to "orgo3" (assets/eureka.js), and the
+  // level sets the tier: 1 Easy (10 XP), 2 Medium (20), 3 Hard (35), before the streak multiplier. The bank then averages
+  // about 21 XP an answer, near Bi 239's 19 (ANTH 104 and ECON 101, mostly recall, about 11).
+  deckBonus: d => (d === "orgo3" ? [4, "A hard question"] : d === "orgo2" ? [2, "A medium question"] : null),
   orgoPortals: [["Readings", "read/"], ["Practice", "drill/"], ["Exam 2 Lab", "exam/"], ["Mechanisms", "mechanisms/"], ["Mock Exam", "mock/"], ["Syllabus", "syllabus/"], ["Review", "review/"], ["Molecule Lab", "lab/"], ["Foundations", "foundations/"], ["Archive", "archive/"]],
   // the companion's fact for each of its six forms
   facts: [

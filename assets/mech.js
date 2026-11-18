@@ -32,11 +32,14 @@
     }
 
     const n = m.steps.length;
-    let mode = MODES.some(x => x[0] === o.mode) ? o.mode : "watch", i = 0, finished = false, res = [], result = null;
+    // inside a question (o.inQuestion) only the modes in which the student produces the arrows are offered, and the run is
+    // recorded as part of the question's answer: the question's own record is the one answer, and the one event
+    const allowed = MODES.map(x => x[0]).filter(k => !o.inQuestion || k === "solo" || k === "paper");
+    let mode = allowed.includes(o.mode) ? o.mode : allowed.includes("watch") ? "watch" : "solo", i = 0, finished = false, res = [], result = null;
     const reset = () => { i = 0; finished = false; result = null; res = m.steps.map(() => ({ done: false, helped: false, score: 0, fails: 0, hints: 0, last: false, miss: null, shown: false, tick: false })) };
     reset();
 
-    const seg = el("div", { class: "seg mech-modes", role: "group", "aria-label": "How to practise" }, MODES.map(([k, text]) => el("button", { type: "button", "aria-pressed": String(k === mode), data: { mode: k }, on: { click: () => setMode(k) } }, text)));
+    const seg = el("div", { class: "seg mech-modes", role: "group", "aria-label": "How to practise" }, MODES.filter(([k]) => allowed.includes(k)).map(([k, text]) => el("button", { type: "button", "aria-pressed": String(k === mode), data: { mode: k }, on: { click: () => setMode(k) } }, text)));
     const strip = el("ol", { class: "mech-strip", "aria-label": "Steps" }), body = el("div", { class: "mech-body" });
     host.appendChild(el("section", { class: "mech", "aria-label": m.title },
       titled("h2", "mech-title", m.title), m.from ? el("p", { class: "small muted mech-from" }, m.from) : null,
@@ -44,7 +47,7 @@
 
     const put = (box, opts) => { const c = ORGO.mol.stage(box, opts); ctls.push(c); return c };
     const button = (text, run, cls) => el("button", { type: "button", class: "btn" + (cls ? " " + cls : ""), on: { click: run } }, text);
-    function setMode(k) { if (!MODES.some(x => x[0] === k)) return; mode = k; [...seg.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === k))); reset(); render() }
+    function setMode(k) { if (!allowed.includes(k)) return; mode = k; [...seg.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === k))); reset(); render() }
     const go = k => { i = k; finished = false; render("step") };
     const named = k => mode === "watch" || mode === "complete" || res[k].done || res[k].shown;
 
@@ -131,8 +134,8 @@
       if (mode === "paper") { score = res.filter(r => r.tick).length / n; helped = false }
       else if (mode !== "watch") { score = res.reduce((a, r) => a + r.score, 0) / n; helped = res.some(r => r.helped) }
       result = { score, helped, mode }; finished = true;
-      // watching is not practice, so it is not recorded as an answer
-      if (score != null && ORGO.learn && ORGO.learn.record) ORGO.learn.record("mech:" + id, { score, hinted: helped });
+      // watching is not practice, so it is not recorded as an answer. A run finished with help is recorded as hinted: a miss, and no event
+      if (score != null && ORGO.learn && ORGO.learn.record) ORGO.learn.record("mech:" + id, { score, hinted: helped, inner: !!o.inQuestion });
       render("step");
       if (o.onDone) o.onDone(result);
     }
@@ -144,7 +147,8 @@
       const sum = mode === "watch" ? "You have seen every step. The next move is to draw the arrows yourself."
         : mode === "paper" ? "You ticked " + ticks + " of " + plural(n, "step") + "." + (ticks < n ? " Redraw the steps you missed before you move on." : "")
         : "You drew " + own + " of " + plural(n, "step") + " on your own." + (own < n ? " Steps that were shown do not count yet, so come back to this one." : "");
-      const row = el("div", { class: "btn-row" }, button("Again", () => { reset(); render("step") }), HARDER[mode] ? button(HARDER[mode][1], () => setMode(HARDER[mode][0]), "primary") : null);
+      const up = HARDER[mode] && allowed.includes(HARDER[mode][0]) ? HARDER[mode] : null;
+      const row = el("div", { class: "btn-row" }, button("Again", () => { reset(); render("step") }), up ? button(up[1], () => setMode(up[0]), "primary") : null);
       body.append(head, box, m.takeaway ? el("div", { class: "panel mech-takeaway" }, el("b", {}, "Takeaway. "), ORGO.html(m.takeaway)) : "", el("p", { class: "mech-sum", role: "status" }, sum), row);
       return head;
     }

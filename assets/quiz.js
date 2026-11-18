@@ -32,14 +32,39 @@
   const typeName = id => { const t = ORGO.type && ORGO.type(id); return t ? (t.short || t.title || id) : (id || "Question") };
   const btn = (label, cls, click, act) => el("button", { type: "button", class: "btn" + (cls ? " " + cls : ""), data: act ? { act } : null, on: { click } }, label);
   let uid = 0;
+  // Eureka's preferences (none outside Eureka)
+  const prefs = () => (ORGO.prefs ? ORGO.prefs() : {});
+  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0 };
+  // a key press that is the page's to use: no other handler took it, not held down, no modifier, no sheet (ours or Eureka's) over the page
+  const free = e => !(e.defaultPrevented || e.repeat || e.ctrlKey || e.metaKey || e.altKey || (ORGO.ui && ORGO.ui.covered ? ORGO.ui.covered() : document.querySelector(".veil")));
+  const typing = t => !!(t && t.closest && t.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])'));
+  // a control of its own, on which Enter already does something
+  const control = t => !!(t && t.closest && t.closest('input, textarea, select, button, a[href], summary, canvas, [role="button"], [contenteditable]:not([contenteditable="false"])'));
+  // The order of the choices. As written when the item says so (its text names the choices by place). Shuffled otherwise,
+  // except when the student asked Eureka to "keep answers in the same order": then an order made from the question's id,
+  // the same on every visit, and not the written one, in which the right choice comes first in most questions.
+  const steady = () => !!prefs().fixedOrder, seedOf = item => String(item.id || item.stem || "");
+  const orderOf = item => {
+    const n = item.choices.length; if (item.fixed) return [...Array(n).keys()]; if (!steady()) return shuffled(n);
+    const at = k => hash(seedOf(item) + "#" + k); return [...Array(n).keys()].sort((a, b) => at(a) - at(b) || a - b);
+  };
 
   // ------------------------------------------------------------------ answer controls
-  // Each returns {el, ready(), touched(), need, mark()}. mark() locks the control, shows the feedback and returns the score.
+  // Each returns {el, ready(), touched(), need, mark(), get(), set(state)}.
+  //   mark()      locks the control, shows the feedback and returns the score
+  //   get()       what the student has entered so far, as plain JSON, or null while the control is untouched:
+  //               mcq the place of the chosen choice in item.choices · multi the places of the ticked choices, in order ·
+  //               numeric the text typed · rank the order shown, as places in item.items, top first ·
+  //               classify the bin chosen on each line, in the order of item.items (null on a line not yet chosen)
+  //   set(state)  puts back what get() gave (null clears it), without marking and without calling onPick or onSubmit.
+  //               After it, ready(), touched() and mark() answer as if the student had entered it. Once marked it does nothing.
+  // Places are places in the item as written, never on screen (the choices may be shuffled), so a saved state fits any later drawing.
   // choices are lettered as on the exam; numbered when the question's own text numbers them ("diagram 2", "product 3")
   const tagsOf = item => /\b(diagram|choice|option|structure|product|compound|reaction|statement|chair|alkene)s? [1-6]\b/i.test(JSON.stringify([item.stem, item.solution, (item.choices || []).map(c => c.why)])) ? "123456" : "ABCDEF";
   const W = {
+    // o: {defer (a second press takes the choice back: the mock exam), onPick, fewer (Eureka's "Fewer choices at once"), onMore}
     mcq(item, o) {
-      const idx = item.fixed ? [...item.choices.keys()] : shuffled(item.choices.length);
+      const idx = orderOf(item), n = idx.length;
       const root = el("div", { class: "opts" + (item.layout === "pair" ? " pair" : ""), role: "group", "aria-label": "Choices" });
       let picked = -1, locked = false;
       const btns = idx.map((ci, k) => {
@@ -47,14 +72,28 @@
           el("span", { class: "opt-k", "aria-hidden": "true" }, tagsOf(item)[k] || String(k + 1)), el("span", { class: "opt-h", html: item.choices[ci].h }));
         root.appendChild(b); return b;
       });
+      const paint = () => btns.forEach((b, j) => { b.classList.toggle("picked", j === picked); b.setAttribute("aria-pressed", String(j === picked)) });
       function pick(k) {
-        if (locked || !btns[k]) return;
-        picked = picked === k && o.defer ? -1 : k;
-        btns.forEach((b, j) => { b.classList.toggle("picked", j === picked); b.setAttribute("aria-pressed", String(j === picked)) });
+        if (locked || !btns[k] || btns[k].hidden) return;
+        picked = picked === k && o.defer ? -1 : k; paint();
         if (o.onPick) o.onPick();
       }
+      // "Fewer choices at once", as Eureka's shared/prefs.js does it in the other classes: with four choices or more, the
+      // right one and one other, each in its own place under its own letter, and a button that shows all of them
+      let more = null;
+      const showAll = () => { if (!more) return; btns.forEach(b => { b.hidden = false }); more.remove(); more = null; if (o.onMore) o.onMore() };
+      if (o.fewer && n >= 4) {
+        const wrong = idx.map((ci, k) => k).filter(k => !item.choices[idx[k]].ok);
+        if (wrong.length > 1 && wrong.length < n) {
+          const keep = wrong[steady() ? hash(seedOf(item) + "#keep") % wrong.length : Math.floor(Math.random() * wrong.length)];
+          wrong.forEach(k => { btns[k].hidden = k !== keep });
+          more = el("button", { type: "button", class: "px-more q-more", on: { click: showAll } }, `Show all ${n} choices`); root.appendChild(more);
+        }
+      }
       return {
-        el: root, n: btns.length, pick, need: "Choose one answer.", ready: () => picked >= 0, touched: () => picked >= 0,
+        el: root, n, pick, need: "Choose one answer.", ready: () => picked >= 0, touched: () => picked >= 0,
+        get: () => (picked < 0 ? null : idx[picked]),
+        set(ci) { if (locked) return; picked = ci == null ? -1 : idx.indexOf(ci); if (picked >= 0 && btns[picked].hidden) showAll(); paint() },
         mark() {
           locked = true; let score = 0;
           btns.forEach((b, j) => {
@@ -69,17 +108,20 @@
       };
     },
     multi(item, o) {
-      const idx = item.fixed ? [...item.choices.keys()] : shuffled(item.choices.length);
+      const idx = orderOf(item);
       const root = el("div", { class: "opts multi", role: "group", "aria-label": "Choices. Tick all that apply." });
-      let touched = false;
+      let touched = false, locked = false;
       const rows = idx.map((ci, k) => {
         const box = el("input", { type: "checkbox", on: { change: () => { touched = true; lab.classList.toggle("picked", box.checked) } } });
         const lab = el("label", { class: "opt", data: { i: ci } }, box, el("b", { class: "opt-letter", "aria-hidden": "true" }, (tagsOf(item)[k] || String(k + 1)) + ". "), el("span", { class: "opt-h", html: item.choices[ci].h }));
-        root.appendChild(lab); return { box, lab, c: item.choices[ci] };
+        root.appendChild(lab); return { box, lab, ci, c: item.choices[ci] };
       });
       return {
         el: root, need: "", ready: () => true, touched: () => touched,
+        get: () => (touched ? rows.filter(r => r.box.checked).map(r => r.ci).sort((a, b) => a - b) : null),
+        set(list) { if (locked) return; touched = Array.isArray(list); rows.forEach(r => { r.box.checked = touched && list.includes(r.ci); r.lab.classList.toggle("picked", r.box.checked) }) },
         mark() {
+          locked = true;
           rows.forEach(r => {
             const on = r.box.checked, ok = on === !!r.c.ok; r.box.disabled = true;
             if (r.c.ok) r.lab.dataset.c = "true";
@@ -101,13 +143,17 @@
         el("span", { id: id + "h", class: "small muted" }, "A number. A minus sign in front is fine."));
       return {
         el: root, need: "Type a number first.", ready: () => S.num(inp.value) != null, touched: () => inp.value.trim() !== "",
+        get: () => (inp.value.trim() === "" ? null : inp.value),
+        set(text) { if (!inp.readOnly) inp.value = text == null ? "" : String(text) },
         mark() {
           const x = S.num(inp.value), score = S.numeric(x, item.lo, item.hi); inp.readOnly = true;
           const unit = item.unit ? " " + item.unit : "";
-          const out = el("div", { class: "explain" }, x == null ? null : mark(!!score), x == null ? null : " ",
-            el("span", { html: `Expected: about <b>${num(item.answer)}</b>${unit}. Accepted: ${num(item.lo)} to ${num(item.hi)}.` }),
-            item.note ? el("span", { class: "num-note", html: " " + item.note }) : null);
-          root.appendChild(out); return score;
+          // the mark and the expected answer are never held back: Eureka's "Explanations" preference hides what has the class
+          // "explain", which here is the note alone
+          root.appendChild(el("div", { class: "panel num-result" }, x == null ? null : mark(!!score), x == null ? null : " ",
+            el("span", { html: `Expected: about <b>${num(item.answer)}</b>${unit}. Accepted: ${num(item.lo)} to ${num(item.hi)}.` })));
+          if (item.note) root.appendChild(el("div", { class: "explain num-note", html: item.note }));
+          return score;
         }
       };
     },
@@ -147,6 +193,12 @@
         el("p", { class: "small muted" }, "Use the arrows, or tap an item and then tap the place it should go."), list, say);
       return {
         el: root, need: "", ready: () => true, touched: () => touched,
+        get: () => (touched ? ord.slice() : null),
+        set(order) {
+          if (locked) return; sel = -1; say.textContent = "";
+          const all = Array.isArray(order) && order.length === n && order.slice().sort((a, b) => a - b).every((v, i) => v === i);     // every item, once each
+          touched = all; if (all) ord = order.slice(); draw();
+        },
         mark() {
           locked = true; sel = -1; draw(); say.textContent = "";
           ord.forEach((ci, p) => { const ok = ci === p, r = rows[ci]; r.li.classList.add(ok ? "right" : "wrong"); r.li.appendChild(el("span", { class: "rank-mark" }, mark(ok, ok ? "Right place" : "Belongs in place " + (ci + 1)))) });
@@ -156,21 +208,26 @@
     },
     classify(item, o) {
       const picked = item.items.map(() => null); let locked = false;
+      const paint = i => [...rows[i].seg.children].forEach(x => x.setAttribute("aria-pressed", String(x.dataset.bin === picked[i])));
       const rows = item.items.map((it, i) => {
-        const seg = el("div", { class: "seg", role: "group", "aria-label": "Choose one" }, item.bins.map(b => el("button", { type: "button", "aria-pressed": "false", data: { bin: b }, on: { click: e => {
-          if (locked) return; picked[i] = b; const me = e.currentTarget;[...seg.children].forEach(x => x.setAttribute("aria-pressed", String(x === me)));
+        const seg = el("div", { class: "seg", role: "group", "aria-label": "Choose one" }, item.bins.map(b => el("button", { type: "button", "aria-pressed": "false", data: { bin: b }, on: { click: () => {
+          if (locked) return; picked[i] = b; paint(i);
         } } }, binLabel(b))));
         return { seg, row: el("div", { class: "cls-row" }, el("div", { class: "cls-h", html: it.h }), seg) };
       });
       return {
         el: el("div", { class: "cls" }, rows.map(r => r.row)), need: "Choose one for every line first.",
         ready: () => picked.every(p => p != null), touched: () => picked.some(p => p != null),
+        get: () => (picked.some(p => p != null) ? picked.slice() : null),
+        set(bins) { if (locked) return; rows.forEach((r, i) => { const b = Array.isArray(bins) ? bins[i] : null; picked[i] = item.bins.includes(b) ? b : null; paint(i) }) },
         mark() {
           locked = true;
           rows.forEach((r, i) => {
             const it = item.items[i], ok = picked[i] === it.bin;[...r.seg.children].forEach(b => { b.disabled = true; if (b.dataset.bin === it.bin) b.dataset.c = "true" });
             r.row.classList.add(ok ? "right" : "wrong");
-            r.row.appendChild(el("div", { class: "explain" }, mark(ok), ok ? " " : el("span", {}, " It is ", el("b", {}, binLabel(it.bin)), ". "), it.why ? el("span", { html: it.why }) : null));
+            // the mark and the right bin on a line of their own, always shown; the reason alone has the class "explain"
+            r.row.appendChild(el("div", { class: "cls-mark", style: { flex: "1 0 100%" } }, mark(ok), ok ? null : el("span", {}, " It is ", el("b", {}, binLabel(it.bin)), ".")));
+            if (it.why) r.row.appendChild(el("div", { class: "explain", html: it.why }));
           });
           return S.classify(picked, item.items.map(it => it.bin));
         }
@@ -220,16 +277,26 @@
     const box = el("section", { class: "q q-" + item.kind, "aria-label": "Question", data: { id: item.id || "", kind: item.kind } }, head(item), stem, body, after);
     host.appendChild(box);
 
-    function finish(score, conf, extra, shown) {
+    // helped: finished with help (the mechanism trainer's last hint, or "Show me"). It is kept as a miss and says so.
+    function finish(score, conf, extra, shown, helped) {
       if (finished) return; finished = true; if (key) document.removeEventListener("keydown", key);
-      score = Math.max(0, Math.min(1, +score || 0));
+      score = Math.max(0, Math.min(1, +score || 0)); if (helped) score = Math.min(score, (ORGO.learn && ORGO.learn.HELPED) || 0.75);
       const pct = Math.round(score * 100), word = score >= 0.999 ? "Right" : score <= 0 ? "Not quite" : `Partly right: ${pct} percent`;
-      const verdict = el("p", { class: "q-verdict", tabindex: "-1", role: "status" }, mark(score >= 0.8, word));
-      after.appendChild(verdict); if (extra) after.appendChild(extra); if (!shown) after.appendChild(solution(item));
+      const verdict = el("p", { class: "q-verdict", tabindex: "-1", role: "status" }, helped ? [el("b", { class: "q-helped" }, "Done with help."), " It does not count as right yet, and it will come back for another try."] : mark(score >= 0.8, word));
+      after.appendChild(verdict); if (extra) after.appendChild(extra);
+      // Eureka's "Explanations" preference: "When I ask" keeps the worked solution behind a button, and so does "When I miss"
+      // after a right answer. The marks and the reasons of the choices are Eureka's to show or hold back (shared/prefs.js).
+      if (!shown) {
+        const sol = solution(item), ex = prefs().explain;
+        if (ex === "ask" || (ex === "wrong" && score >= 0.8)) {
+          const open = el("button", { type: "button", class: "px-more q-show", on: { click: () => { open.replaceWith(sol); sol.tabIndex = -1; try { sol.focus({ preventScroll: true }) } catch (e) { } } } }, "Show the worked solution");
+          after.appendChild(open);
+        } else after.appendChild(sol);
+      }
       box.dataset.done = "1"; box.dataset.score = String(score);
-      if (!opts.review && item.id && !/^gen:/.test(item.id) && ORGO.learn) ORGO.learn.record(item.id, { score, conf: conf == null ? null : conf, secs: (Date.now() - t0) / 1000 });
+      if (!opts.review && item.id && !/^gen:/.test(item.id) && ORGO.learn) ORGO.learn.record(item.id, { score, conf: conf == null ? null : conf, secs: (Date.now() - t0) / 1000, hinted: !!helped });
       try { verdict.focus({ preventScroll: true }) } catch (e) { }
-      if (opts.onDone) opts.onDone({ score });
+      if (opts.onDone) opts.onDone({ score, helped: !!helped });
     }
 
     // on paper, then marked by the student: used when a drawing module is not on the page
@@ -246,18 +313,22 @@
 
     const k = item.kind;
     if (k === "mcq") {
-      const w = W.mcq(item, { onPick: () => finish(w.mark()) }); body.appendChild(w.el);
+      // "Fewer choices at once" only here, where one question is answered on its own (never in the mock exam room)
+      const w = W.mcq(item, { onPick: () => finish(w.mark()), fewer: !!prefs().fewer, onMore: () => hint && say() }); body.appendChild(w.el);
       // number keys answer only where the caller says one question is on screen (a session): on a page with several
-      // questions one key press would answer them all
-      if (opts.keys) {
+      // questions one key press would answer them all. Key 3 is the choice tagged C (or 3), and only while it is shown.
+      const opt = d => { const b = d >= 1 && d <= 6 && d <= w.n ? w.el.querySelectorAll(".opt")[d - 1] : null; return b && !b.hidden ? b : null };
+      const hint = opts.keys ? el("p", { class: "small muted q-keys" }) : null;
+      const say = () => { const ks = [1, 2, 3, 4, 5, 6].filter(opt); hint.textContent = ks.length === Math.min(6, w.n) ? `Keys 1 to ${ks.length} also choose.` : `Keys ${ks.slice(0, -1).join(", ")} and ${ks[ks.length - 1]} also choose.` };
+      if (hint) {
         key = e => {
           if (!box.isConnected || finished) { document.removeEventListener("keydown", key); return }
-          if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || "") || document.querySelector(".veil, .st-veil, .px-veil, .wb-veil")) return;
-          const d = +e.key, b = d >= 1 && d <= 6 && d <= w.n ? w.el.querySelectorAll(".opt")[d - 1] : null;
+          if (!free(e) || typing(e.target)) return;
+          const b = opt(+e.key);
           if (b) { e.preventDefault(); b.click() }      // through the button, so Eureka's "confirm before answering" sees it
         };
         document.addEventListener("keydown", key);
-        body.appendChild(el("p", { class: "small muted q-keys" }, `Keys 1 to ${Math.min(6, w.n)} also choose.`));
+        say(); body.appendChild(hint);
       }
     } else if (W[k]) {
       const msg = el("p", { class: "small q-msg", role: "status" });
@@ -293,10 +364,11 @@
     } else if (k === "mech" || k === "chair") {
       const got = r => {
         if (k === "mech" && r && typeof r === "object" && r.score == null) return;      // watched, not drawn: the question stays open
-        finish(typeof r === "number" ? r : r && typeof r.score === "number" ? r.score : r === false ? 0 : 1, r && r.conf != null ? r.conf : null);
+        finish(typeof r === "number" ? r : r && typeof r.score === "number" ? r.score : r === false ? 0 : 1, r && r.conf != null ? r.conf : null, null, false, !!(r && r.helped));
       };
       try {
-        if (k === "mech" && ORGO.mech && ORGO.mech.mount) ORGO.mech.mount(body, item.mech, { mode: "solo", onDone: got });
+        // inside a question the trainer offers only the modes that ask for the arrows, and records its run as part of this answer
+        if (k === "mech" && ORGO.mech && ORGO.mech.mount) ORGO.mech.mount(body, item.mech, { mode: "solo", inQuestion: true, onDone: got });
         else if (k === "chair" && ORGO.chair && ORGO.chair.ask) { ORGO.chair.ask(body, item, got); if (body.querySelector("[class*=stem]")) stem.remove() }
         else paper(k === "mech" ? "The mechanism trainer is not loaded on this page." : "The chair tool is not loaded on this page.");
       } catch (e) { console.warn("quiz: " + k + " module failed", e); paper("This drawing tool could not start.") }
@@ -374,31 +446,45 @@
         host.appendChild(el("div", { class: "empty" }, el("p", {}, "There are no questions ready for this session yet."), el("a", { class: "btn primary", href: ORGO.base + "drill/index.html" }, "Go to Practice")));
         if (opts.onEnd) opts.onEnd({ right: 0, total: 0, missed: [] }); return;
       }
-      const queue = list.slice(), first = {}, again = new Set(), skipped = []; let done = 0;
+      // A missed question comes back after up to three other questions, at most twice, and only while another question is
+      // left to stand between the tries (straight after its worked solution a try would test nothing). Once right it stops
+      // coming back. Still missed, it is due again at once (core.js), and the summary lists it.
+      const queue = list.slice(), first = {}, tries = {}, skipped = []; let done = 0, nextBtn = null;
       const count = el("span", { class: "sess-count" }), fill = el("i"), bar = el("div", { class: "bar", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": "100", "aria-label": "Progress through this session" }, fill);
       const stage = el("div", { class: "sess-stage", tabindex: "-1" }), foot = el("div", { class: "sess-foot" });
       const root = el("div", { class: "sess" }, el("header", { class: "sess-head" }, el("h2", { class: "sess-title" }, opts.title || "Practice"), count, bar), stage, foot);
       host.appendChild(root);
       const strip = shownNow => { const all = done + queue.length + (shownNow ? 1 : 0), pct = all ? Math.round(done / all * 100) : 100; fill.style.width = pct + "%"; bar.setAttribute("aria-valuenow", String(pct)); count.textContent = shownNow ? `Question ${done + 1} of ${all}` : `${done} of ${all} done` };
+      // once the question on screen is finished, Enter and the right arrow press "Next question" (or "See the summary"),
+      // as Eureka's list of keys says, unless the key is for a control of its own or a sheet is open. Focus is not moved.
+      const onKey = e => {
+        if (!root.isConnected) return document.removeEventListener("keydown", onKey);
+        if ((e.key === "Enter" || e.key === "ArrowRight") && nextBtn && nextBtn.isConnected && free(e) && !control(e.target)) { e.preventDefault(); nextBtn.click() }
+      };
+      document.addEventListener("keydown", onKey);
       function show(started) {
+        nextBtn = null;
         if (!queue.length) return summary();
-        const id = queue.shift(), item = D.items[id], second = id in first;
+        const id = queue.shift(), item = D.items[id], n = tries[id] || 0;
         strip(true); foot.textContent = ""; stage.textContent = "";
-        const slot = el("div", {}); if (second) stage.appendChild(el("p", {}, el("span", { class: "badge" }, "Second try"), " You missed this one earlier in the session."));
+        const slot = el("div", {}); if (n) stage.appendChild(el("p", {}, el("span", { class: "badge" }, n === 1 ? "Second try" : "Third try"), " You missed this one earlier in the session."));
         stage.appendChild(slot);
-        foot.appendChild(el("div", { class: "btn-row" }, btn("Skip this question", "ghost small", () => { if (!second) skipped.push(id); show(true) }, "skip")));
+        foot.appendChild(el("div", { class: "btn-row" }, btn("Skip this question", "ghost small", () => { if (!n) skipped.push(id); show(true) }, "skip")));
         mount(slot, item, { keys: true, onDone: r => {
-          done++; let note = null;
-          if (!second) first[id] = r.score;
-          if (r.score < 0.8 && !again.has(id) && queue.length) { again.add(id); queue.splice(Math.min(3, queue.length), 0, id); note = "This one will come back later in the session." }
+          done++; let note = null; tries[id] = n + 1;
+          if (!n) first[id] = r.score;
+          if (r.score < 0.8 && n < 2 && queue.length) { queue.splice(Math.min(3, queue.length), 0, id); note = "This one will come back later in the session." }
           strip(false); foot.textContent = "";
-          foot.appendChild(el("div", { class: "btn-row" }, btn(queue.length ? "Next question" : "See the summary", "primary", () => show(true), "next"), note ? el("span", { class: "small muted" }, note) : null));
+          nextBtn = btn(queue.length ? "Next question" : "See the summary", "primary", () => show(true), "next");
+          foot.appendChild(el("div", { class: "btn-row" }, nextBtn, note ? el("span", { class: "small muted" }, note) : null));
         } });
         if (started) { try { root.scrollIntoView({ block: "start", behavior: ORGO.reduced ? "auto" : "smooth" }); stage.focus({ preventScroll: true }) } catch (e) { } }
       }
       function summary() {
+        document.removeEventListener("keydown", onKey);
         const answered = Object.keys(first), right = answered.filter(id => first[id] >= 0.8), missed = answered.filter(id => first[id] < 0.8);
-        if (answered.length) { ORGO.learn.did(opts.kind || "mixed", answered.length); try { ORGO.eureka.done("session") } catch (e) { } }
+        // a step of the study plan counts only work of its own kind: a session started without a kind ticks none of them
+        if (answered.length) { if (opts.kind) ORGO.learn.did(opts.kind, answered.length); try { ORGO.eureka.done("session") } catch (e) { } }
         const dues = answered.map(id => (ORGO.learn.state(id) || {}).due).filter(Boolean), next = dues.length ? Math.min(...dues) : null;
         const sum = el("section", { class: "card sess-summary", tabindex: "-1", "aria-label": "Session summary" },
           el("h2", {}, "Session done"),
@@ -406,7 +492,7 @@
           skipped.length ? el("p", { class: "muted" }, `You skipped ${skipped.length}.`) : null,
           missed.length ? el("h3", {}, "Look at these again") : answered.length ? el("p", {}, "Nothing from this session needs a second look today.") : null,
           missed.length ? el("ul", { class: "sess-missed" }, missed.map(id => { const it = D.items[id], txt = ORGO.text(it.stem || ""); return el("li", {}, el("a", { href: ORGO.base + "exam/index.html#" + it.type }, typeName(it.type)), el("span", { class: "muted" }, ": " + (txt.length > 110 ? txt.slice(0, 107) + "..." : txt))) })) : null,
-          next ? el("p", {}, el("b", {}, "Next review: "), next <= Date.now() ? "the ones you missed are due again already. Give them a few hours, then choose Review what is due." : when(next) + ". Come back then and choose Review what is due.") : null,
+          next ? el("p", {}, el("b", {}, "Next review: "), next <= Date.now() ? "now. The ones still missed are due again at once. After a short break, choose Review what is due." : when(next) + ". Come back then and choose Review what is due.") : null,
           el("p", { class: "callout info" }, "Mixing the question types makes you choose the method each time, and coming back after a gap makes the memory last. Both feel harder than repeating one type, and both work better."),
           el("div", { class: "btn-row" }, el("a", { class: "btn primary", href: ORGO.base + "drill/index.html" }, "More practice"), el("a", { class: "btn", href: ORGO.base + "index.html" }, "Home")));
         root.textContent = ""; root.appendChild(sum); root.dataset.done = "1";
