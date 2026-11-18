@@ -35,6 +35,8 @@
 
   // ------------------------------------------------------------------ answer controls
   // Each returns {el, ready(), touched(), need, mark()}. mark() locks the control, shows the feedback and returns the score.
+  // choices are lettered as on the exam; numbered when the question's own text numbers them ("diagram 2", "product 3")
+  const tagsOf = item => /\b(diagram|choice|option|structure|product|compound|reaction|statement|chair|alkene)s? [1-6]\b/i.test(JSON.stringify([item.stem, item.solution, (item.choices || []).map(c => c.why)])) ? "123456" : "ABCDEF";
   const W = {
     mcq(item, o) {
       const idx = item.fixed ? [...item.choices.keys()] : shuffled(item.choices.length);
@@ -42,7 +44,7 @@
       let picked = -1, locked = false;
       const btns = idx.map((ci, k) => {
         const b = el("button", { type: "button", class: "opt", "aria-pressed": "false", data: { i: ci }, on: { click: () => pick(k) } },
-          el("span", { class: "opt-k", "aria-hidden": "true" }, String(k + 1)), el("span", { class: "opt-h", html: item.choices[ci].h }));
+          el("span", { class: "opt-k", "aria-hidden": "true" }, tagsOf(item)[k] || String(k + 1)), el("span", { class: "opt-h", html: item.choices[ci].h }));
         root.appendChild(b); return b;
       });
       function pick(k) {
@@ -70,9 +72,9 @@
       const idx = item.fixed ? [...item.choices.keys()] : shuffled(item.choices.length);
       const root = el("div", { class: "opts multi", role: "group", "aria-label": "Choices. Tick all that apply." });
       let touched = false;
-      const rows = idx.map(ci => {
+      const rows = idx.map((ci, k) => {
         const box = el("input", { type: "checkbox", on: { change: () => { touched = true; lab.classList.toggle("picked", box.checked) } } });
-        const lab = el("label", { class: "opt", data: { i: ci } }, box, el("span", { class: "opt-h", html: item.choices[ci].h }));
+        const lab = el("label", { class: "opt", data: { i: ci } }, box, el("b", { class: "opt-letter", "aria-hidden": "true" }, (tagsOf(item)[k] || String(k + 1)) + ". "), el("span", { class: "opt-h", html: item.choices[ci].h }));
         root.appendChild(lab); return { box, lab, c: item.choices[ci] };
       });
       return {

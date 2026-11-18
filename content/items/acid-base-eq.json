@@ -405,9 +405,9 @@
     "why": "Acetylene (25) is a stronger acid than ammonia (38). The weaker acid is on the right."
    },
    {
-    "h": "[[eq:CO + CC[O-]>>C[O-] + CCO]]",
+    "h": "[[eq:O + [OH-]>>[OH-] + O]]",
     "bin": "Neither: K = 1",
-    "why": "Methanol 15.5 and ethanol 15.9 are the same within half a unit: a mixture of both alkoxides, K close to 1."
+    "why": "Water is the acid on both sides, {{pKa}} 15.7 each time: K = 1. This is the lecture's own example."
    }
   ],
   "solution": {

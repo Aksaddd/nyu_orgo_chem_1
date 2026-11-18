@@ -1,333 +1,897 @@
 [
-  {
-    "id": "sn1-products-001", "type": "sn1-products", "role": "worked", "kind": "written", "diff": 2, "src": "site, modelled on Lecture 11/10, pages 2 and 4", "time": 10, "pts": 40,
-    "stem": "This bromide is warmed in methanol. Draw the substitution product and the elimination products, say which alkene is the major one, and draw the mechanism that leads to the substitution product and to the major alkene.\n[[rxn:CC1(Br)CCCCC1>CH3OH;heat>\"?\"]]",
-    "model": "<p><b>Substitution ({{SN1}}):</b> an ether, because the solvent is an alcohol.</p>\n[[mol:COC1(C)CCCCC1]]\n<p><b>Elimination ({{E1}}):</b> the major alkene (three carbon groups on the double bond), then the minor alkene (two).</p>\n[[mol:CC1=CCCCC1]]\n[[mol:C=C1CCCCC1]]\n<p>Both mechanisms pass through the same tertiary carbocation.</p>\n[[mech:sn1-methylcyclohexyl-bromide-methanol]]\n[[mech:e1-methylcyclohexyl-bromide-methanol]]",
-    "rubric": [
-      {"pts": 8, "h": "The ether: {{OCH3}} on the ring carbon that carried Br, drawn neutral"},
-      {"pts": 6, "h": "Both alkenes: the double bond inside the ring, and the double bond to the outside {{CH2}}"},
-      {"pts": 4, "h": "The alkene inside the ring marked as major because it is more substituted"},
-      {"pts": 6, "h": "Ionization: one arrow from the C-Br bond to Br, and the tertiary carbocation drawn with its charge"},
-      {"pts": 8, "h": "Substitution: an oxygen lone pair of methanol attacks the positive carbon, then a second methanol removes the proton from oxygen"},
-      {"pts": 8, "h": "Elimination: methanol takes a neighbouring ring hydrogen and the C-H electrons form the C=C (two arrows, starting from the same carbocation)"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify the substrate and the conditions", "h": "The carbon that carries Br is tertiary. Methanol is a polar protic solvent, a poor nucleophile and a weak base. Nothing stronger is in the flask, so the C-Br bond ionizes: {{SN1}} and {{E1}}.", "ask": {"q": "Is methoxide, {{CH3O-}}, the nucleophile here?", "a": "No. Nothing was added to make it. Only neutral {{CH3OH}} is present."}},
-        {"t": "Draw the carbocation", "h": "Bromide leaves with both electrons of the bond. The ring carbon is now positive, with three carbon groups on it."},
-        {"t": "Substitution branch", "h": "A lone pair on the oxygen of methanol bonds to the positive carbon. The oxygen then has three bonds and a positive charge, so a second methanol takes its hydrogen. The product is the ether 1-methoxy-1-methylcyclohexane.", "ask": {"q": "What is on the oxygen just after it attacks?", "a": "A carbon from the ring, its own {{CH3}}, a hydrogen, and a positive charge. The hydrogen has to come off."}},
-        {"t": "Elimination branch", "h": "Look at the carbons next to the positive carbon: two ring {{CH2}} groups (the same as each other) and the {{CH3}}. Losing a ring hydrogen gives 1-methylcyclohexene. Losing a methyl hydrogen gives methylenecyclohexane.", "ask": {"q": "How many different alkenes can this cation give?", "a": "Two: one from a ring hydrogen, one from a methyl hydrogen."}},
-        {"t": "Choose the major alkene and the effect of heat", "h": "1-Methylcyclohexene has three carbon groups on its double bond and methylenecyclohexane has two, so the first is major. Warming the reaction raises the share of elimination."}
-      ],
-      "answer": "SN1: 1-methoxy-1-methylcyclohexane. E1: 1-methylcyclohexene (major) and methylenecyclohexane (minor). Same carbocation for all three.",
-      "rule": "One carbocation, two fates: the solvent adds to it (SN1) or takes a neighbouring hydrogen (E1)."
+ {
+  "id": "sn1-products-001",
+  "type": "sn1-products",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "site, modelled on Lecture 11/10, pages 2 and 4",
+  "time": 10,
+  "pts": 40,
+  "stem": "This bromide is warmed in methanol. Draw the substitution product and the elimination products, say which alkene is the major one, and draw the mechanism that leads to the substitution product and to the major alkene.\n[[rxn:CC1(Br)CCCCC1>CH3OH;heat>\"?\"]]",
+  "model": "<p><b>Substitution ({{SN1}}):</b> an ether, because the solvent is an alcohol.</p>\n[[mol:COC1(C)CCCCC1]]\n<p><b>Elimination ({{E1}}):</b> the major alkene (three carbon groups on the double bond), then the minor alkene (two).</p>\n[[mol:CC1=CCCCC1]]\n[[mol:C=C1CCCCC1]]\n<p>Both mechanisms pass through the same tertiary carbocation.</p>\n[[mech:sn1-methylcyclohexyl-bromide-methanol]]\n[[mech:e1-methylcyclohexyl-bromide-methanol]]",
+  "rubric": [
+   {
+    "pts": 8,
+    "h": "The ether: {{OCH3}} on the ring carbon that carried Br, drawn neutral"
+   },
+   {
+    "pts": 6,
+    "h": "Both alkenes: the double bond inside the ring, and the double bond to the outside {{CH2}}"
+   },
+   {
+    "pts": 4,
+    "h": "The alkene inside the ring marked as major because it is more substituted"
+   },
+   {
+    "pts": 6,
+    "h": "Ionization: one arrow from the C-Br bond to Br, and the tertiary carbocation drawn with its charge"
+   },
+   {
+    "pts": 8,
+    "h": "Substitution: an oxygen lone pair of methanol attacks the positive carbon, then a second methanol removes the proton from oxygen"
+   },
+   {
+    "pts": 8,
+    "h": "Elimination: methanol takes a neighbouring ring hydrogen and the C-H electrons form the C=C (two arrows, starting from the same carbocation)"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify the substrate and the conditions",
+     "h": "The carbon that carries Br is tertiary. Methanol is a polar protic solvent, a poor nucleophile and a weak base. Nothing stronger is in the flask, so the C-Br bond ionizes: {{SN1}} and {{E1}}.",
+     "ask": {
+      "q": "Is methoxide, {{CH3O-}}, the nucleophile here?",
+      "a": "No. Nothing was added to make it. Only neutral {{CH3OH}} is present."
+     }
+    },
+    {
+     "t": "Draw the carbocation",
+     "h": "Bromide leaves with both electrons of the bond. The ring carbon is now positive, with three carbon groups on it."
+    },
+    {
+     "t": "Substitution branch",
+     "h": "A lone pair on the oxygen of methanol bonds to the positive carbon. The oxygen then has three bonds and a positive charge, so a second methanol takes its hydrogen. The product is the ether 1-methoxy-1-methylcyclohexane.",
+     "ask": {
+      "q": "What is on the oxygen just after it attacks?",
+      "a": "A carbon from the ring, its own {{CH3}}, a hydrogen, and a positive charge. The hydrogen has to come off."
+     }
+    },
+    {
+     "t": "Elimination branch",
+     "h": "Look at the carbons next to the positive carbon: two ring {{CH2}} groups (the same as each other) and the {{CH3}}. Losing a ring hydrogen gives 1-methylcyclohexene. Losing a methyl hydrogen gives methylenecyclohexane.",
+     "ask": {
+      "q": "How many different alkenes can this cation give?",
+      "a": "Two: one from a ring hydrogen, one from a methyl hydrogen."
+     }
+    },
+    {
+     "t": "Choose the major alkene and the effect of heat",
+     "h": "1-Methylcyclohexene has three carbon groups on its double bond and methylenecyclohexane has two, so the first is major. Warming the reaction raises the share of elimination."
     }
-  },
-  {
-    "id": "sn1-products-002", "type": "sn1-products", "role": "worked", "kind": "mcq", "diff": 2, "src": "site, modelled on Lecture 11/10, page 3", "fixed": true,
-    "stem": "This chloride, a single enantiomer, is left in water at room temperature. What is the substitution product?\n[[mol:CCC[C@](C)(Cl)CC]]",
-    "choices": [
-      {"h": "Only this alcohol: [[mol:CCC[C@@](C)(O)CC]]", "ok": false, "why": "This is the inverted product alone. Inversion is what {{SN2}} gives, and a tertiary carbon cannot do {{SN2}}."},
-      {"h": "Only this alcohol: [[mol:CCC[C@](C)(O)CC]]", "ok": false, "why": "This is retention alone. Water does not have to enter where chloride left: the carbocation in between is flat and open on both faces."},
-      {"h": "Both alcohols, [[mol:CCC[C@](C)(O)CC]] and [[mol:CCC[C@@](C)(O)CC]], in equal amounts", "ok": true, "why": "The tertiary carbocation is planar. Water attacks either face equally, so both enantiomers form: a racemic mixture."},
-      {"h": "[[mol:CCCC(C)(CC)[OH2+]]]", "ok": false, "why": "This is what exists after the second step. A second water removes a proton, and the product is the neutral alcohol."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary carbon, good leaving group, water as the solvent and the only nucleophile: {{SN1}}.", "ask": {"q": "Could this be {{SN2}}?", "a": "No. The carbon is tertiary: the back side is blocked."}},
-        {"t": "Draw the intermediate", "h": "Chloride leaves. The carbocation has three groups in one plane (methyl, ethyl, propyl) and an empty p orbital above and below it.", "ask": {"q": "Is the carbocation chiral?", "a": "No. It is flat, with a mirror plane. The information in the wedge is gone."}},
-        {"t": "Attack on both faces", "h": "Water bonds from the top or from the bottom with equal chance, then loses a proton. Top gives one enantiomer of 3-methylhexan-3-ol and bottom gives the other."},
-        {"t": "Name the result", "h": "Equal amounts of the R and the S alcohol: a racemic mixture, which does not rotate plane-polarized light."}
-      ],
-      "answer": "Both enantiomers of 3-methylhexan-3-ol in equal amounts (a racemic mixture)",
-      "rule": "SN1 at a stereocentre: flat carbocation, attack on either face, racemic product."
-    }
-  },
-  {
-    "id": "sn1-products-003", "type": "sn1-products", "role": "worked", "kind": "mcq", "diff": 2, "src": "site, modelled on Lecture 11/10, page 2",
-    "stem": "Each of these bromides is warmed in ethanol with nothing else added. Only one of them ionizes to a carbocation and gives {{SN1}} and {{E1}} products. Which one?",
-    "choices": [
-      {"h": "[[mol:BrC1C=CCCC1]]", "ok": true, "why": "The carbon that carries Br is next to a C=C: it is allylic. The cation is stabilized by resonance with the pi bond, so it forms."},
-      {"h": "[[mol:BrC1=CCCCC1]]", "ok": false, "why": "The Br is on a carbon of the double bond itself: vinyl. A vinyl cation does not form (and {{SN2}} is impossible there too)."},
-      {"h": "[[mol:CCCCBr]]", "ok": false, "why": "Primary. A primary carbocation is too unstable to form, so there is no {{SN1}} and no {{E1}}."},
-      {"h": "[[mol:CBr]]", "ok": false, "why": "Methyl. A methyl cation never forms. Methyl halides react by {{SN2}} only, and that needs a good nucleophile."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Find the carbon that carries the leaving group", "h": "In each structure, look only at the carbon bonded to Br and at what is attached to it.", "ask": {"q": "What makes a carbon able to ionize?", "a": "It must give a stable cation: tertiary, secondary, allylic or benzylic."}},
-        {"t": "Rule out methyl and primary", "h": "Bromomethane and 1-bromobutane would have to give a methyl or a primary cation. The lecture's list says no {{SN1}} for either."},
-        {"t": "Separate vinyl from allylic", "h": "Both ring compounds have a C=C, but in different places. Br on a double-bond carbon is vinyl: no {{SN1}}. Br on the carbon next to the double bond is allylic: {{SN1}} yes.", "ask": {"q": "Why does the position of the double bond matter so much?", "a": "In the allylic cation the empty p orbital lines up with the pi bond and the charge is shared by two carbons. In a vinyl cation it cannot be shared."}},
-        {"t": "Answer", "h": "3-Bromocyclohexene ionizes. The other three are recovered unchanged under these conditions."}
-      ],
-      "answer": "3-Bromocyclohexene, the allylic bromide",
-      "rule": "SN1 and E1: tertiary, secondary, allylic, benzylic. Never primary, methyl or vinyl."
-    }
-  },
-  {
-    "id": "sn1-products-004", "type": "sn1-products", "role": "worked", "kind": "written", "diff": 2, "src": "Lecture 11/10, page 3", "time": 8, "pts": 30,
-    "stem": "This tosylate, a single enantiomer (S), is dissolved in water. The 2-butanol that forms does not rotate plane-polarized light. Draw the mechanism and explain the result.\n[[mol:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1|abbr]]",
-    "model": "[[mech:sn1-2butyl-tosylate-water]]\n<p>The carbocation is planar, so water attacks the top face and the bottom face equally. The product is a 50:50 mixture of the two enantiomers, a <b>racemic mixture</b>, and the two rotations cancel.</p>\n[[mol:CC[C@H](C)O]]\n[[mol:CC[C@@H](C)O]]",
-    "rubric": [
-      {"pts": 8, "h": "Step 1: arrow from the C-O bond to the tosylate oxygen, and the secondary carbocation drawn"},
-      {"pts": 6, "h": "Step 2: arrow from a lone pair of water to the positive carbon"},
-      {"pts": 6, "h": "Step 3: a second water removes a proton from the positive oxygen (two arrows)"},
-      {"pts": 5, "h": "Says the carbocation is planar and can be attacked from either face"},
-      {"pts": 5, "h": "Both enantiomers of 2-butanol drawn (wedge and dash), in equal amounts: racemic"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Read the clue", "h": "A single enantiomer went in and a product with no optical rotation came out. Both enantiomers of 2-butanol must be there in equal amounts.", "ask": {"q": "What would {{SN2}} have given?", "a": "Only the inverted alcohol, (R)-2-butanol, which does rotate light."}},
-        {"t": "Decide the mechanism", "h": "Secondary carbon, an excellent leaving group (tosylate), water as a polar protic solvent and a poor nucleophile: the bond ionizes first. {{SN1}}."},
-        {"t": "Step 1", "h": "The C-O bond breaks and both electrons go to the tosylate oxygen. A flat secondary carbocation is left."},
-        {"t": "Step 2", "h": "Water's lone pair attacks the positive carbon from either face.", "ask": {"q": "Why are the two faces attacked equally?", "a": "The cation is flat and the two faces are mirror images of each other, so neither is easier to reach."}},
-        {"t": "Step 3", "h": "A second water takes a proton from the positive oxygen. The product is neutral 2-butanol."},
-        {"t": "State the stereochemistry", "h": "Half R and half S: a racemic mixture, which is optically inactive."}
-      ],
-      "answer": "SN1 in three steps. The planar carbocation gives (R)- and (S)-2-butanol in equal amounts: a racemic mixture.",
-      "rule": "Leave, attack, lose the proton. Flat cation, racemic product."
-    }
-  },
-  {
-    "id": "sn1-products-005", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
-    "stem": "What is the {{SN1}} product?\n[[rxn:CC(C)(C)Cl>CH3OH>\"?\"]]",
-    "choices": [
-      {"h": "[[mol:COC(C)(C)C]]", "ok": true, "why": "Methanol is the nucleophile, so the tertiary carbon gains {{OCH3}}, and the extra proton is removed."},
-      {"h": "[[mol:CC(C)(C)O]]", "ok": false, "why": "This alcohol would need water. The solvent here is methanol, and the solvent supplies the oxygen group."},
-      {"h": "[[mol:C[OH+]C(C)(C)C]]", "ok": false, "why": "The mechanism was stopped one step early. A second methanol removes the proton from the positive oxygen."},
-      {"h": "[[mol:COCC(C)C]]", "ok": false, "why": "The oxygen is on a primary carbon. The nucleophile bonds to the carbon that carried the leaving group, the tertiary one."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary chloride in a polar protic solvent: {{SN1}}."},
-        {"t": "Ionize", "h": "Chloride leaves and the tert-butyl cation forms."},
-        {"t": "Add the solvent and lose the proton", "h": "The oxygen of methanol bonds to the positive carbon, then a second methanol takes the O-H proton. The product is tert-butyl methyl ether."}
-      ],
-      "answer": "tert-Butyl methyl ether, {{(CH3)3COCH3}}",
-      "rule": "The solvent is the nucleophile: water gives an alcohol, an alcohol gives an ether."
-    }
-  },
-  {
-    "id": "sn1-products-006", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
-    "stem": "Three of these bromides form a carbocation in warm water. Which one does <b>not</b>?",
-    "choices": [
-      {"h": "[[mol:CC(Br)=C]]", "ok": true, "why": "The Br is on a carbon of the C=C: a vinyl bromide. The lecture's list is clear: vinyl-LG, no {{SN1}}."},
-      {"h": "[[mol:CCC(C)(C)Br]]", "ok": false, "why": "Tertiary: this is the best kind of substrate for ionization."},
-      {"h": "[[mol:CC(Br)c1ccccc1]]", "ok": false, "why": "Secondary and benzylic: the cation is next to the ring and is stabilized by resonance. It forms easily."},
-      {"h": "[[mol:C=CC(C)Br]]", "ok": false, "why": "Secondary and allylic: the cation is next to a C=C and is stabilized by resonance. It forms."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Look at the carbon bonded to Br", "h": "Tertiary in one, next to a benzene ring in one, next to a C=C in one, and part of a C=C in one."},
-        {"t": "Apply the list", "h": "Tertiary, benzylic and allylic carbons ionize. A vinyl carbon does not."},
-        {"t": "Do not be fooled by the count of carbons", "h": "The vinyl carbon in 2-bromopropene has two carbon neighbours, which can look secondary. What matters is that it is an {{sp2}} carbon of a double bond."}
-      ],
-      "answer": "2-Bromopropene, the vinyl bromide",
-      "rule": "Next to a double bond (allylic): yes. On the double bond (vinyl): never."
-    }
-  },
-  {
-    "id": "sn1-products-007", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
-    "stem": "Which is the major <b>elimination</b> product?\n[[rxn:CCC(C)(C)Br>H2O;heat>\"?\"]]",
-    "choices": [
-      {"h": "[[mol:CC=C(C)C]]", "ok": true, "why": "The hydrogen comes from the {{CH2}} next to the positive carbon. The double bond has three carbon groups on it: the more substituted alkene."},
-      {"h": "[[mol:C=C(C)CC]]", "ok": false, "why": "This alkene does form, by loss of a methyl hydrogen, but it has only two carbon groups on the double bond. It is the minor alkene."},
-      {"h": "[[mol:CC(C)C=C]]", "ok": false, "why": "This double bond does not include the carbon that carried Br. {{E1}} removes a hydrogen from a carbon directly next to the positive carbon."},
-      {"h": "[[mol:CCC(C)(C)O]]", "ok": false, "why": "This is the substitution ({{SN1}}) product. It also forms, but the question asks for the elimination product."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Draw the carbocation", "h": "Bromide leaves from the tertiary carbon."},
-        {"t": "List the neighbouring hydrogens", "h": "Two methyl groups and one {{CH2}} are next to the positive carbon."},
-        {"t": "Compare the alkenes", "h": "Loss of a {{CH2}} hydrogen gives 2-methylbut-2-ene (three carbon groups on C=C). Loss of a {{CH3}} hydrogen gives 2-methylbut-1-ene (two). The more substituted one is major."}
-      ],
-      "answer": "2-Methylbut-2-ene",
-      "rule": "E1: the double bond includes the old C-LG carbon, and the more substituted alkene is major."
-    }
-  },
-  {
-    "id": "sn1-products-008", "type": "sn1-products", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 6, "pts": 20,
-    "stem": "Draw the mechanism of this reaction: three steps, with curved arrows.\n[[rxn:CC(C)(C)Br + CCO>>CCOC(C)(C)C + Br]]",
-    "model": "<p><b>Step 1</b> (slow): the C-Br bond breaks. One arrow, from the bond to Br.</p>\n[[rxn:CC(C)(C)Br>>C[C+](C)C + [Br-]]]\n<p><b>Step 2</b>: a lone pair on the oxygen of ethanol attacks the positive carbon. One arrow.</p>\n[[rxn:C[C+](C)C + CCO>>CC[OH+]C(C)(C)C]]\n<p><b>Step 3</b>: a second ethanol removes the proton. Two arrows: its lone pair to H, and the O-H bond onto the positive oxygen.</p>\n[[rxn:CC[OH+]C(C)(C)C + CCO>>CCOC(C)(C)C + CC[OH2+]]]",
-    "rubric": [
-      {"pts": 6, "h": "Step 1: arrow from the C-Br bond to Br, tert-butyl cation and bromide drawn"},
-      {"pts": 6, "h": "Step 2: arrow from an oxygen lone pair of ethanol to the positive carbon, positive oxygen drawn with its H"},
-      {"pts": 6, "h": "Step 3: a second ethanol (not {{HO-}} or {{CH3CH2O-}}) removes the proton, two arrows"},
-      {"pts": 2, "h": "Charges balance in every step and the ether is neutral"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Leave", "h": "Tertiary bromide, protic solvent: the leaving group goes first, alone. This is the slow step."},
-        {"t": "Attack", "h": "Ethanol is neutral, so after it bonds to carbon its oxygen carries three bonds and a positive charge."},
-        {"t": "Lose the proton", "h": "The only base present is more ethanol. It takes the proton and leaves the neutral ether."}
-      ],
-      "answer": "Three steps: ionization, attack by ethanol, loss of a proton to a second ethanol. Product: tert-butyl ethyl ether.",
-      "rule": "SN1 with a neutral nucleophile is three steps."
-    }
-  },
-  {
-    "id": "sn1-products-009", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 2, "src": "Lecture 11/10, page 4",
-    "stem": "tert-Butyl bromide in water gives an alcohol and an alkene. The reaction is repeated at a higher temperature. Which product's share goes up?\n[[rxn:CC(C)(C)Br>H2O>CC(C)(C)O + CC(C)=C]]",
-    "choices": [
-      {"h": "[[mol:CC(C)=C]]", "ok": true, "why": "The alkene is the {{E1}} product. The lecture: {{E1}} is favoured at high temperature, {{SN1}} at lower temperature."},
-      {"h": "[[mol:CC(C)(C)O]]", "ok": false, "why": "The alcohol is the {{SN1}} product, which is favoured at lower temperature."},
-      {"h": "Neither: both come from the same carbocation, so the ratio cannot change", "ok": false, "why": "They do share the carbocation, but the two steps that follow it are different reactions, and they respond differently to temperature."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Name the two products", "h": "The alcohol is substitution ({{SN1}}). The alkene is elimination ({{E1}})."},
-        {"t": "Find the branch point", "h": "Both come from the tert-butyl cation. Water either bonds to the positive carbon or takes a hydrogen from a neighbouring {{CH3}}."},
-        {"t": "Apply the temperature rule", "h": "High temperature favours elimination, so the share of 2-methylpropene rises."}
-      ],
-      "answer": "The alkene, 2-methylpropene",
-      "rule": "Heat favours elimination."
-    }
-  },
-  {
-    "id": "sn1-products-010", "type": "sn1-products", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 8, "pts": 30,
-    "stem": "Draw the substitution product and both elimination products. Name the mechanism that gives each, and say which alkene is major.\n[[rxn:CCC(C)(C)Cl>CH3CH2OH;heat>\"?\"]]",
-    "model": "<p><b>{{SN1}}:</b> the ether (the solvent is ethanol).</p>\n[[mol:CCOC(C)(C)CC]]\n<p><b>{{E1}}:</b> the major alkene, then the minor alkene.</p>\n[[mol:CC=C(C)C]]\n[[mol:C=C(C)CC]]\n<p>All three come from the same tertiary carbocation. 2-Methylbut-2-ene is major because its double bond carries three carbon groups, against two.</p>\n[[mol:CC[C+](C)C]]",
-    "rubric": [
-      {"pts": 10, "h": "The ether, with {{OCH2CH3}} on the tertiary carbon, drawn neutral"},
-      {"pts": 6, "h": "2-Methylbut-2-ene"},
-      {"pts": 6, "h": "2-Methylbut-1-ene"},
-      {"pts": 4, "h": "2-Methylbut-2-ene marked major because it is more substituted"},
-      {"pts": 4, "h": "SN1 and E1 named, with the shared tertiary carbocation"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary chloride, ethanol, no strong base: ionization, then {{SN1}} and {{E1}}."},
-        {"t": "Substitution", "h": "Ethanol's oxygen bonds to the positive carbon and loses its proton: an ethyl ether."},
-        {"t": "Elimination", "h": "Neighbouring carbons with hydrogens: one {{CH2}} and two equivalent {{CH3}} groups. That makes two different alkenes."},
-        {"t": "Rank the alkenes", "h": "Three carbon groups on the double bond beats two: 2-methylbut-2-ene is major. Heat raises the share of both alkenes."}
-      ],
-      "answer": "SN1: 2-ethoxy-2-methylbutane. E1: 2-methylbut-2-ene (major) and 2-methylbut-1-ene (minor).",
-      "rule": "Count the different neighbouring carbons with H: that is the number of E1 alkenes."
-    }
-  },
-  {
-    "id": "sn1-products-011", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 2, "src": "site, modelled on Lecture 11/10, page 2",
-    "stem": "1-Chlorobut-2-ene is a primary chloride, yet it reacts in water through a carbocation and gives two alcohols, both {{C4H8O}}. One is shown. Which is the other?\n[[rxn:C/C=C/CCl>H2O>C/C=C/CO + \"?\"]]",
-    "choices": [
-      {"h": "[[mol:C=CC(C)O]]", "ok": true, "why": "The allylic cation has its charge on both ends of the three-carbon unit. Water at the far end gives this alcohol, with the double bond moved."},
-      {"h": "[[mol:OCCC=C]]", "ok": false, "why": "Here the double bond has moved but the OH has not. In an allylic cation the pi bond and the positive end swap places together."},
-      {"h": "[[mol:CC(O)CC]]", "ok": false, "why": "The double bond has disappeared and the formula is {{C4H10O}}. Nothing in this reaction adds hydrogen."},
-      {"h": "[[mol:C=C(C)CO]]", "ok": false, "why": "The carbon skeleton is branched. Resonance moves electrons, not carbon atoms."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Explain why a primary chloride ionizes", "h": "The carbon is primary but allylic. The flowchart makes this exception: allylic and benzylic carbons can form cations."},
-        {"t": "Draw both forms of the cation", "h": "Move the pi electrons toward the positive {{CH2}}: the double bond is now at the end of the chain and the positive charge is on the third carbon. One cation, two drawings."},
-        {"t": "Attack each positive end", "h": "Water at the end {{CH2}} gives but-2-en-1-ol (shown). Water at the third carbon gives but-3-en-2-ol."},
-        {"t": "Check the formula", "h": "Both are {{C4H8O}} and both keep one C=C."}
-      ],
-      "answer": "But-3-en-2-ol",
-      "rule": "An allylic cation is positive at both ends: two substitution products."
-    }
-  },
-  {
-    "id": "sn1-products-012", "type": "sn1-products", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 7, "pts": 25,
-    "stem": "This chloride, a single enantiomer, reacts in water at room temperature although its carbon is only secondary. Draw the substitution product or products with stereochemistry, and explain why it ionizes so easily.\n[[mol:C[C@H](Cl)c1ccccc1]]",
-    "model": "<p>The products are both enantiomers of 1-phenylethanol, in equal amounts (racemic).</p>\n[[mol:C[C@H](O)c1ccccc1]]\n[[mol:C[C@@H](O)c1ccccc1]]\n<p>The carbocation is <b>benzylic</b>: the positive carbon is attached to the ring, its empty p orbital overlaps the ring's pi electrons, and the charge is shared with the ring by resonance. A secondary benzylic cation forms easily.</p>\n[[mol:C[CH+]c1ccccc1]]\n<p>The cation is planar, so water attacks either face.</p>",
-    "rubric": [
-      {"pts": 8, "h": "Both enantiomers of the alcohol drawn, one with OH on a wedge and one on a dash"},
-      {"pts": 4, "h": "Equal amounts: a racemic mixture"},
-      {"pts": 5, "h": "The carbocation drawn, with the charge on the carbon next to the ring"},
-      {"pts": 5, "h": "Benzylic: stabilized by resonance with the ring"},
-      {"pts": 3, "h": "Planar cation, attacked from either face"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "The carbon carries a methyl group and a phenyl group: secondary and benzylic."},
-        {"t": "Explain the easy ionization", "h": "The ring's pi electrons share the positive charge. Resonance stabilizes the cation, so the C-Cl bond ionizes in water."},
-        {"t": "Substitution", "h": "Water attacks the flat cation from both faces and then loses a proton."},
-        {"t": "Stereochemistry", "h": "One enantiomer in, both out, in equal amounts."}
-      ],
-      "answer": "Racemic 1-phenylethanol. The secondary cation forms because it is benzylic (resonance with the ring).",
-      "rule": "Benzylic and allylic cations are stabilized by resonance. SN1 still racemizes."
-    }
-  },
-  {
-    "id": "sn1-products-013", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 3, "src": "site", "fixed": true,
-    "stem": "This bromide is left in water. Two alcohols, X and Y, are possible. What forms?\n[[ring:1u:Br,1d:CH3,4u:CH3]]\nX, then Y:\n[[ring:1d:OH,1u:CH3,4u:CH3]]\n[[ring:1u:OH,1d:CH3,4u:CH3]]",
-    "choices": [
-      {"h": "Only X, with OH on the face opposite to where Br was", "ok": false, "why": "That is inversion alone, the {{SN2}} result. This carbon is tertiary: it reacts through a flat carbocation."},
-      {"h": "Only Y, with OH on the face where Br was", "ok": false, "why": "The carbocation does not remember which face the bromide left from."},
-      {"h": "X and Y, which are enantiomers: a racemic mixture", "ok": false, "why": "Both do form, but they are not mirror images. The methyl on carbon 4 stays up in both, so X and Y are cis and trans isomers of each other."},
-      {"h": "X and Y, which are diastereomers", "ok": true, "why": "Water attacks both faces of the planar cation. Carbon 4 is untouched, so the two products differ at one of two stereo positions: diastereomers (cis and trans)."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary bromide in water: {{SN1}}."},
-        {"t": "Draw the cation", "h": "Carbon 1 becomes flat. The methyl on carbon 4 is still on a wedge."},
-        {"t": "Attack both faces", "h": "OH up at carbon 1 gives Y. OH down gives X. Both form."},
-        {"t": "Name the relationship", "h": "X and Y have the same connections and differ in whether the two methyl groups are on the same face or on opposite faces. They are not mirror images: diastereomers. The word racemic is for a pair of enantiomers only."}
-      ],
-      "answer": "Both X and Y: a mixture of diastereomers",
-      "rule": "SN1 scrambles one carbon. With a second stereocentre left alone, the products are diastereomers."
-    }
-  },
-  {
-    "id": "sn1-products-014", "type": "sn1-products", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 10, "pts": 40,
-    "stem": "This chloride gives two alcohols in water, both {{C5H10O}}. Draw both. Then draw the mechanism that leads to the alcohol whose OH is <b>not</b> on the carbon that carried the chlorine.\n[[mol:C=CC(C)(C)Cl]]",
-    "model": "<p>The two alcohols:</p>\n[[mol:C=CC(C)(C)O]]\n[[mol:CC(C)=CCO]]\n<p>The carbocation is allylic. Its positive charge is shared by the tertiary carbon and the end {{CH2}}, and water can bond to either.</p>\n[[mech:sn1-allylic-chloride-water]]",
-    "rubric": [
-      {"pts": 6, "h": "Alcohol with OH where Cl was (2-methylbut-3-en-2-ol)"},
-      {"pts": 8, "h": "Alcohol with OH on the end carbon and the double bond moved (3-methylbut-2-en-1-ol)"},
-      {"pts": 6, "h": "Ionization: arrow from the C-Cl bond to Cl, cation drawn"},
-      {"pts": 8, "h": "Second resonance form of the cation, with one arrow from the pi bond"},
-      {"pts": 6, "h": "Water attacks the end carbon"},
-      {"pts": 6, "h": "A second water removes the proton, neutral alcohol"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary and allylic chloride in water: it ionizes."},
-        {"t": "Draw the cation twice", "h": "First with the charge on the tertiary carbon. Then push the pi electrons toward it: the charge appears on the end {{CH2}} and the double bond is in the middle."},
-        {"t": "Attack each positive carbon", "h": "Water at the tertiary carbon gives 2-methylbut-3-en-2-ol. Water at the end carbon gives 3-methylbut-2-en-1-ol."},
-        {"t": "Finish and check", "h": "Each oxygen loses a proton to a second water. Both products are {{C5H10O}} with one C=C."}
-      ],
-      "answer": "2-Methylbut-3-en-2-ol and 3-methylbut-2-en-1-ol, from one allylic cation",
-      "rule": "Resonance puts the charge on two carbons, and the nucleophile can bond to either."
-    }
-  },
-  {
-    "id": "sn1-products-015", "type": "sn1-products", "role": "practice", "kind": "mcq", "diff": 3, "src": "site", "fixed": true,
-    "stem": "Each starting material is a single enantiomer. Which reaction gives a racemic substitution product?",
-    "choices": [
-      {"h": "[[rxn:CC[C@H](C)Br>NaSH;DMF>\"?\"]]", "ok": false, "why": "A secondary bromide with an excellent nucleophile in a polar aprotic solvent: {{SN2}}. The product is one enantiomer, inverted."},
-      {"h": "[[rxn:CCC[C@](C)(Br)CC>CH3OH>\"?\"]]", "ok": true, "why": "A tertiary bromide in a polar protic solvent with no strong base: {{SN1}}. The planar carbocation gives both enantiomers of the ether."},
-      {"h": "[[rxn:CCC[C@](C)(Br)CC>NaOCH3;CH3OH>\"?\"]]", "ok": false, "why": "Methoxide is a strong base and the carbon is tertiary: {{E2}}. The products are alkenes, with no substitution product."},
-      {"h": "[[rxn:CC[C@H](C)CBr>CH3OH>\"?\"]]", "ok": false, "why": "The carbon that carries Br is primary, so it does not ionize. The stereocentre is the next carbon, and no reaction touches it."}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Find the carbon that reacts in each", "h": "Secondary, tertiary, tertiary, primary."},
-        {"t": "Read the reagent", "h": "{{HS-}} in DMF is a strong nucleophile: {{SN2}}. Methanol alone is a weak nucleophile: {{SN1}} if the carbon can ionize. Methoxide is a strong base: {{E2}} on a tertiary carbon."},
-        {"t": "Ask where the stereocentre is", "h": "Racemization needs the stereocentre itself to become a flat carbocation. That happens only for the tertiary bromide in methanol alone."}
-      ],
-      "answer": "The tertiary bromide in methanol alone",
-      "rule": "Racemic product: the stereocentre must be the carbon that ionizes."
-    }
-  },
-  {
-    "id": "sn1-products-016", "type": "sn1-products", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 8, "pts": 30,
-    "stem": "This bromide, a single enantiomer, is warmed in methanol. Draw every substitution product with stereochemistry. Draw the alkenes that {{E1}} can give (ignore E and Z). What does warming do to the mixture?\n[[mol:CCC[C@](C)(Br)CC]]",
-    "model": "<p><b>{{SN1}}:</b> both enantiomers of the methyl ether, in equal amounts.</p>\n[[mol:CCC[C@](C)(OC)CC]]\n[[mol:CCC[C@@](C)(OC)CC]]\n<p><b>{{E1}}:</b> one alkene for each different neighbouring carbon that has a hydrogen (the propyl {{CH2}}, the ethyl {{CH2}}, the {{CH3}}).</p>\n[[mol:CCC=C(C)CC]]\n[[mol:CCCC(C)=CC]]\n[[mol:CCCC(=C)CC]]\n<p>The first two have three carbon groups on the double bond and are the major alkenes. Warming raises the share of the alkenes and lowers the share of the ether.</p>",
-    "rubric": [
-      {"pts": 8, "h": "Both enantiomers of the ether drawn with wedge and dash"},
-      {"pts": 4, "h": "Equal amounts: racemic"},
-      {"pts": 12, "h": "Three alkenes, one from each kind of neighbouring hydrogen (4 points each)"},
-      {"pts": 3, "h": "The two trisubstituted alkenes marked as major"},
-      {"pts": 3, "h": "Heat favours elimination (E1) over substitution (SN1)"}
-    ],
-    "solution": {
-      "steps": [
-        {"t": "Classify", "h": "Tertiary bromide, methanol, no strong base: carbocation."},
-        {"t": "Substitution", "h": "The cation is flat with three different groups. Methanol attacks both faces: R and S ether, 50:50."},
-        {"t": "Elimination", "h": "Three different carbons sit next to the positive carbon, and each has hydrogens. Three alkenes."},
-        {"t": "Major alkenes and temperature", "h": "Hydrogen loss from either {{CH2}} gives a trisubstituted alkene. Loss from the {{CH3}} gives a disubstituted one. Heat favours {{E1}}."}
-      ],
-      "answer": "Racemic 3-methoxy-3-methylhexane, plus 3-methylhex-3-ene, 3-methylhex-2-ene and 2-ethylpent-1-ene. Heat increases the alkenes.",
-      "rule": "SN1 scrambles the stereocentre, and E1 destroys it."
-    }
+   ],
+   "answer": "SN1: 1-methoxy-1-methylcyclohexane. E1: 1-methylcyclohexene (major) and methylenecyclohexane (minor). Same carbocation for all three.",
+   "rule": "One carbocation, two fates: the solvent adds to it (SN1) or takes a neighbouring hydrogen (E1)."
   }
+ },
+ {
+  "id": "sn1-products-002",
+  "type": "sn1-products",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site, modelled on Lecture 11/10, page 3",
+  "fixed": true,
+  "stem": "This chloride, a single enantiomer, is left in water at room temperature. What is the substitution product?\n[[mol:CCC[C@](C)(Cl)CC]]",
+  "choices": [
+   {
+    "h": "Only this alcohol: [[mol:CCC[C@@](C)(O)CC]]",
+    "ok": false,
+    "why": "This is the inverted product alone. Inversion is what {{SN2}} gives, and a tertiary carbon cannot do {{SN2}}."
+   },
+   {
+    "h": "Only this alcohol: [[mol:CCC[C@](C)(O)CC]]",
+    "ok": false,
+    "why": "This is retention alone. Water does not have to enter where chloride left: the carbocation in between is flat and open on both faces."
+   },
+   {
+    "h": "Both alcohols, [[mol:CCC[C@](C)(O)CC]] and [[mol:CCC[C@@](C)(O)CC]], in equal amounts",
+    "ok": true,
+    "why": "The tertiary carbocation is planar. Water attacks either face equally, so both enantiomers form: a racemic mixture."
+   },
+   {
+    "h": "[[mol:CCCC(C)(CC)[OH2+]]]",
+    "ok": false,
+    "why": "This is what exists after the second step. A second water removes a proton, and the product is the neutral alcohol."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary carbon, good leaving group, water as the solvent and the only nucleophile: {{SN1}}.",
+     "ask": {
+      "q": "Could this be {{SN2}}?",
+      "a": "No. The carbon is tertiary: the back side is blocked."
+     }
+    },
+    {
+     "t": "Draw the intermediate",
+     "h": "Chloride leaves. The carbocation has three groups in one plane (methyl, ethyl, propyl) and an empty p orbital above and below it.",
+     "ask": {
+      "q": "Is the carbocation chiral?",
+      "a": "No. It is flat, with a mirror plane. The information in the wedge is gone."
+     }
+    },
+    {
+     "t": "Attack on both faces",
+     "h": "Water bonds from the top or from the bottom with equal chance, then loses a proton. Top gives one enantiomer of 3-methylhexan-3-ol and bottom gives the other."
+    },
+    {
+     "t": "Name the result",
+     "h": "Equal amounts of the R and the S alcohol: a racemic mixture, which does not rotate plane-polarized light."
+    }
+   ],
+   "answer": "Both enantiomers of 3-methylhexan-3-ol in equal amounts (a racemic mixture)",
+   "rule": "SN1 at a stereocentre: flat carbocation, attack on either face, racemic product."
+  }
+ },
+ {
+  "id": "sn1-products-003",
+  "type": "sn1-products",
+  "role": "worked",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site, modelled on Lecture 11/10, page 2",
+  "stem": "Each of these bromides is warmed in ethanol with nothing else added. Only one of them ionizes to a carbocation and gives {{SN1}} and {{E1}} products. Which one?",
+  "choices": [
+   {
+    "h": "[[mol:BrC1C=CCCC1]]",
+    "ok": true,
+    "why": "The carbon that carries Br is next to a C=C: it is allylic. The cation is stabilized by resonance with the pi bond, so it forms."
+   },
+   {
+    "h": "[[mol:BrC1=CCCCC1]]",
+    "ok": false,
+    "why": "The Br is on a carbon of the double bond itself: vinyl. A vinyl cation does not form (and {{SN2}} is impossible there too)."
+   },
+   {
+    "h": "[[mol:CCCCBr]]",
+    "ok": false,
+    "why": "Primary. A primary carbocation is too unstable to form, so there is no {{SN1}} and no {{E1}}."
+   },
+   {
+    "h": "[[mol:CBr]]",
+    "ok": false,
+    "why": "Methyl. A methyl cation never forms. Methyl halides react by {{SN2}} only, and that needs a good nucleophile."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that carries the leaving group",
+     "h": "In each structure, look only at the carbon bonded to Br and at what is attached to it.",
+     "ask": {
+      "q": "What makes a carbon able to ionize?",
+      "a": "It must give a stable cation: tertiary, secondary, allylic or benzylic."
+     }
+    },
+    {
+     "t": "Rule out methyl and primary",
+     "h": "Bromomethane and 1-bromobutane would have to give a methyl or a primary cation. The lecture's list says no {{SN1}} for either."
+    },
+    {
+     "t": "Separate vinyl from allylic",
+     "h": "Both ring compounds have a C=C, but in different places. Br on a double-bond carbon is vinyl: no {{SN1}}. Br on the carbon next to the double bond is allylic: {{SN1}} yes.",
+     "ask": {
+      "q": "Why does the position of the double bond matter so much?",
+      "a": "In the allylic cation the empty p orbital lines up with the pi bond and the charge is shared by two carbons. In a vinyl cation it cannot be shared."
+     }
+    },
+    {
+     "t": "Answer",
+     "h": "3-Bromocyclohexene ionizes. The other three give no {{SN1}} product: a methyl or primary cation is too unstable to form and a vinyl cation does not form at all. (A methyl or primary bromide can still react slowly with the solvent by {{SN2}}, which is a different reaction.)"
+    }
+   ],
+   "answer": "3-Bromocyclohexene, the allylic bromide",
+   "rule": "SN1 and E1: tertiary, secondary, allylic, benzylic. Never primary, methyl or vinyl."
+  }
+ },
+ {
+  "id": "sn1-products-004",
+  "type": "sn1-products",
+  "role": "worked",
+  "kind": "written",
+  "diff": 2,
+  "src": "Lecture 11/10, page 3",
+  "time": 8,
+  "pts": 30,
+  "stem": "This tosylate, a single enantiomer (S), is dissolved in water. The 2-butanol that forms does not rotate plane-polarized light. Draw the mechanism and explain the result.\n[[mol:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1|abbr]]",
+  "model": "[[mech:sn1-2butyl-tosylate-water]]\n<p>The carbocation is planar, so water attacks the top face and the bottom face equally. The product is a 50:50 mixture of the two enantiomers, a <b>racemic mixture</b>, and the two rotations cancel.</p>\n[[mol:CC[C@H](C)O]]\n[[mol:CC[C@@H](C)O]]",
+  "rubric": [
+   {
+    "pts": 8,
+    "h": "Step 1: arrow from the C-O bond to the tosylate oxygen, and the secondary carbocation drawn"
+   },
+   {
+    "pts": 6,
+    "h": "Step 2: arrow from a lone pair of water to the positive carbon"
+   },
+   {
+    "pts": 6,
+    "h": "Step 3: a second water removes a proton from the positive oxygen (two arrows)"
+   },
+   {
+    "pts": 5,
+    "h": "Says the carbocation is planar and can be attacked from either face"
+   },
+   {
+    "pts": 5,
+    "h": "Both enantiomers of 2-butanol drawn (wedge and dash), in equal amounts: racemic"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Read the clue",
+     "h": "A single enantiomer went in and a product with no optical rotation came out. Both enantiomers of 2-butanol must be there in equal amounts.",
+     "ask": {
+      "q": "What would {{SN2}} have given?",
+      "a": "Only the inverted alcohol, (R)-2-butanol, which does rotate light."
+     }
+    },
+    {
+     "t": "Decide the mechanism",
+     "h": "Secondary carbon, an excellent leaving group (tosylate), water as a polar protic solvent and a poor nucleophile: the bond ionizes first. {{SN1}}."
+    },
+    {
+     "t": "Step 1",
+     "h": "The C-O bond breaks and both electrons go to the tosylate oxygen. A flat secondary carbocation is left."
+    },
+    {
+     "t": "Step 2",
+     "h": "Water's lone pair attacks the positive carbon from either face.",
+     "ask": {
+      "q": "Why are the two faces attacked equally?",
+      "a": "The cation is flat and the two faces are mirror images of each other, so neither is easier to reach."
+     }
+    },
+    {
+     "t": "Step 3",
+     "h": "A second water takes a proton from the positive oxygen. The product is neutral 2-butanol."
+    },
+    {
+     "t": "State the stereochemistry",
+     "h": "Half R and half S: a racemic mixture, which is optically inactive."
+    }
+   ],
+   "answer": "SN1 in three steps. The planar carbocation gives (R)- and (S)-2-butanol in equal amounts: a racemic mixture.",
+   "rule": "Leave, attack, lose the proton. Flat cation, racemic product."
+  }
+ },
+ {
+  "id": "sn1-products-005",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "What is the {{SN1}} product?\n[[rxn:CC(C)(C)Cl>CH3OH>\"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:COC(C)(C)C]]",
+    "ok": true,
+    "why": "Methanol is the nucleophile, so the tertiary carbon gains {{OCH3}}, and the extra proton is removed."
+   },
+   {
+    "h": "[[mol:CC(C)(C)O]]",
+    "ok": false,
+    "why": "This alcohol would need water. The solvent here is methanol, and the solvent supplies the oxygen group."
+   },
+   {
+    "h": "[[mol:C[OH+]C(C)(C)C]]",
+    "ok": false,
+    "why": "The mechanism was stopped one step early. A second methanol removes the proton from the positive oxygen."
+   },
+   {
+    "h": "[[mol:COCC(C)C]]",
+    "ok": false,
+    "why": "The oxygen is on a primary carbon. The nucleophile bonds to the carbon that carried the leaving group, the tertiary one."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary chloride in a polar protic solvent: {{SN1}}."
+    },
+    {
+     "t": "Ionize",
+     "h": "Chloride leaves and the tert-butyl cation forms."
+    },
+    {
+     "t": "Add the solvent and lose the proton",
+     "h": "The oxygen of methanol bonds to the positive carbon, then a second methanol takes the O-H proton. The product is tert-butyl methyl ether."
+    }
+   ],
+   "answer": "tert-Butyl methyl ether, {{(CH3)3COCH3}}",
+   "rule": "The solvent is the nucleophile: water gives an alcohol, an alcohol gives an ether."
+  }
+ },
+ {
+  "id": "sn1-products-006",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Three of these bromides form a carbocation in warm water. Which one does <b>not</b>?",
+  "choices": [
+   {
+    "h": "[[mol:CC(Br)=C]]",
+    "ok": true,
+    "why": "The Br is on a carbon of the C=C: a vinyl bromide. The lecture's list is clear: vinyl-LG, no {{SN1}}."
+   },
+   {
+    "h": "[[mol:CCC(C)(C)Br]]",
+    "ok": false,
+    "why": "Tertiary: this is the best kind of substrate for ionization."
+   },
+   {
+    "h": "[[mol:CC(Br)c1ccccc1]]",
+    "ok": false,
+    "why": "Secondary and benzylic: the cation is next to the ring and is stabilized by resonance. It forms easily."
+   },
+   {
+    "h": "[[mol:C=CC(C)Br]]",
+    "ok": false,
+    "why": "Secondary and allylic: the cation is next to a C=C and is stabilized by resonance. It forms."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Look at the carbon bonded to Br",
+     "h": "Tertiary in one, next to a benzene ring in one, next to a C=C in one, and part of a C=C in one."
+    },
+    {
+     "t": "Apply the list",
+     "h": "Tertiary, benzylic and allylic carbons ionize. A vinyl carbon does not."
+    },
+    {
+     "t": "Do not be fooled by the count of carbons",
+     "h": "The vinyl carbon in 2-bromopropene has two carbon neighbours, which can look secondary. What matters is that it is an {{sp2}} carbon of a double bond."
+    }
+   ],
+   "answer": "2-Bromopropene, the vinyl bromide",
+   "rule": "Next to a double bond (allylic): yes. On the double bond (vinyl): never."
+  }
+ },
+ {
+  "id": "sn1-products-007",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 1,
+  "src": "site",
+  "stem": "Which is the major <b>elimination</b> product?\n[[rxn:CCC(C)(C)Br>H2O;heat>\"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:CC=C(C)C]]",
+    "ok": true,
+    "why": "The hydrogen comes from the {{CH2}} next to the positive carbon. The double bond has three carbon groups on it: the more substituted alkene."
+   },
+   {
+    "h": "[[mol:C=C(C)CC]]",
+    "ok": false,
+    "why": "This alkene does form, by loss of a methyl hydrogen, but it has only two carbon groups on the double bond. It is the minor alkene."
+   },
+   {
+    "h": "[[mol:CC(C)C=C]]",
+    "ok": false,
+    "why": "This double bond does not include the carbon that carried Br. {{E1}} removes a hydrogen from a carbon directly next to the positive carbon."
+   },
+   {
+    "h": "[[mol:CCC(C)(C)O]]",
+    "ok": false,
+    "why": "This is the substitution ({{SN1}}) product. It also forms, but the question asks for the elimination product."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Draw the carbocation",
+     "h": "Bromide leaves from the tertiary carbon."
+    },
+    {
+     "t": "List the neighbouring hydrogens",
+     "h": "Two methyl groups and one {{CH2}} are next to the positive carbon."
+    },
+    {
+     "t": "Compare the alkenes",
+     "h": "Loss of a {{CH2}} hydrogen gives 2-methylbut-2-ene (three carbon groups on C=C). Loss of a {{CH3}} hydrogen gives 2-methylbut-1-ene (two). The more substituted one is major."
+    }
+   ],
+   "answer": "2-Methylbut-2-ene",
+   "rule": "E1: the double bond includes the old C-LG carbon, and the more substituted alkene is major."
+  }
+ },
+ {
+  "id": "sn1-products-008",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "written",
+  "diff": 1,
+  "src": "site",
+  "time": 6,
+  "pts": 20,
+  "stem": "Draw the mechanism of this reaction: three steps, with curved arrows.\n[[rxn:CC(C)(C)Br + CCO>>CCOC(C)(C)C + Br]]",
+  "model": "<p><b>Step 1</b> (slow): the C-Br bond breaks. One arrow, from the bond to Br.</p>\n[[rxn:CC(C)(C)Br>>C[C+](C)C + [Br-]]]\n<p><b>Step 2</b>: a lone pair on the oxygen of ethanol attacks the positive carbon. One arrow.</p>\n[[rxn:C[C+](C)C + CCO>>CC[OH+]C(C)(C)C]]\n<p><b>Step 3</b>: a second ethanol removes the proton. Two arrows: its lone pair to H, and the O-H bond onto the positive oxygen.</p>\n[[rxn:CC[OH+]C(C)(C)C + CCO>>CCOC(C)(C)C + CC[OH2+]]]",
+  "rubric": [
+   {
+    "pts": 6,
+    "h": "Step 1: arrow from the C-Br bond to Br, tert-butyl cation and bromide drawn"
+   },
+   {
+    "pts": 6,
+    "h": "Step 2: arrow from an oxygen lone pair of ethanol to the positive carbon, positive oxygen drawn with its H"
+   },
+   {
+    "pts": 6,
+    "h": "Step 3: a second ethanol (not {{HO-}} or {{CH3CH2O-}}) removes the proton, two arrows"
+   },
+   {
+    "pts": 2,
+    "h": "Charges balance in every step and the ether is neutral"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Leave",
+     "h": "Tertiary bromide, protic solvent: the leaving group goes first, alone. This is the slow step."
+    },
+    {
+     "t": "Attack",
+     "h": "Ethanol is neutral, so after it bonds to carbon its oxygen carries three bonds and a positive charge."
+    },
+    {
+     "t": "Lose the proton",
+     "h": "The only base present is more ethanol. It takes the proton and leaves the neutral ether."
+    }
+   ],
+   "answer": "Three steps: ionization, attack by ethanol, loss of a proton to a second ethanol. Product: tert-butyl ethyl ether.",
+   "rule": "SN1 with a neutral nucleophile is three steps."
+  }
+ },
+ {
+  "id": "sn1-products-009",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "Lecture 11/10, page 4",
+  "stem": "tert-Butyl bromide in water gives an alcohol and an alkene. The reaction is repeated at a higher temperature. Which product's share goes up?\n[[rxn:CC(C)(C)Br>H2O>CC(C)(C)O + CC(C)=C]]",
+  "choices": [
+   {
+    "h": "[[mol:CC(C)=C]]",
+    "ok": true,
+    "why": "The alkene is the {{E1}} product. The lecture: {{E1}} is favoured at high temperature, {{SN1}} at lower temperature."
+   },
+   {
+    "h": "[[mol:CC(C)(C)O]]",
+    "ok": false,
+    "why": "The alcohol is the {{SN1}} product, which is favoured at lower temperature."
+   },
+   {
+    "h": "Neither: both come from the same carbocation, so the ratio cannot change",
+    "ok": false,
+    "why": "They do share the carbocation, but the two steps that follow it are different reactions, and they respond differently to temperature."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Name the two products",
+     "h": "The alcohol is substitution ({{SN1}}). The alkene is elimination ({{E1}})."
+    },
+    {
+     "t": "Find the branch point",
+     "h": "Both come from the tert-butyl cation. Water either bonds to the positive carbon or takes a hydrogen from a neighbouring {{CH3}}."
+    },
+    {
+     "t": "Apply the temperature rule",
+     "h": "High temperature favours elimination, so the share of 2-methylpropene rises."
+    }
+   ],
+   "answer": "The alkene, 2-methylpropene",
+   "rule": "Heat favours elimination."
+  }
+ },
+ {
+  "id": "sn1-products-010",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "time": 8,
+  "pts": 30,
+  "stem": "Draw the substitution product and both elimination products. Name the mechanism that gives each, and say which alkene is major.\n[[rxn:CCC(C)(C)Cl>CH3CH2OH;heat>\"?\"]]",
+  "model": "<p><b>{{SN1}}:</b> the ether (the solvent is ethanol).</p>\n[[mol:CCOC(C)(C)CC]]\n<p><b>{{E1}}:</b> the major alkene, then the minor alkene.</p>\n[[mol:CC=C(C)C]]\n[[mol:C=C(C)CC]]\n<p>All three come from the same tertiary carbocation. 2-Methylbut-2-ene is major because its double bond carries three carbon groups, against two.</p>\n[[mol:CC[C+](C)C]]",
+  "rubric": [
+   {
+    "pts": 10,
+    "h": "The ether, with {{OCH2CH3}} on the tertiary carbon, drawn neutral"
+   },
+   {
+    "pts": 6,
+    "h": "2-Methylbut-2-ene"
+   },
+   {
+    "pts": 6,
+    "h": "2-Methylbut-1-ene"
+   },
+   {
+    "pts": 4,
+    "h": "2-Methylbut-2-ene marked major because it is more substituted"
+   },
+   {
+    "pts": 4,
+    "h": "SN1 and E1 named, with the shared tertiary carbocation"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary chloride, ethanol, no strong base: ionization, then {{SN1}} and {{E1}}."
+    },
+    {
+     "t": "Substitution",
+     "h": "Ethanol's oxygen bonds to the positive carbon and loses its proton: an ethyl ether."
+    },
+    {
+     "t": "Elimination",
+     "h": "Neighbouring carbons with hydrogens: one {{CH2}} and two equivalent {{CH3}} groups. That makes two different alkenes."
+    },
+    {
+     "t": "Rank the alkenes",
+     "h": "Three carbon groups on the double bond beats two: 2-methylbut-2-ene is major. Heat raises the share of both alkenes."
+    }
+   ],
+   "answer": "SN1: 2-ethoxy-2-methylbutane. E1: 2-methylbut-2-ene (major) and 2-methylbut-1-ene (minor).",
+   "rule": "Count the different neighbouring carbons with H: that is the number of E1 alkenes."
+  }
+ },
+ {
+  "id": "sn1-products-011",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 2,
+  "src": "site, modelled on Lecture 11/10, page 2",
+  "stem": "1-Chlorobut-2-ene is a primary chloride, yet it reacts in water through a carbocation and gives two alcohols, both {{C4H8O}}. One is shown. Which is the other?\n[[rxn:C/C=C/CCl>H2O>C/C=C/CO + \"?\"]]",
+  "choices": [
+   {
+    "h": "[[mol:C=CC(C)O]]",
+    "ok": true,
+    "why": "The allylic cation has its charge on both ends of the three-carbon unit. Water at the far end gives this alcohol, with the double bond moved."
+   },
+   {
+    "h": "[[mol:OCCC=C]]",
+    "ok": false,
+    "why": "Here the double bond has moved but the OH has not. In an allylic cation the pi bond and the positive end swap places together."
+   },
+   {
+    "h": "[[mol:CC(O)CC]]",
+    "ok": false,
+    "why": "The double bond has disappeared and the formula is {{C4H10O}}. Nothing in this reaction adds hydrogen."
+   },
+   {
+    "h": "[[mol:C=C(C)CO]]",
+    "ok": false,
+    "why": "The carbon skeleton is branched. Resonance moves electrons, not carbon atoms."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Explain why a primary chloride ionizes",
+     "h": "The carbon is primary but allylic. The flowchart makes this exception: allylic and benzylic carbons can form cations."
+    },
+    {
+     "t": "Draw both forms of the cation",
+     "h": "Move the pi electrons toward the positive {{CH2}}: the double bond is now at the end of the chain and the positive charge is on the third carbon. One cation, two drawings."
+    },
+    {
+     "t": "Attack each positive end",
+     "h": "Water at the end {{CH2}} gives but-2-en-1-ol (shown). Water at the third carbon gives but-3-en-2-ol."
+    },
+    {
+     "t": "Check the formula",
+     "h": "Both are {{C4H8O}} and both keep one C=C."
+    }
+   ],
+   "answer": "But-3-en-2-ol",
+   "rule": "An allylic cation is positive at both ends: two substitution products."
+  }
+ },
+ {
+  "id": "sn1-products-012",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "written",
+  "diff": 2,
+  "src": "site",
+  "time": 7,
+  "pts": 25,
+  "stem": "This chloride, a single enantiomer, reacts in water at room temperature although its carbon is only secondary. Draw the substitution product or products with stereochemistry, and explain why it ionizes so easily.\n[[mol:C[C@H](Cl)c1ccccc1]]",
+  "model": "<p>The products are both enantiomers of 1-phenylethanol, in equal amounts (racemic).</p>\n[[mol:C[C@H](O)c1ccccc1]]\n[[mol:C[C@@H](O)c1ccccc1]]\n<p>The carbocation is <b>benzylic</b>: the positive carbon is attached to the ring, its empty p orbital overlaps the ring's pi electrons, and the charge is shared with the ring by resonance. A secondary benzylic cation forms easily.</p>\n[[mol:C[CH+]c1ccccc1]]\n<p>The cation is planar, so water attacks either face.</p>",
+  "rubric": [
+   {
+    "pts": 8,
+    "h": "Both enantiomers of the alcohol drawn, one with OH on a wedge and one on a dash"
+   },
+   {
+    "pts": 4,
+    "h": "Equal amounts: a racemic mixture"
+   },
+   {
+    "pts": 5,
+    "h": "The carbocation drawn, with the charge on the carbon next to the ring"
+   },
+   {
+    "pts": 5,
+    "h": "Benzylic: stabilized by resonance with the ring"
+   },
+   {
+    "pts": 3,
+    "h": "Planar cation, attacked from either face"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "The carbon carries a methyl group and a phenyl group: secondary and benzylic."
+    },
+    {
+     "t": "Explain the easy ionization",
+     "h": "The ring's pi electrons share the positive charge. Resonance stabilizes the cation, so the C-Cl bond ionizes in water."
+    },
+    {
+     "t": "Substitution",
+     "h": "Water attacks the flat cation from both faces and then loses a proton."
+    },
+    {
+     "t": "Stereochemistry",
+     "h": "One enantiomer in, both out, in equal amounts."
+    }
+   ],
+   "answer": "Racemic 1-phenylethanol. The secondary cation forms because it is benzylic (resonance with the ring).",
+   "rule": "Benzylic and allylic cations are stabilized by resonance. SN1 still racemizes."
+  }
+ },
+ {
+  "id": "sn1-products-013",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "This bromide is left in water. Two alcohols, X and Y, are possible. What forms?\n[[ring:1u:Br,1d:CH3,4u:CH3]]\nX, then Y:\n[[ring:1d:OH,1u:CH3,4u:CH3]]\n[[ring:1u:OH,1d:CH3,4u:CH3]]",
+  "choices": [
+   {
+    "h": "Only X, with OH on the face opposite to where Br was",
+    "ok": false,
+    "why": "That is inversion alone, the {{SN2}} result. This carbon is tertiary: it reacts through a flat carbocation."
+   },
+   {
+    "h": "Only Y, with OH on the face where Br was",
+    "ok": false,
+    "why": "The carbocation does not remember which face the bromide left from."
+   },
+   {
+    "h": "X and Y, which are enantiomers: a racemic mixture",
+    "ok": false,
+    "why": "Both do form, but they are not mirror images. The methyl on carbon 4 stays up in both, so X and Y are cis and trans isomers of each other."
+   },
+   {
+    "h": "X and Y, which are diastereomers",
+    "ok": true,
+    "why": "Water attacks both faces of the planar cation. Carbon 4 is untouched, so the two products differ at one of two stereo positions: diastereomers (cis and trans)."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary bromide in water: {{SN1}}."
+    },
+    {
+     "t": "Draw the cation",
+     "h": "Carbon 1 becomes flat. The methyl on carbon 4 is still on a wedge."
+    },
+    {
+     "t": "Attack both faces",
+     "h": "OH up at carbon 1 gives Y. OH down gives X. Both form."
+    },
+    {
+     "t": "Name the relationship",
+     "h": "X and Y have the same connections and differ in whether the two methyl groups are on the same face or on opposite faces. They are not mirror images: diastereomers. The word racemic is for a pair of enantiomers only."
+    }
+   ],
+   "answer": "Both X and Y: a mixture of diastereomers",
+   "rule": "SN1 scrambles one carbon. With a second stereocentre left alone, the products are diastereomers."
+  }
+ },
+ {
+  "id": "sn1-products-014",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site",
+  "time": 10,
+  "pts": 40,
+  "stem": "This chloride gives two alcohols in water, both {{C5H10O}}. Draw both. Then draw the mechanism that leads to the alcohol whose OH is <b>not</b> on the carbon that carried the chlorine.\n[[mol:C=CC(C)(C)Cl]]",
+  "model": "<p>The two alcohols:</p>\n[[mol:C=CC(C)(C)O]]\n[[mol:CC(C)=CCO]]\n<p>The carbocation is allylic. Its positive charge is shared by the tertiary carbon and the end {{CH2}}, and water can bond to either.</p>\n[[mech:sn1-allylic-chloride-water]]",
+  "rubric": [
+   {
+    "pts": 6,
+    "h": "Alcohol with OH where Cl was (2-methylbut-3-en-2-ol)"
+   },
+   {
+    "pts": 8,
+    "h": "Alcohol with OH on the end carbon and the double bond moved (3-methylbut-2-en-1-ol)"
+   },
+   {
+    "pts": 6,
+    "h": "Ionization: arrow from the C-Cl bond to Cl, cation drawn"
+   },
+   {
+    "pts": 8,
+    "h": "Second resonance form of the cation, with one arrow from the pi bond"
+   },
+   {
+    "pts": 6,
+    "h": "Water attacks the end carbon"
+   },
+   {
+    "pts": 6,
+    "h": "A second water removes the proton, neutral alcohol"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary and allylic chloride in water: it ionizes."
+    },
+    {
+     "t": "Draw the cation twice",
+     "h": "First with the charge on the tertiary carbon. Then push the pi electrons toward it: the charge appears on the end {{CH2}} and the double bond is in the middle."
+    },
+    {
+     "t": "Attack each positive carbon",
+     "h": "Water at the tertiary carbon gives 2-methylbut-3-en-2-ol. Water at the end carbon gives 3-methylbut-2-en-1-ol."
+    },
+    {
+     "t": "Finish and check",
+     "h": "Each oxygen loses a proton to a second water. Both products are {{C5H10O}} with one C=C."
+    }
+   ],
+   "answer": "2-Methylbut-3-en-2-ol and 3-methylbut-2-en-1-ol, from one allylic cation",
+   "rule": "Resonance puts the charge on two carbons, and the nucleophile can bond to either."
+  }
+ },
+ {
+  "id": "sn1-products-015",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "mcq",
+  "diff": 3,
+  "src": "site",
+  "fixed": true,
+  "stem": "Each starting material is a single enantiomer. Which reaction gives a racemic substitution product?",
+  "choices": [
+   {
+    "h": "[[rxn:CC[C@H](C)Br>NaSH;DMF>\"?\"]]",
+    "ok": false,
+    "why": "A secondary bromide with an excellent nucleophile in a polar aprotic solvent: {{SN2}}. The product is one enantiomer, inverted."
+   },
+   {
+    "h": "[[rxn:CCC[C@](C)(Br)CC>CH3OH>\"?\"]]",
+    "ok": true,
+    "why": "A tertiary bromide in a polar protic solvent with no strong base: {{SN1}}. The planar carbocation gives both enantiomers of the ether."
+   },
+   {
+    "h": "[[rxn:CCC[C@](C)(Br)CC>NaOCH3;CH3OH>\"?\"]]",
+    "ok": false,
+    "why": "Methoxide is a strong base and the carbon is tertiary: {{E2}}. The products are alkenes, with no substitution product."
+   },
+   {
+    "h": "[[rxn:CC[C@H](C)CBr>CH3OH>\"?\"]]",
+    "ok": false,
+    "why": "The carbon that carries Br is primary, so it does not ionize. The stereocentre is the next carbon, and no reaction touches it."
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Find the carbon that reacts in each",
+     "h": "Secondary, tertiary, tertiary, primary."
+    },
+    {
+     "t": "Read the reagent",
+     "h": "{{HS-}} in DMF is a strong nucleophile: {{SN2}}. Methanol alone is a weak nucleophile: {{SN1}} if the carbon can ionize. Methoxide is a strong base: {{E2}} on a tertiary carbon."
+    },
+    {
+     "t": "Ask where the stereocentre is",
+     "h": "Racemization needs the stereocentre itself to become a flat carbocation. That happens only for the tertiary bromide in methanol alone."
+    }
+   ],
+   "answer": "The tertiary bromide in methanol alone",
+   "rule": "Racemic product: the stereocentre must be the carbon that ionizes."
+  }
+ },
+ {
+  "id": "sn1-products-016",
+  "type": "sn1-products",
+  "role": "practice",
+  "kind": "written",
+  "diff": 3,
+  "src": "site",
+  "time": 8,
+  "pts": 30,
+  "stem": "This bromide, a single enantiomer, is warmed in methanol. Draw every substitution product with stereochemistry. Draw the alkenes that {{E1}} can give (ignore E and Z). What does warming do to the mixture?\n[[mol:CCC[C@](C)(Br)CC]]",
+  "model": "<p><b>{{SN1}}:</b> both enantiomers of the methyl ether, in equal amounts.</p>\n[[mol:CCC[C@](C)(OC)CC]]\n[[mol:CCC[C@@](C)(OC)CC]]\n<p><b>{{E1}}:</b> one alkene for each different neighbouring carbon that has a hydrogen (the propyl {{CH2}}, the ethyl {{CH2}}, the {{CH3}}).</p>\n[[mol:CCC=C(C)CC]]\n[[mol:CCCC(C)=CC]]\n[[mol:CCCC(=C)CC]]\n<p>The first two have three carbon groups on the double bond and are the major alkenes. Warming raises the share of the alkenes and lowers the share of the ether.</p>",
+  "rubric": [
+   {
+    "pts": 8,
+    "h": "Both enantiomers of the ether drawn with wedge and dash"
+   },
+   {
+    "pts": 4,
+    "h": "Equal amounts: racemic"
+   },
+   {
+    "pts": 12,
+    "h": "Three alkenes, one from each kind of neighbouring hydrogen (4 points each)"
+   },
+   {
+    "pts": 3,
+    "h": "The two trisubstituted alkenes marked as major"
+   },
+   {
+    "pts": 3,
+    "h": "Heat favours elimination (E1) over substitution (SN1)"
+   }
+  ],
+  "solution": {
+   "steps": [
+    {
+     "t": "Classify",
+     "h": "Tertiary bromide, methanol, no strong base: carbocation."
+    },
+    {
+     "t": "Substitution",
+     "h": "The cation is flat with three different groups. Methanol attacks both faces: R and S ether, 50:50."
+    },
+    {
+     "t": "Elimination",
+     "h": "Three different carbons sit next to the positive carbon, and each has hydrogens. Three alkenes."
+    },
+    {
+     "t": "Major alkenes and temperature",
+     "h": "Hydrogen loss from either {{CH2}} gives a trisubstituted alkene. Loss from the {{CH3}} gives a disubstituted one. Heat favours {{E1}}."
+    }
+   ],
+   "answer": "Racemic 3-methoxy-3-methylhexane, plus 3-methylhex-3-ene, 3-methylhex-2-ene and 2-ethylpent-1-ene. Heat increases the alkenes.",
+   "rule": "SN1 scrambles the stereocentre, and E1 destroys it."
+  }
+ }
 ]
