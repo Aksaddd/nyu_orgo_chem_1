@@ -8,6 +8,10 @@
   const el = (...a) => ORGO.el(...a);
 
   const COLOR = { C: "#3b3b40", H: "#f2f2f2", O: "#e03131", N: "#2f6fe0", S: "#e8c21a", F: "#5fbf5f", Cl: "#2f9e44", Br: "#8b5a2b", I: "#7b3fa0", Li: "#8f86ad", Mg: "#8f86ad" };
+  // Dark and Stars (data-theme="dark" on <html>): the canvas is dark, so the dark atoms take lighter shades of their colour
+  // (each 3.9:1 or more against the canvas, where they were 1.1 to 2.4) and an atom's outline is light instead of near-black
+  const DARK = { C: "#8e8e93", Br: "#b87a42", I: "#ad72d6" };
+  const isDark = () => document.documentElement.dataset.theme === "dark";
   const RAD = { H: 0.28, C: 0.42, N: 0.4, O: 0.4, F: 0.36, Cl: 0.55, Br: 0.62, I: 0.72, S: 0.55, Li: 0.5, Mg: 0.6 };
   const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const mix = (h, to, k) => { const c = hex(h); return "rgb(" + c.map(v => Math.round(v + (to - v) * k)).join(",") + ")" };
@@ -47,6 +51,7 @@
       const items = P.map(p => ({ z: p.z, atom: p }));
       src.bonds.forEach(b => { const p = P[b[0]], q = P[b[1]]; if (p && q) items.push({ z: (p.z + q.z) / 2 - 0.001, bond: [p, q, b[2] || 1] }) });
       items.sort((u, v) => u.z - v.z);
+      const dark = isDark(), rim = dark ? "rgba(255,255,255,.45)" : "#1c1c1e";      // read at each draw: a change of appearance is picked up at once
       ctx.lineCap = "round"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
       for (const it of items) {
         if (it.bond) {
@@ -55,9 +60,9 @@
           offs.forEach(k => { const ox = nx * k * w, oy = ny * k * w; ctx.beginPath(); ctx.moveTo(p.x + ox, p.y + oy); ctx.lineTo(q.x + ox, q.y + oy); ctx.strokeStyle = "#1c1c1e"; ctx.lineWidth = w + 2; ctx.stroke();
             ctx.strokeStyle = "#a8a8ae"; ctx.lineWidth = w; ctx.stroke() });
         } else {
-          const p = it.atom, base = p.a.col || COLOR[p.a.e] || "#888888", g = ctx.createRadialGradient(p.x - p.r * 0.35, p.y - p.r * 0.35, p.r * 0.1, p.x, p.y, p.r);
+          const p = it.atom, base = p.a.col || (dark && DARK[p.a.e]) || COLOR[p.a.e] || "#888888", g = ctx.createRadialGradient(p.x - p.r * 0.35, p.y - p.r * 0.35, p.r * 0.1, p.x, p.y, p.r);
           g.addColorStop(0, mix(base, 255, 0.55)); g.addColorStop(0.6, base); g.addColorStop(1, mix(base, 0, 0.3));
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fillStyle = g; ctx.fill(); ctx.strokeStyle = "#1c1c1e"; ctx.lineWidth = 1.5; ctx.stroke();
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fillStyle = g; ctx.fill(); ctx.strokeStyle = rim; ctx.lineWidth = 1.5; ctx.stroke();
           if (labels && p.a.e !== "H") text(p.a.e, p.x, p.y, Math.max(10, p.r * 1.1), p.a.e === "S" || p.a.e === "F" ? "#111" : "#fff", p.a.e === "S" || p.a.e === "F" ? "rgba(255,255,255,.85)" : "rgba(0,0,0,.85)");
           if (p.a.tag) text(p.a.tag, p.x + p.r + 7, p.y - p.r * 0.7, 14, "#fff", "rgba(0,0,0,.9)");
         }
@@ -96,6 +101,8 @@
       if (used) { e.preventDefault(); draw() }
     });
     if (window.ResizeObserver) new ResizeObserver(draw).observe(canvas); else window.addEventListener("resize", draw);
+    // a change of appearance (Eureka's Settings, or the class's own button) redraws the model in the new colours
+    if (window.MutationObserver) { const mo = new MutationObserver(() => { if (!canvas.isConnected) mo.disconnect(); else draw() }); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }) }
     if (spin) raf = requestAnimationFrame(t => { last = t; loop(t) });
     return { el: wrap, canvas, set, redraw: draw, reset, get yaw() { return yaw }, get pitch() { return pitch }, get zoom() { return zoom } };
   }
