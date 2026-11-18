@@ -176,7 +176,8 @@ for (const t of blueprint) if (!types[t.id] && !only.length) warn(blueprintFile,
 
 // ------------------------------------------------------------------ chemistry
 let chem = { mols: {}, mech: {}, conf: {}, errors: [] };
-{ const job = { mols: [...allRefs.mols], mechanisms: Object.values(mechs), conf: arr(single.conf).map(c => c.smiles).filter(Boolean) };
+{ const steps = []; Object.values(mechs).forEach(m => (m.steps || []).forEach(s => { if (s.species) steps.push({ key: s.species, arrows: s.arrows || [] }) }));
+  const job = { mols: [...allRefs.mols], steps, mechanisms: Object.values(mechs), conf: arr(single.conf).map(c => c.smiles).filter(Boolean) };
   const r = cp.spawnSync("python3", [path.join(__dirname, "chem.py"), "compile"], { input: JSON.stringify(job), maxBuffer: 1 << 30, encoding: "utf8" });
   if (r.status !== 0 || !r.stdout) { console.error("tools/chem.py could not run. It needs RDKit:  pip install rdkit\n" + (r.stderr || "").slice(0, 2000)); process.exit(2) }
   chem = JSON.parse(r.stdout);

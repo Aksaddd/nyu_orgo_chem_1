@@ -1,0 +1,214 @@
+[
+  {
+    "id": "mech-two-paths-001", "type": "mech-two-paths", "role": "worked", "kind": "written", "diff": 3, "src": "site, after FA24 Exam 2, Q2B", "time": 12, "pts": 70,
+    "stem": "3-Bromo-3-ethylpentane gives the same major product, Product A, under two different conditions.\n[[rxn:CCC(Br)(CC)CC>NaH>\"Product A\"]]\n[[rxn:CCC(Br)(CC)CC>H2O>\"Product A\"]]\n<p>(a) Draw Product A and a mechanism for each reaction.</p><p>(b) The crude {{1H}} NMR spectrum of the NaH reaction shows a small septet. What does that tell you?</p>",
+    "model": "<p><b>Product A</b> is the alkene 3-ethyl-2-pentene: [[mol:CC=C(CC)CC]]</p><p><b>With NaH: {{E2}}, one step.</b> Hydride is a strong base and the halide is tertiary, so {{SN2}} is impossible. Hydride takes a hydrogen from a {{CH2}} next to the C-Br carbon, the C-H electrons form the C=C, and bromide leaves. Three arrows. The other products are {{H2}} and NaBr.</p>\n[[mech:e2-3-bromo-3-ethylpentane-hydride]]\n<p><b>With {{H2O}}: {{E1}}, two steps.</b> Water is a weak base, so the C-Br bond ionizes first (the slow step) to a tertiary carbocation. Water then takes a hydrogen from a neighbouring {{CH2}} and the C-H electrons form the C=C. The other products are {{H3O+}} and {{Br-}}.</p>\n[[mech:e1-3-bromo-3-ethylpentane-water]]\n<p><b>The septet.</b> Seven lines mean a hydrogen with six equivalent neighbours (n + 1 = 7). Product A has no such hydrogen. A C-H whose carbon carries three {{CH2}} groups does: 3 × 2 = 6 neighbours. So the crude product contains a little 3-ethylpentane: [[mol:CCC(CC)CC]]</p><p>A small part of the hydride replaced bromine with H (it acted as a <b>nucleophile</b>, a substitution) instead of acting as a base. Water has no hydride to give, so this by-product cannot form in the second flask.</p>",
+    "rubric": [
+      {"pts": 25, "h": "NaH reaction drawn as E2 in one step with three correct arrows: hydride to H, the C-H bond to the new C=C, the C-Br bond to Br"},
+      {"pts": 25, "h": "Water reaction drawn as E1 in two steps: ionization to the tertiary carbocation, then water takes a neighbouring hydrogen (two arrows)"},
+      {"pts": 5, "h": "Product A drawn correctly: 3-ethyl-2-pentene"},
+      {"pts": 8, "h": "Septet read as one hydrogen with six equivalent neighbouring hydrogens (n + 1 rule)"},
+      {"pts": 7, "h": "Conclusion: some hydride acted as a nucleophile and replaced Br by H, giving a little 3-ethylpentane"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the halide", "h": "The carbon with Br carries three ethyl groups: tertiary. {{SN2}} is ruled out, a carbocation is possible, and each neighbouring {{CH2}} has hydrogens to lose.", "ask": {"q": "How many different alkenes can this halide give?", "a": "One. The three neighbouring {{CH2}} groups are equivalent, and the alkene carbon that keeps two ethyl groups has no E and Z."}},
+        {"t": "Label the two reagents", "h": "NaH is {{Na+}} {{H-}}: a very strong base. Water is a weak base and a polar protic solvent.", "ask": {"q": "Which flask can form a carbocation, and why not the other?", "a": "The water flask. A strong base removes the hydrogen before the halide has time to ionize."}},
+        {"t": "Strong base: draw E2", "h": "One step. Hydride lone pair to a {{CH2}} hydrogen; that C-H bond to the bond between the two carbons; the C-Br bond to Br. Products: A, {{H2}}, {{Br-}}."},
+        {"t": "Weak base: draw E1", "h": "Step 1: the C-Br bond to Br, leaving the tertiary carbocation. Step 2: a water lone pair to a neighbouring hydrogen, and that C-H bond to the C-C bond. Products: A, {{H3O+}}, {{Br-}}.", "ask": {"q": "What does water become?", "a": "{{H3O+}}. It took a proton."}},
+        {"t": "Translate the septet", "h": "Lines minus one is the number of neighbours: 7 − 1 = 6. Look for an H whose neighbouring carbons hold six equivalent hydrogens. In A, the alkene H has only three neighbours (a {{CH3}}). So the septet belongs to something else.", "ask": {"q": "Which group of atoms puts six equivalent hydrogens next to one C-H?", "a": "Two {{CH3}} groups (isopropyl), or three {{CH2}} groups on the same carbon, as here."}},
+        {"t": "Find the by-product and its origin", "h": "If Br is replaced by H, the central carbon has one H and three {{CH2}} neighbours: 3-ethylpentane. The only source of that H is hydride acting as a nucleophile instead of a base."}
+      ],
+      "answer": "A is 3-ethyl-2-pentene. NaH: E2 (one step). Water: E1 (two steps, tertiary carbocation). The septet is the C-H of 3-ethylpentane: a little hydride substituted for Br.",
+      "rule": "Strong base: E2 in one step. Solvent alone: ionize first. Lines minus one equals neighbours."
+    }
+  },
+  {
+    "id": "mech-two-paths-002", "type": "mech-two-paths", "role": "worked", "kind": "written", "diff": 2, "src": "site, after Lecture 11/10, p. 3", "time": 12, "pts": 70,
+    "stem": "(S)-2-Butyl tosylate is treated in two ways. Product B is a single enantiomer. Product C is a racemic mixture.\n[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1>NaSH;DMSO>\"Product B\"]]\n[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1>H2O>\"Product C\"]]\n<p>Draw B and C with their stereochemistry, and draw a mechanism for each reaction that explains it.</p>",
+    "model": "<p><b>Product B</b> is (R)-2-butanethiol, the inverted product: [[mol:CC[C@@H](C)S]]</p><p><b>With NaSH in DMSO: {{SN2}}, one step.</b> {{HS-}} is an excellent nucleophile and a weak base, the carbon is secondary and DMSO is polar aprotic. Sulfur attacks the carbon from the side opposite the tosylate while the C-O bond breaks. Two arrows. Back-side attack turns the carbon inside out, so S becomes R.</p>\n[[mech:sn2-2-butyl-tosylate-hydrosulfide]]\n<p><b>Product C</b> is 2-butanol, both enantiomers in equal amounts: [[mol:CC[C@H](C)O]] and [[mol:CC[C@@H](C)O]]</p><p><b>In water: {{SN1}}, three steps.</b> Water is a poor nucleophile, so the tosylate leaves first (slow) and a secondary carbocation forms. Water attacks the positive carbon, then a second water removes the extra proton.</p>\n[[mech:sn1-2butyl-tosylate-water]]\n<p>The carbocation is planar. Water attacks the top face and the bottom face equally often, so both enantiomers form: a racemic mixture.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Product B: 2-butanethiol drawn with the configuration inverted (R)"},
+      {"pts": 20, "h": "SN2 mechanism: one step, two arrows, sulfur attacking opposite the leaving group"},
+      {"pts": 10, "h": "Product C: both enantiomers of 2-butanol drawn (or one structure labelled racemic)"},
+      {"pts": 20, "h": "SN1 mechanism: ionization to the carbocation, attack by water, loss of a proton to a second water"},
+      {"pts": 10, "h": "Explanation: back-side attack inverts; a planar carbocation is attacked on either face and gives a racemic mixture"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate", "h": "The carbon with {{OTs}} is secondary and a stereocentre. Tosylate is a good leaving group. A secondary carbon can go either way: {{SN2}} or {{SN1}}."},
+        {"t": "Read the first conditions", "h": "{{HS-}} is at the top of the lecture's nucleophile table (126,000) and is a weak base. DMSO is polar aprotic. Good nucleophile, no help for ionization: {{SN2}}.", "ask": {"q": "Why does {{HS-}} substitute here instead of eliminating?", "a": "It is a weak base and an excellent nucleophile. A better nucleophile favours SN2 over E2."}},
+        {"t": "Draw SN2 and invert", "h": "S lone pair to carbon from the back; the C-O bond to oxygen. The nucleophile ends up on the face opposite to where the tosylate was. S becomes R.", "ask": {"q": "One enantiomer in: how many enantiomers out?", "a": "One, the inverted one."}},
+        {"t": "Read the second conditions", "h": "Water alone: a poor nucleophile and a polar protic solvent. The leaving group has to go first: {{SN1}}."},
+        {"t": "Draw SN1 in three steps", "h": "Ionize (one arrow). Water attacks the cation (one arrow). A second water takes a proton from the positive oxygen (two arrows).", "ask": {"q": "Why is the last step needed?", "a": "After water attacks, oxygen has three bonds and a positive charge. Losing {{H+}} gives the neutral alcohol."}},
+        {"t": "Explain the racemic product", "h": "The cation is {{sp2}} and flat, so the stereocentre is gone at that point. Attack on the two faces is equally likely: R and S alcohol, 50:50."}
+      ],
+      "answer": "B: (R)-2-butanethiol by SN2 (inversion). C: racemic 2-butanol by SN1 (planar carbocation).",
+      "rule": "SN2 inverts. SN1 racemizes."
+    }
+  },
+  {
+    "id": "mech-two-paths-003", "type": "mech-two-paths", "role": "worked", "kind": "written", "diff": 3, "src": "site", "time": 12, "pts": 70,
+    "stem": "2-Bromo-2-methylbutane gives the same major product, Product D, under two conditions.\n[[rxn:CCC(C)(C)Br>NaOCH3;CH3OH>\"Product D\"]]\n[[rxn:CCC(C)(C)Br>CH3OH;heat>\"Product D\"]]\n<p>(a) Draw Product D and a mechanism for each reaction.</p><p>(b) The crude {{1H}} NMR spectrum of the reaction in methanol alone shows a by-product with a sharp singlet from a {{CH3}} group, well away from the other {{CH3}} signals, in the region for hydrogens on a carbon bonded to oxygen. The by-product is absent from the methoxide reaction. What is it, and how does it form?</p>",
+    "model": "<p><b>Product D</b> is 2-methyl-2-butene, the more substituted alkene: [[mol:CC=C(C)C]]</p><p><b>With {{NaOCH3}}: {{E2}}, one step.</b> Methoxide is a strong base and the halide is tertiary. Three arrows. The other products are {{CH3OH}} and NaBr.</p>\n[[mech:e2-2-bromo-2-methylbutane-methoxide]]\n<p><b>In {{CH3OH}} alone: {{E1}}, two steps.</b> Methanol is a weak base, so the C-Br bond ionizes first to a tertiary carbocation. Methanol then takes a neighbouring hydrogen.</p>\n[[mech:e1-2-bromo-2-methylbutane-methanol]]\n<p><b>The singlet.</b> A singlet is a group of hydrogens with no hydrogens on the neighbouring atom. A {{CH3}} bonded to oxygen fits: oxygen has no H to split it, and oxygen pulls electron density away, which moves the signal away from ordinary {{CH3}} signals. The by-product is the ether 2-methoxy-2-methylbutane: [[mol:CCC(C)(C)OC]]</p><p>It forms by <b>{{SN1}}</b> from the same carbocation: methanol attacks the positive carbon with a lone pair, then a second methanol removes the proton from oxygen.</p>\n[[rxn:CC[C+](C)C + CO>>CCC(C)(C)[OH+]C]]\n[[rxn:CCC(C)(C)[OH+]C + CO>>CCC(C)(C)OC + C[OH2+]]]\n<p>With methoxide there is no carbocation ({{E2}} is concerted), and {{SN2}} cannot happen at a tertiary carbon, so no ether forms.</p>",
+    "rubric": [
+      {"pts": 20, "h": "Methoxide reaction drawn as E2: one step, three correct arrows"},
+      {"pts": 20, "h": "Methanol reaction drawn as E1: ionization to the tertiary carbocation, then methanol takes a neighbouring hydrogen"},
+      {"pts": 5, "h": "Product D: 2-methyl-2-butene"},
+      {"pts": 10, "h": "Singlet read as a CH3 with no neighbouring hydrogens, on oxygen (an OCH3 group)"},
+      {"pts": 10, "h": "By-product drawn (2-methoxy-2-methylbutane) and explained as SN1: methanol attacks the same carbocation, then loses a proton"},
+      {"pts": 5, "h": "Absent with methoxide because E2 has no carbocation and SN2 is impossible at a tertiary carbon"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the halide and its neighbours", "h": "Tertiary. The neighbouring carbons are one {{CH2}} and two {{CH3}} groups. Taking H from the {{CH2}} gives the trisubstituted alkene, the Saytzeff product, which is D."},
+        {"t": "Methoxide: E2", "h": "Strong, small base. One step, three arrows: O lone pair to the {{CH2}} hydrogen, the C-H bond to the new C=C, the C-Br bond to Br.", "ask": {"q": "What is the rate law?", "a": "rate = k[RBr][{{CH3O-}}]: both are in the one step."}},
+        {"t": "Methanol alone: E1", "h": "No strong base, so the leaving group goes first. The carbocation then loses a hydrogen to a molecule of methanol, which becomes {{CH3OH2+}}.", "ask": {"q": "Why not use {{CH3O-}} as the base in this step?", "a": "There is none in the flask. Only neutral methanol is present."}},
+        {"t": "Translate the singlet", "h": "Singlet: zero neighbouring hydrogens. Shifted away from the other {{CH3}} signals: next to an electronegative atom. A {{CH3}} on oxygen: {{OCH3}}.", "ask": {"q": "Where could an {{OCH3}} group come from?", "a": "From the solvent, methanol, acting as a nucleophile."}},
+        {"t": "Build the by-product", "h": "Put {{OCH3}} where Br was: 2-methoxy-2-methylbutane. Methanol attacked the carbocation ({{SN1}}), then lost {{H+}}. {{E1}} and {{SN1}} always share the carbocation."},
+        {"t": "Explain why the other flask is clean", "h": "In the methoxide flask the alkene forms in one concerted step, so there is never a carbocation to trap. Direct substitution would be {{SN2}} at a tertiary carbon, which does not happen."}
+      ],
+      "answer": "D is 2-methyl-2-butene. Methoxide: E2. Methanol alone: E1. The singlet is the {{OCH3}} of 2-methoxy-2-methylbutane, the SN1 product from the same carbocation.",
+      "rule": "E1 always comes with SN1: the solvent can take a hydrogen or attack the cation."
+    }
+  },
+  {
+    "id": "mech-two-paths-004", "type": "mech-two-paths", "role": "practice", "kind": "mech", "diff": 1, "src": "site", "mech": "e2-2-bromo-2-methylbutane-methoxide",
+    "stem": "Draw the curved arrows for the reaction of 2-bromo-2-methylbutane with sodium methoxide that gives 2-methyl-2-butene.\n[[rxn:CCC(C)(C)Br + C[O-].[Na+]>CH3OH>CC=C(C)C]]",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Tertiary halide and a strong base (methoxide): {{E2}}, one step. {{SN2}} is blocked at a tertiary carbon."},
+        {"t": "Choose the hydrogen", "h": "The product has its C=C toward the {{CH2}}, so the hydrogen comes from the {{CH2}} next to the C-Br carbon."},
+        {"t": "Draw the three arrows", "h": "Methoxide lone pair to that hydrogen. The C-H bond to the bond between the two carbons. The C-Br bond to bromine."}
+      ],
+      "answer": "One step, three arrows. Products: 2-methyl-2-butene, {{CH3OH}} and {{Br-}}.",
+      "rule": "E2: base to H, C-H to the pi bond, C-LG to the leaving group, all at once."
+    }
+  },
+  {
+    "id": "mech-two-paths-005", "type": "mech-two-paths", "role": "practice", "kind": "mech", "diff": 2, "src": "site", "mech": "e1-3-bromo-3-ethylpentane-water",
+    "stem": "Draw the curved arrows, step by step, for the reaction of 3-bromo-3-ethylpentane in water that gives the alkene.\n[[rxn:CCC(Br)(CC)CC>H2O>CC=C(CC)CC]]",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Tertiary halide and only a weak base (water): the leaving group leaves first. {{E1}}, two steps."},
+        {"t": "Step 1: one arrow", "h": "The C-Br bond to bromine. Draw the tertiary carbocation that results."},
+        {"t": "Step 2: two arrows", "h": "A lone pair of water to a hydrogen on a {{CH2}} next to the positive carbon, and that C-H bond to the bond between the two carbons. Water leaves as {{H3O+}}."}
+      ],
+      "answer": "Two steps, three arrows, with a tertiary carbocation between them.",
+      "rule": "E1: ionize first, then a weak base removes a neighbouring hydrogen."
+    }
+  },
+  {
+    "id": "mech-two-paths-006", "type": "mech-two-paths", "role": "practice", "kind": "mech", "diff": 2, "src": "site", "mech": "sn2-2-butyl-tosylate-hydrosulfide",
+    "stem": "Draw the curved arrows for the reaction of (S)-2-butyl tosylate with NaSH in DMSO.\n[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1 + [Na+].[SH-]>DMSO>CC[C@@H](C)S]]",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Secondary carbon, an excellent nucleophile that is a weak base ({{HS-}}), a polar aprotic solvent: {{SN2}}."},
+        {"t": "Draw the two arrows", "h": "A lone pair on sulfur to the carbon that carries the tosylate. The C-O bond to the tosylate oxygen."},
+        {"t": "Show the stereochemistry", "h": "Sulfur comes in from the side opposite the leaving group, so the three other groups flip over. (S) becomes (R)."}
+      ],
+      "answer": "One step, two arrows. Product: (R)-2-butanethiol and tosylate ion.",
+      "rule": "SN2: back-side attack, inversion."
+    }
+  },
+  {
+    "id": "mech-two-paths-007", "type": "mech-two-paths", "role": "practice", "kind": "mech", "diff": 3, "src": "Lecture 11/10, p. 3", "mech": "sn1-2butyl-tosylate-water",
+    "stem": "Draw the curved arrows, step by step, for the reaction of 2-butyl tosylate in water that gives 2-butanol.\n[[rxn:CC[C@H](C)OS(=O)(=O)c1ccc(C)cc1>H2O>CCC(C)O]]",
+    "solution": {
+      "steps": [
+        {"t": "Decide the mechanism", "h": "Water alone is a poor nucleophile and a polar protic solvent. The good leaving group ionizes first: {{SN1}}."},
+        {"t": "Step 1: one arrow", "h": "The C-O bond to the tosylate oxygen. Draw the secondary carbocation."},
+        {"t": "Step 2: one arrow", "h": "A lone pair of water to the positive carbon. The oxygen now has three bonds and a positive charge."},
+        {"t": "Step 3: two arrows", "h": "A lone pair of a second water to a hydrogen on the positive oxygen, and that O-H bond to oxygen. This is the step most often left out."}
+      ],
+      "answer": "Three steps, four arrows. The planar carbocation gives racemic 2-butanol.",
+      "rule": "SN1 with water: ionize, attack, lose a proton."
+    }
+  },
+  {
+    "id": "mech-two-paths-008", "type": "mech-two-paths", "role": "practice", "kind": "written", "diff": 2, "src": "Lecture 11/10, p. 1 to 2 and 11/12, p. 1", "time": 10, "pts": 50,
+    "stem": "tert-Butyl bromide is treated in two ways.\n[[rxn:CC(C)(C)Br>NaOH;H2O>\"Product F\"]]\n[[rxn:CC(C)(C)Br>H2O;25 °C>\"Product G\"]]\n<p>The {{1H}} NMR spectrum of F has two signals. The spectrum of G, the main product of the second reaction, has one C-H signal and one O-H signal.</p><p>(a) Identify F and G. (b) Draw the mechanism that forms each. (c) Why does G not form when NaOH is present?</p>",
+    "model": "<p><b>F</b> is 2-methylpropene. Its two =CH<sub>2</sub> hydrogens are one environment and its six {{CH3}} hydrogens are another: two signals. [[mol:CC(C)=C]]</p><p><b>G</b> is tert-butyl alcohol. All nine C-H hydrogens are equivalent: one C-H signal, plus the O-H. [[mol:CC(C)(C)O]]</p><p><b>F forms by {{E2}}</b>: hydroxide, a strong base, takes a hydrogen from a {{CH3}} while bromide leaves. One step.</p>\n[[mech:e2-tertbutyl-bromide-hydroxide]]\n<p><b>G forms by {{SN1}}</b>: with only water present the C-Br bond ionizes first. Water attacks the tertiary carbocation and a second water removes the proton.</p>\n[[mech:sn1-tertbutyl-bromide-water]]\n<p><b>(c)</b> Hydroxide cannot make the alcohol directly, because that would be {{SN2}} at a tertiary carbon, which does not happen. And it does not wait for the carbocation: as a strong base it removes a neighbouring hydrogen in a fast one-step {{E2}} (rate = k[RBr][{{HO-}}]), so the halide is used up before it can ionize.</p>",
+    "rubric": [
+      {"pts": 10, "h": "F = 2-methylpropene, with the two signals assigned (=CH2 and the two equivalent CH3 groups)"},
+      {"pts": 10, "h": "G = tert-butyl alcohol, with the nine equivalent C-H hydrogens named as the single signal"},
+      {"pts": 10, "h": "E2 mechanism for F: one step, three arrows"},
+      {"pts": 10, "h": "SN1 mechanism for G: ionization, attack by water, loss of a proton"},
+      {"pts": 10, "h": "(c): no SN2 at a tertiary carbon, and the strong base does E2 faster than the halide ionizes"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Count environments", "h": "An alkene from tert-butyl bromide can only be 2-methylpropene: =CH<sub>2</sub> and two equivalent {{CH3}} groups, two signals. A product with nine equivalent hydrogens and an O-H is {{(CH3)3COH}}."},
+        {"t": "Match reagent to mechanism", "h": "NaOH supplies {{HO-}}, a strong base: {{E2}}. Water alone is a weak base and a poor nucleophile: the halide ionizes, and at room temperature the cation is mostly captured by water ({{SN1}})."},
+        {"t": "Draw both", "h": "{{E2}}: one step, three arrows. {{SN1}}: three steps (C-Br breaks, water attacks, a second water takes {{H+}})."},
+        {"t": "Answer (c) with two facts", "h": "Tertiary carbons never do {{SN2}}, so hydroxide cannot attack the carbon. And the lecture's rate law, rate = k[t-BuBr][{{HO-}}], shows hydroxide reacts with the halide directly, by elimination."}
+      ],
+      "answer": "F: 2-methylpropene by E2. G: tert-butyl alcohol by SN1. With hydroxide the alcohol is not formed: no SN2 at a tertiary carbon, and E2 is faster than ionization.",
+      "rule": "Tertiary halide: strong base gives E2 only; solvent alone gives SN1 and E1."
+    }
+  },
+  {
+    "id": "mech-two-paths-009", "type": "mech-two-paths", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 12, "pts": 70,
+    "stem": "2-Bromo-2-methylbutane (RBr) gives 2-methyl-2-butene in both flasks, but the measured rate laws differ.\n<table><tr><th>Flask</th><th>Conditions</th><th>Rate law found</th></tr><tr><td>1</td><td>{{NaOCH3}} in {{CH3OH}}</td><td>rate = k[RBr][{{CH3O-}}]</td></tr><tr><td>2</td><td>{{CH3OH}} alone, heat</td><td>rate = k[RBr]</td></tr></table>\n<p>(a) Name the mechanism in each flask and say how the rate law tells you. (b) Draw each mechanism. (c) Sketch an energy diagram for each and mark the rate-determining step.</p>",
+    "model": "<p><b>(a)</b> Flask 1 is <b>{{E2}}</b>: the rate depends on both the halide and the base, so both are in the rate-determining step (bimolecular). Flask 2 is <b>{{E1}}</b>: the rate depends on the halide alone, so the slow step involves only the halide (unimolecular): it is the ionization.</p><p><b>(b)</b> Flask 1, one step:</p>\n[[mech:e2-2-bromo-2-methylbutane-methoxide]]\n<p>Flask 2, two steps:</p>\n[[mech:e1-2-bromo-2-methylbutane-methanol]]\n<p><b>(c)</b> {{E2}}: one hump, no intermediate. The single transition state contains the base, the hydrogen, both carbons and the bromine.</p>\n[[energy:R=0,TS=20,P=-5|TS=rate-determining]]\n<p>{{E1}}: two humps with the carbocation in the valley between them. The first hump (ionization) is the higher one and is the rate-determining step.</p>\n[[energy:R=0,TS1=22,I=14,TS2=17,P=-3|I=carbocation,TS1=rate-determining]]",
+    "rubric": [
+      {"pts": 10, "h": "Flask 1 named E2 and flask 2 named E1, each tied to its rate law (two species or one species in the slow step)"},
+      {"pts": 20, "h": "E2 mechanism: one step, three arrows"},
+      {"pts": 20, "h": "E1 mechanism: ionization, then methanol removes a neighbouring hydrogen"},
+      {"pts": 10, "h": "E2 diagram: one hump, no intermediate"},
+      {"pts": 10, "h": "E1 diagram: two humps, carbocation valley, first hump higher and marked rate-determining"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the rate laws", "h": "Whatever appears in the rate law takes part in the slow step. Halide and base: bimolecular elimination, {{E2}}. Halide only: unimolecular, {{E1}}. This is how the lecture named both reactions from its rate tables."},
+        {"t": "Check against the reagents", "h": "Methoxide is a strong base: {{E2}} is expected. Methanol alone is a weak base and a polar protic solvent, and the halide is tertiary: {{E1}} is expected. The kinetics agree."},
+        {"t": "Draw the mechanisms", "h": "{{E2}}: three arrows in one drawing. {{E1}}: one arrow to make the carbocation, then two arrows for methanol taking the hydrogen."},
+        {"t": "Draw the diagrams", "h": "One step means one hump. Two steps mean two humps and a valley for the intermediate. The slow step is the highest hump: the first one in {{E1}}."}
+      ],
+      "answer": "Flask 1: E2, one concerted step, one hump. Flask 2: E1, ionization (slow) then loss of a proton, two humps with a carbocation between.",
+      "rule": "The rate law lists what is in the slow step."
+    }
+  },
+  {
+    "id": "mech-two-paths-010", "type": "mech-two-paths", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 10, "pts": 50,
+    "stem": "3-Bromo-3-ethylpentane is stirred in water at room temperature. The alkene 3-ethyl-2-pentene forms, but the crude {{1H}} NMR spectrum also shows a second compound, E, that has only three signals: a triplet, a quartet and one O-H signal.\n[[rxn:CCC(Br)(CC)CC>H2O;25 °C>CC=C(CC)CC + \"E\"]]\n<p>(a) What is E? Use the spectrum. (b) Show how E forms and which step it shares with the route to the alkene. (c) Why is there no E when the same bromide is treated with NaH instead? (d) What change would give more alkene and less E in water?</p>",
+    "model": "<p><b>(a)</b> A triplet is a group with two neighbouring hydrogens and a quartet is a group with three: together they are an ethyl group, {{CH3CH2}}. Only one triplet and one quartet means all the ethyl groups are equivalent. With an O-H, E is 3-ethyl-3-pentanol: [[mol:CCC(O)(CC)CC]]</p><p><b>(b)</b> E is the <b>{{SN1}}</b> product. The first step is the same ionization that starts the {{E1}} route:</p>\n[[mech:e1-3-bromo-3-ethylpentane-water]]\n<p>From the carbocation, water can instead attack the positive carbon with a lone pair, and a second water then removes a proton from oxygen:</p>\n[[rxn:CC[C+](CC)CC + O>>CCC([OH2+])(CC)CC]]\n[[rxn:CCC([OH2+])(CC)CC + O>>CCC(O)(CC)CC + [OH3+]]]\n<p><b>(c)</b> With NaH the alkene forms by {{E2}} in one concerted step. There is no carbocation, and there is no water in the flask to supply the oxygen.</p><p><b>(d)</b> Heat the reaction. From the same carbocation, {{E1}} is favoured at high temperature and {{SN1}} at lower temperature.</p>",
+    "rubric": [
+      {"pts": 15, "h": "E identified as 3-ethyl-3-pentanol, with the triplet and quartet read as equivalent ethyl groups"},
+      {"pts": 15, "h": "E explained as SN1: same carbocation as E1, water attacks the positive carbon, then a proton is lost"},
+      {"pts": 10, "h": "NaH: E2 is concerted, so no carbocation forms, and no water is present"},
+      {"pts": 10, "h": "More alkene at higher temperature (E1 favoured by heat, SN1 by lower temperature)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the splitting", "h": "Triplet: 2 neighbours, so a {{CH3}} next to a {{CH2}}. Quartet: 3 neighbours, so a {{CH2}} next to a {{CH3}} and next to a carbon with no hydrogen. That is an ethyl group on a carbon with no H."},
+        {"t": "Read the number of signals", "h": "Only one triplet and one quartet: every ethyl group is in the same environment. Three ethyl groups and an OH on one carbon: 3-ethyl-3-pentanol."},
+        {"t": "Find its origin", "h": "An alcohol from a tertiary halide in water is the {{SN1}} product. {{SN1}} and {{E1}} share the ionization step and the carbocation, then part ways: water attacks carbon ({{SN1}}) or takes a hydrogen ({{E1}})."},
+        {"t": "Compare with the NaH flask", "h": "Hydride is a strong base: {{E2}}, concerted, no carbocation to capture, and no oxygen nucleophile around."},
+        {"t": "Use temperature", "h": "The lecture: {{SN1}} is favoured at lower temperature, {{E1}} at high temperature. Warm the flask to raise the share of alkene."}
+      ],
+      "answer": "E is 3-ethyl-3-pentanol, the SN1 product from the same carbocation as the E1 alkene. No E with NaH (E2, no carbocation). Heat favours the alkene.",
+      "rule": "Solvent alone: SN1 and E1 from one carbocation. Heat favours elimination."
+    }
+  },
+  {
+    "id": "mech-two-paths-011", "type": "mech-two-paths", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 5, "pts": 20,
+    "stem": "2-Bromo-2-methylbutane gives 2-methyl-2-butene by {{E2}} with {{NaOCH3}} in {{CH3OH}}, and by {{E1}} in warm {{CH3OH}} alone. For each reaction give: (a) the number of steps, (b) the intermediate, if there is one, (c) the rate law, (d) the species that removes the hydrogen.\n[[mol:CCC(C)(C)Br]]",
+    "model": "<table><tr><th></th><th>{{E2}} ({{NaOCH3}})</th><th>{{E1}} ({{CH3OH}} alone)</th></tr><tr><td>(a) Steps</td><td>one, concerted</td><td>two</td></tr><tr><td>(b) Intermediate</td><td>none</td><td>the tertiary carbocation [[mol:CC[C+](C)C]]</td></tr><tr><td>(c) Rate law</td><td>rate = k[RBr][{{CH3O-}}]</td><td>rate = k[RBr]</td></tr><tr><td>(d) Base</td><td>{{CH3O-}} (strong base)</td><td>{{CH3OH}} (weak base, the solvent)</td></tr></table>",
+    "rubric": [
+      {"pts": 5, "h": "Steps: E2 one, E1 two"},
+      {"pts": 5, "h": "Intermediate: none for E2, a tertiary carbocation for E1"},
+      {"pts": 5, "h": "Rate laws: k[RBr][CH3O-] for E2, k[RBr] for E1"},
+      {"pts": 5, "h": "Base: methoxide in E2, neutral methanol in E1"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "E2 is concerted", "h": "The strong base, the hydrogen and the leaving group all move in one step, so there is no intermediate and both the halide and the base are in the rate law."},
+        {"t": "E1 starts alone", "h": "With no strong base the halide ionizes by itself. That slow step makes the carbocation and sets the rate: only [RBr] appears."},
+        {"t": "Name the base honestly", "h": "In the second flask nothing but methanol is present, so methanol is the base that takes the hydrogen from the carbocation. It leaves as {{CH3OH2+}}."}
+      ],
+      "answer": "E2: one step, no intermediate, rate = k[RBr][{{CH3O-}}], base {{CH3O-}}. E1: two steps, carbocation, rate = k[RBr], base {{CH3OH}}.",
+      "rule": "E2: bimolecular and concerted. E1: unimolecular, through a carbocation."
+    }
+  }
+]

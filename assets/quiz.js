@@ -214,7 +214,7 @@
   function mount(host, item, opts) {
     opts = opts || {}; host.textContent = "";
     const t0 = Date.now(); let finished = false, key = null;
-    const stem = el("div", { class: "q-stem", html: item.stem || "" }), body = el("div", { class: "q-body" }), after = el("div", { class: "q-after" });
+    const stem = el("div", { class: "q-stem", html: stemOf(item) }), body = el("div", { class: "q-body" }), after = el("div", { class: "q-after" });
     const box = el("section", { class: "q q-" + item.kind, "aria-label": "Question", data: { id: item.id || "", kind: item.kind } }, head(item), stem, body, after);
     host.appendChild(box);
 
@@ -295,11 +295,22 @@
   }
 
   // ------------------------------------------------------------------ a worked example
+  // a chair question's drawing is made by the chair tool itself, so the same drawing in the stem is left out
+  const stemOf = item => item.kind === "chair" ? String(item.stem || "").replace(/\[\[(ring|chair):.*?\]\](?!\])/g, "") : item.stem || "";
+  // what a worked example is choosing between, shown before the steps (unmarked)
+  function asked(item) {
+    const k = item.kind;
+    if ((k === "mcq" || k === "multi") && item.choices) return el("ul", { class: "q-key q-asked" + (item.layout === "pair" ? " pair" : "") }, item.choices.map((c, i) => el("li", {}, item.layout === "pair" ? null : el("b", { class: "q-letter" }, "ABCDEF"[i] + ". "), el("div", { class: "q-key-h", html: c.h }))));
+    if (k === "rank" && item.items) return el("div", { class: "q-asked" }, el("p", { class: "small muted" }, "To put in order (" + (item.order || "") + "), shown here in no particular order:"), el("ul", { class: "q-key" }, item.items.slice().sort((a, b) => ORGO.text(a.h).length - ORGO.text(b.h).length || (a.h < b.h ? -1 : 1)).map(it => el("li", { html: it.h }))));
+    if (k === "classify" && item.items) return el("div", { class: "q-asked" }, el("p", { class: "small muted" }, "To sort into: " + (item.bins || []).join(", ")), el("ul", { class: "q-key" }, item.items.map(it => el("li", { html: it.h }))));
+    if (k === "chair" && ORGO.chair) { try { const subs = ORGO.chair.parse(item.subs); return el("div", { class: "q-asked" }, item.given === "ring" ? ORGO.chair.ring(subs, { num: true }) : ORGO.chair.svg(subs, item.given === "chairB" ? "B" : "A", { num: true })) } catch (e) { } }
+    return null;
+  }
   function worked(host, item) {
     host.textContent = "";
     const s = item.solution || {}, steps = s.steps || []; let i = 0;
     const list = el("ol", { class: "steps" }), ctl = el("div", { class: "q-ctl" }), end = el("div", { class: "q-after" });
-    const box = el("section", { class: "q q-worked", "aria-label": "Worked example", data: { id: item.id || "" } }, head(item, "Worked example"), el("div", { class: "q-stem", html: item.stem || "" }), list, ctl, end);
+    const box = el("section", { class: "q q-worked", "aria-label": "Worked example", data: { id: item.id || "" } }, head(item, "Worked example"), el("div", { class: "q-stem", html: stemOf(item) }), asked(item), list, ctl, end);
     host.appendChild(box);
     const put = (node, focus) => { ctl.textContent = ""; if (node) ctl.appendChild(node); if (focus) try { focus.focus({ preventScroll: true }) } catch (e) { } };
     function reveal(asked) { list.appendChild(stepLi(steps[i], i, asked)); i++; offer(true) }

@@ -1,0 +1,244 @@
+[
+  {
+    "id": "route-choice-001", "type": "route-choice", "role": "worked", "kind": "mcq", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q6A", "layout": "pair",
+    "stem": "Which route is the more efficient way to make cyclopentyl ethyl ether? Circle it.\n[[mol:CCOC1CCCC1]]",
+    "choices": [
+      {"h": "[[rxn:BrC1CCCC1 + CC[O-].[Na+]>CH3CH2OH>CCOC1CCCC1]]", "ok": false, "why": "The halide is secondary and ethoxide is a strong base (ethanol {{pKa}} about 16). {{E2}} to cyclopentene competes with {{SN2}} and wins, so the ether is a minor product in a mixture."},
+      {"h": "[[rxn:[O-]C1CCCC1.[Na+] + CCBr>DMSO>CCOC1CCCC1]]", "ok": true, "why": "The halide is primary and the alkoxide is not bulky, so the reaction is {{SN2}}. DMSO, polar aprotic, leaves the alkoxide unsolvated and very nucleophilic."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the bond being made", "h": "Both routes make a C-O bond of the ether. On the left the oxygen attacks the ring carbon; on the right it attacks the {{CH2}} of bromoethane.", "ask": {"q": "In each route, which carbon carries the leaving group?", "a": "Left: a ring carbon, secondary. Right: the {{CH2}} of bromoethane, primary."}},
+        {"t": "Classify the electrophiles", "h": "Secondary on the left (like isopropyl, {{SN2}} rate 0.00083). Primary on the right (ethyl, 0.033)."},
+        {"t": "Judge the nucleophiles as bases", "h": "Both are alkoxides, both strong bases. A strong base with a secondary halide gives mostly {{E2}}; with a primary halide, if the base is not bulky, it gives {{SN2}}.", "ask": {"q": "What is the by-product of the left-hand route?", "a": "Cyclopentene, with ethanol and bromide, from {{E2}}."}},
+        {"t": "Read the solvents", "h": "Ethanol is polar protic: it hydrogen-bonds to the alkoxide and slows it as a nucleophile. DMSO is polar aprotic: the favourite solvent of {{SN2}}.", "ask": {"q": "Which lecture summary line covers the solvent?", "a": "{{SN2}}: low sterics, good nucleophile, good leaving group, polar aprotic solvent."}},
+        {"t": "Circle and explain", "h": "The right-hand route can only substitute. The left-hand route mostly eliminates."}
+      ],
+      "answer": "The right-hand route: sodium cyclopentanolate with bromoethane in DMSO.",
+      "rule": "Put the leaving group on the less hindered carbon and the hindered group on the oxygen."
+    }
+  },
+  {
+    "id": "route-choice-002", "type": "route-choice", "role": "worked", "kind": "written", "diff": 2, "src": "site, from Lecture 11/10 p. 4 and 11/12 p. 1", "pts": 50, "time": 8,
+    "stem": "Two ways of turning tert-butyl bromide into 2-methylpropene are proposed. Which gives the alkene cleanly? Explain, naming every mechanism involved.\n[[rxn:CC(C)(C)Br>NaOH;H2O>CC(C)=C]]\n[[rxn:CC(C)(C)Br>H2O;25 °C>CC(C)=C]]",
+    "model": "<p><b>Choose NaOH.</b> The halide is tertiary, so {{SN2}} is impossible in both flasks.</p><p>With hydroxide, a strong base, the reaction is <b>{{E2}}</b>: one step, rate = k[RBr][{{HO-}}]. Hydroxide removes a beta hydrogen as bromide leaves, and the alkene is the only organic product. No alcohol is formed.</p><p>In water alone there is no strong base. The bromide ionizes to the tert-butyl cation (the slow step). Water then usually adds to the cation: <b>{{SN1}}</b>, tert-butyl alcohol, the major product at 25 °C. Only sometimes does water remove a beta hydrogen: <b>{{E1}}</b>, the alkene, minor. The second route gives a mixture that is mostly the wrong product.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Chooses the NaOH route"},
+      {"pts": 5, "h": "Tertiary halide: no SN2 in either flask"},
+      {"pts": 15, "h": "Hydroxide is a strong base: E2, concerted, alkene only"},
+      {"pts": 15, "h": "Water alone: carbocation, then SN1 alcohol (major) and E1 alkene (minor)"},
+      {"pts": 5, "h": "Notes that SN1 and E1 share one intermediate, or that lower temperature favours SN1"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Notice what the target is", "h": "An alkene. This time elimination is the reaction wanted and substitution is the side reaction.", "ask": {"q": "Which mechanisms make an alkene from an alkyl halide?", "a": "{{E2}} (strong base, one step) and {{E1}} (through a carbocation)."}},
+        {"t": "Classify the substrate", "h": "Tertiary. {{SN2}} is out. Left on the list: {{E2}} with a strong base, or {{SN1}} and {{E1}} without one."},
+        {"t": "NaOH route", "h": "Hydroxide is a strong base. The lecture's rate data gave rate = k[t-BuBr][{{HO-}}] and the alkene with no alcohol: {{E2}}.", "ask": {"q": "Why does hydroxide not give the alcohol here?", "a": "It cannot reach the tertiary carbon ({{SN2}} rate 0), and it removes a hydrogen faster than the bromide can ionize."}},
+        {"t": "Water route", "h": "No strong base, polar protic solvent: ionization to the carbocation. One intermediate, two products: water adds ({{SN1}}, favoured at lower temperature) or takes a proton ({{E1}}, favoured by heat).", "ask": {"q": "At 25 °C, which product of the water route is major?", "a": "tert-Butyl alcohol, from {{SN1}}."}},
+        {"t": "Write the answer in three parts", "h": "The choice, why it can only do {{E2}}, and what the other route gives instead."}
+      ],
+      "answer": "NaOH in water: clean E2 to 2-methylpropene. Water alone gives mostly tert-butyl alcohol by SN1, with a little alkene by E1.",
+      "rule": "For an alkene from a tertiary halide, use a strong base."
+    }
+  },
+  {
+    "id": "route-choice-003", "type": "route-choice", "role": "worked", "kind": "mcq", "diff": 3, "src": "site", "layout": "pair",
+    "stem": "The target is the single enantiomer shown, the (S) acetate. Both routes start from (R)-2-butyl tosylate. Circle the route that gives the target cleanly.\n[[mol:CC[C@H](C)OC(C)=O]]",
+    "choices": [
+      {"h": "[[rxn:CC[C@@H](C)OS(=O)(=O)c1ccc(C)cc1 + CC(=O)[O-].[Na+]>DMSO>CC[C@H](C)OC(C)=O]]", "ok": true, "why": "Acetate is a weak base (acetic acid {{pKa}} 4) and a fair nucleophile, and DMSO is polar aprotic: {{SN2}} at the secondary carbon, with inversion. (R) tosylate gives (S) acetate."},
+      {"h": "[[rxn:CC[C@@H](C)OS(=O)(=O)c1ccc(C)cc1>CH3CO2H;heat>CC[C@H](C)OC(C)=O]]", "ok": false, "why": "Neutral acetic acid is a poor nucleophile in a polar protic solvent, so the secondary tosylate ionizes: {{SN1}} through a planar carbocation gives both enantiomers, and {{E1}} gives butenes, more so with heat."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the stereochemistry asked for", "h": "The starting tosylate is (R) and the target acetate is (S), with the oxygen on the opposite face. The route must invert the carbon, completely.", "ask": {"q": "Which mechanism inverts and which racemizes?", "a": "{{SN2}} inverts. {{SN1}} goes through a planar carbocation and gives a racemic mixture."}},
+        {"t": "Classify the substrate", "h": "Secondary, with a good leaving group (tosylate). The crossroads: the reagent and the solvent decide."},
+        {"t": "Left-hand route", "h": "An anionic nucleophile that is a weak base: no {{E2}} to speak of. Polar aprotic solvent: {{SN2}}. This is the exam's own reaction (Q2A, pair 2).", "ask": {"q": "Why does acetate not eliminate, when ethoxide would?", "a": "Acetate is a weak base: its conjugate acid has {{pKa}} 4, against 16 for ethanol."}},
+        {"t": "Right-hand route", "h": "No anion at all: the nucleophile is neutral acetic acid, the solvent is polar protic. Flowchart: secondary, polar protic, weak base and poor nucleophile gives {{SN1}} and {{E1}}. The lecture's 2-butyl tosylate in water gave racemic alcohol the same way.", "ask": {"q": "What does the right-hand flask contain?", "a": "Both enantiomers of the acetate, plus butenes."}},
+        {"t": "Circle", "h": "Only the left-hand route gives one enantiomer."}
+      ],
+      "answer": "The left-hand route: sodium acetate in DMSO (SN2, inversion).",
+      "rule": "To keep stereochemistry under control at a secondary carbon: anionic weak base, polar aprotic solvent."
+    }
+  },
+  {
+    "id": "route-choice-004", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 1, "src": "site", "layout": "pair",
+    "stem": "Circle the cleaner route to isopropyl methyl ether.\n[[mol:COC(C)C]]",
+    "choices": [
+      {"h": "[[rxn:CC(C)[O-].[Na+] + CI>DMSO>COC(C)C]]", "ok": true, "why": "Iodomethane can only do {{SN2}}: open carbon, no beta hydrogen. The secondary group is in the alkoxide, where it does no harm."},
+      {"h": "[[rxn:CC(C)I + C[O-].[Na+]>CH3OH>COC(C)C]]", "ok": false, "why": "A secondary halide with a strong base: mostly {{E2}} to propene. Choosing this route forgets that methoxide is a base as well as a nucleophile."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the halides", "h": "Left: methyl. Right: secondary."},
+        {"t": "Judge the reagents", "h": "Both nucleophiles are alkoxides, strong bases."},
+        {"t": "Apply the flowchart", "h": "Methyl: {{SN2}} only. Secondary with a strong base: {{E2}}."}
+      ],
+      "answer": "Sodium isopropoxide with iodomethane in DMSO",
+      "rule": "Methyl halide plus alkoxide: SN2 only."
+    }
+  },
+  {
+    "id": "route-choice-005", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 1, "src": "site, from Lecture 11/05 p. 2", "layout": "pair",
+    "stem": "Circle the route that gives ethanethiol.\n[[mol:CCS]]",
+    "choices": [
+      {"h": "[[rxn:CCO + [Na+].[SH-]>>CCS]]", "ok": false, "why": "The leaving group would be {{HO-}}, a strong base and a poor leaving group. The lecture's verdict: no reaction."},
+      {"h": "[[rxn:CCOS(=O)(=O)c1ccc(C)cc1 + [Na+].[SH-]>>CCS]]", "ok": true, "why": "Tosylate is a good leaving group, the carbon is primary and {{HS-}} is an excellent nucleophile (126,000): {{SN2}}."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Spot the difference", "h": "Same carbon, same nucleophile. Only the leaving group differs: OH or OTs."},
+        {"t": "Judge the leaving groups", "h": "A good leaving group is a weak base. {{HO-}} is a strong base (water {{pKa}} 15.7). Tosylate is the anion of a strong acid."},
+        {"t": "Conclude", "h": "An alcohol does not react with a nucleophile directly. Turn the OH into OTs first."}
+      ],
+      "answer": "Ethyl tosylate with NaSH",
+      "rule": "HO- is a poor leaving group; tosylate is a good one."
+    }
+  },
+  {
+    "id": "route-choice-006", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 1, "src": "site", "layout": "pair",
+    "stem": "Both flasks give 1-azidobutane. Circle the faster, more efficient one.\n[[mol:CCCCN=[N+]=[N-]]]",
+    "choices": [
+      {"h": "[[rxn:CCCCBr + [Na+].[N-]=[N+]=[N-]>DMSO>CCCCN=[N+]=[N-]]]", "ok": true, "why": "Primary halide, good nucleophile: {{SN2}}. DMSO is polar aprotic, so the azide ion is not held by hydrogen bonds and attacks at full strength."},
+      {"h": "[[rxn:CCCCBr + [Na+].[N-]=[N+]=[N-]>CH3OH>CCCCN=[N+]=[N-]]]", "ok": false, "why": "Same reaction, but methanol is polar protic: it hydrogen-bonds to the anion and the nucleophile has to shed that solvent before it can attack. Slower."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the mechanism", "h": "Primary halide with azide ({{N3-}}, 8,000 on the lecture scale): {{SN2}} in both flasks."},
+        {"t": "Spot the difference", "h": "Only the solvent: DMSO is polar aprotic, methanol is polar protic."},
+        {"t": "Use the summary", "h": "{{SN2}}: low sterics, good nucleophile, good leaving group, polar aprotic solvent. Protic solvents solvate negative ions."}
+      ],
+      "answer": "The reaction in DMSO",
+      "rule": "SN2 with an anion: polar aprotic solvent."
+    }
+  },
+  {
+    "id": "route-choice-007", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 2, "src": "site", "layout": "pair",
+    "stem": "The target is cyclohexene. Circle the route that gives it cleanly.\n[[mol:C1=CCCCC1]]",
+    "choices": [
+      {"h": "[[rxn:BrC1CCCCC1 + CC(C)(C)[O-].[K+]>(CH3)3COH>C1=CCCCC1]]", "ok": true, "why": "tert-Butoxide is a strong base and too bulky to be a good nucleophile: with a secondary halide it gives {{E2}} only."},
+      {"h": "[[rxn:BrC1CCCCC1 + CC(=O)[O-].[Na+]>DMSO>C1=CCCCC1]]", "ok": false, "why": "Acetate is a weak base (acetic acid {{pKa}} 4) and a fair nucleophile. With a secondary halide in a polar aprotic solvent it substitutes: mostly the ester, little alkene."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Notice the target", "h": "An alkene. Elimination is wanted, so the usual advice is reversed: pick the strong base."},
+        {"t": "Compare the reagents as bases", "h": "tert-Butanol {{pKa}} 17.0; acetic acid 4. tert-Butoxide is the strong base, and its bulk stops it substituting."},
+        {"t": "Apply the flowchart", "h": "Secondary halide: strong base gives {{E2}}; weak base that is a fair nucleophile gives {{SN2}}."}
+      ],
+      "answer": "Bromocyclohexane with potassium tert-butoxide",
+      "rule": "Want the alkene: strong, bulky base."
+    }
+  },
+  {
+    "id": "route-choice-008", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 2, "src": "site, from Lecture 11/10 p. 4 and 11/12 p. 1", "layout": "pair",
+    "stem": "The target is tert-butyl alcohol. Circle the better route.\n[[mol:CC(C)(C)O]]",
+    "choices": [
+      {"h": "[[rxn:CC(C)(C)Br>H2O;25 °C>CC(C)(C)O]]", "ok": true, "why": "No strong base: the tertiary bromide ionizes and water adds to the carbocation. {{SN1}}, favoured at lower temperature, with only a little {{E1}} alkene."},
+      {"h": "[[rxn:CC(C)(C)Br>NaOH;H2O>CC(C)(C)O]]", "ok": false, "why": "It looks as if hydroxide should supply the OH faster, but it cannot reach a tertiary carbon. As a strong base it gives {{E2}}: 2-methylpropene, and no alcohol."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate", "h": "Tertiary: {{SN2}} rate 0. Hydroxide cannot make the alcohol by direct attack."},
+        {"t": "Ask what each reagent does instead", "h": "Water alone: ionization, then {{SN1}} (major) and {{E1}} (minor). Hydroxide: {{E2}}, the lecture's example, alcohol not formed."},
+        {"t": "Choose for the target", "h": "The alcohol comes from the weak nucleophile, not from the strong one."}
+      ],
+      "answer": "Water alone at 25 °C",
+      "rule": "Tertiary halide: water gives the alcohol (SN1), hydroxide gives the alkene (E2)."
+    }
+  },
+  {
+    "id": "route-choice-009", "type": "route-choice", "role": "practice", "kind": "written", "diff": 2, "src": "site", "pts": 50, "time": 8,
+    "stem": "2-Methoxybutane can be planned in two ways. Which route is cleaner? Explain in terms of the substrate, the strength of the base and the solvent, and say what the poorer route gives instead.\n[[rxn:CCC(C)Br + C[O-].[Na+]>CH3OH>CCC(C)OC]]\n[[rxn:CCC(C)[O-].[Na+] + CBr>DMSO>CCC(C)OC]]",
+    "model": "<p><b>The second route.</b> Bromomethane can only undergo {{SN2}}: its carbon is unhindered and it has no beta hydrogen, so elimination is impossible. DMSO is polar aprotic, so the alkoxide is unsolvated and very nucleophilic. The ether is the only product.</p><p>In the first route the halide is secondary and methoxide is a strong base (methanol {{pKa}} 15.5). {{E2}} competes with {{SN2}} and wins: the flask holds mostly butenes (2-butene major, 1-butene minor) and methanol, with a little ether.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Chooses the second route (alkoxide with bromomethane in DMSO)"},
+      {"pts": 15, "h": "Bromomethane can only do SN2: unhindered, no beta hydrogen"},
+      {"pts": 5, "h": "DMSO is polar aprotic: unsolvated, reactive alkoxide"},
+      {"pts": 15, "h": "First route: secondary halide with a strong base, so E2 competes and dominates"},
+      {"pts": 5, "h": "Names the by-products: butenes (and methanol)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the halides", "h": "First route: 2-bromobutane, secondary. Second route: bromomethane, methyl."},
+        {"t": "Judge the bases", "h": "Both nucleophiles are alkoxides: strong bases."},
+        {"t": "List what each route can do", "h": "Secondary with a strong base: {{E2}} mainly, some {{SN2}}. Methyl: {{SN2}} only."},
+        {"t": "Add the solvent", "h": "Methanol solvates the methoxide; DMSO leaves the alkoxide free. That helps the second route further."}
+      ],
+      "answer": "The second route: sodium butan-2-olate with bromomethane in DMSO. The first gives mostly butenes by E2.",
+      "rule": "Same logic as Q6A: methyl halide, hindered alkoxide, polar aprotic solvent."
+    }
+  },
+  {
+    "id": "route-choice-010", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 2, "src": "site", "layout": "pair",
+    "stem": "The target is 1-butene. Circle the route that gives mostly the target.\n[[mol:C=CCC]]",
+    "choices": [
+      {"h": "[[rxn:CCCCBr + CC(C)(C)[O-].[K+]>(CH3)3COH>C=CCC]]", "ok": true, "why": "A primary halide substitutes with most strong bases, but a bulky strong base cannot reach the carbon easily and takes a beta hydrogen instead: {{E2}}."},
+      {"h": "[[rxn:CCCCBr + CC[O-].[Na+]>CH3CH2OH>C=CCC]]", "ok": false, "why": "Ethoxide is a strong base but not bulky. With a primary halide it substitutes: {{SN2}}, butyl ethyl ether, with little alkene."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify the substrate", "h": "Primary. The flowchart: good nucleophile gives {{SN2}}; bulky strong base gives {{E2}}; strong base that is not bulky gives {{SN2}}."},
+        {"t": "Compare the two bases", "h": "Both are strong (conjugate acids {{pKa}} 17.0 and 15.9). Only tert-butoxide is bulky."},
+        {"t": "Match to the target", "h": "The alkene needs {{E2}}, so it needs the bulky base."}
+      ],
+      "answer": "1-Bromobutane with potassium tert-butoxide",
+      "rule": "Primary halide: only a bulky strong base eliminates."
+    }
+  },
+  {
+    "id": "route-choice-011", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 3, "src": "site", "layout": "pair",
+    "stem": "The target is the single enantiomer shown, (R)-2-methoxybutane. Circle the route that gives it cleanly.\n[[mol:CC[C@@H](C)OC]]",
+    "choices": [
+      {"h": "[[rxn:CC[C@@H](C)[O-].[Na+] + CI>DMSO>CC[C@@H](C)OC]]", "ok": true, "why": "{{SN2}} at the methyl carbon. No bond to the stereocentre is made or broken, so the (R) alkoxide gives the (R) ether, and a methyl halide cannot eliminate."},
+      {"h": "[[rxn:CC[C@H](C)Br + C[O-].[Na+]>CH3OH>CC[C@@H](C)OC]]", "ok": false, "why": "On paper, {{SN2}} on the (S) bromide would invert to the (R) ether. But methoxide is a strong base and the halide is secondary: {{E2}} to butenes is the main reaction."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Check the stereochemistry of each route", "h": "Left: the stereocentre is on the alkoxide and is untouched, (R) stays (R). Right: the stereocentre is attacked, so (S) would invert to (R). Both give the right enantiomer on paper."},
+        {"t": "So stereochemistry does not decide", "h": "Ask what else each route can do. Left: methyl halide, {{SN2}} only. Right: secondary halide with a strong base, mostly {{E2}}."},
+        {"t": "Circle the route with one outcome", "h": "The trap is to stop after working out the inversion correctly."}
+      ],
+      "answer": "The (R) alkoxide with iodomethane in DMSO",
+      "rule": "Getting the stereochemistry right is not enough: the route must also have no competing reaction."
+    }
+  },
+  {
+    "id": "route-choice-012", "type": "route-choice", "role": "practice", "kind": "mcq", "diff": 3, "src": "site, modelled on FA24 Exam 2, Q3D", "layout": "pair",
+    "stem": "The target is 1-methylcyclohexene. Each bromide below is treated with {{NaOCH3}} in {{CH3OH}}. Circle the bromide that gives the target as its major product.\n[[mol:CC1=CCCCC1]]",
+    "choices": [
+      {"h": "[[ring:1u:Br,2u:CH3]]\ncis-1-bromo-2-methylcyclohexane", "ok": true, "why": "With Br axial, the cis methyl is equatorial, so the hydrogen on C2 is axial and anti to Br. Losing it puts the double bond between C1 and C2: the more substituted alkene."},
+      {"h": "[[ring:1u:Br,2d:CH3]]\ntrans-1-bromo-2-methylcyclohexane", "ok": false, "why": "With Br axial, the trans methyl is axial too, so the hydrogen on C2 is equatorial and cannot leave. Only C6 has an axial hydrogen: the product is 3-methylcyclohexene."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the reaction", "h": "Secondary halide with a strong base: {{E2}} in both cases. The question is which hydrogen can leave."},
+        {"t": "Put the leaving group axial", "h": "{{E2}} on a ring needs Br axial and an axial hydrogen on a neighbouring carbon, one up and one down."},
+        {"t": "Look at C2 in each isomer", "h": "cis: Br up and axial on C1 means {{CH3}} up and equatorial on C2, so the C2 hydrogen is down and axial. It can leave. trans: {{CH3}} is down and axial on C2, so the C2 hydrogen is equatorial. It cannot."},
+        {"t": "Draw the alkenes", "h": "cis: C1=C2, 1-methylcyclohexene (major, more substituted). trans: only C1=C6, 3-methylcyclohexene, as in the exam's Q3D."}
+      ],
+      "answer": "The cis isomer",
+      "rule": "On a ring, E2 takes only a hydrogen that is trans-diaxial to the leaving group."
+    }
+  },
+  {
+    "id": "route-choice-013", "type": "route-choice", "role": "practice", "kind": "written", "diff": 3, "src": "site", "pts": 50, "time": 8,
+    "stem": "Neither route below uses a secondary or tertiary halide. Which is the better way to make isobutyl methyl ether, and why is the other one poorer?\n[[rxn:CC(C)CBr + C[O-].[Na+]>CH3OH>CC(C)COC]]\n[[rxn:CC(C)C[O-].[Na+] + CBr>DMSO>CC(C)COC]]",
+    "model": "<p><b>The second route.</b> Bromomethane is the best {{SN2}} substrate (relative rate 1) and has no beta hydrogen, so substitution is the only possible reaction. DMSO keeps the alkoxide unsolvated and reactive.</p><p>In the first route the halide is primary, but it is branched on the carbon next to the {{CH2Br}}. That branch gets in the way of backside attack: the lecture rate for isobutyl is 0.003, about ten times slower than ethyl (0.033) and about 300 times slower than methyl. Methoxide is a strong base and the halide has a beta hydrogen, so {{E2}} competes and a good share of the product is 2-methylpropene. Branching on the beta carbon favours {{E2}} over {{SN2}}.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Chooses the second route"},
+      {"pts": 10, "h": "Bromomethane: fastest SN2, no beta hydrogen, substitution only"},
+      {"pts": 15, "h": "1-Bromo-2-methylpropane is primary but branched at the beta carbon, so SN2 is slow (0.003)"},
+      {"pts": 10, "h": "Methoxide is a strong base, so E2 competes: 2-methylpropene"},
+      {"pts": 5, "h": "Solvent: DMSO (polar aprotic) helps SN2; methanol solvates the nucleophile"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Do not stop at \"primary\"", "h": "Both halides pass the first test. Look one carbon further: 1-bromo-2-methylpropane has two methyl groups on the carbon next door."},
+        {"t": "Use the lecture numbers", "h": "Methyl 1; ethyl 0.033; isobutyl 0.003. Branching next to the reacting carbon slows {{SN2}}."},
+        {"t": "Ask what the base does while SN2 is slow", "h": "Methoxide removes the beta hydrogen: {{E2}} gives 2-methylpropene. The flowchart says so directly: more branching on the alpha and beta carbons favours {{E2}} over {{SN2}}."},
+        {"t": "Compare with the second route", "h": "A methyl halide has no beta hydrogen at all, so the alkoxide can only substitute."}
+      ],
+      "answer": "The second route: sodium 2-methylpropan-1-olate with bromomethane in DMSO. The first is slowed by beta branching and loses product to E2.",
+      "rule": "Primary is not always fast: branching on the next carbon slows SN2 and invites E2."
+    }
+  }
+]

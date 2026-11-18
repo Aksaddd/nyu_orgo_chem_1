@@ -102,6 +102,14 @@ def canon_frags(m):
     return sorted(Chem.MolToSmiles(f) for f in Chem.GetMolFrags(strip(m), asMols=True))
 
 
+def flat_frags(m):
+    """Fragments by connectivity and charge only. Curved arrows say which bonds form and break, not which face is
+    attacked, so a mechanism is compared without wedges and dashes (inversion in SN2 is the author's to draw)."""
+    c = strip(m)
+    Chem.RemoveStereochemistry(c)
+    return sorted(Chem.MolToSmiles(f) for f in Chem.GetMolFrags(c, asMols=True))
+
+
 def facts(smiles):
     m = parse(smiles)
     s = strip(m)
@@ -135,12 +143,87 @@ def _layout(m):
         x += (max(xs) - min(xs)) + 2.1      # the gap leaves room for labels and charges
 
 
+def _face(m, maps, arrows):
+    """Turn (and if need be mirror) each molecule of a mechanism step so that atoms joined by an arrow face each
+    other and the arrows stay short. Wedges are worked out from the coordinates afterwards, so this is safe."""
+    import math
+    frags = sorted(Chem.GetMolFrags(m), key=min)
+    if len(frags) < 2 or not arrows:
+        return
+    by = {n: i for i, n in maps.items() if n}
+    frag_of = {i: k for k, f in enumerate(frags) for i in f}
+    pairs = set()
+    for ar in arrows:
+        ends = []
+        for side in ("from", "to"):
+            e = ar.get(side) or {}
+            ids = [e["lp"]] if "lp" in e else list(e.get("bond", [])) if "bond" in e else [e["atom"]] if "atom" in e else []
+            ends += [by[n] for n in ids if n in by]
+        for a in ends:
+            for b in ends:
+                if a < b and frag_of.get(a) != frag_of.get(b):
+                    pairs.add((a, b))
+    if not pairs:
+        return
+    conf = m.GetConformer()
+
+    def get():
+        return {i: (conf.GetAtomPosition(i).x, conf.GetAtomPosition(i).y) for f in frags for i in f}
+
+    def put(pos):
+        for i, (x, y) in pos.items():
+            conf.SetAtomPosition(i, Point3D(x, y, 0))
+
+    def placed(pos):
+        out, x = {}, 0.0
+        for f in frags:
+            xs = [pos[i][0] for i in f]
+            ys = [pos[i][1] for i in f]
+            cy = (min(ys) + max(ys)) / 2
+            for i in f:
+                out[i] = (pos[i][0] - min(xs) + x, pos[i][1] - cy)
+            x += (max(xs) - min(xs)) + 2.1
+        return out
+
+    def turned(pos, f, deg, mirror):
+        c, s_ = math.cos(math.radians(deg)), math.sin(math.radians(deg))
+        cx = sum(pos[i][0] for i in f) / len(f)
+        cy = sum(pos[i][1] for i in f) / len(f)
+        out = dict(pos)
+        for i in f:
+            dx, dy = pos[i][0] - cx, pos[i][1] - cy
+            if mirror:
+                dx = -dx
+            out[i] = (cx + dx * c - dy * s_, cy + dx * s_ + dy * c)
+        return out
+
+    def cost(pos):
+        return sum(math.dist(pos[a], pos[b]) for a, b in pairs)
+
+    pos = placed(get())
+    for _ in range(2):
+        for f in frags:
+            if len(f) < 2:
+                continue
+            best, keep = cost(pos), pos
+            for mirror in (False, True):
+                for deg in range(0, 360, 30):
+                    if not mirror and deg == 0:
+                        continue
+                    trial = placed(turned(pos, f, deg, mirror))
+                    c = cost(trial) * (1.0 if deg in (0, 180) else 1.06)      # prefer the usual horizontal zigzag
+                    if c < best - 0.05:
+                        best, keep = c, trial
+            pos = keep
+    put(pos)
+
+
 _PATH = re.compile(r"<path(?: class='bond-(\d+)[^']*')? d='([^']+)' style='([^']*)'")
 _TEXT = re.compile(r"<text x='([-\d.]+)' y='([-\d.]+)' class='atom-(\d+)' style='font-size:(\d+)px[^>]*>([^<]*)</text>")
 _BOX = re.compile(r"viewBox='0 0 ([\d.]+) ([\d.]+)'")
 
 
-def draw(smiles, abbr=False, methyl=False):
+def draw(smiles, abbr=False, methyl=False, arrows=None):
     """SMILES -> {w, h, p: paths, t: labels, a: atoms, b: bonds} for assets/mol.js.
     p: [bond index or -1, path data, kind]   kind 0 line, 1 hash line of a dashed wedge, 2 solid wedge
     t: [atom index, x, y, font size, text]   one entry per printed character group
@@ -161,6 +244,8 @@ def draw(smiles, abbr=False, methyl=False):
     except Exception:
         pass
     _layout(m)
+    if arrows and not abbr:
+        _face(m, maps, arrows)
     d = rdMolDraw2D.MolDraw2DSVG(-1, -1, -1, -1, True)      # True: labels as text, not outlines
     o = d.drawOptions()
     o.fixedBondLength = BOND_PX
@@ -345,7 +430,7 @@ def _frags_after(m):
     c = Chem.Mol(m)
     for a in c.GetAtoms():
         a.SetNoImplicit(False)
-    return canon_frags(c)
+    return flat_frags(c)
 
 
 def check_mechanism(mech):
@@ -375,7 +460,7 @@ def check_mechanism(mech):
             problems.append(f"{tag}: nothing to compare with (the mechanism needs a 'product')")
             continue
         try:
-            want = canon_frags(parse(after))
+            want = flat_frags(parse(after))
         except ChemError as e:
             problems.append(f"{tag}: next structures: {e}")
             continue
@@ -384,7 +469,7 @@ def check_mechanism(mech):
         except Exception as e:
             problems.append(f"{tag}: the structure after the arrows is not valid ({e})")
             continue
-        added =[canon_frags(parse(x))[0] for x in (steps[k].get("adds") if k < len(steps) else mech.get("adds")) or []]
+        added =[flat_frags(parse(x))[0] for x in (steps[k].get("adds") if k < len(steps) else mech.get("adds")) or []]
         pool = have + added
         missing = []
         for f in want:
@@ -427,6 +512,11 @@ def main():
                 out["mols"][key] = draw(smi, abbr="abbr" in opt.split(","), methyl="me" in opt.split(","))
             except Exception as e:
                 out["errors"].append(f"structure {key}: {e}")
+        for st in job.get("steps", []):          # mechanism steps: drawn with the molecules turned to face each other
+            try:
+                out["mols"][st["key"]] = draw(st["key"], arrows=st.get("arrows"))
+            except Exception as e:
+                out["errors"].append(f"structure {st.get('key')}: {e}")
         for s in job.get("facts", []):
             try:
                 out["facts"][s] = facts(s)

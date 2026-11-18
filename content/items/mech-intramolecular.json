@@ -1,0 +1,235 @@
+[
+  {
+    "id": "mech-intramolecular-001", "type": "mech-intramolecular", "role": "worked", "kind": "written", "diff": 3, "src": "site, modelled on FA24 Exam 2, Q4B", "pts": 50, "time": 10,
+    "stem": "Draw a mechanism for this reaction. Analyze the product first.\n[[rxn:CC(Cl)CCC1CO1 + C[O-]>CH3OH>COCC1CCC(C)O1]]",
+    "model": "<p><b>Product analysis.</b> The {{OCH3}} is on the {{CH2}} that used to be part of the epoxide. The epoxide is gone. The ring oxygen of the product joins the old epoxide CH to the carbon that used to carry Cl. Chlorine is gone.</p>\n[[mech:epoxide-opening-thf-methoxide]]\n<p>Step 1 is an {{SN2}} reaction on the epoxide {{CH2}}. Step 2 is an intramolecular {{SN2}} that closes a five-membered ring and expels {{Cl-}}.</p>",
+    "rubric": [
+      {"pts": 15, "h": "Product analysis: methoxide attacks the epoxide CH2, not the C-Cl carbon"},
+      {"pts": 10, "h": "Step 1 arrows: methoxide lone pair to the ring CH2, C-O ring bond onto oxygen"},
+      {"pts": 5, "h": "Alkoxide intermediate drawn with its negative charge"},
+      {"pts": 15, "h": "Step 2 arrows: O- lone pair to the C-Cl carbon, C-Cl bond to Cl"},
+      {"pts": 5, "h": "Product with the five-membered ring, and chloride ion"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find each carbon in the product", "h": "Number the chain of the reactant from the {{CH3}}: C1 is {{CH3}}, C2 carries Cl, C3 and C4 are {{CH2}} groups, C5 is the epoxide CH, C6 is the epoxide {{CH2}}. In the product C6 carries {{OCH3}}, and C5 and C2 are both bonded to the ring oxygen.", "ask": {"q": "Where is the {{OCH3}} in the product?", "a": "On C6, the old epoxide {{CH2}}. Not on the carbon that carried Cl."}},
+        {"t": "List what changed", "h": "New bonds: {{CH3O}} to C6, and oxygen to C2. Broken bonds: C6 to the epoxide oxygen, and C2 to Cl. The oxygen that ends up in the ring is the old epoxide oxygen: it never lets go of C5."},
+        {"t": "Rule out the familiar reaction", "h": "Methoxide displacing chloride directly would keep the epoxide and put {{OCH3}} on C2.", "ask": {"q": "What would direct {{SN2}} at the C-Cl carbon give?", "a": "[[mol:CC(OC)CCC1CO1]], an isomer with the same formula that still has its epoxide. It is not the product."}},
+        {"t": "Step 1: open the epoxide", "h": "Methoxide attacks C6, the less hindered epoxide carbon, from the side opposite the ring oxygen. The C6-O bond breaks onto oxygen. Ring strain is what lets an alkoxide leave. The intermediate is an alkoxide on C5."},
+        {"t": "Step 2: close the new ring", "h": "The {{O-}} on C5 attacks C2 from the back and chloride leaves.", "ask": {"q": "How many atoms are in the new ring?", "a": "Five: the oxygen, C5, C4, C3 and C2."}},
+        {"t": "Check", "h": "Compare with the product atom by atom, and check the charge: one negative charge on methoxide at the start, one on chloride at the end."}
+      ],
+      "answer": "Two steps: methoxide opens the epoxide at its CH2 (SN2), then the alkoxide displaces chloride inside the molecule (SN2) to close a five-membered ring.",
+      "rule": "Analyze the product first. An alkoxide made inside the molecule attacks a leaving group within reach and closes a ring."
+    }
+  },
+  {
+    "id": "mech-intramolecular-002", "type": "mech-intramolecular", "role": "worked", "kind": "written", "diff": 1, "src": "site", "pts": 30, "time": 6,
+    "stem": "1-Chloropropan-2-ol is treated with NaOH in water. The product has the formula {{C3H6O}}. Draw the product and the mechanism.\n[[rxn:CC(O)CCl>NaOH;H2O>\"C3H6O\"]]",
+    "model": "<p>Product: [[mol:CC1CO1]]</p>\n[[mech:halohydrin-epoxide-chloropropanol]]\n<p>Step 1 is an acid and base reaction. Step 2 is an intramolecular {{SN2}}: the {{O-}} attacks the neighbouring carbon from the side opposite Cl.</p>",
+    "rubric": [
+      {"pts": 8, "h": "Product: the epoxide (2-methyloxirane)"},
+      {"pts": 7, "h": "Step 1 arrows: hydroxide lone pair to the O-H hydrogen, O-H bond onto oxygen"},
+      {"pts": 5, "h": "Alkoxide intermediate with its charge"},
+      {"pts": 8, "h": "Step 2 arrows: O- lone pair to the CH2 carbon, C-Cl bond to Cl"},
+      {"pts": 2, "h": "Water and chloride shown as the other products"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Compare the formulas", "h": "The reactant is {{C3H7ClO}}. The product {{C3H6O}} has lost H and Cl and gained nothing.", "ask": {"q": "If hydroxide had simply replaced Cl, what would the formula be?", "a": "{{C3H8O2}}, a diol. The product has only one oxygen, so hydroxide is not in it."}},
+        {"t": "Decide what hydroxide does", "h": "It acts as a base. The most acidic hydrogen is the O-H (about {{pKa}} 16, against 15.7 for water, so K is about 1). Removing it gives an alkoxide.", "ask": {"q": "Why bother making the alkoxide?", "a": "An anion is a far better nucleophile than the neutral alcohol ({{HO-}} 16,000 against {{H2O}} 1)."}},
+        {"t": "Find the electrophile", "h": "The carbon bonded to Cl: primary, good leaving group, and right next to the {{O-}}."},
+        {"t": "Close the ring", "h": "The {{O-}} lone pair attacks that carbon from the back; the C-Cl electrons leave with Cl. Oxygen and two carbons make a three-membered ring: an epoxide.", "ask": {"q": "A three-membered ring is strained. Why does it form?", "a": "The {{O-}} and the C-Cl carbon are neighbours, so they are always within reach. The ring closes faster than hydroxide can find the carbon."}},
+        {"t": "Check the formula", "h": "The epoxide is {{C3H6O}}."}
+      ],
+      "answer": "2-Methyloxirane, by deprotonation of the OH and then an intramolecular SN2.",
+      "rule": "OH next to a halogen, plus base: an epoxide."
+    }
+  },
+  {
+    "id": "mech-intramolecular-003", "type": "mech-intramolecular", "role": "worked", "kind": "written", "diff": 2, "src": "site", "pts": 40, "time": 8,
+    "stem": "5-Bromopentan-1-amine slowly turns into a salt on standing. Adding NaOH to the salt releases a compound of formula {{C5H11N}}. Draw the compound and the mechanism.\n[[rxn:NCCCCCBr>;then NaOH>\"C5H11N\"]]",
+    "model": "<p>Product: [[mol:C1CCNCC1]]</p>\n[[mech:piperidine-from-5-bromopentylamine]]\n<p>The salt is the ring with {{NH2+}} and {{Br-}}. Hydroxide removes one N-H proton at the end.</p>",
+    "rubric": [
+      {"pts": 10, "h": "Product: the six-membered ring containing N-H"},
+      {"pts": 10, "h": "Step 1 arrows: N lone pair to the C-Br carbon, C-Br bond to Br"},
+      {"pts": 8, "h": "Intermediate: ring with a positively charged nitrogen, and bromide (this is the salt)"},
+      {"pts": 10, "h": "Step 2 arrows: hydroxide lone pair to an N-H hydrogen, N-H bond onto nitrogen"},
+      {"pts": 2, "h": "Water as the other product"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Compare the formulas", "h": "The reactant is {{C5H12BrN}}. The product {{C5H11N}} has lost H and Br: the same change as in a halohydrin closing to an epoxide.", "ask": {"q": "No base is present at first. What can react?", "a": "The nitrogen lone pair. A neutral amine is a good nucleophile (ammonia is 8,000 on the lecture scale)."}},
+        {"t": "Find the electrophile and count the ring", "h": "The carbon bonded to Br, at the other end of the chain. Nitrogen plus five carbons is a six-membered ring: strain free.", "ask": {"q": "Why does the nitrogen attack its own chain and not another molecule?", "a": "The two ends are tied together and a six-membered ring is easy to close."}},
+        {"t": "Step 1: close the ring", "h": "Nitrogen lone pair to the C-Br carbon from the back; the C-Br electrons leave with Br. Nitrogen now has four bonds and a positive charge: with {{Br-}} this is the salt."},
+        {"t": "Step 2: remove the proton", "h": "Hydroxide takes one N-H hydrogen; the N-H electrons return to nitrogen. An ammonium ion has {{pKa}} about 10.5 and water 15.7, so this goes to completion.", "ask": {"q": "Why is the base needed only at the end?", "a": "A neutral nucleophile attacks as it is and becomes positive. The proton comes off afterwards."}},
+        {"t": "Check the formula", "h": "The ring is {{C5H11N}}."}
+      ],
+      "answer": "The six-membered ring amine (piperidine): intramolecular SN2 by nitrogen, then loss of a proton to hydroxide.",
+      "rule": "A neutral internal nucleophile attacks first and is deprotonated afterwards."
+    }
+  },
+  {
+    "id": "mech-intramolecular-004", "type": "mech-intramolecular", "role": "practice", "kind": "mech", "diff": 1, "src": "site", "mech": "thf-from-4-bromobutanol-hydride",
+    "stem": "4-Bromobutan-1-ol is treated with sodium hydride. Draw the arrows for each step.\n[[rxn:OCCCCBr + [Na+].[H-]>>C1CCOC1]]",
+    "solution": {
+      "steps": [
+        {"t": "Analyze the product", "h": "The O-H hydrogen and the bromine are gone, and the oxygen is bonded to both end carbons."},
+        {"t": "Make the nucleophile", "h": "Hydride is a strong base. Its electron pair takes the O-H hydrogen ({{H2}} gas leaves) and the O-H electrons stay on oxygen."},
+        {"t": "Close the ring", "h": "The {{O-}} lone pair attacks the carbon bonded to Br from the back; the C-Br electrons go to Br. Oxygen plus four carbons: a five-membered ring."}
+      ],
+      "answer": "Two steps, two arrows each: deprotonation by hydride, then an intramolecular SN2.",
+      "rule": "Base first, then ring closure from the back."
+    }
+  },
+  {
+    "id": "mech-intramolecular-005", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 1, "src": "site", "pts": 30, "time": 6,
+    "stem": "5-Bromopentan-1-ol and sodium hydride give a cyclic ether, {{C5H10O}}, and a gas. Draw the ether, name the gas and write the mechanism.\n[[mol:OCCCCCBr]]",
+    "model": "<p>Product: [[mol:C1CCOCC1]], a six-membered ring (the oxygen and five carbons). The gas is {{H2}}.</p><p><b>Step 1, acid and base.</b> The electron pair of {{H-}} takes the O-H hydrogen; the O-H electrons go onto oxygen.</p>\n[[rxn:OCCCCCBr + [H-]>>[O-]CCCCCBr + [H][H]]]\n<p><b>Step 2, intramolecular {{SN2}}.</b> The {{O-}} lone pair attacks the carbon bonded to Br from the back; the C-Br electrons go to Br.</p>\n[[rxn:[O-]CCCCCBr>>C1CCOCC1 + [Br-]]]",
+    "rubric": [
+      {"pts": 8, "h": "Product: the six-membered cyclic ether"},
+      {"pts": 4, "h": "Gas: H2"},
+      {"pts": 6, "h": "Step 1 arrows: hydride pair to H, O-H bond onto oxygen"},
+      {"pts": 4, "h": "Alkoxide intermediate with its charge"},
+      {"pts": 6, "h": "Step 2 arrows: O- lone pair to the C-Br carbon, C-Br bond to Br"},
+      {"pts": 2, "h": "Bromide ion shown"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Compare the formulas", "h": "{{C5H11BrO}} becomes {{C5H10O}}: H and Br are lost."},
+        {"t": "Use the base", "h": "Hydride removes the most acidic hydrogen, the O-H, and leaves as {{H2}}."},
+        {"t": "Count and close the ring", "h": "The oxygen is on C1 and the bromine on C5. The ring holds O, C1, C2, C3, C4 and C5: six atoms."},
+        {"t": "Check", "h": "A six-membered ring with one oxygen and five {{CH2}} groups is {{C5H10O}}."}
+      ],
+      "answer": "The six-membered cyclic ether (oxane) and H2, by deprotonation and then intramolecular SN2.",
+      "rule": "Ring size = the nucleophile atom plus the carbons up to and including the one with the leaving group."
+    }
+  },
+  {
+    "id": "mech-intramolecular-006", "type": "mech-intramolecular", "role": "practice", "kind": "mech", "diff": 2, "src": "site", "mech": "thiolane-sulfide-dibromobutane",
+    "stem": "Sodium sulfide and 1,4-dibromobutane give a ring. Draw the arrows for each step.\n[[rxn:BrCCCCBr + [Na+].[Na+].[S-2]>>C1CCSC1]]",
+    "solution": {
+      "steps": [
+        {"t": "Analyze the product", "h": "One sulfur, four carbons, no bromine: the sulfur is bonded to both end carbons."},
+        {"t": "First substitution", "h": "Sulfide attacks one end carbon from the back and bromide leaves. Sulfur still has one negative charge."},
+        {"t": "Second substitution", "h": "The thiolate attacks the other end of its own chain and the second bromide leaves. Sulfur plus four carbons: a five-membered ring."}
+      ],
+      "answer": "Two SN2 steps on the same sulfur; the second is intramolecular.",
+      "rule": "A doubly charged nucleophile substitutes twice; the second time it closes a ring."
+    }
+  },
+  {
+    "id": "mech-intramolecular-007", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 2, "src": "site, a variation on FA24 Exam 2, Q4B", "pts": 50, "time": 10,
+    "stem": "Draw a mechanism for this reaction. Analyze the product first.\n[[rxn:CCC(Br)C1CO1 + CC[O-]>CH3CH2OH>CCC1OC1COCC]]",
+    "model": "<p><b>Product analysis.</b> The ethoxy group is on the old epoxide {{CH2}}. A new epoxide joins the old epoxide CH to the carbon that carried Br. Bromine is gone. Ethoxide did not displace bromide directly.</p><p><b>Step 1, {{SN2}} on the epoxide.</b> The ethoxide lone pair attacks the ring {{CH2}} (the less hindered ring carbon) from the side opposite the oxygen; the C-O ring bond breaks onto oxygen.</p>\n[[rxn:CCC(Br)C1CO1 + CC[O-]>>CCC(Br)C([O-])COCC]]\n<p><b>Step 2, intramolecular {{SN2}}.</b> The {{O-}} lone pair attacks the neighbouring carbon, the one bonded to Br, from the back; the C-Br electrons go to Br. A new three-membered ring closes.</p>\n[[rxn:CCC(Br)C([O-])COCC>>CCC1OC1COCC + [Br-]]]",
+    "rubric": [
+      {"pts": 15, "h": "Product analysis: ethoxide attacks the epoxide CH2, not the C-Br carbon"},
+      {"pts": 10, "h": "Step 1 arrows: ethoxide lone pair to the ring CH2, C-O ring bond onto oxygen"},
+      {"pts": 5, "h": "Alkoxide intermediate drawn with its charge"},
+      {"pts": 15, "h": "Step 2 arrows: O- lone pair to the C-Br carbon, C-Br bond to Br"},
+      {"pts": 5, "h": "Product and bromide ion"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the new group", "h": "The {{OCH2CH3}} is on the end {{CH2}}, which was an epoxide carbon. So that carbon was attacked."},
+        {"t": "Find the old oxygen", "h": "The epoxide oxygen is still on the old CH, and is now also bonded to the carbon that lost Br."},
+        {"t": "Step 1", "h": "Ethoxide opens the strained ring at its {{CH2}}. The oxygen leaves that carbon but stays on the CH as {{O-}}."},
+        {"t": "Step 2", "h": "The {{O-}} is one carbon away from the C-Br carbon: it attacks from the back, bromide leaves, and a new epoxide forms."},
+        {"t": "Name the wrong path", "h": "Direct {{SN2}} at C-Br would give [[mol:CCC(OCC)C1CO1]], an isomer that is not the product."}
+      ],
+      "answer": "Ethoxide opens the epoxide at its CH2; the alkoxide formed then displaces bromide next door and closes a new epoxide.",
+      "rule": "The epoxide appears to move one carbon along: open with the nucleophile, close on the halide."
+    }
+  },
+  {
+    "id": "mech-intramolecular-008", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 2, "src": "site", "pts": 30, "time": 6,
+    "stem": "5-Bromopentan-2-ol and sodium hydride give a cyclic ether of formula {{C5H10O}}. Draw the ether and write the mechanism. How many atoms are in its ring?\n[[mol:CC(O)CCCBr]]",
+    "model": "<p>Product: [[mol:CC1CCCO1]]. The ring has five atoms: the oxygen, C2, C3, C4 and C5. C1 is a methyl group on the ring.</p><p><b>Step 1.</b> The electron pair of {{H-}} takes the O-H hydrogen ({{H2}} leaves); the O-H electrons go onto oxygen.</p>\n[[rxn:CC(O)CCCBr + [H-]>>CC([O-])CCCBr + [H][H]]]\n<p><b>Step 2.</b> The {{O-}} lone pair attacks C5, the carbon bonded to Br, from the back; the C-Br electrons go to Br.</p>\n[[rxn:CC([O-])CCCBr>>CC1CCCO1 + [Br-]]]",
+    "rubric": [
+      {"pts": 10, "h": "Product: five-membered ring with a methyl group on the carbon next to oxygen"},
+      {"pts": 6, "h": "Step 1 arrows: hydride pair to H, O-H bond onto oxygen"},
+      {"pts": 4, "h": "Alkoxide intermediate with its charge"},
+      {"pts": 8, "h": "Step 2 arrows: O- lone pair to C5, C-Br bond to Br"},
+      {"pts": 2, "h": "Bromide ion and H2 shown"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Locate the two ends", "h": "The oxygen is on C2, not on C1. The bromine is on C5."},
+        {"t": "Count the ring", "h": "O, C2, C3, C4, C5: five atoms. C1 is outside the ring."},
+        {"t": "Draw the two steps", "h": "Deprotonation by hydride, then backside attack of {{O-}} on C5."},
+        {"t": "Check the tempting answer", "h": "A six-membered ring with no methyl group is also {{C5H10O}}, but it would need the oxygen to start on C1."}
+      ],
+      "answer": "2-Methyloxolane (2-methyltetrahydrofuran): a five-membered ring with a methyl group.",
+      "rule": "Count the ring from the atom that carries the nucleophile, not from the end of the chain."
+    }
+  },
+  {
+    "id": "mech-intramolecular-009", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 3, "src": "site", "pts": 40, "time": 8,
+    "stem": "(2R,3R)-3-Bromobutan-2-ol is treated with NaOH. Draw the epoxide with its stereochemistry and explain it. Are the two methyl groups cis or trans on the ring?\n[[mol:C[C@@H](O)[C@@H](C)Br]]",
+    "model": "<p>Hydroxide removes the O-H proton. The molecule turns about its C2-C3 bond until the {{O-}} is anti to Br, and the oxygen attacks C3 from the side opposite Br. C3 is inverted; C2 is untouched.</p><p>Product: [[mol:C[C@@H]1O[C@@H]1C]]</p><p>The two methyl groups are <b>cis</b>. In the conformation with {{O-}} anti to Br the two methyl groups are gauche, on the same side, and they stay on the same side of the new ring.</p>",
+    "rubric": [
+      {"pts": 5, "h": "Deprotonation of the OH by hydroxide"},
+      {"pts": 10, "h": "O- must be anti to Br: backside attack"},
+      {"pts": 10, "h": "Inversion at C3; C2 keeps its configuration"},
+      {"pts": 10, "h": "Epoxide drawn with both methyl groups on the same side"},
+      {"pts": 5, "h": "States cis"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recognize the reaction", "h": "OH and Br on neighbouring carbons, with a base: halohydrin to epoxide."},
+        {"t": "Apply the SN2 geometry", "h": "The {{O-}} must attack C3 from the side opposite Br. Rotate the C2-C3 bond until O and Br are anti."},
+        {"t": "See where the other groups are", "h": "In that conformation of the (2R,3R) isomer, the methyl on C2 and the methyl on C3 are gauche to each other, and so are the two hydrogens."},
+        {"t": "Close the ring", "h": "As the O-C3 bond forms and Br leaves, the groups on C3 fold away from the oxygen. Both methyl groups end up on one face of the ring and both hydrogens on the other: cis."},
+        {"t": "Check with the rule", "h": "Only C3 is inverted. A model, or drawing it both ways, shows that attack with retention would have given the trans epoxide instead."}
+      ],
+      "answer": "cis-2,3-Dimethyloxirane",
+      "rule": "The ring-closing step is a backside attack: put O- anti to the leaving group, then read off cis or trans."
+    }
+  },
+  {
+    "id": "mech-intramolecular-010", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 3, "src": "site", "pts": 40, "time": 8,
+    "stem": "trans-2-Bromocyclohexanol (first drawing) gives an epoxide with NaOH. The cis isomer (second drawing) gives no epoxide. Write the mechanism for the trans isomer and explain the difference with chairs.\n[[ring:1u:OH,2d:Br]]\n[[ring:1u:OH,2u:Br]]",
+    "model": "<p><b>trans.</b> Hydroxide removes the O-H proton. In the chair below (drawn before the proton is removed) both groups are axial: the oxygen points up and the bromine points down on the next carbon, so they are anti.</p>\n[[chair:1u:OH,2d:Br|A]]\n<p>The {{O-}} lone pair attacks C2 from the side opposite Br; the C-Br electrons go to Br.</p>\n[[rxn:[O-]C1CCCCC1Br>>C1CCC2OC2C1 + [Br-]]]\n<p><b>cis.</b> In both chairs one group is axial and the other equatorial.</p>\n[[chair:1u:OH,2u:Br|A]]\n[[chair:1u:OH,2u:Br|B]]\n<p>The oxygen and the bromine are about 60° apart in each chair, never 180°. The oxygen cannot reach the back of the C-Br bond, so the epoxide does not form.</p>",
+    "rubric": [
+      {"pts": 5, "h": "Deprotonation of the OH by hydroxide"},
+      {"pts": 10, "h": "trans isomer: chair with O and Br both axial (trans-diaxial), so they are anti"},
+      {"pts": 10, "h": "Ring-closing arrows: O- lone pair to C2, C-Br bond to Br; epoxide and bromide"},
+      {"pts": 10, "h": "cis isomer: one axial and one equatorial in both chairs"},
+      {"pts": 5, "h": "So O and Br are never anti and backside attack is impossible"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "State the requirement", "h": "The ring-closing step is an {{SN2}} reaction: the oxygen must come in exactly opposite the bromine."},
+        {"t": "Translate it to a chair", "h": "On neighbouring ring carbons, anti means both axial, one up and one down. It is the same picture as {{E2}} on a ring."},
+        {"t": "trans isomer", "h": "Trans groups on neighbouring carbons are both equatorial in one chair and both axial in the other. The diaxial chair is the less stable one, but the ring flips fast and that is the chair that reacts."},
+        {"t": "cis isomer", "h": "Cis groups on neighbouring carbons are always one axial and one equatorial. Flipping the ring swaps them but never makes both axial."}
+      ],
+      "answer": "Only the trans isomer can place O- and Br trans-diaxial (anti), so only it can close the epoxide by backside attack.",
+      "rule": "Intramolecular SN2 on a cyclohexane needs the nucleophile and the leaving group trans-diaxial."
+    }
+  },
+  {
+    "id": "mech-intramolecular-011", "type": "mech-intramolecular", "role": "practice", "kind": "written", "diff": 3, "src": "site", "pts": 50, "time": 10,
+    "stem": "A small amount of NaOH in water converts this epoxy alcohol into an isomer. Draw a mechanism. Analyze the product first.\n[[rxn:OCCCC1CO1>NaOH (a little);H2O>OCC1CCCO1]]",
+    "model": "<p><b>Product analysis.</b> Both compounds are {{C5H10O2}}. The epoxide is gone. The oxygen of the old O-H is now in a five-membered ring, bonded to the old epoxide CH. The old epoxide oxygen is now an O-H on the old epoxide {{CH2}}.</p><p><b>Step 1.</b> Hydroxide removes the O-H proton.</p>\n[[eq:OCCCC1CO1 + [OH-]>>[O-]CCCC1CO1 + O]]\n<p><b>Step 2, intramolecular {{SN2}} on the epoxide.</b> The {{O-}} lone pair attacks the epoxide CH from the side opposite the ring oxygen; the C-O bond of the epoxide breaks onto that oxygen. A five-membered ring closes.</p>\n[[rxn:[O-]CCCC1CO1>>[O-]CC1CCCO1]]\n<p><b>Step 3.</b> The new alkoxide takes a proton from water. Hydroxide is made again, which is why a little is enough.</p>\n[[rxn:[O-]CC1CCCO1 + O>>OCC1CCCO1 + [OH-]]]",
+    "rubric": [
+      {"pts": 15, "h": "Product analysis: the old O-H oxygen is in the new ring, bonded to the old epoxide CH"},
+      {"pts": 8, "h": "Step 1 arrows: hydroxide lone pair to the O-H hydrogen, O-H bond onto oxygen"},
+      {"pts": 15, "h": "Step 2 arrows: O- lone pair to the epoxide CH, C-O ring bond onto the epoxide oxygen"},
+      {"pts": 5, "h": "Alkoxide intermediates drawn with their charges"},
+      {"pts": 7, "h": "Step 3: the alkoxide takes a proton from water, hydroxide regenerated"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Compare the formulas", "h": "Isomers: nothing is added or lost overall, so the base is only a catalyst."},
+        {"t": "Track the two oxygens", "h": "Number the chain from the {{CH2OH}}: C1 to C3 are {{CH2}} groups, C4 is the epoxide CH, C5 the epoxide {{CH2}}. In the product the oxygen on C1 is also bonded to C4, and C5 carries an O-H."},
+        {"t": "Make the nucleophile", "h": "Hydroxide removes the O-H proton (alcohol {{pKa}} about 16, water 15.7: an equilibrium that always supplies some alkoxide)."},
+        {"t": "Open the epoxide from inside", "h": "The {{O-}} on C1 attacks C4. Ring: O, C1, C2, C3, C4, five atoms. The epoxide oxygen leaves C4 and stays on C5 as {{O-}}."},
+        {"t": "Explain the site of attack", "h": "The product decides: attack on C5 would give a six-membered ring, [[mol:OC1CCCOC1]], which is not the compound drawn."},
+        {"t": "Finish", "h": "The alkoxide on C5 takes a proton from water."}
+      ],
+      "answer": "Deprotonation, then the alkoxide opens the epoxide at its CH to close a five-membered ring, then protonation by water.",
+      "rule": "The nucleophile can be inside the molecule and the epoxide the electrophile. The product tells which carbon was attacked."
+    }
+  }
+]

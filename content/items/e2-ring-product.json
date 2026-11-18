@@ -1,0 +1,241 @@
+[
+  {
+    "id": "e2-ring-product-001", "type": "e2-ring-product", "role": "worked", "kind": "mcq", "diff": 3, "src": "site, after FA24 Exam 2, Q3D",
+    "stem": "trans-1-Bromo-2-ethylcyclohexane is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which is the major elimination product?\n[[mol:CC[C@H]1CCCC[C@@H]1Br]]",
+    "choices": [
+      {"h": "[[mol:CCC1=CCCCC1]]\n1-Ethylcyclohexene", "ok": false, "why": "This is the Saytzeff alkene, but it needs the hydrogen on the ethyl-bearing carbon. In the chair with Br axial that hydrogen is equatorial, so it is not anti to Br and cannot leave. The geometry was not checked."},
+      {"h": "[[mol:CC[C@@H]1C=CCCC1]]\n3-Ethylcyclohexene", "ok": true, "why": "With Br axial, the only axial hydrogen next door is on C6, the side away from the ethyl group. The double bond forms there, and the ethyl carbon is not touched."},
+      {"h": "[[mol:CCC1CCC=CC1]]\n4-Ethylcyclohexene", "ok": false, "why": "The double bond must include the carbon that carried Br. Here it has moved one carbon further round the ring."},
+      {"h": "[[mol:CCO[C@@H]1CCCC[C@@H]1CC]]\nThe ethyl ether", "ok": false, "why": "This is the substitution product. The question asks for the elimination product, and a strong base with a secondary halide gives mostly E2."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Name the reaction", "h": "Secondary bromide and a strong base (ethoxide): {{E2}}. The hydrogen and the bromine must be anti-periplanar, which on a cyclohexane means both axial on neighbouring carbons.", "ask": {"q": "What does anti-periplanar become on a chair?", "a": "Trans-diaxial: leaving group axial, and an axial H on the next carbon."}},
+        {"t": "Read the faces", "h": "Br is on a wedge (up) on C1. Ethyl is on a dash (down) on C2. Opposite faces: trans."},
+        {"t": "Draw the chair with Br axial", "h": "Axial bonds alternate up and down around the ring. If axial is up on C1, axial is down on C2. The ethyl group is down on C2, so it is axial as well.\n[[chair:1u:Br,2d:CH2CH3|A]]", "ask": {"q": "Where is the hydrogen on C2 in this chair?", "a": "Equatorial. The axial position on C2 is taken by the ethyl group."}},
+        {"t": "Look for axial hydrogens next door", "h": "C2: no axial H. C6: one hydrogen is axial and points down, opposite the axial Br. That hydrogen can leave.", "ask": {"q": "So between which carbons does the double bond form?", "a": "C1 and C6, away from the ethyl group."}},
+        {"t": "Draw the product", "h": "Remove Br from C1 and the axial H from C6: 3-ethylcyclohexene. C2 took no part, so its ethyl group stays where it was."},
+        {"t": "Compare with Saytzeff", "h": "The Saytzeff rule would pick 1-ethylcyclohexene (more substituted). It cannot form here, because its hydrogen cannot stand anti to Br. Geometry is checked first."}
+      ],
+      "answer": "3-Ethylcyclohexene: the double bond forms away from the ethyl group.",
+      "rule": "Trans neighbour: the hydrogen on that carbon cannot be anti. The double bond goes the other way."
+    }
+  },
+  {
+    "id": "e2-ring-product-002", "type": "e2-ring-product", "role": "worked", "kind": "chair", "diff": 2, "src": "site", "subs": "1u:Br,2u:CH2CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "This is the cis isomer of the compound in the previous example. It is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene is major?\n[[ring:1u:Br,2u:CH2CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "Br is up on C1 and ethyl is up on C2: cis.", "ask": {"q": "On neighbouring carbons, are two cis groups both axial, both equatorial, or one of each?", "a": "One of each."}},
+        {"t": "Draw the chair with Br axial", "h": "With Br axial (up) on C1, an up group on C2 is equatorial. So the ethyl group is equatorial, and this is also the more stable chair.\n[[chair:1u:Br,2u:CH2CH3|A]]"},
+        {"t": "Check C2", "h": "The ethyl group is equatorial, so the axial position on C2 holds a hydrogen. It points down, opposite the axial Br: anti-periplanar. It can leave.", "ask": {"q": "Why could this hydrogen not leave in the trans isomer?", "a": "There the ethyl group was axial, so the hydrogen was equatorial."}},
+        {"t": "Check C6", "h": "C6 has an axial hydrogen pointing down as well. It can also leave."},
+        {"t": "Two alkenes: use Saytzeff", "h": "C1=C2 gives 1-ethylcyclohexene (three carbons on the C=C). C1=C6 gives 3-ethylcyclohexene (two carbons on the C=C). Both hydrogens are available, so the more substituted alkene is major.", "ask": {"q": "Which is the Saytzeff product?", "a": "1-Ethylcyclohexene."}}
+      ],
+      "answer": "The axial hydrogens on C2 and C6 can both leave. Major: 1-ethylcyclohexene (C1=C2). Minor: 3-ethylcyclohexene.",
+      "rule": "Cis neighbour: its carbon has an axial H, so the Saytzeff alkene can form."
+    }
+  },
+  {
+    "id": "e2-ring-product-003", "type": "e2-ring-product", "role": "worked", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "This bromide has a tert-butyl group on the ring. It is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which is the major elimination product?\n[[mol:C[C@H]1C[C@H](C(C)(C)C)CC[C@@H]1Br]]",
+    "choices": [
+      {"h": "[[mol:CC1=CCC[C@@H](C(C)(C)C)C1]]\nDouble bond toward the methyl group", "ok": false, "why": "This is the Saytzeff alkene. Its hydrogen, on the methyl-bearing carbon, is equatorial in the only chair that matters, so it is not anti to Br."},
+      {"h": "[[mol:C[C@@H]1C=CC[C@@H](C(C)(C)C)C1]]\nDouble bond away from the methyl group, methyl and tert-butyl trans", "ok": true, "why": "Br is axial and the methyl group next to it is axial too. The only axial hydrogen next to Br is on the other side, so the double bond forms away from the methyl. The two untouched carbons keep their groups on opposite faces."},
+      {"h": "[[mol:C[C@H]1C=CC[C@@H](C(C)(C)C)C1]]\nDouble bond away from the methyl group, methyl and tert-butyl cis", "ok": false, "why": "The double bond is in the right place, but the methyl carbon has changed face. No bond to that carbon is made or broken, so methyl and tert-butyl stay trans, as in the starting material."},
+      {"h": "[[mol:CCO[C@@H]1CC[C@@H](C(C)(C)C)C[C@@H]1C]]\nThe ethyl ether", "ok": false, "why": "Substitution, not elimination. With a strong base on a hindered secondary carbon, E2 is the main reaction."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Let the tert-butyl group fix the chair", "h": "Axial tert-butyl costs 5.5 kcal/mol (K = 11,916), so only the chair with tert-butyl equatorial counts.", "ask": {"q": "About what fraction of molecules have the tert-butyl axial?", "a": "About 1 in 12,000."}},
+        {"t": "Place the other groups", "h": "Number from the C-Br carbon: Br up on C1, {{CH3}} down on C2, tert-butyl up on C4. With tert-butyl equatorial, the up group on C1 is axial and the down group on C2 is axial.\n[[chair:1u:Br,2d:CH3,4u:C(CH3)3|A]]", "ask": {"q": "Is Br axial in the locked chair?", "a": "Yes, so E2 can go through this chair."}},
+        {"t": "Look next door", "h": "C2: the axial position holds the methyl, so its hydrogen is equatorial. C6: the axial position holds a hydrogen, pointing down, anti to Br."},
+        {"t": "Eliminate", "h": "The double bond forms between C1 and C6, away from the methyl group, although that is the less substituted alkene.", "ask": {"q": "What happens to the configuration at C2 and C4?", "a": "Nothing. Methyl stays down and tert-butyl stays up: trans."}},
+        {"t": "Rule out the look-alike", "h": "Two choices have the double bond in the right place. Pick the one in which methyl and tert-butyl are on opposite faces, as they were at the start."}
+      ],
+      "answer": "The alkene with the double bond away from the methyl group, methyl and tert-butyl still trans.",
+      "rule": "A tert-butyl group picks the chair. Then look for axial hydrogens next to the axial leaving group."
+    }
+  },
+  {
+    "id": "e2-ring-product-004", "type": "e2-ring-product", "role": "worked", "kind": "chair", "diff": 3, "src": "site", "subs": "1u:Cl,2d:CH(CH3)2,5u:CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "This chloride (menthyl chloride) is heated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene forms?\n[[ring:1u:Cl,2d:CH(CH3)2,5u:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Find the stable chair", "h": "Cl up on C1, isopropyl down on C2, methyl up on C5. In one chair all three groups are equatorial. That chair is the stable one, but Cl is equatorial in it, so it cannot react.\n[[chair:1u:Cl,2d:CH(CH3)2,5u:CH3|B]]", "ask": {"q": "Why can an equatorial Cl not leave in an E2?", "a": "No hydrogen is anti to it. Anti to an equatorial bond is a ring C-C bond."}},
+        {"t": "Flip to put Cl axial", "h": "The ring flip makes all three groups axial. This chair is strained and rare, but it is the only one with Cl axial, so the reaction has to go through it.\n[[chair:1u:Cl,2d:CH(CH3)2,5u:CH3|A]]"},
+        {"t": "Check C2", "h": "Isopropyl is trans to Cl, so in this chair it is axial. The hydrogen on C2 is equatorial: it cannot leave.", "ask": {"q": "Which alkene would that hydrogen have given?", "a": "The Saytzeff alkene, with the double bond toward the isopropyl group."}},
+        {"t": "Check C6", "h": "C6 has no substituent. One of its hydrogens is axial and anti to Cl. It can leave."},
+        {"t": "Draw the alkene", "h": "C1=C6, away from the isopropyl group: the less substituted alkene, and the only one. The isopropyl and methyl carbons keep their configuration.\n[[mol:CC(C)[C@@H]1C=C[C@@H](C)CC1]]", "ask": {"q": "Is this reaction fast or slow compared with an isomer whose Cl is axial in its stable chair?", "a": "Slow, because only the small fraction of molecules in the all-axial chair can react."}}
+      ],
+      "answer": "Only the axial hydrogen on C6 can leave. The single product has the double bond between C1 and C6, away from the isopropyl group: not the Saytzeff alkene.",
+      "rule": "The reaction goes through the chair with the leaving group axial, even when that chair is the unstable one."
+    }
+  },
+  {
+    "id": "e2-ring-product-005", "type": "e2-ring-product", "role": "practice", "kind": "chair", "diff": 1, "src": "site", "subs": "1u:Br", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "Bromocyclohexane is treated with {{NaOCH3}} in {{CH3OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene forms?\n[[ring:1u:Br]]",
+    "solution": {
+      "steps": [
+        {"t": "Put Br axial", "h": "The chair with Br equatorial is slightly more stable, but only the chair with Br axial can react. The two chairs interconvert all the time, so plenty of molecules have Br axial.\n[[chair:1u:Br|A]]"},
+        {"t": "Look next door", "h": "C2 and C6 each have one axial hydrogen pointing the opposite way from Br. Both are anti-periplanar to it."},
+        {"t": "Eliminate", "h": "Removing either gives the same compound, cyclohexene, because the ring is symmetrical.\n[[mol:C1=CCCCC1]]"}
+      ],
+      "answer": "The axial hydrogens on C2 and C6. Both give cyclohexene.",
+      "rule": "Leaving group axial, hydrogen axial on the next carbon."
+    }
+  },
+  {
+    "id": "e2-ring-product-006", "type": "e2-ring-product", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "cis-2-Methylcyclohexyl tosylate is treated with {{NaOCH3}} in {{CH3OH}}. Which is the major elimination product?\n[[mol:C[C@@H]1CCCC[C@@H]1OS(=O)(=O)c2ccc(C)cc2|abbr]]",
+    "choices": [
+      {"h": "[[mol:CC1=CCCCC1]]\n1-Methylcyclohexene", "ok": true, "why": "The groups are cis, so with OTs axial the methyl is equatorial and the hydrogen on its carbon is axial, anti to the tosylate. That hydrogen can leave, and it gives the more substituted (Saytzeff) alkene."},
+      {"h": "[[mol:C[C@H]1C=CCCC1]]\n3-Methylcyclohexene", "ok": false, "why": "This alkene does form, from the axial hydrogen on the other neighbour, but it is the less substituted one and so the minor product. It is major only for the trans isomer."},
+      {"h": "[[mol:C=C1CCCCC1]]\nMethylenecyclohexane", "ok": false, "why": "The double bond would have to include the methyl carbon, which is two carbons away from the leaving group. The C=C always includes the carbon that carried the leaving group."},
+      {"h": "[[mol:CO[C@@H]1CCCC[C@H]1C]]\nThe methyl ether", "ok": false, "why": "This is the substitution product. The question asks for elimination, and a strong base on a secondary tosylate gives mostly E2."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "OTs and {{CH3}} are both on wedges: cis. Tosylate is a good leaving group and methoxide a strong base: {{E2}}."},
+        {"t": "Draw the chair with OTs axial", "h": "Cis neighbours are one axial and one equatorial. With OTs axial, the methyl is equatorial, so C2 has an axial hydrogen."},
+        {"t": "Count the axial hydrogens next door", "h": "C2 has one and C6 has one. Both are anti to the tosylate."},
+        {"t": "Apply Saytzeff", "h": "C1=C2 is trisubstituted (1-methylcyclohexene). C1=C6 is disubstituted (3-methylcyclohexene). The more substituted alkene is major."}
+      ],
+      "answer": "1-Methylcyclohexene",
+      "rule": "Cis: both neighbours offer an axial H, so Saytzeff decides."
+    }
+  },
+  {
+    "id": "e2-ring-product-007", "type": "e2-ring-product", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "trans-2-Methylcyclohexyl tosylate is treated with the bulky base {{KOC(CH3)3}} in {{(CH3)3COH}}. Which is the major elimination product?\n[[mol:C[C@H]1CCCC[C@@H]1OS(=O)(=O)c2ccc(C)cc2|abbr]]",
+    "choices": [
+      {"h": "[[mol:CC1=CCCCC1]]\n1-Methylcyclohexene", "ok": false, "why": "The Saytzeff alkene needs the hydrogen on the methyl-bearing carbon. In the chair with OTs axial, the trans methyl is axial and that hydrogen is equatorial: not anti, so it cannot leave."},
+      {"h": "[[mol:C[C@@H]1C=CCCC1]]\n3-Methylcyclohexene", "ok": true, "why": "Only C6 has an axial hydrogen anti to the axial tosylate. The double bond forms away from the methyl. The base did not decide this: the geometry allows nothing else."},
+      {"h": "[[mol:C=C1CCCCC1]]\nMethylenecyclohexane", "ok": false, "why": "A bulky base prefers exposed hydrogens, but only among hydrogens on carbons next to the leaving group. The methyl carbon is one carbon too far away."},
+      {"h": "[[mol:C[C@H]1CCCC[C@H]1OC(C)(C)C]]\nThe tert-butyl ether", "ok": false, "why": "tert-Butoxide is a poor nucleophile because of its bulk, and the carbon is secondary and hindered. Substitution does not compete."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Read the faces", "h": "OTs on a wedge, {{CH3}} on a dash: trans. Strong base: {{E2}}."},
+        {"t": "Draw the chair with OTs axial", "h": "Trans neighbours are both axial or both equatorial. With OTs axial, the methyl is axial as well."},
+        {"t": "Look next door", "h": "C2: axial position taken by the methyl, hydrogen equatorial, cannot leave. C6: axial hydrogen, anti to OTs, can leave."},
+        {"t": "Draw the product", "h": "C1=C6: 3-methylcyclohexene. The same answer would come with a small base. The leaving group being a tosylate instead of a halide changes nothing either."}
+      ],
+      "answer": "3-Methylcyclohexene",
+      "rule": "Geometry first. Base size only matters when two hydrogens are both anti."
+    }
+  },
+  {
+    "id": "e2-ring-product-008", "type": "e2-ring-product", "role": "practice", "kind": "chair", "diff": 2, "src": "site", "subs": "1u:Br,3d:CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "This bromide has its methyl group two carbons away from the leaving group. It is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene or alkenes form?\n[[ring:1u:Br,3d:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Put Br axial", "h": "Br up on C1 is axial in the chair where the down group on C3 is equatorial. So the reacting chair has Br axial and methyl equatorial.\n[[chair:1u:Br,3d:CH3|A]]"},
+        {"t": "Look next door", "h": "The methyl group is on C3, not on a carbon next to Br. C2 and C6 are both {{CH2}} groups and each has an axial hydrogen anti to Br."},
+        {"t": "Draw both alkenes", "h": "C1=C2 puts the double bond next to the methyl carbon: 3-methylcyclohexene. C1=C6 puts it one carbon further away: 4-methylcyclohexene."},
+        {"t": "Compare them", "h": "In both alkenes the C=C carries two ring carbons and no methyl: equally substituted. The Saytzeff rule does not favour either, so a mixture forms."}
+      ],
+      "answer": "The axial hydrogens on C2 and C6 can both leave: a mixture of 3-methylcyclohexene and 4-methylcyclohexene, with neither favoured by Saytzeff.",
+      "rule": "A substituent that is not on a neighbouring carbon does not make either alkene more substituted."
+    }
+  },
+  {
+    "id": "e2-ring-product-009", "type": "e2-ring-product", "role": "practice", "kind": "chair", "diff": 1, "src": "site", "subs": "1u:Cl,4u:C(CH3)3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "cis-1-Chloro-4-tert-butylcyclohexane is treated with {{NaOCH3}} in {{CH3OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene forms?\n[[ring:1u:Cl,4u:C(CH3)3]]",
+    "solution": {
+      "steps": [
+        {"t": "Let tert-butyl choose the chair", "h": "tert-Butyl stays equatorial (5.5 kcal/mol, K = 11,916). Cl is cis to it, across the ring, and a cis-1,4 pair is one axial and one equatorial. So Cl is axial.\n[[chair:1u:Cl,4u:C(CH3)3|A]]"},
+        {"t": "Look next door", "h": "C2 and C6 are both {{CH2}} groups. Each has an axial hydrogen anti to the axial Cl."},
+        {"t": "Eliminate", "h": "Either hydrogen gives 4-tert-butylcyclohexene. The stable chair is already the reactive one, so the reaction is fast."}
+      ],
+      "answer": "The axial hydrogens on C2 and C6. Both give 4-tert-butylcyclohexene, and the reaction is fast because Cl is already axial.",
+      "rule": "A leaving group cis to a 4-tert-butyl group is held axial: ready for E2."
+    }
+  },
+  {
+    "id": "e2-ring-product-010", "type": "e2-ring-product", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "In this bromide all three groups are on the same face of the ring. It is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which is the major elimination product?\n[[mol:C[C@@H]1C[C@H](C(C)(C)C)CC[C@@H]1Br]]",
+    "choices": [
+      {"h": "[[mol:CC1=CCC[C@@H](C(C)(C)C)C1]]\nDouble bond toward the methyl group", "ok": true, "why": "tert-Butyl equatorial puts Br axial and the cis methyl next to it equatorial. The methyl carbon therefore has an axial hydrogen anti to Br, and removing it gives the more substituted alkene."},
+      {"h": "[[mol:C[C@H]1C=CC[C@@H](C(C)(C)C)C1]]\nDouble bond away from the methyl group, methyl and tert-butyl cis", "ok": false, "why": "This alkene also forms, from the axial hydrogen on the other neighbour, but it is less substituted and so the minor product. This is the answer for the isomer with methyl trans to Br."},
+      {"h": "[[mol:C[C@@H]1C=CC[C@@H](C(C)(C)C)C1]]\nDouble bond away from the methyl group, methyl and tert-butyl trans", "ok": false, "why": "Not formed at all: the methyl carbon would have to change face, and no bond to it is made or broken."},
+      {"h": "[[mol:CCO[C@@H]1CC[C@@H](C(C)(C)C)C[C@H]1C]]\nThe ethyl ether", "ok": false, "why": "Substitution, not elimination. A strong base on a hindered secondary bromide gives mostly E2."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Fix the chair", "h": "tert-Butyl is equatorial. Number from the C-Br carbon: Br up on C1, {{CH3}} up on C2, tert-butyl up on C4. With the C4 group equatorial, the up group on C1 is axial and the up group on C2 is equatorial.\n[[chair:1u:Br,2u:CH3,4u:C(CH3)3|A]]"},
+        {"t": "Look next door", "h": "C2: methyl equatorial, so its hydrogen is axial and anti to Br. C6: an axial hydrogen too."},
+        {"t": "Apply Saytzeff", "h": "Both hydrogens can leave, so the more substituted alkene wins: the double bond forms between C1 and C2, toward the methyl."},
+        {"t": "Check the stereocentre that is left", "h": "The methyl carbon is now part of the C=C and is no longer a stereocentre. Only the tert-butyl carbon remains one."}
+      ],
+      "answer": "The trisubstituted alkene with the double bond toward the methyl group.",
+      "rule": "Methyl cis to the axial leaving group: the Saytzeff hydrogen is axial and available."
+    }
+  },
+  {
+    "id": "e2-ring-product-011", "type": "e2-ring-product", "role": "practice", "kind": "chair", "diff": 2, "src": "site", "subs": "1d:Cl,2d:CH(CH3)2,5u:CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "This chloride (neomenthyl chloride) differs from menthyl chloride only at the carbon that carries Cl. It is heated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene is major?\n[[ring:1d:Cl,2d:CH(CH3)2,5u:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Find the stable chair", "h": "Isopropyl down on C2 and methyl up on C5 are both equatorial in the same chair. In that chair Cl, down on C1, is axial. So the stable chair already has the leaving group axial.\n[[chair:1d:Cl,2d:CH(CH3)2,5u:CH3|B]]"},
+        {"t": "Check C2", "h": "Cl and isopropyl are cis. With Cl axial the isopropyl is equatorial, so C2 has an axial hydrogen, anti to Cl."},
+        {"t": "Check C6", "h": "C6 is a {{CH2}}: it has an axial hydrogen anti to Cl as well."},
+        {"t": "Apply Saytzeff", "h": "C1=C2 has the isopropyl group on the double bond (trisubstituted). C1=C6 is disubstituted. Both can form, and the more substituted one is major.\n[[mol:CC(C)C1=CC[C@@H](C)CC1]]"}
+      ],
+      "answer": "The axial hydrogens on C2 and C6 can both leave. Major: the alkene with the double bond toward the isopropyl group (Saytzeff). The reaction is fast because Cl is axial in the stable chair.",
+      "rule": "Change one stereocentre and both the rate and the product can change."
+    }
+  },
+  {
+    "id": "e2-ring-product-012", "type": "e2-ring-product", "role": "practice", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "Three stereoisomers of 1-chloro-2,6-dimethylcyclohexane are each treated with {{NaOCH3}} in {{CH3OH}}. Two of them give 1,6-dimethylcyclohexene readily. Which one does <b>not</b> undergo {{E2}} readily?",
+    "choices": [
+      {"h": "[[mol:C[C@@H]1CCC[C@H](C)[C@@H]1Cl]]\nCl cis to both methyl groups", "ok": false, "why": "With Cl axial both methyls are equatorial, so both neighbouring carbons have an axial hydrogen anti to Cl. This isomer has two hydrogens to choose from and reacts readily."},
+      {"h": "[[mol:C[C@@H]1CCC[C@@H](C)C1Cl]]\nCl cis to one methyl group and trans to the other", "ok": false, "why": "With Cl axial, the cis methyl is equatorial and its carbon has an axial hydrogen anti to Cl. One hydrogen is enough for E2."},
+      {"h": "[[mol:C[C@@H]1CCC[C@H](C)[C@H]1Cl]]\nCl trans to both methyl groups", "ok": true, "why": "With Cl axial both methyls are axial, so the hydrogens on both neighbouring carbons are equatorial. In the other chair Cl is equatorial. Neither chair has a hydrogen anti to Cl."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "State what is needed", "h": "An axial Cl with an axial hydrogen on C2 or C6."},
+        {"t": "Translate cis and trans", "h": "A hydrogen on C2 is axial when Cl is axial only if the methyl on C2 is equatorial, which means the methyl is cis to Cl. A trans methyl is axial and blocks that carbon."},
+        {"t": "Test each isomer", "h": "Cis to both: two anti hydrogens. Cis to one: one anti hydrogen. Trans to both: none.\n[[chair:1u:Cl,2d:CH3,6d:CH3|A]]"},
+        {"t": "Check the flipped chair of the last one", "h": "After the flip all three groups are equatorial. Cl is no longer axial, so nothing is anti to it there either."}
+      ],
+      "answer": "The isomer with Cl trans to both methyl groups.",
+      "rule": "A trans neighbour blocks its side. Trans neighbours on both sides block E2 altogether."
+    }
+  },
+  {
+    "id": "e2-ring-product-013", "type": "e2-ring-product", "role": "practice", "kind": "mcq", "diff": 3, "src": "site",
+    "stem": "This bromocyclohexane carries one deuterium (D, heavy hydrogen), trans to the bromine. It is treated with {{NaOCH2CH3}} in {{CH3CH2OH}}. Which alkene is <b>not</b> formed?\n[[mol:[2H][C@H]1CCCC[C@@H]1Br]]",
+    "choices": [
+      {"h": "[[mol:C1=CCCCC1]]\nCyclohexene with no deuterium", "ok": false, "why": "This one forms. D is trans to Br, so with Br axial the D is axial and anti to it. Elimination toward that carbon removes D."},
+      {"h": "[[mol:[2H]C1C=CCCC1]]\nCyclohexene with D on the carbon next to the double bond", "ok": false, "why": "This one forms. The other neighbour, C6, has an axial H anti to Br. Elimination toward C6 leaves the C-D carbon untouched."},
+      {"h": "[[mol:[2H]C1=CCCCC1]]\nCyclohexene with D on the double bond", "ok": true, "why": "To keep D on the new C=C, the base would have to remove the H on the C-D carbon. That H is cis to Br: equatorial when Br is axial, so never anti. This alkene cannot form by anti elimination."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Draw the chair with Br axial", "h": "Br up on C1, D down on C2: trans, so both are axial in the reacting chair.\n[[chair:1u:Br,2d:D|A]]"},
+        {"t": "List what is anti to Br", "h": "On C2: the axial atom is D. On C6: the axial atom is H. Those two can leave, and no others."},
+        {"t": "Draw what each gives", "h": "Losing D from C2 gives cyclohexene with no D. Losing H from C6 gives cyclohexene with D on the carbon next to the C=C."},
+        {"t": "Find the missing one", "h": "An alkene with D on the C=C would need loss of the equatorial H from C2. That does not happen. Labelling experiments like this are how the anti requirement is proved."}
+      ],
+      "answer": "The alkene with D on the double bond is not formed.",
+      "rule": "The atom that leaves is the axial one, trans to the leaving group, whether it is H or D."
+    }
+  },
+  {
+    "id": "e2-ring-product-014", "type": "e2-ring-product", "role": "practice", "kind": "chair", "diff": 3, "src": "site", "subs": "1u:Cl,2u:CH3,6d:CH3", "given": "ring", "ask": ["e2"], "lg": 1,
+    "stem": "This chloride has a methyl group on each side of the leaving group, one cis to Cl and one trans. It is treated with {{NaOCH3}} in {{CH3OH}}. Which hydrogens can be removed in an {{E2}} reaction, and which alkene forms?\n[[ring:1u:Cl,2u:CH3,6d:CH3]]",
+    "solution": {
+      "steps": [
+        {"t": "Put Cl axial", "h": "With Cl axial (up) on C1: the up methyl on C2 is equatorial, and the down methyl on C6 is axial.\n[[chair:1u:Cl,2u:CH3,6d:CH3|A]]"},
+        {"t": "Check C2 (cis methyl)", "h": "Methyl equatorial, so the hydrogen is axial and anti to Cl. It can leave."},
+        {"t": "Check C6 (trans methyl)", "h": "Methyl axial, so the hydrogen is equatorial. It cannot leave."},
+        {"t": "Draw the alkene", "h": "Only C1=C2 can form. Both possible alkenes would have been trisubstituted, so Saytzeff could not have chosen between them: the geometry does.\n[[mol:CC1=CCCCC1C]]"}
+      ],
+      "answer": "Only the axial hydrogen on C2, the carbon whose methyl is cis to Cl. The double bond forms between C1 and C2.",
+      "rule": "The double bond forms toward the cis neighbour, never toward the trans one."
+    }
+  }
+]

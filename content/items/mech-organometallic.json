@@ -1,0 +1,243 @@
+[
+  {
+    "id": "mech-organometallic-001", "type": "mech-organometallic", "role": "worked", "kind": "written", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q1D", "time": 12, "pts": 55,
+    "stem": "Draw the mechanism.\n[[rxn:Br[Mg]C1CCCCC1>1) CO2;2) H3O+>OC(=O)C1CCCCC1]]",
+    "model": "[[mech:grignard-co2-cyclohexyl]]\n<p>Four arrows in all. The Grignard reagent behaves as R:⁻ and attacks the carbon of {{CO2}}. The acid is a separate, second step.</p>",
+    "rubric": [
+      {"pts": 20, "h": "First arrow: from the C-Mg bond to the carbon of {{CO2}} (Grignard as nucleophile, the carbon of {{CO2}} as electrophile)"},
+      {"pts": 10, "h": "Second arrow: one C=O pi bond onto its oxygen"},
+      {"pts": 10, "h": "The carboxylate intermediate, with O⁻ and ⁺MgBr"},
+      {"pts": 10, "h": "Workup: O⁻ lone pair to an H of {{H3O+}}, and the H-O bond onto the oxygen of water"},
+      {"pts": 5, "h": "The neutral carboxylic acid as the product"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "The C-Mg bond is polarized toward carbon. Treat cyclohexylmagnesium bromide as a cyclohexyl carbanion, R:⁻, with ⁺MgBr next to it.", "ask": {"q": "Which atom of the Grignard reagent carries the electrons that will react?", "a": "The carbon bonded to magnesium."}},
+        {"t": "Read the partner", "h": "{{CO2}} has no hydrogen at all, so there is no proton to take. The reagent must act as a nucleophile. In O=C=O the carbon is electron poor: two oxygens pull electrons away from it.", "ask": {"q": "Which atom of {{CO2}} is attacked?", "a": "The carbon. The oxygens are electron rich."}},
+        {"t": "Draw step 1", "h": "Arrow from the C-Mg bond to the carbon of {{CO2}}. That carbon would then have five bonds, so the electrons of one C=O pi bond move onto that oxygen. Two arrows."},
+        {"t": "Draw the intermediate", "h": "A carboxylate: the ring carbon is bonded to C(=O)O⁻, with ⁺MgBr as the counter-ion."},
+        {"t": "Draw step 2, the workup", "h": "{{H3O+}} is added afterwards. A lone pair on O⁻ takes a proton, and the H-O electrons stay on water. Two arrows. The product is cyclohexanecarboxylic acid.", "ask": {"q": "Why can the acid not be added at the start?", "a": "It would protonate R:⁻ to give cyclohexane, and no C-C bond would form."}}
+      ],
+      "answer": "Step 1: the C-Mg electrons attack the carbon of CO2 and a pi bond opens onto oxygen (carboxylate). Step 2: H3O+ protonates the carboxylate. Product: cyclohexanecarboxylic acid.",
+      "rule": "R:⁻ attacks the electron-poor carbon. Acid comes last."
+    }
+  },
+  {
+    "id": "mech-organometallic-002", "type": "mech-organometallic", "role": "worked", "kind": "mech", "diff": 1, "src": "Lecture 11/03, page 1", "mech": "isopropylmagnesium-bromide-d2o",
+    "stem": "Draw the curved arrows.\n[[rxn:CC(C)[Mg]Br + [2H]O[2H]>>CC(C)[2H]]]",
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "Isopropylmagnesium bromide is R:⁻ with ⁺MgBr. The electrons are in the C-Mg bond, on the middle carbon.", "ask": {"q": "Is R:⁻ a strong or a weak base?", "a": "Very strong. Its conjugate acid, an alkane, has {{pKa}} 50 to 60."}},
+        {"t": "Read the partner", "h": "{{D2O}} is water with D in place of H. It has an acidic O-D ({{pKa}} about 15.7), so this is an acid-base reaction.", "ask": {"q": "Which way does the equilibrium lie?", "a": "Far to the right: the stronger acid ({{D2O}}, 15.7) gives its D to the stronger base and the weaker acid (the alkane, 50 to 60) forms."}},
+        {"t": "Draw the two arrows", "h": "First arrow: from the C-Mg bond to a D of {{D2O}}. Second arrow: from that D-O bond onto oxygen."},
+        {"t": "Draw the products", "h": "Propane with a D on the middle carbon, and {{DO-}} with ⁺MgBr.", "ask": {"q": "On which carbon is the D?", "a": "On the carbon that was bonded to magnesium."}}
+      ],
+      "answer": "Two arrows: C-Mg bond to D, D-O bond to O. Products: 2-deuteriopropane and DO⁻ ⁺MgBr.",
+      "rule": "R-MgX + D2O gives R-D, with D where the metal was."
+    }
+  },
+  {
+    "id": "mech-organometallic-003", "type": "mech-organometallic", "role": "worked", "kind": "mcq", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q1D",
+    "stem": "A student wants butanoic acid and adds {{CO2}} and {{H3O+}} to the Grignard reagent at the same time. What is the main organic product?\n[[rxn:CCC[Mg]Br>CO2, H3O+;together>\"?\"]]",
+    "choices": [
+      {"h": "[[mol:CCC]]", "ok": true, "why": "R:⁻ is a very strong base and {{H3O+}} is a strong acid. The proton transfer happens at once and gives propane, before any carbon-carbon bond can form."},
+      {"h": "[[mol:CCCC(=O)O]]", "ok": false, "why": "This needs two separate steps: {{CO2}} first, acid afterwards. With acid present from the start, the reagent is destroyed."},
+      {"h": "[[mol:CCCO]]", "ok": false, "why": "The carbon of a Grignard reagent is the electron-rich atom. It takes a proton. It is not attacked by water's oxygen."},
+      {"h": "[[mol:CCCBr]]", "ok": false, "why": "The reagent does not go back to the alkyl bromide. Acid gives R-H."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "Propylmagnesium bromide is {{CH3CH2CH2:-}} with ⁺MgBr.", "ask": {"q": "What does a very strong base do when an acid is in the flask?", "a": "It takes a proton, faster than anything else it could do."}},
+        {"t": "Compare the two partners", "h": "{{H3O+}} has {{pKa}} −1.5 and the alkane 50 to 60. Protonation of the carbanion is enormously favourable and very fast. {{CO2}} never gets its turn.", "ask": {"q": "What does \"1) {{CO2}}; 2) {{H3O+}}\" tell you to do?", "a": "Add {{CO2}} first, let it react completely, and only then add the acid."}},
+        {"t": "Draw the product", "h": "R:⁻ + {{H+}} gives R-H: propane."},
+        {"t": "State the lesson", "h": "The acid is the last step, written as step 2. Its job is only to put the proton on the carboxylate."}
+      ],
+      "answer": "Propane",
+      "rule": "Acid destroys a Grignard reagent: R:⁻ + H⁺ gives R-H. Acid comes last."
+    }
+  },
+  {
+    "id": "mech-organometallic-004", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 1, "src": "site",
+    "stem": "What is the organic product?\n[[rxn:CC[Li] + O>>\"?\"]]",
+    "choices": [
+      {"h": "[[mol:CC]]", "ok": true, "why": "Ethyllithium is {{CH3CH2:-}}, a very strong base. It takes a proton from water ({{pKa}} 15.7) and becomes ethane. The other product is LiOH."},
+      {"h": "[[mol:CCO]]", "ok": false, "why": "This treats the carbon as electron poor, as it is in an alkyl halide. In C-Li the carbon is the electron-rich end."},
+      {"h": "[[mol:C=C]]", "ok": false, "why": "Nothing here removes a hydrogen from the next carbon. The reagent is the base, and it gains a hydrogen."},
+      {"h": "[[mol:CCCC]]", "ok": false, "why": "Two ethyl groups do not join. The carbanion finds the acidic hydrogen of water first."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "C-Li is polarized {{d-}} on carbon: {{CH3CH2:-}} {{Li+}}."},
+        {"t": "Find the acid", "h": "Water, {{pKa}} 15.7. The conjugate acid of the carbanion is ethane, {{pKa}} 50 to 60."},
+        {"t": "Transfer the proton", "h": "The C-Li electrons take an H of water, and the H-O electrons stay on oxygen: ethane and {{Li+}} {{-OH}}."}
+      ],
+      "answer": "Ethane (and LiOH)",
+      "rule": "R-Li + H2O gives R-H."
+    }
+  },
+  {
+    "id": "mech-organometallic-005", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 1, "src": "Lecture 10/29, page 5",
+    "stem": "Which conditions turn 1-bromobutane into a Grignard reagent?\n[[rxn:CCCCBr>?>CCCC[Mg]Br]]",
+    "choices": [
+      {"h": "Mg in diethyl ether", "ok": true, "why": "The lecture's recipe: R-X + Mg in diethyl ether gives R-MgX."},
+      {"h": "2 Li in pentane", "ok": false, "why": "This is the recipe for the organolithium reagent, butyllithium, with LiBr as the other product. It contains no magnesium."},
+      {"h": "Mg in water", "ok": false, "why": "Water would protonate the reagent as fast as it formed. The product would be butane."},
+      {"h": "{{MgBr2}} in diethyl ether", "ok": false, "why": "The magnesium has to be the metal, Mg, which gives up its electrons to the C-Br bond. {{Mg^2+}} has none to give."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recall the two recipes", "h": "Grignard: R-X + Mg, diethyl ether. Organolithium: R-X + 2 Li, pentane."},
+        {"t": "Check the solvent", "h": "The solvent must have no acidic hydrogen. Ether and pentane qualify. Water and alcohols do not."},
+        {"t": "Check the metal", "h": "It is the metal itself that reacts, written Mg or {{Mg^0}}."}
+      ],
+      "answer": "Mg in diethyl ether",
+      "rule": "R-X + Mg in ether gives R-MgX. R-X + 2 Li in pentane gives R-Li."
+    }
+  },
+  {
+    "id": "mech-organometallic-006", "type": "mech-organometallic", "role": "practice", "kind": "mech", "diff": 1, "src": "site", "mech": "ethylmagnesium-bromide-ethanol",
+    "stem": "Draw the curved arrows.\n[[rxn:CC[Mg]Br + CCO>>CC + CC[O-]]]",
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "Ethylmagnesium bromide is {{CH3CH2:-}} with ⁺MgBr."},
+        {"t": "Find the acidic hydrogen", "h": "Ethanol's O-H, {{pKa}} about 16. The C-H hydrogens of ethanol are not acidic."},
+        {"t": "Draw the two arrows", "h": "From the C-Mg bond to the H of the O-H. From the H-O bond onto oxygen. Products: ethane and ethoxide with ⁺MgBr."}
+      ],
+      "answer": "Two arrows: C-Mg bond to H, H-O bond to O. Products: ethane and CH3CH2O⁻ ⁺MgBr.",
+      "rule": "Any O-H protonates a Grignard reagent."
+    }
+  },
+  {
+    "id": "mech-organometallic-007", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 2, "src": "site, modelled on FA24 Exam 2, Q1D",
+    "stem": "Methylmagnesium bromide reacts with {{CO2}}. What has formed after this first step, before any acid is added?\n[[rxn:C[Mg]Br + O=C=O>>\"?\"]]",
+    "choices": [
+      {"h": "[[mol:CC(=O)[O-]]]", "ok": true, "why": "The methyl carbon bonds to the carbon of {{CO2}}, and one pi bond opens onto oxygen. The result is a carboxylate (acetate), with ⁺MgBr beside it."},
+      {"h": "[[mol:CO[C-]=O]]", "ok": false, "why": "Here the methyl carbon has bonded to an oxygen. The oxygens of {{CO2}} are electron rich. The electron-poor atom is the carbon."},
+      {"h": "[[mol:CC(=O)O]]", "ok": false, "why": "Acetic acid needs a proton, and there is no proton source until the acid is added in the second step."},
+      {"h": "[[mol:C]]", "ok": false, "why": "Methane would need an acidic hydrogen. {{CO2}} has no hydrogen."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Base or nucleophile", "h": "{{CO2}} has no hydrogen, so the reagent cannot act as a base. It acts as a nucleophile."},
+        {"t": "Find the electron-poor atom", "h": "The carbon of O=C=O, pulled on by two oxygens."},
+        {"t": "Draw the step", "h": "C-Mg bond to the carbon of {{CO2}}, and one C=O pi bond onto oxygen. The product is acetate, still an anion."}
+      ],
+      "answer": "Acetate, {{CH3CO2-}} ⁺MgBr",
+      "rule": "R:⁻ attacks the carbon of CO2. The product stays an anion until acid is added."
+    }
+  },
+  {
+    "id": "mech-organometallic-008", "type": "mech-organometallic", "role": "practice", "kind": "mech", "diff": 2, "src": "site", "mech": "butyllithium-propyne",
+    "stem": "Draw the curved arrows.\n[[rxn:CCCC[Li] + CC#C>>CCCC + CC#[C-].[Li+]]]",
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "Butyllithium is a butyl carbanion with {{Li+}}."},
+        {"t": "Find the acidic hydrogen", "h": "Propyne has two kinds of hydrogen. The one on the triple-bond carbon ({{sp}}) has {{pKa}} 25. The {{CH3}} hydrogens are {{sp3}} C-H, {{pKa}} 50 to 60."},
+        {"t": "Compare", "h": "25 is far below 50 to 60, so the alkyne hydrogen is transferred to the butyl carbon."},
+        {"t": "Draw the two arrows", "h": "From the C-Li bond to the alkyne H. From that C-H bond onto the alkyne carbon, as a lone pair."}
+      ],
+      "answer": "Two arrows: C-Li bond to H, C-H bond onto the alkyne carbon. Products: butane and lithium propynide.",
+      "rule": "A terminal alkyne (pKa 25) is acidic enough to protonate R:⁻."
+    }
+  },
+  {
+    "id": "mech-organometallic-009", "type": "mech-organometallic", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 6, "pts": 30,
+    "stem": "Draw the mechanism and all the products.\n[[rxn:[Li]c1ccccc1 + [2H]O[2H]>>\"?\"]]",
+    "model": "<p>Phenyllithium is a carbanion, R:⁻ {{Li+}}, and {{D2O}} is the acid. Two arrows: from the C-Li bond to a D, and from that D-O bond onto oxygen.</p>\n[[rxn:[Li]c1ccccc1 + [2H]O[2H]>>[2H]c1ccccc1 + [Li+].[O-][2H]]]\n<p>The D is on the ring carbon that carried the lithium. The other product is LiOD.</p>",
+    "rubric": [
+      {"pts": 10, "h": "First arrow starts at the C-Li bond and ends at a D of {{D2O}}"},
+      {"pts": 8, "h": "Second arrow: the D-O bond onto oxygen"},
+      {"pts": 7, "h": "Benzene with one D, on the carbon that carried Li"},
+      {"pts": 5, "h": "{{Li+}} and {{DO-}} shown as the other product"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Rewrite the reagent", "h": "The ring carbon bonded to Li is the electron-rich atom."},
+        {"t": "Find the acid", "h": "{{D2O}} has an acidic O-D, just as water has an acidic O-H."},
+        {"t": "Transfer the deuteron", "h": "C-Li bond to D, D-O bond to O. The carbon gains D exactly where Li was."}
+      ],
+      "answer": "Deuteriobenzene and LiOD, by one proton-transfer step with two arrows",
+      "rule": "R-Li + D2O gives R-D."
+    }
+  },
+  {
+    "id": "mech-organometallic-010", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 2, "src": "site",
+    "stem": "Which of these liquids can be the solvent for a Grignard reagent without destroying it?",
+    "choices": [
+      {"h": "[[mol:CCOCC]]", "ok": true, "why": "Diethyl ether has only C-H hydrogens ({{pKa}} 50 to 60). It has no proton the reagent can take, and it is the solvent the lecture uses."},
+      {"h": "[[mol:CO]]", "ok": false, "why": "Methanol has an O-H, {{pKa}} about 15.5. The reagent takes that proton and becomes R-H."},
+      {"h": "[[mol:O]]", "ok": false, "why": "Water, {{pKa}} 15.7, protonates the reagent at once."},
+      {"h": "[[mol:CCCCC#C]]", "ok": false, "why": "The hydrogen on the triple-bond carbon has {{pKa}} 25, still far below 50. The reagent takes it and becomes R-H."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Recall how basic the reagent is", "h": "R:⁻, conjugate acid {{pKa}} 50 to 60."},
+        {"t": "Look for acidic hydrogens", "h": "O-H in methanol and water. The alkyne C-H in 1-hexyne. None in diethyl ether."},
+        {"t": "Compare each with 50", "h": "15.5, 15.7 and 25 are all far below 50: each of those liquids destroys the reagent."}
+      ],
+      "answer": "Diethyl ether",
+      "rule": "The solvent for R-MgX or R-Li must have no acidic hydrogen."
+    }
+  },
+  {
+    "id": "mech-organometallic-011", "type": "mech-organometallic", "role": "practice", "kind": "mcq", "diff": 3, "src": "site", "fixed": true,
+    "stem": "A student wants the labelled alcohol shown as the product and tries this route. What goes wrong?\n[[rxn:OCCCCBr>1) Mg, ether;2) D2O>[2H]CCCCO]]",
+    "choices": [
+      {"h": "Nothing: the route gives the product shown", "ok": false, "why": "The starting bromide carries its own acid, the O-H. The C-Mg carbon never survives to meet {{D2O}}."},
+      {"h": "As soon as a C-Mg bond forms, that carbon takes the O-H hydrogen of a neighbouring molecule, so the carbon ends up with H and not D", "ok": true, "why": "An alcohol O-H has {{pKa}} about 16, far below 50 to 60. The carbanion is protonated to a {{CH3}} group, and the {{D2O}} added later can only put D on the oxygen."},
+      {"h": "Magnesium cannot react with a primary C-Br bond", "ok": false, "why": "Primary bromides make Grignard reagents without trouble. The problem is the OH group."},
+      {"h": "Ether is the wrong solvent: an alcohol should be used so that everything dissolves", "ok": false, "why": "An alcohol as solvent would destroy any Grignard reagent, for the same reason the OH group in this molecule does."}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Look at the whole starting material", "h": "It has a C-Br bond, which is what Mg needs, and also an O-H."},
+        {"t": "Ask what R:⁻ meets first", "h": "The moment a carbanion-like carbon forms, it is surrounded by O-H groups of other molecules. {{pKa}} 16 against 50 to 60: the proton transfer is fast and complete."},
+        {"t": "Follow the label", "h": "The carbon gets H from the O-H, so the chain ends in an ordinary {{CH3}}. The oxygen is left as an alkoxide, and {{D2O}} in step 2 gives O-D, not C-D."}
+      ],
+      "answer": "The reagent destroys itself: the C-Mg carbon is protonated by the O-H, so no D ends up on carbon.",
+      "rule": "A molecule with an O-H or N-H cannot be turned into a Grignard reagent."
+    }
+  },
+  {
+    "id": "mech-organometallic-012", "type": "mech-organometallic", "role": "practice", "kind": "written", "diff": 3, "src": "site", "time": 12, "pts": 55,
+    "stem": "Propyne is treated with ethylmagnesium bromide, then with {{CO2}}, then with {{H3O+}}. The product is {{C4H4O2}}. Draw the mechanism of each step.\n[[rxn:CC#C>1) CH3CH2MgBr;2) CO2, then H3O+>CC#CC(=O)O]]",
+    "model": "<p><b>Step 1, proton transfer.</b> The Grignard reagent is a base. Arrow from the C-Mg bond of ethyl to the H on the triple-bond carbon ({{pKa}} 25), and arrow from that C-H bond onto the alkyne carbon. Ethane ({{pKa}} 50 to 60) leaves, and the alkyne carbon now carries the negative charge, with ⁺MgBr.</p>\n[[rxn:CC[Mg]Br + CC#C>>CC + CC#C[Mg]Br]]\n<p><b>Step 2, attack on {{CO2}}.</b> The new carbanion is a nucleophile. Arrow from the alkyne carbon's pair (its C-Mg bond) to the carbon of {{CO2}}, and arrow from one C=O pi bond onto oxygen: a carboxylate.</p>\n[[rxn:CC#C[Mg]Br + O=C=O>>CC#CC(=O)[O-]]]\n<p><b>Step 3, workup.</b> Arrow from an O⁻ lone pair to an H of {{H3O+}}, and arrow from the H-O bond onto water's oxygen.</p>\n[[rxn:CC#CC(=O)[O-] + [OH3+]>>CC#CC(=O)O + O]]",
+    "rubric": [
+      {"pts": 15, "h": "Step 1: two arrows of the proton transfer, taking the hydrogen on the triple-bond carbon (not a {{CH3}} hydrogen)"},
+      {"pts": 5, "h": "Ethane and the alkynyl anion (with ⁺MgBr) as the products of step 1, with {{pKa}} 25 against 50 to 60 as the reason"},
+      {"pts": 15, "h": "Step 2: the alkyne carbon attacks the carbon of {{CO2}}, and a pi bond opens onto oxygen"},
+      {"pts": 10, "h": "The carboxylate intermediate with its charge"},
+      {"pts": 10, "h": "Step 3: protonation by {{H3O+}} (two arrows) and the neutral acid, {{C4H4O2}}"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Take the reagents one at a time", "h": "First ask what ethylmagnesium bromide does to propyne. Propyne has an acidic hydrogen ({{pKa}} 25), so the Grignard reagent acts as a base."},
+        {"t": "See what step 1 has made", "h": "Ethane, and a new carbanion on the alkyne carbon. It is a weaker base than the ethyl carbanion, but it is still R:⁻."},
+        {"t": "Give the new R:⁻ its partner", "h": "{{CO2}} has no hydrogen, so the alkyne carbanion attacks its carbon, exactly as in the exam question."},
+        {"t": "Finish with acid", "h": "The carboxylate takes a proton from {{H3O+}}."},
+        {"t": "Check the formula", "h": "But-2-ynoic acid: four carbons, four hydrogens, two oxygens. One carbon more than propyne, from {{CO2}}."}
+      ],
+      "answer": "Proton transfer (ethane leaves), then attack of the alkynyl carbanion on the carbon of CO2, then protonation: but-2-ynoic acid.",
+      "rule": "Acidic hydrogen present: the reagent is a base. None: it is a nucleophile. Ask again at every step."
+    }
+  },
+  {
+    "id": "mech-organometallic-013", "type": "mech-organometallic", "role": "practice", "kind": "written", "diff": 3, "src": "site, modelled on FA24 Exam 2, Q1D", "time": 8, "pts": 30,
+    "stem": "A student's mechanism for this reaction has three mistakes, listed below. Correct each one and say why it is wrong.\n[[rxn:Br[Mg]c1ccccc1>1) CO2;2) H3O+>OC(=O)c1ccccc1]]\n<ol><li>The first arrow starts at the Mg atom and points to the ring carbon.</li><li>The ring carbon is shown making its new bond to an oxygen of {{CO2}}.</li><li>{{H3O+}} is drawn in the same step as {{CO2}}.</li></ol>",
+    "model": "<ol><li>The arrow must start at the <b>C-Mg bond</b> and point away from the ring, to the atom being attacked. An arrow shows where electrons go, and the electrons are in that bond (the reagent is R:⁻ ⁺MgBr).</li><li>The new bond goes to the <b>carbon</b> of {{CO2}}. That carbon is electron poor because two oxygens pull on it. The oxygens are electron rich. A second arrow moves one C=O pi bond onto oxygen.</li><li>The acid is a <b>separate second step</b>. If {{H3O+}} were present with the Grignard reagent it would protonate R:⁻ and give benzene. It is added afterwards to protonate the carboxylate.</li></ol>\n[[mech:grignard-co2-benzoic-acid]]",
+    "rubric": [
+      {"pts": 10, "h": "Mistake 1: the arrow starts at the C-Mg bond, with the reason (that is where the electrons are)"},
+      {"pts": 10, "h": "Mistake 2: attack on the carbon of {{CO2}}, with the reason (electron poor), and the pi electrons moved to oxygen"},
+      {"pts": 10, "h": "Mistake 3: acid only in the second step, with the reason (it would destroy the reagent: R-H)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Arrows show electrons", "h": "A curved arrow starts at an electron pair. Magnesium is the electron-poor end of the C-Mg bond, so no arrow starts there."},
+        {"t": "Electron rich meets electron poor", "h": "The carbanion-like carbon looks for the electron-poor atom of {{CO2}}, which is its carbon."},
+        {"t": "Order of addition", "h": "Step numbers on an arrow mean separate additions. A strong acid and a carbanion cannot be in the flask together."}
+      ],
+      "answer": "Start the arrow at the C-Mg bond; attack the carbon of CO2 and open a pi bond onto oxygen; add the acid only afterwards.",
+      "rule": "Arrow from the C-metal bond, to the electron-poor carbon, acid last."
+    }
+  }
+]

@@ -1,0 +1,273 @@
+[
+  {
+    "id": "mech-rearrangement-001", "type": "mech-rearrangement", "role": "worked", "kind": "written", "diff": 3, "src": "site, modelled on FA24 Exam 2, Q9", "time": 20, "pts": 100,
+    "stem": "The amine below is treated with HONO, which turns the {{NH2}} group into {{N2+}}. Two ketones form. Draw the mechanism that leads to each.\n[[rxn:CC(N)C1(O)CCC1C>HONO>CC1CCC(C)C1=O + CC1C(C)CCC1=O]]",
+    "model": "<p>Both ketones come from one carbocation. After {{N2}} leaves, a ring bond of the C-OH carbon shifts to the positive carbon and the four-membered ring becomes five-membered. The C-OH carbon has two different ring bonds, so there are two paths.</p>\n<p><b>Path 1:</b> the ring {{CH2}} migrates. The methyl groups end up on both sides of the C=O.</p>\n[[mech:ring-expansion-aminoalcohol-ch2]]\n<p><b>Path 2:</b> the ring {{CH(CH3)}} migrates. The methyl groups end up on neighbouring carbons.</p>\n[[mech:ring-expansion-aminoalcohol-chme]]",
+    "rubric": [
+      {"pts": 20, "h": "{{N2}} leaves (arrow from the C-N bond to N) and the secondary carbocation next to the C-OH carbon is drawn"},
+      {"pts": 25, "h": "Path 1: one arrow from the ring bond C(OH)-{{CH2}} to the positive carbon, and the five-membered cation with the charge on the C-OH carbon"},
+      {"pts": 25, "h": "Path 2: one arrow from the ring bond C(OH)-{{CH(CH3)}} to the positive carbon, and the five-membered cation with the charge on the C-OH carbon"},
+      {"pts": 10, "h": "An oxygen lone pair shares the charge: C⁺-OH drawn as C=O⁺-H"},
+      {"pts": 20, "h": "Water removes the O-H proton, giving each ketone (10 points each)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Analyze the products first", "h": "The starting ring has four carbons. Both products have five-membered rings, with a C=O where the C-OH carbon was. The ring has gained one carbon, and the nitrogen is gone.", "ask": {"q": "Which carbon was added to the ring?", "a": "The carbon that carried the nitrogen. It is the only carbon outside the ring that is attached to it."}},
+        {"t": "Remove the leaving group", "h": "The C-N bond breaks and {{N2}} leaves with the electrons. A secondary carbocation is left on the carbon next to the C-OH ring carbon."},
+        {"t": "Find what can move", "h": "The neighbour of the positive carbon is the C-OH carbon. It has two ring bonds: one to a ring {{CH2}} and one to the ring carbon that carries a methyl group. Moving either one makes a five-membered ring and puts the charge on the carbon that carries oxygen.", "ask": {"q": "Why does a ring bond move, when the cation is secondary before and after?", "a": "Two gains: the strained four-membered ring opens to a five-membered ring, and the new positive carbon is bonded to an oxygen whose lone pair shares the charge."}},
+        {"t": "Path 1: the ring CH2 moves", "h": "Arrow from the C(OH)-{{CH2}} bond to the positive carbon. In the new ring the C-OH carbon sits between the two carbons that carry methyl groups. This path ends as 2,5-dimethylcyclopentanone."},
+        {"t": "Path 2: the ring CH(CH3) moves", "h": "Arrow from the C(OH)-{{CH(CH3)}} bond to the positive carbon. Now the two methyl-bearing carbons are bonded to each other. This path ends as 2,3-dimethylcyclopentanone.", "ask": {"q": "How do you tell the two products apart quickly?", "a": "Look at where the methyl groups are: on both sides of the C=O (path 1), or on neighbouring carbons on one side (path 2)."}},
+        {"t": "Finish both: make the ketone", "h": "A lone pair on the OH oxygen forms a second bond to the positive carbon (C=O⁺-H). Water takes that proton. The product is the neutral ketone."}
+      ],
+      "answer": "N2 leaves; either ring bond of the C-OH carbon shifts (ring expansion); the oxygen lone pair shares the charge; water removes the proton. The CH2 shift gives 2,5-dimethylcyclopentanone and the CH(CH3) shift gives 2,3-dimethylcyclopentanone.",
+      "rule": "A cation next to a strained ring pulls a ring bond over. Two different ring bonds, two products."
+    }
+  },
+  {
+    "id": "mech-rearrangement-002", "type": "mech-rearrangement", "role": "worked", "kind": "written", "diff": 2, "src": "site", "time": 10, "pts": 40,
+    "stem": "The major alcohol from this reaction does not have its OH on the carbon that carried the bromine. Draw the major alcohol and the mechanism that explains it.\n[[rxn:CC(Br)C(C)C>H2O;heat>\"?\"]]",
+    "model": "<p>The major alcohol is 2-methylbutan-2-ol:</p>\n[[mol:CCC(C)(C)O]]\n[[mech:hydride-shift-3methyl2butyl-water]]\n<p>The secondary cation becomes a tertiary cation by a 1,2-hydride shift before water attacks. A little of the alcohol without rearrangement also forms:</p>\n[[mol:CC(O)C(C)C]]",
+    "rubric": [
+      {"pts": 8, "h": "The product: OH on the carbon that carries two methyl groups (2-methylbutan-2-ol)"},
+      {"pts": 8, "h": "Ionization: arrow from the C-Br bond to Br, secondary carbocation drawn"},
+      {"pts": 12, "h": "1,2-Hydride shift: one arrow from the neighbouring C-H bond to the positive carbon, and the tertiary carbocation drawn"},
+      {"pts": 6, "h": "Water attacks the tertiary carbon"},
+      {"pts": 6, "h": "A second water removes the proton"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify", "h": "Secondary bromide in hot water, no strong base and no good nucleophile: the C-Br bond ionizes."},
+        {"t": "Draw the first cation and look next door", "h": "The positive carbon is secondary. On one side is a {{CH3}}. On the other is a carbon with one hydrogen and two methyl groups.", "ask": {"q": "If the positive charge were on that neighbouring carbon, what kind of cation would it be?", "a": "Tertiary, which is more stable."}},
+        {"t": "Shift the hydride", "h": "The neighbouring hydrogen moves to the positive carbon with the two electrons of its C-H bond. One arrow, from that bond to the positive carbon. The charge is now on the carbon the hydrogen left.", "ask": {"q": "Does the hydrogen move as {{H+}} or with its electrons?", "a": "With its electrons, as a hydride. That is why the arrow starts at the C-H bond."}},
+        {"t": "Finish as SN1", "h": "Water bonds to the tertiary positive carbon, and a second water removes a proton."},
+        {"t": "Check", "h": "The product has five carbons and one OH, like the alcohol without rearrangement. Only the position of the OH differs."}
+      ],
+      "answer": "2-Methylbutan-2-ol, by ionization, a 1,2-hydride shift (secondary to tertiary), attack by water and loss of a proton",
+      "rule": "A hydrogen next door moves over if that leaves a more stable cation."
+    }
+  },
+  {
+    "id": "mech-rearrangement-003", "type": "mech-rearrangement", "role": "worked", "kind": "written", "diff": 3, "src": "Lecture 11/10, homework", "time": 15, "pts": 60,
+    "stem": "Predict the {{SN1}} product and the {{E1}} product, without rearrangement and with rearrangement. Show the mechanism of the rearrangement.\n[[rxn:CC(Br)C1CCC1>CH3CH2OH;heat>\"?\"]]",
+    "model": "<p><b>Without rearrangement</b>, from the first (secondary) cation: the {{SN1}} ether, then the {{E1}} alkenes, the more substituted one first.</p>\n[[mol:CCOC(C)C1CCC1]]\n[[mol:CC=C1CCC1]]\n[[mol:C=CC1CCC1]]\n<p><b>With rearrangement</b>, after a ring bond shifts and the ring expands to five carbons: the {{SN1}} ether (cis and trans), then the {{E1}} alkenes, the more substituted one first.</p>\n[[mol:CCOC1CCCC1C]]\n[[mol:CC1=CCCC1]]\n[[mol:CC1C=CCC1]]\n<p>The mechanisms of the rearranged products:</p>\n[[mech:ring-expansion-bromoethylcyclobutane-sn1]]\n[[mech:ring-expansion-bromoethylcyclobutane-e1]]",
+    "rubric": [
+      {"pts": 8, "h": "Ionization: arrow from the C-Br bond to Br, and the secondary cation next to the ring"},
+      {"pts": 8, "h": "{{SN1}} without rearrangement: the ethyl ether on the carbon that carried Br"},
+      {"pts": 8, "h": "{{E1}} without rearrangement: an alkene with the four-membered ring intact (ethylidenecyclobutane is the more substituted one)"},
+      {"pts": 14, "h": "Ring expansion: one arrow from a ring bond of the neighbouring ring carbon to the positive carbon, and the cyclopentyl cation with {{CH3}} on the carbon next to the charge"},
+      {"pts": 10, "h": "{{SN1}} with rearrangement: 1-ethoxy-2-methylcyclopentane, with the proton removed"},
+      {"pts": 8, "h": "{{E1}} with rearrangement: 1-methylcyclopentene"},
+      {"pts": 4, "h": "Reason: the ring expansion relieves the strain of the four-membered ring"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify", "h": "Secondary bromide, ethanol (polar protic, poor nucleophile), heat: ionization, then {{SN1}} and {{E1}}."},
+        {"t": "Products of the first cation", "h": "Ethanol adds to the positive carbon and loses a proton: (1-ethoxyethyl)cyclobutane. Or ethanol takes a neighbouring hydrogen: from the ring carbon (ethylidenecyclobutane, more substituted) or from the {{CH3}} (vinylcyclobutane).", "ask": {"q": "How many different neighbouring carbons with hydrogens does the first cation have?", "a": "Two: the {{CH3}} and the ring CH."}},
+        {"t": "See the strained ring next door", "h": "The positive carbon is attached to a cyclobutane. If one ring bond of the attached ring carbon moves to the positive carbon, the ring becomes five-membered.", "ask": {"q": "The cation is secondary before and after. What makes the shift worthwhile?", "a": "Ring strain. From the lecture table, cyclobutane holds about 26 kcal/mol of strain and cyclopentane about 6."}},
+        {"t": "Draw the ring expansion", "h": "One arrow from the ring C-C bond to the positive carbon. Redraw: a five-membered ring with the {{CH3}} on one carbon and the positive charge on the ring carbon next to it."},
+        {"t": "Products of the second cation", "h": "Ethanol adds and loses a proton: 1-ethoxy-2-methylcyclopentane (both cis and trans, because the cation is flat). Or ethanol takes a neighbouring hydrogen: 1-methylcyclopentene (three carbon groups on C=C, major) or 3-methylcyclopentene.", "ask": {"q": "Which hydrogen is lost to give 1-methylcyclopentene?", "a": "The one on the carbon that carries the methyl group."}},
+        {"t": "Check", "h": "Each ether is {{C8H16O}} and each alkene is {{C6H10}}, with or without rearrangement. Only the skeleton differs."}
+      ],
+      "answer": "Without rearrangement: (1-ethoxyethyl)cyclobutane (SN1) and ethylidenecyclobutane (E1). With ring expansion: 1-ethoxy-2-methylcyclopentane (SN1) and 1-methylcyclopentene (E1).",
+      "rule": "A cation next to a four-membered ring expands it to five. Then finish as SN1 or E1."
+    }
+  },
+  {
+    "id": "mech-rearrangement-004", "type": "mech-rearrangement", "role": "worked", "kind": "mech", "diff": 2, "src": "site", "mech": "methyl-shift-33dimethyl2butyl-water",
+    "stem": "Draw the curved arrows, step by step.\n[[rxn:CC(Br)C(C)(C)C>H2O>CC(C)C(C)(C)O]]",
+    "solution": {
+      "steps": [
+        {"t": "Compare the skeletons", "h": "The starting material has three methyl groups on one carbon. The product has two methyl groups on each of the two middle carbons. A methyl group has moved to the neighbouring carbon.", "ask": {"q": "On which carbon is the OH, compared with the Br?", "a": "On the neighbouring carbon, the one that lost a methyl group."}},
+        {"t": "Ionize", "h": "The C-Br bond breaks: a secondary carbocation."},
+        {"t": "Shift a methyl group", "h": "The neighbouring carbon has no hydrogen, so a hydride shift is impossible. A methyl group moves with its bonding pair: one arrow from the C-{{CH3}} bond to the positive carbon. The cation is now tertiary.", "ask": {"q": "Why a methyl group and not a hydrogen?", "a": "The carbon next to the positive carbon carries three methyl groups and no hydrogen."}},
+        {"t": "Add water and lose the proton", "h": "Water bonds to the tertiary positive carbon, then a second water removes a proton from oxygen."}
+      ],
+      "answer": "Four steps: ionization, 1,2-methyl shift, attack by water, loss of a proton. Product: 2,3-dimethylbutan-2-ol.",
+      "rule": "No hydrogen next door: a methyl group shifts instead, and the skeleton changes."
+    }
+  },
+  {
+    "id": "mech-rearrangement-005", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 5, "pts": 15,
+    "stem": "For each carbocation, say whether it rearranges. If it does, name the shift and draw the new cation.\n<p><b>A</b></p>\n[[mol:C[CH+]C(C)C]]\n<p><b>B</b></p>\n[[mol:C[CH+]C(C)(C)C]]\n<p><b>C</b></p>\n[[mol:CC[C+](C)C]]",
+    "model": "<p><b>A</b> rearranges by a 1,2-hydride shift (secondary to tertiary):</p>\n[[mol:CC[C+](C)C]]\n<p><b>B</b> rearranges by a 1,2-methyl shift (secondary to tertiary). There is no hydrogen on the neighbouring carbon.</p>\n[[mol:CC(C)[C+](C)C]]\n<p><b>C</b> does not rearrange. It is already tertiary, and any shift would give a secondary or a primary cation.</p>",
+    "rubric": [
+      {"pts": 5, "h": "A: hydride shift, tertiary cation drawn"},
+      {"pts": 5, "h": "B: methyl shift, tertiary cation drawn with the methyl on the carbon that was positive"},
+      {"pts": 5, "h": "C: no rearrangement, with the reason"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Classify each cation", "h": "A and B are secondary. C is tertiary."},
+        {"t": "Look at the neighbouring carbons", "h": "A: the neighbour has one H and two methyls. B: the neighbour has three methyls and no H. C: the neighbours are a {{CH2}} and two {{CH3}} groups."},
+        {"t": "Decide", "h": "A: moving the H gives a tertiary cation. B: moving a methyl gives a tertiary cation. C: every shift would go downhill in stability, so nothing moves."}
+      ],
+      "answer": "A: hydride shift. B: methyl shift. C: no rearrangement.",
+      "rule": "Shift only if the new cation is more stable. H if there is one, otherwise a carbon group."
+    }
+  },
+  {
+    "id": "mech-rearrangement-006", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 1, "src": "Lecture 11/10, homework", "time": 6, "pts": 20,
+    "stem": "This carbocation forms when (1-bromoethyl)cyclobutane ionizes. Draw the curved arrow for its ring expansion, draw the new cation, and say what drives the change.\n[[mol:C[CH+]C1CCC1]]",
+    "model": "<p>One arrow, from a ring C-C bond of the ring carbon that is attached to the positive carbon, to the positive carbon:</p>\n[[rxn:C[CH+]C1CCC1>>CC1CCC[CH+]1]]\n<p>The new cation is a five-membered ring with the {{CH3}} on the carbon next to the positive carbon. It is secondary, like the first one. What drives the shift is <b>relief of ring strain</b>: cyclobutane has 90° angles and eclipsed hydrogens (about 26 kcal/mol of strain from the lecture table), cyclopentane has very little (about 6).</p>",
+    "rubric": [
+      {"pts": 8, "h": "The arrow starts at a ring C-C bond of the neighbouring ring carbon and ends at the positive carbon"},
+      {"pts": 7, "h": "New cation: five-membered ring, {{CH3}} on the ring carbon next to the positive carbon"},
+      {"pts": 5, "h": "Reason: relief of ring strain (angle strain and torsional strain of the four-membered ring)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Find the neighbour", "h": "The carbon next to the positive carbon is a ring carbon. It has one H and two ring bonds."},
+        {"t": "Move a ring bond", "h": "One of its ring bonds swings to the positive carbon. The positive carbon joins the ring, and the ring carbon that lost the bond becomes positive."},
+        {"t": "Count", "h": "Four ring carbons plus the one that joined: five. The methyl group is on the carbon that used to be positive."},
+        {"t": "Give the reason", "h": "Per {{CH2}}, the lecture table has cyclobutane at +1.7 and cyclopentane at −3.7 kcal/mol, against −4.9 for a strain-free chain. Four times 6.6 is about 26. Five times 1.2 is 6."}
+      ],
+      "answer": "A ring bond shifts to the positive carbon and gives the 2-methylcyclopentyl cation. Driving force: relief of ring strain.",
+      "rule": "Four-membered ring next to a cation: the ring grows to five."
+    }
+  },
+  {
+    "id": "mech-rearrangement-007", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 1, "src": "site", "time": 6, "pts": 20,
+    "stem": "Two ethers form. Draw both. Say which one needed a rearrangement, and what kind.\n[[rxn:CC(I)C(C)C>CH3OH>\"?\"]]",
+    "model": "<p>Without rearrangement (methanol adds to the first, secondary cation):</p>\n[[mol:COC(C)C(C)C]]\n<p>With rearrangement (a 1,2-hydride shift makes the tertiary cation first). This one is expected to be major:</p>\n[[mol:CCC(C)(C)OC]]",
+    "rubric": [
+      {"pts": 6, "h": "Ether with {{OCH3}} on the carbon that carried I"},
+      {"pts": 6, "h": "Ether with {{OCH3}} on the neighbouring carbon, the one with two methyl groups"},
+      {"pts": 5, "h": "Names the 1,2-hydride shift, secondary to tertiary"},
+      {"pts": 3, "h": "Both ethers neutral, with {{OCH3}} (from the solvent), not OH"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Ionize", "h": "Iodide is a good leaving group and methanol is a polar protic solvent: a secondary cation forms."},
+        {"t": "Two fates for the cation", "h": "Methanol can add at once. Or the hydrogen on the neighbouring carbon can shift first and make the tertiary cation, and methanol adds there."},
+        {"t": "Finish each", "h": "In both cases a second methanol removes the proton from oxygen. The products are methyl ethers because the solvent is methanol."}
+      ],
+      "answer": "2-Methoxy-3-methylbutane (no rearrangement) and 2-methoxy-2-methylbutane (after a 1,2-hydride shift)",
+      "rule": "Draw the product of the first cation and of the rearranged cation."
+    }
+  },
+  {
+    "id": "mech-rearrangement-008", "type": "mech-rearrangement", "role": "practice", "kind": "mech", "diff": 2, "src": "site", "mech": "hydride-shift-3methyl2butyl-water",
+    "stem": "Draw the curved arrows, step by step.\n[[rxn:CC(Br)C(C)C>H2O>CCC(C)(C)O]]",
+    "solution": {
+      "steps": [
+        {"t": "Ionize", "h": "One arrow from the C-Br bond to Br. A secondary cation forms."},
+        {"t": "Shift the hydride", "h": "One arrow from the C-H bond on the neighbouring carbon to the positive carbon. The charge moves to the carbon with two methyl groups: tertiary."},
+        {"t": "Water attacks", "h": "One arrow from a lone pair on water to the tertiary positive carbon."},
+        {"t": "Lose the proton", "h": "Two arrows: a second water's lone pair to H, and the O-H bond onto the positive oxygen."}
+      ],
+      "answer": "Four steps, five arrows: ionization, hydride shift, attack by water, loss of a proton",
+      "rule": "The shift arrow starts at the C-H bond and ends at the positive carbon."
+    }
+  },
+  {
+    "id": "mech-rearrangement-009", "type": "mech-rearrangement", "role": "practice", "kind": "mech", "diff": 2, "src": "Lecture 11/10, homework", "mech": "ring-expansion-bromoethylcyclobutane-e1",
+    "stem": "Draw the curved arrows for the path to the rearranged alkene.\n[[rxn:CC(Br)C1CCC1>CH3CH2OH;heat>CC1=CCCC1]]",
+    "solution": {
+      "steps": [
+        {"t": "Ionize", "h": "One arrow from the C-Br bond to Br: a secondary cation attached to the four-membered ring."},
+        {"t": "Expand the ring", "h": "One arrow from a ring C-C bond of the attached ring carbon to the positive carbon. The ring now has five carbons, and the positive charge is on the ring carbon next to the one that carries {{CH3}}."},
+        {"t": "Eliminate", "h": "Ethanol takes the hydrogen from the carbon that carries the methyl group, and the C-H electrons form the C=C. Two arrows. This gives the more substituted alkene."}
+      ],
+      "answer": "Three steps, four arrows: ionization, ring expansion, loss of a neighbouring hydrogen to ethanol",
+      "rule": "After a rearrangement, E1 takes a hydrogen next to the new positive carbon."
+    }
+  },
+  {
+    "id": "mech-rearrangement-010", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 8, "pts": 30,
+    "stem": "This tosylate is warmed in methanol. Draw the major substitution product and the major elimination product, and show the step that changes the carbon skeleton.\n[[mol:CC(OS(=O)(=O)c1ccc(C)cc1)C(C)(C)C|abbr]]",
+    "model": "<p>Tosylate leaves and a secondary cation forms. The neighbouring carbon has no hydrogen, so a <b>methyl group</b> shifts with its bonding pair (one arrow, from the C-{{CH3}} bond to the positive carbon). The new cation is tertiary.</p>\n[[rxn:C[CH+]C(C)(C)C>>CC(C)[C+](C)C]]\n<p>Major {{SN1}} product (methanol adds to the tertiary carbon, then loses a proton):</p>\n[[mol:COC(C)(C)C(C)C]]\n<p>Major {{E1}} product (four carbon groups on the double bond):</p>\n[[mol:CC(C)=C(C)C]]",
+    "rubric": [
+      {"pts": 6, "h": "Tosylate leaves, secondary cation drawn"},
+      {"pts": 9, "h": "1,2-Methyl shift: one arrow from the C-{{CH3}} bond to the positive carbon, tertiary cation drawn"},
+      {"pts": 2, "h": "Says a methyl moves because the neighbouring carbon has no hydrogen"},
+      {"pts": 7, "h": "The ether: {{OCH3}} on the tertiary carbon of the new skeleton, neutral"},
+      {"pts": 6, "h": "The alkene: 2,3-dimethylbut-2-ene"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Ionize", "h": "Secondary tosylate, methanol, heat: the C-O bond breaks and tosylate leaves."},
+        {"t": "Look next door", "h": "The neighbouring carbon carries three methyl groups. Moving one of them leaves a tertiary cation."},
+        {"t": "Substitution", "h": "Methanol bonds to the tertiary positive carbon and loses its proton: 2-methoxy-2,3-dimethylbutane."},
+        {"t": "Elimination", "h": "The tertiary cation has a neighbouring CH with one hydrogen. Removing it gives 2,3-dimethylbut-2-ene, the most substituted alkene possible. Removing a methyl hydrogen gives 2,3-dimethylbut-1-ene, the minor alkene."}
+      ],
+      "answer": "After a 1,2-methyl shift: 2-methoxy-2,3-dimethylbutane (SN1) and 2,3-dimethylbut-2-ene (E1)",
+      "rule": "A methyl shift changes the skeleton, so count the methyl groups on each carbon of the product."
+    }
+  },
+  {
+    "id": "mech-rearrangement-011", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 2, "src": "site", "time": 5, "pts": 20,
+    "stem": "A student writes that this bromide gives a rearranged alcohol in water. Is the student right? Draw the alcohol that forms and explain.\n[[mol:CCC(C)(C)Br]]",
+    "model": "<p>No. The carbocation is already tertiary:</p>\n[[mol:CC[C+](C)C]]\n<p>A shift of a hydrogen from the neighbouring {{CH2}} would make a secondary cation, and a shift from a {{CH3}} would make a primary one. Both are less stable, so nothing moves. Water adds to the tertiary carbon:</p>\n[[mol:CCC(C)(C)O]]",
+    "rubric": [
+      {"pts": 6, "h": "The tertiary carbocation drawn"},
+      {"pts": 8, "h": "Any shift would give a less stable (secondary or primary) cation, so there is no rearrangement"},
+      {"pts": 6, "h": "The alcohol with OH where Br was (2-methylbutan-2-ol)"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Ionize", "h": "The tertiary C-Br bond breaks."},
+        {"t": "Test every neighbour", "h": "Imagine the charge on each neighbouring carbon in turn: secondary on the {{CH2}}, primary on a {{CH3}}. Neither is better than tertiary."},
+        {"t": "Finish", "h": "Water attacks the tertiary carbon and a second water removes a proton."}
+      ],
+      "answer": "No rearrangement. The product is 2-methylbutan-2-ol.",
+      "rule": "A shift must lead to a more stable cation. Tertiary stays put."
+    }
+  },
+  {
+    "id": "mech-rearrangement-012", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 3, "src": "site, modelled on FA24 Exam 2, Q9", "time": 10, "pts": 40,
+    "stem": "The amine below is treated with HONO, which turns the {{NH2}} group into {{N2+}}. Only one ketone forms. Draw it, draw the mechanism, and explain why there is only one product here.\n[[mol:CC(N)C1(O)CCC1]]",
+    "model": "<p><b>1.</b> {{N2}} leaves (arrow from the C-N bond to N).</p>\n[[rxn:CC([N+]#N)C1(O)CCC1>>C[CH+]C1(O)CCC1 + N#N]]\n<p><b>2.</b> A ring bond of the C-OH carbon shifts to the positive carbon (arrow from the ring C-C bond to the positive carbon). The ring is now five-membered and the charge is on the carbon that carries OH.</p>\n[[rxn:C[CH+]C1(O)CCC1>>CC1CCC[C+]1O]]\n<p><b>3.</b> A lone pair on oxygen shares the charge (arrow from the lone pair to the C-O bond). These are two drawings of one ion.</p>\n[[rxn:CC1CCC[C+]1O>resonance>CC1CCCC1=[OH+]]]\n<p><b>4.</b> Water removes the proton (lone pair to H, O-H bond onto oxygen).</p>\n[[rxn:CC1CCCC1=[OH+] + O>>CC1CCCC1=O + [OH3+]]]\n<p>Only one ketone: the two ring bonds of the C-OH carbon both lead to a {{CH2}}, and the two are equivalent. Whichever moves, the product is 2-methylcyclopentanone.</p>",
+    "rubric": [
+      {"pts": 8, "h": "{{N2}} leaves, secondary cation drawn"},
+      {"pts": 12, "h": "Ring bond shifts (arrow from the ring C-C bond to the positive carbon), five-membered cation with the charge on the C-OH carbon"},
+      {"pts": 6, "h": "Oxygen lone pair shares the charge: C=O⁺-H"},
+      {"pts": 6, "h": "Water removes the proton: 2-methylcyclopentanone"},
+      {"pts": 8, "h": "One product because the two ring bonds that could move are equivalent"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Remove the leaving group", "h": "{{N2+}} leaves as {{N2}}. The cation is on the carbon next to the C-OH ring carbon."},
+        {"t": "Expand the ring", "h": "A ring bond of the C-OH carbon moves to the positive carbon. Four ring carbons become five, and the charge lands next to oxygen."},
+        {"t": "Make the ketone", "h": "The oxygen lone pair forms the C=O, and water takes the O-H proton."},
+        {"t": "Count the paths", "h": "On the exam the two ring bonds were different, and two ketones formed. Here the ring has a mirror plane through the C-OH carbon, so both bonds are the same and the two paths give the same ketone."}
+      ],
+      "answer": "2-Methylcyclopentanone, by loss of N2, ring expansion, and loss of the O-H proton. One product, because the two ring bonds are equivalent.",
+      "rule": "Count the different bonds that can migrate: that is the number of products."
+    }
+  },
+  {
+    "id": "mech-rearrangement-013", "type": "mech-rearrangement", "role": "practice", "kind": "mech", "diff": 3, "src": "Lecture 11/10, homework", "mech": "ring-expansion-bromoethylcyclobutane-sn1",
+    "stem": "Draw the curved arrows for the path to the ring-expanded ether.\n[[rxn:CC(Br)C1CCC1>CH3CH2OH>CCOC1CCCC1C]]",
+    "solution": {
+      "steps": [
+        {"t": "Analyze the product", "h": "The product has a five-membered ring, with the methyl group and the {{OCH2CH3}} on neighbouring ring carbons. The carbon that carried Br is now in the ring and carries the methyl group."},
+        {"t": "Ionize", "h": "One arrow from the C-Br bond to Br."},
+        {"t": "Expand the ring", "h": "One arrow from a ring C-C bond of the attached ring carbon to the positive carbon. The charge moves into the ring."},
+        {"t": "Add ethanol and lose the proton", "h": "One arrow from an oxygen lone pair of ethanol to the positive ring carbon. Then two arrows: a second ethanol takes the proton from the positive oxygen."}
+      ],
+      "answer": "Four steps, five arrows: ionization, ring expansion, attack by ethanol, loss of a proton",
+      "rule": "The nucleophile adds where the charge is after the shift, not where the leaving group was."
+    }
+  },
+  {
+    "id": "mech-rearrangement-014", "type": "mech-rearrangement", "role": "practice", "kind": "written", "diff": 3, "src": "site, extends the Lecture 11/10 homework", "time": 8, "pts": 30,
+    "stem": "In the homework reaction, (1-bromoethyl)cyclobutane in ethanol, a careful analysis also finds the ether below. Start from the ring-expanded cation and draw the steps that explain it.\n[[mol:CCOC1(C)CCCC1]]\nThe ring-expanded cation:\n[[mol:CC1CCC[CH+]1]]",
+    "model": "<p>The ring-expanded cation is secondary, and the carbon next to it carries the methyl group and one hydrogen. A <b>1,2-hydride shift</b> (one arrow, from that C-H bond to the positive carbon) gives a tertiary cation:</p>\n[[rxn:CC1CCC[CH+]1>>C[C+]1CCCC1]]\n<p>Ethanol attacks the tertiary carbon and a second ethanol removes the proton:</p>\n[[rxn:C[C+]1CCCC1 + CCO>>CCOC1(C)CCCC1]]\n<p>Two rearrangements in a row: the ring expansion relieves ring strain, then the hydride shift turns a secondary cation into a tertiary one.</p>",
+    "rubric": [
+      {"pts": 12, "h": "1,2-Hydride shift: arrow from the C-H bond on the methyl-bearing carbon to the positive carbon"},
+      {"pts": 6, "h": "The tertiary 1-methylcyclopentyl cation drawn"},
+      {"pts": 8, "h": "Ethanol attacks the tertiary carbon, and a second ethanol removes the proton"},
+      {"pts": 4, "h": "Reason: secondary to tertiary"}
+    ],
+    "solution": {
+      "steps": [
+        {"t": "Compare the ether with the cation", "h": "In the ether the methyl group and the oxygen are on the same ring carbon. In the cation the charge is on the carbon next to the methyl-bearing carbon. The charge has to move one carbon over."},
+        {"t": "Find the shift", "h": "The methyl-bearing carbon has one hydrogen. If it moves with its bonding pair to the positive carbon, the charge lands on the methyl-bearing carbon: tertiary."},
+        {"t": "Finish as SN1", "h": "Ethanol bonds to the tertiary positive carbon and loses its proton."},
+        {"t": "See the pattern", "h": "A cation keeps rearranging as long as each step leads to something more stable."}
+      ],
+      "answer": "A 1,2-hydride shift turns the secondary ring cation into the tertiary 1-methylcyclopentyl cation, and ethanol then gives 1-ethoxy-1-methylcyclopentane.",
+      "rule": "After one rearrangement, look again: a second shift may make a still better cation."
+    }
+  }
+]
