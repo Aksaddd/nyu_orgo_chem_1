@@ -34,7 +34,8 @@
   let uid = 0;
   // Eureka's preferences (none outside Eureka)
   const prefs = () => (ORGO.prefs ? ORGO.prefs() : {});
-  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0 };
+  // FNV-1a and a final mix (murmur3's), so that ids which differ only in their last digit still give unrelated numbers
+  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); h = Math.imul(h ^ h >>> 16, 0x85ebca6b); h = Math.imul(h ^ h >>> 13, 0xc2b2ae35); return (h ^ h >>> 16) >>> 0 };
   // a key press that is the page's to use: no other handler took it, not held down, no modifier, no sheet (ours or Eureka's) over the page
   const free = e => !(e.defaultPrevented || e.repeat || e.ctrlKey || e.metaKey || e.altKey || (ORGO.ui && ORGO.ui.covered ? ORGO.ui.covered() : document.querySelector(".veil")));
   const typing = t => !!(t && t.closest && t.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])'));
