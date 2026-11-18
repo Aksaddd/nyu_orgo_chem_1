@@ -35,7 +35,7 @@
 .chair-template svg { max-width: min(100%, 320px); }
 .chair-q { font-weight: 600; margin: 0; }
 .chair-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.chair-row > span:first-child { min-width: 14em; }
+.chair-row > span:first-child { min-width: min(14em, 100%); }      /* never wider than the row: larger text inside Eureka */
 .chair-opts-fig { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .chair-opts-fig .opt { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 .chair-tag { font-style: italic; }
@@ -65,3 +65,9 @@
   .chair-pair { grid-template-columns: minmax(0, 1fr); }
   .chair-row > span:first-child { min-width: 0; }
 }
+/* Eureka's "Text and layout size" zooms the page: the screen stays wide while the room inside shrinks, and the media queries
+   above see only the screen. So each lab also follows the width it has, at the same widths as above on a plain page (the
+   page's padding is 40 px): at 200% on a tablet the chairs no longer get a column too narrow to draw in. */
+.chair-lab, .newman-lab, .energy-lab { container: orgo-lab / inline-size; }
+@container orgo-lab (max-width: 720px) { .chair-lab-main, .newman-main, .energy-main { grid-template-columns: minmax(0, 1fr); } }
+@container orgo-lab (max-width: 480px) { .chair-pair { grid-template-columns: minmax(0, 1fr); } }

@@ -67,4 +67,11 @@
   .rung-btn { grid-template-columns: 1fr auto; }
   .rung-track { display: none }
 }
+/* Eureka's "Text and layout size" zooms the page, and a media query sees only the screen: a tool also follows the width it
+   has, at the same width as above on a plain page (whose padding is 40 px) */
+.lab-tool { container: orgo-tool / inline-size }
+@container orgo-tool (max-width: 520px) {
+  .rung-btn { grid-template-columns: 1fr auto; }
+  .rung-track { display: none }
+}
 .lab-card .v3d-help { display: none }
