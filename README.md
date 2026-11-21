@@ -77,7 +77,7 @@ The design is in `docs/dev/ARCHITECTURE.md`; `docs/dev/LECTURES.md` is a page-by
 ## In Eureka
 
 The guide is in Eureka as the folder `chem225/`, brought in with `git subtree`. It opens from Eureka's library with the
-class code `CHEM225` (change it before sharing: see `class.js`). Inside Eureka, the class bar, appearance settings,
+class code the owner gives out (only its fingerprint is stored, in `class.js`). Inside Eureka, the class bar, appearance settings,
 account sync, companions and XP replace this folder's own top bar; double-tapping a term opens the class dictionary
 (`content/glossary.json`), which also feeds the Word Bank; and each finished reading chapter earns a badge.
 

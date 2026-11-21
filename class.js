@@ -1,7 +1,7 @@
 // CHEM 225 · what Eureka needs to know to list this class (see Eureka's docs/adding-a-class.md).
 // After changing it, run  node tools/build-classes.js  from the Eureka folder.
-// The class code students type is CHEM225 (only its fingerprint is stored here). Change it before sharing widely:
-//     node tools/class-code.js "NEW-CODE"
+// The class code students type is given out by the owner; only its fingerprint is stored here. To change it, make the
+// fingerprint of the new code with  node tools/class-code.js "NEW-CODE"  (in the Eureka folder) and put it in code.
 (window.EUREKA_CLASS = window.EUREKA_CLASS || []).push({
   id: "orgo",
   order: 5,
@@ -13,7 +13,7 @@
   stats: "560 questions · 11 reading chapters · 45 mechanisms · 3 mock exams",
   color: "#5e5ce6",
   cover: ["#3b3a9e", "#17163f"],
-  code: "5192f344100426d7f1cd0438219fae75cbe180a69dbae837e804b47c40f62737",
+  code: "31d4cc2b0f8afe93842db5582c3aee4a71661e12b8e100b430ef923df2bf19a6",
   // the questions that are marked: the practice bank and the past exam (tools/build.js says when this number is out of date)
   progress: [["orgo-drill-v1", 453]],
   portals: {"main":[["Readings","read/","read"],["Practice","drill/","drill"],["Exam 2 Lab","exam/","exam"],["Mechanisms","mechanisms/","mechanisms"],["Mock Exam","mock/","mock"],["Syllabus","syllabus/","syllabus"]],"more":[["Review List","review/","review"],["Molecule Lab","lab/","lab"],["Foundations","foundations/","foundations"],["Word Roots","roots/","roots"],["Archive","archive/","archive"]]},
